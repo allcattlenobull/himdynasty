@@ -45,6 +45,12 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         run: python scripts/update_league.py
 
+      - name: Build the rookie mock draft
+        if: steps.gate.outputs.run == 'true'
+        # A source being down should never block the league update.
+        continue-on-error: true
+        run: python scripts/mock_draft.py
+
       - name: Commit updated data
         if: steps.gate.outputs.run == 'true'
         run: |
