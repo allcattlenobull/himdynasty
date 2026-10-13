@@ -50,50 +50,87 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Follow the league into a new season (rollover)
+        id: rollover
+        if: steps.gate.outputs.run == 'true'
+        continue-on-error: true
+        run: python scripts/rollover.py
+
       - name: Fetch league data from Sleeper
+        id: league
         if: steps.gate.outputs.run == 'true'
         run: python scripts/update_league.py
 
       - name: Build trade values
+        id: trade
         if: steps.gate.outputs.run == 'true'
         continue-on-error: true
         run: python scripts/trade_values.py
 
       - name: Build player analytics (nflverse)
+        id: analytics
         if: steps.gate.outputs.run == 'true'
         continue-on-error: true
         run: python scripts/analytics_data.py
 
       - name: Build weekly start/sit and play-by-play splits
+        id: startsit
         if: steps.gate.outputs.run == 'true'
         continue-on-error: true
         run: python scripts/startsit.py
 
       - name: Write team analysis
+        id: analysis
         if: steps.gate.outputs.run == 'true'
         continue-on-error: true
         run: python scripts/analysis.py
 
       - name: Collect player news
+        id: news
         if: steps.gate.outputs.run == 'true'
         continue-on-error: true
         run: python scripts/news.py
 
       - name: Build the rookie mock draft
+        id: mock
         if: steps.gate.outputs.run == 'true'
         # A source being down should never block the league update.
         continue-on-error: true
         run: python scripts/mock_draft.py
 
       - name: Find prospect highlight clips (YouTube)
+        id: highlights
         if: steps.gate.outputs.run == 'true'
         continue-on-error: true
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python scripts/highlights.py
 
-      - name: Commit updated data
+      - name: Build league history (all seasons)
+        id: history
         if: steps.gate.outputs.run == 'true'
+        continue-on-error: true
+        run: python scripts/history.py
+
+      - name: Record what worked
+        if: always() && steps.gate.outputs.run == 'true'
+        env:
+          STEPS: ${{ toJSON(steps) }}
+        run: |
+          python3 - <<'PY'
+          import json, os, datetime as dt
+          steps = json.loads(os.environ["STEPS"])
+          names = {"rollover": "Season rollover", "league": "League update", "trade": "Trade values",
+                   "analytics": "Player analytics", "startsit": "Start/sit", "analysis": "Team analysis",
+                   "news": "Player news", "mock": "Mock draft", "highlights": "Highlights", "history": "League history"}
+          failed = [names[k] for k, v in steps.items() if k in names and v.get("outcome") == "failure"]
+          out = {"checked": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), "failed": failed}
+          open("docs/data/status.json", "w").write(json.dumps(out) + "\n")
+          print("Failed steps:", failed or "none")
+          PY
+
+      - name: Commit updated data
+        if: always() && steps.gate.outputs.run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -105,3 +142,8 @@ jobs:
             git pull --rebase origin main
             git push
           fi
+
+      - name: Flag a broken step (GitHub emails a failed run)
+        if: always() && steps.gate.outputs.run == 'true'
+        run: |
+          python3 -c "import json,sys; f=json.load(open('docs/data/status.json'))['failed']; print('Failed:', f); sys.exit(1 if f else 0)"

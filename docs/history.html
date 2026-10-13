@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>History · HIM Dynasty</title>
+  <meta name="theme-color" content="#09090b">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/brand.css?v=20261013j">
+  <script src="assets/theme.js?v=20261013j"></script>
+</head>
+<body>
+  <header class="topbar" data-topbar></header>
+
+  <main class="league-main">
+    <div class="strip">
+      <p class="kicker">League <em>History</em></p>
+      <p class="updated" id="updated">Loading history…</p>
+    </div>
+
+    <section class="hof" id="hof" aria-label="Champions"></section>
+
+    <nav class="an-tabs" id="h-tabs" aria-label="History sections">
+      <a href="#seasons" data-tab="seasons">Seasons</a>
+      <a href="#records" data-tab="records">Record Book</a>
+      <a href="#rivalries" data-tab="rivalries">Rivalries</a>
+      <a href="#managers" data-tab="managers">Managers</a>
+      <a href="#drafts" data-tab="drafts">Drafts</a>
+      <a href="#trades" data-tab="trades">Trades</a>
+    </nav>
+
+    <section class="panel h-view" id="view-seasons" hidden>
+      <div class="panel-head"><h2 id="season-title">Seasons</h2><p class="note" id="season-note"></p></div>
+      <div class="round-tabs" id="season-pills" role="tablist" aria-label="Season"></div>
+      <div id="season-body"></div>
+    </section>
+
+    <section class="panel h-view" id="view-records" hidden>
+      <div class="panel-head"><h2>Record Book</h2><p class="note">Every game since the 2024 startup, playoffs included. Season records count finished seasons only.</p></div>
+      <div class="records" id="records"></div>
+    </section>
+
+    <section class="panel h-view" id="view-rivalries" hidden>
+      <div class="panel-head"><h2>Rivalries</h2><p class="note">All-time head-to-head, regular season and playoffs. Read across: the row team's record against the column team. Tap a square, or pick two managers.</p></div>
+      <div class="cmp-pickers riv-pickers">
+        <label>Manager <select id="riv-a"></select></label>
+        <span class="riv-vs">vs</span>
+        <label>Manager <select id="riv-b"></select></label>
+      </div>
+      <div id="riv-detail"></div>
+      <div class="table-wrap" id="riv-matrix"></div>
+    </section>
+
+    <section class="panel h-view" id="view-managers" hidden>
+      <div class="panel-head"><h2>Managers</h2><p class="note">Careers follow the person, not the team name. Regular-season record; playoff record shown separately. Tap a manager for the full profile.</p></div>
+      <div id="mgr-detail"></div>
+      <div class="table-wrap" id="mgr-table"></div>
+    </section>
+
+    <section class="panel h-view" id="view-drafts" hidden>
+      <div class="panel-head"><h2>Drafts</h2><p class="note" id="draft-note"></p></div>
+      <div class="round-tabs" id="draft-pills" role="tablist" aria-label="Draft"></div>
+      <div id="draft-summary"></div>
+      <div class="table-wrap" id="draft-table"></div>
+    </section>
+
+    <section class="panel h-view" id="view-trades" hidden>
+      <div class="panel-head"><h2>Trades</h2><p class="note" id="trade-note"></p></div>
+      <div class="an-controls">
+        <label>Season <select id="tr-season"></select></label>
+        <label>Manager <select id="tr-user"></select></label>
+        <label>Show <select id="tr-kind"><option value="all">All trades</option><option value="decided">Clear winner only</option><option value="big">Big trades (5,000+ value)</option></select></label>
+      </div>
+      <div id="trade-board"></div>
+      <div class="trade-list" id="trade-list"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <img src="assets/logo.svg" alt="" width="28" height="28">
+    HIM DYNASTY · ARE YOU HIM?
+    <br><a class="credit" href="mailto:paforprince@gmail.com">Built by P Saah</a>
+  </footer>
+
+  <script src="assets/common.js?v=20261013j"></script>
+  <script src="assets/motion.js?v=20261013j"></script>
+  <script src="assets/history.js?v=20261013j"></script>
+</body>
+</html>

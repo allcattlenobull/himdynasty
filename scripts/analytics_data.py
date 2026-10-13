@@ -30,12 +30,16 @@ import datetime as dt
 import io
 import json
 import os
+import sys
 import statistics
 import time
 import urllib.request
 from pathlib import Path
 
-LEAGUE_ID = os.environ.get("SLEEPER_LEAGUE_ID", "1312005038838673409")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from league_pointer import current_league_id  # noqa: E402
+
+LEAGUE_ID = current_league_id()
 DATA_DIR = Path(__file__).resolve().parent.parent / "docs" / "data"
 NFLVERSE = "https://github.com/nflverse/nflverse-data/releases/download"
 FFOPP = "https://github.com/ffverse/ffopportunity/releases/download/latest-data"
@@ -124,8 +128,17 @@ def main():
     today = dt.date.today()
 
     print("Downloading nflverse data…")
-    stats = [r for r in rows(f"{NFLVERSE}/stats_player/stats_player_week_{season}.csv")
-             if r["season_type"] == "REG" and r["position"] in POSITIONS]
+    try:
+        stats = [r for r in rows(f"{NFLVERSE}/stats_player/stats_player_week_{season}.csv")
+                 if r["season_type"] == "REG" and r["position"] in POSITIONS]
+        if not stats:
+            raise ValueError("no regular-season games yet")
+    except Exception as e:  # noqa: BLE001
+        # New season, no games yet: keep showing last season.
+        print(f"No {season} weekly stats yet ({e}); using {season - 1}.")
+        season -= 1
+        stats = [r for r in rows(f"{NFLVERSE}/stats_player/stats_player_week_{season}.csv")
+                 if r["season_type"] == "REG" and r["position"] in POSITIONS]
     snaps = rows(f"{NFLVERSE}/snap_counts/snap_counts_{season}.csv", optional=True)
     adv = rows(f"{NFLVERSE}/pfr_advstats/advstats_week_rec_{season}.csv", optional=True)
     ep = rows(f"{FFOPP}/ep_weekly_{season}.csv", optional=True)

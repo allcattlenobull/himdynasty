@@ -147,7 +147,7 @@ window.HIM = (() => {
   // theme switches inside it.
   // ---------------------------------------------------------------- //
   const NAV = [["League", "league.html"], ["Mock", "draft.html"], ["Trade", "trade.html"],
-    ["Analytics", "analytics.html"], ["Buzz", "buzz.html"]];
+    ["Analytics", "analytics.html"], ["Buzz", "buzz.html"], ["History", "history.html"]];
 
   function renderHeader() {
     const header = document.querySelector("[data-topbar]");
@@ -438,8 +438,22 @@ window.HIM = (() => {
     (window.requestIdleCallback || ((f) => setTimeout(f, 300)))(refresh, { timeout: 1500 });
   }
 
+  // Footer note when this morning's update had a problem.
+  function dataStatus() {
+    const foot = document.querySelector(".foot");
+    if (!foot) return;
+    fetch("data/status.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).then((st) => {
+      if (!st) return;
+      const age = (Date.now() - new Date(st.checked)) / 3600000;
+      const msg = st.failed && st.failed.length ? `This morning's update had trouble with: ${st.failed.join(", ")}. Those parts show the last good data.`
+        : age > 36 ? `The daily update hasn't run since ${new Date(st.checked).toLocaleDateString()}.` : "";
+      if (msg) foot.appendChild(el("div", msg, "data-status"));
+    }).catch(() => {});
+  }
+
   renderHeader();
   renderTicker();
+  (window.requestIdleCallback || ((f) => setTimeout(f, 800)))(dataStatus);
 
   return { initExpand, el, cssVar, assignColors, teamVar, teamColor, dot, teamHref, teamLink, oddsCell, withAlpha, chartTheme, themeChart, loadData, updatedText };
 })();

@@ -27,13 +27,17 @@ import datetime as dt
 import json
 import math
 import os
+import sys
 import random
 import statistics
 import urllib.request
 from pathlib import Path
 
 API = "https://api.sleeper.app/v1"
-LEAGUE_ID = os.environ.get("SLEEPER_LEAGUE_ID", "1312005038838673409")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from league_pointer import current_league_id  # noqa: E402
+
+LEAGUE_ID = current_league_id()
 SIMULATIONS = int(os.environ.get("SIMULATIONS", "10000"))
 HISTORY_SIMULATIONS = int(os.environ.get("HISTORY_SIMULATIONS", "4000"))
 DEFAULT_SD = 25.0
@@ -586,6 +590,21 @@ def build_team_pages(teams, rids, schedule, done, players, league, model, ranked
     return pages
 
 
+def prune_snapshots(folder, today):
+    """Keep every daily snapshot for 3 weeks, then one a week (Tuesdays).
+
+    Each snapshot is ~200 KB; this keeps the repo growing by ~10 MB a year
+    instead of ~70 MB. Season results live on in docs/data/archive.
+    """
+    for f in folder.glob("*.json"):
+        try:
+            day = dt.date.fromisoformat(f.stem)
+        except ValueError:
+            continue
+        if (today - day).days > 21 and day.weekday() != 1:
+            f.unlink()
+
+
 def main():
     league = get(f"/league/{LEAGUE_ID}")
     users = {u["user_id"]: u for u in get(f"/league/{LEAGUE_ID}/users")}
@@ -783,6 +802,7 @@ def main():
     (DATA_DIR / "history").mkdir(parents=True, exist_ok=True)
     (DATA_DIR / "latest.json").write_text(payload + "\n", encoding="utf-8")
     (DATA_DIR / "history" / f"{now:%Y-%m-%d}.json").write_text(payload + "\n", encoding="utf-8")
+    prune_snapshots(DATA_DIR / "history", now.date())
     print(f"Wrote {len(standings)} teams, {done} weeks of history, {remaining_games} weeks left, to {DATA_DIR}")
     for d in diagnostics:
         print(f"  max PF check roster {d['roster_id']}: computed {d['computed']} vs Sleeper {d['official']}")

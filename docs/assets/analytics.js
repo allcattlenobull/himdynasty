@@ -352,6 +352,11 @@
     document.getElementById("ss-note").textContent =
       "Projections are Sleeper's, scored with this league's settings. Matchups, usage and Vegas lines explain each call; they don't override the number, because a season of graded picks showed matchup tweaks didn't beat Sleeper. "
       + "A player is only told to sit when someone better can take his spot. Close calls go to the higher ceiling if you're an underdog this week, the steadier floor if you're a big favorite. Updated every morning.";
+    if (S.offseason) {
+      document.getElementById("ss-title").textContent = "Start / Sit";
+      host.replaceChildren(el("p", `It's the offseason. Start/sit returns when the regular season starts. Until then, Explorer and Defenses show the ${S.stats_season || S.season} season.`, "note"));
+      return;
+    }
     if (!rid || !S.teams[rid]) {
       renderLeagueOverview(host);
       return;
@@ -742,7 +747,7 @@
     thName.addEventListener("click", () => { ex.dir = ex.sort === "name" ? -ex.dir : 1; ex.sort = "name"; renderExplorer(); });
     head.appendChild(thName);
     head.appendChild(el("th", "Team", ""));
-    if (S) head.appendChild(el("th", `Wk ${S.week}`, "num"));
+    if (S && !S.offseason) head.appendChild(el("th", `Wk ${S.week}`, "num"));
     for (const k of cols) {
       const th = el("th", M[k][0], "num sortable");
       th.title = M[k][3];
@@ -773,7 +778,7 @@
       if (p.owner) { own.append(dot(p.owner), document.createTextNode(` ${teamName(p.owner)}`)); }
       else own.appendChild(el("span", "FA", "up"));
       tr.appendChild(own);
-      if (S) {
+      if (S && !S.offseason) {
         const wk = el("td", null, "num");
         if (p.proj !== undefined && !p.bye) { wk.textContent = p.proj.toFixed(1); wk.title = gameLine(p); }
         else wk.textContent = p.bye ? "bye" : "—";
@@ -1191,7 +1196,7 @@
     assignColors(latest.standings.map((t) => t.roster_id));
     mergeStartsit();
     document.getElementById("updated").textContent =
-      `Week ${S.week} · stats through week ${S.data_through} · updated ${new Date(S.generated_at).toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}`;
+      `${S.offseason ? `Offseason · ${S.stats_season || S.season} stats` : `Week ${S.week} · stats through week ${S.data_through}`} · updated ${new Date(S.generated_at).toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}`;
     const sel = document.getElementById("ss-team");
     const o0 = el("option", "Whole league");
     o0.value = "";

@@ -60,6 +60,9 @@
     const inPlayoffs = t.rank <= playoffTeams ? "in playoff position" : "outside the playoffs";
     text.appendChild(el("p", `${t.owner} · ${record} · #${t.rank} in the league, ${inPlayoffs}`, "team-sub"));
     text.appendChild(buzz);
+    const career = el("a", "Career & history →", "chip buzz-link");
+    career.href = `history.html#managers/rid:${encodeURIComponent(t.roster_id)}`;
+    text.appendChild(career);
     hero.appendChild(text);
 
     const stats = el("div", null, "stats");

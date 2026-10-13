@@ -16,6 +16,7 @@ https://allcattlenobull.github.io/himdynasty/
 | `docs/trade.html` | Trade center: calculator, team-to-team builder, and trade idea generator, all adjusted for this league's lineup and each team's window. |
 | `docs/buzz.html` | News and live social for the league, a team (`?team=N`), or a player (`?player=ID`): nightly ESPN/RotoWire news, live ESPN news for one player, live Bluesky posts, embedded X insider timelines, live-on-X search, Sleeper trending. |
 | `docs/analytics.html` | Analytics HQ: weekly start/sit for every team (best lineup, reasons for and against each player, waiver upgrades), a two-player compare, a stat explorer (EPA, CPOE, estimated YPRR, blitz and play-action splits, box counts, red zone, Next Gen Stats), a defense table, a team view, and player profiles. |
+| `docs/history.html` | League history since the 2024 startup: champions, every season's standings and playoffs, the record book, all-time head-to-head, manager careers (by Sleeper account, so renamed teams stay one manager), every draft re-graded with today's values, and a trade archive that keeps re-scoring who won. |
 | `docs/team.html?id=N` | One team: stats, roster (starters, bench, taxi, IR), full schedule with results and win odds, season trend. |
 
 Every inner page has a score ticker on top (live NFL scores and upcoming games from ESPN, this league's matchups from Sleeper, and NFL headlines), refreshed every minute while games are live.
@@ -34,6 +35,14 @@ Branding lives in `docs/assets/` (`logo.svg`, `brand.css`). Every page has an Au
 - **History:** for every completed week, the standings as of that week and the playoff odds and projected draft pick from re-simulating the rest of the season from that point
 
 Weekly max PF is computed from each team's best possible lineup and scaled to match Sleeper's season total. `diagnostics.max_pf_check` in `latest.json` shows the raw comparison.
+
+## A site that runs every season
+
+- **Rollover:** Sleeper gives a renewed league a new id each year. `scripts/rollover.py` runs first every morning, finds the renewal (the next-season league whose previous league is the current one) and records it in `docs/data/league_ids.json`; every script reads the id from there (`scripts/league_pointer.py`). `SLEEPER_LEAGUE_ID` still overrides it.
+- **Archive:** `scripts/history.py` walks the league chain and writes `docs/data/archive/<season>.json` for each season (finished seasons are written once, then reused) and `docs/data/history.json` for the History page.
+- **Offseason:** start/sit pauses outside the regular season; analytics fall back to last season's stats until the new season has games.
+- **Storage:** daily snapshots in `docs/data/history/` are kept for 3 weeks, then one per week.
+- **Alerts:** every step's result is written to `docs/data/status.json`. If any step fails, the run is marked failed (GitHub emails the repo owner) and the site footer says which part didn't refresh.
 
 ## Running locally
 

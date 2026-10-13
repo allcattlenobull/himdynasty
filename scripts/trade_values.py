@@ -20,13 +20,17 @@ import datetime as dt
 import io
 import json
 import os
+import sys
 import re
 import statistics
 import time
 import urllib.request
 from pathlib import Path
 
-LEAGUE_ID = os.environ.get("SLEEPER_LEAGUE_ID", "1312005038838673409")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from league_pointer import current_league_id  # noqa: E402
+
+LEAGUE_ID = current_league_id()
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "docs" / "data"
 DP = "https://raw.githubusercontent.com/dynastyprocess/data/master/files"

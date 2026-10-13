@@ -49,7 +49,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from analytics_data import league_points as nflverse_points  # noqa: E402
 
-LEAGUE_ID = os.environ.get("SLEEPER_LEAGUE_ID", "1312005038838673409")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from league_pointer import current_league_id  # noqa: E402
+
+LEAGUE_ID = current_league_id()
 DATA_DIR = Path(__file__).resolve().parent.parent / "docs" / "data"
 LOCAL = os.environ.get("STARTSIT_LOCAL")
 NFLVERSE = "https://github.com/nflverse/nflverse-data/releases/download"
@@ -854,19 +857,22 @@ def main():
 
     state = jget(f"{SLEEPER}/state/nfl", "state.json")
     week = int(state.get("week") or 1)
-    if str(state.get("season")) != str(season) or state.get("season_type") not in ("regular", "pre"):
-        log(f"Not in the regular season (state {state.get('season_type')}); writing splits only.")
+    offseason = str(state.get("season")) != str(season) or state.get("season_type") not in ("regular", "pre")
+    if offseason:
+        log(f"Not in the regular season (state {state.get('season_type')}); no start/sit this week, splits only.")
     league = jget(f"{SLEEPER}/league/{LEAGUE_ID}", "league.json")
     sc = league.get("scoring_settings") or {}
     slots = [s for s in (league.get("roster_positions") or []) if s in SLOT_ELIGIBLE]
     rosters = jget(f"{SLEEPER}/league/{LEAGUE_ID}/rosters", "rosters.json")
     try:
+        if offseason:
+            raise ValueError("offseason")
         matchups = jget(f"{SLEEPER}/league/{LEAGUE_ID}/matchups/{week}", "matchups.json")
     except Exception as exc:  # noqa: BLE001
         log(f"No league matchups for week {week}: {exc}")
         matchups = []
     proj_raw = {}
-    for pos in ([] if LOCAL and (Path(LOCAL) / "proj.json").exists() else ALL_POS):
+    for pos in ([] if offseason or (LOCAL and (Path(LOCAL) / "proj.json").exists()) else ALL_POS):
         try:
             proj_raw[pos] = jget(f"{SLEEPER_COM}/projections/nfl/{season}/{week}?season_type=regular&position[]={pos}&order_by=pts_ppr",
                                  f"proj_{pos}.json")
@@ -877,13 +883,21 @@ def main():
         proj_raw = json.loads((Path(LOCAL) / "proj.json").read_text())
 
     log("Downloading nflverse data…")
-    pbp = csv_rows(f"{NFLVERSE}/pbp/play_by_play_{season}.csv.gz", "pbp.csv.gz")
-    ftn = csv_rows(f"{NFLVERSE}/ftn_charting/ftn_charting_{season}.csv", "ftn.csv", optional=True)
+    stats_season = season
+    try:
+        pbp = csv_rows(f"{NFLVERSE}/pbp/play_by_play_{season}.csv.gz", "pbp.csv.gz")
+        if not any(r.get("season_type") == "REG" for r in pbp):
+            raise ValueError("no regular-season plays yet")
+    except Exception as exc:  # noqa: BLE001
+        stats_season = season - 1
+        log(f"No {season} play-by-play yet ({exc}); using {stats_season}.")
+        pbp = csv_rows(f"{NFLVERSE}/pbp/play_by_play_{stats_season}.csv.gz")
+    ftn = csv_rows(f"{NFLVERSE}/ftn_charting/ftn_charting_{stats_season}.csv", "ftn.csv", optional=True)
     ngs_pass = csv_rows(f"{NFLVERSE}/nextgen_stats/ngs_passing.csv.gz", "ngs_pass.csv.gz", optional=True)
     ngs_rec = csv_rows(f"{NFLVERSE}/nextgen_stats/ngs_receiving.csv.gz", "ngs_rec.csv.gz", optional=True)
     ngs_rush = csv_rows(f"{NFLVERSE}/nextgen_stats/ngs_rushing.csv.gz", "ngs_rush.csv.gz", optional=True)
-    snaps = csv_rows(f"{NFLVERSE}/snap_counts/snap_counts_{season}.csv", "snaps.csv", optional=True)
-    stat_rows = csv_rows(f"{NFLVERSE}/stats_player/stats_player_week_{season}.csv", f"stats_player_week_{season}.csv")
+    snaps = csv_rows(f"{NFLVERSE}/snap_counts/snap_counts_{stats_season}.csv", "snaps.csv", optional=True)
+    stat_rows = csv_rows(f"{NFLVERSE}/stats_player/stats_player_week_{stats_season}.csv", f"stats_player_week_{stats_season}.csv")
     people = csv_rows(f"{NFLVERSE}/players/players.csv", "players.csv")
     games_rows = [g for g in csv_rows(GAMES, "games.csv") if g.get("season") == str(season)]
     ids = csv_rows(DP_IDS, "db_playerids.csv", optional=True)
@@ -925,16 +939,16 @@ def main():
     # NGS season lines
     ngs = defaultdict(dict)
     for r in ngs_pass:
-        if r.get("season") == str(season) and r.get("week") == "0" and r.get("season_type") == "REG":
+        if r.get("season") == str(stats_season) and r.get("week") == "0" and r.get("season_type") == "REG":
             ngs[r["player_gsis_id"]].update({"ttt": num(r["avg_time_to_throw"]), "aggr": num(r["aggressiveness"]),
                                              "ngs_cpoe": num(r["completion_percentage_above_expectation"]),
                                              "air_diff": num(r["avg_air_yards_differential"])})
     for r in ngs_rec:
-        if r.get("season") == str(season) and r.get("week") == "0" and r.get("season_type") == "REG":
+        if r.get("season") == str(stats_season) and r.get("week") == "0" and r.get("season_type") == "REG":
             ngs[r["player_gsis_id"]].update({"sep": num(r["avg_separation"]), "cushion": num(r["avg_cushion"]),
                                              "yac_oe": num(r["avg_yac_above_expectation"])})
     for r in ngs_rush:
-        if r.get("season") == str(season) and r.get("week") == "0" and r.get("season_type") == "REG":
+        if r.get("season") == str(stats_season) and r.get("week") == "0" and r.get("season_type") == "REG":
             ryoe = num(r["rush_yards_over_expected_per_att"])
             pct = num(r["rush_pct_over_expected"])
             ngs[r["player_gsis_id"]].update({"ryoe": ryoe, "ryoe_pct": round(pct * 100, 1) if pct is not None and pct <= 1 else pct,
@@ -1253,7 +1267,8 @@ def main():
         p.pop("sd", None)
     payload = {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-        "season": season, "week": week, "data_through": max(weeks) if weeks else None,
+        "season": season, "week": None if offseason else week, "offseason": offseason, "stats_season": stats_season,
+        "data_through": max(weeks) if weeks else None,
         "scoring": {"rec": sc.get("rec"), "pass_td": sc.get("pass_td"), "te_premium": sc.get("bonus_rec_te") or 0},
         "games": games, "defenses": dprof, "offenses": oprof, "players": players, "teams": teams_out,
         "averages": pos_avgs,
