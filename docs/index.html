@@ -4,287 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HIM Dynasty</title>
-  <style>
-    :root {
-      --bg: #0e1116;
-      --panel: #171b22;
-      --line: #2a303b;
-      --text: #e8ecf2;
-      --muted: #8b95a5;
-      --accent: #f5b301;
-      --good: #3fb97a;
-      --bad: #ff7b72;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.4;
-    }
-    header {
-      padding: 2rem 1.25rem 1.25rem;
-      border-bottom: 1px solid var(--line);
-      text-align: center;
-    }
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 6vw, 3rem);
-      letter-spacing: 0.08em;
-      color: var(--accent);
-    }
-    .slogan { margin: 0.35rem 0 0; font-size: 1.15rem; font-style: italic; }
-    .updated { margin: 0.75rem 0 0; color: var(--muted); font-size: 0.85rem; }
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.25rem;
-      display: grid;
-      gap: 1.25rem;
-    }
-    section {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 1rem 1.1rem 1.2rem;
-      overflow-x: auto;
-    }
-    h2 {
-      margin: 0 0 0.75rem;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--accent);
-    }
-    h3 { margin: 0 0 0.5rem; font-size: 0.95rem; color: var(--muted); font-weight: 600; }
-    .note { margin: 0 0 0.75rem; color: var(--muted); font-size: 0.85rem; }
-    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
-    th, td { padding: 0.5rem 0.45rem; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
-    th { color: var(--muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
-    .num { text-align: right; font-variant-numeric: tabular-nums; }
-    .team { font-weight: 600; }
-    .owner { color: var(--muted); font-size: 0.82rem; }
-    .bar {
-      display: inline-block;
-      vertical-align: middle;
-      width: 60px;
-      height: 7px;
-      background: var(--line);
-      border-radius: 4px;
-      overflow: hidden;
-      margin-right: 0.4rem;
-    }
-    .bar span { display: block; height: 100%; background: var(--good); }
-    .meta { color: var(--muted); font-size: 0.82rem; }
-    .bracket { display: flex; gap: 1.25rem; align-items: stretch; min-width: 620px; }
-    .round { flex: 1; display: flex; flex-direction: column; justify-content: space-around; gap: 0.75rem; }
-    .round h3 { text-align: center; color: var(--accent); }
-    .game {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--bg);
-      overflow: hidden;
-    }
-    .side {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.45rem 0.6rem;
-      font-size: 0.9rem;
-    }
-    .side + .side { border-top: 1px solid var(--line); }
-    .side.winner .name { color: var(--good); font-weight: 700; }
-    .seed { color: var(--muted); font-size: 0.8rem; min-width: 1.4rem; }
-    .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .pct { color: var(--muted); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
-    .status { padding: 0.25rem 0.6rem; font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; border-top: 1px solid var(--line); }
-    .status.final { color: var(--good); }
-    .empty { color: var(--muted); }
-    .error { color: var(--bad); }
-  </style>
+  <meta name="description" content="HIM Dynasty. Are you HIM?">
+  <meta name="theme-color" content="#09090b">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/brand.css">
 </head>
-<body>
-  <header>
-    <h1>HIM DYNASTY</h1>
-    <p class="slogan">Are you HIM?</p>
-    <p class="updated" id="updated">Loading league data…</p>
-  </header>
-
-  <main>
-    <section>
-      <h2>Standings &amp; Playoff Odds</h2>
-      <p class="note">Max PF is each team's potential points (its best possible lineup). Odds come from 10,000 simulations of the rest of the season and playoffs.</p>
-      <div id="standings"><p class="empty">Loading…</p></div>
-    </section>
-
-    <section>
-      <h2>Playoff Bracket</h2>
-      <p class="note">Projected games use current seeds and the favorite in each game, until a game is played. Percentages are each team's chance to win that game.</p>
-      <div id="seeds" class="meta"></div>
-      <div id="bracket"><p class="empty">Loading…</p></div>
-    </section>
-
-    <section>
-      <h2>Draft Order</h2>
-      <p class="note">Non-playoff teams pick first (1–6), lowest max PF first. Playoff teams follow by how far they got: round 1 losers, then round 2 losers, then the finals loser, and the champion last. Order is by average projected pick. "vs #1" is how far each team's max PF is above the team projected at pick 1.</p>
-      <h3>Projected next draft</h3>
-      <div id="projected"><p class="empty">Loading…</p></div>
-    </section>
+<body class="gate">
+  <main class="gate-main">
+    <img class="gate-logo" src="assets/logo.svg" alt="HIM Dynasty logo" width="150" height="150">
+    <p class="gate-kicker">HIM DYNASTY</p>
+    <h1 class="gate-q"><span class="pre">Are you</span><span class="him">HIM?</span></h1>
+    <div class="gate-actions">
+      <a class="btn btn-yes" href="league.html">Yes</a>
+      <a class="btn btn-no" href="no.html">No</a>
+    </div>
+    <p class="gate-hint">Press <kbd>Y</kbd> or <kbd>N</kbd></p>
   </main>
-
   <script>
-    // Text is always set with textContent, so team and owner names from Sleeper
-    // are never parsed as HTML.
-    function el(tag, text, className) {
-      const node = document.createElement(tag);
-      if (text !== undefined && text !== null) node.textContent = text;
-      if (className) node.className = className;
-      return node;
-    }
-
-    function fail(id, message) {
-      document.getElementById(id).replaceChildren(el("p", message, "error"));
-    }
-
-    function renderStandings(rows) {
-      const table = el("table");
-      const headers = [
-        ["#", false], ["Team", false], ["Record", true], ["PF", true], ["PA", true],
-        ["Max PF", true], ["Proj W", true], ["Playoff", false], ["Champ", true],
-      ];
-      const head = el("tr");
-      for (const [label, right] of headers) head.appendChild(el("th", label, right ? "num" : ""));
-      table.appendChild(el("thead")).appendChild(head);
-
-      const body = el("tbody");
-      for (const row of rows) {
-        const tr = el("tr");
-        tr.appendChild(el("td", row.rank, "num"));
-
-        const teamCell = el("td");
-        teamCell.appendChild(el("div", row.team, "team"));
-        teamCell.appendChild(el("div", row.owner, "owner"));
-        tr.appendChild(teamCell);
-
-        const record = row.ties ? `${row.wins}-${row.losses}-${row.ties}` : `${row.wins}-${row.losses}`;
-        tr.appendChild(el("td", record, "num"));
-        tr.appendChild(el("td", row.points_for.toFixed(1), "num"));
-        tr.appendChild(el("td", row.points_against.toFixed(1), "num"));
-        tr.appendChild(el("td", row.max_pf.toFixed(1), "num"));
-        tr.appendChild(el("td", row.projected_wins.toFixed(1), "num"));
-
-        const oddsCell = el("td");
-        const bar = el("span", null, "bar");
-        const fill = el("span");
-        fill.style.width = `${Math.min(100, row.playoff_odds)}%`;
-        bar.appendChild(fill);
-        oddsCell.appendChild(bar);
-        oddsCell.appendChild(document.createTextNode(`${row.playoff_odds.toFixed(1)}%`));
-        tr.appendChild(oddsCell);
-
-        tr.appendChild(el("td", `${row.champion_odds.toFixed(1)}%`, "num"));
-        body.appendChild(tr);
-      }
-      table.appendChild(body);
-      return table;
-    }
-
-    function renderSide(side, won, pct) {
-      const row = el("div", null, won ? "side winner" : "side");
-      row.appendChild(el("span", side.seed ? `#${side.seed}` : "", "seed"));
-      const name = el("span", `${side.team}`, "name");
-      row.appendChild(name);
-      row.appendChild(el("span", pct, "pct"));
-      return row;
-    }
-
-    function renderBracket(rounds) {
-      const wrap = el("div", null, "bracket");
-      for (const round of rounds) {
-        const col = el("div", null, "round");
-        col.appendChild(el("h3", round.name));
-        for (const g of round.games) {
-          const box = el("div", null, "game");
-          const aWon = g.winner === g.a.roster_id;
-          const bWon = g.winner === g.b.roster_id;
-          box.appendChild(renderSide(g.a, aWon, `${g.a_win_pct.toFixed(0)}%`));
-          box.appendChild(renderSide(g.b, bWon, `${(100 - g.a_win_pct).toFixed(0)}%`));
-          const status = g.status === "final" ? "Final" : "Projected";
-          box.appendChild(el("div", status, `status ${g.status}`));
-          col.appendChild(box);
-        }
-        wrap.appendChild(col);
-      }
-      return wrap;
-    }
-
-    function renderProjected(rows) {
-      const table = el("table");
-      const head = el("tr");
-      for (const [label, right] of [["Pick", true], ["Team", false], ["Max PF", true], ["vs #1", true], ["Playoff", false]]) {
-        head.appendChild(el("th", label, right ? "num" : ""));
-      }
-      table.appendChild(el("thead")).appendChild(head);
-
-      const topMaxPf = rows.length ? rows[0].max_pf : 0;
-      const body = el("tbody");
-      rows.forEach((row, i) => {
-        const tr = el("tr");
-        tr.appendChild(el("td", i + 1, "num"));
-
-        const teamCell = el("td");
-        teamCell.appendChild(el("div", row.team, "team"));
-        teamCell.appendChild(el("div", row.owner, "owner"));
-        tr.appendChild(teamCell);
-
-        tr.appendChild(el("td", row.max_pf.toFixed(1), "num"));
-        const gap = row.max_pf - topMaxPf;
-        tr.appendChild(el("td", i === 0 ? "#1 pick" : `+${gap.toFixed(1)}`, "num"));
-
-        const oddsCell = el("td");
-        const bar = el("span", null, "bar");
-        const fill = el("span");
-        fill.style.width = `${Math.min(100, row.playoff_odds)}%`;
-        bar.appendChild(fill);
-        oddsCell.appendChild(bar);
-        oddsCell.appendChild(document.createTextNode(`${row.playoff_odds.toFixed(1)}%`));
-        tr.appendChild(oddsCell);
-
-        body.appendChild(tr);
-      });
-      table.appendChild(body);
-      return table;
-    }
-
-    async function load() {
-      try {
-        const res = await fetch("data/latest.json", { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
-
-        const when = new Date(data.generated_at);
-        document.getElementById("updated").textContent =
-          `${data.league.name || "League"} · ${data.league.season} season · updated ${when.toLocaleString()}`;
-
-        document.getElementById("standings").replaceChildren(renderStandings(data.standings));
-
-        document.getElementById("seeds").textContent =
-          "Current seeds: " + data.playoffs.seeds.map((s) => `${s.seed}. ${s.team}`).join("   ·   ");
-        document.getElementById("bracket").replaceChildren(renderBracket(data.playoffs.rounds));
-
-        document.getElementById("projected").replaceChildren(renderProjected(data.draft.projected_order));
-      } catch (err) {
-        const msg = `Could not load league data (${err.message}).`;
-        fail("standings", msg);
-        fail("bracket", msg);
-        fail("projected", msg);
-        document.getElementById("updated").textContent = "Data unavailable";
-      }
-    }
-
-    load();
+    document.addEventListener("keydown", (e) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const key = e.key.toLowerCase();
+      if (key === "y") location.href = "league.html";
+      if (key === "n") location.href = "no.html";
+    });
   </script>
 </body>
 </html>

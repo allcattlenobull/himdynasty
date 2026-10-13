@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HIM Dynasty</title>
+  <meta name="theme-color" content="#09090b">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/brand.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-row">
+      <a class="brand" href="index.html" aria-label="HIM Dynasty home">
+        <img src="assets/logo.svg" alt="" width="40" height="40">
+        <span class="wordmark"><span class="wm-him">HIM</span><span class="wm-dyn">DYNASTY</span></span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#standings">Standings</a>
+        <a href="#playoffs">Playoffs</a>
+        <a href="#draft">Draft</a>
+      </nav>
+    </div>
+    <div class="focusbar">
+      <span class="focus-label">Focus</span>
+      <div class="chips" id="chips" role="toolbar" aria-label="Focus a team"></div>
+    </div>
+  </header>
+
+  <main class="league-main">
+    <div class="strip">
+      <p class="kicker">Are you <em>HIM?</em></p>
+      <p class="updated" id="updated">Loading league data…</p>
+    </div>
+
+    <section id="standings" class="panel">
+      <div class="panel-head">
+        <h2>Standings</h2>
+        <p class="note">Max PF is each team's best possible lineup. Odds come from 10,000 simulations of the rest of the season and playoffs. Click any team to follow it across every table and chart.</p>
+      </div>
+      <div class="table-wrap" id="standings-table"></div>
+      <div class="chart-card">
+        <div class="chart-head"><h3>Rank by week</h3><span class="hint">Click a line to focus</span></div>
+        <div class="chart-box"><canvas id="chart-rank" aria-label="League rank by week"></canvas></div>
+      </div>
+    </section>
+
+    <section id="playoffs" class="panel">
+      <div class="panel-head">
+        <h2>Playoff Picture</h2>
+        <p class="note">Projected games use current seeds, with the favorite advancing until a game is played. Percentages are each team's chance to win that game.</p>
+      </div>
+      <div class="chart-card">
+        <div class="chart-head"><h3>Playoff odds by week</h3><span class="hint">Click a line to focus</span></div>
+        <div class="chart-box"><canvas id="chart-odds" aria-label="Playoff odds by week"></canvas></div>
+      </div>
+      <div class="bracket-wrap">
+        <p class="seeds" id="seeds"></p>
+        <div id="bracket"></div>
+      </div>
+    </section>
+
+    <section id="draft" class="panel">
+      <div class="panel-head">
+        <h2>Draft Order</h2>
+        <p class="note">Non-playoff teams pick first, lowest max PF first. Playoff teams follow by how far they got: round 1 losers, round 2 losers, the finals loser, and the champion last. Order is by average projected pick. "vs #1" is how far each team's max PF is above the team at pick 1.</p>
+      </div>
+      <div class="split draft">
+        <div class="table-wrap" id="draft-table"></div>
+        <div class="chart-card">
+          <div class="chart-head"><h3>Projected pick by week</h3><span class="hint">Click a line to focus</span></div>
+          <div class="chart-box"><canvas id="chart-pick" aria-label="Projected draft pick by week"></canvas></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <img src="assets/logo.svg" alt="" width="28" height="28">
+    HIM DYNASTY · ARE YOU HIM?
+  </footer>
+
+  <script src="assets/vendor/chart.umd.js"></script>
+  <script src="assets/league.js"></script>
+</body>
+</html>

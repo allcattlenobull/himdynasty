@@ -2,9 +2,11 @@ name: Daily HIM Dynasty update
 
 on:
   schedule:
-    # 08:00 UTC = 3:00 AM Eastern standard time (4:00 AM during daylight saving).
-    # GitHub may start scheduled runs a few minutes late.
-    - cron: "0 8 * * *"
+    # GitHub cron runs in UTC. 4:00 AM Central is 09:00 UTC during daylight
+    # saving (CDT) and 10:00 UTC the rest of the year (CST). Both are scheduled
+    # and the gate step below lets only the matching one run.
+    - cron: "0 9 * * *"
+    - cron: "0 10 * * *"
   workflow_dispatch:
 
 permissions:
@@ -18,16 +20,33 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      - name: Run only at 4 AM Central
+        id: gate
+        run: |
+          offset="$(TZ=America/Chicago date +%z)"
+          schedule="${{ github.event.schedule }}"
+          run=true
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if [ "$offset" = "-0500" ] && [ "$schedule" != "0 9 * * *" ]; then run=false; fi
+            if [ "$offset" = "-0600" ] && [ "$schedule" != "0 10 * * *" ]; then run=false; fi
+          fi
+          echo "Chicago UTC offset $offset, schedule '$schedule', run=$run"
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+
       - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == 'true'
 
       - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == 'true'
         with:
           python-version: "3.12"
 
       - name: Fetch league data from Sleeper
+        if: steps.gate.outputs.run == 'true'
         run: python scripts/update_league.py
 
       - name: Commit updated data
+        if: steps.gate.outputs.run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -35,6 +54,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else
-            git commit -m "Update league data $(date -u +%Y-%m-%d)"
+            git commit -m "Update league data $(TZ=America/Chicago date +%Y-%m-%d)"
+            git pull --rebase origin main
             git push
           fi
