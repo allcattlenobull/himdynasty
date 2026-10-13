@@ -22,7 +22,7 @@ Branding lives in `docs/assets/` (`logo.svg`, `brand.css`). Every page has an Au
 
 ## Daily update
 
-`.github/workflows/daily-update.yml` runs every day at **4:00 AM Central**. GitHub cron only runs in UTC, so the workflow is scheduled at both 09:00 and 10:00 UTC and only the one that is 4 AM in Chicago (based on daylight saving) does the work.
+`.github/workflows/daily-update.yml` runs every day at **4:00 AM Central**. GitHub can delay or drop scheduled runs (especially on the hour), so the workflow tries at :07, :27, and :47 past each hour from 09:00 to 12:59 UTC; the first attempt at or after 4:00 AM Central does the update and the rest skip. You can also run it any time from the Actions tab.
 
 `scripts/update_league.py` (Python standard library only) pulls the league from Sleeper and writes `docs/data/latest.json` plus a dated copy in `docs/data/history/`. It records:
 

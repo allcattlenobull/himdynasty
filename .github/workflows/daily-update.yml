@@ -2,11 +2,11 @@ name: Daily HIM Dynasty update
 
 on:
   schedule:
-    # GitHub cron runs in UTC. 4:00 AM Central is 09:00 UTC during daylight
-    # saving (CDT) and 10:00 UTC the rest of the year (CST). Both are scheduled
-    # and the gate step below lets only the matching one run.
-    - cron: "0 9 * * *"
-    - cron: "0 10 * * *"
+    # GitHub cron runs in UTC and can delay or drop runs at the top of the hour,
+    # so there are several off-peak attempts between 09:00 and 12:59 UTC
+    # (4:00-7:59 AM CDT, 3:00-6:59 AM CST). The gate below makes the first
+    # attempt at or after 4:00 AM Central do the update; later ones skip.
+    - cron: "7,27,47 9-12 * * *"
   workflow_dispatch:
 
 permissions:
@@ -20,21 +20,30 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Run only at 4 AM Central
+      - uses: actions/checkout@v4
+
+      - name: Run once a day, at or after 4 AM Central
         id: gate
         run: |
-          offset="$(TZ=America/Chicago date +%z)"
-          schedule="${{ github.event.schedule }}"
-          run=true
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            if [ "$offset" = "-0500" ] && [ "$schedule" != "0 9 * * *" ]; then run=false; fi
-            if [ "$offset" = "-0600" ] && [ "$schedule" != "0 10 * * *" ]; then run=false; fi
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "Manual run: always update."
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
-          echo "Chicago UTC offset $offset, schedule '$schedule', run=$run"
-          echo "run=$run" >> "$GITHUB_OUTPUT"
-
-      - uses: actions/checkout@v4
-        if: steps.gate.outputs.run == 'true'
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import datetime as dt, json, zoneinfo
+          ct = zoneinfo.ZoneInfo("America/Chicago")
+          now = dt.datetime.now(ct)
+          cutoff = now.replace(hour=4, minute=0, second=0, microsecond=0)
+          try:
+              last = dt.datetime.fromisoformat(json.load(open("docs/data/latest.json"))["generated_at"]).astimezone(ct)
+          except Exception:
+              last = None
+          run = now >= cutoff and (last is None or last < cutoff)
+          import sys
+          print(f"Now {now:%Y-%m-%d %H:%M} CT, last update {last}, run={run}", file=sys.stderr)
+          print(f"run={'true' if run else 'false'}")
+          PY
 
       - uses: actions/setup-python@v5
         if: steps.gate.outputs.run == 'true'
