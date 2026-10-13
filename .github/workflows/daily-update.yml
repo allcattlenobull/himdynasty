@@ -64,6 +64,11 @@ jobs:
         continue-on-error: true
         run: python scripts/analytics_data.py
 
+      - name: Build weekly start/sit and play-by-play splits
+        if: steps.gate.outputs.run == 'true'
+        continue-on-error: true
+        run: python scripts/startsit.py
+
       - name: Write team analysis
         if: steps.gate.outputs.run == 'true'
         continue-on-error: true

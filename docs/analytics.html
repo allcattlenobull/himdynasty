@@ -9,41 +9,93 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/brand.css?v=20261013c">
-  <script src="assets/theme.js?v=20261013c"></script>
+  <link rel="stylesheet" href="assets/brand.css?v=20261013d">
+  <script src="assets/theme.js?v=20261013d"></script>
 </head>
 <body>
   <header class="topbar" data-topbar></header>
 
   <main class="league-main">
     <div class="strip">
-      <p class="kicker">Player <em>Analytics</em></p>
+      <p class="kicker" id="title">Analytics <em>HQ</em></p>
       <p class="updated" id="updated">Loading analytics…</p>
     </div>
 
+    <nav class="an-tabs" id="an-tabs" aria-label="Analytics tools">
+      <a href="#startsit" data-tab="startsit">Start / Sit</a>
+      <a href="#compare" data-tab="compare">Compare</a>
+      <a href="#explorer" data-tab="explorer">Explorer</a>
+      <a href="#defenses" data-tab="defenses">Defenses</a>
+      <a href="#teams" data-tab="teams">Teams</a>
+    </nav>
+
     <section class="panel" id="detail" hidden></section>
 
-    <section class="panel">
-      <div class="round-tabs" id="view-tabs" role="tablist" aria-label="View">
-        <button class="chip is-current" type="button" data-view="players">Players</button>
-        <button class="chip" type="button" data-view="teams">Teams</button>
+    <!-- Start / Sit -->
+    <section class="panel an-view" id="view-startsit" hidden>
+      <div class="panel-head">
+        <h2 id="ss-title">Start / Sit</h2>
+        <p class="note" id="ss-note"></p>
       </div>
+      <div class="ss-controls">
+        <label class="team-filter">Team <select id="ss-team" aria-label="Team"></select></label>
+      </div>
+      <div id="ss-body"></div>
+    </section>
 
-      <div id="players-view">
+    <!-- Compare -->
+    <section class="panel an-view" id="view-compare" hidden>
+      <div class="panel-head">
+        <h2>Compare</h2>
+        <p class="note">Pick any two players for a this-week verdict and a stat-by-stat breakdown. Same position works best; flex choices work too.</p>
+      </div>
+      <div class="cmp-pickers">
+        <label>Player A <input id="cmp-a" list="cmp-list" placeholder="Type a name…" autocomplete="off"></label>
+        <button class="chip" type="button" id="cmp-swap" aria-label="Swap players">⇄</button>
+        <label>Player B <input id="cmp-b" list="cmp-list" placeholder="Type a name…" autocomplete="off"></label>
+        <datalist id="cmp-list"></datalist>
+      </div>
+      <div id="cmp-body"></div>
+    </section>
+
+    <!-- Explorer -->
+    <section class="panel an-view" id="view-explorer" hidden>
+      <div class="panel-head">
+        <h2>Explorer</h2>
+        <p class="note">Every number we have, by position. Turn stat groups on and off, sort any column, and set a minimum volume. Colors rank each column within the players shown: green is better.</p>
+      </div>
+      <div class="ex-controls">
+        <div class="round-tabs" id="ex-pos" role="tablist" aria-label="Position"></div>
+        <div class="round-tabs" id="ex-scope" role="tablist" aria-label="Time frame"></div>
+        <div class="round-tabs ex-groups" id="ex-groups" aria-label="Stat groups"></div>
         <div class="an-controls">
-          <div class="round-tabs" id="pos-tabs" role="tablist" aria-label="Position"></div>
-          <label>Show <select id="owner-filter"></select></label>
-          <label>Signal <select id="signal-filter"></select></label>
-          <label>Search <input id="search" type="search" placeholder="Player name…"></label>
+          <label>Show <select id="ex-owner"></select></label>
+          <label>NFL team <select id="ex-nfl"></select></label>
+          <label><span id="ex-min-label">Minimum volume</span> <input id="ex-min" type="range" min="0" max="100" step="1" value="20"></label>
+          <label>Search <input id="ex-search" type="search" placeholder="Player name…"></label>
         </div>
-        <p class="note" id="table-note"></p>
-        <div class="table-wrap" id="players-table"></div>
       </div>
+      <p class="note" id="ex-note"></p>
+      <div class="table-wrap ex-wrap" id="ex-table"></div>
+    </section>
 
-      <div id="teams-view" hidden>
-        <p class="note">How each roster's players are producing versus what their usage predicts, how old the core is, and how many players are flashing buy-low or sell-high signals.</p>
-        <div class="table-wrap" id="teams-table"></div>
+    <!-- Defenses -->
+    <section class="panel an-view" id="view-defenses" hidden>
+      <div class="panel-head">
+        <h2>Defenses</h2>
+        <p class="note" id="def-note"></p>
       </div>
+      <div class="round-tabs" id="def-mode" role="tablist" aria-label="Values or ranks"></div>
+      <div class="table-wrap ex-wrap" id="def-table"></div>
+    </section>
+
+    <!-- Teams -->
+    <section class="panel an-view" id="view-teams" hidden>
+      <div class="panel-head">
+        <h2>Teams</h2>
+        <p class="note">How each roster's players are producing versus what their usage predicts, how old the core is, and how many players are flashing buy-low or sell-high signals.</p>
+      </div>
+      <div class="table-wrap" id="teams-table"></div>
     </section>
 
     <section class="panel">
@@ -58,9 +110,9 @@
     <br><a class="credit" href="mailto:paforprince@gmail.com">Built by P Saah</a>
   </footer>
 
-  <script src="assets/vendor/chart.umd.js?v=20261013c"></script>
-  <script src="assets/common.js?v=20261013c"></script>
-  <script src="assets/motion.js?v=20261013c"></script>
-  <script src="assets/analytics.js?v=20261013c"></script>
+  <script src="assets/vendor/chart.umd.js?v=20261013d"></script>
+  <script src="assets/common.js?v=20261013d"></script>
+  <script src="assets/motion.js?v=20261013d"></script>
+  <script src="assets/analytics.js?v=20261013d"></script>
 </body>
 </html>

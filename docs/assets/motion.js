@@ -35,6 +35,7 @@
     ".side-box", ".game", ".verdict-row", ".him-col", ".ass-col", ".team-hero", ".pick-chip",
     ".method li", ".news-card", ".social-card", ".an-group", ".me-bar",
     ".roster-col", ".tend-row", "tbody tr", ".butt-card", ".plan-summary",
+    ".ss-card", ".ss-team-card", ".ss-matchup", ".cmp-card", ".cmp-verdict", ".duel-row", ".an-week", ".ss-waiver",
   ].join(",");
   const ROW_CAP = 24;
 
@@ -90,7 +91,7 @@
   // ---------------------------------------------------------------- //
   // Count-up numbers
   // ---------------------------------------------------------------- //
-  const COUNT = ".stat .value, .verdict-score, .mscore";
+  const COUNT = ".stat .value, .verdict-score, .mscore, .ss-big, .ss-win, .ss-team-card .ss-points";
   function countUpWithin(node, delay) {
     const targets = node.matches(COUNT) ? [node] : [...node.querySelectorAll(COUNT)];
     targets.forEach((t) => countUp(t, delay));
@@ -131,7 +132,7 @@
   // ---------------------------------------------------------------- //
   // Desktop: tilt + spotlight, magnetic chips, scroll progress
   // ---------------------------------------------------------------- //
-  const TILT = ".pick, .idea, .matchup, .stat, .odds-block, .pick-chip, .news-card, .game, .roster-col";
+  const TILT = ".pick, .idea, .matchup, .stat, .odds-block, .pick-chip, .news-card, .game, .roster-col, .ss-team-card, .cmp-card";
   let tilted = null;
   let frame = 0;
   function resetTilt(node) {
