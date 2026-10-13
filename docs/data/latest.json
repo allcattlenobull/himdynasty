@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T02:19:22+00:00",
+  "generated_at": "2026-10-13T02:42:55+00:00",
   "league": {
     "id": "1312005038838673409",
     "name": "The HIM Dynasty",
@@ -1257,8 +1257,11 @@
               "age": 31,
               "exp": 10,
               "injury": null,
+              "espn_id": 3046779,
               "pts": 86.06,
-              "last": 20.48
+              "last": 20.48,
+              "ppg": 21.52,
+              "proj": 21.52
             }
           },
           {
@@ -1271,8 +1274,11 @@
               "age": 23,
               "exp": 1,
               "injury": null,
+              "espn_id": null,
               "pts": 44.7,
-              "last": 13.3
+              "last": 13.3,
+              "ppg": 11.18,
+              "proj": 11.18
             }
           },
           {
@@ -1285,8 +1291,11 @@
               "age": 27,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 28.4,
-              "last": 27.0
+              "last": 27.0,
+              "ppg": 14.2,
+              "proj": 14.2
             }
           },
           {
@@ -1299,8 +1308,11 @@
               "age": 22,
               "exp": 1,
               "injury": null,
+              "espn_id": null,
               "pts": 46.9,
-              "last": 11.4
+              "last": 11.4,
+              "ppg": 11.72,
+              "proj": 11.72
             }
           },
           {
@@ -1313,8 +1325,11 @@
               "age": 21,
               "exp": 0,
               "injury": null,
+              "espn_id": null,
               "pts": 46.8,
-              "last": 21.5
+              "last": 21.5,
+              "ppg": 11.7,
+              "proj": 11.7
             }
           },
           {
@@ -1327,8 +1342,11 @@
               "age": 22,
               "exp": 1,
               "injury": null,
+              "espn_id": null,
               "pts": 50.3,
-              "last": 11.7
+              "last": 11.7,
+              "ppg": 12.57,
+              "proj": 12.57
             }
           },
           {
@@ -1341,8 +1359,11 @@
               "age": 27,
               "exp": 6,
               "injury": null,
+              "espn_id": 4259545,
               "pts": 63.5,
-              "last": 7.4
+              "last": 7.4,
+              "ppg": 15.87,
+              "proj": 15.87
             }
           },
           {
@@ -1355,8 +1376,11 @@
               "age": 23,
               "exp": 1,
               "injury": null,
+              "espn_id": null,
               "pts": 58.0,
-              "last": 11.7
+              "last": 11.7,
+              "ppg": 14.5,
+              "proj": 14.5
             }
           },
           {
@@ -1369,8 +1393,11 @@
               "age": 34,
               "exp": 12,
               "injury": null,
+              "espn_id": 17427,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 0.0,
+              "proj": 0.0
             }
           },
           {
@@ -1383,8 +1410,11 @@
               "age": null,
               "exp": null,
               "injury": null,
+              "espn_id": null,
               "pts": 9.0,
-              "last": 9.0
+              "last": 9.0,
+              "ppg": 9.0,
+              "proj": 9.0
             }
           }
         ],
@@ -1397,8 +1427,11 @@
             "age": 24,
             "exp": 2,
             "injury": "Out",
+            "espn_id": null,
             "pts": 45.98,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 22.99,
+            "proj": 11.49
           },
           {
             "id": "10213",
@@ -1408,8 +1441,11 @@
             "age": 25,
             "exp": 3,
             "injury": null,
+            "espn_id": null,
             "pts": 44.3,
-            "last": 8.4
+            "last": 8.4,
+            "ppg": 11.07,
+            "proj": 11.07
           },
           {
             "id": "8134",
@@ -1419,8 +1455,11 @@
             "age": 26,
             "exp": 4,
             "injury": null,
+            "espn_id": null,
             "pts": 30.6,
-            "last": 13.2
+            "last": 13.2,
+            "ppg": 7.65,
+            "proj": 7.65
           },
           {
             "id": "1479",
@@ -1430,8 +1469,11 @@
             "age": 34,
             "exp": 13,
             "injury": null,
+            "espn_id": 15818,
             "pts": 29.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 9.67,
+            "proj": 9.67
           },
           {
             "id": "13414",
@@ -1441,8 +1483,11 @@
             "age": 24,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 13.5,
-            "last": 1.3
+            "last": 1.3,
+            "ppg": 3.38,
+            "proj": 3.38
           },
           {
             "id": "8210",
@@ -1452,8 +1497,11 @@
             "age": 27,
             "exp": 4,
             "injury": null,
+            "espn_id": null,
             "pts": 6.1,
-            "last": 2.5
+            "last": 2.5,
+            "ppg": 3.05,
+            "proj": 3.05
           }
         ],
         "taxi": [
@@ -1465,8 +1513,11 @@
             "age": 22,
             "exp": 1,
             "injury": null,
+            "espn_id": null,
             "pts": 1.8,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 1.8,
+            "proj": 1.8
           },
           {
             "id": "13293",
@@ -1476,8 +1527,11 @@
             "age": 22,
             "exp": 0,
             "injury": "IR",
+            "espn_id": null,
             "pts": 2.1,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 2.1,
+            "proj": 0.0
           }
         ],
         "ir": [
@@ -1489,8 +1543,11 @@
             "age": 23,
             "exp": 1,
             "injury": "IR",
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           },
           {
             "id": "12534",
@@ -1500,8 +1557,11 @@
             "age": 24,
             "exp": 1,
             "injury": "Out",
+            "espn_id": null,
             "pts": 59.3,
-            "last": 28.0
+            "last": 28.0,
+            "ppg": 14.82,
+            "proj": 7.41
           }
         ]
       },
@@ -1669,8 +1729,11 @@
               "age": 30,
               "exp": 8,
               "injury": null,
+              "espn_id": 3918298,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 28.86,
+              "proj": 28.86
             }
           },
           {
@@ -1683,8 +1746,11 @@
               "age": 27,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 66.5,
-              "last": 16.3
+              "last": 16.3,
+              "ppg": 16.62,
+              "proj": 16.62
             }
           },
           {
@@ -1697,8 +1763,11 @@
               "age": 27,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 56.2,
-              "last": 15.6
+              "last": 15.6,
+              "ppg": 14.05,
+              "proj": 14.05
             }
           },
           {
@@ -1711,8 +1780,11 @@
               "age": 26,
               "exp": 5,
               "injury": null,
+              "espn_id": null,
               "pts": 91.3,
-              "last": 15.5
+              "last": 15.5,
+              "ppg": 22.83,
+              "proj": 22.83
             }
           },
           {
@@ -1725,8 +1797,11 @@
               "age": 26,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 56.8,
-              "last": 16.5
+              "last": 16.5,
+              "ppg": 14.2,
+              "proj": 14.2
             }
           },
           {
@@ -1739,8 +1814,11 @@
               "age": 26,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 46.0,
-              "last": 1.7
+              "last": 1.7,
+              "ppg": 11.5,
+              "proj": 11.5
             }
           },
           {
@@ -1753,8 +1831,11 @@
               "age": 27,
               "exp": 5,
               "injury": null,
+              "espn_id": null,
               "pts": 43.9,
-              "last": 14.5
+              "last": 14.5,
+              "ppg": 10.97,
+              "proj": 10.97
             }
           },
           {
@@ -1767,8 +1848,11 @@
               "age": 31,
               "exp": 9,
               "injury": null,
+              "espn_id": 3054850,
               "pts": 35.1,
-              "last": 22.8
+              "last": 22.8,
+              "ppg": 11.7,
+              "proj": 11.7
             }
           },
           {
@@ -1781,8 +1865,11 @@
               "age": 26,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 0.0,
+              "proj": 0.0
             }
           },
           {
@@ -1795,8 +1882,11 @@
               "age": null,
               "exp": null,
               "injury": null,
+              "espn_id": null,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 0.0,
+              "proj": 0.0
             }
           }
         ],
@@ -1809,8 +1899,11 @@
             "age": 30,
             "exp": 8,
             "injury": null,
+            "espn_id": 3117256,
             "pts": 42.4,
-            "last": 2.9
+            "last": 2.9,
+            "ppg": 10.6,
+            "proj": 10.6
           },
           {
             "id": "5849",
@@ -1820,8 +1913,11 @@
             "age": 29,
             "exp": 7,
             "injury": null,
+            "espn_id": 3917315,
             "pts": 23.52,
-            "last": 11.48
+            "last": 11.48,
+            "ppg": 7.84,
+            "proj": 7.84
           },
           {
             "id": "7600",
@@ -1831,8 +1927,11 @@
             "age": 27,
             "exp": 5,
             "injury": null,
+            "espn_id": null,
             "pts": 23.2,
-            "last": 10.7
+            "last": 10.7,
+            "ppg": 7.73,
+            "proj": 7.73
           },
           {
             "id": "7567",
@@ -1842,8 +1941,11 @@
             "age": 27,
             "exp": 5,
             "injury": null,
+            "espn_id": null,
             "pts": 21.0,
-            "last": 10.7
+            "last": 10.7,
+            "ppg": 5.25,
+            "proj": 5.25
           },
           {
             "id": "11586",
@@ -1853,8 +1955,11 @@
             "age": 25,
             "exp": 2,
             "injury": null,
+            "espn_id": null,
             "pts": 3.1,
-            "last": 3.1
+            "last": 3.1,
+            "ppg": 5.55,
+            "proj": 5.55
           },
           {
             "id": "12497",
@@ -1864,8 +1969,11 @@
             "age": 23,
             "exp": 1,
             "injury": null,
+            "espn_id": null,
             "pts": 0.0,
-            "last": null
+            "last": null,
+            "ppg": 0.0,
+            "proj": 0.0
           },
           {
             "id": "4663",
@@ -1875,8 +1983,11 @@
             "age": 31,
             "exp": 9,
             "injury": null,
+            "espn_id": 3068267,
             "pts": 0.0,
-            "last": null
+            "last": null,
+            "ppg": 0.0,
+            "proj": 0.0
           },
           {
             "id": "6783",
@@ -1886,8 +1997,11 @@
             "age": 27,
             "exp": 6,
             "injury": null,
+            "espn_id": 4241463,
             "pts": 0.0,
-            "last": null
+            "last": null,
+            "ppg": 4.6,
+            "proj": 4.6
           }
         ],
         "taxi": [
@@ -1899,8 +2013,11 @@
             "age": 23,
             "exp": 0,
             "injury": "Out",
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ],
         "ir": []
@@ -1961,7 +2078,7 @@
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
           "win_pct": 29.5,
-          "points": 99.52,
+          "points": 104.2,
           "opp_points": 166.86
         },
         {
@@ -2069,8 +2186,11 @@
               "age": 25,
               "exp": 2,
               "injury": null,
+              "espn_id": null,
               "pts": 32.4,
-              "last": 0.0
+              "last": 0.0,
+              "ppg": 16.2,
+              "proj": 16.2
             }
           },
           {
@@ -2083,8 +2203,11 @@
               "age": 21,
               "exp": 0,
               "injury": null,
+              "espn_id": null,
               "pts": 48.9,
-              "last": 6.5
+              "last": 6.5,
+              "ppg": 12.22,
+              "proj": 12.22
             }
           },
           {
@@ -2097,8 +2220,11 @@
               "age": 22,
               "exp": 2,
               "injury": null,
+              "espn_id": null,
               "pts": 25.9,
-              "last": 8.7
+              "last": 8.7,
+              "ppg": 6.47,
+              "proj": 6.47
             }
           },
           {
@@ -2111,8 +2237,11 @@
               "age": 30,
               "exp": 7,
               "injury": "Out",
+              "espn_id": 3126486,
               "pts": 57.9,
-              "last": 18.0
+              "last": 18.0,
+              "ppg": 14.47,
+              "proj": 7.24
             }
           },
           {
@@ -2125,8 +2254,11 @@
               "age": 23,
               "exp": 1,
               "injury": null,
+              "espn_id": null,
               "pts": 36.1,
-              "last": 3.3
+              "last": 3.3,
+              "ppg": 9.02,
+              "proj": 9.02
             }
           },
           {
@@ -2139,8 +2271,11 @@
               "age": 33,
               "exp": 10,
               "injury": null,
+              "espn_id": 2573401,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 0.0,
+              "proj": 0.0
             }
           },
           {
@@ -2153,8 +2288,11 @@
               "age": 31,
               "exp": 9,
               "injury": null,
+              "espn_id": 3045523,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 0.0,
+              "proj": 0.0
             }
           },
           {
@@ -2167,8 +2305,11 @@
               "age": 28,
               "exp": 5,
               "injury": null,
+              "espn_id": null,
               "pts": 43.3,
-              "last": 18.4
+              "last": 18.4,
+              "ppg": 10.82,
+              "proj": 10.82
             }
           },
           {
@@ -2181,8 +2322,11 @@
               "age": 32,
               "exp": 10,
               "injury": null,
+              "espn_id": 2971573,
               "pts": 16.0,
-              "last": 16.0
+              "last": 16.0,
+              "ppg": 9.0,
+              "proj": 9.0
             }
           },
           {
@@ -2195,8 +2339,11 @@
               "age": null,
               "exp": null,
               "injury": null,
+              "espn_id": null,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 0.0,
+              "proj": 0.0
             }
           }
         ],
@@ -2209,8 +2356,11 @@
             "age": 25,
             "exp": 4,
             "injury": null,
+            "espn_id": null,
             "pts": 110.1,
-            "last": 30.9
+            "last": 30.9,
+            "ppg": 27.52,
+            "proj": 27.52
           },
           {
             "id": "7594",
@@ -2220,8 +2370,11 @@
             "age": 27,
             "exp": 5,
             "injury": null,
+            "espn_id": null,
             "pts": 79.0,
-            "last": 25.9
+            "last": 25.9,
+            "ppg": 19.75,
+            "proj": 19.75
           },
           {
             "id": "1466",
@@ -2231,8 +2384,11 @@
             "age": 37,
             "exp": 13,
             "injury": null,
+            "espn_id": 15847,
             "pts": 52.6,
-            "last": 3.5
+            "last": 3.5,
+            "ppg": 13.15,
+            "proj": 13.15
           },
           {
             "id": "13330",
@@ -2242,8 +2398,11 @@
             "age": 21,
             "exp": 0,
             "injury": "Out",
+            "espn_id": null,
             "pts": 38.6,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 12.87,
+            "proj": 6.43
           },
           {
             "id": "9758",
@@ -2253,8 +2412,11 @@
             "age": 25,
             "exp": 3,
             "injury": null,
+            "espn_id": null,
             "pts": 34.76,
-            "last": 23.08
+            "last": 23.08,
+            "ppg": 17.06,
+            "proj": 17.06
           },
           {
             "id": "9756",
@@ -2264,8 +2426,11 @@
             "age": 24,
             "exp": 3,
             "injury": "Out",
+            "espn_id": null,
             "pts": 33.2,
-            "last": 9.1
+            "last": 9.1,
+            "ppg": 11.07,
+            "proj": 5.53
           },
           {
             "id": "4037",
@@ -2275,8 +2440,11 @@
             "age": 30,
             "exp": 9,
             "injury": null,
+            "espn_id": 3116165,
             "pts": 31.7,
-            "last": 9.1
+            "last": 9.1,
+            "ppg": 7.93,
+            "proj": 7.93
           },
           {
             "id": "421",
@@ -2286,8 +2454,11 @@
             "age": 38,
             "exp": 17,
             "injury": null,
+            "espn_id": 12483,
             "pts": 11.68,
-            "last": 11.68
+            "last": 11.68,
+            "ppg": 16.91,
+            "proj": 16.91
           }
         ],
         "taxi": [
@@ -2299,8 +2470,11 @@
             "age": 24,
             "exp": 1,
             "injury": null,
+            "espn_id": null,
             "pts": 58.74,
-            "last": 16.58
+            "last": 16.58,
+            "ppg": 14.68,
+            "proj": 14.68
           },
           {
             "id": "13269",
@@ -2310,8 +2484,11 @@
             "age": 23,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           },
           {
             "id": "13274",
@@ -2321,8 +2498,11 @@
             "age": 22,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 13.0,
-            "last": 3.1
+            "last": 3.1,
+            "ppg": 4.33,
+            "proj": 4.33
           }
         ],
         "ir": [
@@ -2334,8 +2514,11 @@
             "age": 28,
             "exp": 6,
             "injury": "Out",
+            "espn_id": 4038815,
             "pts": 10.5,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 5.25,
+            "proj": 2.62
           },
           {
             "id": "8155",
@@ -2345,8 +2528,11 @@
             "age": 25,
             "exp": 4,
             "injury": "Out",
+            "espn_id": null,
             "pts": 42.5,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 14.17,
+            "proj": 7.08
           }
         ]
       },
@@ -2406,7 +2592,7 @@
           "opponent_team": "Finesse🥶🤴🏿",
           "opponent_owner": "JustinFreshly",
           "win_pct": 76.1,
-          "points": 134.76,
+          "points": 138.56,
           "opp_points": 130.38
         },
         {
@@ -2514,8 +2700,11 @@
               "age": 33,
               "exp": 10,
               "injury": null,
+              "espn_id": 2578570,
               "pts": 13.44,
-              "last": 13.44
+              "last": 13.44,
+              "ppg": 13.44,
+              "proj": 13.44
             }
           },
           {
@@ -2528,8 +2717,11 @@
               "age": 24,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 116.0,
-              "last": 17.7
+              "last": 17.7,
+              "ppg": 29.0,
+              "proj": 29.0
             }
           },
           {
@@ -2542,8 +2734,11 @@
               "age": 26,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 58.0,
-              "last": 19.1
+              "last": 19.1,
+              "ppg": 14.5,
+              "proj": 14.5
             }
           },
           {
@@ -2556,8 +2751,11 @@
               "age": 26,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 67.2,
-              "last": 25.8
+              "last": 25.8,
+              "ppg": 22.4,
+              "proj": 22.4
             }
           },
           {
@@ -2570,8 +2768,11 @@
               "age": 31,
               "exp": 8,
               "injury": null,
+              "espn_id": 3128429,
               "pts": 17.6,
-              "last": 1.4
+              "last": 1.4,
+              "ppg": 4.4,
+              "proj": 4.4
             }
           },
           {
@@ -2584,8 +2785,11 @@
               "age": 26,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 69.2,
-              "last": 10.1
+              "last": 10.1,
+              "ppg": 17.3,
+              "proj": 17.3
             }
           },
           {
@@ -2598,8 +2802,11 @@
               "age": 26,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 30.7,
-              "last": 12.9
+              "last": 12.9,
+              "ppg": 7.68,
+              "proj": 7.68
             }
           },
           {
@@ -2612,8 +2819,11 @@
               "age": 25,
               "exp": 1,
               "injury": null,
+              "espn_id": null,
               "pts": 30.7,
-              "last": 7.0
+              "last": 7.0,
+              "ppg": 7.67,
+              "proj": 7.67
             }
           },
           {
@@ -2626,8 +2836,11 @@
               "age": 23,
               "exp": 2,
               "injury": null,
+              "espn_id": null,
               "pts": 37.0,
-              "last": 14.0
+              "last": 14.0,
+              "ppg": 9.25,
+              "proj": 9.25
             }
           },
           {
@@ -2640,8 +2853,11 @@
               "age": null,
               "exp": null,
               "injury": null,
+              "espn_id": null,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 0.0,
+              "proj": 0.0
             }
           }
         ],
@@ -2654,8 +2870,11 @@
             "age": 28,
             "exp": 6,
             "injury": null,
+            "espn_id": 4040715,
             "pts": 70.02,
-            "last": 13.52
+            "last": 13.52,
+            "ppg": 17.5,
+            "proj": 17.5
           },
           {
             "id": "2449",
@@ -2665,8 +2884,11 @@
             "age": 32,
             "exp": 11,
             "injury": "Out",
+            "espn_id": 2976212,
             "pts": 53.0,
-            "last": 8.5
+            "last": 8.5,
+            "ppg": 13.25,
+            "proj": 6.62
           },
           {
             "id": "11635",
@@ -2676,8 +2898,11 @@
             "age": 24,
             "exp": 2,
             "injury": "Questionable",
+            "espn_id": null,
             "pts": 36.3,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 12.1,
+            "proj": 11.49
           },
           {
             "id": "4983",
@@ -2687,8 +2912,11 @@
             "age": 29,
             "exp": 8,
             "injury": "Out",
+            "espn_id": 3915416,
             "pts": 36.3,
-            "last": 2.7
+            "last": 2.7,
+            "ppg": 9.07,
+            "proj": 4.54
           },
           {
             "id": "11624",
@@ -2698,8 +2926,11 @@
             "age": 23,
             "exp": 2,
             "injury": null,
+            "espn_id": null,
             "pts": 33.3,
-            "last": 11.0
+            "last": 11.0,
+            "ppg": 8.32,
+            "proj": 8.32
           },
           {
             "id": "BAL",
@@ -2709,8 +2940,11 @@
             "age": null,
             "exp": null,
             "injury": null,
+            "espn_id": null,
             "pts": 23.0,
-            "last": 7.0
+            "last": 7.0,
+            "ppg": 5.75,
+            "proj": 5.75
           },
           {
             "id": "9508",
@@ -2720,8 +2954,11 @@
             "age": 25,
             "exp": 3,
             "injury": null,
+            "espn_id": null,
             "pts": 15.5,
-            "last": 1.6
+            "last": 1.6,
+            "ppg": 3.88,
+            "proj": 3.88
           },
           {
             "id": "13405",
@@ -2731,8 +2968,11 @@
             "age": 23,
             "exp": 0,
             "injury": "Out",
+            "espn_id": null,
             "pts": 4.1,
-            "last": 0.1
+            "last": 0.1,
+            "ppg": 1.37,
+            "proj": 0.68
           }
         ],
         "taxi": [
@@ -2744,8 +2984,11 @@
             "age": 23,
             "exp": 1,
             "injury": null,
+            "espn_id": null,
             "pts": 8.0,
-            "last": 2.2
+            "last": 2.2,
+            "ppg": 2.67,
+            "proj": 2.67
           },
           {
             "id": "13311",
@@ -2755,8 +2998,11 @@
             "age": 22,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 14.2,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 7.1,
+            "proj": 7.1
           },
           {
             "id": "13337",
@@ -2766,8 +3012,11 @@
             "age": 23,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 18.0,
-            "last": 2.0
+            "last": 2.0,
+            "ppg": 4.5,
+            "proj": 4.5
           },
           {
             "id": "13347",
@@ -2777,8 +3026,11 @@
             "age": 23,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 2.5,
-            "last": 1.2
+            "last": 1.2,
+            "ppg": 0.83,
+            "proj": 0.83
           }
         ],
         "ir": [
@@ -2790,8 +3042,11 @@
             "age": 26,
             "exp": 3,
             "injury": "IR",
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 3.2,
+            "proj": 0.0
           },
           {
             "id": "4866",
@@ -2801,8 +3056,11 @@
             "age": 29,
             "exp": 8,
             "injury": "Out",
+            "espn_id": 3929630,
             "pts": 23.0,
-            "last": 2.0
+            "last": 2.0,
+            "ppg": 5.75,
+            "proj": 2.88
           }
         ]
       },
@@ -2970,8 +3228,11 @@
               "age": 23,
               "exp": 0,
               "injury": null,
+              "espn_id": null,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 0.0,
+              "proj": 0.0
             }
           },
           {
@@ -2984,8 +3245,11 @@
               "age": 22,
               "exp": 1,
               "injury": "Questionable",
+              "espn_id": null,
               "pts": 18.0,
-              "last": 18.0
+              "last": 18.0,
+              "ppg": 18.0,
+              "proj": 17.1
             }
           },
           {
@@ -2998,8 +3262,11 @@
               "age": 24,
               "exp": 2,
               "injury": null,
+              "espn_id": null,
               "pts": 47.2,
-              "last": 6.1
+              "last": 6.1,
+              "ppg": 11.8,
+              "proj": 11.8
             }
           },
           {
@@ -3012,8 +3279,11 @@
               "age": 25,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 40.1,
-              "last": 27.7
+              "last": 27.7,
+              "ppg": 20.05,
+              "proj": 20.05
             }
           },
           {
@@ -3026,8 +3296,11 @@
               "age": 33,
               "exp": 12,
               "injury": null,
+              "espn_id": 16737,
               "pts": 50.3,
-              "last": 12.6
+              "last": 12.6,
+              "ppg": 12.57,
+              "proj": 12.57
             }
           },
           {
@@ -3040,8 +3313,11 @@
               "age": 33,
               "exp": 9,
               "injury": null,
+              "espn_id": 3040151,
               "pts": 64.4,
-              "last": 17.0
+              "last": 17.0,
+              "ppg": 16.1,
+              "proj": 16.1
             }
           },
           {
@@ -3054,8 +3330,11 @@
               "age": 28,
               "exp": 7,
               "injury": null,
+              "espn_id": 4047650,
               "pts": 43.3,
-              "last": 16.5
+              "last": 16.5,
+              "ppg": 10.82,
+              "proj": 10.82
             }
           },
           {
@@ -3068,8 +3347,11 @@
               "age": 25,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 38.9,
-              "last": 16.2
+              "last": 16.2,
+              "ppg": 9.73,
+              "proj": 9.73
             }
           },
           {
@@ -3082,8 +3364,11 @@
               "age": 27,
               "exp": 5,
               "injury": null,
+              "espn_id": null,
               "pts": 16.0,
-              "last": 5.0
+              "last": 5.0,
+              "ppg": 11.67,
+              "proj": 11.67
             }
           },
           {
@@ -3096,8 +3381,11 @@
               "age": null,
               "exp": null,
               "injury": null,
+              "espn_id": null,
               "pts": 23.0,
-              "last": 8.0
+              "last": 8.0,
+              "ppg": 11.5,
+              "proj": 11.5
             }
           }
         ],
@@ -3110,8 +3398,11 @@
             "age": 31,
             "exp": 8,
             "injury": null,
+            "espn_id": 3116365,
             "pts": 38.9,
-            "last": 13.7
+            "last": 13.7,
+            "ppg": 9.73,
+            "proj": 9.73
           },
           {
             "id": "4892",
@@ -3121,8 +3412,11 @@
             "age": 31,
             "exp": 8,
             "injury": "Out",
+            "espn_id": 3052587,
             "pts": 37.1,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 12.37,
+            "proj": 6.18
           },
           {
             "id": "9480",
@@ -3132,8 +3426,11 @@
             "age": 25,
             "exp": 3,
             "injury": null,
+            "espn_id": null,
             "pts": 36.7,
-            "last": 16.5
+            "last": 16.5,
+            "ppg": 9.18,
+            "proj": 9.18
           },
           {
             "id": "7543",
@@ -3143,8 +3440,11 @@
             "age": 27,
             "exp": 5,
             "injury": "IR",
+            "espn_id": null,
             "pts": 30.9,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 10.3,
+            "proj": 0.0
           },
           {
             "id": "9511",
@@ -3154,8 +3454,11 @@
             "age": 24,
             "exp": 3,
             "injury": null,
+            "espn_id": null,
             "pts": 30.8,
-            "last": 11.3
+            "last": 11.3,
+            "ppg": 7.7,
+            "proj": 7.7
           },
           {
             "id": "13345",
@@ -3165,8 +3468,11 @@
             "age": 23,
             "exp": 0,
             "injury": "IR",
+            "espn_id": null,
             "pts": 14.8,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 14.8,
+            "proj": 0.0
           },
           {
             "id": "3321",
@@ -3176,8 +3482,11 @@
             "age": 31,
             "exp": 10,
             "injury": "",
+            "espn_id": 3116406,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           },
           {
             "id": "7083",
@@ -3187,8 +3496,11 @@
             "age": 28,
             "exp": 6,
             "injury": null,
+            "espn_id": 4035671,
             "pts": 0.0,
-            "last": null
+            "last": null,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ],
         "taxi": [
@@ -3200,8 +3512,11 @@
             "age": 23,
             "exp": 1,
             "injury": "IR",
+            "espn_id": null,
             "pts": 31.9,
-            "last": 7.7
+            "last": 7.7,
+            "ppg": 7.97,
+            "proj": 0.0
           },
           {
             "id": "13288",
@@ -3211,8 +3526,11 @@
             "age": 22,
             "exp": 0,
             "injury": "Out",
+            "espn_id": null,
             "pts": 1.2,
-            "last": 0.2
+            "last": 0.2,
+            "ppg": 0.6,
+            "proj": 0.3
           },
           {
             "id": "13421",
@@ -3222,8 +3540,11 @@
             "age": 22,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 13.4,
-            "last": 2.2
+            "last": 2.2,
+            "ppg": 4.47,
+            "proj": 4.47
           }
         ],
         "ir": [
@@ -3235,8 +3556,11 @@
             "age": 29,
             "exp": 8,
             "injury": "Out",
+            "espn_id": 3916387,
             "pts": 80.08,
-            "last": 18.88
+            "last": 18.88,
+            "ppg": 20.02,
+            "proj": 10.01
           },
           {
             "id": "9226",
@@ -3246,8 +3570,11 @@
             "age": 25,
             "exp": 3,
             "injury": "IR",
+            "espn_id": null,
             "pts": 24.6,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 8.2,
+            "proj": 0.0
           }
         ]
       },
@@ -3307,7 +3634,7 @@
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
           "win_pct": 27.5,
-          "points": 143.36,
+          "points": 154.26,
           "opp_points": 132.12
         },
         {
@@ -3415,8 +3742,11 @@
               "age": 26,
               "exp": 2,
               "injury": null,
+              "espn_id": null,
               "pts": 60.26,
-              "last": 13.56
+              "last": 13.56,
+              "ppg": 15.07,
+              "proj": 15.07
             }
           },
           {
@@ -3429,8 +3759,11 @@
               "age": 26,
               "exp": 5,
               "injury": null,
+              "espn_id": null,
               "pts": 49.6,
-              "last": 31.3
+              "last": 31.3,
+              "ppg": 20.45,
+              "proj": 20.45
             }
           },
           {
@@ -3443,8 +3776,11 @@
               "age": 22,
               "exp": 1,
               "injury": null,
+              "espn_id": null,
               "pts": 73.9,
-              "last": 18.6
+              "last": 18.6,
+              "ppg": 18.48,
+              "proj": 18.48
             }
           },
           {
@@ -3457,8 +3793,11 @@
               "age": 27,
               "exp": 6,
               "injury": "Questionable",
+              "espn_id": 4241389,
               "pts": 112.2,
-              "last": 41.3
+              "last": 41.3,
+              "ppg": 28.05,
+              "proj": 26.65
             }
           },
           {
@@ -3471,8 +3810,11 @@
               "age": 27,
               "exp": 5,
               "injury": null,
+              "espn_id": null,
               "pts": 52.0,
-              "last": 30.8
+              "last": 30.8,
+              "ppg": 26.0,
+              "proj": 26.0
             }
           },
           {
@@ -3485,8 +3827,11 @@
               "age": 25,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 36.1,
-              "last": 16.5
+              "last": 16.5,
+              "ppg": 9.03,
+              "proj": 9.03
             }
           },
           {
@@ -3499,8 +3844,11 @@
               "age": 24,
               "exp": 3,
               "injury": "Questionable",
+              "espn_id": null,
               "pts": 116.66,
-              "last": 12.6
+              "last": 12.6,
+              "ppg": 29.16,
+              "proj": 27.71
             }
           },
           {
@@ -3513,8 +3861,11 @@
               "age": 24,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 51.1,
-              "last": 2.0
+              "last": 2.0,
+              "ppg": 12.78,
+              "proj": 12.78
             }
           },
           {
@@ -3527,8 +3878,11 @@
               "age": 22,
               "exp": 0,
               "injury": null,
+              "espn_id": null,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 0.0,
+              "proj": 0.0
             }
           },
           {
@@ -3541,8 +3895,11 @@
               "age": null,
               "exp": null,
               "injury": null,
+              "espn_id": null,
               "pts": 44.0,
-              "last": 9.0
+              "last": 9.0,
+              "ppg": 14.67,
+              "proj": 14.67
             }
           }
         ],
@@ -3555,8 +3912,11 @@
             "age": 28,
             "exp": 6,
             "injury": null,
+            "espn_id": 4038941,
             "pts": 49.44,
-            "last": 11.56
+            "last": 11.56,
+            "ppg": 12.36,
+            "proj": 12.36
           },
           {
             "id": "13298",
@@ -3566,8 +3926,11 @@
             "age": 22,
             "exp": 0,
             "injury": "Out",
+            "espn_id": null,
             "pts": 30.3,
-            "last": 11.4
+            "last": 11.4,
+            "ppg": 7.57,
+            "proj": 3.79
           },
           {
             "id": "13285",
@@ -3577,8 +3940,11 @@
             "age": 23,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 26.6,
-            "last": 13.2
+            "last": 13.2,
+            "ppg": 6.65,
+            "proj": 6.65
           },
           {
             "id": "11603",
@@ -3588,8 +3954,11 @@
             "age": 24,
             "exp": 2,
             "injury": null,
+            "espn_id": null,
             "pts": 25.3,
-            "last": 2.2
+            "last": 2.2,
+            "ppg": 6.33,
+            "proj": 6.33
           },
           {
             "id": "9225",
@@ -3599,8 +3968,11 @@
             "age": 24,
             "exp": 3,
             "injury": "IR",
+            "espn_id": null,
             "pts": 17.1,
-            "last": 5.5
+            "last": 5.5,
+            "ppg": 4.28,
+            "proj": 0.0
           },
           {
             "id": "9757",
@@ -3610,8 +3982,11 @@
             "age": 24,
             "exp": 3,
             "injury": null,
+            "espn_id": null,
             "pts": 1.9,
-            "last": 1.9
+            "last": 1.9,
+            "ppg": 1.9,
+            "proj": 1.9
           },
           {
             "id": "1166",
@@ -3621,8 +3996,11 @@
             "age": 38,
             "exp": 14,
             "injury": null,
+            "espn_id": 14880,
             "pts": 0.0,
-            "last": null
+            "last": null,
+            "ppg": 0.0,
+            "proj": 0.0
           },
           {
             "id": "NE",
@@ -3632,8 +4010,11 @@
             "age": null,
             "exp": null,
             "injury": null,
+            "espn_id": null,
             "pts": 0.0,
-            "last": null
+            "last": null,
+            "ppg": 9.33,
+            "proj": 9.33
           }
         ],
         "taxi": [
@@ -3645,8 +4026,11 @@
             "age": 22,
             "exp": 1,
             "injury": null,
+            "espn_id": null,
             "pts": 1.5,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 1.5,
+            "proj": 1.5
           },
           {
             "id": "12487",
@@ -3656,8 +4040,11 @@
             "age": 23,
             "exp": 1,
             "injury": "IR",
+            "espn_id": null,
             "pts": 19.3,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 9.65,
+            "proj": 0.0
           },
           {
             "id": "12535",
@@ -3667,8 +4054,11 @@
             "age": 24,
             "exp": 1,
             "injury": null,
+            "espn_id": null,
             "pts": 27.7,
-            "last": 13.5
+            "last": 13.5,
+            "ppg": 9.23,
+            "proj": 9.23
           },
           {
             "id": "13349",
@@ -3678,8 +4068,11 @@
             "age": 23,
             "exp": 0,
             "injury": "IR",
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ],
         "ir": [
@@ -3691,8 +4084,11 @@
             "age": 23,
             "exp": 2,
             "injury": "IR",
+            "espn_id": null,
             "pts": 9.3,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 4.65,
+            "proj": 0.0
           },
           {
             "id": "13417",
@@ -3702,8 +4098,11 @@
             "age": 23,
             "exp": 0,
             "injury": "IR",
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ]
       },
@@ -3764,7 +4163,7 @@
           "opponent_owner": "JudasJudge",
           "win_pct": 72.5,
           "points": 132.12,
-          "opp_points": 143.36
+          "opp_points": 154.26
         },
         {
           "week": 6,
@@ -3871,8 +4270,11 @@
               "age": 27,
               "exp": 6,
               "injury": null,
+              "espn_id": 4036378,
               "pts": 67.84,
-              "last": 14.08
+              "last": 14.08,
+              "ppg": 16.96,
+              "proj": 16.96
             }
           },
           {
@@ -3885,8 +4287,11 @@
               "age": 24,
               "exp": 1,
               "injury": null,
+              "espn_id": null,
               "pts": 44.2,
-              "last": 7.6
+              "last": 7.6,
+              "ppg": 11.05,
+              "proj": 11.05
             }
           },
           {
@@ -3899,8 +4304,11 @@
               "age": 25,
               "exp": 1,
               "injury": null,
+              "espn_id": null,
               "pts": 30.8,
-              "last": 8.2
+              "last": 8.2,
+              "ppg": 7.7,
+              "proj": 7.7
             }
           },
           {
@@ -3913,8 +4321,11 @@
               "age": 23,
               "exp": 2,
               "injury": null,
+              "espn_id": null,
               "pts": 23.2,
-              "last": 23.2
+              "last": 23.2,
+              "ppg": 11.2,
+              "proj": 11.2
             }
           },
           {
@@ -3927,8 +4338,11 @@
               "age": 26,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 44.3,
-              "last": 23.8
+              "last": 23.8,
+              "ppg": 14.77,
+              "proj": 14.77
             }
           },
           {
@@ -3941,8 +4355,11 @@
               "age": 25,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 56.8,
-              "last": 22.4
+              "last": 22.4,
+              "ppg": 14.2,
+              "proj": 14.2
             }
           },
           {
@@ -3955,8 +4372,11 @@
               "age": 25,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 29.7,
-              "last": 11.0
+              "last": 11.0,
+              "ppg": 10.1,
+              "proj": 10.1
             }
           },
           {
@@ -3969,8 +4389,11 @@
               "age": 29,
               "exp": 7,
               "injury": "Out",
+              "espn_id": 4036133,
               "pts": 47.5,
-              "last": 24.9
+              "last": 24.9,
+              "ppg": 11.88,
+              "proj": 5.94
             }
           },
           {
@@ -3983,8 +4406,11 @@
               "age": 32,
               "exp": 7,
               "injury": null,
+              "espn_id": 4249087,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 12.0,
+              "proj": 12.0
             }
           },
           {
@@ -3997,8 +4423,11 @@
               "age": null,
               "exp": null,
               "injury": null,
+              "espn_id": null,
               "pts": 22.0,
-              "last": 4.0
+              "last": 4.0,
+              "ppg": 5.5,
+              "proj": 5.5
             }
           }
         ],
@@ -4011,8 +4440,11 @@
             "age": 29,
             "exp": 8,
             "injury": null,
+            "espn_id": 3912547,
             "pts": 44.5,
-            "last": 14.32
+            "last": 14.32,
+            "ppg": 14.83,
+            "proj": 14.83
           },
           {
             "id": "11628",
@@ -4022,8 +4454,11 @@
             "age": 24,
             "exp": 2,
             "injury": "Out",
+            "espn_id": null,
             "pts": 19.5,
-            "last": 8.2
+            "last": 8.2,
+            "ppg": 6.5,
+            "proj": 3.25
           },
           {
             "id": "9754",
@@ -4033,8 +4468,11 @@
             "age": 25,
             "exp": 3,
             "injury": "Out",
+            "espn_id": null,
             "pts": 18.1,
-            "last": 5.0
+            "last": 5.0,
+            "ppg": 4.53,
+            "proj": 2.26
           },
           {
             "id": "10219",
@@ -4044,8 +4482,11 @@
             "age": 27,
             "exp": 3,
             "injury": null,
+            "espn_id": null,
             "pts": 9.5,
-            "last": 9.5
+            "last": 9.5,
+            "ppg": 5.7,
+            "proj": 5.7
           },
           {
             "id": "9486",
@@ -4055,8 +4496,11 @@
             "age": 25,
             "exp": 3,
             "injury": null,
+            "espn_id": null,
             "pts": 4.8,
-            "last": 4.8
+            "last": 4.8,
+            "ppg": 9.43,
+            "proj": 9.43
           },
           {
             "id": "13317",
@@ -4066,8 +4510,11 @@
             "age": 22,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 4.5,
-            "last": 4.5
+            "last": 4.5,
+            "ppg": 6.7,
+            "proj": 6.7
           },
           {
             "id": "13264",
@@ -4077,8 +4524,11 @@
             "age": 26,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 0.0,
-            "last": null
+            "last": null,
+            "ppg": 0.0,
+            "proj": 0.0
           },
           {
             "id": "13413",
@@ -4088,8 +4538,11 @@
             "age": 23,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 0.0,
-            "last": null
+            "last": null,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ],
         "taxi": [
@@ -4101,8 +4554,11 @@
             "age": 24,
             "exp": 2,
             "injury": "Out",
+            "espn_id": null,
             "pts": 21.3,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 10.65,
+            "proj": 5.33
           },
           {
             "id": "13268",
@@ -4112,8 +4568,11 @@
             "age": 23,
             "exp": 0,
             "injury": "Out",
+            "espn_id": null,
             "pts": 2.3,
-            "last": 2.3
+            "last": 2.3,
+            "ppg": 2.3,
+            "proj": 1.15
           },
           {
             "id": "13324",
@@ -4123,8 +4582,11 @@
             "age": 24,
             "exp": 0,
             "injury": "Questionable",
+            "espn_id": null,
             "pts": 18.0,
-            "last": 5.4
+            "last": 5.4,
+            "ppg": 6.0,
+            "proj": 5.7
           }
         ],
         "ir": [
@@ -4136,8 +4598,11 @@
             "age": 22,
             "exp": 1,
             "injury": "IR",
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           },
           {
             "id": "13302",
@@ -4147,8 +4612,11 @@
             "age": 22,
             "exp": 0,
             "injury": "IR",
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ]
       },
@@ -4209,7 +4677,7 @@
           "opponent_owner": "sleepymike09",
           "win_pct": 23.9,
           "points": 130.38,
-          "opp_points": 134.76
+          "opp_points": 138.56
         },
         {
           "week": 6,
@@ -4316,8 +4784,11 @@
               "age": 26,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 101.48,
-              "last": 19.62
+              "last": 19.62,
+              "ppg": 25.37,
+              "proj": 25.37
             }
           },
           {
@@ -4330,8 +4801,11 @@
               "age": 22,
               "exp": 1,
               "injury": "Questionable",
+              "espn_id": null,
               "pts": 48.3,
-              "last": 21.6
+              "last": 21.6,
+              "ppg": 12.08,
+              "proj": 11.47
             }
           },
           {
@@ -4344,8 +4818,11 @@
               "age": 25,
               "exp": 1,
               "injury": null,
+              "espn_id": null,
               "pts": 38.1,
-              "last": 19.3
+              "last": 19.3,
+              "ppg": 12.7,
+              "proj": 12.7
             }
           },
           {
@@ -4358,8 +4835,11 @@
               "age": 26,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 63.0,
-              "last": 5.7
+              "last": 5.7,
+              "ppg": 15.75,
+              "proj": 15.75
             }
           },
           {
@@ -4372,8 +4852,11 @@
               "age": 27,
               "exp": 6,
               "injury": null,
+              "espn_id": 4262921,
               "pts": 44.9,
-              "last": 0.0
+              "last": 0.0,
+              "ppg": 14.97,
+              "proj": 14.97
             }
           },
           {
@@ -4386,8 +4869,11 @@
               "age": 23,
               "exp": 2,
               "injury": null,
+              "espn_id": null,
               "pts": 48.2,
-              "last": 20.6
+              "last": 20.6,
+              "ppg": 24.1,
+              "proj": 24.1
             }
           },
           {
@@ -4400,8 +4886,11 @@
               "age": 25,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 37.2,
-              "last": 4.6
+              "last": 4.6,
+              "ppg": 9.3,
+              "proj": 9.3
             }
           },
           {
@@ -4414,8 +4903,11 @@
               "age": 30,
               "exp": 6,
               "injury": null,
+              "espn_id": 3929645,
               "pts": 60.2,
-              "last": 11.9
+              "last": 11.9,
+              "ppg": 15.05,
+              "proj": 15.05
             }
           },
           {
@@ -4428,8 +4920,11 @@
               "age": 27,
               "exp": 2,
               "injury": null,
+              "espn_id": null,
               "pts": 33.0,
-              "last": 16.0
+              "last": 16.0,
+              "ppg": 13.0,
+              "proj": 13.0
             }
           },
           {
@@ -4442,8 +4937,11 @@
               "age": null,
               "exp": null,
               "injury": null,
+              "espn_id": null,
               "pts": 35.0,
-              "last": 12.0
+              "last": 12.0,
+              "ppg": 8.75,
+              "proj": 8.75
             }
           }
         ],
@@ -4456,8 +4954,11 @@
             "age": 28,
             "exp": 2,
             "injury": null,
+            "espn_id": null,
             "pts": 55.6,
-            "last": 17.4
+            "last": 17.4,
+            "ppg": 13.9,
+            "proj": 13.9
           },
           {
             "id": "10229",
@@ -4467,8 +4968,11 @@
             "age": 26,
             "exp": 3,
             "injury": "Questionable",
+            "espn_id": null,
             "pts": 38.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 12.67,
+            "proj": 12.03
           },
           {
             "id": "11539",
@@ -4478,8 +4982,11 @@
             "age": 27,
             "exp": 3,
             "injury": null,
+            "espn_id": null,
             "pts": 25.0,
-            "last": 18.0
+            "last": 18.0,
+            "ppg": 10.67,
+            "proj": 10.67
           },
           {
             "id": "LAR",
@@ -4489,8 +4996,11 @@
             "age": null,
             "exp": null,
             "injury": null,
+            "espn_id": null,
             "pts": 24.0,
-            "last": 6.0
+            "last": 6.0,
+            "ppg": 6.0,
+            "proj": 6.0
           },
           {
             "id": "13286",
@@ -4500,8 +5010,11 @@
             "age": 23,
             "exp": 0,
             "injury": "IR",
+            "espn_id": null,
             "pts": 14.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 4.67,
+            "proj": 0.0
           },
           {
             "id": "5850",
@@ -4511,8 +5024,11 @@
             "age": 28,
             "exp": 7,
             "injury": "NA",
+            "espn_id": 4047365,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ],
         "taxi": [],
@@ -4525,8 +5041,11 @@
             "age": 23,
             "exp": 1,
             "injury": "IR",
+            "espn_id": null,
             "pts": 27.4,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 13.7,
+            "proj": 0.0
           },
           {
             "id": "9753",
@@ -4536,8 +5055,11 @@
             "age": 25,
             "exp": 3,
             "injury": "PUP",
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ]
       },
@@ -4705,8 +5227,11 @@
               "age": 24,
               "exp": 2,
               "injury": null,
+              "espn_id": null,
               "pts": 54.76,
-              "last": 27.16
+              "last": 27.16,
+              "ppg": 13.69,
+              "proj": 13.69
             }
           },
           {
@@ -4719,8 +5244,11 @@
               "age": 24,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 105.4,
-              "last": 27.7
+              "last": 27.7,
+              "ppg": 26.35,
+              "proj": 26.35
             }
           },
           {
@@ -4733,8 +5261,11 @@
               "age": 23,
               "exp": 1,
               "injury": null,
+              "espn_id": null,
               "pts": 52.1,
-              "last": 11.1
+              "last": 11.1,
+              "ppg": 13.03,
+              "proj": 13.03
             }
           },
           {
@@ -4747,8 +5278,11 @@
               "age": 25,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 10.12,
+              "proj": 10.12
             }
           },
           {
@@ -4761,8 +5295,11 @@
               "age": 26,
               "exp": 5,
               "injury": null,
+              "espn_id": null,
               "pts": 60.2,
-              "last": 5.7
+              "last": 5.7,
+              "ppg": 15.05,
+              "proj": 15.05
             }
           },
           {
@@ -4775,8 +5312,11 @@
               "age": 22,
               "exp": 1,
               "injury": null,
+              "espn_id": null,
               "pts": 20.1,
-              "last": 11.7
+              "last": 11.7,
+              "ppg": 6.7,
+              "proj": 6.7
             }
           },
           {
@@ -4789,8 +5329,11 @@
               "age": 25,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 57.4,
-              "last": 14.6
+              "last": 14.6,
+              "ppg": 14.35,
+              "proj": 14.35
             }
           },
           {
@@ -4803,8 +5346,11 @@
               "age": 26,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 90.1,
-              "last": 19.6
+              "last": 19.6,
+              "ppg": 22.52,
+              "proj": 22.52
             }
           },
           {
@@ -4817,8 +5363,11 @@
               "age": 26,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 1.5,
+              "proj": 1.5
             }
           },
           {
@@ -4831,8 +5380,11 @@
               "age": null,
               "exp": null,
               "injury": null,
+              "espn_id": null,
               "pts": 28.0,
-              "last": 3.0
+              "last": 3.0,
+              "ppg": 7.0,
+              "proj": 7.0
             }
           }
         ],
@@ -4845,8 +5397,11 @@
             "age": 23,
             "exp": 1,
             "injury": null,
+            "espn_id": null,
             "pts": 74.5,
-            "last": 45.2
+            "last": 45.2,
+            "ppg": 18.62,
+            "proj": 18.62
           },
           {
             "id": "8154",
@@ -4856,8 +5411,11 @@
             "age": 27,
             "exp": 4,
             "injury": null,
+            "espn_id": null,
             "pts": 48.5,
-            "last": 25.7
+            "last": 25.7,
+            "ppg": 12.12,
+            "proj": 12.12
           },
           {
             "id": "11637",
@@ -4867,8 +5425,11 @@
             "age": 23,
             "exp": 2,
             "injury": null,
+            "espn_id": null,
             "pts": 28.3,
-            "last": 23.6
+            "last": 23.6,
+            "ppg": 14.15,
+            "proj": 14.15
           },
           {
             "id": "12529",
@@ -4878,8 +5439,11 @@
             "age": 23,
             "exp": 1,
             "injury": "Out",
+            "espn_id": null,
             "pts": 21.7,
-            "last": 4.2
+            "last": 4.2,
+            "ppg": 7.23,
+            "proj": 3.62
           },
           {
             "id": "13424",
@@ -4889,8 +5453,11 @@
             "age": 24,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 7.2,
-            "last": 4.8
+            "last": 4.8,
+            "ppg": 2.4,
+            "proj": 2.4
           },
           {
             "id": "13394",
@@ -4900,8 +5467,11 @@
             "age": 23,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 6.2,
-            "last": 6.2
+            "last": 6.2,
+            "ppg": 6.2,
+            "proj": 6.2
           },
           {
             "id": "7523",
@@ -4911,8 +5481,11 @@
             "age": 27,
             "exp": 5,
             "injury": null,
+            "espn_id": null,
             "pts": 0.0,
-            "last": null
+            "last": null,
+            "ppg": 16.78,
+            "proj": 16.78
           },
           {
             "id": "9482",
@@ -4922,8 +5495,11 @@
             "age": 25,
             "exp": 3,
             "injury": null,
+            "espn_id": null,
             "pts": 0.0,
-            "last": null
+            "last": null,
+            "ppg": 7.25,
+            "proj": 7.25
           }
         ],
         "taxi": [
@@ -4935,8 +5511,11 @@
             "age": 23,
             "exp": 1,
             "injury": null,
+            "espn_id": null,
             "pts": 23.8,
-            "last": 8.8
+            "last": 8.8,
+            "ppg": 7.93,
+            "proj": 7.93
           },
           {
             "id": "12509",
@@ -4946,8 +5525,11 @@
             "age": 24,
             "exp": 1,
             "injury": "Questionable",
+            "espn_id": null,
             "pts": 33.9,
-            "last": 9.0
+            "last": 9.0,
+            "ppg": 8.47,
+            "proj": 8.05
           },
           {
             "id": "13276",
@@ -4957,8 +5539,11 @@
             "age": 22,
             "exp": 0,
             "injury": "IR",
+            "espn_id": null,
             "pts": 4.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 4.0,
+            "proj": 0.0
           },
           {
             "id": "13296",
@@ -4968,8 +5553,11 @@
             "age": 23,
             "exp": 0,
             "injury": "Out",
+            "espn_id": null,
             "pts": 18.3,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 9.15,
+            "proj": 4.58
           }
         ],
         "ir": [
@@ -4981,8 +5569,11 @@
             "age": 31,
             "exp": 9,
             "injury": "IR",
+            "espn_id": 3045147,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ]
       },
@@ -5043,7 +5634,7 @@
           "opponent_owner": "RefMitch128",
           "win_pct": 70.5,
           "points": 166.86,
-          "opp_points": 99.52
+          "opp_points": 104.2
         },
         {
           "week": 6,
@@ -5150,8 +5741,11 @@
               "age": 33,
               "exp": 10,
               "injury": null,
+              "espn_id": 2577417,
               "pts": 82.2,
-              "last": 18.1
+              "last": 18.1,
+              "ppg": 20.55,
+              "proj": 20.55
             }
           },
           {
@@ -5164,8 +5758,11 @@
               "age": 30,
               "exp": 9,
               "injury": null,
+              "espn_id": 3117251,
               "pts": 74.0,
-              "last": 16.0
+              "last": 16.0,
+              "ppg": 18.5,
+              "proj": 18.5
             }
           },
           {
@@ -5178,8 +5775,11 @@
               "age": 27,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 30.1,
-              "last": 0.0
+              "last": 0.0,
+              "ppg": 10.03,
+              "proj": 10.03
             }
           },
           {
@@ -5192,8 +5792,11 @@
               "age": 33,
               "exp": 12,
               "injury": null,
+              "espn_id": 16800,
               "pts": 73.0,
-              "last": 7.2
+              "last": 7.2,
+              "ppg": 18.25,
+              "proj": 18.25
             }
           },
           {
@@ -5206,8 +5809,11 @@
               "age": 29,
               "exp": 7,
               "injury": null,
+              "espn_id": 3916433,
               "pts": 41.7,
-              "last": 6.3
+              "last": 6.3,
+              "ppg": 10.42,
+              "proj": 10.42
             }
           },
           {
@@ -5220,8 +5826,11 @@
               "age": 26,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 53.0,
-              "last": 13.6
+              "last": 13.6,
+              "ppg": 13.25,
+              "proj": 13.25
             }
           },
           {
@@ -5234,8 +5843,11 @@
               "age": 27,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 36.3,
-              "last": 4.1
+              "last": 4.1,
+              "ppg": 9.08,
+              "proj": 9.08
             }
           },
           {
@@ -5248,8 +5860,11 @@
               "age": 25,
               "exp": 2,
               "injury": null,
+              "espn_id": null,
               "pts": 38.1,
-              "last": 12.0
+              "last": 12.0,
+              "ppg": 9.53,
+              "proj": 9.53
             }
           },
           {
@@ -5262,8 +5877,11 @@
               "age": 31,
               "exp": 3,
               "injury": null,
+              "espn_id": null,
               "pts": 37.0,
-              "last": 10.0
+              "last": 10.0,
+              "ppg": 9.25,
+              "proj": 9.25
             }
           },
           {
@@ -5276,8 +5894,11 @@
               "age": null,
               "exp": null,
               "injury": null,
+              "espn_id": null,
               "pts": 12.0,
-              "last": 1.0
+              "last": 1.0,
+              "ppg": 3.0,
+              "proj": 3.0
             }
           }
         ],
@@ -5290,8 +5911,11 @@
             "age": 42,
             "exp": 21,
             "injury": null,
+            "espn_id": 8439,
             "pts": 65.16,
-            "last": 23.96
+            "last": 23.96,
+            "ppg": 16.29,
+            "proj": 16.29
           },
           {
             "id": "11792",
@@ -5301,8 +5925,11 @@
             "age": 25,
             "exp": 2,
             "injury": null,
+            "espn_id": null,
             "pts": 52.0,
-            "last": 19.0
+            "last": 19.0,
+            "ppg": 13.0,
+            "proj": 13.0
           },
           {
             "id": "7525",
@@ -5312,8 +5939,11 @@
             "age": 27,
             "exp": 5,
             "injury": "Out",
+            "espn_id": null,
             "pts": 48.5,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 16.17,
+            "proj": 8.08
           },
           {
             "id": "5927",
@@ -5323,8 +5953,11 @@
             "age": 31,
             "exp": 7,
             "injury": null,
+            "espn_id": 3121422,
             "pts": 30.1,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 10.03,
+            "proj": 10.03
           },
           {
             "id": "TB",
@@ -5334,8 +5967,11 @@
             "age": null,
             "exp": null,
             "injury": null,
+            "espn_id": null,
             "pts": 23.0,
-            "last": 7.0
+            "last": 7.0,
+            "ppg": 5.75,
+            "proj": 5.75
           },
           {
             "id": "10226",
@@ -5345,8 +5981,11 @@
             "age": 26,
             "exp": 3,
             "injury": "IR",
+            "espn_id": null,
             "pts": 4.9,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 2.45,
+            "proj": 0.0
           },
           {
             "id": "7528",
@@ -5356,8 +5995,11 @@
             "age": 28,
             "exp": 5,
             "injury": null,
+            "espn_id": null,
             "pts": 3.0,
-            "last": 3.0
+            "last": 3.0,
+            "ppg": 1.8,
+            "proj": 1.8
           },
           {
             "id": "6149",
@@ -5367,8 +6009,11 @@
             "age": 29,
             "exp": 7,
             "injury": "Out",
+            "espn_id": 3916945,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ],
         "taxi": [
@@ -5380,8 +6025,11 @@
             "age": 23,
             "exp": 1,
             "injury": "Out",
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           },
           {
             "id": "12523",
@@ -5391,8 +6039,11 @@
             "age": 24,
             "exp": 1,
             "injury": null,
+            "espn_id": null,
             "pts": -2.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": -2.0,
+            "proj": -2.0
           },
           {
             "id": "13278",
@@ -5402,8 +6053,11 @@
             "age": 23,
             "exp": 0,
             "injury": "Out",
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           },
           {
             "id": "13353",
@@ -5413,8 +6067,11 @@
             "age": 23,
             "exp": 0,
             "injury": "IR",
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ],
         "ir": [
@@ -5426,8 +6083,11 @@
             "age": 27,
             "exp": 4,
             "injury": "IR",
+            "espn_id": null,
             "pts": 11.9,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 11.9,
+            "proj": 0.0
           }
         ]
       },
@@ -5595,8 +6255,11 @@
               "age": 32,
               "exp": 11,
               "injury": null,
+              "espn_id": 2969939,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 0.0,
+              "proj": 0.0
             }
           },
           {
@@ -5609,8 +6272,11 @@
               "age": 27,
               "exp": 6,
               "injury": null,
+              "espn_id": 4242335,
               "pts": 86.2,
-              "last": 22.7
+              "last": 22.7,
+              "ppg": 21.55,
+              "proj": 21.55
             }
           },
           {
@@ -5623,8 +6289,11 @@
               "age": 29,
               "exp": 7,
               "injury": "Out",
+              "espn_id": 4035538,
               "pts": 44.4,
-              "last": 4.3
+              "last": 4.3,
+              "ppg": 11.1,
+              "proj": 5.55
             }
           },
           {
@@ -5637,8 +6306,11 @@
               "age": 27,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 77.1,
-              "last": 7.7
+              "last": 7.7,
+              "ppg": 19.28,
+              "proj": 19.28
             }
           },
           {
@@ -5651,8 +6323,11 @@
               "age": 24,
               "exp": 2,
               "injury": null,
+              "espn_id": null,
               "pts": 37.3,
-              "last": 15.4
+              "last": 15.4,
+              "ppg": 9.32,
+              "proj": 9.32
             }
           },
           {
@@ -5665,8 +6340,11 @@
               "age": 24,
               "exp": 1,
               "injury": null,
+              "espn_id": null,
               "pts": 48.5,
-              "last": 9.1
+              "last": 9.1,
+              "ppg": 12.13,
+              "proj": 12.13
             }
           },
           {
@@ -5679,8 +6357,11 @@
               "age": 27,
               "exp": 6,
               "injury": null,
+              "espn_id": 4241985,
               "pts": 20.7,
-              "last": 7.2
+              "last": 7.2,
+              "ppg": 5.17,
+              "proj": 5.17
             }
           },
           {
@@ -5693,8 +6374,11 @@
               "age": 31,
               "exp": 9,
               "injury": "Questionable",
+              "espn_id": 3042519,
               "pts": 51.5,
-              "last": 16.8
+              "last": 16.8,
+              "ppg": 12.88,
+              "proj": 12.23
             }
           },
           {
@@ -5707,8 +6391,11 @@
               "age": 41,
               "exp": 19,
               "injury": null,
+              "espn_id": 10621,
               "pts": 9.0,
-              "last": 9.0
+              "last": 9.0,
+              "ppg": 9.0,
+              "proj": 9.0
             }
           },
           {
@@ -5721,8 +6408,11 @@
               "age": null,
               "exp": null,
               "injury": null,
+              "espn_id": null,
               "pts": 33.0,
-              "last": 7.0
+              "last": 7.0,
+              "ppg": 8.25,
+              "proj": 8.25
             }
           }
         ],
@@ -5735,8 +6425,11 @@
             "age": 25,
             "exp": 3,
             "injury": null,
+            "espn_id": null,
             "pts": 92.62,
-            "last": 21.46
+            "last": 21.46,
+            "ppg": 23.16,
+            "proj": 23.16
           },
           {
             "id": "4046",
@@ -5746,8 +6439,11 @@
             "age": 31,
             "exp": 9,
             "injury": null,
+            "espn_id": 3139477,
             "pts": 85.58,
-            "last": 17.0
+            "last": 17.0,
+            "ppg": 21.39,
+            "proj": 21.39
           },
           {
             "id": "5967",
@@ -5757,8 +6453,11 @@
             "age": 29,
             "exp": 7,
             "injury": null,
+            "espn_id": 3916148,
             "pts": 38.5,
-            "last": 13.0
+            "last": 13.0,
+            "ppg": 9.62,
+            "proj": 9.62
           },
           {
             "id": "4039",
@@ -5768,8 +6467,11 @@
             "age": 33,
             "exp": 9,
             "injury": null,
+            "espn_id": 2977187,
             "pts": 26.4,
-            "last": 2.3
+            "last": 2.3,
+            "ppg": 6.6,
+            "proj": 6.6
           },
           {
             "id": "11631",
@@ -5779,8 +6481,11 @@
             "age": 24,
             "exp": 2,
             "injury": null,
+            "espn_id": null,
             "pts": 25.5,
-            "last": 9.7
+            "last": 9.7,
+            "ppg": 6.38,
+            "proj": 6.38
           },
           {
             "id": "5022",
@@ -5790,8 +6495,11 @@
             "age": 31,
             "exp": 8,
             "injury": null,
+            "espn_id": 3121023,
             "pts": 25.1,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 12.55,
+            "proj": 12.55
           },
           {
             "id": "BUF",
@@ -5801,8 +6509,11 @@
             "age": null,
             "exp": null,
             "injury": null,
+            "espn_id": null,
             "pts": 10.0,
-            "last": 5.0
+            "last": 5.0,
+            "ppg": 5.0,
+            "proj": 5.0
           },
           {
             "id": "2078",
@@ -5812,8 +6523,11 @@
             "age": 33,
             "exp": 12,
             "injury": "Out",
+            "espn_id": 16733,
             "pts": 0.0,
-            "last": null
+            "last": null,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ],
         "taxi": [
@@ -5825,8 +6539,11 @@
             "age": 22,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 30.4,
-            "last": 5.1
+            "last": 5.1,
+            "ppg": 7.6,
+            "proj": 7.6
           },
           {
             "id": "13346",
@@ -5836,8 +6553,11 @@
             "age": 22,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 55.4,
-            "last": 12.9
+            "last": 12.9,
+            "ppg": 13.85,
+            "proj": 13.85
           },
           {
             "id": "13411",
@@ -5847,8 +6567,11 @@
             "age": 22,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 1.1,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 1.1,
+            "proj": 1.1
           },
           {
             "id": "13420",
@@ -5858,8 +6581,11 @@
             "age": 24,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 10.7,
-            "last": 1.7
+            "last": 1.7,
+            "ppg": 3.57,
+            "proj": 3.57
           }
         ],
         "ir": [
@@ -5871,8 +6597,11 @@
             "age": 24,
             "exp": 2,
             "injury": "Out",
+            "espn_id": null,
             "pts": 52.2,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 17.4,
+            "proj": 8.7
           }
         ]
       },
@@ -5933,7 +6662,7 @@
           "opponent_owner": "JHam4Hunnid",
           "win_pct": 55.9,
           "points": 144.84,
-          "opp_points": 120.8
+          "opp_points": 121.0
         },
         {
           "week": 6,
@@ -6040,8 +6769,11 @@
               "age": 29,
               "exp": 6,
               "injury": null,
+              "espn_id": 3915511,
               "pts": 79.64,
-              "last": 25.72
+              "last": 25.72,
+              "ppg": 19.91,
+              "proj": 19.91
             }
           },
           {
@@ -6054,8 +6786,11 @@
               "age": 32,
               "exp": 10,
               "injury": null,
+              "espn_id": 3043078,
               "pts": 90.8,
-              "last": 15.9
+              "last": 15.9,
+              "ppg": 22.7,
+              "proj": 22.7
             }
           },
           {
@@ -6068,8 +6803,11 @@
               "age": 26,
               "exp": 4,
               "injury": null,
+              "espn_id": null,
               "pts": 89.7,
-              "last": 36.7
+              "last": 36.7,
+              "ppg": 22.43,
+              "proj": 22.43
             }
           },
           {
@@ -6082,8 +6820,11 @@
               "age": 25,
               "exp": 2,
               "injury": "Out",
+              "espn_id": null,
               "pts": 16.4,
-              "last": 16.4
+              "last": 16.4,
+              "ppg": 12.1,
+              "proj": 6.05
             }
           },
           {
@@ -6096,8 +6837,11 @@
               "age": 27,
               "exp": 6,
               "injury": null,
+              "espn_id": 4239993,
               "pts": 71.1,
-              "last": 26.7
+              "last": 26.7,
+              "ppg": 17.77,
+              "proj": 17.77
             }
           },
           {
@@ -6110,8 +6854,11 @@
               "age": 26,
               "exp": 5,
               "injury": null,
+              "espn_id": null,
               "pts": 11.7,
-              "last": 7.7
+              "last": 7.7,
+              "ppg": 3.9,
+              "proj": 3.9
             }
           },
           {
@@ -6124,8 +6871,11 @@
               "age": 25,
               "exp": 2,
               "injury": null,
+              "espn_id": null,
               "pts": 22.3,
-              "last": 9.9
+              "last": 9.9,
+              "ppg": 6.5,
+              "proj": 6.5
             }
           },
           {
@@ -6138,8 +6888,11 @@
               "age": 24,
               "exp": 2,
               "injury": "Out",
+              "espn_id": null,
               "pts": 0.0,
-              "last": null
+              "last": null,
+              "ppg": 0.0,
+              "proj": 0.0
             }
           },
           {
@@ -6152,8 +6905,11 @@
               "age": 35,
               "exp": 11,
               "injury": null,
+              "espn_id": 2473037,
               "pts": 28.0,
-              "last": 5.0
+              "last": 5.0,
+              "ppg": 7.0,
+              "proj": 7.0
             }
           },
           {
@@ -6166,8 +6922,11 @@
               "age": null,
               "exp": null,
               "injury": null,
+              "espn_id": null,
               "pts": 43.0,
-              "last": 8.0
+              "last": 8.0,
+              "ppg": 10.75,
+              "proj": 10.75
             }
           }
         ],
@@ -6180,8 +6939,11 @@
             "age": 27,
             "exp": 1,
             "injury": null,
+            "espn_id": null,
             "pts": 40.74,
-            "last": 15.94
+            "last": 15.94,
+            "ppg": 22.08,
+            "proj": 22.08
           },
           {
             "id": "13305",
@@ -6191,8 +6953,11 @@
             "age": 23,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 18.9,
-            "last": 2.7
+            "last": 2.7,
+            "ppg": 4.72,
+            "proj": 4.72
           },
           {
             "id": "13294",
@@ -6202,8 +6967,11 @@
             "age": 22,
             "exp": 0,
             "injury": null,
+            "espn_id": null,
             "pts": 16.0,
-            "last": 5.7
+            "last": 5.7,
+            "ppg": 4.0,
+            "proj": 4.0
           },
           {
             "id": "6819",
@@ -6213,8 +6981,11 @@
             "age": 29,
             "exp": 6,
             "injury": "IR",
+            "espn_id": 4035687,
             "pts": 15.9,
-            "last": 3.5
+            "last": 3.5,
+            "ppg": 5.3,
+            "proj": 0.0
           },
           {
             "id": "8142",
@@ -6224,8 +6995,11 @@
             "age": 26,
             "exp": 4,
             "injury": "IR",
+            "espn_id": null,
             "pts": 12.2,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 6.1,
+            "proj": 0.0
           },
           {
             "id": "5859",
@@ -6235,8 +7009,11 @@
             "age": 29,
             "exp": 7,
             "injury": "IR",
+            "espn_id": 4047646,
             "pts": 5.6,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 5.6,
+            "proj": 0.0
           },
           {
             "id": "4993",
@@ -6246,8 +7023,11 @@
             "age": 31,
             "exp": 8,
             "injury": null,
+            "espn_id": 3116164,
             "pts": 0.0,
-            "last": null
+            "last": null,
+            "ppg": 0.0,
+            "proj": 0.0
           },
           {
             "id": "6803",
@@ -6257,8 +7037,11 @@
             "age": 28,
             "exp": 6,
             "injury": "DNR",
+            "espn_id": 4360438,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ],
         "taxi": [
@@ -6270,8 +7053,11 @@
             "age": 26,
             "exp": 2,
             "injury": null,
+            "espn_id": null,
             "pts": 2.0,
-            "last": 1.7
+            "last": 1.7,
+            "ppg": 1.0,
+            "proj": 1.0
           },
           {
             "id": "11643",
@@ -6281,8 +7067,11 @@
             "age": 23,
             "exp": 2,
             "injury": null,
+            "espn_id": null,
             "pts": 1.7,
-            "last": 0.7
+            "last": 0.7,
+            "ppg": 0.57,
+            "proj": 0.57
           },
           {
             "id": "12499",
@@ -6292,8 +7081,11 @@
             "age": 23,
             "exp": 1,
             "injury": null,
+            "espn_id": null,
             "pts": 22.3,
-            "last": 3.2
+            "last": 3.2,
+            "ppg": 5.58,
+            "proj": 5.58
           },
           {
             "id": "12524",
@@ -6303,8 +7095,11 @@
             "age": 24,
             "exp": 1,
             "injury": null,
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ],
         "ir": [
@@ -6316,8 +7111,11 @@
             "age": 26,
             "exp": 2,
             "injury": "IR",
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           },
           {
             "id": "13281",
@@ -6327,8 +7125,11 @@
             "age": 22,
             "exp": 0,
             "injury": "IR",
+            "espn_id": null,
             "pts": 0.0,
-            "last": 0.0
+            "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ]
       },
@@ -6388,7 +7189,7 @@
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
           "win_pct": 44.1,
-          "points": 120.8,
+          "points": 121.0,
           "opp_points": 144.84
         },
         {
@@ -6466,6 +7267,459 @@
       ],
       "playoffs_start_week": 15
     }
+  },
+  "sim": {
+    "remaining": [
+      [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      [
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      [
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          7,
+          10
+        ]
+      ],
+      [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          9,
+          11
+        ]
+      ],
+      [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          10,
+          12
+        ]
+      ],
+      [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          10
+        ]
+      ],
+      [
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          8,
+          12
+        ]
+      ],
+      [
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          9,
+          12
+        ]
+      ],
+      [
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ]
+    ],
+    "base": {
+      "1": {
+        "wins": 0.0,
+        "pf": 456.3,
+        "max_pf": 620.98
+      },
+      "2": {
+        "wins": 2.0,
+        "pf": 479.16,
+        "max_pf": 586.32
+      },
+      "3": {
+        "wins": 4.0,
+        "pf": 558.46,
+        "max_pf": 624.04
+      },
+      "4": {
+        "wins": 2.0,
+        "pf": 528.34,
+        "max_pf": 613.32
+      },
+      "5": {
+        "wins": 3.0,
+        "pf": 480.78,
+        "max_pf": 542.38
+      },
+      "6": {
+        "wins": 4.0,
+        "pf": 623.4,
+        "max_pf": 713.94
+      },
+      "7": {
+        "wins": 0.0,
+        "pf": 398.0,
+        "max_pf": 510.84
+      },
+      "8": {
+        "wins": 2.0,
+        "pf": 528.78,
+        "max_pf": 599.98
+      },
+      "9": {
+        "wins": 3.0,
+        "pf": 612.72,
+        "max_pf": 732.3
+      },
+      "10": {
+        "wins": 2.0,
+        "pf": 506.7,
+        "max_pf": 580.6
+      },
+      "11": {
+        "wins": 1.0,
+        "pf": 531.28,
+        "max_pf": 649.72
+      },
+      "12": {
+        "wins": 1.0,
+        "pf": 493.36,
+        "max_pf": 557.06
+      }
+    },
+    "model": {
+      "1": [
+        120.519,
+        19.496,
+        7.369
+      ],
+      "2": [
+        123.784,
+        24.404,
+        9.224
+      ],
+      "3": [
+        135.113,
+        18.77,
+        7.094
+      ],
+      "4": [
+        130.81,
+        33.728,
+        12.748
+      ],
+      "5": [
+        124.016,
+        24.099,
+        9.108
+      ],
+      "6": [
+        144.39,
+        20.81,
+        7.866
+      ],
+      "7": [
+        112.19,
+        23.627,
+        8.93
+      ],
+      "8": [
+        130.873,
+        19.436,
+        7.346
+      ],
+      "9": [
+        142.864,
+        22.507,
+        8.507
+      ],
+      "10": [
+        127.719,
+        29.612,
+        11.192
+      ],
+      "11": [
+        131.23,
+        28.606,
+        10.812
+      ],
+      "12": [
+        125.813,
+        18.462,
+        6.978
+      ]
+    },
+    "max_model": {
+      "1": [
+        154.171,
+        18.07,
+        6.83
+      ],
+      "2": [
+        149.22,
+        22.937,
+        8.669
+      ],
+      "3": [
+        154.608,
+        19.725,
+        7.455
+      ],
+      "4": [
+        153.077,
+        27.771,
+        10.497
+      ],
+      "5": [
+        142.943,
+        21.932,
+        8.289
+      ],
+      "6": [
+        167.451,
+        20.443,
+        7.727
+      ],
+      "7": [
+        138.437,
+        20.628,
+        7.797
+      ],
+      "8": [
+        151.171,
+        22.872,
+        8.645
+      ],
+      "9": [
+        170.074,
+        22.962,
+        8.679
+      ],
+      "10": [
+        148.402,
+        30.279,
+        11.445
+      ],
+      "11": [
+        158.277,
+        35.055,
+        13.25
+      ],
+      "12": [
+        145.04,
+        20.507,
+        7.751
+      ]
+    },
+    "playoff_teams": 6,
+    "median": false,
+    "actual": []
   },
   "diagnostics": {
     "max_pf_check": [
