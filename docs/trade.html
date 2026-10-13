@@ -51,23 +51,24 @@
     <section class="panel tool" id="tool-calc" hidden>
       <div class="panel-head">
         <h2>Trade Calculator</h2>
-        <p class="note">Any players or picks, in or out of the league. Values are tuned to this league's format: a star beats a pile of depth, and extra QBs are discounted because only one starts.</p>
+        <p class="note">Pick a team for each side, then add players and picks from its roster. Every change updates the fair meter and both teams' playoff, title, and #1 pick odds. Side A starts as your team.</p>
       </div>
       <div class="sides">
         <div class="side-box" data-side="A">
-          <h3>Side A gives</h3>
-          <input class="search" type="search" placeholder="Add a player or pick…" list="all-assets" aria-label="Add to side A">
+          <label class="team-select">Side A sends <select class="calc-team" aria-label="Side A team"></select></label>
+          <div class="mode"></div>
+          <select class="calc-add" aria-label="Add an asset to side A"></select>
           <ul class="asset-list"></ul>
           <div class="side-total"></div>
         </div>
         <div class="side-box" data-side="B">
-          <h3>Side B gives</h3>
-          <input class="search" type="search" placeholder="Add a player or pick…" list="all-assets" aria-label="Add to side B">
+          <label class="team-select">Side B sends <select class="calc-team" aria-label="Side B team"></select></label>
+          <div class="mode"></div>
+          <select class="calc-add" aria-label="Add an asset to side B"></select>
           <ul class="asset-list"></ul>
           <div class="side-total"></div>
         </div>
       </div>
-      <datalist id="all-assets"></datalist>
       <div class="result" id="calc-result"></div>
     </section>
 

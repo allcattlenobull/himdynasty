@@ -875,3 +875,24 @@ body.no-scroll { overflow: hidden; }
 .news-player { max-width: 100%; }
 .news-player .team { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .news-headline, .news-body { overflow-wrap: anywhere; }
+
+/* Team-based calculator */
+.calc-add {
+  width: 100%;
+  margin-top: 0.6rem;
+  font: 600 0.95rem var(--body);
+  color: var(--text);
+  background: var(--raise);
+  border: 1px dashed var(--red);
+  padding: 0.6rem 0.65rem;
+  cursor: pointer;
+}
+.calc-add:focus { outline: 2px solid var(--red); outline-offset: 1px; }
+.empty-side { padding: 0.6rem 0; border: 0; }
+.odds-pair { display: grid; gap: 0.75rem; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .odds-pair { grid-template-columns: 1fr 1fr; } .odds-pair .odds-block { margin-bottom: 0; } }
+.odds-pair { margin-bottom: 1rem; }
+.meter-ends { display: flex; justify-content: space-between; gap: 0.5rem; margin: -0.6rem 0 1rem; font-size: 0.75rem; color: var(--muted); }
+.meter-ends span:nth-child(2) { font-family: var(--display); letter-spacing: 0.1em; text-transform: uppercase; }
+.idea-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.odds-tile .owner { white-space: normal; overflow: visible; }
