@@ -1,0 +1,62 @@
+{
+ "espn_draft_athletes": {
+  "status": "200",
+  "bytes": 6464,
+  "head": "{\"count\":50,\"pageIndex\":1,\"pageSize\":50,\"pageCount\":1,\"items\":[{\"$ref\":\"http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2027/draft/athletes/4582818?lang=en&region=us\"},{\"$ref\":\"http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2027/draft/athletes/4582819?l"
+ },
+ "espn_draft": {
+  "status": "200",
+  "bytes": 5840,
+  "head": "{\"$ref\":\"http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2027/draft?lang=en&region=us\",\"uid\":\"s:20~l:28~e:draft~y:2027\",\"year\":2027,\"numberOfRounds\":7,\"displayName\":\"2027 National Football League Draft\",\"shortDisplayName\":\"2027 NFL Draft\",\"status\":{\"$ref\":\"http://sports.core.a"
+ },
+ "espn_cfb_byathlete": {
+  "status": "200",
+  "bytes": 669830,
+  "head": "{\"pagination\":{\"count\":1908,\"limit\":50,\"page\":1,\"pages\":39,\"first\":\"http://site.api.espn.com:80/apis/common/v3/sports/football/college-football/statistics/byathlete?category=offense%3Areceiving&contentorigin=espn&isqualified=false&lang=en&region=us&season=2026&seasontype=2&sort=receiving.receivingYa"
+ },
+ "espn_cfb_scoreboard": {
+  "status": "200",
+  "bytes": 305840,
+  "head": "{\"leagues\":[{\"id\":\"23\",\"uid\":\"s:20~l:23\",\"name\":\"NCAA - Football\",\"abbreviation\":\"NCAAF\",\"midsizeName\":\"NCAA Football\",\"slug\":\"college-football\",\"season\":{\"year\":2026,\"startDate\":\"2026-02-01T08:00Z\",\"endDate\":\"2027-01-28T07:59Z\",\"displayName\":\"2026\",\"type\":{\"id\":\"2\",\"type\":2,\"name\":\"Regular Season\","
+ },
+ "fp_dynasty_rookies": {
+  "status": "200",
+  "bytes": 869962,
+  "head": "\r\n\n\n<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    \n    <title>2026 Fantasy Football Draft Rankings, Consensus Draft Rankings, Overall Cheat Sheets | FantasyPros</title>\n    <meta property=\"og:title\" content=\"2026 Fantasy Football Draft Rankings, Consensus Draft Rankings, Overall Cheat Sheets | Fantas"
+ },
+ "mddb_consensus": {
+  "status": "200",
+  "bytes": 326136,
+  "head": "<!DOCTYPE html>\n<html lang=\"en\" class=\"h-full\">\n  <head>\n    <title>2027 NFL Consensus Big Board - Top NFL Draft Prospects Ranked Daily | NFL Mock Draft Database</title>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n    <script>\n      (function () {\n        function at(n) {"
+ },
+ "drafttek": {
+  "status": "200",
+  "bytes": 286769,
+  "head": "\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, -scale=1\">\n    <meta name=\"google\" content=\"notranslate\">\n    <meta name=\"robots\" content=\"index, follow\">\n\n    <title>2027 NFL Draft Big Board - Top Prospects 1-150</title>\n   "
+ },
+ "tankathon": {
+  "status": "200",
+  "bytes": 1779014,
+  "head": "<!DOCTYPE html><html class=\"sport-nfl\" lang=\"en\"><head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"bam.nr-data.net\",\"errorBeacon\":\"bam.nr-data.net\",\"licenseKey\":\"05ac3bf583\",\"applicationID\":\"549018598\",\"transactionName\":\"JltYTRYJCl9WFx8PBAkbVFADOQRcUhdU\",\"queueTime"
+ },
+ "cfbd_nokey": {
+  "status": "ERR HTTP Error 401: Unauthorized",
+  "bytes": 255,
+  "head": "{\"message\":\"Unauthorized. Did you forget to add \\\"Bearer \\\" before your key? Go to CollegeFootballData.com to register for your free API key. See the CFBD Blog for examples on usage: https://blog.collegefootballdata.com/using-api-keys-with-the-cfbd-api.\"}"
+ },
+ "sleeper_traded": {
+  "status": "200",
+  "bytes": 4170,
+  "head": "[{\"round\":1,\"season\":\"2026\",\"roster_id\":1,\"owner_id\":1,\"previous_owner_id\":5},{\"round\":2,\"season\":\"2026\",\"roster_id\":1,\"owner_id\":4,\"previous_owner_id\":9},{\"round\":2,\"season\":\"2027\",\"roster_id\":1,\"owner_id\":6,\"previous_owner_id\":4},{\"round\":1,\"season\":\"2026\",\"roster_id\":2,\"owner_id\":8,\"previous_owne"
+ },
+ "sleeper_drafts": {
+  "status": "200",
+  "bytes": 1136,
+  "head": "[{\"created\":1767168886439,\"creators\":[\"712572907015995392\",\"915169621920559104\"],\"draft_id\":\"1312005038851231744\",\"draft_order\":{\"1055571877013331968\":6,\"1056709847351189504\":11,\"1057129992515170304\":9,\"1058853825798381568\":4,\"446943204101582848\":12,\"712572907015995392\":3,\"712866854871306240\":5,\"713"
+ },
+ "sleeper_league": {
+  "status": "200",
+  "bytes": 2678,
+  "head": "{\"name\":\"The HIM Dynasty\",\"status\":\"in_season\",\"metadata\":{\"auto_continue\":\"on\",\"keeper_deadline\":\"0\",\"latest_league_winner_roster_id\":\"5\"},\"settings\":{\"best_ball\":0,\"last_report\":4,\"waiver_budget\":100,\"disable_adds\":0,\"capacity_override\":0,\"waiver_bid_min\":1,\"taxi_deadline\":4,\"draft_rounds\":3,\"rese"
+ }
+}
