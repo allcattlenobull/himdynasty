@@ -1,18 +1,38 @@
-import json, urllib.request, pathlib
-out = pathlib.Path("probe/out6"); out.mkdir(parents=True, exist_ok=True)
-res = {}
-for name, url in {
-    "scoreboard": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
-    "scoreboard_wk": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?week=5&seasontype=2&dates=2026",
-    "news": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/news?limit=20",
-    "fnews": "https://site.api.espn.com/apis/fantasy/v2/games/ffl/news/players?limit=5&playerId=4361307",
-}.items():
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0", "Origin": "https://allcattlenobull.github.io"})
+import gzip, json, urllib.request, pathlib
+out = pathlib.Path("probe/out7"); out.mkdir(parents=True, exist_ok=True)
+B = "https://api.sleeper.app/v1"
+def get(path):
+    with urllib.request.urlopen(urllib.request.Request(B + path, headers={"User-Agent": "him-dynasty-probe"}), timeout=90) as r:
+        return r.read()
+def save(path):
     try:
-        with urllib.request.urlopen(req, timeout=40) as r:
-            body = r.read().decode()
-            res[name] = {"status": r.status, "acao": r.headers.get("Access-Control-Allow-Origin"), "cache": r.headers.get("Cache-Control"), "len": len(body)}
-            (out / f"{name}.json").write_text(body)
+        data = get(path)
     except Exception as e:
-        res[name] = {"error": str(e)}
-(out / "summary.json").write_text(json.dumps(res, indent=1))
+        data = json.dumps({"__error__": str(e)}).encode()
+    (out / (path.strip("/").replace("/", "__") + ".json")).write_bytes(data)
+    try:
+        return json.loads(data)
+    except Exception:
+        return None
+save("/state/nfl")
+lid = "1312005038838673409"
+while lid and lid != "0":
+    lg = save(f"/league/{lid}")
+    users = save(f"/league/{lid}/users")
+    save(f"/league/{lid}/rosters")
+    save(f"/league/{lid}/winners_bracket")
+    save(f"/league/{lid}/losers_bracket")
+    save(f"/league/{lid}/traded_picks")
+    for w in range(1, 19):
+        save(f"/league/{lid}/matchups/{w}")
+    for w in range(0, 19):
+        save(f"/league/{lid}/transactions/{w}")
+    for d in save(f"/league/{lid}/drafts") or []:
+        save(f"/draft/{d['draft_id']}/picks")
+        save(f"/draft/{d['draft_id']}")
+    if users and lg:
+        uid = (users[0] or {}).get("user_id")
+        for s in (int(lg["season"]), int(lg["season"]) + 1):
+            save(f"/user/{uid}/leagues/nfl/{s}")
+    lid = (lg or {}).get("previous_league_id")
+(out / "players.json.gz").write_bytes(gzip.compress(get("/players/nfl")))
