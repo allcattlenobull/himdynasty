@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T02:42:55+00:00",
+  "generated_at": "2026-10-13T02:49:29+00:00",
   "league": {
     "id": "1312005038838673409",
     "name": "The HIM Dynasty",
@@ -2078,7 +2078,7 @@
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
           "win_pct": 29.5,
-          "points": 104.2,
+          "points": 120.24,
           "opp_points": 166.86
         },
         {
@@ -5634,7 +5634,7 @@
           "opponent_owner": "RefMitch128",
           "win_pct": 70.5,
           "points": 166.86,
-          "opp_points": 104.2
+          "opp_points": 120.24
         },
         {
           "week": 6,
