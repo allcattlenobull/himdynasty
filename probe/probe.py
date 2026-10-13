@@ -1,38 +1,16 @@
-import gzip, json, urllib.request, pathlib
-out = pathlib.Path("probe/out7"); out.mkdir(parents=True, exist_ok=True)
-B = "https://api.sleeper.app/v1"
-def get(path):
-    with urllib.request.urlopen(urllib.request.Request(B + path, headers={"User-Agent": "him-dynasty-probe"}), timeout=90) as r:
-        return r.read()
-def save(path):
-    try:
-        data = get(path)
-    except Exception as e:
-        data = json.dumps({"__error__": str(e)}).encode()
-    (out / (path.strip("/").replace("/", "__") + ".json")).write_bytes(data)
-    try:
-        return json.loads(data)
-    except Exception:
-        return None
-save("/state/nfl")
-lid = "1312005038838673409"
-while lid and lid != "0":
-    lg = save(f"/league/{lid}")
-    users = save(f"/league/{lid}/users")
-    save(f"/league/{lid}/rosters")
-    save(f"/league/{lid}/winners_bracket")
-    save(f"/league/{lid}/losers_bracket")
-    save(f"/league/{lid}/traded_picks")
-    for w in range(1, 19):
-        save(f"/league/{lid}/matchups/{w}")
-    for w in range(0, 19):
-        save(f"/league/{lid}/transactions/{w}")
-    for d in save(f"/league/{lid}/drafts") or []:
-        save(f"/draft/{d['draft_id']}/picks")
-        save(f"/draft/{d['draft_id']}")
-    if users and lg:
-        uid = (users[0] or {}).get("user_id")
-        for s in (int(lg["season"]), int(lg["season"]) + 1):
-            save(f"/user/{uid}/leagues/nfl/{s}")
-    lid = (lg or {}).get("previous_league_id")
-(out / "players.json.gz").write_bytes(gzip.compress(get("/players/nfl")))
+import json, urllib.request, pathlib
+out = pathlib.Path("probe/out8"); out.mkdir(parents=True, exist_ok=True)
+API = "https://api.sleeper.app/v1"
+LID = "1312005038838673409"
+def get(p):
+    req = urllib.request.Request(API + p, headers={"User-Agent": "him-probe"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        return json.load(r)
+(out / "league.json").write_text(json.dumps(get(f"/league/{LID}")))
+(out / "users.json").write_text(json.dumps(get(f"/league/{LID}/users")))
+(out / "rosters.json").write_text(json.dumps(get(f"/league/{LID}/rosters")))
+for w in range(1, 7):
+    (out / f"matchups_{w}.json").write_text(json.dumps(get(f"/league/{LID}/matchups/{w}")))
+players = get("/players/nfl")
+pos = {pid: (p.get("fantasy_positions") or ([p["position"]] if p.get("position") else [])) for pid, p in players.items()}
+(out / "positions.json").write_text(json.dumps(pos))
