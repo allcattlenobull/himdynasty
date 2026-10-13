@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T00:53:22+00:00",
+  "generated_at": "2026-10-13T00:58:37+00:00",
   "league": {
     "id": "1312005038838673409",
     "name": "The HIM Dynasty",
@@ -21,9 +21,9 @@
       "points_against": 474.18,
       "max_pf": 713.94,
       "playoff_odds": 100.0,
-      "champion_odds": 35.6,
+      "champion_odds": 36.4,
       "projected_wins": 11.1,
-      "avg_pick": 10.9,
+      "avg_pick": 11.0,
       "most_likely_pick": 12
     },
     {
@@ -37,8 +37,8 @@
       "points_against": 465.56,
       "max_pf": 624.04,
       "playoff_odds": 98.9,
-      "champion_odds": 7.4,
-      "projected_wins": 9.5,
+      "champion_odds": 7.2,
+      "projected_wins": 9.4,
       "avg_pick": 9.5,
       "most_likely_pick": 10
     },
@@ -52,10 +52,10 @@
       "points_for": 612.72,
       "points_against": 533.24,
       "max_pf": 732.3,
-      "playoff_odds": 99.9,
-      "champion_odds": 45.3,
+      "playoff_odds": 99.8,
+      "champion_odds": 44.6,
       "projected_wins": 10.2,
-      "avg_pick": 11.1,
+      "avg_pick": 11.0,
       "most_likely_pick": 12
     },
     {
@@ -68,10 +68,10 @@
       "points_for": 480.78,
       "points_against": 466.74,
       "max_pf": 542.38,
-      "playoff_odds": 59.4,
-      "champion_odds": 0.6,
+      "playoff_odds": 60.4,
+      "champion_odds": 0.9,
       "projected_wins": 7.0,
-      "avg_pick": 5.5,
+      "avg_pick": 5.6,
       "most_likely_pick": 2
     },
     {
@@ -84,8 +84,8 @@
       "points_for": 528.78,
       "points_against": 523.36,
       "max_pf": 599.98,
-      "playoff_odds": 68.7,
-      "champion_odds": 1.6,
+      "playoff_odds": 68.0,
+      "champion_odds": 1.5,
       "projected_wins": 6.8,
       "avg_pick": 7.2,
       "most_likely_pick": 9
@@ -100,8 +100,8 @@
       "points_for": 528.34,
       "points_against": 584.56,
       "max_pf": 613.32,
-      "playoff_odds": 75.1,
-      "champion_odds": 6.1,
+      "playoff_odds": 74.8,
+      "champion_odds": 6.0,
       "projected_wins": 7.2,
       "avg_pick": 7.9,
       "most_likely_pick": 8
@@ -116,10 +116,10 @@
       "points_for": 506.7,
       "points_against": 519.6,
       "max_pf": 580.6,
-      "playoff_odds": 28.1,
-      "champion_odds": 0.4,
+      "playoff_odds": 28.6,
+      "champion_odds": 0.5,
       "projected_wins": 5.7,
-      "avg_pick": 4.7,
+      "avg_pick": 4.6,
       "most_likely_pick": 3
     },
     {
@@ -132,9 +132,9 @@
       "points_for": 479.16,
       "points_against": 431.48,
       "max_pf": 586.32,
-      "playoff_odds": 15.5,
-      "champion_odds": 0.0,
-      "projected_wins": 5.3,
+      "playoff_odds": 15.3,
+      "champion_odds": 0.1,
+      "projected_wins": 5.2,
       "avg_pick": 4.6,
       "most_likely_pick": 4
     },
@@ -148,8 +148,8 @@
       "points_for": 531.28,
       "points_against": 526.38,
       "max_pf": 649.72,
-      "playoff_odds": 50.0,
-      "champion_odds": 3.0,
+      "playoff_odds": 49.7,
+      "champion_odds": 2.8,
       "projected_wins": 6.1,
       "avg_pick": 7.6,
       "most_likely_pick": 6
@@ -164,7 +164,7 @@
       "points_for": 493.36,
       "points_against": 538.58,
       "max_pf": 557.06,
-      "playoff_odds": 4.1,
+      "playoff_odds": 4.3,
       "champion_odds": 0.0,
       "projected_wins": 4.2,
       "avg_pick": 2.6,
@@ -271,7 +271,7 @@
               "team": "MIP",
               "owner": "toobizzie"
             },
-            "a_win_pct": 35.0,
+            "a_win_pct": 36.3,
             "winner": 8
           }
         ]
@@ -406,73 +406,97 @@
       {
         "team": "Finesse\ud83e\udd76\ud83e\udd34\ud83c\udfff",
         "owner": "JustinFreshly",
+        "max_pf": 510.84,
+        "playoff_odds": 0.2,
         "avg_pick": 1.0,
         "most_likely_pick": 1
       },
       {
         "team": "Daejon Mustard ",
         "owner": "JHam4Hunnid",
+        "max_pf": 557.06,
+        "playoff_odds": 4.3,
         "avg_pick": 2.6,
         "most_likely_pick": 2
       },
       {
         "team": "DOLLA BILLZ",
         "owner": "RefMitch128",
+        "max_pf": 586.32,
+        "playoff_odds": 15.3,
         "avg_pick": 4.6,
         "most_likely_pick": 4
       },
       {
         "team": "\ud83c\udf28\ufe0f\ud83e\uddf1Brick by Brick\ud83e\uddf1\ud83c\udf28\ufe0f",
         "owner": "BryanGichaba",
-        "avg_pick": 4.7,
+        "max_pf": 580.6,
+        "playoff_odds": 28.6,
+        "avg_pick": 4.6,
         "most_likely_pick": 3
       },
       {
         "team": "\u201889 Earthquake",
         "owner": "TheeDarryKing",
+        "max_pf": 620.98,
+        "playoff_odds": 0.1,
         "avg_pick": 5.5,
         "most_likely_pick": 5
       },
       {
         "team": "Chocolate Gold ",
         "owner": "JudasJudge",
-        "avg_pick": 5.5,
+        "max_pf": 542.38,
+        "playoff_odds": 60.4,
+        "avg_pick": 5.6,
         "most_likely_pick": 2
       },
       {
         "team": "MIP",
         "owner": "toobizzie",
+        "max_pf": 599.98,
+        "playoff_odds": 68.0,
         "avg_pick": 7.2,
         "most_likely_pick": 9
       },
       {
         "team": "Ryan Poles",
         "owner": "TribalChief13",
+        "max_pf": 649.72,
+        "playoff_odds": 49.7,
         "avg_pick": 7.6,
         "most_likely_pick": 6
       },
       {
         "team": "The Lab",
         "owner": "JamesQua",
+        "max_pf": 613.32,
+        "playoff_odds": 74.8,
         "avg_pick": 7.9,
         "most_likely_pick": 8
       },
       {
         "team": "K-9\u2019s Unit",
         "owner": "sleepymike09",
+        "max_pf": 624.04,
+        "playoff_odds": 98.9,
         "avg_pick": 9.5,
         "most_likely_pick": 10
       },
       {
         "team": "Vanilla Diamonds",
         "owner": "VanillaDiamonds",
-        "avg_pick": 10.9,
+        "max_pf": 713.94,
+        "playoff_odds": 100.0,
+        "avg_pick": 11.0,
         "most_likely_pick": 12
       },
       {
         "team": "Top 5 Top 5 Top 5",
         "owner": "NewEleven",
-        "avg_pick": 11.1,
+        "max_pf": 732.3,
+        "playoff_odds": 99.8,
+        "avg_pick": 11.0,
         "most_likely_pick": 12
       }
     ]
