@@ -1426,3 +1426,4 @@ th.sortable.asc::after { content: " ▲"; color: var(--red); }
 .tk-news::before { content: "▸"; color: var(--red); }
 .tk-him .dot { width: 8px; height: 8px; }
 @media (prefers-reduced-motion: reduce) { .ticker { overflow-x: auto; scrollbar-width: none; } }
+.idea-odds-team { font-weight: 700; color: var(--text); background: none !important; padding-left: 0 !important; max-width: 9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

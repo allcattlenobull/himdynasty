@@ -38,17 +38,32 @@ window.TradeEngine = (fmt) => {
   };
   const capacity = (fmt.roster_size || 18) + (fmt.taxi || 0) + (fmt.ir || 0);
 
+  // Players who can't play right now are worth less to a team trying to win
+  // now; a rebuilder barely cares about a few missed weeks.
+  const OUT = new Set(["Out", "IR", "PUP", "Sus", "NA"]);
+  function injuryFactor(asset, mode) {
+    if (asset.kind !== "player" || !asset.injury) return 1;
+    if (OUT.has(asset.injury)) return mode === "contender" ? 0.8 : mode === "rebuilder" ? 0.97 : 0.9;
+    if (asset.injury === "Doubtful") return mode === "contender" ? 0.9 : mode === "rebuilder" ? 1 : 0.95;
+    return 1;
+  }
+
   // Team window tilt.
   function tilt(asset, mode) {
     if (asset.kind === "pick") return mode === "contender" ? 0.85 : mode === "rebuilder" ? 1.12 : 1;
     const age = asset.age || 26;
-    if (mode === "contender") return age >= 27 ? 1.08 : age <= 22 ? 0.92 : 1;
-    if (mode === "rebuilder") return age >= 30 ? 0.7 : age >= 28 ? 0.82 : age <= 24 ? 1.06 : 1;
-    return 1;
+    let t = 1;
+    if (mode === "contender") t = age >= 27 ? 1.08 : age <= 22 ? 0.92 : 1;
+    else if (mode === "rebuilder") t = age >= 30 ? 0.7 : age >= 28 ? 0.82 : age <= 24 ? 1.06 : 1;
+    return t * injuryFactor(asset, mode);
   }
 
-  function lineup(players) {
-    const pool = players.slice().sort((a, b) => b.value - a.value);
+  /* Who starts. Contending and middle teams start whoever scores the most
+     right now (points per game x availability); rebuilders are judged by
+     dynasty value. */
+  function lineup(players, mode) {
+    const byPoints = mode !== "rebuilder";
+    const pool = players.slice().sort((a, b) => (byPoints ? ((b.proj || 0) - (a.proj || 0)) || (b.value - a.value) : b.value - a.value));
     const used = new Set();
     for (const slot of slots) {
       const pick = pool.find((p) => !used.has(p.id) && SLOT_ELIGIBLE[slot].includes(p.pos));
@@ -61,7 +76,7 @@ window.TradeEngine = (fmt) => {
   function rosterValue(assets, mode) {
     const players = assets.filter((a) => a.kind === "player");
     const picks = assets.filter((a) => a.kind === "pick");
-    const starters = lineup(players);
+    const starters = lineup(players, mode);
     const depth = {};
     const contrib = [];
     for (const p of players.slice().sort((a, b) => b.value - a.value)) {
@@ -109,6 +124,11 @@ window.TradeEngine = (fmt) => {
   }
 
   const sum = (list) => list.reduce((s, a) => s + a.value, 0);
+  /* Value lost by spreading a package across extra pieces. */
+  function depthLoss(list) {
+    return list.filter((a) => a.kind === "player").slice().sort((a, b) => b.value - a.value)
+      .reduce((s, a, i) => s + a.value * (1 - PACKAGE_WEIGHTS[Math.min(i, PACKAGE_WEIGHTS.length - 1)]), 0);
+  }
   const avgAge = (list) => {
     const aged = list.filter((a) => a.kind === "player" && a.age);
     return aged.length ? aged.reduce((s, a) => s + a.age, 0) / aged.length : null;
@@ -142,8 +162,11 @@ window.TradeEngine = (fmt) => {
     const bAfterAssets = teamB.assets.filter((a) => !getIds.has(a.id)).concat(give);
     const aAfter = rosterValue(aAfterAssets, teamA.mode);
     const bAfter = rosterValue(bAfterAssets, teamB.mode);
-    const dA = aAfter.total - aBefore.total;
-    const dB = bAfter.total - bBefore.total;
+    // Stud premium: one great player is worth more than the same total value
+    // split across several, because only one of them fills a lineup spot.
+    const premium = depthLoss(give) - depthLoss(get);
+    const dA = aAfter.total - aBefore.total + premium;
+    const dB = bAfter.total - bBefore.total - premium;
 
     const notes = [];
     const side = (team, before, after, received, sent) => {
@@ -152,6 +175,8 @@ window.TradeEngine = (fmt) => {
       const qbsAfter = (team === teamA ? aAfterAssets : bAfterAssets).filter((a) => a.pos === "QB").length;
       if (!fmt.superflex && qbsIn >= 2) notes.push(`${name} gets ${qbsIn} QBs but can start only ${qbStarters}.`);
       else if (!fmt.superflex && qbsIn && qbsAfter >= 3) notes.push(`${name} would carry ${qbsAfter} QBs in a ${qbStarters}-QB league.`);
+      const hurt = received.filter((a) => a.kind === "player" && (OUT.has(a.injury) || a.injury === "Doubtful"));
+      if (hurt.length) notes.push(`${name} gets ${hurt.map((a) => `${a.name} (${a.injury})`).join(", ")}${team.mode === "contender" ? ", a real cost for a contender" : ""}.`);
       if (after.cuts.length) notes.push(`${name} would have to cut ${after.cuts.length} to fit the roster: ${after.cuts.map((a) => a.name).join(", ")}.`);
       const ageIn = avgAge(received), ageOut = avgAge(sent);
       if (ageIn && ageOut && Math.abs(ageIn - ageOut) >= 1.5) {
@@ -229,14 +254,16 @@ window.TradeEngine = (fmt) => {
     const picked = [];
     for (const r of results) {
       const key = r.give.map((a) => a.id).sort().join("|");
-      if ((perTeam[r.other.rid] || 0) >= 3 || seen.has(key + r.other.rid)) continue;
+      const shown = `${r.other.rid}:${r.give.map((a) => a.name).sort().join("|")}>${r.get.map((a) => a.name).sort().join("|")}`;
+      if ((perTeam[r.other.rid] || 0) >= 3 || seen.has(key + r.other.rid) || seen.has(shown)) continue;
       perTeam[r.other.rid] = (perTeam[r.other.rid] || 0) + 1;
       seen.add(key + r.other.rid);
+      seen.add(shown);
       picked.push(r);
       if (picked.length >= (opts.limit || 15)) break;
     }
     return picked;
   }
 
-  return { rosterValue, packageValue, compare, evaluate, ideas, lineup, qbStarters };
+  return { rosterValue, packageValue, compare, evaluate, ideas, lineup, qbStarters, depthLoss };
 };

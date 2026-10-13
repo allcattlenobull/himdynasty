@@ -397,7 +397,7 @@
     const box = document.querySelector(`.side-box[data-team="${side}"]`);
     box.querySelector(".mode").textContent = modeLine(build[key]);
     const t = team(build[key]);
-    const starters = E.lineup(t.assets.filter((a) => a.kind === "player"));
+    const starters = E.lineup(t.assets.filter((a) => a.kind === "player"), t.mode);
     const host = box.querySelector(".roster-pick");
     host.replaceChildren();
     for (const [pos, title] of GROUPS) {
@@ -500,12 +500,25 @@
       const meTeam = team(rid);
       const others = Object.keys(data.teams).filter((r) => r !== rid).map(team);
       const goal = document.getElementById("idea-goal").value;
-      let results = E.ideas(meTeam, others, { pos: document.getElementById("idea-pos").value, goal, limit: 40 });
+      let results = E.ideas(meTeam, others, { pos: document.getElementById("idea-pos").value, goal, limit: 45 });
+      let dropped = 0;
       if (S) {
         const base = getBaseline();
         const mode = data.teams[rid].mode;
+        // A trade only "helps both sides" if the other team's season survives it:
+        // contenders and middle teams can't lose real playoff or title odds.
+        results = results.filter((r) => {
+          r.imp = S.impact(meTeam, r.other, r.give, r.get, 1200, null);
+          const b = r.imp.b;
+          const om = data.teams[r.other.rid].mode;
+          const dP = b.playoff[1] - b.playoff[0], dC = b.champ[1] - b.champ[0];
+          const hurts = om === "rebuilder"
+            ? false
+            : dP <= -5 || dC <= -Math.max(1.5, 0.15 * b.champ[0]);
+          if (hurts) dropped++;
+          return !hurts;
+        });
         for (const r of results) {
-          r.imp = S.impact(meTeam, r.other, r.give, r.get, 1500, null);
           const a = r.imp.a;
           const dP = a.playoff[1] - a.playoff[0], dC = a.champ[1] - a.champ[0], dF = a.first[1] - a.first[0];
           const v = r.ev.dA / 500;
@@ -521,9 +534,10 @@
       results = results.slice(0, 15);
       out.replaceChildren();
       if (!results.length) {
-        out.appendChild(el("p", "No trades found that help both teams with these filters. Try another target or goal.", "muted"));
+        out.appendChild(el("p", `No trades found that help both teams with these filters${dropped ? ` (${dropped} were left out because they'd sink the other team's season)` : ""}. Try another target or goal.`, "muted"));
         return;
       }
+      if (dropped) out.appendChild(el("p", `${dropped} trade${dropped === 1 ? " was" : "s were"} left out because ${dropped === 1 ? "it" : "they"} would cost the other team real playoff or title odds.`, "note"));
       const grid = el("div", null, "ideas");
       for (const r of results) {
         const card = el("article", null, "idea");
@@ -549,11 +563,13 @@
         swap.appendChild(col(`${teamName(rid)} gets`, r.get));
         card.appendChild(swap);
         if (r.imp) {
-          const a = r.imp.a;
           const fmtD = (p) => `${p[1] - p[0] >= 0 ? "+" : "−"}${Math.abs(p[1] - p[0]).toFixed(1)}`;
-          const odds = el("div", null, "idea-odds");
-          odds.append(el("span", `Playoff ${fmtD(a.playoff)}`), el("span", `Title ${fmtD(a.champ)}`), el("span", `#1 pick ${fmtD(a.first)}`));
-          card.appendChild(odds);
+          for (const [nm, side] of [[teamName(rid), r.imp.a], [r.other.name, r.imp.b]]) {
+            const odds = el("div", null, "idea-odds");
+            odds.appendChild(el("span", nm.trim(), "idea-odds-team"));
+            odds.append(el("span", `Playoff ${fmtD(side.playoff)}`), el("span", `Title ${fmtD(side.champ)}`), el("span", `#1 pick ${fmtD(side.first)}`));
+            card.appendChild(odds);
+          }
         }
         card.appendChild(el("div", `Roster value: ${teamName(rid)} ${signed(r.ev.dA)} · ${r.other.name} ${signed(r.ev.dB)} · ${r.ev.verdict.label}`, "small muted"));
         const why = [];
