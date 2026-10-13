@@ -1,0 +1,34 @@
+{
+ "mddb_p2": {
+  "status": "200",
+  "bytes": 326143
+ },
+ "mddb_wr": {
+  "status": "200",
+  "bytes": 326148
+ },
+ "mddb_pos_wr": {
+  "status": "ERR HTTP Error 404: Not Found",
+  "bytes": 0
+ },
+ "espn_draft_ath1": {
+  "status": "200",
+  "bytes": 5062
+ },
+ "espn_draft_ath_p2": {
+  "status": "200",
+  "bytes": 6465
+ },
+ "espn_rec3": {
+  "status": "200",
+  "bytes": 54697
+ },
+ "espn_gamelog": {
+  "status": "200",
+  "bytes": 47978
+ },
+ "espn_ath": {
+  "status": "200",
+  "bytes": 206025
+ }
+}
