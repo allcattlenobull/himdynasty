@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T14:50:23+00:00",
+ "generated_at": "2026-10-13T18:30:43+00:00",
  "draft_year": 2027,
  "college_season": 2026,
  "rounds": 3,
@@ -5856,14 +5856,14 @@
    "1": {
     "current": [
      {
-      "id": "3163",
-      "name": "Jared Goff",
+      "id": "11560",
+      "name": "Caleb Williams",
       "pos": "QB",
-      "nfl": "DET",
-      "age": 31,
-      "exp": 10,
-      "ppg": 23.0,
-      "value": 901,
+      "nfl": "CHI",
+      "age": 24,
+      "exp": 2,
+      "ppg": 22.99,
+      "value": 3742,
       "group": "starter"
      },
      {
@@ -5878,14 +5878,14 @@
       "group": "starter"
      },
      {
-      "id": "11435",
-      "name": "Emanuel Wilson",
+      "id": "6790",
+      "name": "D'Andre Swift",
       "pos": "RB",
-      "nfl": "SEA",
+      "nfl": "CHI",
       "age": 27,
-      "exp": 3,
-      "ppg": 13.87,
-      "value": 21,
+      "exp": 6,
+      "ppg": 16.16,
+      "value": 1391,
       "group": "starter"
      },
      {
@@ -5922,14 +5922,14 @@
       "group": "starter"
      },
      {
-      "id": "6790",
-      "name": "D'Andre Swift",
-      "pos": "RB",
-      "nfl": "CHI",
-      "age": 27,
-      "exp": 6,
-      "ppg": 16.16,
-      "value": 1391,
+      "id": "8134",
+      "name": "Khalil Shakir",
+      "pos": "WR",
+      "nfl": "BUF",
+      "age": 26,
+      "exp": 4,
+      "ppg": 8.32,
+      "value": 583,
       "group": "starter"
      },
      {
@@ -5966,6 +5966,17 @@
       "group": "starter"
      },
      {
+      "id": "3163",
+      "name": "Jared Goff",
+      "pos": "QB",
+      "nfl": "DET",
+      "age": 31,
+      "exp": 10,
+      "ppg": 23.0,
+      "value": 901,
+      "group": "bench"
+     },
+     {
       "id": "10213",
       "name": "Tre Tucker",
       "pos": "WR",
@@ -5977,25 +5988,14 @@
       "group": "bench"
      },
      {
-      "id": "11560",
-      "name": "Caleb Williams",
-      "pos": "QB",
-      "nfl": "CHI",
-      "age": 24,
-      "exp": 2,
-      "ppg": 22.99,
-      "value": 3742,
-      "group": "bench"
-     },
-     {
-      "id": "8134",
-      "name": "Khalil Shakir",
-      "pos": "WR",
-      "nfl": "BUF",
-      "age": 26,
-      "exp": 4,
-      "ppg": 8.32,
-      "value": 583,
+      "id": "11435",
+      "name": "Emanuel Wilson",
+      "pos": "RB",
+      "nfl": "SEA",
+      "age": 27,
+      "exp": 3,
+      "ppg": 13.87,
+      "value": 21,
       "group": "bench"
      },
      {
@@ -7188,14 +7188,14 @@
    "6": {
     "current": [
      {
-      "id": "11563",
-      "name": "Bo Nix",
+      "id": "1166",
+      "name": "Kirk Cousins",
       "pos": "QB",
-      "nfl": "DEN",
-      "age": 26,
-      "exp": 2,
-      "ppg": 13.64,
-      "value": 1970,
+      "nfl": "LV",
+      "age": 38,
+      "exp": 14,
+      "ppg": 13.72,
+      "value": 49,
       "group": "starter"
      },
      {
@@ -7221,14 +7221,14 @@
       "group": "starter"
      },
      {
-      "id": "6786",
-      "name": "CeeDee Lamb",
+      "id": "9488",
+      "name": "Jaxon Smith-Njigba",
       "pos": "WR",
-      "nfl": "DAL",
-      "age": 27,
-      "exp": 6,
-      "ppg": 23.02,
-      "value": 9205,
+      "nfl": "SEA",
+      "age": 24,
+      "exp": 3,
+      "ppg": 27.89,
+      "value": 10136,
       "group": "starter"
      },
      {
@@ -7254,14 +7254,14 @@
       "group": "starter"
      },
      {
-      "id": "9488",
-      "name": "Jaxon Smith-Njigba",
+      "id": "6786",
+      "name": "CeeDee Lamb",
       "pos": "WR",
-      "nfl": "SEA",
-      "age": 24,
-      "exp": 3,
-      "ppg": 27.89,
-      "value": 10136,
+      "nfl": "DAL",
+      "age": 27,
+      "exp": 6,
+      "ppg": 23.02,
+      "value": 9205,
       "group": "starter"
      },
      {
@@ -7287,15 +7287,26 @@
       "group": "starter"
      },
      {
-      "id": "MIN",
-      "name": "Minnesota Vikings",
+      "id": "NE",
+      "name": "New England Patriots",
       "pos": "DEF",
-      "nfl": "MIN",
+      "nfl": "NE",
       "age": null,
       "exp": null,
-      "ppg": 13.75,
+      "ppg": 9.0,
       "value": 0,
       "group": "starter"
+     },
+     {
+      "id": "11563",
+      "name": "Bo Nix",
+      "pos": "QB",
+      "nfl": "DEN",
+      "age": 26,
+      "exp": 2,
+      "ppg": 13.64,
+      "value": 1970,
+      "group": "bench"
      },
      {
       "id": "6797",
@@ -7306,6 +7317,17 @@
       "exp": 6,
       "ppg": 12.14,
       "value": 2674,
+      "group": "bench"
+     },
+     {
+      "id": "MIN",
+      "name": "Minnesota Vikings",
+      "pos": "DEF",
+      "nfl": "MIN",
+      "age": null,
+      "exp": null,
+      "ppg": 13.75,
+      "value": 0,
       "group": "bench"
      },
      {
@@ -7353,17 +7375,6 @@
       "group": "bench"
      },
      {
-      "id": "1166",
-      "name": "Kirk Cousins",
-      "pos": "QB",
-      "nfl": "LV",
-      "age": 38,
-      "exp": 14,
-      "ppg": 13.72,
-      "value": 49,
-      "group": "bench"
-     },
-     {
       "id": "9757",
       "name": "Kendre Miller",
       "pos": "RB",
@@ -7372,17 +7383,6 @@
       "exp": 3,
       "ppg": 5.45,
       "value": 25,
-      "group": "bench"
-     },
-     {
-      "id": "NE",
-      "name": "New England Patriots",
-      "pos": "DEF",
-      "nfl": "NE",
-      "age": null,
-      "exp": null,
-      "ppg": 9.0,
-      "value": 0,
       "group": "bench"
      },
      {
@@ -7577,14 +7577,14 @@
       "group": "starter"
      },
      {
-      "id": "5844",
-      "name": "T.J. Hockenson",
-      "pos": "TE",
-      "nfl": "MIN",
-      "age": 29,
-      "exp": 7,
-      "ppg": 9.84,
-      "value": 239,
+      "id": "9486",
+      "name": "Dontayvion Wicks",
+      "pos": "WR",
+      "nfl": "PHI",
+      "age": 25,
+      "exp": 3,
+      "ppg": 9.8,
+      "value": 177,
       "group": "starter"
      },
      {
@@ -7621,6 +7621,17 @@
       "group": "bench"
      },
      {
+      "id": "5844",
+      "name": "T.J. Hockenson",
+      "pos": "TE",
+      "nfl": "MIN",
+      "age": 29,
+      "exp": 7,
+      "ppg": 9.84,
+      "value": 239,
+      "group": "bench"
+     },
+     {
       "id": "11628",
       "name": "Marvin Harrison",
       "pos": "WR",
@@ -7640,17 +7651,6 @@
       "exp": 3,
       "ppg": 4.53,
       "value": 675,
-      "group": "bench"
-     },
-     {
-      "id": "9486",
-      "name": "Dontayvion Wicks",
-      "pos": "WR",
-      "nfl": "PHI",
-      "age": 25,
-      "exp": 3,
-      "ppg": 9.8,
-      "value": 177,
       "group": "bench"
      },
      {

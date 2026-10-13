@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T14:49:15+00:00",
+  "generated_at": "2026-10-13T18:28:26+00:00",
   "league": {
     "id": "1312005038838673409",
     "name": "The HIM Dynasty",
@@ -1376,18 +1376,18 @@
           {
             "slot": "QB",
             "player": {
-              "id": "3163",
-              "name": "Jared Goff",
+              "id": "11560",
+              "name": "Caleb Williams",
               "pos": "QB",
-              "nfl": "DET",
-              "age": 31,
-              "exp": 10,
-              "injury": null,
-              "espn_id": 3046779,
-              "pts": 115.0,
-              "last": 28.94,
-              "ppg": 23.0,
-              "proj": 23.0
+              "nfl": "CHI",
+              "age": 24,
+              "exp": 2,
+              "injury": "Out",
+              "espn_id": null,
+              "pts": 45.98,
+              "last": 0.0,
+              "ppg": 22.99,
+              "proj": 11.49
             }
           },
           {
@@ -1410,18 +1410,18 @@
           {
             "slot": "RB",
             "player": {
-              "id": "11435",
-              "name": "Emanuel Wilson",
+              "id": "6790",
+              "name": "D'Andre Swift",
               "pos": "RB",
-              "nfl": "SEA",
+              "nfl": "CHI",
               "age": 27,
-              "exp": 3,
+              "exp": 6,
               "injury": null,
-              "espn_id": null,
-              "pts": 41.6,
-              "last": 13.2,
-              "ppg": 13.87,
-              "proj": 13.87
+              "espn_id": 4259545,
+              "pts": 80.8,
+              "last": 17.3,
+              "ppg": 16.16,
+              "proj": 16.16
             }
           },
           {
@@ -1478,18 +1478,18 @@
           {
             "slot": "FLEX",
             "player": {
-              "id": "6790",
-              "name": "D'Andre Swift",
-              "pos": "RB",
-              "nfl": "CHI",
-              "age": 27,
-              "exp": 6,
+              "id": "8134",
+              "name": "Khalil Shakir",
+              "pos": "WR",
+              "nfl": "BUF",
+              "age": 26,
+              "exp": 4,
               "injury": null,
-              "espn_id": 4259545,
-              "pts": 80.8,
-              "last": 17.3,
-              "ppg": 16.16,
-              "proj": 16.16
+              "espn_id": null,
+              "pts": 41.6,
+              "last": 11.0,
+              "ppg": 8.32,
+              "proj": 8.32
             }
           },
           {
@@ -1546,6 +1546,20 @@
         ],
         "bench": [
           {
+            "id": "3163",
+            "name": "Jared Goff",
+            "pos": "QB",
+            "nfl": "DET",
+            "age": 31,
+            "exp": 10,
+            "injury": null,
+            "espn_id": 3046779,
+            "pts": 115.0,
+            "last": 28.94,
+            "ppg": 23.0,
+            "proj": 23.0
+          },
+          {
             "id": "10213",
             "name": "Tre Tucker",
             "pos": "WR",
@@ -1560,32 +1574,18 @@
             "proj": 10.36
           },
           {
-            "id": "11560",
-            "name": "Caleb Williams",
-            "pos": "QB",
-            "nfl": "CHI",
-            "age": 24,
-            "exp": 2,
-            "injury": "Out",
-            "espn_id": null,
-            "pts": 45.98,
-            "last": 0.0,
-            "ppg": 22.99,
-            "proj": 11.49
-          },
-          {
-            "id": "8134",
-            "name": "Khalil Shakir",
-            "pos": "WR",
-            "nfl": "BUF",
-            "age": 26,
-            "exp": 4,
+            "id": "11435",
+            "name": "Emanuel Wilson",
+            "pos": "RB",
+            "nfl": "SEA",
+            "age": 27,
+            "exp": 3,
             "injury": null,
             "espn_id": null,
             "pts": 41.6,
-            "last": 11.0,
-            "ppg": 8.32,
-            "proj": 8.32
+            "last": 13.2,
+            "ppg": 13.87,
+            "proj": 13.87
           },
           {
             "id": "1479",
@@ -3871,18 +3871,18 @@
           {
             "slot": "QB",
             "player": {
-              "id": "11563",
-              "name": "Bo Nix",
+              "id": "1166",
+              "name": "Kirk Cousins",
               "pos": "QB",
-              "nfl": "DEN",
-              "age": 26,
-              "exp": 2,
+              "nfl": "LV",
+              "age": 38,
+              "exp": 14,
               "injury": null,
-              "espn_id": null,
-              "pts": 68.18,
-              "last": 7.92,
-              "ppg": 13.64,
-              "proj": 13.64
+              "espn_id": 14880,
+              "pts": 13.72,
+              "last": 13.72,
+              "ppg": 13.72,
+              "proj": 13.72
             }
           },
           {
@@ -3922,18 +3922,18 @@
           {
             "slot": "WR",
             "player": {
-              "id": "6786",
-              "name": "CeeDee Lamb",
+              "id": "9488",
+              "name": "Jaxon Smith-Njigba",
               "pos": "WR",
-              "nfl": "DAL",
-              "age": 27,
-              "exp": 6,
+              "nfl": "SEA",
+              "age": 24,
+              "exp": 3,
               "injury": "Questionable",
-              "espn_id": 4241389,
-              "pts": 115.1,
-              "last": 2.9,
-              "ppg": 23.02,
-              "proj": 21.87
+              "espn_id": null,
+              "pts": 139.46,
+              "last": 22.8,
+              "ppg": 27.89,
+              "proj": 26.5
             }
           },
           {
@@ -3973,18 +3973,18 @@
           {
             "slot": "FLEX",
             "player": {
-              "id": "9488",
-              "name": "Jaxon Smith-Njigba",
+              "id": "6786",
+              "name": "CeeDee Lamb",
               "pos": "WR",
-              "nfl": "SEA",
-              "age": 24,
-              "exp": 3,
+              "nfl": "DAL",
+              "age": 27,
+              "exp": 6,
               "injury": "Questionable",
-              "espn_id": null,
-              "pts": 139.46,
-              "last": 22.8,
-              "ppg": 27.89,
-              "proj": 26.5
+              "espn_id": 4241389,
+              "pts": 115.1,
+              "last": 2.9,
+              "ppg": 23.02,
+              "proj": 21.87
             }
           },
           {
@@ -4024,22 +4024,36 @@
           {
             "slot": "DEF",
             "player": {
-              "id": "MIN",
-              "name": "Minnesota Vikings",
+              "id": "NE",
+              "name": "New England Patriots",
               "pos": "DEF",
-              "nfl": "MIN",
+              "nfl": "NE",
               "age": null,
               "exp": null,
               "injury": null,
               "espn_id": null,
-              "pts": 55.0,
-              "last": 11.0,
-              "ppg": 13.75,
-              "proj": 13.75
+              "pts": 8.0,
+              "last": 8.0,
+              "ppg": 9.0,
+              "proj": 9.0
             }
           }
         ],
         "bench": [
+          {
+            "id": "11563",
+            "name": "Bo Nix",
+            "pos": "QB",
+            "nfl": "DEN",
+            "age": 26,
+            "exp": 2,
+            "injury": null,
+            "espn_id": null,
+            "pts": 68.18,
+            "last": 7.92,
+            "ppg": 13.64,
+            "proj": 13.64
+          },
           {
             "id": "6797",
             "name": "Justin Herbert",
@@ -4053,6 +4067,20 @@
             "last": 11.24,
             "ppg": 12.14,
             "proj": 12.14
+          },
+          {
+            "id": "MIN",
+            "name": "Minnesota Vikings",
+            "pos": "DEF",
+            "nfl": "MIN",
+            "age": null,
+            "exp": null,
+            "injury": null,
+            "espn_id": null,
+            "pts": 55.0,
+            "last": 11.0,
+            "ppg": 13.75,
+            "proj": 13.75
           },
           {
             "id": "13298",
@@ -4111,20 +4139,6 @@
             "proj": 0.0
           },
           {
-            "id": "1166",
-            "name": "Kirk Cousins",
-            "pos": "QB",
-            "nfl": "LV",
-            "age": 38,
-            "exp": 14,
-            "injury": null,
-            "espn_id": 14880,
-            "pts": 13.72,
-            "last": 13.72,
-            "ppg": 13.72,
-            "proj": 13.72
-          },
-          {
             "id": "9757",
             "name": "Kendre Miller",
             "pos": "RB",
@@ -4137,20 +4151,6 @@
             "last": 9.0,
             "ppg": 5.45,
             "proj": 5.45
-          },
-          {
-            "id": "NE",
-            "name": "New England Patriots",
-            "pos": "DEF",
-            "nfl": "NE",
-            "age": null,
-            "exp": null,
-            "injury": null,
-            "espn_id": null,
-            "pts": 8.0,
-            "last": 8.0,
-            "ppg": 9.0,
-            "proj": 9.0
           }
         ],
         "taxi": [
@@ -4520,18 +4520,18 @@
           {
             "slot": "FLEX",
             "player": {
-              "id": "5844",
-              "name": "T.J. Hockenson",
-              "pos": "TE",
-              "nfl": "MIN",
-              "age": 29,
-              "exp": 7,
-              "injury": "Out",
-              "espn_id": 4036133,
-              "pts": 49.2,
-              "last": 1.7,
-              "ppg": 9.84,
-              "proj": 4.92
+              "id": "9486",
+              "name": "Dontayvion Wicks",
+              "pos": "WR",
+              "nfl": "PHI",
+              "age": 25,
+              "exp": 3,
+              "injury": null,
+              "espn_id": null,
+              "pts": 16.1,
+              "last": 11.3,
+              "ppg": 9.8,
+              "proj": 9.8
             }
           },
           {
@@ -4585,6 +4585,20 @@
             "proj": 13.7
           },
           {
+            "id": "5844",
+            "name": "T.J. Hockenson",
+            "pos": "TE",
+            "nfl": "MIN",
+            "age": 29,
+            "exp": 7,
+            "injury": "Out",
+            "espn_id": 4036133,
+            "pts": 49.2,
+            "last": 1.7,
+            "ppg": 9.84,
+            "proj": 4.92
+          },
+          {
             "id": "11628",
             "name": "Marvin Harrison",
             "pos": "WR",
@@ -4611,20 +4625,6 @@
             "last": 0.0,
             "ppg": 4.53,
             "proj": 2.26
-          },
-          {
-            "id": "9486",
-            "name": "Dontayvion Wicks",
-            "pos": "WR",
-            "nfl": "PHI",
-            "age": 25,
-            "exp": 3,
-            "injury": null,
-            "espn_id": null,
-            "pts": 16.1,
-            "last": 11.3,
-            "ppg": 9.8,
-            "proj": 9.8
           },
           {
             "id": "10219",
