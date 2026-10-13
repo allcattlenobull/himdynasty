@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T12:32:20+00:00",
+ "generated_at": "2026-10-13T12:37:36+00:00",
  "draft_year": 2027,
  "college_season": 2026,
  "rounds": 3,
@@ -430,8 +430,8 @@
    "reason": "Adds WR depth",
    "context": {
     "needs": [
-     "QB",
-     "RB"
+     "RB",
+     "QB"
     ],
     "set": [
      "TE"
@@ -495,7 +495,7 @@
    "original_team": "🌨️🧱Brick by Brick🧱🌨️",
    "traded": false,
    "prospect": "wyatt young",
-   "reason": "Adds WR depth",
+   "reason": "Fills a WR need (11th at WR)",
    "context": {
     "needs": [
      "RB",
@@ -534,8 +534,7 @@
      "QB"
     ],
     "set": [
-     "WR",
-     "TE"
+     "WR"
     ],
     "thin": [
      "RB"
@@ -569,8 +568,7 @@
      "QB"
     ],
     "set": [
-     "WR",
-     "TE"
+     "WR"
     ],
     "thin": [
      "RB"
@@ -666,8 +664,8 @@
    "reason": "Fills a RB need (12th at RB)",
    "context": {
     "needs": [
-     "QB",
-     "RB"
+     "RB",
+     "QB"
     ],
     "set": [
      "TE"
@@ -730,13 +728,12 @@
    "original": 6,
    "original_team": "Vanilla Diamonds",
    "traded": false,
-   "prospect": "dylan riley",
-   "reason": "Adds RB depth",
+   "prospect": "luke reynolds",
+   "reason": "Manager leans TE",
    "context": {
     "needs": [],
     "set": [
-     "WR",
-     "TE"
+     "WR"
     ],
     "thin": [
      "RB"
@@ -857,7 +854,7 @@
    "original": 12,
    "original_team": "Daejon Mustard ",
    "traded": false,
-   "prospect": "wayne knight",
+   "prospect": "dylan riley",
    "reason": "Fills a RB need (11th at RB)",
    "context": {
     "needs": [
@@ -923,8 +920,8 @@
    "original": 1,
    "original_team": "‘89 Earthquake",
    "traded": false,
-   "prospect": "luke reynolds",
-   "reason": "Fills a TE need (8th at TE)",
+   "prospect": "wayne knight",
+   "reason": "Adds RB depth",
    "context": {
     "needs": [
      "TE"
@@ -987,15 +984,15 @@
    "original_team": "Ryan Poles",
    "traded": false,
    "prospect": "desean bishop",
-   "reason": "Adds RB depth",
+   "reason": "Fills a RB need (8th at RB)",
    "context": {
-    "needs": [],
+    "needs": [
+     "RB"
+    ],
     "set": [
      "WR"
     ],
-    "thin": [
-     "RB"
-    ],
+    "thin": [],
     "ranks": {
      "QB": 4,
      "RB": 8,
@@ -1087,8 +1084,8 @@
    "original": 4,
    "original_team": "The Lab",
    "traded": true,
-   "prospect": "arch manning",
-   "reason": "Best available",
+   "prospect": "ahmad hardy",
+   "reason": "Adds RB depth",
    "context": {
     "needs": [],
     "set": [
@@ -1120,7 +1117,7 @@
    "original": 6,
    "original_team": "Vanilla Diamonds",
    "traded": false,
-   "prospect": "dante moore",
+   "prospect": "arch manning",
    "reason": "Best available",
    "context": {
     "needs": [],
@@ -1153,7 +1150,7 @@
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": false,
-   "prospect": "julian sayin",
+   "prospect": "dante moore",
    "reason": "Best available",
    "context": {
     "needs": [
@@ -1185,8 +1182,8 @@
    "original": 9,
    "original_team": "Top 5 Top 5 Top 5",
    "traded": false,
-   "prospect": "ahmad hardy",
-   "reason": "Adds RB depth",
+   "prospect": "cayden lee",
+   "reason": "Value pick",
    "context": {
     "needs": [],
     "set": [

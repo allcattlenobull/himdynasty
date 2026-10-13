@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T12:30:59+00:00",
+  "generated_at": "2026-10-13T12:36:01+00:00",
   "league": {
     "id": "1312005038838673409",
     "name": "The HIM Dynasty",
@@ -2309,69 +2309,69 @@
           {
             "slot": "QB",
             "player": {
-              "id": "11566",
-              "name": "Jayden Daniels",
+              "id": "421",
+              "name": "Matthew Stafford",
               "pos": "QB",
-              "nfl": "WAS",
-              "age": 25,
-              "exp": 2,
+              "nfl": "LAR",
+              "age": 38,
+              "exp": 17,
               "injury": null,
-              "espn_id": null,
-              "pts": 64.66,
-              "last": 32.26,
-              "ppg": 21.55,
-              "proj": 21.55
+              "espn_id": 12483,
+              "pts": 39.0,
+              "last": 27.32,
+              "ppg": 19.0,
+              "proj": 19.0
             }
           },
           {
             "slot": "RB",
             "player": {
-              "id": "13287",
-              "name": "Jeremiyah Love",
-              "pos": "RB",
-              "nfl": "ARI",
-              "age": 21,
-              "exp": 0,
-              "injury": null,
-              "espn_id": null,
-              "pts": 51.1,
-              "last": 2.2,
-              "ppg": 10.22,
-              "proj": 10.22
-            }
-          },
-          {
-            "slot": "RB",
-            "player": {
-              "id": "11576",
-              "name": "Braelon Allen",
+              "id": "8155",
+              "name": "Breece Hall",
               "pos": "RB",
               "nfl": "NYJ",
-              "age": 22,
-              "exp": 2,
+              "age": 25,
+              "exp": 4,
+              "injury": "Out",
+              "espn_id": null,
+              "pts": 42.5,
+              "last": 0.0,
+              "ppg": 14.17,
+              "proj": 7.08
+            }
+          },
+          {
+            "slot": "RB",
+            "player": {
+              "id": "8151",
+              "name": "Kenneth Walker",
+              "pos": "RB",
+              "nfl": "KC",
+              "age": 25,
+              "exp": 4,
               "injury": null,
               "espn_id": null,
-              "pts": 44.5,
-              "last": 18.6,
-              "ppg": 8.9,
-              "proj": 8.9
+              "pts": 110.1,
+              "last": 0.0,
+              "ppg": 27.52,
+              "proj": 27.52
             }
           },
           {
             "slot": "WR",
             "player": {
-              "id": "5872",
-              "name": "Deebo Samuel",
+              "id": "4037",
+              "name": "Chris Godwin",
               "pos": "WR",
-              "nfl": "SF",
+              "nfl": "TB",
               "age": 30,
-              "exp": 7,
-              "injury": "Out",
-              "espn_id": 3126486,
-              "pts": 60.4,
-              "last": 2.5,
-              "ppg": 12.08,
-              "proj": 6.04
+              "exp": 9,
+              "injury": null,
+              "espn_id": 3116165,
+              "pts": 38.7,
+              "last": 7.0,
+              "ppg": 7.74,
+              "proj": 7.74
             }
           },
           {
@@ -2394,35 +2394,35 @@
           {
             "slot": "TE",
             "player": {
-              "id": "3271",
-              "name": "Tyler Higbee",
+              "id": "1466",
+              "name": "Travis Kelce",
               "pos": "TE",
-              "nfl": "LAR",
-              "age": 33,
-              "exp": 10,
+              "nfl": "KC",
+              "age": 37,
+              "exp": 13,
               "injury": null,
-              "espn_id": 2573401,
-              "pts": 13.3,
-              "last": 13.3,
-              "ppg": 13.3,
-              "proj": 13.3
+              "espn_id": 15847,
+              "pts": 52.6,
+              "last": 0.0,
+              "ppg": 13.15,
+              "proj": 13.15
             }
           },
           {
             "slot": "FLEX",
             "player": {
-              "id": "4454",
-              "name": "Kendrick Bourne",
-              "pos": "WR",
-              "nfl": "ARI",
-              "age": 31,
-              "exp": 9,
+              "id": "7594",
+              "name": "Chuba Hubbard",
+              "pos": "RB",
+              "nfl": "CAR",
+              "age": 27,
+              "exp": 5,
               "injury": null,
-              "espn_id": 3045523,
-              "pts": 12.0,
-              "last": 12.0,
-              "ppg": 12.0,
-              "proj": 12.0
+              "espn_id": null,
+              "pts": 79.0,
+              "last": 0.0,
+              "ppg": 19.75,
+              "proj": 19.75
             }
           },
           {
@@ -2479,32 +2479,32 @@
         ],
         "bench": [
           {
-            "id": "8151",
-            "name": "Kenneth Walker",
-            "pos": "RB",
-            "nfl": "KC",
+            "id": "11566",
+            "name": "Jayden Daniels",
+            "pos": "QB",
+            "nfl": "WAS",
             "age": 25,
-            "exp": 4,
+            "exp": 2,
             "injury": null,
             "espn_id": null,
-            "pts": 110.1,
-            "last": 0.0,
-            "ppg": 27.52,
-            "proj": 27.52
+            "pts": 64.66,
+            "last": 32.26,
+            "ppg": 21.55,
+            "proj": 21.55
           },
           {
-            "id": "7594",
-            "name": "Chuba Hubbard",
-            "pos": "RB",
-            "nfl": "CAR",
-            "age": 27,
-            "exp": 5,
-            "injury": null,
-            "espn_id": null,
-            "pts": 79.0,
-            "last": 0.0,
-            "ppg": 19.75,
-            "proj": 19.75
+            "id": "5872",
+            "name": "Deebo Samuel",
+            "pos": "WR",
+            "nfl": "SF",
+            "age": 30,
+            "exp": 7,
+            "injury": "Out",
+            "espn_id": 3126486,
+            "pts": 60.4,
+            "last": 2.5,
+            "ppg": 12.08,
+            "proj": 6.04
           },
           {
             "id": "9758",
@@ -2521,60 +2521,32 @@
             "proj": 17.84
           },
           {
-            "id": "1466",
-            "name": "Travis Kelce",
-            "pos": "TE",
-            "nfl": "KC",
-            "age": 37,
-            "exp": 13,
-            "injury": null,
-            "espn_id": 15847,
-            "pts": 52.6,
-            "last": 0.0,
-            "ppg": 13.15,
-            "proj": 13.15
-          },
-          {
-            "id": "421",
-            "name": "Matthew Stafford",
-            "pos": "QB",
-            "nfl": "LAR",
-            "age": 38,
-            "exp": 17,
-            "injury": null,
-            "espn_id": 12483,
-            "pts": 39.0,
-            "last": 27.32,
-            "ppg": 19.0,
-            "proj": 19.0
-          },
-          {
-            "id": "13330",
-            "name": "Kenyon Sadiq",
-            "pos": "TE",
-            "nfl": "NYJ",
+            "id": "13287",
+            "name": "Jeremiyah Love",
+            "pos": "RB",
+            "nfl": "ARI",
             "age": 21,
             "exp": 0,
-            "injury": "Out",
+            "injury": null,
             "espn_id": null,
-            "pts": 38.9,
-            "last": 0.3,
-            "ppg": 9.72,
-            "proj": 4.86
+            "pts": 51.1,
+            "last": 2.2,
+            "ppg": 10.22,
+            "proj": 10.22
           },
           {
-            "id": "4037",
-            "name": "Chris Godwin",
-            "pos": "WR",
-            "nfl": "TB",
-            "age": 30,
-            "exp": 9,
+            "id": "11576",
+            "name": "Braelon Allen",
+            "pos": "RB",
+            "nfl": "NYJ",
+            "age": 22,
+            "exp": 2,
             "injury": null,
-            "espn_id": 3116165,
-            "pts": 38.7,
-            "last": 7.0,
-            "ppg": 7.74,
-            "proj": 7.74
+            "espn_id": null,
+            "pts": 44.5,
+            "last": 18.6,
+            "ppg": 8.9,
+            "proj": 8.9
           },
           {
             "id": "9756",
@@ -2589,6 +2561,34 @@
             "last": 0.0,
             "ppg": 11.07,
             "proj": 5.53
+          },
+          {
+            "id": "3271",
+            "name": "Tyler Higbee",
+            "pos": "TE",
+            "nfl": "LAR",
+            "age": 33,
+            "exp": 10,
+            "injury": null,
+            "espn_id": 2573401,
+            "pts": 13.3,
+            "last": 13.3,
+            "ppg": 13.3,
+            "proj": 13.3
+          },
+          {
+            "id": "4454",
+            "name": "Kendrick Bourne",
+            "pos": "WR",
+            "nfl": "ARI",
+            "age": 31,
+            "exp": 9,
+            "injury": null,
+            "espn_id": 3045523,
+            "pts": 12.0,
+            "last": 12.0,
+            "ppg": 12.0,
+            "proj": 12.0
           }
         ],
         "taxi": [
@@ -2637,6 +2637,20 @@
         ],
         "ir": [
           {
+            "id": "13330",
+            "name": "Kenyon Sadiq",
+            "pos": "TE",
+            "nfl": "NYJ",
+            "age": 21,
+            "exp": 0,
+            "injury": "Out",
+            "espn_id": null,
+            "pts": 38.9,
+            "last": 0.3,
+            "ppg": 9.72,
+            "proj": 4.86
+          },
+          {
             "id": "7021",
             "name": "Rico Dowdle",
             "pos": "RB",
@@ -2649,20 +2663,6 @@
             "last": 0.0,
             "ppg": 5.25,
             "proj": 2.62
-          },
-          {
-            "id": "8155",
-            "name": "Breece Hall",
-            "pos": "RB",
-            "nfl": "NYJ",
-            "age": 25,
-            "exp": 4,
-            "injury": "Out",
-            "espn_id": null,
-            "pts": 42.5,
-            "last": 0.0,
-            "ppg": 14.17,
-            "proj": 7.08
           }
         ]
       },
