@@ -36,6 +36,7 @@ from pathlib import Path
 API = "https://api.sleeper.app/v1"
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from league_pointer import current_league_id  # noqa: E402
+from recap import build_recap, write_recap  # noqa: E402
 
 LEAGUE_ID = current_league_id()
 SIMULATIONS = int(os.environ.get("SIMULATIONS", "10000"))
@@ -152,7 +153,7 @@ def read_schedule(weeks, slots, positions):
         for m in matchups:
             if m.get("matchup_id") is not None:
                 grouped.setdefault(m["matchup_id"], []).append(m)
-        games, scores, maxes, player_pts = [], {}, {}, {}
+        games, scores, maxes, player_pts, starters = [], {}, {}, {}, {}
         for pair in grouped.values():
             if len(pair) != 2:
                 continue
@@ -162,7 +163,9 @@ def read_schedule(weeks, slots, positions):
                 scores[side["roster_id"]] = float(side.get("points") or 0.0)
                 maxes[side["roster_id"]] = best_lineup_points(side, slots, positions)
                 player_pts[side["roster_id"]] = side.get("players_points") or {}
-        schedule.append({"week": week, "games": games, "scores": scores, "max": maxes, "player_pts": player_pts})
+                starters[side["roster_id"]] = side.get("starters") or []
+        schedule.append({"week": week, "games": games, "scores": scores, "max": maxes,
+                         "player_pts": player_pts, "starters": starters})
     return schedule
 
 
@@ -803,6 +806,18 @@ def main():
     (DATA_DIR / "latest.json").write_text(payload + "\n", encoding="utf-8")
     (DATA_DIR / "history" / f"{now:%Y-%m-%d}.json").write_text(payload + "\n", encoding="utf-8")
     prune_snapshots(DATA_DIR / "history", now.date())
+
+    # Weekly recap: bench regret, all-play, luck, awards.
+    try:
+        start_slots = [x for x in (league.get("roster_positions") or []) if x in SLOT_ELIGIBILITY]
+        def name_of(pid):
+            c = player_card(pid, players)
+            return [c["name"], c["pos"], c["nfl"]]
+        recap = build_recap(schedule, done, teams, positions, start_slots, season, name_of)
+        write_recap(DATA_DIR, recap, snapshot["generated_at"])
+        print(f"Wrote recap for {len(recap['weeks'])} weeks")
+    except Exception as exc:  # noqa: BLE001 - the recap must never block standings
+        print(f"Recap skipped: {exc}")
     print(f"Wrote {len(standings)} teams, {done} weeks of history, {remaining_games} weeks left, to {DATA_DIR}")
     for d in diagnostics:
         print(f"  max PF check roster {d['roster_id']}: computed {d['computed']} vs Sleeper {d['official']}")

@@ -108,16 +108,62 @@
     return thead;
   }
 
+  // Sortable standings: click a header to sort, click again to flip.
+  // Each column: label, right-aligned, sort value, first direction.
+  const STANDING_COLS = [
+    { key: "rank", label: "#", num: true, val: (r) => r.rank, dir: 1 },
+    { key: "team", label: "Team", num: false, val: (r) => r.team.toLowerCase(), dir: 1 },
+    { key: "record", label: "Record", num: true, val: (r) => (r.wins + r.ties / 2) / Math.max(1, r.wins + r.losses + r.ties) + r.points_for / 1e7, dir: -1 },
+    { key: "pf", label: "PF", num: true, val: (r) => r.points_for, dir: -1 },
+    { key: "pa", label: "PA", num: true, val: (r) => r.points_against, dir: -1 },
+    { key: "max", label: "Max PF", num: true, val: (r) => r.max_pf, dir: -1 },
+    { key: "projw", label: "Proj W", num: true, val: (r) => r.projected_wins, dir: -1 },
+    { key: "playoff", label: "Playoff", num: false, val: (r) => r.playoff_odds, dir: -1 },
+    { key: "champ", label: "Champ", num: true, val: (r) => r.champion_odds, dir: -1 },
+  ];
+  state.sort = { key: "rank", dir: 1 };
+
+  function sortedRows(rows) {
+    const col = STANDING_COLS.find((c) => c.key === state.sort.key) || STANDING_COLS[0];
+    const d = state.sort.dir;
+    return rows.slice().sort((a, b) => {
+      const x = col.val(a), y = col.val(b);
+      if (x < y) return -d;
+      if (x > y) return d;
+      return a.rank - b.rank;
+    });
+  }
+
   function renderStandings(rows, playoffTeams) {
-    const table = el("table");
-    table.appendChild(header([
-      ["#", true], ["Team", false], ["Record", true], ["PF", true], ["PA", true],
-      ["Max PF", true], ["Proj W", true], ["Playoff", false], ["Champ", true],
-    ]));
+    const table = el("table", null, "sortable");
+    const thead = el("thead");
+    const htr = el("tr");
+    for (const c of STANDING_COLS) {
+      const th = el("th", null, c.num ? "num" : "");
+      const active = state.sort.key === c.key;
+      th.setAttribute("aria-sort", active ? (state.sort.dir === 1 ? "ascending" : "descending") : "none");
+      const btn = el("button", c.label, "sort-btn" + (active ? " on" : ""));
+      btn.type = "button";
+      btn.title = `Sort by ${c.label === "#" ? "rank" : c.label}`;
+      if (active) btn.appendChild(el("span", state.sort.dir === 1 ? "▲" : "▼", "sort-arrow"));
+      btn.addEventListener("click", () => {
+        state.sort = active ? { key: c.key, dir: -state.sort.dir } : { key: c.key, dir: c.dir };
+        const box = document.getElementById("standings-table");
+        box.replaceChildren(renderStandings(state.data.standings, playoffTeams));
+        box.querySelector(".sort-btn.on")?.focus({ preventScroll: true });
+        applyFocus();
+      });
+      th.appendChild(btn);
+      htr.appendChild(th);
+    }
+    thead.appendChild(htr);
+    table.appendChild(thead);
+    const byRank = state.sort.key === "rank" && state.sort.dir === 1;
     const body = el("tbody");
-    rows.forEach((row, i) => {
+    sortedRows(rows).forEach((row, i) => {
       const tr = focusable(el("tr"), row.roster_id);
-      if (i === playoffTeams - 1) tr.classList.add("cutline");
+      if (byRank && i === playoffTeams - 1) tr.classList.add("cutline");
+      if (!byRank && row.rank <= playoffTeams) tr.classList.add("in-seed");
       tr.appendChild(el("td", row.rank, "num rank"));
       tr.appendChild(teamCell(row));
       const record = row.ties ? `${row.wins}-${row.losses}-${row.ties}` : `${row.wins}-${row.losses}`;
@@ -133,7 +179,7 @@
     table.appendChild(body);
     const frag = document.createDocumentFragment();
     frag.appendChild(table);
-    frag.appendChild(el("div", "▲ Playoff line", "cut-label"));
+    frag.appendChild(el("div", byRank ? "▲ Playoff line" : "● = playoff spot · sort by # for the playoff line", "cut-label"));
     return frag;
   }
 

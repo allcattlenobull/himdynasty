@@ -35,7 +35,7 @@
     ".side-box", ".game", ".verdict-row", ".him-col", ".ass-col", ".team-hero", ".pick-chip",
     ".method li", ".news-card", ".social-card", ".an-group", ".me-bar",
     ".roster-col", ".tend-row", "tbody tr", ".butt-card", ".plan-summary",
-    ".ss-card", ".ss-team-card", ".hof-card", ".record", ".trade-card", ".fin-chip", ".h-game", ".draft-sum-card", ".ss-matchup", ".cmp-card", ".cmp-verdict", ".duel-row", ".an-week", ".ss-waiver",
+    ".ss-card", ".ss-team-card", ".rc-award", ".rc-game", ".hof-card", ".record", ".trade-card", ".fin-chip", ".h-game", ".draft-sum-card", ".ss-matchup", ".cmp-card", ".cmp-verdict", ".duel-row", ".an-week", ".ss-waiver",
   ].join(",");
   const ROW_CAP = 10;
 
@@ -133,7 +133,7 @@
   // ---------------------------------------------------------------- //
   // Desktop: tilt + spotlight, magnetic chips, scroll progress
   // ---------------------------------------------------------------- //
-  const TILT = ".pick, .idea, .matchup, .stat, .odds-block, .pick-chip, .news-card, .game, .roster-col, .ss-team-card, .cmp-card, .hof-card, .record";
+  const TILT = ".pick, .idea, .matchup, .stat, .odds-block, .pick-chip, .news-card, .game, .roster-col, .ss-team-card, .cmp-card, .hof-card, .record, .rc-award";
   let tilted = null;
   let lastMagnet = null;
   let frame = 0;

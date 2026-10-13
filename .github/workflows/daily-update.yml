@@ -112,6 +112,22 @@ jobs:
         continue-on-error: true
         run: python scripts/history.py
 
+      - name: Check every data file (restore last good copy if broken)
+        id: checks
+        if: always() && steps.gate.outputs.run == 'true'
+        continue-on-error: true
+        env:
+          CHECK_OUT: /tmp/checks.json
+        run: python scripts/check_data.py
+
+      - name: Draw link preview cards
+        id: share
+        if: always() && steps.gate.outputs.run == 'true'
+        continue-on-error: true
+        run: |
+          pip install --quiet pillow
+          python scripts/share_cards.py
+
       - name: Record what worked
         if: always() && steps.gate.outputs.run == 'true'
         env:
@@ -122,9 +138,14 @@ jobs:
           steps = json.loads(os.environ["STEPS"])
           names = {"rollover": "Season rollover", "league": "League update", "trade": "Trade values",
                    "analytics": "Player analytics", "startsit": "Start/sit", "analysis": "Team analysis",
-                   "news": "Player news", "mock": "Mock draft", "highlights": "Highlights", "history": "League history"}
+                   "news": "Player news", "mock": "Mock draft", "highlights": "Highlights", "history": "League history",
+                   "checks": "Data checks", "share": "Preview cards"}
           failed = [names[k] for k, v in steps.items() if k in names and v.get("outcome") == "failure"]
           out = {"checked": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), "failed": failed}
+          try:
+              out["checks"] = json.load(open("/tmp/checks.json"))
+          except Exception:
+              pass
           open("docs/data/status.json", "w").write(json.dumps(out) + "\n")
           print("Failed steps:", failed or "none")
           PY
@@ -134,7 +155,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data
+          git add docs/data docs/og docs/share
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else

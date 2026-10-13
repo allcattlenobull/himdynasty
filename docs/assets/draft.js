@@ -2,7 +2,7 @@
    for team colors). All names are set with textContent. */
 (() => {
   "use strict";
-  const { el, dot, teamLink, assignColors } = window.HIM;
+  const { el, dot, teamLink, assignColors, shareButton } = window.HIM;
   const SVG = "http://www.w3.org/2000/svg";
   const safeUrl = (u) => (typeof u === "string" && /^https:\/\//i.test(u) ? u : null);
 
@@ -191,6 +191,12 @@
       sel.appendChild(o);
     });
     sel.addEventListener("change", () => setTeam(sel.value || null));
+    if (!document.getElementById("mock-share")) {
+      const b = shareButton(() => (teamFilter ? `share/mock-${encodeURIComponent(teamFilter)}.html` : "draft.html"),
+        () => (teamFilter ? `${(names[teamFilter] || "").trim()} mock draft · HIM Dynasty` : "HIM Dynasty mock draft"), "Share");
+      b.id = "mock-share";
+      sel.closest("label").after(b);
+    }
     const want = new URLSearchParams(window.location.search).get("team");
     if (want && names[want]) teamFilter = want;
     sel.value = teamFilter || "";

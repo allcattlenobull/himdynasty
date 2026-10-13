@@ -2,7 +2,7 @@
    Header stats, roster, schedule (past, current, upcoming), and season trend. */
 (() => {
   "use strict";
-  const { el, dot, teamLink, teamVar, teamColor, themeChart, assignColors, loadData, updatedText, cssVar, withAlpha } = window.HIM;
+  const { el, dot, teamLink, teamVar, teamColor, themeChart, assignColors, loadData, updatedText, cssVar, withAlpha, shareButton } = window.HIM;
 
   const SLOT_LABELS = {
     SUPER_FLEX: "SF", FLEX: "FLEX", WRRB_FLEX: "W/R", REC_FLEX: "W/T", IDP_FLEX: "IDP",
@@ -63,6 +63,7 @@
     const career = el("a", "Career & history →", "chip buzz-link");
     career.href = `history.html#managers/rid:${encodeURIComponent(t.roster_id)}`;
     text.appendChild(career);
+    text.appendChild(shareButton(() => `share/team-${encodeURIComponent(t.roster_id)}.html`, `${t.team} · HIM Dynasty`, "Share team"));
     hero.appendChild(text);
 
     const stats = el("div", null, "stats");

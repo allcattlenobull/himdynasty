@@ -146,7 +146,7 @@ window.HIM = (() => {
   // Rendered synchronously (before DOMContentLoaded) so theme.js mounts the
   // theme switches inside it.
   // ---------------------------------------------------------------- //
-  const NAV = [["League", "league.html"], ["Mock", "draft.html"], ["Trade", "trade.html"],
+  const NAV = [["League", "league.html"], ["Recap", "recap.html"], ["Mock", "draft.html"], ["Trade", "trade.html"],
     ["Analytics", "analytics.html"], ["Buzz", "buzz.html"], ["History", "history.html"]];
 
   function renderHeader() {
@@ -445,15 +445,111 @@ window.HIM = (() => {
     fetch("data/status.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).then((st) => {
       if (!st) return;
       const age = (Date.now() - new Date(st.checked)) / 3600000;
-      const msg = st.failed && st.failed.length ? `This morning's update had trouble with: ${st.failed.join(", ")}. Those parts show the last good data.`
+      const PART = { "latest.json": "standings", "recap.json": "recap", "trade.json": "trade values", "mock_draft.json": "mock draft",
+        "startsit.json": "start/sit", "splits.json": "splits", "analytics.json": "analytics", "analysis.json": "team analysis",
+        "news.json": "news", "highlights.json": "highlights", "history.json": "history", "league_ids.json": "season links", "players_lite.json": "player names" };
+      const parts = (st.failed || []).filter((x) => x !== "Data checks");
+      (st.checks || []).forEach((c) => { const n = PART[c.file] || c.file; if (!parts.includes(n)) parts.push(n); });
+      const msg = parts.length ? `This morning's update had trouble with: ${parts.join(", ")}. Those parts show the last good data.`
         : age > 36 ? `The daily update hasn't run since ${new Date(st.checked).toLocaleDateString()}.` : "";
       if (msg) foot.appendChild(el("div", msg, "data-status"));
     }).catch(() => {});
+  }
+
+
+  // ---------------------------------------------------------------- //
+  // Sortable table. cols: [{key, label, num, val(row), dir (1 asc, -1 desc
+  // first), cell(row) -> Node|string, title}]. Click a header to sort; click
+  // again to flip. opts: {sort: {key, dir}, rowRid(row), onRow(tr,row)}.
+  // ---------------------------------------------------------------- //
+  function sortableTable(host, cols, rows, opts = {}) {
+    let sort = opts.sort || { key: cols[0].key, dir: cols[0].dir || 1 };
+    const draw = (focusKey) => {
+      const col = cols.find((c) => c.key === sort.key) || cols[0];
+      const sorted = rows.slice().sort((a, b) => {
+        const x = col.val(a), y = col.val(b);
+        if (x === y) return 0;
+        if (x === null || x === undefined) return 1;
+        if (y === null || y === undefined) return -1;
+        return x < y ? -sort.dir : sort.dir;
+      });
+      const table = el("table", null, "sortable");
+      const tr = el("tr");
+      for (const c of cols) {
+        const th = el("th", null, c.num ? "num" : "");
+        const on = c.key === sort.key;
+        th.setAttribute("aria-sort", on ? (sort.dir === 1 ? "ascending" : "descending") : "none");
+        if (c.val) {
+          const b = el("button", c.label, "sort-btn" + (on ? " on" : ""));
+          b.type = "button";
+          if (c.title) b.title = c.title;
+          if (on) b.appendChild(el("span", sort.dir === 1 ? "▲" : "▼", "sort-arrow"));
+          b.addEventListener("click", () => {
+            sort = on ? { key: c.key, dir: -sort.dir } : { key: c.key, dir: c.dir || -1 };
+            draw(c.key);
+          });
+          th.appendChild(b);
+        } else {
+          th.appendChild(el("span", c.label, "sort-static"));
+        }
+        tr.appendChild(th);
+      }
+      table.appendChild(el("thead")).appendChild(tr);
+      const body = el("tbody");
+      sorted.forEach((row, i) => {
+        const r = el("tr");
+        if (opts.rowRid) r.dataset.rid = opts.rowRid(row);
+        for (const c of cols) {
+          const td = el("td", null, c.num ? "num" : "");
+          const v = c.cell ? c.cell(row, i) : c.val(row);
+          if (v instanceof Node) td.appendChild(v); else td.textContent = v ?? "—";
+          r.appendChild(td);
+        }
+        if (opts.onRow) opts.onRow(r, row, i);
+        body.appendChild(r);
+      });
+      table.appendChild(body);
+      host.replaceChildren(table);
+      if (focusKey) host.querySelector(".sort-btn.on")?.focus({ preventScroll: true });
+    };
+    draw();
+  }
+
+  // Share a link: the phone share sheet when there is one, else copy.
+  async function shareLink(url, title, button) {
+    const abs = new URL(url, location.href).href;
+    try {
+      if (navigator.share && matchMedia("(pointer: coarse)").matches) {
+        await navigator.share({ title, url: abs });
+        return;
+      }
+    } catch (e) {
+      if (e && e.name === "AbortError") return;
+    }
+    let ok = false;
+    try { await navigator.clipboard.writeText(abs); ok = true; } catch (e) { ok = false; }
+    if (!ok) {
+      window.prompt("Copy this link:", abs);
+      return;
+    }
+    if (button) {
+      const old = button.textContent;
+      button.textContent = "✓ Link copied";
+      button.classList.add("copied");
+      setTimeout(() => { button.textContent = old; button.classList.remove("copied"); }, 1800);
+    }
+  }
+
+  function shareButton(getUrl, title, label = "Share") {
+    const b = el("button", `↗ ${label}`, "share-btn");
+    b.type = "button";
+    b.addEventListener("click", (e) => { e.stopPropagation(); shareLink(getUrl(), typeof title === "function" ? title() : title, b); });
+    return b;
   }
 
   renderHeader();
   renderTicker();
   (window.requestIdleCallback || ((f) => setTimeout(f, 800)))(dataStatus);
 
-  return { initExpand, el, cssVar, assignColors, teamVar, teamColor, dot, teamHref, teamLink, oddsCell, withAlpha, chartTheme, themeChart, loadData, updatedText };
+  return { initExpand, el, cssVar, assignColors, teamVar, teamColor, dot, teamHref, teamLink, oddsCell, withAlpha, chartTheme, themeChart, loadData, updatedText, sortableTable, shareLink, shareButton };
 })();

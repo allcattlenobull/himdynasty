@@ -10,7 +10,8 @@ https://allcattlenobull.github.io/himdynasty/
 | Page | What it is |
 | --- | --- |
 | `docs/index.html` | The gate: "Are you HIM?" Yes goes to the league, No goes to the butts. Keys Y and N work too. |
-| `docs/league.html` | Standings, playoff picture, and draft order, each with a week-by-week chart. Click any team to follow it everywhere. |
+| `docs/league.html` | Standings (click a column header to sort), playoff picture, and draft order, each with a week-by-week chart. Click any team to follow it everywhere. |
+| `docs/recap.html#2026-w5` | Weekly recap: an auto-written summary, awards (HIM and Ass of the week, blowout, nail-biter, worst start/sit, luckiest and unluckiest), every game with lineup efficiency and missed moves, the bench-regret leaderboard (week and season), and all-play records with luck. |
 | `docs/no.html` | 100 cartoon animal butts for anyone who is not HIM. |
 | `docs/draft.html` | Automatic rookie mock draft and big board (expert boards + college game logs + traded picks + whole-roster needs + this league's past drafts and each manager's habits). |
 | `docs/trade.html` | Trade center: calculator, team-to-team builder, and trade idea generator, all adjusted for this league's lineup and each team's window. |
@@ -36,11 +37,22 @@ Branding lives in `docs/assets/` (`logo.svg`, `brand.css`). Every page has an Au
 
 Weekly max PF is computed from each team's best possible lineup and scaled to match Sleeper's season total. `diagnostics.max_pf_check` in `latest.json` shows the raw comparison.
 
+## Sharing
+
+- Team pages, recap weeks, mock drafts (with a team picked) and trades have a **Share** button: the phone share sheet, or copy link on a computer.
+- Trade links carry both teams and every asset (`trade.html#calc&a=3&b=8&ga=…&gb=…`). If a player has moved rosters since the link was sent, he's left out and the page says so.
+- Link previews: every page has Open Graph tags with `docs/og/site.png`. `scripts/share_cards.py` (Pillow, fonts in `scripts/fonts`, OFL) draws a card per team, recap week and team mock draft into `docs/og/`, and writes small pages in `docs/share/` that carry that card's preview tags and then forward to the real page. Share buttons use those links so group chats show the right card.
+
+## Data checks
+
+`scripts/check_data.py` runs after every update. It checks each file in `docs/data` for the fields the site reads (and that it was rebuilt recently). A file that fails goes back to its last committed version, so the site keeps yesterday's data for that part; the problem is saved in `status.json`, the run is flagged, and the footer names the part. `python scripts/check_data.py --dry-run` checks without restoring.
+
 ## A site that runs every season
 
 - **Rollover:** Sleeper gives a renewed league a new id each year. `scripts/rollover.py` runs first every morning, finds the renewal (the next-season league whose previous league is the current one) and records it in `docs/data/league_ids.json`; every script reads the id from there (`scripts/league_pointer.py`). `SLEEPER_LEAGUE_ID` still overrides it.
 - **Archive:** `scripts/history.py` walks the league chain and writes `docs/data/archive/<season>.json` for each season (finished seasons are written once, then reused) and `docs/data/history.json` for the History page.
 - **Offseason:** start/sit pauses outside the regular season; analytics fall back to last season's stats until the new season has games.
+- **Recaps:** each season's recap is kept in `docs/data/recaps/<season>.json` (built by `scripts/recap.py` inside the league update); `docs/data/recap.json` lists the seasons.
 - **Storage:** daily snapshots in `docs/data/history/` are kept for 3 weeks, then one per week.
 - **Alerts:** every step's result is written to `docs/data/status.json`. If any step fails, the run is marked failed (GitHub emails the repo owner) and the site footer says which part didn't refresh.
 

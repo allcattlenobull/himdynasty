@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weekly Recap · HIM Dynasty</title>
+  <meta name="description" content="Every week in The HIM Dynasty: awards, blowouts, nail-biters, points left on the bench, and all-play records.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HIM Dynasty">
+  <meta property="og:title" content="Weekly Recap · HIM Dynasty">
+  <meta property="og:description" content="Every week in The HIM Dynasty: awards, blowouts, nail-biters, points left on the bench, and all-play records.">
+  <meta property="og:url" content="https://allcattlenobull.github.io/himdynasty/recap.html">
+  <meta property="og:image" content="https://allcattlenobull.github.io/himdynasty/og/site.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://allcattlenobull.github.io/himdynasty/og/site.png">
+  <meta name="theme-color" content="#09090b">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/brand.css?v=20261013k">
+  <script src="assets/theme.js?v=20261013k"></script>
+</head>
+<body>
+  <header class="topbar" data-topbar></header>
+
+  <main class="league-main">
+    <div class="strip">
+      <p class="kicker">Weekly <em>Recap</em></p>
+      <p class="updated" id="updated">Loading recap…</p>
+    </div>
+
+    <div class="rc-picker">
+      <label class="team-filter" id="rc-season-wrap" hidden>Season <select id="rc-season" aria-label="Season"></select></label>
+      <div class="round-tabs" id="rc-weeks" role="tablist" aria-label="Week"></div>
+    </div>
+
+    <section class="rc-hero" id="rc-hero" aria-live="polite"></section>
+
+    <section class="panel">
+      <div class="panel-head"><h2>Awards</h2></div>
+      <div class="rc-awards" id="rc-awards"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Games</h2>
+        <p class="note">Each bar shows how much of the best possible lineup a team actually started. Missed moves list the bench players who should have played.</p>
+      </div>
+      <div class="rc-games" id="rc-games"></div>
+    </section>
+
+    <section class="panel" id="regret">
+      <div class="panel-head">
+        <h2>Bench Regret</h2>
+        <p class="note">Points left on the bench: the best lineup each team could have set from its own roster, minus what it scored. Same method as Sleeper's max PF. Click a header to sort.</p>
+      </div>
+      <div class="round-tabs" id="rg-mode" role="tablist" aria-label="Week or season"></div>
+      <div class="table-wrap" id="rg-table"></div>
+    </section>
+
+    <section class="panel" id="allplay">
+      <div class="panel-head">
+        <h2>All-Play &amp; Luck</h2>
+        <p class="note">All-play is each team's record if it played every other team every week. Luck is actual wins minus the wins all-play says a team earned: plus means the schedule helped, minus means it hurt. Season to date. Click a header to sort.</p>
+      </div>
+      <div class="table-wrap" id="ap-table"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <img src="assets/logo.svg" alt="" width="28" height="28">
+    HIM DYNASTY · ARE YOU HIM?
+    <br><a class="credit" href="mailto:paforprince@gmail.com">Built by P Saah</a>
+  </footer>
+
+  <script src="assets/common.js?v=20261013k"></script>
+  <script src="assets/motion.js?v=20261013k"></script>
+  <script src="assets/recap.js?v=20261013k"></script>
+</body>
+</html>

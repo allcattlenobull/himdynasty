@@ -3,11 +3,12 @@
    textContent only. */
 (() => {
   "use strict";
-  const { el, dot, teamLink, assignColors } = window.HIM;
+  const { el, dot, teamLink, assignColors, shareButton } = window.HIM;
 
   let data, E, S, byId, latest;
   let me = null;
   let baseline = null;
+  let stale = null; // note for a shared link whose players moved; shown on first render only
   const ME_KEY = "him-me";
   const calc = { a: null, b: null, A: [], B: [] };
   const build = { a: null, b: null, ga: new Set(), gb: new Set() };
@@ -198,10 +199,19 @@
 
   function renderTradeResult(out, A, B, give, get, onAdd, onRemove) {
     out.replaceChildren();
+    if (stale && out.id === stale.id) {
+      if (stale.shown) stale = null;
+      else { stale.shown = true; out.appendChild(el("p", stale.text, "trade-stale")); }
+    }
     if (!give.length && !get.length) {
       out.appendChild(el("p", "Add assets to either side to see how the trade moves both teams.", "muted"));
       return;
     }
+    // Share this exact trade: the link carries both teams and every asset.
+    const bar = el("div", null, "trade-share");
+    const summary = `${A.name} sends ${give.map((x) => x.name).join(", ") || "nothing"} · ${B.name} sends ${get.map((x) => x.name).join(", ") || "nothing"}`;
+    bar.append(el("span", summary, "owner"), shareButton(() => location.href, () => `HIM Dynasty trade: ${summary}`, "Share trade"));
+    out.appendChild(bar);
     if (S) {
       const imp = S.impact(A, B, give, get, 4000, getBaseline());
       const odds = el("div", null, "odds-pair");
@@ -351,13 +361,20 @@
     renderCalc();
   }
 
+  function noteStale(n, id) {
+    if (n > 0) stale = { id, shown: false, text:  `${n} item${n > 1 ? "s" : ""} in this shared link ${n > 1 ? "have" : "has"} moved to another roster since it was sent, so ${n > 1 ? "they were" : "it was"} left out.` };
+  }
+
   function setupCalc(params, isCalc) {
     const ids = Object.keys(data.teams);
     calc.a = isCalc && data.teams[params.get("a")] ? params.get("a") : (me || ids[0]);
     calc.b = isCalc && data.teams[params.get("b")] && params.get("b") !== calc.a ? params.get("b") : ids.find((x) => x !== calc.a);
     const owned = (rid) => (id) => byId[id] && String(byId[id].owner) === String(rid);
-    calc.A = isCalc ? (params.get("ga") || "").split(",").filter(owned(calc.a)) : [];
-    calc.B = isCalc ? (params.get("gb") || "").split(",").filter(owned(calc.b)) : [];
+    const wantA = isCalc ? (params.get("ga") || "").split(",").filter(Boolean) : [];
+    const wantB = isCalc ? (params.get("gb") || "").split(",").filter(Boolean) : [];
+    calc.A = wantA.filter(owned(calc.a));
+    calc.B = wantB.filter(owned(calc.b));
+    noteStale(wantA.length + wantB.length - calc.A.length - calc.B.length, "calc-result");
     for (const side of ["A", "B"]) {
       const box = document.querySelector(`.side-box[data-side="${side}"]`);
       const teamSel = box.querySelector(".calc-team");
@@ -449,8 +466,12 @@
     const ids = Object.keys(data.teams);
     build.a = params.get("a") && data.teams[params.get("a")] ? params.get("a") : (me || ids[0]);
     build.b = params.get("b") && data.teams[params.get("b")] && params.get("b") !== build.a ? params.get("b") : ids.find((x) => x !== build.a);
-    (params.get("ga") || "").split(",").filter((id) => byId[id]).forEach((id) => build.ga.add(id));
-    (params.get("gb") || "").split(",").filter((id) => byId[id]).forEach((id) => build.gb.add(id));
+    const owns = (rid) => (id) => byId[id] && String(byId[id].owner) === String(rid);
+    const wantA = (params.get("ga") || "").split(",").filter(Boolean);
+    const wantB = (params.get("gb") || "").split(",").filter(Boolean);
+    wantA.filter(owns(build.a)).forEach((id) => build.ga.add(id));
+    wantB.filter(owns(build.b)).forEach((id) => build.gb.add(id));
+    noteStale(wantA.length + wantB.length - build.ga.size - build.gb.size, "build-result");
 
     for (const side of ["A", "B"]) {
       const select = document.querySelector(`.side-box[data-team="${side}"] select`);
@@ -664,6 +685,8 @@
     setupIdeas();
     document.querySelectorAll("[data-tab]").forEach((b) => b.addEventListener("click", () => showTab(b.dataset.tab)));
     showTab(tab, false);
+    // Rewrite the URL so a re-shared link drops anything that moved rosters.
+    if (stale) { if (tab === "calc") writeCalcHash(); else if (tab === "build") writeHash("build"); }
   }
 
   load();
