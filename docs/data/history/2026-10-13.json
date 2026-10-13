@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T01:57:10+00:00",
+  "generated_at": "2026-10-13T02:19:22+00:00",
   "league": {
     "id": "1312005038838673409",
     "name": "The HIM Dynasty",
@@ -337,120 +337,144 @@
   "draft": {
     "projected_order": [
       {
+        "slot": 1,
         "roster_id": 7,
         "team": "Finesse🥶🤴🏿",
         "owner": "JustinFreshly",
         "max_pf": 510.84,
+        "in_playoffs": false,
         "playoff_odds": 1.7,
         "first_pick_odds": 68.8,
         "avg_pick": 1.55,
         "most_likely_pick": 1
       },
       {
+        "slot": 2,
         "roster_id": 12,
         "team": "Daejon Mustard ",
         "owner": "JHam4Hunnid",
         "max_pf": 557.06,
+        "in_playoffs": false,
         "playoff_odds": 20.0,
         "first_pick_odds": 10.8,
         "avg_pick": 3.88,
         "most_likely_pick": 2
       },
       {
-        "roster_id": 1,
-        "team": "‘89 Earthquake",
-        "owner": "TheeDarryKing",
-        "max_pf": 620.98,
-        "playoff_odds": 4.3,
-        "first_pick_odds": 0.7,
-        "avg_pick": 4.62,
-        "most_likely_pick": 5
-      },
-      {
-        "roster_id": 2,
-        "team": "DOLLA BILLZ",
-        "owner": "RefMitch128",
-        "max_pf": 586.32,
-        "playoff_odds": 35.4,
-        "first_pick_odds": 3.3,
-        "avg_pick": 5.39,
-        "most_likely_pick": 3
-      },
-      {
-        "roster_id": 5,
-        "team": "Chocolate Gold ",
-        "owner": "JudasJudge",
-        "max_pf": 542.38,
-        "playoff_odds": 52.0,
-        "first_pick_odds": 10.8,
-        "avg_pick": 5.58,
-        "most_likely_pick": 7
-      },
-      {
+        "slot": 3,
         "roster_id": 10,
         "team": "🌨️🧱Brick by Brick🧱🌨️",
         "owner": "BryanGichaba",
         "max_pf": 580.6,
+        "in_playoffs": false,
         "playoff_odds": 45.1,
         "first_pick_odds": 3.6,
         "avg_pick": 6.15,
         "most_likely_pick": 4
       },
       {
-        "roster_id": 8,
-        "team": "MIP",
-        "owner": "toobizzie",
-        "max_pf": 599.98,
-        "playoff_odds": 58.3,
-        "first_pick_odds": 0.9,
-        "avg_pick": 6.86,
-        "most_likely_pick": 7
+        "slot": 4,
+        "roster_id": 2,
+        "team": "DOLLA BILLZ",
+        "owner": "RefMitch128",
+        "max_pf": 586.32,
+        "in_playoffs": false,
+        "playoff_odds": 35.4,
+        "first_pick_odds": 3.3,
+        "avg_pick": 5.39,
+        "most_likely_pick": 3
       },
       {
+        "slot": 5,
+        "roster_id": 1,
+        "team": "‘89 Earthquake",
+        "owner": "TheeDarryKing",
+        "max_pf": 620.98,
+        "in_playoffs": false,
+        "playoff_odds": 4.3,
+        "first_pick_odds": 0.7,
+        "avg_pick": 4.62,
+        "most_likely_pick": 5
+      },
+      {
+        "slot": 6,
         "roster_id": 11,
         "team": "Ryan Poles",
         "owner": "TribalChief13",
         "max_pf": 649.72,
+        "in_playoffs": false,
         "playoff_odds": 40.4,
         "first_pick_odds": 0.4,
         "avg_pick": 6.92,
         "most_likely_pick": 6
       },
       {
+        "slot": 7,
+        "roster_id": 5,
+        "team": "Chocolate Gold ",
+        "owner": "JudasJudge",
+        "max_pf": 542.38,
+        "in_playoffs": true,
+        "playoff_odds": 52.0,
+        "first_pick_odds": 10.8,
+        "avg_pick": 5.58,
+        "most_likely_pick": 7
+      },
+      {
+        "slot": 8,
         "roster_id": 4,
         "team": "The Lab",
         "owner": "JamesQua",
         "max_pf": 613.32,
+        "in_playoffs": true,
         "playoff_odds": 57.5,
         "first_pick_odds": 0.8,
         "avg_pick": 7.26,
         "most_likely_pick": 8
       },
       {
+        "slot": 9,
+        "roster_id": 8,
+        "team": "MIP",
+        "owner": "toobizzie",
+        "max_pf": 599.98,
+        "in_playoffs": true,
+        "playoff_odds": 58.3,
+        "first_pick_odds": 0.9,
+        "avg_pick": 6.86,
+        "most_likely_pick": 7
+      },
+      {
+        "slot": 10,
         "roster_id": 3,
         "team": "K-9’s Unit",
         "owner": "sleepymike09",
         "max_pf": 624.04,
+        "in_playoffs": true,
         "playoff_odds": 93.2,
         "first_pick_odds": 0.1,
         "avg_pick": 9.21,
         "most_likely_pick": 9
       },
       {
+        "slot": 11,
         "roster_id": 9,
         "team": "Top 5 Top 5 Top 5",
         "owner": "NewEleven",
         "max_pf": 732.3,
+        "in_playoffs": true,
         "playoff_odds": 93.3,
         "first_pick_odds": 0.0,
         "avg_pick": 10.02,
         "most_likely_pick": 10
       },
       {
+        "slot": 12,
         "roster_id": 6,
         "team": "Vanilla Diamonds",
         "owner": "VanillaDiamonds",
         "max_pf": 713.94,
+        "in_playoffs": true,
         "playoff_odds": 98.8,
         "first_pick_odds": 0.0,
         "avg_pick": 10.56,
@@ -576,6 +600,12 @@
           4.4,
           1.2,
           0.7
+        ],
+        "draft_slot": [
+          5,
+          5,
+          5,
+          5
         ]
       },
       "2": {
@@ -626,6 +656,12 @@
           0.5,
           1.2,
           3.3
+        ],
+        "draft_slot": [
+          7,
+          9,
+          7,
+          4
         ]
       },
       "3": {
@@ -676,6 +712,12 @@
           0.8,
           0.2,
           0.1
+        ],
+        "draft_slot": [
+          10,
+          7,
+          9,
+          10
         ]
       },
       "4": {
@@ -726,6 +768,12 @@
           0.6,
           0.3,
           0.8
+        ],
+        "draft_slot": [
+          12,
+          8,
+          10,
+          8
         ]
       },
       "5": {
@@ -776,6 +824,12 @@
           15.9,
           17.6,
           10.8
+        ],
+        "draft_slot": [
+          4,
+          2,
+          2,
+          7
         ]
       },
       "6": {
@@ -826,6 +880,12 @@
           0.1,
           0.0,
           0.0
+        ],
+        "draft_slot": [
+          9,
+          11,
+          12,
+          12
         ]
       },
       "7": {
@@ -876,6 +936,12 @@
           59.1,
           60.7,
           68.8
+        ],
+        "draft_slot": [
+          1,
+          1,
+          1,
+          1
         ]
       },
       "8": {
@@ -926,6 +992,12 @@
           6.0,
           1.4,
           0.9
+        ],
+        "draft_slot": [
+          8,
+          4,
+          4,
+          9
         ]
       },
       "9": {
@@ -976,6 +1048,12 @@
           0.2,
           0.0,
           0.0
+        ],
+        "draft_slot": [
+          6,
+          10,
+          11,
+          11
         ]
       },
       "10": {
@@ -1026,6 +1104,12 @@
           1.5,
           0.4,
           3.6
+        ],
+        "draft_slot": [
+          2,
+          6,
+          8,
+          3
         ]
       },
       "11": {
@@ -1076,6 +1160,12 @@
           0.1,
           0.1,
           0.4
+        ],
+        "draft_slot": [
+          11,
+          12,
+          6,
+          6
         ]
       },
       "12": {
@@ -1126,6 +1216,12 @@
           10.8,
           16.8,
           10.8
+        ],
+        "draft_slot": [
+          3,
+          3,
+          3,
+          2
         ]
       }
     }
@@ -1865,7 +1961,7 @@
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
           "win_pct": 29.5,
-          "points": 96.78,
+          "points": 99.52,
           "opp_points": 166.86
         },
         {
@@ -3211,7 +3307,7 @@
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
           "win_pct": 27.5,
-          "points": 142.06,
+          "points": 143.36,
           "opp_points": 132.12
         },
         {
@@ -3668,7 +3764,7 @@
           "opponent_owner": "JudasJudge",
           "win_pct": 72.5,
           "points": 132.12,
-          "opp_points": 142.06
+          "opp_points": 143.36
         },
         {
           "week": 6,
@@ -4947,7 +5043,7 @@
           "opponent_owner": "RefMitch128",
           "win_pct": 70.5,
           "points": 166.86,
-          "opp_points": 96.78
+          "opp_points": 99.52
         },
         {
           "week": 6,
@@ -5837,7 +5933,7 @@
           "opponent_owner": "JHam4Hunnid",
           "win_pct": 55.9,
           "points": 144.84,
-          "opp_points": 120.5
+          "opp_points": 120.8
         },
         {
           "week": 6,
@@ -6292,7 +6388,7 @@
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
           "win_pct": 44.1,
-          "points": 120.5,
+          "points": 120.8,
           "opp_points": 144.84
         },
         {

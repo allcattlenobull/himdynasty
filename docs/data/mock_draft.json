@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T01:57:48+00:00",
+ "generated_at": "2026-10-13T02:20:08+00:00",
  "draft_year": 2027,
  "college_season": 2026,
  "rounds": 3,
@@ -56,10 +56,10 @@
    "pick": 3,
    "label": "1.03",
    "overall": 3,
-   "owner": 1,
-   "owner_team": "‘89 Earthquake",
-   "original": 1,
-   "original_team": "‘89 Earthquake",
+   "owner": 10,
+   "owner_team": "🌨️🧱Brick by Brick🧱🌨️",
+   "original": 10,
+   "original_team": "🌨️🧱Brick by Brick🧱🌨️",
    "traded": false,
    "prospect": "jadan baugh",
    "reason": "Best available"
@@ -82,10 +82,10 @@
    "pick": 5,
    "label": "1.05",
    "overall": 5,
-   "owner": 5,
-   "owner_team": "Chocolate Gold ",
-   "original": 5,
-   "original_team": "Chocolate Gold ",
+   "owner": 1,
+   "owner_team": "‘89 Earthquake",
+   "original": 1,
+   "original_team": "‘89 Earthquake",
    "traded": false,
    "prospect": "cam coleman",
    "reason": "Best available"
@@ -95,25 +95,25 @@
    "pick": 6,
    "label": "1.06",
    "overall": 6,
-   "owner": 10,
-   "owner_team": "🌨️🧱Brick by Brick🧱🌨️",
-   "original": 10,
-   "original_team": "🌨️🧱Brick by Brick🧱🌨️",
+   "owner": 11,
+   "owner_team": "Ryan Poles",
+   "original": 11,
+   "original_team": "Ryan Poles",
    "traded": false,
-   "prospect": "kewan lacy",
-   "reason": "Fills a RB need"
+   "prospect": "nick marsh",
+   "reason": "Best available"
   },
   {
    "round": 1,
    "pick": 7,
    "label": "1.07",
    "overall": 7,
-   "owner": 11,
-   "owner_team": "Ryan Poles",
-   "original": 8,
-   "original_team": "MIP",
-   "traded": true,
-   "prospect": "nick marsh",
+   "owner": 5,
+   "owner_team": "Chocolate Gold ",
+   "original": 5,
+   "original_team": "Chocolate Gold ",
+   "traded": false,
+   "prospect": "kj duff",
    "reason": "Best available"
   },
   {
@@ -121,26 +121,26 @@
    "pick": 8,
    "label": "1.08",
    "overall": 8,
-   "owner": 11,
-   "owner_team": "Ryan Poles",
-   "original": 11,
-   "original_team": "Ryan Poles",
-   "traded": false,
+   "owner": 9,
+   "owner_team": "Top 5 Top 5 Top 5",
+   "original": 4,
+   "original_team": "The Lab",
+   "traded": true,
    "prospect": "treydez green",
-   "reason": "Value pick"
+   "reason": "Fills a TE need"
   },
   {
    "round": 1,
    "pick": 9,
    "label": "1.09",
    "overall": 9,
-   "owner": 9,
-   "owner_team": "Top 5 Top 5 Top 5",
-   "original": 4,
-   "original_team": "The Lab",
+   "owner": 11,
+   "owner_team": "Ryan Poles",
+   "original": 8,
+   "original_team": "MIP",
    "traded": true,
-   "prospect": "jamari johnson",
-   "reason": "Fills a TE need"
+   "prospect": "trinidad chambliss",
+   "reason": "Best available"
   },
   {
    "round": 1,
@@ -152,7 +152,7 @@
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": true,
-   "prospect": "kj duff",
+   "prospect": "kewan lacy",
    "reason": "Best available"
   },
   {
@@ -165,7 +165,7 @@
    "original": 9,
    "original_team": "Top 5 Top 5 Top 5",
    "traded": true,
-   "prospect": "trinidad chambliss",
+   "prospect": "drew mestemaker",
    "reason": "Best available"
   },
   {
@@ -178,8 +178,8 @@
    "original": 6,
    "original_team": "Vanilla Diamonds",
    "traded": true,
-   "prospect": "drew mestemaker",
-   "reason": "Best available"
+   "prospect": "reed harris",
+   "reason": "Fills a WR need"
   },
   {
    "round": 2,
@@ -191,8 +191,8 @@
    "original": 7,
    "original_team": "Finesse🥶🤴🏿",
    "traded": false,
-   "prospect": "reed harris",
-   "reason": "Best available"
+   "prospect": "cj carr",
+   "reason": "Fills a QB need"
   },
   {
    "round": 2,
@@ -204,21 +204,21 @@
    "original": 12,
    "original_team": "Daejon Mustard ",
    "traded": false,
-   "prospect": "deuce alexander",
-   "reason": "Fills a WR need"
+   "prospect": "jamari johnson",
+   "reason": "Best available"
   },
   {
    "round": 2,
    "pick": 3,
    "label": "2.03",
    "overall": 15,
-   "owner": 6,
-   "owner_team": "Vanilla Diamonds",
-   "original": 1,
-   "original_team": "‘89 Earthquake",
-   "traded": true,
-   "prospect": "cj carr",
-   "reason": "Best available"
+   "owner": 10,
+   "owner_team": "🌨️🧱Brick by Brick🧱🌨️",
+   "original": 10,
+   "original_team": "🌨️🧱Brick by Brick🧱🌨️",
+   "traded": false,
+   "prospect": "deuce alexander",
+   "reason": "Value pick"
   },
   {
    "round": 2,
@@ -238,25 +238,25 @@
    "pick": 5,
    "label": "2.05",
    "overall": 17,
-   "owner": 1,
-   "owner_team": "‘89 Earthquake",
-   "original": 5,
-   "original_team": "Chocolate Gold ",
+   "owner": 6,
+   "owner_team": "Vanilla Diamonds",
+   "original": 1,
+   "original_team": "‘89 Earthquake",
    "traded": true,
-   "prospect": "ryan coleman williams",
-   "reason": "Fills a WR need"
+   "prospect": "dante moore",
+   "reason": "Best available"
   },
   {
    "round": 2,
    "pick": 6,
    "label": "2.06",
    "overall": 18,
-   "owner": 10,
-   "owner_team": "🌨️🧱Brick by Brick🧱🌨️",
-   "original": 10,
-   "original_team": "🌨️🧱Brick by Brick🧱🌨️",
+   "owner": 11,
+   "owner_team": "Ryan Poles",
+   "original": 11,
+   "original_team": "Ryan Poles",
    "traded": false,
-   "prospect": "dante moore",
+   "prospect": "ryan coleman williams",
    "reason": "Best available"
   },
   {
@@ -264,10 +264,10 @@
    "pick": 7,
    "label": "2.07",
    "overall": 19,
-   "owner": 7,
-   "owner_team": "Finesse🥶🤴🏿",
-   "original": 8,
-   "original_team": "MIP",
+   "owner": 1,
+   "owner_team": "‘89 Earthquake",
+   "original": 5,
+   "original_team": "Chocolate Gold ",
    "traded": true,
    "prospect": "mark fletcher",
    "reason": "Best available"
@@ -277,19 +277,6 @@
    "pick": 8,
    "label": "2.08",
    "overall": 20,
-   "owner": 11,
-   "owner_team": "Ryan Poles",
-   "original": 11,
-   "original_team": "Ryan Poles",
-   "traded": false,
-   "prospect": "jamal roberts",
-   "reason": "Best available"
-  },
-  {
-   "round": 2,
-   "pick": 9,
-   "label": "2.09",
-   "overall": 21,
    "owner": 1,
    "owner_team": "‘89 Earthquake",
    "original": 4,
@@ -297,6 +284,19 @@
    "traded": true,
    "prospect": "luke reynolds",
    "reason": "Value pick"
+  },
+  {
+   "round": 2,
+   "pick": 9,
+   "label": "2.09",
+   "overall": 21,
+   "owner": 7,
+   "owner_team": "Finesse🥶🤴🏿",
+   "original": 8,
+   "original_team": "MIP",
+   "traded": true,
+   "prospect": "jamal roberts",
+   "reason": "Best available"
   },
   {
    "round": 2,
@@ -360,20 +360,20 @@
    "original": 12,
    "original_team": "Daejon Mustard ",
    "traded": false,
-   "prospect": "wayshawn parker",
-   "reason": "Best available"
+   "prospect": "umari hatcher",
+   "reason": "Fills a WR need"
   },
   {
    "round": 3,
    "pick": 3,
    "label": "3.03",
    "overall": 27,
-   "owner": 1,
-   "owner_team": "‘89 Earthquake",
-   "original": 1,
-   "original_team": "‘89 Earthquake",
+   "owner": 10,
+   "owner_team": "🌨️🧱Brick by Brick🧱🌨️",
+   "original": 10,
+   "original_team": "🌨️🧱Brick by Brick🧱🌨️",
    "traded": false,
-   "prospect": "dylan riley",
+   "prospect": "wayshawn parker",
    "reason": "Best available"
   },
   {
@@ -386,18 +386,18 @@
    "original": 2,
    "original_team": "DOLLA BILLZ",
    "traded": true,
-   "prospect": "umari hatcher",
-   "reason": "Fills a WR need"
+   "prospect": "dylan riley",
+   "reason": "Best available"
   },
   {
    "round": 3,
    "pick": 5,
    "label": "3.05",
    "overall": 29,
-   "owner": 5,
-   "owner_team": "Chocolate Gold ",
-   "original": 5,
-   "original_team": "Chocolate Gold ",
+   "owner": 1,
+   "owner_team": "‘89 Earthquake",
+   "original": 1,
+   "original_team": "‘89 Earthquake",
    "traded": false,
    "prospect": "wayne knight",
    "reason": "Best available"
@@ -407,10 +407,10 @@
    "pick": 6,
    "label": "3.06",
    "overall": 30,
-   "owner": 10,
-   "owner_team": "🌨️🧱Brick by Brick🧱🌨️",
-   "original": 10,
-   "original_team": "🌨️🧱Brick by Brick🧱🌨️",
+   "owner": 11,
+   "owner_team": "Ryan Poles",
+   "original": 11,
+   "original_team": "Ryan Poles",
    "traded": false,
    "prospect": "cam cook",
    "reason": "Best available"
@@ -420,10 +420,10 @@
    "pick": 7,
    "label": "3.07",
    "overall": 31,
-   "owner": 8,
-   "owner_team": "MIP",
-   "original": 8,
-   "original_team": "MIP",
+   "owner": 5,
+   "owner_team": "Chocolate Gold ",
+   "original": 5,
+   "original_team": "Chocolate Gold ",
    "traded": false,
    "prospect": "desean bishop",
    "reason": "Best available"
@@ -433,11 +433,11 @@
    "pick": 8,
    "label": "3.08",
    "overall": 32,
-   "owner": 11,
-   "owner_team": "Ryan Poles",
-   "original": 11,
-   "original_team": "Ryan Poles",
-   "traded": false,
+   "owner": 9,
+   "owner_team": "Top 5 Top 5 Top 5",
+   "original": 4,
+   "original_team": "The Lab",
+   "traded": true,
    "prospect": "lanorris sellers",
    "reason": "Best available"
   },
@@ -446,13 +446,13 @@
    "pick": 9,
    "label": "3.09",
    "overall": 33,
-   "owner": 9,
-   "owner_team": "Top 5 Top 5 Top 5",
-   "original": 4,
-   "original_team": "The Lab",
-   "traded": true,
-   "prospect": "jayden maiava",
-   "reason": "Fills a QB need"
+   "owner": 8,
+   "owner_team": "MIP",
+   "original": 8,
+   "original_team": "MIP",
+   "traded": false,
+   "prospect": "anthony evans",
+   "reason": "Best available"
   },
   {
    "round": 3,
@@ -464,7 +464,7 @@
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": false,
-   "prospect": "anthony evans",
+   "prospect": "carlos hernandez",
    "reason": "Best available"
   },
   {
@@ -477,8 +477,8 @@
    "original": 9,
    "original_team": "Top 5 Top 5 Top 5",
    "traded": false,
-   "prospect": "carlos hernandez",
-   "reason": "Best available"
+   "prospect": "jayden maiava",
+   "reason": "Value pick"
   },
   {
    "round": 3,
