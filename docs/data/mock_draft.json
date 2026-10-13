@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T10:17:38+00:00",
+ "generated_at": "2026-10-13T12:32:20+00:00",
  "draft_year": 2027,
  "college_season": 2026,
  "rounds": 3,
@@ -9,10 +9,10 @@
   "ppr": 1.0,
   "te_premium": 0,
   "position_multipliers": {
-   "QB": 0.72,
-   "RB": 1.1,
-   "WR": 1.05,
-   "TE": 0.82
+   "QB": 0.7,
+   "RB": 1.0,
+   "WR": 1.0,
+   "TE": 0.9
   }
  },
  "weights": {
@@ -41,15 +41,21 @@
     "needs": [],
     "set": [
      "QB",
-     "RB",
-     "WR"
+     "WR",
+     "TE"
+    ],
+    "thin": [
+     "RB"
     ],
     "ranks": {
      "QB": 3,
      "RB": 3,
      "WR": 2,
      "TE": 4
-    }
+    },
+    "tendency": [
+     "Leans TE"
+    ]
    }
   },
   {
@@ -62,20 +68,25 @@
    "original": 12,
    "original_team": "Daejon Mustard ",
    "traded": false,
-   "prospect": "jadan baugh",
-   "reason": "Fills a RB need (11th at RB)",
+   "prospect": "charlie becker",
+   "reason": "Best available",
    "context": {
     "needs": [
      "RB",
      "TE"
     ],
     "set": [],
+    "thin": [],
     "ranks": {
      "QB": 5,
      "RB": 11,
      "WR": 7,
      "TE": 9
-    }
+    },
+    "tendency": [
+     "Leans WR",
+     "Avoids TE"
+    ]
    }
   },
   {
@@ -88,20 +99,25 @@
    "original": 10,
    "original_team": "🌨️🧱Brick by Brick🧱🌨️",
    "traded": false,
-   "prospect": "charlie becker",
+   "prospect": "cam coleman",
    "reason": "Fills a WR need (11th at WR)",
    "context": {
     "needs": [
-     "QB",
-     "TE"
+     "RB",
+     "WR"
     ],
     "set": [],
+    "thin": [],
     "ranks": {
      "QB": 11,
-     "RB": 10,
+     "RB": 9,
      "WR": 11,
      "TE": 11
-    }
+    },
+    "tendency": [
+     "Leans QB",
+     "Leans TE"
+    ]
    }
   },
   {
@@ -114,20 +130,27 @@
    "original": 1,
    "original_team": "‘89 Earthquake",
    "traded": false,
-   "prospect": "cam coleman",
-   "reason": "Fills a WR need (9th at WR)",
+   "prospect": "jadan baugh",
+   "reason": "Fills a RB need (6th at RB)",
    "context": {
     "needs": [
-     "TE",
-     "WR"
+     "WR",
+     "TE"
     ],
     "set": [],
+    "thin": [
+     "RB"
+    ],
     "ranks": {
      "QB": 7,
-     "RB": 7,
+     "RB": 6,
      "WR": 9,
      "TE": 8
-    }
+    },
+    "tendency": [
+     "Leans RB",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -140,21 +163,27 @@
    "original": 2,
    "original_team": "DOLLA BILLZ",
    "traded": true,
-   "prospect": "treydez green",
-   "reason": "Value pick",
+   "prospect": "kewan lacy",
+   "reason": "Adds RB depth",
    "context": {
     "needs": [],
     "set": [
      "QB",
-     "RB",
-     "WR"
+     "WR",
+     "TE"
+    ],
+    "thin": [
+     "RB"
     ],
     "ranks": {
      "QB": 3,
      "RB": 3,
      "WR": 2,
      "TE": 4
-    }
+    },
+    "tendency": [
+     "Leans TE"
+    ]
    }
   },
   {
@@ -171,15 +200,21 @@
    "reason": "Fills a WR need (10th at WR)",
    "context": {
     "needs": [
+     "RB",
      "WR"
     ],
     "set": [],
+    "thin": [],
     "ranks": {
      "QB": 4,
      "RB": 8,
      "WR": 10,
      "TE": 5
-    }
+    },
+    "tendency": [
+     "Leans WR",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -192,19 +227,28 @@
    "original": 5,
    "original_team": "Chocolate Gold ",
    "traded": false,
-   "prospect": "jamari johnson",
-   "reason": "Fills a TE need (12th at TE)",
+   "prospect": "kj duff",
+   "reason": "Adds WR depth",
    "context": {
     "needs": [
      "TE"
     ],
-    "set": [],
+    "set": [
+     "QB"
+    ],
+    "thin": [
+     "WR"
+    ],
     "ranks": {
      "QB": 2,
-     "RB": 5,
+     "RB": 7,
      "WR": 5,
      "TE": 12
-    }
+    },
+    "tendency": [
+     "Leans WR",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -217,17 +261,24 @@
    "original": 8,
    "original_team": "MIP",
    "traded": true,
-   "prospect": "kewan lacy",
-   "reason": "Value pick",
+   "prospect": "reed harris",
+   "reason": "Manager leans WR",
    "context": {
-    "needs": [],
+    "needs": [
+     "RB"
+    ],
     "set": [],
+    "thin": [],
     "ranks": {
      "QB": 4,
      "RB": 8,
      "WR": 10,
      "TE": 5
-    }
+    },
+    "tendency": [
+     "Leans WR",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -240,22 +291,27 @@
    "original": 4,
    "original_team": "The Lab",
    "traded": true,
-   "prospect": "darian mensah",
+   "prospect": "treydez green",
    "reason": "Best available",
    "context": {
     "needs": [],
     "set": [
      "QB",
-     "RB",
      "WR",
      "TE"
+    ],
+    "thin": [
+     "RB"
     ],
     "ranks": {
      "QB": 3,
      "RB": 3,
      "WR": 2,
      "TE": 4
-    }
+    },
+    "tendency": [
+     "Leans TE"
+    ]
    }
   },
   {
@@ -268,20 +324,27 @@
    "original": 6,
    "original_team": "Vanilla Diamonds",
    "traded": true,
-   "prospect": "drew mestemaker",
-   "reason": "Fills a QB need (12th at QB)",
+   "prospect": "deuce alexander",
+   "reason": "Fills a WR need (6th at WR)",
    "context": {
     "needs": [
-     "QB",
-     "RB"
+     "RB",
+     "WR"
     ],
-    "set": [],
+    "set": [
+     "TE"
+    ],
+    "thin": [],
     "ranks": {
      "QB": 12,
      "RB": 12,
      "WR": 6,
      "TE": 3
-    }
+    },
+    "tendency": [
+     "Leans RB",
+     "Leans TE"
+    ]
    }
   },
   {
@@ -294,19 +357,29 @@
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": true,
-   "prospect": "trinidad chambliss",
-   "reason": "Value pick",
+   "prospect": "mark fletcher",
+   "reason": "Fills a RB need (12th at RB)",
    "context": {
     "needs": [
-     "RB"
+     "RB",
+     "QB"
     ],
-    "set": [],
+    "set": [
+     "TE"
+    ],
+    "thin": [
+     "WR"
+    ],
     "ranks": {
      "QB": 12,
      "RB": 12,
      "WR": 6,
      "TE": 3
-    }
+    },
+    "tendency": [
+     "Leans RB",
+     "Leans TE"
+    ]
    }
   },
   {
@@ -319,8 +392,8 @@
    "original": 9,
    "original_team": "Top 5 Top 5 Top 5",
    "traded": true,
-   "prospect": "cj carr",
-   "reason": "Fills a QB need (10th at QB)",
+   "prospect": "jamari johnson",
+   "reason": "Best available",
    "context": {
     "needs": [
      "QB"
@@ -328,12 +401,19 @@
     "set": [
      "WR"
     ],
+    "thin": [
+     "RB"
+    ],
     "ranks": {
      "QB": 10,
      "RB": 4,
      "WR": 1,
      "TE": 7
-    }
+    },
+    "tendency": [
+     "Leans TE",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -346,19 +426,29 @@
    "original": 7,
    "original_team": "Finesse🥶🤴🏿",
    "traded": false,
-   "prospect": "kj duff",
-   "reason": "Best available",
+   "prospect": "ryan coleman williams",
+   "reason": "Adds WR depth",
    "context": {
     "needs": [
+     "QB",
      "RB"
     ],
-    "set": [],
+    "set": [
+     "TE"
+    ],
+    "thin": [
+     "WR"
+    ],
     "ranks": {
      "QB": 12,
      "RB": 12,
      "WR": 6,
      "TE": 3
-    }
+    },
+    "tendency": [
+     "Leans RB",
+     "Leans TE"
+    ]
    }
   },
   {
@@ -371,19 +461,27 @@
    "original": 12,
    "original_team": "Daejon Mustard ",
    "traded": false,
-   "prospect": "reed harris",
-   "reason": "Best available",
+   "prospect": "jamal roberts",
+   "reason": "Fills a RB need (11th at RB)",
    "context": {
     "needs": [
+     "RB",
      "TE"
     ],
-    "set": [],
+    "set": [
+     "WR"
+    ],
+    "thin": [],
     "ranks": {
      "QB": 5,
      "RB": 11,
      "WR": 7,
      "TE": 9
-    }
+    },
+    "tendency": [
+     "Leans WR",
+     "Avoids TE"
+    ]
    }
   },
   {
@@ -396,20 +494,27 @@
    "original": 10,
    "original_team": "🌨️🧱Brick by Brick🧱🌨️",
    "traded": false,
-   "prospect": "arch manning",
-   "reason": "Fills a QB need (11th at QB)",
+   "prospect": "wyatt young",
+   "reason": "Adds WR depth",
    "context": {
     "needs": [
-     "QB",
+     "RB",
      "TE"
     ],
     "set": [],
+    "thin": [
+     "WR"
+    ],
     "ranks": {
      "QB": 11,
-     "RB": 10,
+     "RB": 9,
      "WR": 11,
      "TE": 11
-    }
+    },
+    "tendency": [
+     "Leans QB",
+     "Leans TE"
+    ]
    }
   },
   {
@@ -422,19 +527,29 @@
    "original": 1,
    "original_team": "‘89 Earthquake",
    "traded": true,
-   "prospect": "dante moore",
+   "prospect": "collin dixon",
    "reason": "Value pick",
    "context": {
-    "needs": [],
+    "needs": [
+     "QB"
+    ],
     "set": [
-     "WR"
+     "WR",
+     "TE"
+    ],
+    "thin": [
+     "RB"
     ],
     "ranks": {
      "QB": 10,
      "RB": 4,
      "WR": 1,
      "TE": 7
-    }
+    },
+    "tendency": [
+     "Leans TE",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -447,19 +562,29 @@
    "original": 2,
    "original_team": "DOLLA BILLZ",
    "traded": true,
-   "prospect": "luke reynolds",
-   "reason": "Value pick",
+   "prospect": "darian mensah",
+   "reason": "Fills a QB need (10th at QB)",
    "context": {
-    "needs": [],
+    "needs": [
+     "QB"
+    ],
     "set": [
-     "WR"
+     "WR",
+     "TE"
+    ],
+    "thin": [
+     "RB"
     ],
     "ranks": {
      "QB": 10,
      "RB": 4,
      "WR": 1,
      "TE": 7
-    }
+    },
+    "tendency": [
+     "Leans TE",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -472,17 +597,26 @@
    "original": 11,
    "original_team": "Ryan Poles",
    "traded": false,
-   "prospect": "deuce alexander",
-   "reason": "Best available",
+   "prospect": "jahiem white",
+   "reason": "Fills a RB need (8th at RB)",
    "context": {
-    "needs": [],
-    "set": [],
+    "needs": [
+     "RB"
+    ],
+    "set": [
+     "WR"
+    ],
+    "thin": [],
     "ranks": {
      "QB": 4,
      "RB": 8,
      "WR": 10,
      "TE": 5
-    }
+    },
+    "tendency": [
+     "Leans WR",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -495,19 +629,27 @@
    "original": 5,
    "original_team": "Chocolate Gold ",
    "traded": true,
-   "prospect": "ryan coleman williams",
-   "reason": "Best available",
+   "prospect": "umari hatcher",
+   "reason": "Fills a WR need (9th at WR)",
    "context": {
     "needs": [
+     "WR",
      "TE"
     ],
     "set": [],
+    "thin": [
+     "RB"
+    ],
     "ranks": {
      "QB": 7,
-     "RB": 7,
+     "RB": 6,
      "WR": 9,
      "TE": 8
-    }
+    },
+    "tendency": [
+     "Leans RB",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -520,19 +662,29 @@
    "original": 8,
    "original_team": "MIP",
    "traded": true,
-   "prospect": "mark fletcher",
+   "prospect": "wayshawn parker",
    "reason": "Fills a RB need (12th at RB)",
    "context": {
     "needs": [
+     "QB",
      "RB"
     ],
-    "set": [],
+    "set": [
+     "TE"
+    ],
+    "thin": [
+     "WR"
+    ],
     "ranks": {
      "QB": 12,
      "RB": 12,
      "WR": 6,
      "TE": 3
-    }
+    },
+    "tendency": [
+     "Leans RB",
+     "Leans TE"
+    ]
    }
   },
   {
@@ -545,21 +697,27 @@
    "original": 4,
    "original_team": "The Lab",
    "traded": true,
-   "prospect": "julian sayin",
-   "reason": "Best available",
+   "prospect": "anthony evans",
+   "reason": "Adds WR depth",
    "context": {
     "needs": [
      "TE"
     ],
-    "set": [
+    "set": [],
+    "thin": [
+     "RB",
      "WR"
     ],
     "ranks": {
      "QB": 7,
-     "RB": 7,
+     "RB": 6,
      "WR": 9,
      "TE": 8
-    }
+    },
+    "tendency": [
+     "Leans RB",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -572,19 +730,27 @@
    "original": 6,
    "original_team": "Vanilla Diamonds",
    "traded": false,
-   "prospect": "jamal roberts",
-   "reason": "Best available",
+   "prospect": "dylan riley",
+   "reason": "Adds RB depth",
    "context": {
     "needs": [],
     "set": [
-     "WR"
+     "WR",
+     "TE"
+    ],
+    "thin": [
+     "RB"
     ],
     "ranks": {
      "QB": 10,
      "RB": 4,
      "WR": 1,
      "TE": 7
-    }
+    },
+    "tendency": [
+     "Leans TE",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -597,22 +763,25 @@
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": false,
-   "prospect": "wyatt young",
+   "prospect": "carlos hernandez",
    "reason": "Fills a WR need (12th at WR)",
    "context": {
     "needs": [
-     "TE",
-     "WR"
+     "WR",
+     "TE"
     ],
-    "set": [
-     "RB"
-    ],
+    "set": [],
+    "thin": [],
     "ranks": {
      "QB": 8,
      "RB": 1,
      "WR": 12,
      "TE": 10
-    }
+    },
+    "tendency": [
+     "Leans QB",
+     "Avoids RB"
+    ]
    }
   },
   {
@@ -625,21 +794,25 @@
    "original": 9,
    "original_team": "Top 5 Top 5 Top 5",
    "traded": true,
-   "prospect": "austin simmons",
-   "reason": "Value pick",
+   "prospect": "kelby valsin",
+   "reason": "Fills a WR need (12th at WR)",
    "context": {
     "needs": [
-     "TE"
+     "TE",
+     "WR"
     ],
-    "set": [
-     "RB"
-    ],
+    "set": [],
+    "thin": [],
     "ranks": {
      "QB": 8,
      "RB": 1,
      "WR": 12,
      "TE": 10
-    }
+    },
+    "tendency": [
+     "Leans QB",
+     "Avoids RB"
+    ]
    }
   },
   {
@@ -652,12 +825,14 @@
    "original": 7,
    "original_team": "Finesse🥶🤴🏿",
    "traded": true,
-   "prospect": "collin dixon",
-   "reason": "Value pick",
+   "prospect": "drew mestemaker",
+   "reason": "Fills a QB need (6th at QB)",
    "context": {
-    "needs": [],
-    "set": [
-     "RB",
+    "needs": [
+     "QB"
+    ],
+    "set": [],
+    "thin": [
      "TE"
     ],
     "ranks": {
@@ -665,7 +840,11 @@
      "RB": 2,
      "WR": 8,
      "TE": 2
-    }
+    },
+    "tendency": [
+     "Leans RB",
+     "Avoids WR"
+    ]
    }
   },
   {
@@ -678,19 +857,27 @@
    "original": 12,
    "original_team": "Daejon Mustard ",
    "traded": false,
-   "prospect": "jahiem white",
-   "reason": "Best available",
+   "prospect": "wayne knight",
+   "reason": "Fills a RB need (11th at RB)",
    "context": {
     "needs": [
-     "TE"
+     "TE",
+     "RB"
     ],
-    "set": [],
+    "set": [
+     "WR"
+    ],
+    "thin": [],
     "ranks": {
      "QB": 5,
      "RB": 11,
      "WR": 7,
      "TE": 9
-    }
+    },
+    "tendency": [
+     "Leans WR",
+     "Avoids TE"
+    ]
    }
   },
   {
@@ -703,20 +890,27 @@
    "original": 10,
    "original_team": "🌨️🧱Brick by Brick🧱🌨️",
    "traded": false,
-   "prospect": "wayshawn parker",
-   "reason": "Fills a RB need (10th at RB)",
+   "prospect": "trinidad chambliss",
+   "reason": "Fills a QB need (11th at QB)",
    "context": {
     "needs": [
-     "TE",
-     "RB"
+     "RB",
+     "TE"
     ],
     "set": [],
+    "thin": [
+     "WR"
+    ],
     "ranks": {
      "QB": 11,
-     "RB": 10,
+     "RB": 9,
      "WR": 11,
      "TE": 11
-    }
+    },
+    "tendency": [
+     "Leans QB",
+     "Leans TE"
+    ]
    }
   },
   {
@@ -729,21 +923,27 @@
    "original": 1,
    "original_team": "‘89 Earthquake",
    "traded": false,
-   "prospect": "dylan riley",
-   "reason": "Best available",
+   "prospect": "luke reynolds",
+   "reason": "Fills a TE need (8th at TE)",
    "context": {
     "needs": [
      "TE"
     ],
-    "set": [
+    "set": [],
+    "thin": [
+     "RB",
      "WR"
     ],
     "ranks": {
      "QB": 7,
-     "RB": 7,
+     "RB": 6,
      "WR": 9,
      "TE": 8
-    }
+    },
+    "tendency": [
+     "Leans RB",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -756,12 +956,12 @@
    "original": 2,
    "original_team": "DOLLA BILLZ",
    "traded": true,
-   "prospect": "lanorris sellers",
-   "reason": "Value pick",
+   "prospect": "cam cook",
+   "reason": "Manager leans RB",
    "context": {
     "needs": [],
-    "set": [
-     "RB",
+    "set": [],
+    "thin": [
      "TE"
     ],
     "ranks": {
@@ -769,7 +969,11 @@
      "RB": 2,
      "WR": 8,
      "TE": 2
-    }
+    },
+    "tendency": [
+     "Leans RB",
+     "Avoids WR"
+    ]
    }
   },
   {
@@ -782,17 +986,26 @@
    "original": 11,
    "original_team": "Ryan Poles",
    "traded": false,
-   "prospect": "wayne knight",
-   "reason": "Best available",
+   "prospect": "desean bishop",
+   "reason": "Adds RB depth",
    "context": {
     "needs": [],
-    "set": [],
+    "set": [
+     "WR"
+    ],
+    "thin": [
+     "RB"
+    ],
     "ranks": {
      "QB": 4,
      "RB": 8,
      "WR": 10,
      "TE": 5
-    }
+    },
+    "tendency": [
+     "Leans WR",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -805,17 +1018,28 @@
    "original": 5,
    "original_team": "Chocolate Gold ",
    "traded": false,
-   "prospect": "cam cook",
-   "reason": "Best available",
+   "prospect": "nate frazier",
+   "reason": "Value pick",
    "context": {
-    "needs": [],
-    "set": [],
+    "needs": [
+     "TE"
+    ],
+    "set": [
+     "QB"
+    ],
+    "thin": [
+     "WR"
+    ],
     "ranks": {
      "QB": 2,
-     "RB": 5,
+     "RB": 7,
      "WR": 5,
      "TE": 12
-    }
+    },
+    "tendency": [
+     "Leans WR",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -828,23 +1052,29 @@
    "original": 8,
    "original_team": "MIP",
    "traded": false,
-   "prospect": "desean bishop",
-   "reason": "Fills a RB need (9th at RB)",
+   "prospect": "cj carr",
+   "reason": "Fills a QB need (9th at QB)",
    "context": {
     "needs": [
-     "RB",
-     "QB"
+     "QB",
+     "RB"
     ],
     "set": [
-     "WR",
      "TE"
+    ],
+    "thin": [
+     "WR"
     ],
     "ranks": {
      "QB": 9,
-     "RB": 9,
+     "RB": 10,
      "WR": 3,
      "TE": 1
-    }
+    },
+    "tendency": [
+     "Leans RB",
+     "Leans QB"
+    ]
    }
   },
   {
@@ -857,22 +1087,27 @@
    "original": 4,
    "original_team": "The Lab",
    "traded": true,
-   "prospect": "nate frazier",
-   "reason": "Value pick",
+   "prospect": "arch manning",
+   "reason": "Best available",
    "context": {
     "needs": [],
     "set": [
      "QB",
-     "RB",
      "WR",
      "TE"
+    ],
+    "thin": [
+     "RB"
     ],
     "ranks": {
      "QB": 3,
      "RB": 3,
      "WR": 2,
      "TE": 4
-    }
+    },
+    "tendency": [
+     "Leans TE"
+    ]
    }
   },
   {
@@ -885,20 +1120,27 @@
    "original": 6,
    "original_team": "Vanilla Diamonds",
    "traded": false,
-   "prospect": "jayden maiava",
-   "reason": "Value pick",
+   "prospect": "dante moore",
+   "reason": "Best available",
    "context": {
     "needs": [],
     "set": [
-     "RB",
-     "WR"
+     "WR",
+     "TE"
+    ],
+    "thin": [
+     "RB"
     ],
     "ranks": {
      "QB": 10,
      "RB": 4,
      "WR": 1,
      "TE": 7
-    }
+    },
+    "tendency": [
+     "Leans TE",
+     "Avoids QB"
+    ]
    }
   },
   {
@@ -911,21 +1153,26 @@
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": false,
-   "prospect": "umari hatcher",
+   "prospect": "julian sayin",
    "reason": "Best available",
    "context": {
     "needs": [
      "TE"
     ],
-    "set": [
-     "RB"
+    "set": [],
+    "thin": [
+     "WR"
     ],
     "ranks": {
      "QB": 8,
      "RB": 1,
      "WR": 12,
      "TE": 10
-    }
+    },
+    "tendency": [
+     "Leans QB",
+     "Avoids RB"
+    ]
    }
   },
   {
@@ -939,21 +1186,26 @@
    "original_team": "Top 5 Top 5 Top 5",
    "traded": false,
    "prospect": "ahmad hardy",
-   "reason": "Value pick",
+   "reason": "Adds RB depth",
    "context": {
     "needs": [],
     "set": [
      "QB",
-     "RB",
      "WR",
      "TE"
+    ],
+    "thin": [
+     "RB"
     ],
     "ranks": {
      "QB": 3,
      "RB": 3,
      "WR": 2,
      "TE": 4
-    }
+    },
+    "tendency": [
+     "Leans TE"
+    ]
    }
   }
  ],
@@ -967,7 +1219,7 @@
    "espn_id": "5079720",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079720.png",
    "rank": 1,
-   "value": 105.0,
+   "value": 100.0,
    "cons_rank": 1.0,
    "mddb_rank": 1,
    "espn_rank": 1,
@@ -1033,7 +1285,7 @@
    "espn_id": "5146735",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146735.png",
    "rank": 2,
-   "value": 87.23,
+   "value": 83.07,
    "cons_rank": 8.0,
    "mddb_rank": 8,
    "espn_rank": 8,
@@ -1099,7 +1351,7 @@
    "espn_id": "5079322",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079322.png",
    "rank": 3,
-   "value": 85.57,
+   "value": 77.79,
    "cons_rank": 15.0,
    "mddb_rank": 20,
    "espn_rank": 10,
@@ -1165,7 +1417,7 @@
    "espn_id": "5079376",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079376.png",
    "rank": 4,
-   "value": 70.67,
+   "value": 67.3,
    "cons_rank": 11.0,
    "mddb_rank": 10,
    "espn_rank": 12,
@@ -1217,6 +1469,102 @@
    "consensus": true
   },
   {
+   "key": "treydez green",
+   "name": "Trey'Dez Green",
+   "pos": "TE",
+   "school": "LSU",
+   "cls": null,
+   "espn_id": "5079420",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079420.png",
+   "rank": 5,
+   "value": 60.67,
+   "cons_rank": 22.5,
+   "mddb_rank": 22,
+   "espn_rank": 23,
+   "prod_pct": 88.4,
+   "ppg": 14.3,
+   "last3": 14.3,
+   "games": 3,
+   "last": {
+    "week": 3,
+    "opp": "MISS",
+    "at": "@",
+    "result": "L",
+    "pts": 10.0,
+    "line": "4 rec, 60 yds, 0 TD"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 9.8,
+     "opp": "CLEM",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 23.1,
+     "opp": "LT",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 10.0,
+     "opp": "MISS",
+     "at": "@"
+    }
+   ],
+   "move7": 6,
+   "consensus": true
+  },
+  {
+   "key": "jamari johnson",
+   "name": "Jamari Johnson",
+   "pos": "TE",
+   "school": "Oregon",
+   "cls": null,
+   "espn_id": "4922988",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4922988.png",
+   "rank": 6,
+   "value": 59.56,
+   "cons_rank": 21.0,
+   "mddb_rank": 21,
+   "espn_rank": 21,
+   "prod_pct": 79.1,
+   "ppg": 12.3,
+   "last3": 12.3,
+   "games": 3,
+   "last": {
+    "week": 6,
+    "opp": "UCLA",
+    "at": "vs",
+    "result": "L",
+    "pts": 2.3,
+    "line": "1 rec, 13 yds, 0 TD"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 15.7,
+     "opp": "BOIS",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 18.9,
+     "opp": "USC",
+     "at": "@"
+    },
+    {
+     "week": 6,
+     "pts": 2.3,
+     "opp": "UCLA",
+     "at": "vs"
+    }
+   ],
+   "move7": 6,
+   "consensus": true
+  },
+  {
    "key": "darian mensah",
    "name": "Darian Mensah",
    "pos": "QB",
@@ -1224,8 +1572,8 @@
    "cls": null,
    "espn_id": "5121169",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5121169.png",
-   "rank": 5,
-   "value": 61.12,
+   "rank": 7,
+   "value": 59.42,
    "cons_rank": 9.5,
    "mddb_rank": 5,
    "espn_rank": 14,
@@ -1273,7 +1621,7 @@
      "at": "@"
     }
    ],
-   "move7": 0,
+   "move7": -2,
    "consensus": true
   },
   {
@@ -1284,8 +1632,8 @@
    "cls": null,
    "espn_id": "5079600",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079600.png",
-   "rank": 6,
-   "value": 60.65,
+   "rank": 8,
+   "value": 57.76,
    "cons_rank": 30.0,
    "mddb_rank": 33,
    "espn_rank": 27,
@@ -1339,7 +1687,7 @@
      "at": "@"
     }
    ],
-   "move7": 0,
+   "move7": -2,
    "consensus": true
   },
   {
@@ -1350,8 +1698,8 @@
    "cls": null,
    "espn_id": "5084771",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5084771.png",
-   "rank": 7,
-   "value": 59.64,
+   "rank": 9,
+   "value": 56.8,
    "cons_rank": 37.0,
    "mddb_rank": 36,
    "espn_rank": 38,
@@ -1399,61 +1747,7 @@
      "at": "vs"
     }
    ],
-   "move7": 0,
-   "consensus": true
-  },
-  {
-   "key": "kewan lacy",
-   "name": "Kewan Lacy",
-   "pos": "RB",
-   "school": "Mississippi",
-   "cls": null,
-   "espn_id": "5086388",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5086388.png",
-   "rank": 8,
-   "value": 58.71,
-   "cons_rank": 35.5,
-   "mddb_rank": 43,
-   "espn_rank": 28,
-   "prod_pct": 79.4,
-   "ppg": 15.4,
-   "last3": 14.5,
-   "games": 4,
-   "last": {
-    "week": 6,
-    "opp": "VAN",
-    "at": "@",
-    "result": "W",
-    "pts": 9.9,
-    "line": "7-39-1 rushing"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 18.0,
-     "opp": "LOU",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 21.6,
-     "opp": "CLT",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 12.1,
-     "opp": "LSU",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 9.9,
-     "opp": "VAN",
-     "at": "@"
-    }
-   ],
-   "move7": 1,
+   "move7": -2,
    "consensus": true
   },
   {
@@ -1464,8 +1758,8 @@
    "cls": null,
    "espn_id": "5219834",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5219834.png",
-   "rank": 9,
-   "value": 57.47,
+   "rank": 10,
+   "value": 55.88,
    "cons_rank": 13.0,
    "mddb_rank": 15,
    "espn_rank": 11,
@@ -1513,7 +1807,7 @@
      "at": "vs"
     }
    ],
-   "move7": 1,
+   "move7": 0,
    "consensus": true
   },
   {
@@ -1524,8 +1818,8 @@
    "cls": null,
    "espn_id": "4911529",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4911529.png",
-   "rank": 10,
-   "value": 57.44,
+   "rank": 11,
+   "value": 55.84,
    "cons_rank": 13.5,
    "mddb_rank": 11,
    "espn_rank": 16,
@@ -1573,103 +1867,61 @@
      "at": "@"
     }
    ],
-   "move7": -2,
+   "move7": -3,
    "consensus": true
   },
   {
-   "key": "treydez green",
-   "name": "Trey'Dez Green",
-   "pos": "TE",
-   "school": "LSU",
+   "key": "kewan lacy",
+   "name": "Kewan Lacy",
+   "pos": "RB",
+   "school": "Mississippi",
    "cls": null,
-   "espn_id": "5079420",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079420.png",
-   "rank": 11,
-   "value": 55.27,
-   "cons_rank": 22.5,
-   "mddb_rank": 22,
-   "espn_rank": 23,
-   "prod_pct": 88.4,
-   "ppg": 14.3,
-   "last3": 14.3,
-   "games": 3,
+   "espn_id": "5086388",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5086388.png",
+   "rank": 12,
+   "value": 53.37,
+   "cons_rank": 35.5,
+   "mddb_rank": 43,
+   "espn_rank": 28,
+   "prod_pct": 79.4,
+   "ppg": 15.4,
+   "last3": 14.5,
+   "games": 4,
    "last": {
-    "week": 3,
-    "opp": "MISS",
+    "week": 6,
+    "opp": "VAN",
     "at": "@",
-    "result": "L",
-    "pts": 10.0,
-    "line": "4 rec, 60 yds, 0 TD"
+    "result": "W",
+    "pts": 9.9,
+    "line": "7-39-1 rushing"
    },
    "weekly": [
     {
      "week": 1,
-     "pts": 9.8,
-     "opp": "CLEM",
+     "pts": 18.0,
+     "opp": "LOU",
      "at": "vs"
     },
     {
      "week": 2,
-     "pts": 23.1,
-     "opp": "LT",
+     "pts": 21.6,
+     "opp": "CLT",
      "at": "vs"
     },
     {
      "week": 3,
-     "pts": 10.0,
-     "opp": "MISS",
-     "at": "@"
-    }
-   ],
-   "move7": 0,
-   "consensus": true
-  },
-  {
-   "key": "jamari johnson",
-   "name": "Jamari Johnson",
-   "pos": "TE",
-   "school": "Oregon",
-   "cls": null,
-   "espn_id": "4922988",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4922988.png",
-   "rank": 12,
-   "value": 54.27,
-   "cons_rank": 21.0,
-   "mddb_rank": 21,
-   "espn_rank": 21,
-   "prod_pct": 79.1,
-   "ppg": 12.3,
-   "last3": 12.3,
-   "games": 3,
-   "last": {
-    "week": 6,
-    "opp": "UCLA",
-    "at": "vs",
-    "result": "L",
-    "pts": 2.3,
-    "line": "1 rec, 13 yds, 0 TD"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 15.7,
-     "opp": "BOIS",
+     "pts": 12.1,
+     "opp": "LSU",
      "at": "vs"
-    },
-    {
-     "week": 4,
-     "pts": 18.9,
-     "opp": "USC",
-     "at": "@"
     },
     {
      "week": 6,
-     "pts": 2.3,
-     "opp": "UCLA",
-     "at": "vs"
+     "pts": 9.9,
+     "opp": "VAN",
+     "at": "@"
     }
    ],
-   "move7": 0,
+   "move7": -3,
    "consensus": true
   },
   {
@@ -1681,7 +1933,7 @@
    "espn_id": "5031157",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5031157.png",
    "rank": 13,
-   "value": 53.2,
+   "value": 50.67,
    "cons_rank": 45.5,
    "mddb_rank": 45,
    "espn_rank": 46,
@@ -1741,7 +1993,7 @@
    "espn_id": "5079369",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079369.png",
    "rank": 14,
-   "value": 50.06,
+   "value": 48.67,
    "cons_rank": 18.0,
    "mddb_rank": 14,
    "espn_rank": 22,
@@ -1807,7 +2059,7 @@
    "espn_id": "4870906",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870906.png",
    "rank": 15,
-   "value": 48.65,
+   "value": 47.3,
    "cons_rank": 9.5,
    "mddb_rank": 2,
    "espn_rank": 17,
@@ -1867,7 +2119,7 @@
    "espn_id": "5152158",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5152158.png",
    "rank": 16,
-   "value": 48.22,
+   "value": 45.93,
    "cons_rank": 51.5,
    "mddb_rank": 74,
    "espn_rank": 29,
@@ -1927,7 +2179,7 @@
    "espn_id": "4870921",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870921.png",
    "rank": 17,
-   "value": 45.36,
+   "value": 44.1,
    "cons_rank": 13.0,
    "mddb_rank": 6,
    "espn_rank": 20,
@@ -1981,7 +2233,7 @@
    "espn_id": "5141711",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5141711.png",
    "rank": 18,
-   "value": 43.45,
+   "value": 41.38,
    "cons_rank": 32.5,
    "mddb_rank": 31,
    "espn_rank": 34,
@@ -2039,57 +2291,69 @@
    "consensus": true
   },
   {
-   "key": "mark fletcher",
-   "name": "Mark Fletcher",
-   "pos": "RB",
-   "school": "Miami (FL)",
+   "key": "luke reynolds",
+   "name": "Luke Reynolds",
+   "pos": "TE",
+   "school": "Virginia Tech",
    "cls": null,
-   "espn_id": "4870736",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870736.png",
+   "espn_id": "5138451",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5138451.png",
    "rank": 19,
-   "value": 35.99,
-   "cons_rank": 92.0,
-   "mddb_rank": 92,
+   "value": 38.75,
+   "cons_rank": 61.0,
+   "mddb_rank": 61,
    "espn_rank": null,
-   "prod_pct": 85.1,
-   "ppg": 16.8,
-   "last3": 20.1,
-   "games": 4,
+   "prod_pct": 91.5,
+   "ppg": 18.0,
+   "last3": 11.0,
+   "games": 6,
    "last": {
-    "week": 5,
-    "opp": "CLEM",
+    "week": 6,
+    "opp": "CAL",
     "at": "@",
-    "result": "W",
-    "pts": 23.3,
-    "line": "16-77-2 rushing; 2-16-0 receiving"
+    "result": "L",
+    "pts": 9.8,
+    "line": "4 rec, 58 yds, 0 TD"
    },
    "weekly": [
     {
      "week": 1,
-     "pts": 7.0,
-     "opp": "STAN",
-     "at": "@"
+     "pts": 16.0,
+     "opp": "VMI",
+     "at": "vs"
     },
     {
      "week": 2,
-     "pts": 22.5,
-     "opp": "FAMU",
+     "pts": 30.6,
+     "opp": "ODU",
      "at": "vs"
     },
     {
      "week": 3,
-     "pts": 14.5,
-     "opp": "WAKE",
+     "pts": 28.7,
+     "opp": "MD",
+     "at": "@"
+    },
+    {
+     "week": 4,
+     "pts": 6.8,
+     "opp": "BC",
      "at": "@"
     },
     {
      "week": 5,
-     "pts": 23.3,
-     "opp": "CLEM",
+     "pts": 16.3,
+     "opp": "PITT",
+     "at": "vs"
+    },
+    {
+     "week": 6,
+     "pts": 9.8,
+     "opp": "CAL",
      "at": "@"
     }
    ],
-   "move7": 0,
+   "move7": 6,
    "consensus": true
   },
   {
@@ -2101,7 +2365,7 @@
    "espn_id": "5079712",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079712.png",
    "rank": 20,
-   "value": 35.72,
+   "value": 34.73,
    "cons_rank": 44.0,
    "mddb_rank": 44,
    "espn_rank": null,
@@ -2159,390 +2423,6 @@
    "consensus": true
   },
   {
-   "key": "jamal roberts",
-   "name": "Jamal Roberts",
-   "pos": "RB",
-   "school": "Missouri Tigers",
-   "cls": "Senior",
-   "espn_id": "4921116",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4921116.png",
-   "rank": 21,
-   "value": 35.38,
-   "cons_rank": null,
-   "mddb_rank": null,
-   "espn_rank": null,
-   "prod_pct": 100.0,
-   "ppg": 25.0,
-   "last3": 32.8,
-   "games": 6,
-   "last": {
-    "week": 6,
-    "opp": "TA&M",
-    "at": "vs",
-    "result": "W",
-    "pts": 38.0,
-    "line": "34-222-2 rushing; 3-8-0 receiving"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 10.7,
-     "opp": "UAPB",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 19.1,
-     "opp": "KU",
-     "at": "@"
-    },
-    {
-     "week": 3,
-     "pts": 22.1,
-     "opp": "TROY",
-     "at": "vs"
-    },
-    {
-     "week": 4,
-     "pts": 15.3,
-     "opp": "MSST",
-     "at": "@"
-    },
-    {
-     "week": 5,
-     "pts": 45.0,
-     "opp": "FLA",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 38.0,
-     "opp": "TA&M",
-     "at": "vs"
-    }
-   ],
-   "move7": -1,
-   "consensus": false
-  },
-  {
-   "key": "luke reynolds",
-   "name": "Luke Reynolds",
-   "pos": "TE",
-   "school": "Virginia Tech",
-   "cls": null,
-   "espn_id": "5138451",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5138451.png",
-   "rank": 22,
-   "value": 35.31,
-   "cons_rank": 61.0,
-   "mddb_rank": 61,
-   "espn_rank": null,
-   "prod_pct": 91.5,
-   "ppg": 18.0,
-   "last3": 11.0,
-   "games": 6,
-   "last": {
-    "week": 6,
-    "opp": "CAL",
-    "at": "@",
-    "result": "L",
-    "pts": 9.8,
-    "line": "4 rec, 58 yds, 0 TD"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 16.0,
-     "opp": "VMI",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 30.6,
-     "opp": "ODU",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 28.7,
-     "opp": "MD",
-     "at": "@"
-    },
-    {
-     "week": 4,
-     "pts": 6.8,
-     "opp": "BC",
-     "at": "@"
-    },
-    {
-     "week": 5,
-     "pts": 16.3,
-     "opp": "PITT",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 9.8,
-     "opp": "CAL",
-     "at": "@"
-    }
-   ],
-   "move7": 3,
-   "consensus": true
-  },
-  {
-   "key": "jahiem white",
-   "name": "Jahiem White",
-   "pos": "RB",
-   "school": "North Texas Mean Green",
-   "cls": "Senior",
-   "espn_id": "4911971",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4911971.png",
-   "rank": 23,
-   "value": 35.23,
-   "cons_rank": null,
-   "mddb_rank": null,
-   "espn_rank": null,
-   "prod_pct": 99.5,
-   "ppg": 29.5,
-   "last3": 31.8,
-   "games": 6,
-   "last": {
-    "week": 6,
-    "opp": "CLT",
-    "at": "vs",
-    "result": "W",
-    "pts": 22.2,
-    "line": "12-105-1 rushing; 2-37-0 receiving"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 22.7,
-     "opp": "IU",
-     "at": "@"
-    },
-    {
-     "week": 2,
-     "pts": 29.8,
-     "opp": "UNLV",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 29.1,
-     "opp": "TXST",
-     "at": "@"
-    },
-    {
-     "week": 4,
-     "pts": 42.0,
-     "opp": "HCU",
-     "at": "vs"
-    },
-    {
-     "week": 5,
-     "pts": 31.1,
-     "opp": "TLSA",
-     "at": "@"
-    },
-    {
-     "week": 6,
-     "pts": 22.2,
-     "opp": "CLT",
-     "at": "vs"
-    }
-   ],
-   "move7": -2,
-   "consensus": false
-  },
-  {
-   "key": "wayshawn parker",
-   "name": "Wayshawn Parker",
-   "pos": "RB",
-   "school": "Utah Utes",
-   "cls": "Junior",
-   "espn_id": "5173431",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5173431.png",
-   "rank": 24,
-   "value": 35.22,
-   "cons_rank": null,
-   "mddb_rank": null,
-   "espn_rank": null,
-   "prod_pct": 99.5,
-   "ppg": 30.4,
-   "last3": 28.9,
-   "games": 5,
-   "last": {
-    "week": 6,
-    "opp": "KU",
-    "at": "vs",
-    "result": "W",
-    "pts": 34.7,
-    "line": "16-171-2 rushing; 2-36-0 receiving"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 30.4,
-     "opp": "IDHO",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 34.8,
-     "opp": "ARK",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 5.1,
-     "opp": "USU",
-     "at": "vs"
-    },
-    {
-     "week": 4,
-     "pts": 46.9,
-     "opp": "ISU",
-     "at": "@"
-    },
-    {
-     "week": 6,
-     "pts": 34.7,
-     "opp": "KU",
-     "at": "vs"
-    }
-   ],
-   "move7": -2,
-   "consensus": false
-  },
-  {
-   "key": "dylan riley",
-   "name": "Dylan Riley",
-   "pos": "RB",
-   "school": "Boise State Broncos",
-   "cls": "Junior",
-   "espn_id": "5146712",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146712.png",
-   "rank": 25,
-   "value": 34.93,
-   "cons_rank": null,
-   "mddb_rank": null,
-   "espn_rank": null,
-   "prod_pct": 98.6,
-   "ppg": 24.8,
-   "last3": 27.6,
-   "games": 6,
-   "last": {
-    "week": 6,
-    "opp": "FRES",
-    "at": "@",
-    "result": "W",
-    "pts": 37.4,
-    "line": "19-150-1 rushing; 4-64-1 receiving"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 6.5,
-     "opp": "ORE",
-     "at": "@"
-    },
-    {
-     "week": 2,
-     "pts": 23.7,
-     "opp": "MEM",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 35.6,
-     "opp": "SDAK",
-     "at": "vs"
-    },
-    {
-     "week": 4,
-     "pts": 22.3,
-     "opp": "WMU",
-     "at": "@"
-    },
-    {
-     "week": 5,
-     "pts": 23.0,
-     "opp": "USU",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 37.4,
-     "opp": "FRES",
-     "at": "@"
-    }
-   ],
-   "move7": -2,
-   "consensus": false
-  },
-  {
-   "key": "wayne knight",
-   "name": "Wayne Knight",
-   "pos": "RB",
-   "school": "UCLA Bruins",
-   "cls": "Senior",
-   "espn_id": "4912342",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4912342.png",
-   "rank": 26,
-   "value": 34.51,
-   "cons_rank": null,
-   "mddb_rank": null,
-   "espn_rank": null,
-   "prod_pct": 97.4,
-   "ppg": 28.4,
-   "last3": 28.0,
-   "games": 5,
-   "last": {
-    "week": 6,
-    "opp": "ORE",
-    "at": "@",
-    "result": "W",
-    "pts": 26.5,
-    "line": "22-103-1 rushing; 3-12-1 receiving"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 30.1,
-     "opp": "CAL",
-     "at": "@"
-    },
-    {
-     "week": 2,
-     "pts": 27.7,
-     "opp": "SDSU",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 35.0,
-     "opp": "PUR",
-     "at": "vs"
-    },
-    {
-     "week": 4,
-     "pts": 22.5,
-     "opp": "MD",
-     "at": "@"
-    },
-    {
-     "week": 6,
-     "pts": 26.5,
-     "opp": "ORE",
-     "at": "@"
-    }
-   ],
-   "move7": 0,
-   "consensus": false
-  },
-  {
    "key": "austin simmons",
    "name": "Austin Simmons",
    "pos": "QB",
@@ -2550,8 +2430,8 @@
    "cls": null,
    "espn_id": "5141684",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5141684.png",
-   "rank": 27,
-   "value": 34.1,
+   "rank": 21,
+   "value": 33.15,
    "cons_rank": 30.0,
    "mddb_rank": 30,
    "espn_rank": null,
@@ -2605,8 +2485,380 @@
      "at": "vs"
     }
    ],
-   "move7": 0,
+   "move7": 6,
    "consensus": true
+  },
+  {
+   "key": "mark fletcher",
+   "name": "Mark Fletcher",
+   "pos": "RB",
+   "school": "Miami (FL)",
+   "cls": null,
+   "espn_id": "4870736",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870736.png",
+   "rank": 22,
+   "value": 32.72,
+   "cons_rank": 92.0,
+   "mddb_rank": 92,
+   "espn_rank": null,
+   "prod_pct": 85.1,
+   "ppg": 16.8,
+   "last3": 20.1,
+   "games": 4,
+   "last": {
+    "week": 5,
+    "opp": "CLEM",
+    "at": "@",
+    "result": "W",
+    "pts": 23.3,
+    "line": "16-77-2 rushing; 2-16-0 receiving"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 7.0,
+     "opp": "STAN",
+     "at": "@"
+    },
+    {
+     "week": 2,
+     "pts": 22.5,
+     "opp": "FAMU",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 14.5,
+     "opp": "WAKE",
+     "at": "@"
+    },
+    {
+     "week": 5,
+     "pts": 23.3,
+     "opp": "CLEM",
+     "at": "@"
+    }
+   ],
+   "move7": -3,
+   "consensus": true
+  },
+  {
+   "key": "jamal roberts",
+   "name": "Jamal Roberts",
+   "pos": "RB",
+   "school": "Missouri Tigers",
+   "cls": "Senior",
+   "espn_id": "4921116",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4921116.png",
+   "rank": 23,
+   "value": 32.17,
+   "cons_rank": null,
+   "mddb_rank": null,
+   "espn_rank": null,
+   "prod_pct": 100.0,
+   "ppg": 25.0,
+   "last3": 32.8,
+   "games": 6,
+   "last": {
+    "week": 6,
+    "opp": "TA&M",
+    "at": "vs",
+    "result": "W",
+    "pts": 38.0,
+    "line": "34-222-2 rushing; 3-8-0 receiving"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 10.7,
+     "opp": "UAPB",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 19.1,
+     "opp": "KU",
+     "at": "@"
+    },
+    {
+     "week": 3,
+     "pts": 22.1,
+     "opp": "TROY",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 15.3,
+     "opp": "MSST",
+     "at": "@"
+    },
+    {
+     "week": 5,
+     "pts": 45.0,
+     "opp": "FLA",
+     "at": "vs"
+    },
+    {
+     "week": 6,
+     "pts": 38.0,
+     "opp": "TA&M",
+     "at": "vs"
+    }
+   ],
+   "move7": -3,
+   "consensus": false
+  },
+  {
+   "key": "jahiem white",
+   "name": "Jahiem White",
+   "pos": "RB",
+   "school": "North Texas Mean Green",
+   "cls": "Senior",
+   "espn_id": "4911971",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4911971.png",
+   "rank": 24,
+   "value": 32.03,
+   "cons_rank": null,
+   "mddb_rank": null,
+   "espn_rank": null,
+   "prod_pct": 99.5,
+   "ppg": 29.5,
+   "last3": 31.8,
+   "games": 6,
+   "last": {
+    "week": 6,
+    "opp": "CLT",
+    "at": "vs",
+    "result": "W",
+    "pts": 22.2,
+    "line": "12-105-1 rushing; 2-37-0 receiving"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 22.7,
+     "opp": "IU",
+     "at": "@"
+    },
+    {
+     "week": 2,
+     "pts": 29.8,
+     "opp": "UNLV",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 29.1,
+     "opp": "TXST",
+     "at": "@"
+    },
+    {
+     "week": 4,
+     "pts": 42.0,
+     "opp": "HCU",
+     "at": "vs"
+    },
+    {
+     "week": 5,
+     "pts": 31.1,
+     "opp": "TLSA",
+     "at": "@"
+    },
+    {
+     "week": 6,
+     "pts": 22.2,
+     "opp": "CLT",
+     "at": "vs"
+    }
+   ],
+   "move7": -3,
+   "consensus": false
+  },
+  {
+   "key": "wayshawn parker",
+   "name": "Wayshawn Parker",
+   "pos": "RB",
+   "school": "Utah Utes",
+   "cls": "Junior",
+   "espn_id": "5173431",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5173431.png",
+   "rank": 25,
+   "value": 32.02,
+   "cons_rank": null,
+   "mddb_rank": null,
+   "espn_rank": null,
+   "prod_pct": 99.5,
+   "ppg": 30.4,
+   "last3": 28.9,
+   "games": 5,
+   "last": {
+    "week": 6,
+    "opp": "KU",
+    "at": "vs",
+    "result": "W",
+    "pts": 34.7,
+    "line": "16-171-2 rushing; 2-36-0 receiving"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 30.4,
+     "opp": "IDHO",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 34.8,
+     "opp": "ARK",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 5.1,
+     "opp": "USU",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 46.9,
+     "opp": "ISU",
+     "at": "@"
+    },
+    {
+     "week": 6,
+     "pts": 34.7,
+     "opp": "KU",
+     "at": "vs"
+    }
+   ],
+   "move7": -3,
+   "consensus": false
+  },
+  {
+   "key": "dylan riley",
+   "name": "Dylan Riley",
+   "pos": "RB",
+   "school": "Boise State Broncos",
+   "cls": "Junior",
+   "espn_id": "5146712",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146712.png",
+   "rank": 26,
+   "value": 31.76,
+   "cons_rank": null,
+   "mddb_rank": null,
+   "espn_rank": null,
+   "prod_pct": 98.6,
+   "ppg": 24.8,
+   "last3": 27.6,
+   "games": 6,
+   "last": {
+    "week": 6,
+    "opp": "FRES",
+    "at": "@",
+    "result": "W",
+    "pts": 37.4,
+    "line": "19-150-1 rushing; 4-64-1 receiving"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 6.5,
+     "opp": "ORE",
+     "at": "@"
+    },
+    {
+     "week": 2,
+     "pts": 23.7,
+     "opp": "MEM",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 35.6,
+     "opp": "SDAK",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 22.3,
+     "opp": "WMU",
+     "at": "@"
+    },
+    {
+     "week": 5,
+     "pts": 23.0,
+     "opp": "USU",
+     "at": "vs"
+    },
+    {
+     "week": 6,
+     "pts": 37.4,
+     "opp": "FRES",
+     "at": "@"
+    }
+   ],
+   "move7": -3,
+   "consensus": false
+  },
+  {
+   "key": "wayne knight",
+   "name": "Wayne Knight",
+   "pos": "RB",
+   "school": "UCLA Bruins",
+   "cls": "Senior",
+   "espn_id": "4912342",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4912342.png",
+   "rank": 27,
+   "value": 31.38,
+   "cons_rank": null,
+   "mddb_rank": null,
+   "espn_rank": null,
+   "prod_pct": 97.4,
+   "ppg": 28.4,
+   "last3": 28.0,
+   "games": 5,
+   "last": {
+    "week": 6,
+    "opp": "ORE",
+    "at": "@",
+    "result": "W",
+    "pts": 26.5,
+    "line": "22-103-1 rushing; 3-12-1 receiving"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 30.1,
+     "opp": "CAL",
+     "at": "@"
+    },
+    {
+     "week": 2,
+     "pts": 27.7,
+     "opp": "SDSU",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 35.0,
+     "opp": "PUR",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 22.5,
+     "opp": "MD",
+     "at": "@"
+    },
+    {
+     "week": 6,
+     "pts": 26.5,
+     "opp": "ORE",
+     "at": "@"
+    }
+   ],
+   "move7": -1,
+   "consensus": false
   },
   {
    "key": "cam cook",
@@ -2617,7 +2869,7 @@
    "espn_id": "4918103",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4918103.png",
    "rank": 28,
-   "value": 33.92,
+   "value": 30.84,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -2675,72 +2927,6 @@
    "consensus": false
   },
   {
-   "key": "desean bishop",
-   "name": "DeSean Bishop",
-   "pos": "RB",
-   "school": "Tennessee Volunteers",
-   "cls": "Junior",
-   "espn_id": "4921108",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4921108.png",
-   "rank": 29,
-   "value": 33.15,
-   "cons_rank": null,
-   "mddb_rank": null,
-   "espn_rank": null,
-   "prod_pct": 93.2,
-   "ppg": 20.8,
-   "last3": 22.3,
-   "games": 6,
-   "last": {
-    "week": 6,
-    "opp": "ARK",
-    "at": "@",
-    "result": "W",
-    "pts": 19.8,
-    "line": "19-138-1 rushing"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 15.7,
-     "opp": "FUR",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 29.2,
-     "opp": "GT",
-     "at": "@"
-    },
-    {
-     "week": 3,
-     "pts": 12.7,
-     "opp": "KENN",
-     "at": "vs"
-    },
-    {
-     "week": 4,
-     "pts": 7.2,
-     "opp": "TEX",
-     "at": "vs"
-    },
-    {
-     "week": 5,
-     "pts": 40.0,
-     "opp": "AUB",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 19.8,
-     "opp": "ARK",
-     "at": "@"
-    }
-   ],
-   "move7": 0,
-   "consensus": false
-  },
-  {
    "key": "wyatt young",
    "name": "Wyatt Young",
    "pos": "WR",
@@ -2748,8 +2934,8 @@
    "cls": null,
    "espn_id": "5148787",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5148787.png",
-   "rank": 30,
-   "value": 31.8,
+   "rank": 29,
+   "value": 30.29,
    "cons_rank": 95.0,
    "mddb_rank": 95,
    "espn_rank": null,
@@ -2797,7 +2983,7 @@
      "at": "vs"
     }
    ],
-   "move7": 13,
+   "move7": 14,
    "consensus": true
   },
   {
@@ -2808,8 +2994,8 @@
    "cls": "Senior",
    "espn_id": "4923226",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4923226.png",
-   "rank": 31,
-   "value": 31.75,
+   "rank": 30,
+   "value": 30.24,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -2863,7 +3049,73 @@
      "at": "@"
     }
    ],
-   "move7": -1,
+   "move7": 0,
+   "consensus": false
+  },
+  {
+   "key": "desean bishop",
+   "name": "DeSean Bishop",
+   "pos": "RB",
+   "school": "Tennessee Volunteers",
+   "cls": "Junior",
+   "espn_id": "4921108",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4921108.png",
+   "rank": 31,
+   "value": 30.13,
+   "cons_rank": null,
+   "mddb_rank": null,
+   "espn_rank": null,
+   "prod_pct": 93.2,
+   "ppg": 20.8,
+   "last3": 22.3,
+   "games": 6,
+   "last": {
+    "week": 6,
+    "opp": "ARK",
+    "at": "@",
+    "result": "W",
+    "pts": 19.8,
+    "line": "19-138-1 rushing"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 15.7,
+     "opp": "FUR",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 29.2,
+     "opp": "GT",
+     "at": "@"
+    },
+    {
+     "week": 3,
+     "pts": 12.7,
+     "opp": "KENN",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 7.2,
+     "opp": "TEX",
+     "at": "vs"
+    },
+    {
+     "week": 5,
+     "pts": 40.0,
+     "opp": "AUB",
+     "at": "vs"
+    },
+    {
+     "week": 6,
+     "pts": 19.8,
+     "opp": "ARK",
+     "at": "@"
+    }
+   ],
+   "move7": -2,
    "consensus": false
   },
   {
@@ -2875,7 +3127,7 @@
    "espn_id": "4691315",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4691315.png",
    "rank": 32,
-   "value": 31.56,
+   "value": 30.05,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -2935,7 +3187,7 @@
    "espn_id": "4907671",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4907671.png",
    "rank": 33,
-   "value": 31.04,
+   "value": 29.57,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -2995,7 +3247,7 @@
    "espn_id": "5153074",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5153074.png",
    "rank": 34,
-   "value": 30.54,
+   "value": 29.09,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -3053,132 +3305,6 @@
    "consensus": false
   },
   {
-   "key": "kelby valsin",
-   "name": "Kelby Valsin",
-   "pos": "WR",
-   "school": "Florida Atlantic Owls",
-   "cls": "Senior",
-   "espn_id": "4920163",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4920163.png",
-   "rank": 35,
-   "value": 30.14,
-   "cons_rank": null,
-   "mddb_rank": null,
-   "espn_rank": null,
-   "prod_pct": 88.5,
-   "ppg": 24.2,
-   "last3": 23.5,
-   "games": 5,
-   "last": {
-    "week": 5,
-    "opp": "TXSO",
-    "at": "vs",
-    "result": "W",
-    "pts": 37.6,
-    "line": "7 rec, 126 yds, 3 TD"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 25.2,
-     "opp": "FLA",
-     "at": "@"
-    },
-    {
-     "week": 2,
-     "pts": 25.5,
-     "opp": "NAVY",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 11.6,
-     "opp": "FIU",
-     "at": "vs"
-    },
-    {
-     "week": 4,
-     "pts": 21.3,
-     "opp": "ULM",
-     "at": "@"
-    },
-    {
-     "week": 5,
-     "pts": 37.6,
-     "opp": "TXSO",
-     "at": "vs"
-    }
-   ],
-   "move7": 0,
-   "consensus": false
-  },
-  {
-   "key": "cayden lee",
-   "name": "Cayden Lee",
-   "pos": "WR",
-   "school": "Missouri Tigers",
-   "cls": "Senior",
-   "espn_id": "4870858",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870858.png",
-   "rank": 36,
-   "value": 30.07,
-   "cons_rank": null,
-   "mddb_rank": null,
-   "espn_rank": null,
-   "prod_pct": 88.2,
-   "ppg": 22.3,
-   "last3": 26.7,
-   "games": 6,
-   "last": {
-    "week": 6,
-    "opp": "TA&M",
-    "at": "vs",
-    "result": "W",
-    "pts": 22.4,
-    "line": "7 rec, 94 yds, 1 TD"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 19.9,
-     "opp": "UAPB",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 24.0,
-     "opp": "KU",
-     "at": "@"
-    },
-    {
-     "week": 3,
-     "pts": 9.7,
-     "opp": "TROY",
-     "at": "vs"
-    },
-    {
-     "week": 4,
-     "pts": 38.6,
-     "opp": "MSST",
-     "at": "@"
-    },
-    {
-     "week": 5,
-     "pts": 19.0,
-     "opp": "FLA",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 22.4,
-     "opp": "TA&M",
-     "at": "vs"
-    }
-   ],
-   "move7": 0,
-   "consensus": false
-  },
-  {
    "key": "lanorris sellers",
    "name": "LaNorris Sellers",
    "pos": "QB",
@@ -3186,8 +3312,8 @@
    "cls": null,
    "espn_id": "4875127",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4875127.png",
-   "rank": 37,
-   "value": 29.89,
+   "rank": 35,
+   "value": 29.06,
    "cons_rank": 60.0,
    "mddb_rank": 60,
    "espn_rank": null,
@@ -3241,7 +3367,7 @@
      "at": "@"
     }
    ],
-   "move7": -5,
+   "move7": -3,
    "consensus": true
   },
   {
@@ -3252,8 +3378,8 @@
    "cls": null,
    "espn_id": "4685454",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4685454.png",
-   "rank": 38,
-   "value": 29.71,
+   "rank": 36,
+   "value": 28.89,
    "cons_rank": 53.0,
    "mddb_rank": 53,
    "espn_rank": null,
@@ -3313,8 +3439,134 @@
      "at": "@"
     }
    ],
-   "move7": -1,
+   "move7": 1,
    "consensus": true
+  },
+  {
+   "key": "kelby valsin",
+   "name": "Kelby Valsin",
+   "pos": "WR",
+   "school": "Florida Atlantic Owls",
+   "cls": "Senior",
+   "espn_id": "4920163",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4920163.png",
+   "rank": 37,
+   "value": 28.71,
+   "cons_rank": null,
+   "mddb_rank": null,
+   "espn_rank": null,
+   "prod_pct": 88.5,
+   "ppg": 24.2,
+   "last3": 23.5,
+   "games": 5,
+   "last": {
+    "week": 5,
+    "opp": "TXSO",
+    "at": "vs",
+    "result": "W",
+    "pts": 37.6,
+    "line": "7 rec, 126 yds, 3 TD"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 25.2,
+     "opp": "FLA",
+     "at": "@"
+    },
+    {
+     "week": 2,
+     "pts": 25.5,
+     "opp": "NAVY",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 11.6,
+     "opp": "FIU",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 21.3,
+     "opp": "ULM",
+     "at": "@"
+    },
+    {
+     "week": 5,
+     "pts": 37.6,
+     "opp": "TXSO",
+     "at": "vs"
+    }
+   ],
+   "move7": -2,
+   "consensus": false
+  },
+  {
+   "key": "cayden lee",
+   "name": "Cayden Lee",
+   "pos": "WR",
+   "school": "Missouri Tigers",
+   "cls": "Senior",
+   "espn_id": "4870858",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870858.png",
+   "rank": 38,
+   "value": 28.63,
+   "cons_rank": null,
+   "mddb_rank": null,
+   "espn_rank": null,
+   "prod_pct": 88.2,
+   "ppg": 22.3,
+   "last3": 26.7,
+   "games": 6,
+   "last": {
+    "week": 6,
+    "opp": "TA&M",
+    "at": "vs",
+    "result": "W",
+    "pts": 22.4,
+    "line": "7 rec, 94 yds, 1 TD"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 19.9,
+     "opp": "UAPB",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 24.0,
+     "opp": "KU",
+     "at": "@"
+    },
+    {
+     "week": 3,
+     "pts": 9.7,
+     "opp": "TROY",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 38.6,
+     "opp": "MSST",
+     "at": "@"
+    },
+    {
+     "week": 5,
+     "pts": 19.0,
+     "opp": "FLA",
+     "at": "vs"
+    },
+    {
+     "week": 6,
+     "pts": 22.4,
+     "opp": "TA&M",
+     "at": "vs"
+    }
+   ],
+   "move7": -2,
+   "consensus": false
   },
   {
    "key": "joseph williams",
@@ -3325,7 +3577,7 @@
    "espn_id": "5189530",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5189530.png",
    "rank": 39,
-   "value": 28.74,
+   "value": 27.38,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -3377,60 +3629,6 @@
    "consensus": false
   },
   {
-   "key": "nate frazier",
-   "name": "Nate Frazier",
-   "pos": "RB",
-   "school": "Georgia",
-   "cls": null,
-   "espn_id": "5084047",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5084047.png",
-   "rank": 40,
-   "value": 28.08,
-   "cons_rank": 79.0,
-   "mddb_rank": 79,
-   "espn_rank": null,
-   "prod_pct": 51.9,
-   "ppg": 13.2,
-   "last3": 9.1,
-   "games": 4,
-   "last": {
-    "week": 5,
-    "opp": "VAN",
-    "at": "vs",
-    "result": "W",
-    "pts": 0.9,
-    "line": "2-9-0 rushing"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 25.2,
-     "opp": "TNST",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 13.0,
-     "opp": "WKU",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 13.5,
-     "opp": "ARK",
-     "at": "@"
-    },
-    {
-     "week": 5,
-     "pts": 0.9,
-     "opp": "VAN",
-     "at": "vs"
-    }
-   ],
-   "move7": 1,
-   "consensus": true
-  },
-  {
    "key": "justin bowick",
    "name": "Justin Bowick",
    "pos": "WR",
@@ -3438,8 +3636,8 @@
    "cls": "Senior",
    "espn_id": "5083747",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5083747.png",
-   "rank": 41,
-   "value": 27.96,
+   "rank": 40,
+   "value": 26.63,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -3487,7 +3685,7 @@
      "at": "vs"
     }
    ],
-   "move7": -2,
+   "move7": -1,
    "consensus": false
   },
   {
@@ -3498,8 +3696,8 @@
    "cls": "Senior",
    "espn_id": "5218891",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5218891.png",
-   "rank": 42,
-   "value": 27.56,
+   "rank": 41,
+   "value": 26.25,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -3547,7 +3745,7 @@
      "at": "@"
     }
    ],
-   "move7": -2,
+   "move7": -1,
    "consensus": false
   },
   {
@@ -3558,8 +3756,8 @@
    "cls": "Senior",
    "espn_id": "4896289",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4896289.png",
-   "rank": 43,
-   "value": 27.19,
+   "rank": 42,
+   "value": 25.9,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -3607,8 +3805,62 @@
      "at": "@"
     }
    ],
-   "move7": -1,
+   "move7": 0,
    "consensus": false
+  },
+  {
+   "key": "nate frazier",
+   "name": "Nate Frazier",
+   "pos": "RB",
+   "school": "Georgia",
+   "cls": null,
+   "espn_id": "5084047",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5084047.png",
+   "rank": 43,
+   "value": 25.53,
+   "cons_rank": 79.0,
+   "mddb_rank": 79,
+   "espn_rank": null,
+   "prod_pct": 51.9,
+   "ppg": 13.2,
+   "last3": 9.1,
+   "games": 4,
+   "last": {
+    "week": 5,
+    "opp": "VAN",
+    "at": "vs",
+    "result": "W",
+    "pts": 0.9,
+    "line": "2-9-0 rushing"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 25.2,
+     "opp": "TNST",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 13.0,
+     "opp": "WKU",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 13.5,
+     "opp": "ARK",
+     "at": "@"
+    },
+    {
+     "week": 5,
+     "pts": 0.9,
+     "opp": "VAN",
+     "at": "vs"
+    }
+   ],
+   "move7": -2,
+   "consensus": true
   },
   {
    "key": "chris durr",
@@ -3619,7 +3871,7 @@
    "espn_id": "5193298",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5193298.png",
    "rank": 44,
-   "value": 26.72,
+   "value": 25.45,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -3677,28 +3929,6 @@
    "consensus": false
   },
   {
-   "key": "ahmad hardy",
-   "name": "Ahmad Hardy",
-   "pos": "RB",
-   "school": "Missouri",
-   "cls": null,
-   "espn_id": null,
-   "headshot": null,
-   "rank": 45,
-   "value": 26.34,
-   "cons_rank": 67.0,
-   "mddb_rank": 67,
-   "espn_rank": null,
-   "prod_pct": null,
-   "ppg": null,
-   "last3": null,
-   "games": 0,
-   "last": null,
-   "weekly": [],
-   "move7": 0,
-   "consensus": true
-  },
-  {
    "key": "chris marshall",
    "name": "Chris Marshall",
    "pos": "WR",
@@ -3706,8 +3936,8 @@
    "cls": "Senior",
    "espn_id": "4717430",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4717430.png",
-   "rank": 46,
-   "value": 25.69,
+   "rank": 45,
+   "value": 24.47,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -3761,8 +3991,30 @@
      "at": "vs"
     }
    ],
-   "move7": 1,
+   "move7": 2,
    "consensus": false
+  },
+  {
+   "key": "ahmad hardy",
+   "name": "Ahmad Hardy",
+   "pos": "RB",
+   "school": "Missouri",
+   "cls": null,
+   "espn_id": null,
+   "headshot": null,
+   "rank": 46,
+   "value": 23.94,
+   "cons_rank": 67.0,
+   "mddb_rank": 67,
+   "espn_rank": null,
+   "prod_pct": null,
+   "ppg": null,
+   "last3": null,
+   "games": 0,
+   "last": null,
+   "weekly": [],
+   "move7": -1,
+   "consensus": true
   },
   {
    "key": "eli wood",
@@ -3773,7 +4025,7 @@
    "espn_id": "5081209",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5081209.png",
    "rank": 47,
-   "value": 25.06,
+   "value": 23.86,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -3831,66 +4083,6 @@
    "consensus": false
   },
   {
-   "key": "omarion miller",
-   "name": "Omarion Miller",
-   "pos": "WR",
-   "school": "Arizona State",
-   "cls": null,
-   "espn_id": "4870850",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870850.png",
-   "rank": 48,
-   "value": 24.63,
-   "cons_rank": 63.0,
-   "mddb_rank": 63,
-   "espn_rank": null,
-   "prod_pct": 28.7,
-   "ppg": 14.9,
-   "last3": 12.9,
-   "games": 5,
-   "last": {
-    "week": 6,
-    "opp": "HAW",
-    "at": "vs",
-    "result": "W",
-    "pts": 13.8,
-    "line": "6 rec, 78 yds, 0 TD"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 24.2,
-     "opp": "MORG",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 11.9,
-     "opp": "TA&M",
-     "at": "@"
-    },
-    {
-     "week": 3,
-     "pts": 4.8,
-     "opp": "KU",
-     "at": "vs"
-    },
-    {
-     "week": 5,
-     "pts": 20.0,
-     "opp": "BAY",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 13.8,
-     "opp": "HAW",
-     "at": "vs"
-    }
-   ],
-   "move7": -2,
-   "consensus": true
-  },
-  {
    "key": "sam leavitt",
    "name": "Sam Leavitt",
    "pos": "QB",
@@ -3898,8 +4090,8 @@
    "cls": null,
    "espn_id": "5078810",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5078810.png",
-   "rank": 49,
-   "value": 24.34,
+   "rank": 48,
+   "value": 23.67,
    "cons_rank": 96.0,
    "mddb_rank": 96,
    "espn_rank": null,
@@ -3953,7 +4145,67 @@
      "at": "@"
     }
    ],
-   "move7": 0,
+   "move7": 1,
+   "consensus": true
+  },
+  {
+   "key": "omarion miller",
+   "name": "Omarion Miller",
+   "pos": "WR",
+   "school": "Arizona State",
+   "cls": null,
+   "espn_id": "4870850",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870850.png",
+   "rank": 49,
+   "value": 23.45,
+   "cons_rank": 63.0,
+   "mddb_rank": 63,
+   "espn_rank": null,
+   "prod_pct": 28.7,
+   "ppg": 14.9,
+   "last3": 12.9,
+   "games": 5,
+   "last": {
+    "week": 6,
+    "opp": "HAW",
+    "at": "vs",
+    "result": "W",
+    "pts": 13.8,
+    "line": "6 rec, 78 yds, 0 TD"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 24.2,
+     "opp": "MORG",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 11.9,
+     "opp": "TA&M",
+     "at": "@"
+    },
+    {
+     "week": 3,
+     "pts": 4.8,
+     "opp": "KU",
+     "at": "vs"
+    },
+    {
+     "week": 5,
+     "pts": 20.0,
+     "opp": "BAY",
+     "at": "vs"
+    },
+    {
+     "week": 6,
+     "pts": 13.8,
+     "opp": "HAW",
+     "at": "vs"
+    }
+   ],
+   "move7": -3,
    "consensus": true
   },
   {
@@ -3965,7 +4217,7 @@
    "espn_id": "4914830",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4914830.png",
    "rank": 50,
-   "value": 23.72,
+   "value": 22.59,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -4025,7 +4277,7 @@
    "espn_id": "5127885",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5127885.png",
    "rank": 51,
-   "value": 23.46,
+   "value": 22.35,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -4083,72 +4335,6 @@
    "consensus": false
   },
   {
-   "key": "justin stevenson",
-   "name": "Justin Stevenson",
-   "pos": "WR",
-   "school": "North Texas Mean Green",
-   "cls": "Senior",
-   "espn_id": "5122082",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5122082.png",
-   "rank": 52,
-   "value": 23.45,
-   "cons_rank": null,
-   "mddb_rank": null,
-   "espn_rank": null,
-   "prod_pct": 67.2,
-   "ppg": 18.1,
-   "last3": 24.4,
-   "games": 6,
-   "last": {
-    "week": 6,
-    "opp": "CLT",
-    "at": "vs",
-    "result": "W",
-    "pts": 33.2,
-    "line": "9 rec, 122 yds, 2 TD"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 6.7,
-     "opp": "IU",
-     "at": "@"
-    },
-    {
-     "week": 2,
-     "pts": 6.3,
-     "opp": "UNLV",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 22.2,
-     "opp": "TXST",
-     "at": "@"
-    },
-    {
-     "week": 4,
-     "pts": 17.9,
-     "opp": "HCU",
-     "at": "vs"
-    },
-    {
-     "week": 5,
-     "pts": 22.0,
-     "opp": "TLSA",
-     "at": "@"
-    },
-    {
-     "week": 6,
-     "pts": 33.2,
-     "opp": "CLT",
-     "at": "vs"
-    }
-   ],
-   "move7": null,
-   "consensus": false
-  },
-  {
    "key": "gio lopez",
    "name": "Gio Lopez",
    "pos": "QB",
@@ -4156,8 +4342,8 @@
    "cls": "Junior",
    "espn_id": "4920227",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4920227.png",
-   "rank": 53,
-   "value": 22.98,
+   "rank": 52,
+   "value": 22.34,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -4211,7 +4397,73 @@
      "at": "@"
     }
    ],
-   "move7": -1,
+   "move7": 0,
+   "consensus": false
+  },
+  {
+   "key": "ashton daniels",
+   "name": "Ashton Daniels",
+   "pos": "QB",
+   "school": "Florida State Seminoles",
+   "cls": "Senior",
+   "espn_id": "4838679",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4838679.png",
+   "rank": 53,
+   "value": 21.97,
+   "cons_rank": null,
+   "mddb_rank": null,
+   "espn_rank": null,
+   "prod_pct": 97.4,
+   "ppg": 28.4,
+   "last3": 31.7,
+   "games": 6,
+   "last": {
+    "week": 6,
+    "opp": "LOU",
+    "at": "@",
+    "result": "L",
+    "pts": 25.9,
+    "line": "21/37, 209 yds, 2 TD, 1 INT; 45 rush yds, 1 rush TD"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 20.1,
+     "opp": "NMSU",
+     "at": "vs"
+    },
+    {
+     "week": 1,
+     "pts": 22.1,
+     "opp": "SMU",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 32.8,
+     "opp": "ALA",
+     "at": "@"
+    },
+    {
+     "week": 4,
+     "pts": 19.4,
+     "opp": "CARK",
+     "at": "vs"
+    },
+    {
+     "week": 5,
+     "pts": 49.9,
+     "opp": "UVA",
+     "at": "vs"
+    },
+    {
+     "week": 6,
+     "pts": 25.9,
+     "opp": "LOU",
+     "at": "@"
+    }
+   ],
+   "move7": 1,
    "consensus": false
   },
   {
@@ -4223,7 +4475,7 @@
    "espn_id": "4869601",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4869601.png",
    "rank": 54,
-   "value": 22.85,
+   "value": 21.76,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -4281,72 +4533,6 @@
    "consensus": false
   },
   {
-   "key": "ashton daniels",
-   "name": "Ashton Daniels",
-   "pos": "QB",
-   "school": "Florida State Seminoles",
-   "cls": "Senior",
-   "espn_id": "4838679",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4838679.png",
-   "rank": 55,
-   "value": 22.6,
-   "cons_rank": null,
-   "mddb_rank": null,
-   "espn_rank": null,
-   "prod_pct": 97.4,
-   "ppg": 28.4,
-   "last3": 31.7,
-   "games": 6,
-   "last": {
-    "week": 6,
-    "opp": "LOU",
-    "at": "@",
-    "result": "L",
-    "pts": 25.9,
-    "line": "21/37, 209 yds, 2 TD, 1 INT; 45 rush yds, 1 rush TD"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 20.1,
-     "opp": "NMSU",
-     "at": "vs"
-    },
-    {
-     "week": 1,
-     "pts": 22.1,
-     "opp": "SMU",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 32.8,
-     "opp": "ALA",
-     "at": "@"
-    },
-    {
-     "week": 4,
-     "pts": 19.4,
-     "opp": "CARK",
-     "at": "vs"
-    },
-    {
-     "week": 5,
-     "pts": 49.9,
-     "opp": "UVA",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 25.9,
-     "opp": "LOU",
-     "at": "@"
-    }
-   ],
-   "move7": -1,
-   "consensus": false
-  },
-  {
    "key": "lincoln kienholz",
    "name": "Lincoln Kienholz",
    "pos": "QB",
@@ -4354,8 +4540,8 @@
    "cls": "Junior",
    "espn_id": "5078278",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5078278.png",
-   "rank": 56,
-   "value": 21.72,
+   "rank": 55,
+   "value": 21.11,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
@@ -4409,7 +4595,73 @@
      "at": "vs"
     }
    ],
-   "move7": -1,
+   "move7": 0,
+   "consensus": false
+  },
+  {
+   "key": "caden creel",
+   "name": "Caden Creel",
+   "pos": "QB",
+   "school": "Jacksonville State Gamecocks",
+   "cls": "Junior",
+   "espn_id": "5122157",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5122157.png",
+   "rank": 56,
+   "value": 20.81,
+   "cons_rank": null,
+   "mddb_rank": null,
+   "espn_rank": null,
+   "prod_pct": 91.9,
+   "ppg": 26.1,
+   "last3": 24.5,
+   "games": 6,
+   "last": {
+    "week": 6,
+    "opp": "KENN",
+    "at": "@",
+    "result": "W",
+    "pts": 24.4,
+    "line": "26/44, 311 yds, 1 TD, 1 INT; 30 rush yds, 1 rush TD"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 12.8,
+     "opp": "NDSU",
+     "at": "@"
+    },
+    {
+     "week": 1,
+     "pts": 37.5,
+     "opp": "EKU",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 32.6,
+     "opp": "OHIO",
+     "at": "@"
+    },
+    {
+     "week": 3,
+     "pts": 19.6,
+     "opp": "GASO",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 29.5,
+     "opp": "MTSU",
+     "at": "vs"
+    },
+    {
+     "week": 6,
+     "pts": 24.4,
+     "opp": "KENN",
+     "at": "@"
+    }
+   ],
+   "move7": null,
    "consensus": false
   },
   {
@@ -4421,7 +4673,7 @@
    "espn_id": "5079345",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079345.png",
    "rank": 57,
-   "value": 17.24,
+   "value": 16.42,
    "cons_rank": 59.0,
    "mddb_rank": 59,
    "espn_rank": null,
@@ -4487,7 +4739,7 @@
    "espn_id": "5218633",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5218633.png",
    "rank": 58,
-   "value": 15.22,
+   "value": 14.49,
    "cons_rank": 64.0,
    "mddb_rank": 64,
    "espn_rank": null,
@@ -4547,7 +4799,7 @@
    "espn_id": "5112674",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5112674.png",
    "rank": 59,
-   "value": 9.79,
+   "value": 9.32,
    "cons_rank": 85.0,
    "mddb_rank": 85,
    "espn_rank": null,
@@ -4607,7 +4859,7 @@
    "espn_id": "4870922",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870922.png",
    "rank": 60,
-   "value": 7.37,
+   "value": 7.02,
    "cons_rank": 93.0,
    "mddb_rank": 93,
    "espn_rank": null,
@@ -4668,87 +4920,87 @@
  "needs": {
   "1": {
    "QB": 0.022,
-   "RB": 0.032,
-   "WR": 0.175,
-   "TE": 0.204
+   "RB": 0.18,
+   "WR": 0.262,
+   "TE": 0.24
   },
   "2": {
-   "QB": -0.6,
-   "RB": -0.032,
-   "WR": -0.246,
-   "TE": -0.068
+   "QB": -0.18,
+   "RB": 0.191,
+   "WR": 0.206,
+   "TE": 0.013
   },
   "3": {
    "QB": 0.074,
-   "RB": -0.6,
-   "WR": 0.321,
-   "TE": 0.345
+   "RB": -0.128,
+   "WR": 0.45,
+   "TE": 0.293
   },
   "4": {
-   "QB": -0.022,
-   "RB": -0.6,
-   "WR": 0.065,
-   "TE": -0.6
+   "QB": 0.182,
+   "RB": -0.109,
+   "WR": 0.116,
+   "TE": -0.105
   },
   "5": {
-   "QB": -0.381,
-   "RB": -0.106,
-   "WR": -0.181,
-   "TE": 0.4
+   "QB": -0.187,
+   "RB": 0.01,
+   "WR": 0.076,
+   "TE": 0.45
   },
   "6": {
-   "QB": 0.301,
-   "RB": -0.213,
-   "WR": -0.6,
-   "TE": 0.068
+   "QB": 0.2,
+   "RB": 0.03,
+   "WR": -0.21,
+   "TE": 0.058
   },
   "7": {
-   "QB": 0.4,
-   "RB": 0.4,
-   "WR": -0.021,
-   "TE": -0.295
+   "QB": 0.2,
+   "RB": 0.45,
+   "WR": 0.242,
+   "TE": -0.165
   },
   "8": {
-   "QB": 0.285,
-   "RB": 0.353,
-   "WR": -0.6,
-   "TE": -0.6
+   "QB": 0.2,
+   "RB": 0.174,
+   "WR": -0.086,
+   "TE": -0.24
   },
   "9": {
    "QB": -0.6,
-   "RB": -0.53,
-   "WR": -0.6,
-   "TE": -0.207
+   "RB": -0.069,
+   "WR": -0.21,
+   "TE": -0.176
   },
   "10": {
-   "QB": 0.4,
-   "RB": 0.398,
-   "WR": 0.297,
-   "TE": 0.4
+   "QB": 0.2,
+   "RB": 0.45,
+   "WR": 0.445,
+   "TE": 0.378
   },
   "11": {
-   "QB": -0.174,
-   "RB": 0.119,
-   "WR": 0.243,
-   "TE": -0.073
+   "QB": -0.119,
+   "RB": 0.359,
+   "WR": 0.175,
+   "TE": -0.062
   },
   "12": {
    "QB": -0.121,
-   "RB": 0.4,
-   "WR": 0.021,
-   "TE": 0.26
+   "RB": 0.45,
+   "WR": 0.032,
+   "TE": 0.37
   }
  },
  "needs_ranks": {
   "1": {
    "QB": 7,
-   "RB": 7,
+   "RB": 6,
    "WR": 9,
    "TE": 8
   },
   "2": {
    "QB": 1,
-   "RB": 6,
+   "RB": 5,
    "WR": 4,
    "TE": 6
   },
@@ -4766,7 +5018,7 @@
   },
   "5": {
    "QB": 2,
-   "RB": 5,
+   "RB": 7,
    "WR": 5,
    "TE": 12
   },
@@ -4784,7 +5036,7 @@
   },
   "8": {
    "QB": 9,
-   "RB": 9,
+   "RB": 10,
    "WR": 3,
    "TE": 1
   },
@@ -4796,7 +5048,7 @@
   },
   "10": {
    "QB": 11,
-   "RB": 10,
+   "RB": 9,
    "WR": 11,
    "TE": 11
   },
@@ -4811,6 +5063,790 @@
    "RB": 11,
    "WR": 7,
    "TE": 9
+  }
+ },
+ "thin": {
+  "1": [
+   "RB",
+   "WR"
+  ],
+  "2": [
+   "RB",
+   "WR"
+  ],
+  "3": [
+   "WR"
+  ],
+  "4": [
+   "TE"
+  ],
+  "5": [
+   "WR"
+  ],
+  "6": [
+   "RB"
+  ],
+  "7": [
+   "RB",
+   "WR"
+  ],
+  "8": [
+   "WR"
+  ],
+  "9": [
+   "RB"
+  ],
+  "10": [
+   "RB",
+   "WR"
+  ],
+  "11": [
+   "RB"
+  ],
+  "12": [
+   "RB",
+   "TE"
+  ]
+ },
+ "history": {
+  "drafts": [
+   {
+    "season": "2024",
+    "kind": "startup",
+    "rounds": 20,
+    "picks": 240
+   },
+   {
+    "season": "2025",
+    "kind": "rookie",
+    "rounds": 3,
+    "picks": 36
+   },
+   {
+    "season": "2026",
+    "kind": "rookie",
+    "rounds": 3,
+    "picks": 36
+   }
+  ],
+  "round_counts": {
+   "1": {
+    "QB": 1,
+    "RB": 8,
+    "WR": 12,
+    "TE": 3
+   },
+   "2": {
+    "QB": 1,
+    "RB": 7,
+    "WR": 13,
+    "TE": 3
+   },
+   "3": {
+    "QB": 3,
+    "RB": 9,
+    "WR": 6,
+    "TE": 5
+   }
+  },
+  "round_priors": {
+   "1": {
+    "QB": 0.55,
+    "RB": 1.134,
+    "WR": 1.35,
+    "TE": 0.756
+   },
+   "2": {
+    "QB": 0.55,
+    "RB": 1.069,
+    "WR": 1.35,
+    "TE": 0.756
+   },
+   "3": {
+    "QB": 0.77,
+    "RB": 1.217,
+    "WR": 1.018,
+    "TE": 0.943
+   }
+  }
+ },
+ "tendencies": {
+  "1": {
+   "pref": {
+    "QB": 0.85,
+    "RB": 1.108,
+    "WR": 0.991,
+    "TE": 0.93
+   },
+   "labels": [
+    "Leans RB",
+    "Avoids QB"
+   ],
+   "rookie_picks": [
+    {
+     "season": "2025",
+     "round": 1,
+     "pos": "RB",
+     "name": "Omarion Hampton"
+    },
+    {
+     "season": "2025",
+     "round": 1,
+     "pos": "RB",
+     "name": "Kaleb Johnson"
+    },
+    {
+     "season": "2025",
+     "round": 3,
+     "pos": "WR",
+     "name": "Jack Bech"
+    },
+    {
+     "season": "2025",
+     "round": 3,
+     "pos": "TE",
+     "name": "Harold Fannin"
+    },
+    {
+     "season": "2025",
+     "round": 3,
+     "pos": "RB",
+     "name": "Dylan Sampson"
+    },
+    {
+     "season": "2026",
+     "round": 1,
+     "pos": "WR",
+     "name": "Carnell Tate"
+    },
+    {
+     "season": "2026",
+     "round": 2,
+     "pos": "WR",
+     "name": "Ja'Kobi Lane"
+    },
+    {
+     "season": "2026",
+     "round": 3,
+     "pos": "RB",
+     "name": "Kaelon Black"
+    }
+   ],
+   "rookie_counts": {
+    "QB": 0,
+    "RB": 4,
+    "WR": 3,
+    "TE": 1
+   },
+   "weighted_picks": 12.0
+  },
+  "2": {
+   "pref": {
+    "QB": 0.85,
+    "RB": 1.107,
+    "WR": 0.981,
+    "TE": 0.905
+   },
+   "labels": [
+    "Leans RB",
+    "Avoids QB"
+   ],
+   "rookie_picks": [
+    {
+     "season": "2025",
+     "round": 1,
+     "pos": "WR",
+     "name": "Tetairoa McMillan"
+    },
+    {
+     "season": "2025",
+     "round": 2,
+     "pos": "RB",
+     "name": "Devin Neal"
+    },
+    {
+     "season": "2025",
+     "round": 3,
+     "pos": "WR",
+     "name": "Tory Horton"
+    },
+    {
+     "season": "2026",
+     "round": 2,
+     "pos": "RB",
+     "name": "Adam Randall"
+    }
+   ],
+   "rookie_counts": {
+    "QB": 0,
+    "RB": 2,
+    "WR": 2,
+    "TE": 0
+   },
+   "weighted_picks": 8.0
+  },
+  "3": {
+   "pref": {
+    "QB": 1.2,
+    "RB": 0.85,
+    "WR": 0.976,
+    "TE": 1.033
+   },
+   "labels": [
+    "Leans QB",
+    "Avoids RB"
+   ],
+   "rookie_picks": [
+    {
+     "season": "2025",
+     "round": 1,
+     "pos": "WR",
+     "name": "Travis Hunter"
+    },
+    {
+     "season": "2025",
+     "round": 1,
+     "pos": "QB",
+     "name": "Cam Ward"
+    },
+    {
+     "season": "2025",
+     "round": 1,
+     "pos": "WR",
+     "name": "Matthew Golden"
+    },
+    {
+     "season": "2025",
+     "round": 2,
+     "pos": "QB",
+     "name": "Shedeur Sanders"
+    },
+    {
+     "season": "2025",
+     "round": 2,
+     "pos": "TE",
+     "name": "Elijah Arroyo"
+    },
+    {
+     "season": "2025",
+     "round": 3,
+     "pos": "RB",
+     "name": "Trevor Etienne"
+    },
+    {
+     "season": "2026",
+     "round": 1,
+     "pos": "RB",
+     "name": "Jeremiyah Love"
+    },
+    {
+     "season": "2026",
+     "round": 1,
+     "pos": "TE",
+     "name": "Kenyon Sadiq"
+    },
+    {
+     "season": "2026",
+     "round": 2,
+     "pos": "WR",
+     "name": "Germie Bernard"
+    },
+    {
+     "season": "2026",
+     "round": 2,
+     "pos": "WR",
+     "name": "Ted Hurst"
+    },
+    {
+     "season": "2026",
+     "round": 3,
+     "pos": "QB",
+     "name": "Fernando Mendoza"
+    }
+   ],
+   "rookie_counts": {
+    "QB": 3,
+    "RB": 2,
+    "WR": 4,
+    "TE": 2
+   },
+   "weighted_picks": 15.0
+  },
+  "4": {
+   "pref": {
+    "QB": 1.045,
+    "RB": 1.139,
+    "WR": 0.894,
+    "TE": 0.93
+   },
+   "labels": [
+    "Leans RB",
+    "Avoids WR"
+   ],
+   "rookie_picks": [
+    {
+     "season": "2025",
+     "round": 2,
+     "pos": "RB",
+     "name": "Jaydon Blue"
+    },
+    {
+     "season": "2025",
+     "round": 3,
+     "pos": "WR",
+     "name": "Dont'e Thornton"
+    },
+    {
+     "season": "2026",
+     "round": 1,
+     "pos": "WR",
+     "name": "Chris Bell"
+    },
+    {
+     "season": "2026",
+     "round": 2,
+     "pos": "RB",
+     "name": "Emmett Johnson"
+    },
+    {
+     "season": "2026",
+     "round": 3,
+     "pos": "RB",
+     "name": "Demond Claiborne"
+    },
+    {
+     "season": "2026",
+     "round": 3,
+     "pos": "QB",
+     "name": "Ty Simpson"
+    },
+    {
+     "season": "2026",
+     "round": 3,
+     "pos": "RB",
+     "name": "Kaytron Allen"
+    },
+    {
+     "season": "2026",
+     "round": 3,
+     "pos": "TE",
+     "name": "Oscar Delp"
+    }
+   ],
+   "rookie_counts": {
+    "QB": 1,
+    "RB": 4,
+    "WR": 2,
+    "TE": 1
+   },
+   "weighted_picks": 12.0
+  },
+  "5": {
+   "pref": {
+    "QB": 0.85,
+    "RB": 0.968,
+    "WR": 1.085,
+    "TE": 0.957
+   },
+   "labels": [
+    "Leans WR",
+    "Avoids QB"
+   ],
+   "rookie_picks": [
+    {
+     "season": "2025",
+     "round": 2,
+     "pos": "WR",
+     "name": "Luther Burden"
+    },
+    {
+     "season": "2025",
+     "round": 2,
+     "pos": "WR",
+     "name": "Jayden Higgins"
+    },
+    {
+     "season": "2025",
+     "round": 3,
+     "pos": "WR",
+     "name": "Pat Bryant"
+    },
+    {
+     "season": "2026",
+     "round": 1,
+     "pos": "RB",
+     "name": "Jonah Coleman"
+    },
+    {
+     "season": "2026",
+     "round": 2,
+     "pos": "RB",
+     "name": "Nicholas Singleton"
+    },
+    {
+     "season": "2026",
+     "round": 2,
+     "pos": "WR",
+     "name": "Skyler Bell"
+    },
+    {
+     "season": "2026",
+     "round": 2,
+     "pos": "TE",
+     "name": "Eli Raridon"
+    }
+   ],
+   "rookie_counts": {
+    "QB": 0,
+    "RB": 2,
+    "WR": 4,
+    "TE": 1
+   },
+   "weighted_picks": 11.0
+  },
+  "6": {
+   "pref": {
+    "QB": 0.85,
+    "RB": 0.868,
+    "WR": 1.019,
+    "TE": 1.2
+   },
+   "labels": [
+    "Leans TE",
+    "Avoids QB"
+   ],
+   "rookie_picks": [
+    {
+     "season": "2025",
+     "round": 1,
+     "pos": "RB",
+     "name": "Ashton Jeanty"
+    },
+    {
+     "season": "2025",
+     "round": 1,
+     "pos": "TE",
+     "name": "Tyler Warren"
+    },
+    {
+     "season": "2025",
+     "round": 3,
+     "pos": "TE",
+     "name": "Terrance Ferguson"
+    },
+    {
+     "season": "2026",
+     "round": 1,
+     "pos": "WR",
+     "name": "KC Concepcion"
+    },
+    {
+     "season": "2026",
+     "round": 2,
+     "pos": "TE",
+     "name": "Eli Stowers"
+    },
+    {
+     "season": "2026",
+     "round": 2,
+     "pos": "WR",
+     "name": "De'Zhaun Stribling"
+    },
+    {
+     "season": "2026",
+     "round": 3,
+     "pos": "WR",
+     "name": "Malachi Fields"
+    }
+   ],
+   "rookie_counts": {
+    "QB": 0,
+    "RB": 1,
+    "WR": 3,
+    "TE": 3
+   },
+   "weighted_picks": 11.0
+  },
+  "7": {
+   "pref": {
+    "QB": 0.929,
+    "RB": 1.142,
+    "WR": 0.868,
+    "TE": 1.07
+   },
+   "labels": [
+    "Leans RB",
+    "Leans TE"
+   ],
+   "rookie_picks": [
+    {
+     "season": "2025",
+     "round": 1,
+     "pos": "RB",
+     "name": "TreVeyon Henderson"
+    },
+    {
+     "season": "2025",
+     "round": 2,
+     "pos": "RB",
+     "name": "Cam Skattebo"
+    },
+    {
+     "season": "2025",
+     "round": 3,
+     "pos": "RB",
+     "name": "Ollie Gordon"
+    },
+    {
+     "season": "2025",
+     "round": 3,
+     "pos": "TE",
+     "name": "Mason Taylor"
+    },
+    {
+     "season": "2026",
+     "round": 1,
+     "pos": "WR",
+     "name": "Elijah Sarratt"
+    },
+    {
+     "season": "2026",
+     "round": 3,
+     "pos": "RB",
+     "name": "Le'Veon Moss"
+    }
+   ],
+   "rookie_counts": {
+    "QB": 0,
+    "RB": 4,
+    "WR": 1,
+    "TE": 1
+   },
+   "weighted_picks": 10.0
+  },
+  "8": {
+   "pref": {
+    "QB": 1.12,
+    "RB": 1.13,
+    "WR": 0.894,
+    "TE": 0.891
+   },
+   "labels": [
+    "Leans RB",
+    "Leans QB"
+   ],
+   "rookie_picks": [
+    {
+     "season": "2026",
+     "round": 1,
+     "pos": "RB",
+     "name": "Jadarian Price"
+    }
+   ],
+   "rookie_counts": {
+    "QB": 0,
+    "RB": 1,
+    "WR": 0,
+    "TE": 0
+   },
+   "weighted_picks": 5.0
+  },
+  "9": {
+   "pref": {
+    "QB": 1.052,
+    "RB": 0.958,
+    "WR": 0.994,
+    "TE": 1.07
+   },
+   "labels": [
+    "Leans TE"
+   ],
+   "rookie_picks": [
+    {
+     "season": "2025",
+     "round": 1,
+     "pos": "TE",
+     "name": "Colston Loveland"
+    },
+    {
+     "season": "2025",
+     "round": 1,
+     "pos": "WR",
+     "name": "Emeka Egbuka"
+    },
+    {
+     "season": "2025",
+     "round": 2,
+     "pos": "WR",
+     "name": "Tre Harris"
+    },
+    {
+     "season": "2025",
+     "round": 2,
+     "pos": "WR",
+     "name": "Kyle Williams"
+    },
+    {
+     "season": "2025",
+     "round": 2,
+     "pos": "RB",
+     "name": "RJ Harvey"
+    },
+    {
+     "season": "2026",
+     "round": 3,
+     "pos": "RB",
+     "name": "Eli Heidenreich"
+    }
+   ],
+   "rookie_counts": {
+    "QB": 0,
+    "RB": 2,
+    "WR": 3,
+    "TE": 1
+   },
+   "weighted_picks": 10.0
+  },
+  "10": {
+   "pref": {
+    "QB": 1.185,
+    "RB": 0.85,
+    "WR": 1.014,
+    "TE": 1.144
+   },
+   "labels": [
+    "Leans QB",
+    "Leans TE"
+   ],
+   "rookie_picks": [
+    {
+     "season": "2025",
+     "round": 3,
+     "pos": "QB",
+     "name": "Jalen Milroe"
+    },
+    {
+     "season": "2026",
+     "round": 1,
+     "pos": "WR",
+     "name": "Omar Cooper"
+    },
+    {
+     "season": "2026",
+     "round": 2,
+     "pos": "WR",
+     "name": "Chris Brazzell"
+    },
+    {
+     "season": "2026",
+     "round": 3,
+     "pos": "TE",
+     "name": "Max Klare"
+    }
+   ],
+   "rookie_counts": {
+    "QB": 1,
+    "RB": 0,
+    "WR": 2,
+    "TE": 1
+   },
+   "weighted_picks": 8.0
+  },
+  "11": {
+   "pref": {
+    "QB": 0.85,
+    "RB": 0.924,
+    "WR": 1.155,
+    "TE": 0.85
+   },
+   "labels": [
+    "Leans WR",
+    "Avoids QB"
+   ],
+   "rookie_picks": [
+    {
+     "season": "2025",
+     "round": 1,
+     "pos": "RB",
+     "name": "Quinshon Judkins"
+    },
+    {
+     "season": "2025",
+     "round": 2,
+     "pos": "WR",
+     "name": "Jaylin Noel"
+    },
+    {
+     "season": "2026",
+     "round": 1,
+     "pos": "WR",
+     "name": "Denzel Boston"
+    },
+    {
+     "season": "2026",
+     "round": 2,
+     "pos": "WR",
+     "name": "Antonio Williams"
+    },
+    {
+     "season": "2026",
+     "round": 3,
+     "pos": "WR",
+     "name": "Bryce Lance"
+    }
+   ],
+   "rookie_counts": {
+    "QB": 0,
+    "RB": 1,
+    "WR": 4,
+    "TE": 0
+   },
+   "weighted_picks": 9.0
+  },
+  "12": {
+   "pref": {
+    "QB": 0.993,
+    "RB": 0.957,
+    "WR": 1.093,
+    "TE": 0.85
+   },
+   "labels": [
+    "Leans WR",
+    "Avoids TE"
+   ],
+   "rookie_picks": [
+    {
+     "season": "2025",
+     "round": 2,
+     "pos": "WR",
+     "name": "Elic Ayomanor"
+    },
+    {
+     "season": "2026",
+     "round": 1,
+     "pos": "WR",
+     "name": "Makai Lemon"
+    },
+    {
+     "season": "2026",
+     "round": 1,
+     "pos": "WR",
+     "name": "Jordyn Tyson"
+    },
+    {
+     "season": "2026",
+     "round": 3,
+     "pos": "RB",
+     "name": "Mike Washington"
+    }
+   ],
+   "rookie_counts": {
+    "QB": 0,
+    "RB": 1,
+    "WR": 3,
+    "TE": 0
+   },
+   "weighted_picks": 8.0
   }
  }
 }

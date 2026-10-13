@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T10:16:34+00:00",
+  "generated_at": "2026-10-13T12:30:59+00:00",
   "league": {
     "id": "1312005038838673409",
     "name": "The HIM Dynasty",
@@ -5574,20 +5574,6 @@
             "proj": 12.0
           },
           {
-            "id": "12529",
-            "name": "TreVeyon Henderson",
-            "pos": "RB",
-            "nfl": "NE",
-            "age": 23,
-            "exp": 1,
-            "injury": "Out",
-            "espn_id": null,
-            "pts": 26.5,
-            "last": 4.8,
-            "ppg": 6.62,
-            "proj": 3.31
-          },
-          {
             "id": "7523",
             "name": "Trevor Lawrence",
             "pos": "QB",
@@ -5703,6 +5689,20 @@
           }
         ],
         "ir": [
+          {
+            "id": "12529",
+            "name": "TreVeyon Henderson",
+            "pos": "RB",
+            "nfl": "NE",
+            "age": 23,
+            "exp": 1,
+            "injury": "Out",
+            "espn_id": null,
+            "pts": 26.5,
+            "last": 4.8,
+            "ppg": 6.62,
+            "proj": 3.31
+          },
           {
             "id": "4137",
             "name": "James Conner",
