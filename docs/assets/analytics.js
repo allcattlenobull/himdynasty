@@ -612,8 +612,8 @@
   // ---------------------------------------------------------------- //
   // Explorer
   // ---------------------------------------------------------------- //
-  const FLEX = ["RB", "WR", "TE"];
-  // QB stands alone; RB, WR and TE can be mixed (flex view).
+  const FLEX = ["WR", "TE"];
+  // QB and RB stand alone; WR and TE can be viewed together.
   function groupsFor(list) {
     if (list.length === 1) return GROUPS[list[0]];
     const merged = new Map();
@@ -625,7 +625,7 @@
     return [...merged.entries()];
   }
   const defaultsFor = (list) => new Set(list.flatMap((pos) => DEFAULT_GROUPS[pos]));
-  const volumeFor = (list) => (list.length === 1 ? VOLUME[list[0]] : ["opp", "carries + targets", 100]);
+  const volumeFor = (list) => (list.length === 1 ? VOLUME[list[0]] : ["tgt", "targets", 70]);
   const ex = { pos: ["WR"], scope: "s", groups: null, owner: "all", nfl: "", min: 20, q: "", sort: "ppg", dir: -1, shown: 50 };
 
   function exRows() {
@@ -669,10 +669,10 @@
       const b = el("button", v, on ? "chip is-current" : "chip");
       b.type = "button";
       b.setAttribute("aria-pressed", String(on));
-      b.title = v === "QB" ? "Quarterbacks (on their own)" : "Tap RB, WR and TE together to compare flex options";
+      b.title = FLEX.includes(v) ? "Tap WR and TE together to see pass catchers side by side" : `${v}s on their own`;
       b.addEventListener("click", () => {
         let next;
-        if (v === "QB" || ex.pos.includes("QB")) next = [v];
+        if (!FLEX.includes(v) || !ex.pos.every((x) => FLEX.includes(x))) next = [v];
         else if (on) next = ex.pos.length > 1 ? ex.pos.filter((x) => x !== v) : ex.pos;
         else next = FLEX.filter((x) => ex.pos.includes(x) || x === v);
         if (next.join() === ex.pos.join()) return;
@@ -684,7 +684,7 @@
         renderExplorer();
       });
       return b;
-    }), el("span", "QB alone, or mix RB / WR / TE", "owner ex-pos-hint"));
+    }), el("span", "WR and TE can be combined", "owner ex-pos-hint"));
     const st = document.getElementById("ex-scope");
     st.replaceChildren(...[["s", "Season"], ["l3", "Last 3 games"]].map(([k, lab]) => {
       const b = el("button", lab, k === ex.scope ? "chip is-current" : "chip");
