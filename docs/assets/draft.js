@@ -45,7 +45,7 @@
       r.setAttribute("y", h - bh);
       r.setAttribute("width", bw);
       r.setAttribute("height", bh);
-      r.setAttribute("class", g.pts >= 25 ? "hot" : "bar");
+      r.setAttribute("class", g.pts >= 25 ? "sb hot" : "sb");
       const t = document.createElementNS(SVG, "title");
       t.textContent = `Wk ${g.week ?? "?"} ${g.at === "@" ? "@" : "vs"} ${g.opp ?? ""}: ${g.pts.toFixed(1)} pts`;
       r.appendChild(t);

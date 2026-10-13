@@ -678,8 +678,8 @@ a.team:hover { color: var(--red); text-decoration: underline; text-underline-off
 .pick-foot { margin-top: auto; display: flex; justify-content: space-between; align-items: end; gap: 0.5rem; padding: 0.45rem 0.7rem 0.6rem; border-top: 1px dashed var(--line); }
 .reason { font-family: var(--display); letter-spacing: 0.1em; font-size: 0.72rem; text-transform: uppercase; color: var(--red); }
 .spark { display: block; }
-.spark .bar { fill: var(--muted); opacity: 0.55; }
-.spark .hot { fill: var(--red); }
+.spark .sb { fill: var(--muted); opacity: 0.55; }
+.spark .sb.hot { fill: var(--red); opacity: 1; }
 .posbadge {
   display: inline-block;
   font-family: var(--display);
