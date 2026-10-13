@@ -301,8 +301,7 @@ img { display: block; }
   top: 0;
   z-index: 10;
   background: var(--topbar);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: none;
   border-bottom: 2px solid var(--red);
 }
 .topbar-row {
@@ -1118,15 +1117,15 @@ th.sortable.asc::after { content: " ▲"; color: var(--red); }
 /* ------------------------------------------------------------------ */
 @view-transition { navigation: auto; }
 .topbar { view-transition-name: topbar; }
-::view-transition-old(root) { animation: vt-out 0.22s ease both; }
-::view-transition-new(root) { animation: vt-in 0.42s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+::view-transition-old(root) { animation: vt-out 0.14s ease both; }
+::view-transition-new(root) { animation: vt-in 0.26s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
 @keyframes vt-out { to { opacity: 0; transform: translateY(-14px); } }
 @keyframes vt-in { from { opacity: 0; transform: translateY(26px); } }
 
 .motion .rv {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 0.55s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.65s cubic-bezier(0.2, 0.9, 0.25, 1.15);
+  transition: opacity 0.38s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.45s cubic-bezier(0.2, 0.9, 0.25, 1.1);
   transition-delay: var(--rv-delay, 0ms);
 }
 .motion tr.rv { transform: translateX(-14px); transition-duration: 0.35s, 0.4s; }
@@ -1174,16 +1173,16 @@ th.sortable.asc::after { content: " ▲"; color: var(--red); }
 
 /* Desktop: depth, tilt, spotlight */
 @media (min-width: 861px) and (pointer: fine) {
-  .motion .rv { transform: translateY(42px) scale(0.97); }
+  .motion .rv { transform: translateY(26px) scale(0.98); }
   .motion .pick.rv, .motion .matchup.rv, .motion .idea.rv { transform: perspective(900px) rotateX(-14deg) translateY(46px); transform-origin: 50% 0; }
   .motion tr.rv { transform: translateX(-26px); }
   .motion .rv.in { transform: none; }
 
   .motion :is(.pick, .idea, .matchup, .stat, .odds-block, .pick-chip, .news-card, .game, .roster-col, .ss-team-card, .cmp-card) {
     transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease, border-color 0.2s ease;
-    will-change: transform;
   }
   .motion .tilting {
+    will-change: transform;
     box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--red);
     background-image: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), var(--glow), transparent 55%);
     z-index: 2; position: relative;
@@ -1205,7 +1204,7 @@ th.sortable.asc::after { content: " ▲"; color: var(--red); }
   .motion body::after {
     content: ""; position: fixed; inset: -40%; z-index: -1; pointer-events: none;
     background: repeating-linear-gradient(-55deg, transparent 0 22px, var(--texture) 22px 24px);
-    opacity: 0.55; animation: drift 60s linear infinite;
+    opacity: 0.55;
   }
   @keyframes drift { to { transform: translate(120px, 0); } }
 }
@@ -1392,3 +1391,38 @@ th.sortable.asc::after { content: " ▲"; color: var(--red); }
 .an-week .chip { justify-self: start; text-decoration: none; }
 .gloss-more { margin-top: 0.8rem; }
 .gloss-more summary { cursor: pointer; font-family: var(--display); letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); margin-bottom: 0.6rem; }
+
+/* Big data tables: fixed cell sizing is much cheaper to lay out */
+.ex-table { border-collapse: separate; border-spacing: 0; }
+.ex-table td, .ex-table th { padding: 0.45rem 0.55rem; }
+
+/* ------------------------------------------------------------------ */
+/* Score ticker                                                        */
+/* ------------------------------------------------------------------ */
+.ticker { background: #0d0d10; color: #f4f4f5; border-bottom: 2px solid var(--red); overflow: hidden; height: 36px; position: relative; font-size: 0.8rem; }
+.ticker::before, .ticker::after { content: ""; position: absolute; top: 0; bottom: 0; width: 28px; z-index: 1; pointer-events: none; }
+.ticker::before { left: 0; background: linear-gradient(90deg, #0d0d10, transparent); }
+.ticker::after { right: 0; background: linear-gradient(270deg, #0d0d10, transparent); }
+.tk-track { display: flex; width: max-content; height: 100%; }
+.tk-track.tk-move { animation: tk-scroll var(--tk-dur, 60s) linear infinite; }
+.ticker:hover .tk-track, .ticker:focus-within .tk-track { animation-play-state: paused; }
+@keyframes tk-scroll { to { transform: translateX(-50%); } }
+.tk-run { display: flex; align-items: center; height: 100%; flex: none; }
+.tk-label { flex: none; align-self: stretch; display: flex; align-items: center; padding: 0 0.7rem; background: var(--red); color: #fff; font-family: var(--display); letter-spacing: 0.1em; font-size: 0.78rem; margin-left: 0.6rem; clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); }
+.tk-game, .tk-news { flex: none; display: inline-flex; align-items: center; gap: 0.55rem; padding: 0 0.9rem; height: 100%; color: inherit; text-decoration: none; border-right: 1px solid #26262b; white-space: nowrap; }
+.tk-game:hover, .tk-news:hover { background: #1b1b20; }
+.tk-team { display: inline-flex; align-items: center; gap: 0.3rem; color: #a1a1aa; }
+.tk-team.win, .tk-in .tk-team, .tk-pre .tk-team { color: #f4f4f5; }
+.tk-team img { width: 18px; height: 18px; object-fit: contain; }
+.tk-abbr { font-weight: 700; }
+.tk-name { max-width: 9rem; overflow: hidden; text-overflow: ellipsis; }
+.tk-score { font-variant-numeric: tabular-nums; font-weight: 800; }
+.tk-poss { color: #facc15; font-size: 0.6rem; }
+.tk-status { color: #a1a1aa; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.tk-status.live { color: #ff4d4d; font-weight: 700; }
+.tk-status.live::before { content: "● "; animation: pulse 1.2s ease-in-out infinite; }
+.tk-status.rz { color: #facc15; }
+.tk-news { font-weight: 600; }
+.tk-news::before { content: "▸"; color: var(--red); }
+.tk-him .dot { width: 8px; height: 8px; }
+@media (prefers-reduced-motion: reduce) { .ticker { overflow-x: auto; scrollbar-width: none; } }

@@ -18,6 +18,8 @@ https://allcattlenobull.github.io/himdynasty/
 | `docs/analytics.html` | Analytics HQ: weekly start/sit for every team (best lineup, reasons for and against each player, waiver upgrades), a two-player compare, a stat explorer (EPA, CPOE, estimated YPRR, blitz and play-action splits, box counts, red zone, Next Gen Stats), a defense table, a team view, and player profiles. |
 | `docs/team.html?id=N` | One team: stats, roster (starters, bench, taxi, IR), full schedule with results and win odds, season trend. |
 
+Every inner page has a score ticker on top (live NFL scores and upcoming games from ESPN, this league's matchups from Sleeper, and NFL headlines), refreshed every minute while games are live.
+
 Branding lives in `docs/assets/` (`logo.svg`, `brand.css`). Every page has an Auto / Light / Dark theme switch (`theme.js`); Auto follows the device setting. Charts use Chart.js 4.4.1, included in `docs/assets/vendor/`. `motion.js` adds scroll reveals, count-ups, card tilt, page transitions, and a scroll progress bar; it turns itself off when the device asks for reduced motion.
 
 ## Daily update

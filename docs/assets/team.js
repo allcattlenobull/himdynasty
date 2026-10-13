@@ -392,7 +392,7 @@
     let analysis = null;
     let analytics = null;
     try {
-      const get = (u) => fetch(u, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+      const get = (u) => fetch(u, { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
       [data, trade, analysis, analytics] = await Promise.all([loadData(), get("data/trade.json"), get("data/analysis.json"), get("data/analytics.json")]);
     } catch (err) {
       document.getElementById("hero").replaceChildren(el("p", `Could not load league data (${err.message}).`, "error"));

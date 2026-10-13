@@ -81,7 +81,7 @@ window.HIM = (() => {
   let dataPromise = null;
   function loadData() {
     if (!dataPromise) {
-      dataPromise = fetch("data/latest.json", { cache: "no-store" }).then((res) => {
+      dataPromise = fetch("data/latest.json", { cache: "no-cache" }).then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
       });
@@ -261,7 +261,185 @@ window.HIM = (() => {
       });
     }).catch(() => {});
   }
+
+  // ---------------------------------------------------------------- //
+  // Score ticker: NFL games, this league's matchups, NFL headlines.
+  // Live from ESPN and Sleeper in the browser; cached for a minute across
+  // pages so moving around the site doesn't refetch.
+  // ---------------------------------------------------------------- //
+  const ESPN_BOARD = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard";
+  const ESPN_NEWS = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/news?limit=15";
+  const SLEEPER_API = "https://api.sleeper.app/v1";
+
+  async function cachedJson(url, maxAgeMs) {
+    const key = `him-tk:${url}`;
+    try {
+      const hit = JSON.parse(sessionStorage.getItem(key) || "null");
+      if (hit && Date.now() - hit.t < maxAgeMs) return hit.d;
+    } catch (e) { /* storage off */ }
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const d = await res.json();
+    try { sessionStorage.setItem(key, JSON.stringify({ t: Date.now(), d })); } catch (e) { /* full or off */ }
+    return d;
+  }
+
+  function slimBoard(b) {
+    return (b.events || []).map((e) => {
+      const c = (e.competitions || [])[0] || {};
+      const st = (e.status || {}).type || {};
+      const side = (ha) => {
+        const t = (c.competitors || []).find((x) => x.homeAway === ha) || {};
+        return { abbr: (t.team || {}).abbreviation || "", score: t.score, logo: (t.team || {}).logo || "",
+          winner: !!t.winner, poss: !!((c.situation || {}).possession && (c.situation || {}).possession === (t.team || {}).id) };
+      };
+      return {
+        id: e.id, date: e.date, state: st.state, detail: st.shortDetail || st.detail || "",
+        away: side("away"), home: side("home"),
+        tv: ((c.broadcasts || [])[0] || {}).names ? c.broadcasts[0].names[0] : "",
+        link: ((e.links || []).find((l) => (l.rel || []).includes("summary")) || {}).href || "",
+        red: !!((c.situation || {}).isRedZone),
+      };
+    });
+  }
+
+  async function tickerData() {
+    const out = { games: [], week: null, label: "", him: [], himWeek: null, news: [] };
+    const jobs = [];
+    jobs.push((async () => {
+      const b = await cachedJson(ESPN_BOARD, 60000);
+      let games = slimBoard(b);
+      out.week = (b.week || {}).number;
+      // Tuesday/Wednesday: the default board still shows last week. Show the
+      // upcoming slate first, then last week's finals.
+      if (games.length && games.every((g) => g.state === "post") && out.week) {
+        try {
+          const nb = await cachedJson(`${ESPN_BOARD}?week=${out.week + 1}&seasontype=${(b.season || {}).type || 2}&dates=${(b.season || {}).year || ""}`, 300000);
+          const next = slimBoard(nb).filter((g) => g.state !== "post");
+          if (next.length) { out.next = next; out.nextWeek = out.week + 1; }
+        } catch (e) { /* next week not posted yet */ }
+      }
+      out.games = games;
+    })());
+    jobs.push((async () => {
+      const n = await cachedJson(ESPN_NEWS, 300000);
+      out.news = (n.articles || []).filter((a) => a.headline).slice(0, 12)
+        .map((a) => ({ text: a.headline, link: (((a.links || {}).web) || {}).href || "" }));
+    })());
+    jobs.push((async () => {
+      const data = await loadData();
+      const state = await cachedJson(`${SLEEPER_API}/state/nfl`, 600000);
+      const wk = Number(state.display_week || state.week || 0);
+      if (!wk || !data.league || !data.league.id) return;
+      const ms = await cachedJson(`${SLEEPER_API}/league/${data.league.id}/matchups/${wk}`, 60000);
+      const by = {};
+      (ms || []).forEach((m) => { if (m.matchup_id) (by[m.matchup_id] = by[m.matchup_id] || []).push(m); });
+      out.himWeek = wk;
+      out.him = Object.values(by).filter((p) => p.length === 2).map(([a, b]) => ({
+        a: { rid: a.roster_id, name: (data.teams[a.roster_id] || {}).team || `Team ${a.roster_id}`, pts: a.points || 0 },
+        b: { rid: b.roster_id, name: (data.teams[b.roster_id] || {}).team || `Team ${b.roster_id}`, pts: b.points || 0 },
+      }));
+    })());
+    await Promise.allSettled(jobs);
+    return out;
+  }
+
+  function gameTime(g) {
+    const d = new Date(g.date);
+    if (isNaN(d)) return g.detail;
+    return d.toLocaleString([], { weekday: "short", hour: "numeric", minute: "2-digit" });
+  }
+
+  function tickerItems(d) {
+    const items = [];
+    const label = (txt) => items.push(el("span", txt, "tk-label"));
+    const game = (g) => {
+      const a = el(g.link ? "a" : "span", null, `tk-game tk-${g.state}`);
+      if (g.link) { a.href = g.link; a.target = "_blank"; a.rel = "noopener"; }
+      const team = (t) => {
+        const w = el("span", null, `tk-team${g.state === "post" && t.winner ? " win" : ""}`);
+        if (t.logo) { const i = el("img"); i.alt = ""; i.width = 18; i.height = 18; i.loading = "lazy"; i.addEventListener("error", () => i.remove()); i.src = t.logo; w.appendChild(i); }
+        w.appendChild(el("span", t.abbr, "tk-abbr"));
+        if (g.state !== "pre") w.appendChild(el("span", t.score ?? "", "tk-score"));
+        if (g.state === "in" && t.poss) w.appendChild(el("span", "●", "tk-poss"));
+        return w;
+      };
+      a.append(team(g.away), team(g.home));
+      const st = g.state === "pre" ? `${gameTime(g)}${g.tv ? ` · ${g.tv}` : ""}` : g.detail;
+      a.appendChild(el("span", st, `tk-status${g.state === "in" ? " live" : ""}${g.red ? " rz" : ""}`));
+      items.push(a);
+    };
+    const live = d.games.filter((g) => g.state === "in");
+    const pre = d.games.filter((g) => g.state === "pre").sort((x, y) => x.date.localeCompare(y.date));
+    const post = d.games.filter((g) => g.state === "post");
+    if (live.length) { label("NFL · LIVE"); live.forEach(game); }
+    if (d.next && d.next.length) { label(`NFL · WEEK ${d.nextWeek}`); d.next.sort((x, y) => x.date.localeCompare(y.date)).forEach(game); }
+    if (pre.length) { label(`NFL · WEEK ${d.week} · UPCOMING`); pre.forEach(game); }
+    if (post.length) { label(`NFL · WEEK ${d.week} · FINAL`); post.forEach(game); }
+    if (d.him.length) {
+      label(`HIM · WEEK ${d.himWeek}`);
+      d.him.forEach((m) => {
+        const a = el("a", null, "tk-game tk-him");
+        a.href = "league.html#matchups";
+        const side = (t, other) => {
+          const w = el("span", null, `tk-team${t.pts > other.pts ? " win" : ""}`);
+          w.append(dot(t.rid), el("span", t.name.trim(), "tk-abbr tk-name"), el("span", t.pts ? t.pts.toFixed(1) : "0", "tk-score"));
+          return w;
+        };
+        a.append(side(m.a, m.b), side(m.b, m.a));
+        items.push(a);
+      });
+    }
+    if (d.news.length) {
+      label("NFL HEADLINES");
+      d.news.forEach((n) => {
+        const a = el(n.link ? "a" : "span", n.text, "tk-news");
+        if (n.link) { a.href = n.link; a.target = "_blank"; a.rel = "noopener"; }
+        items.push(a);
+      });
+    }
+    return items;
+  }
+
+  function renderTicker() {
+    const header = document.querySelector("[data-topbar]");
+    if (!header || document.querySelector(".ticker")) return;
+    const bar = el("div", null, "ticker");
+    bar.setAttribute("role", "region");
+    bar.setAttribute("aria-label", "Scores and headlines");
+    const track = el("div", null, "tk-track");
+    bar.appendChild(track);
+    header.parentNode.insertBefore(bar, header);
+    let timer = 0;
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    async function refresh() {
+      clearTimeout(timer);
+      let d;
+      try { d = await tickerData(); } catch (e) { d = null; }
+      const items = d ? tickerItems(d) : [];
+      if (!items.length) { bar.hidden = true; timer = setTimeout(refresh, 300000); return; }
+      bar.hidden = false;
+      const run = el("div", null, "tk-run");
+      run.append(...items);
+      const runs = reduce ? [run] : [run, run.cloneNode(true)];
+      if (runs[1]) runs[1].setAttribute("aria-hidden", "true");
+      track.replaceChildren(...runs);
+      if (!reduce) {
+        requestAnimationFrame(() => {
+          const w = run.scrollWidth;
+          track.style.setProperty("--tk-dur", `${Math.max(30, w / 70)}s`);
+          track.classList.add("tk-move");
+        });
+      }
+      const live = d.games.some((g) => g.state === "in");
+      timer = setTimeout(() => { if (!document.hidden) refresh(); else document.addEventListener("visibilitychange", refresh, { once: true }); }, live ? 60000 : 600000);
+    }
+    // Let the page's own content load first.
+    (window.requestIdleCallback || ((f) => setTimeout(f, 300)))(refresh, { timeout: 1500 });
+  }
+
   renderHeader();
+  renderTicker();
 
   return { initExpand, el, cssVar, assignColors, teamVar, teamColor, dot, teamHref, teamLink, oddsCell, withAlpha, chartTheme, themeChart, loadData, updatedText };
 })();

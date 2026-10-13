@@ -618,7 +618,7 @@
   async function load() {
     try {
       const [trade, latestData] = await Promise.all([
-        fetch("data/trade.json", { cache: "no-store" }).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); }),
+        fetch("data/trade.json", { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); }),
         window.HIM.loadData().catch(() => null),
       ]);
       data = trade;

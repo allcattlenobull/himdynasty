@@ -341,7 +341,7 @@
   // ------------------------------------------------------------------ //
   async function load() {
     try {
-      const get = (u) => fetch(u, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+      const get = (u) => fetch(u, { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
       [latest, news, trade] = await Promise.all([window.HIM.loadData(), get("data/news.json"), get("data/trade.json")]);
     } catch (err) {
       document.getElementById("updated").textContent = `Could not load league data (${err.message}).`;

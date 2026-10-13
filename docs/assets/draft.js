@@ -546,7 +546,7 @@
     try {
       let mock;
       [mock, latest] = await Promise.all([
-        fetch("data/mock_draft.json", { cache: "no-store" }).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); }),
+        fetch("data/mock_draft.json", { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); }),
         window.HIM.loadData().catch(() => null),
       ]);
       data = mock;
@@ -563,7 +563,7 @@
       data.teamNames = Object.fromEntries(Object.entries(latest.teams).map(([k, t]) => [k, t.team]));
     }
     try {
-      const h = await fetch("data/highlights.json", { cache: "no-store" });
+      const h = await fetch("data/highlights.json", { cache: "no-cache" });
       if (h.ok) {
         const hj = await h.json();
         highlights = hj.players || {};

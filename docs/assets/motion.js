@@ -20,10 +20,10 @@
   if (window.Chart && window.Chart.defaults) {
     const drawn = new WeakSet();
     const a = window.Chart.defaults.animation;
-    a.duration = desktop.matches ? 1100 : 700;
+    a.duration = desktop.matches ? 700 : 450;
     a.easing = "easeOutQuart";
     a.delay = (ctx) => (ctx.type === "data" && ctx.mode === "default" && !drawn.has(ctx.chart)
-      ? Math.min(ctx.dataIndex * (desktop.matches ? 22 : 10) + ctx.datasetIndex * 35, 900) : 0);
+      ? Math.min(ctx.dataIndex * (desktop.matches ? 12 : 6) + ctx.datasetIndex * 20, 450) : 0);
     a.onComplete = (ctx) => { if (ctx && ctx.chart) drawn.add(ctx.chart); };
   }
 
@@ -37,7 +37,7 @@
     ".roster-col", ".tend-row", "tbody tr", ".butt-card", ".plan-summary",
     ".ss-card", ".ss-team-card", ".ss-matchup", ".cmp-card", ".cmp-verdict", ".duel-row", ".an-week", ".ss-waiver",
   ].join(",");
-  const ROW_CAP = 24;
+  const ROW_CAP = 10;
 
   function stagger(list) {
     // Cascade siblings that come into view together.
@@ -50,15 +50,15 @@
     for (const nodes of groups.values()) {
       nodes.forEach((node, i) => {
         const row = node.tagName === "TR";
-        const step = row ? 22 : (desktop.matches ? 70 : 45);
-        const delay = Math.min(i, row ? ROW_CAP : 10) * step;
+        const step = row ? 14 : (desktop.matches ? 40 : 28);
+        const delay = Math.min(i, row ? ROW_CAP : 8) * step;
         node.style.setProperty("--rv-delay", `${delay}ms`);
         node.classList.add("in");
         countUpWithin(node, delay);
         window.setTimeout(() => {
           node.classList.remove("rv", "in");
           node.style.removeProperty("--rv-delay");
-        }, delay + (row ? 520 : 900));
+        }, delay + (row ? 380 : 560));
       });
     }
   }
@@ -77,6 +77,7 @@
     for (const n of found) {
       if (n.dataset.rv) continue;
       n.dataset.rv = "1";
+      if (n.tagName === "TR" && n.sectionRowIndex > 14) continue;
       if (n.closest(".topbar, .modal, [data-no-motion], [data-quiet]")) continue;
       n.classList.add("rv");
       io.observe(n);
@@ -113,7 +114,7 @@
         : v.toFixed(decimals);
       return before + s + after;
     };
-    const dur = desktop.matches ? 1000 : 650;
+    const dur = desktop.matches ? 650 : 450;
     let start = null;
     let last = fmt(0);
     node.textContent = last;
@@ -134,6 +135,7 @@
   // ---------------------------------------------------------------- //
   const TILT = ".pick, .idea, .matchup, .stat, .odds-block, .pick-chip, .news-card, .game, .roster-col, .ss-team-card, .cmp-card";
   let tilted = null;
+  let lastMagnet = null;
   let frame = 0;
   function resetTilt(node) {
     if (!node) return;
@@ -159,9 +161,8 @@
       });
     }
     const chip = e.target.closest && e.target.closest(".chip, .btn, .small-btn");
-    document.querySelectorAll(".magnet").forEach((c) => {
-      if (c !== chip) { c.classList.remove("magnet"); c.style.removeProperty("translate"); }
-    });
+    if (lastMagnet && lastMagnet !== chip) { lastMagnet.classList.remove("magnet"); lastMagnet.style.removeProperty("translate"); }
+    lastMagnet = chip || null;
     if (chip) {
       const r = chip.getBoundingClientRect();
       const dx = (e.clientX - (r.left + r.width / 2)) / r.width;

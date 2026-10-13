@@ -225,8 +225,13 @@
     charts.push(chart);
     return chart;
   }
+  const kickCache = {};
   function kickoff(g) {
     if (!g || !g.kick) return "";
+    if (kickCache[g.kick] !== undefined) return kickCache[g.kick];
+    return (kickCache[g.kick] = kickoffText(g));
+  }
+  function kickoffText(g) {
     const [d, t] = g.kick.split(" ");
     const dt = new Date(`${d}T${t || "13:00"}:00-04:00`);
     if (isNaN(dt)) return "";
@@ -435,7 +440,10 @@
   const labelFor = (p) => `${p.name} · ${p.pos} · ${p.nfl || "FA"}`;
   let labelToId = {};
 
+  let compareSetup = false;
   function setupCompare() {
+    if (compareSetup) return;
+    compareSetup = true;
     const dl = document.getElementById("cmp-list");
     labelToId = {};
     const all = Object.values(byId).filter((p) => p.pos && (p.proj !== undefined || p.s)).sort((a, b) => (b.proj || 0) - (a.proj || 0));
@@ -604,7 +612,7 @@
   // ---------------------------------------------------------------- //
   // Explorer
   // ---------------------------------------------------------------- //
-  const ex = { pos: "WR", scope: "s", groups: null, owner: "all", nfl: "", min: 20, q: "", sort: "ppg", dir: -1, shown: 80 };
+  const ex = { pos: "WR", scope: "s", groups: null, owner: "all", nfl: "", min: 20, q: "", sort: "ppg", dir: -1, shown: 50 };
 
   function exRows() {
     const [vkey, , vmax] = VOLUME[ex.pos];
@@ -645,7 +653,7 @@
     pt.replaceChildren(...["QB", "RB", "WR", "TE"].map((v) => {
       const b = el("button", v, v === ex.pos ? "chip is-current" : "chip");
       b.type = "button";
-      b.addEventListener("click", () => { ex.pos = v; ex.groups = new Set(DEFAULT_GROUPS[v]); ex.sort = "ppg"; ex.dir = -1; ex.shown = 80; renderExplorer(); });
+      b.addEventListener("click", () => { ex.pos = v; ex.groups = new Set(DEFAULT_GROUPS[v]); ex.sort = "ppg"; ex.dir = -1; ex.shown = 50; renderExplorer(); });
       return b;
     }));
     const st = document.getElementById("ex-scope");
@@ -744,29 +752,42 @@
     if (rows.length > ex.shown) {
       const more = el("button", `Show more (${rows.length - ex.shown})`, "chip");
       more.type = "button";
-      more.addEventListener("click", () => { ex.shown += 80; renderExplorer(); });
+      more.addEventListener("click", () => { ex.shown += 50; renderExplorer(); });
       host.appendChild(more);
     }
     document.getElementById("ex-note").textContent =
       `${rows.length} ${ex.pos}s · ${ex.scope === "s" ? `season (weeks ${SP.weeks[0]}–${SP.weeks[SP.weeks.length - 1]})` : "each player's last 3 games"} · * routes are estimated from snap share and team dropbacks.`;
   }
 
+  let exTimer = 0;
+  function scheduleExplorer(ms) {
+    clearTimeout(exTimer);
+    exTimer = setTimeout(renderExplorer, ms);
+  }
+
+  let explorerSetup = false;
   function setupExplorer() {
+    if (explorerSetup) return;
+    explorerSetup = true;
     const add = (sel, value, label) => { const o = el("option", label); o.value = value; sel.appendChild(o); };
     const owner = document.getElementById("ex-owner");
     add(owner, "all", "All players");
     add(owner, "rostered", "Rostered in HIM");
     add(owner, "fa", "Free agents");
     Object.entries(latest.teams).sort((a, b) => a[1].team.localeCompare(b[1].team)).forEach(([rid, t]) => add(owner, rid, t.team.trim()));
-    owner.addEventListener("change", () => { ex.owner = owner.value; ex.shown = 80; renderExplorer(); });
+    owner.addEventListener("change", () => { ex.owner = owner.value; ex.shown = 50; renderExplorer(); });
     const nfl = document.getElementById("ex-nfl");
     add(nfl, "", "All NFL teams");
     [...new Set(Object.values(byId).map((p) => p.nfl).filter(Boolean))].sort().forEach((t) => add(nfl, t, t));
     nfl.addEventListener("change", () => { ex.nfl = nfl.value; renderExplorer(); });
     const min = document.getElementById("ex-min");
-    min.addEventListener("input", () => { ex.min = Number(min.value); ex.shown = 80; renderExplorer(); });
+    min.addEventListener("input", () => {
+      ex.min = Number(min.value); ex.shown = 50;
+      document.getElementById("ex-min-label").textContent = `Minimum ${VOLUME[ex.pos][1]}: ${Math.round((ex.min / 100) * VOLUME[ex.pos][2])}`;
+      scheduleExplorer(120);
+    });
     const q = document.getElementById("ex-search");
-    q.addEventListener("input", () => { ex.q = q.value; ex.shown = 80; renderExplorer(); });
+    q.addEventListener("input", () => { ex.q = q.value; ex.shown = 50; scheduleExplorer(180); });
   }
 
   // ---------------------------------------------------------------- //
@@ -861,6 +882,7 @@
   };
 
   function openPlayer(id, scroll = true) {
+    if (!deepReady) { whenDeep(() => openPlayer(id, scroll)); return; }
     const p = byId[id];
     if (!p) return;
     const url = new URL(location.href);
@@ -1076,33 +1098,58 @@
       const want = a || new URLSearchParams(location.search).get("team") || "";
       renderStartSit(want);
     } else if (view === "compare") {
-      if (a && byId[a]) cmp.a = a;
-      if (b && byId[b]) cmp.b = b;
-      renderCompare();
-    } else if (view === "explorer") renderExplorer();
+      whenDeep(() => {
+        if (a && byId[a]) cmp.a = a;
+        if (b && byId[b]) cmp.b = b;
+        renderCompare();
+      }, "cmp-body");
+    } else if (view === "explorer") whenDeep(renderExplorer, "ex-table");
     else if (view === "defenses") renderDefenses();
-    else if (view === "teams") renderTeams();
+    else if (view === "teams") whenDeep(renderTeams, "teams-table");
+  }
+
+  // Start/Sit needs only startsit.json; the bigger files load in the background
+  // and the tabs that use them wait for `deep`.
+  let deep = null;
+  let deepReady = false;
+  function mergeStartsit() {
+    for (const [id, p] of Object.entries(S.players)) {
+      const base = byId[id] || {};
+      byId[id] = Object.assign(base, p, { id, headshot: base.headshot || p.headshot, owner: p.owner ?? base.owner });
+    }
+  }
+  function loadDeep() {
+    if (deep) return deep;
+    const get = (u) => fetch(u, { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); });
+    deep = Promise.all([get("data/splits.json"), get("data/analytics.json").catch(() => null), get("data/trade.json").catch(() => null)])
+      .then(([sp, a, tr]) => {
+        SP = sp; A = a; trade = tr;
+        for (const [id, s] of Object.entries(SP.players)) byId[id] = Object.assign(byId[id] || { id }, s, { id });
+        if (A) for (const p of A.players) byId[p.id] = Object.assign(byId[p.id] || {}, p, { id: p.id });
+        mergeStartsit();
+        deepReady = true;
+        setupCompare();
+        setupExplorer();
+      });
+    return deep;
+  }
+  function whenDeep(fn, hostId) {
+    if (deepReady) { fn(); return; }
+    const host = hostId && document.getElementById(hostId);
+    if (host && !host.childElementCount) host.replaceChildren(el("p", "Loading stats…", "muted"));
+    loadDeep().then(fn).catch((err) => { if (host) host.replaceChildren(el("p", `Stats unavailable (${err.message}).`, "muted")); });
   }
 
   async function load() {
-    const get = (u) => fetch(u, { cache: "no-store" }).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); });
+    const get = (u) => fetch(u, { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); });
     try {
-      [S, SP, A, latest, trade] = await Promise.all([
-        get("data/startsit.json"), get("data/splits.json"), get("data/analytics.json").catch(() => null),
-        window.HIM.loadData(), get("data/trade.json").catch(() => null),
-      ]);
+      [S, latest] = await Promise.all([get("data/startsit.json"), window.HIM.loadData()]);
     } catch (err) {
       document.getElementById("updated").textContent = `Analytics appear after the next morning update (${err.message}).`;
       return;
     }
     assignColors(latest.standings.map((t) => t.roster_id));
-    // Merge everything we know about each player under the Sleeper id.
-    for (const [id, s] of Object.entries(SP.players)) byId[id] = Object.assign({ id }, s);
-    if (A) for (const p of A.players) byId[p.id] = Object.assign(byId[p.id] || {}, p, { id: p.id });
-    for (const [id, p] of Object.entries(S.players)) {
-      const base = byId[id] || {};
-      byId[id] = Object.assign(base, p, { id, headshot: base.headshot || p.headshot, owner: p.owner ?? base.owner });
-    }
+    mergeStartsit();
     document.getElementById("updated").textContent =
       `Week ${S.week} · stats through week ${S.data_through} · updated ${new Date(S.generated_at).toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}`;
     const sel = document.getElementById("ss-team");
@@ -1111,13 +1158,13 @@
     sel.appendChild(o0);
     Object.keys(S.teams).sort((a, b) => teamName(a).localeCompare(teamName(b))).forEach((rid) => { const o = el("option", teamName(rid)); o.value = rid; sel.appendChild(o); });
     sel.addEventListener("change", () => { location.hash = sel.value ? `#startsit/${sel.value}` : "#startsit"; });
-    setupCompare();
-    setupExplorer();
     renderGlossary();
     window.addEventListener("hashchange", route);
     route();
+    // Start the background load once the first view has painted.
+    (window.requestIdleCallback || ((f) => setTimeout(f, 200)))(() => loadDeep());
     const pid = new URLSearchParams(location.search).get("player");
-    if (pid) openPlayer(pid, false);
+    if (pid) whenDeep(() => openPlayer(pid, false));
     document.addEventListener("him-themechange", () => {
       const open = new URLSearchParams(location.search).get("player");
       if (open) openPlayer(open, false);
