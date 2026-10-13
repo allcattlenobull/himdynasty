@@ -80,6 +80,13 @@ jobs:
         continue-on-error: true
         run: python scripts/mock_draft.py
 
+      - name: Find prospect highlight clips (YouTube)
+        if: steps.gate.outputs.run == 'true'
+        continue-on-error: true
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python scripts/highlights.py
+
       - name: Commit updated data
         if: steps.gate.outputs.run == 'true'
         run: |

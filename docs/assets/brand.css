@@ -1111,3 +1111,163 @@ th.sortable.asc::after { content: " ▲"; color: var(--red); }
 .sub-head { font-family: var(--display); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; font-size: 1rem; margin: 1rem 0 0.5rem; }
 .sub-head:first-child { margin-top: 0; }
 #tendencies td.wrap { min-width: 16rem; }
+.me-bar.league-wide { grid-template-columns: 1fr; }
+
+/* ------------------------------------------------------------------ */
+/* Motion (motion.js adds .motion unless reduced motion is requested)  */
+/* ------------------------------------------------------------------ */
+@view-transition { navigation: auto; }
+.topbar { view-transition-name: topbar; }
+::view-transition-old(root) { animation: vt-out 0.22s ease both; }
+::view-transition-new(root) { animation: vt-in 0.42s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+@keyframes vt-out { to { opacity: 0; transform: translateY(-14px); } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(26px); } }
+
+.motion .rv {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.65s cubic-bezier(0.2, 0.9, 0.25, 1.15);
+  transition-delay: var(--rv-delay, 0ms);
+}
+.motion tr.rv { transform: translateX(-14px); transition-duration: 0.35s, 0.4s; }
+.motion .rv.in { opacity: 1; transform: none; }
+
+/* Page entrance */
+.motion .topbar { animation: bar-drop 0.55s cubic-bezier(0.2, 0.9, 0.2, 1) both; }
+.motion .nav > * { animation: nav-in 0.45s cubic-bezier(0.2, 0.9, 0.2, 1) both; }
+.motion .nav > *:nth-child(1) { animation-delay: 0.08s; }
+.motion .nav > *:nth-child(2) { animation-delay: 0.13s; }
+.motion .nav > *:nth-child(3) { animation-delay: 0.18s; }
+.motion .nav > *:nth-child(4) { animation-delay: 0.23s; }
+.motion .nav > *:nth-child(5) { animation-delay: 0.28s; }
+.motion .nav > *:nth-child(6) { animation-delay: 0.33s; }
+.motion .brand img { animation: logo-in 0.7s cubic-bezier(0.2, 1.5, 0.4, 1) both; }
+.motion .brand:hover img { animation: logo-shake 0.45s ease-in-out; }
+.motion .strip .kicker { animation: wipe 0.8s 0.1s cubic-bezier(0.7, 0, 0.2, 1) both; }
+.motion .strip .kicker em { display: inline-block; animation: em-pop 0.6s 0.55s cubic-bezier(0.2, 1.6, 0.4, 1) both; }
+.motion .strip .updated { animation: fade-up 0.6s 0.45s ease both; }
+.motion .panel.in h2::before { animation: bar-grow 0.5s calc(var(--rv-delay, 0ms) + 0.15s) cubic-bezier(0.2, 1.4, 0.4, 1) both; }
+.motion .pick.in .pick-no { animation: stamp 0.55s calc(var(--rv-delay, 0ms) + 0.12s) cubic-bezier(0.2, 1.5, 0.4, 1) both; }
+.motion .matchup.in .mscore { animation: fade-up 0.5s calc(var(--rv-delay, 0ms) + 0.1s) ease both; }
+@keyframes bar-drop { from { transform: translateY(-100%); opacity: 0; } }
+@keyframes nav-in { from { opacity: 0; transform: translateY(-10px); } }
+@keyframes logo-in { from { opacity: 0; transform: scale(0.3) rotate(-25deg); } }
+@keyframes logo-shake { 25% { transform: rotate(-12deg) scale(1.08); } 60% { transform: rotate(9deg) scale(1.08); } }
+@keyframes wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 -5% 0 0); } }
+@keyframes em-pop { from { transform: scale(1.6) skewX(-12deg); opacity: 0; } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(8px); } }
+@keyframes bar-grow { from { transform: skewX(-20deg) scaleY(0); } }
+@keyframes stamp { from { transform: scale(2.2) rotate(-8deg); opacity: 0; } }
+
+/* Hover polish everywhere */
+.motion .chip, .motion .btn, .motion .small-btn { transition: translate 0.18s ease, transform 0.15s ease, background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease; }
+.motion .chip:active, .motion .small-btn:active { transform: scale(0.94); }
+.motion .chip.is-current { animation: chip-on 0.35s cubic-bezier(0.2, 1.5, 0.4, 1); }
+@keyframes chip-on { from { transform: scale(0.85); } }
+.motion .nav a { position: relative; transition: color 0.2s ease, background 0.2s ease, box-shadow 0.25s ease; }
+
+.scroll-progress {
+  position: fixed; left: 0; top: 0; z-index: 30; height: 3px; width: 100%;
+  background: linear-gradient(90deg, var(--red-deep), var(--red), var(--red-hot));
+  transform-origin: 0 50%; transform: scaleX(0); pointer-events: none;
+}
+
+/* Desktop: depth, tilt, spotlight */
+@media (min-width: 861px) and (pointer: fine) {
+  .motion .rv { transform: translateY(42px) scale(0.97); }
+  .motion .pick.rv, .motion .matchup.rv, .motion .idea.rv { transform: perspective(900px) rotateX(-14deg) translateY(46px); transform-origin: 50% 0; }
+  .motion tr.rv { transform: translateX(-26px); }
+  .motion .rv.in { transform: none; }
+
+  .motion :is(.pick, .idea, .matchup, .stat, .odds-block, .pick-chip, .news-card, .game, .roster-col) {
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease, border-color 0.2s ease;
+    will-change: transform;
+  }
+  .motion .tilting {
+    box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--red);
+    background-image: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), var(--glow), transparent 55%);
+    z-index: 2; position: relative;
+  }
+  .motion tbody tr:hover { box-shadow: inset 4px 0 0 var(--red); }
+  .motion .panel { transition: box-shadow 0.3s ease, border-color 0.3s ease; }
+  .motion .panel:hover { box-shadow: 0 22px 50px -32px rgba(0, 0, 0, 0.6); }
+  .motion .nav a::after {
+    content: ""; position: absolute; left: 0.6rem; right: 0.6rem; bottom: 2px; height: 2px;
+    background: var(--red); transform: scaleX(0); transform-origin: 0 50%;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .motion .nav a:hover::after { transform: scaleX(1); }
+  .motion .strip .kicker { animation-duration: 1s; }
+  .motion .panel h2 { transition: letter-spacing 0.3s ease; }
+  .motion .panel:hover h2 { letter-spacing: 0.07em; }
+  .motion .headshot { transition: transform 0.3s cubic-bezier(0.2, 1.4, 0.4, 1); }
+  .motion .pick:hover .headshot, .motion tr:hover .headshot { transform: scale(1.12) rotate(-3deg); }
+  .motion body::after {
+    content: ""; position: fixed; inset: -40%; z-index: -1; pointer-events: none;
+    background: repeating-linear-gradient(-55deg, transparent 0 22px, var(--texture) 22px 24px);
+    opacity: 0.55; animation: drift 60s linear infinite;
+  }
+  @keyframes drift { to { transform: translate(120px, 0); } }
+}
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}
+
+/* Mock draft: team filter, roster plan, prospect pop-up */
+.mock-controls { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center; justify-content: space-between; margin-bottom: 0.6rem; }
+.mock-controls .round-tabs { margin: 0; }
+.team-filter { display: inline-flex; gap: 0.5rem; align-items: center; font-family: var(--display); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem; color: var(--red); }
+.team-filter select { font: 600 0.9rem var(--body); color: var(--text); background: var(--raise); border: 1px solid var(--line); padding: 0.4rem 0.5rem; max-width: min(78vw, 300px); }
+.filter-note { display: flex; flex-wrap: wrap; gap: 0.3rem 0.5rem; align-items: center; min-height: 0; margin: 0 0 0.7rem; }
+.filter-note:empty { display: none; }
+.filter-note .chip { margin-left: 0.4rem; }
+.roster-plan { margin-top: 1.2rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+.plan-summary .note { margin: 0.2rem 0; max-width: 90ch; }
+.plan-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 0.8rem; }
+@media (max-width: 760px) { .plan-grid { grid-template-columns: 1fr; } }
+.roster-col { background: var(--bg); border: 1px solid var(--line); padding: 0.7rem 0.8rem; min-width: 0; }
+.plan-pos + .plan-pos { margin-top: 0.6rem; }
+.plan-pos-head { font-family: var(--display); letter-spacing: 0.1em; font-size: 0.85rem; color: var(--red); border-bottom: 1px solid var(--line); padding-bottom: 0.15rem; }
+.plan-list { list-style: none; margin: 0.25rem 0 0; padding: 0; }
+.plan-row { display: flex; gap: 0.45rem; align-items: baseline; padding: 0.2rem 0; font-size: 0.9rem; min-width: 0; flex-wrap: wrap; }
+.plan-name { font-weight: 600; }
+.plan-val { margin-left: auto; font-size: 0.8rem; }
+.plan-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.05rem 0.4rem; border: 1px solid var(--line); color: var(--muted); }
+.plan-tag.new { color: var(--good); border-color: var(--good); }
+.plan-tag.drop { color: var(--bad); border-color: var(--bad); }
+.plan-row.rookie { background: linear-gradient(90deg, color-mix(in srgb, var(--good) 14%, transparent), transparent 70%); padding-left: 0.35rem; }
+.plan-row.cut .plan-name, .plan-row.cut .owner, .plan-row.cut .plan-val { text-decoration: line-through; text-decoration-color: var(--bad); text-decoration-thickness: 2px; opacity: 0.6; }
+
+.prospect-link { background: none; border: 0; padding: 0; font: inherit; font-weight: 700; color: inherit; cursor: pointer; text-align: left; }
+.prospect-link:hover { color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
+.prospect-link:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+.pick.clickable { cursor: pointer; }
+
+.modal { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 16px; background: rgba(0, 0, 0, 0.72); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: modal-fade 0.22s ease both; }
+.modal.closing { animation: modal-fade 0.2s ease reverse both; }
+.modal-box { width: min(920px, 100%); max-height: calc(100vh - 32px); overflow: auto; background: var(--panel); border: 1px solid var(--line); border-top: 4px solid var(--red); animation: modal-pop 0.38s cubic-bezier(0.2, 1.3, 0.4, 1) both; }
+.modal.closing .modal-box { animation: modal-pop 0.2s ease reverse both; }
+.modal-head { display: flex; gap: 0.75rem; align-items: center; padding: 0.8rem 1rem; border-bottom: 1px solid var(--line); }
+.modal-head .headshot { width: 56px; height: 56px; }
+.modal-head > div { min-width: 0; flex: 1; }
+.modal-close { margin-left: auto; flex: none; width: 40px; height: 40px; font-size: 1.6rem; line-height: 1; background: var(--raise); color: var(--text); border: 1px solid var(--line); cursor: pointer; transition: transform 0.2s ease, background 0.2s ease; }
+.modal-close:hover { background: var(--red); color: var(--on-red); transform: rotate(90deg); }
+.modal-stage { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 0.8rem; padding: 0.9rem 1rem; }
+@media (max-width: 760px) { .modal-stage { grid-template-columns: 1fr; } }
+.video-frame { position: relative; aspect-ratio: 16 / 9; background: #000; }
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-list { display: grid; gap: 0.5rem; align-content: start; max-height: 420px; overflow: auto; }
+@media (max-width: 760px) { .video-list { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); max-height: none; } }
+.vid { display: grid; grid-template-columns: 96px 1fr; gap: 0.5rem; text-align: left; background: var(--bg); border: 1px solid var(--line); padding: 0.3rem; color: var(--text); cursor: pointer; font: inherit; transition: border-color 0.2s ease, transform 0.2s ease; }
+@media (max-width: 760px) { .vid { grid-template-columns: 1fr; } }
+.vid img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.vid:hover { transform: translateX(3px); border-color: var(--red); }
+.vid.is-current { border-color: var(--red); box-shadow: inset 3px 0 0 var(--red); }
+.vid-cap { display: grid; gap: 0.15rem; min-width: 0; }
+.vid-title { font-size: 0.8rem; font-weight: 700; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.video-empty { grid-column: 1 / -1; text-align: center; padding: 2rem 1rem; border: 1px dashed var(--line); }
+.modal-foot { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center; padding: 0.7rem 1rem 1rem; border-top: 1px solid var(--line); font-size: 0.9rem; }
+.yt-link { margin-left: auto; text-decoration: none; }
+@keyframes modal-fade { from { opacity: 0; } }
+@keyframes modal-pop { from { opacity: 0; transform: translateY(24px) scale(0.94); } }

@@ -187,7 +187,12 @@
     }
     clearTimeout(refreshTimer);
     if (week === currentWeek && anyLive) {
-      refreshTimer = setTimeout(() => { if (!document.hidden && shownWeek === currentWeek) renderWeek(currentWeek); }, 60000);
+      refreshTimer = setTimeout(async () => {
+        if (document.hidden || shownWeek !== currentWeek) return;
+        const sec = document.getElementById("matchups");
+        if (sec) sec.dataset.quiet = "1"; // live refresh: no entrance animation
+        try { await renderWeek(currentWeek); } finally { if (sec) delete sec.dataset.quiet; }
+      }, 60000);
     }
   }
 

@@ -205,8 +205,8 @@
     if (S) {
       const imp = S.impact(A, B, give, get, 4000, getBaseline());
       const odds = el("div", null, "odds-pair");
-      odds.appendChild(oddsBlock(A.rid === me ? `You (${A.name})` : A.name, A.rid, imp.a, A.rid === me || B.rid !== me));
-      odds.appendChild(oddsBlock(B.rid === me ? `You (${B.name})` : B.name, B.rid, imp.b, B.rid === me));
+      odds.appendChild(oddsBlock(A.name, A.rid, imp.a, true));
+      odds.appendChild(oddsBlock(B.name, B.rid, imp.b, true));
       out.appendChild(odds);
       if (give.length || get.length) out.appendChild(lineupNotes(A, B, imp));
     }
@@ -545,8 +545,8 @@
           }
           return c;
         };
-        swap.appendChild(col("You give", r.give));
-        swap.appendChild(col("You get", r.get));
+        swap.appendChild(col(`${teamName(rid)} gives`, r.give));
+        swap.appendChild(col(`${teamName(rid)} gets`, r.get));
         card.appendChild(swap);
         if (r.imp) {
           const a = r.imp.a;
@@ -555,9 +555,9 @@
           odds.append(el("span", `Playoff ${fmtD(a.playoff)}`), el("span", `Title ${fmtD(a.champ)}`), el("span", `#1 pick ${fmtD(a.first)}`));
           card.appendChild(odds);
         }
-        card.appendChild(el("div", `Roster value: yours ${signed(r.ev.dA)} · theirs ${signed(r.ev.dB)} · ${r.ev.verdict.label}`, "small muted"));
+        card.appendChild(el("div", `Roster value: ${teamName(rid)} ${signed(r.ev.dA)} · ${r.other.name} ${signed(r.ev.dB)} · ${r.ev.verdict.label}`, "small muted"));
         const why = [];
-        if (r.imp && r.imp.a.starters.in.length) why.push(`${r.imp.a.starters.in.map((a) => a.name).join(", ")} would start for you this season.`);
+        if (r.imp && r.imp.a.starters.in.length) why.push(`${r.imp.a.starters.in.map((a) => a.name).join(", ")} would start for ${teamName(rid)} this season.`);
         why.push(...r.ev.notes.filter((n) => n.includes("younger") || n.includes("older") || n.includes("QBs")).slice(0, 2 - why.length));
         if (why.length) card.appendChild(notesList(why));
         const actions = el("div", null, "idea-actions");
@@ -578,8 +578,6 @@
   function setMe(rid, rerender = true) {
     me = String(rid);
     try { localStorage.setItem(ME_KEY, me); } catch (e) { /* storage off: still works this visit */ }
-    const sel = document.getElementById("me");
-    if (sel.value !== me) sel.value = me;
     const ideaSel = document.getElementById("idea-team");
     if (ideaSel && ideaSel.value !== me) ideaSel.value = me;
     if (rerender) {
@@ -606,9 +604,6 @@
     let saved = null;
     try { saved = localStorage.getItem(ME_KEY); } catch (e) { saved = null; }
     me = saved && data.teams[saved] ? saved : Object.keys(data.teams)[0];
-    const sel = document.getElementById("me");
-    fillTeamSelect(sel, me);
-    sel.addEventListener("change", () => setMe(sel.value));
   }
 
   function setupIdeas() {

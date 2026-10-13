@@ -24,10 +24,15 @@
     <section class="panel" id="mock">
       <div class="panel-head">
         <h2>Mock Draft</h2>
-        <p class="note" id="mock-note">Rebuilt every morning from expert big boards, college game logs, your league's scoring, traded picks, this league's past drafts, and each roster's needs.</p>
+        <p class="note" id="mock-note">Rebuilt every morning from expert big boards, college game logs, your league's scoring, traded picks, this league's past drafts, and each roster's needs. Tap a prospect for highlights; pick a team to see its roster before and after.</p>
       </div>
-      <div class="round-tabs" id="round-tabs" role="tablist" aria-label="Rounds"></div>
+      <div class="mock-controls">
+        <div class="round-tabs" id="round-tabs" role="tablist" aria-label="Rounds"></div>
+        <label class="team-filter">Team <select id="team-filter" aria-label="Show one team's picks"></select></label>
+      </div>
+      <p class="note filter-note" id="filter-note"></p>
       <div id="picks" class="picks"></div>
+      <div id="roster-plan" class="roster-plan" hidden></div>
     </section>
 
     <section class="panel" id="board-panel">
@@ -60,6 +65,7 @@
   </footer>
 
   <script src="assets/common.js"></script>
+  <script src="assets/motion.js"></script>
   <script src="assets/draft.js"></script>
 </body>
 </html>

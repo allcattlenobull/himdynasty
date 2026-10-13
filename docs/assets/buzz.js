@@ -64,17 +64,10 @@
   function renderScope() {
     const tabs = document.getElementById("scope-tabs");
     tabs.replaceChildren();
-    let me = null;
-    try { me = localStorage.getItem("him-me"); } catch (e) { me = null; }
-    const opts = [["league", "Whole league"]];
-    if (me && latest.teams[me]) opts.push(["me", `My team: ${latest.teams[me].team.trim()}`]);
-    for (const [kind, label] of opts) {
-      const on = kind === "league" ? scope.kind === "league" : scope.kind === "team" && String(scope.id) === me;
-      const b = el("button", label, on ? "chip is-current" : "chip");
-      b.type = "button";
-      b.addEventListener("click", () => setScope(kind === "league" ? { kind: "league" } : { kind: "team", id: me }));
-      tabs.appendChild(b);
-    }
+    const b = el("button", "Whole league", scope.kind === "league" ? "chip is-current" : "chip");
+    b.type = "button";
+    b.addEventListener("click", () => setScope({ kind: "league" }));
+    tabs.appendChild(b);
     document.getElementById("team-pick").value = scope.kind === "team" ? String(scope.id) : "";
     const title = document.getElementById("scope-title");
     title.replaceChildren();
@@ -267,7 +260,11 @@
     host.replaceChildren();
     if (!posts.length) host.appendChild(el("p", "No recent posts found. Try the X button for more.", "muted"));
     posts.slice(0, 30).forEach(({ post, p }) => host.appendChild(postCard(post, scope.kind === "player" ? null : p)));
-    socialTimer = setTimeout(() => { if (!document.hidden) loadSocial(); }, 120000);
+    socialTimer = setTimeout(async () => {
+      if (document.hidden) return;
+      host.dataset.quiet = "1"; // auto refresh: no entrance animation
+      try { await loadSocial(); } finally { delete host.dataset.quiet; }
+    }, 120000);
   }
 
   function renderXEmbed(handle) {

@@ -18,7 +18,7 @@ https://allcattlenobull.github.io/himdynasty/
 | `docs/analytics.html` | Player analytics from nflverse: sortable explorer, player profiles (production, usage, expected points, efficiency, dynasty context, signals, weekly charts), and a team view. |
 | `docs/team.html?id=N` | One team: stats, roster (starters, bench, taxi, IR), full schedule with results and win odds, season trend. |
 
-Branding lives in `docs/assets/` (`logo.svg`, `brand.css`). Every page has an Auto / Light / Dark theme switch (`theme.js`); Auto follows the device setting. Charts use Chart.js 4.4.1, included in `docs/assets/vendor/`.
+Branding lives in `docs/assets/` (`logo.svg`, `brand.css`). Every page has an Auto / Light / Dark theme switch (`theme.js`); Auto follows the device setting. Charts use Chart.js 4.4.1, included in `docs/assets/vendor/`. `motion.js` adds scroll reveals, count-ups, card tilt, page transitions, and a scroll progress bar; it turns itself off when the device asks for reduced motion.
 
 ## Daily update
 
@@ -50,6 +50,7 @@ Environment overrides: `SLEEPER_LEAGUE_ID`, `SIMULATIONS` (current week, default
 - `scripts/analysis.py` writes `docs/data/analysis.json`: each team's HIM score, verdict, and data-backed 'Why you are HIM' / 'Why you are Ass' lines.
 - `scripts/analytics_data.py` writes `docs/data/analytics.json` from nflverse (weekly stats, snap counts, PFR advanced) and ffopportunity (expected points), plus `values_history.json`.
 - `scripts/news.py` writes `docs/data/news.json`: 21 days of ESPN/RotoWire player news for every rostered player.
-- `scripts/mock_draft.py` writes `docs/data/mock_draft.json` and `prospects_history.json`.
+- `scripts/mock_draft.py` writes `docs/data/mock_draft.json` (picks, board, draft habits, and each team's roster before/after the mock with suggested cuts) and `prospects_history.json`.
+- `scripts/highlights.py` writes `docs/data/highlights.json`: YouTube highlight clips for the mock draft's prospects, via the official YouTube Data API. It only runs searches when the repository secret `YOUTUBE_API_KEY` is set (a free key from Google Cloud; about 60 searches a day, well inside the free quota).
 
 All of these run in the daily workflow after the league update and never block it if a source is down.

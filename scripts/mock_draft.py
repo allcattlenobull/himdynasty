@@ -387,6 +387,69 @@ def needs_summary(need, rank, thin=()):
     }
 
 
+def roster_plans(latest, league, picks, board):
+    """Each team's roster now and after its mock picks, with suggested cuts.
+
+    Roster limits come from Sleeper: active spots (every lineup and bench
+    slot), taxi spots, and IR spots. Assumptions, kept simple and stated on
+    the page: players on IR stay there; next season's taxi can hold the new
+    rookies plus this year's rookies (years_exp 0), up to the taxi limit; the
+    mock picks are kept. If the team is still over, the lowest dynasty values
+    are released first (never a team's only kicker or defense).
+    """
+    settings = league.get("settings") or {}
+    active_slots = len([s for s in league.get("roster_positions") or [] if s != "IR"])
+    taxi_slots = settings.get("taxi_slots") or 0
+    reserve_slots = settings.get("reserve_slots") or 0
+    values = {}
+    try:
+        for a in json.loads((DATA_DIR / "trade.json").read_text())["assets"]:
+            if a["kind"] == "player":
+                values[str(a["id"]).lstrip("p")] = a["value"]
+    except (FileNotFoundError, KeyError, ValueError):
+        pass
+    by_key = {e["key"]: e for e in board}
+    plans = {}
+    for rid, t in (latest.get("teams") or {}).items():
+        r = t["roster"]
+        current = []
+        for group, players in (("starter", [x["player"] for x in r["starters"] if x.get("player")]),
+                               ("bench", r["bench"]), ("taxi", r["taxi"]), ("ir", r["ir"])):
+            for pl in players:
+                current.append({"id": pl["id"], "name": pl["name"], "pos": pl["pos"], "nfl": pl.get("nfl"),
+                                "age": pl.get("age"), "exp": pl.get("exp"), "ppg": pl.get("ppg"),
+                                "value": round(values.get(str(pl["id"]), 0.0)), "group": group})
+        draftees = [{"label": pk["label"], "key": pk["prospect"], "name": by_key[pk["prospect"]]["name"],
+                     "pos": by_key[pk["prospect"]]["pos"]}
+                    for pk in picks if str(pk["owner"]) == str(rid)]
+        pool = [p for p in current if p["group"] != "ir"]
+        protected = set()
+        for pos in ("K", "DEF"):
+            only = [p for p in pool if p["pos"] == pos]
+            if only:
+                protected.add(max(only, key=lambda p: (p["ppg"] or 0))["id"])
+        cuts = []
+        while True:
+            alive = [p for p in pool if p["id"] not in cuts]
+            eligible = len(draftees) + sum(1 for p in alive if p.get("exp") == 0)
+            over = len(alive) + len(draftees) - active_slots - min(taxi_slots, eligible)
+            if over <= 0:
+                break
+            options = [p for p in alive if p["id"] not in protected]
+            if not options:
+                break
+            cuts.append(min(options, key=lambda p: (p["value"], p["ppg"] or 0))["id"])
+        plans[str(rid)] = {
+            "current": current,
+            "draftees": draftees,
+            "cuts": cuts,
+            "counts": {"active": sum(1 for p in current if p["group"] in ("starter", "bench")),
+                       "taxi": sum(1 for p in current if p["group"] == "taxi"),
+                       "ir": sum(1 for p in current if p["group"] == "ir")},
+        }
+    return {"limits": {"active": active_slots, "taxi": taxi_slots, "ir": reserve_slots}, "teams": plans}
+
+
 # --------------------------------------------------------------------------- #
 # League draft history: position priors by round and manager tendencies
 # --------------------------------------------------------------------------- #
@@ -817,6 +880,7 @@ def main():
             "round_priors": {str(r): v for r, v in priors.items()},
         },
         "tendencies": {str(k): v for k, v in tendencies.items()},
+        "rosters": roster_plans(latest, league, picks, board),
     }
     (DATA_DIR / "mock_draft.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     log(f"Wrote {len(picks)} picks and a {len(board)}-player board (production weight {w}).")

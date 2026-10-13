@@ -10,6 +10,9 @@
   let board = {};
   let round = 1;
   let pos = "All";
+  let teamFilter = null; // roster id as a string, or null for every team
+  let highlights = {};
+  let highlightsEnabled = false;
 
   function headshot(e) {
     const src = safeUrl(e.headshot) || (e.espn_id ? `https://a.espncdn.com/i/headshots/college-football/players/full/${encodeURIComponent(e.espn_id)}.png` : null);
@@ -74,13 +77,29 @@
   }
 
   function renderPicks() {
-    renderTabs(document.getElementById("round-tabs"),
-      Array.from({ length: data.rounds }, (_, i) => i + 1), round,
-      (v) => { round = v; renderPicks(); }, (v) => `Round ${v}`);
+    const tabs = document.getElementById("round-tabs");
+    renderTabs(tabs, Array.from({ length: data.rounds }, (_, i) => i + 1), teamFilter ? null : round,
+      (v) => { round = v; setTeam(null); }, (v) => `Round ${v}`);
+    const shown = teamFilter
+      ? data.picks.filter((x) => String(x.owner) === teamFilter)
+      : data.picks.filter((x) => x.round === round);
+    const note = document.getElementById("filter-note");
+    if (note) {
+      note.replaceChildren();
+      if (teamFilter) {
+        note.appendChild(el("span", `${shown.length} mock pick${shown.length === 1 ? "" : "s"} for `));
+        note.appendChild(teamLink(Number(teamFilter), teamNames()[teamFilter] || `Team ${teamFilter}`));
+        if (!shown.length) note.appendChild(el("span", " (this team has no picks in this draft)"));
+        const clear = el("button", "Show every team", "chip");
+        clear.type = "button";
+        clear.addEventListener("click", () => setTeam(null));
+        note.appendChild(clear);
+      }
+    }
 
     const host = document.getElementById("picks");
     host.replaceChildren();
-    for (const p of data.picks.filter((x) => x.round === round)) {
+    for (const p of shown) {
       const e = board[p.prospect];
       const card = el("article", null, "pick");
 
@@ -109,7 +128,7 @@
       body.appendChild(headshot(e));
       const info = el("div", null, "pick-info");
       const nameRow = el("div", null, "pick-name");
-      nameRow.appendChild(el("span", e.name, "team"));
+      nameRow.appendChild(prospectButton(e));
       nameRow.appendChild(posBadge(e.pos));
       info.appendChild(nameRow);
       info.appendChild(el("div", [e.school, e.cls].filter(Boolean).join(" · "), "owner"));
@@ -130,8 +149,241 @@
       foot.appendChild(sparkline(e.weekly));
       foot.appendChild(el("span", p.reason, "reason"));
       card.appendChild(foot);
+      card.classList.add("clickable");
+      card.addEventListener("click", (ev) => {
+        if (ev.target.closest("a, button")) return;
+        openProspect(e, p);
+      });
       host.appendChild(card);
     }
+    renderRosterPlan();
+  }
+
+  function teamNames() {
+    const names = {};
+    for (const p of data.picks) names[p.owner] = p.owner_team;
+    if (data.rosters) for (const rid of Object.keys(data.rosters.teams)) names[rid] = names[rid] || `Team ${rid}`;
+    if (data.teamNames) Object.assign(names, data.teamNames);
+    return names;
+  }
+
+  function setTeam(rid) {
+    teamFilter = rid ? String(rid) : null;
+    const sel = document.getElementById("team-filter");
+    if (sel) sel.value = teamFilter || "";
+    const url = new URL(window.location.href);
+    if (teamFilter) url.searchParams.set("team", teamFilter); else url.searchParams.delete("team");
+    history.replaceState(null, "", url);
+    renderPicks();
+  }
+
+  function setupTeamFilter() {
+    const sel = document.getElementById("team-filter");
+    if (!sel) return;
+    const names = teamNames();
+    sel.replaceChildren(el("option", "All teams"));
+    sel.firstChild.value = "";
+    const counts = {};
+    for (const p of data.picks) counts[p.owner] = (counts[p.owner] || 0) + 1;
+    Object.keys(names).sort((a, b) => names[a].localeCompare(names[b])).forEach((rid) => {
+      const o = el("option", `${names[rid].trim()} (${counts[rid] || 0} pick${counts[rid] === 1 ? "" : "s"})`);
+      o.value = rid;
+      sel.appendChild(o);
+    });
+    sel.addEventListener("change", () => setTeam(sel.value || null));
+    const want = new URLSearchParams(window.location.search).get("team");
+    if (want && names[want]) teamFilter = want;
+    sel.value = teamFilter || "";
+  }
+
+  // ------------------------------------------------------------------ //
+  // Roster now vs after the mock
+  // ------------------------------------------------------------------ //
+  const POS_ORDER = ["QB", "RB", "WR", "TE", "K", "DEF"];
+  const GROUP_TAG = { taxi: "Taxi", ir: "IR" };
+
+  function renderRosterPlan() {
+    const host = document.getElementById("roster-plan");
+    if (!host) return;
+    const plan = teamFilter && data.rosters && data.rosters.teams[teamFilter];
+    host.hidden = !plan;
+    if (!plan) { host.replaceChildren(); return; }
+    const L = data.rosters.limits;
+    const cuts = new Set(plan.cuts);
+    const now = plan.counts;
+    const kept = plan.current.filter((p) => p.group !== "ir" && !cuts.has(p.id)).length + plan.draftees.length;
+
+    const head = el("div", null, "plan-summary");
+    head.appendChild(el("h3", "Roster: now vs after the mock", "sub-head"));
+    head.appendChild(el("p",
+      `Now: ${now.active}/${L.active} active · ${now.taxi}/${L.taxi} taxi · ${now.ir}/${L.ir} IR. ` +
+      `After the mock: +${plan.draftees.length} rookie${plan.draftees.length === 1 ? "" : "s"}` +
+      (plan.cuts.length
+        ? `, so ${plan.cuts.length} player${plan.cuts.length === 1 ? "" : "s"} must go to fit ${L.active} active + ${L.taxi} taxi spots (struck out below, lowest dynasty value first).`
+        : `, and everyone still fits in ${L.active} active + ${L.taxi} taxi spots.`), "note"));
+    head.appendChild(el("p",
+      `Assumes players on IR stay there, next year's taxi holds the new rookies and this year's rookies, and a team's only kicker and defense are kept. ${kept} players after cuts.`,
+      "note small"));
+
+    const grid = el("div", null, "plan-grid");
+    grid.appendChild(rosterColumn("Now", plan.current, [], new Set()));
+    grid.appendChild(rosterColumn("After the mock", plan.current, plan.draftees, cuts));
+    host.replaceChildren(head, grid);
+  }
+
+  function rosterColumn(title, current, draftees, cuts) {
+    const col = el("div", null, "roster-col");
+    col.appendChild(el("div", title, "group-title"));
+    for (const pos of POS_ORDER) {
+      const players = current.filter((p) => p.pos === pos).sort((a, b) => b.value - a.value || (b.ppg || 0) - (a.ppg || 0));
+      const rookies = draftees.filter((d) => d.pos === pos);
+      if (!players.length && !rookies.length) continue;
+      const block = el("div", null, "plan-pos");
+      block.appendChild(el("div", `${pos} · ${players.length - players.filter((p) => cuts.has(p.id)).length + rookies.length}`, "plan-pos-head"));
+      const list = el("ul", null, "plan-list");
+      for (const d of rookies) {
+        const li = el("li", null, "plan-row rookie");
+        const b = prospectButton(board[d.key] || { name: d.name, pos: d.pos, key: d.key });
+        li.appendChild(b);
+        li.appendChild(el("span", `${d.label} rookie`, "plan-tag new"));
+        list.appendChild(li);
+      }
+      for (const p of players) {
+        const cut = cuts.has(p.id);
+        const li = el("li", null, cut ? "plan-row cut" : "plan-row");
+        li.appendChild(el("span", p.name, "plan-name"));
+        const meta = [p.nfl, p.age ? `${p.age}` : null].filter(Boolean).join(" · ");
+        if (meta) li.appendChild(el("span", meta, "owner"));
+        if (GROUP_TAG[p.group]) li.appendChild(el("span", GROUP_TAG[p.group], "plan-tag"));
+        if (cut) li.appendChild(el("span", "Release", "plan-tag drop"));
+        li.appendChild(el("span", p.value ? p.value.toLocaleString() : "—", "num muted plan-val"));
+        list.appendChild(li);
+      }
+      block.appendChild(list);
+      col.appendChild(block);
+    }
+    return col;
+  }
+
+  // ------------------------------------------------------------------ //
+  // Prospect pop-up with highlights
+  // ------------------------------------------------------------------ //
+  function prospectButton(e) {
+    const b = el("button", e.name, "team prospect-link");
+    b.type = "button";
+    b.title = `Highlights and stats: ${e.name}`;
+    b.addEventListener("click", (ev) => { ev.stopPropagation(); openProspect(e); });
+    return b;
+  }
+
+  function closeModal() {
+    const m = document.querySelector(".modal");
+    if (!m) return;
+    m.classList.add("closing");
+    document.body.classList.remove("no-scroll");
+    setTimeout(() => m.remove(), 220);
+    document.removeEventListener("keydown", onModalKey);
+    if (closeModal.returnTo) closeModal.returnTo.focus();
+  }
+  function onModalKey(ev) { if (ev.key === "Escape") closeModal(); }
+
+  function openProspect(e, pick) {
+    if (!e || !e.key) return;
+    closeModal.returnTo = document.activeElement;
+    const old = document.querySelector(".modal");
+    if (old) old.remove();
+    pick = pick || data.picks.find((x) => x.prospect === e.key);
+    const modal = el("div", null, "modal");
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-label", `${e.name} highlights`);
+    modal.addEventListener("click", (ev) => { if (ev.target === modal) closeModal(); });
+    const box = el("div", null, "modal-box");
+
+    const head = el("div", null, "modal-head");
+    head.appendChild(headshot(e));
+    const who = el("div");
+    const nm = el("div", null, "pick-name");
+    nm.appendChild(el("span", e.name, "team"));
+    if (e.pos) nm.appendChild(posBadge(e.pos));
+    who.appendChild(nm);
+    const sub = [e.school, e.cls, e.rank ? `Board #${e.rank}` : null,
+      pick ? `Mocked ${pick.label} to ${pick.owner_team.trim()}` : null].filter(Boolean).join(" · ");
+    who.appendChild(el("div", sub, "owner"));
+    head.appendChild(who);
+    const x = el("button", "×", "modal-close");
+    x.type = "button";
+    x.setAttribute("aria-label", "Close");
+    x.addEventListener("click", closeModal);
+    head.appendChild(x);
+    box.appendChild(head);
+
+    const vids = (highlights[e.key] || {}).videos || [];
+    const stage = el("div", null, "modal-stage");
+    const query = `${e.name} ${e.school || ""} ${data.college_season} highlights`.replace(/\s+/g, " ").trim();
+    const searchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+    if (vids.length) {
+      const frame = el("div", null, "video-frame");
+      const play = (v) => {
+        const f = document.createElement("iframe");
+        f.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.id)}?autoplay=1&rel=0`;
+        f.title = v.title || `${e.name} highlights`;
+        f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        f.allowFullscreen = true;
+        f.referrerPolicy = "strict-origin-when-cross-origin";
+        frame.replaceChildren(f);
+        list.querySelectorAll(".vid").forEach((n) => n.classList.toggle("is-current", n.dataset.id === v.id));
+      };
+      const list = el("div", null, "video-list");
+      for (const v of vids) {
+        const t = el("button", null, "vid");
+        t.type = "button";
+        t.dataset.id = v.id;
+        const img = el("img");
+        img.alt = "";
+        img.loading = "lazy";
+        img.src = `https://i.ytimg.com/vi/${encodeURIComponent(v.id)}/mqdefault.jpg`;
+        t.appendChild(img);
+        const cap = el("span", null, "vid-cap");
+        cap.appendChild(el("span", v.title || "Highlights", "vid-title"));
+        cap.appendChild(el("span", [v.channel, v.date].filter(Boolean).join(" · "), "owner"));
+        t.appendChild(cap);
+        t.addEventListener("click", () => play(v));
+        list.appendChild(t);
+      }
+      stage.append(frame, list);
+      play(vids[0]);
+    } else {
+      const empty = el("div", null, "video-empty");
+      empty.appendChild(el("p", `No highlight clips saved for ${e.name} yet.`, "team"));
+      empty.appendChild(el("p", highlightsEnabled
+        ? "The nightly update hasn't found an embeddable clip for him yet."
+        : "Embedded clips turn on once a free YouTube key is added to the site's nightly update.", "muted small"));
+      stage.appendChild(empty);
+    }
+    box.appendChild(stage);
+
+    const foot = el("div", null, "modal-foot");
+    const statBits = [
+      e.cons_rank ? `Consensus #${Math.round(e.cons_rank)}` : "Not on expert boards yet",
+      e.ppg != null ? `${e.ppg.toFixed(1)} fantasy PPG (league scoring)` : null,
+      e.last3 != null ? `last 3: ${e.last3.toFixed(1)}` : null,
+      e.games ? `${e.games} games` : null,
+    ].filter(Boolean);
+    foot.appendChild(el("div", statBits.join(" · ")));
+    if (e.weekly && e.weekly.length) foot.appendChild(sparkline(e.weekly));
+    const yt = el("a", "Search YouTube for more", "chip yt-link");
+    yt.href = searchUrl;
+    yt.target = "_blank";
+    yt.rel = "noopener";
+    foot.appendChild(yt);
+    box.appendChild(foot);
+
+    modal.appendChild(box);
+    document.body.appendChild(modal);
+    document.body.classList.add("no-scroll");
+    document.addEventListener("keydown", onModalKey);
+    x.focus();
   }
 
   // ------------------------------------------------------------------ //
@@ -162,7 +414,7 @@
       const wrap = el("div", null, "player");
       wrap.appendChild(headshot(e));
       const text = el("div");
-      text.appendChild(el("div", e.name, "team"));
+      text.appendChild(prospectButton(e));
       text.appendChild(el("div", [e.school, e.cls].filter(Boolean).join(" · "), "owner"));
       wrap.appendChild(text);
       who.appendChild(wrap);
@@ -290,8 +542,10 @@
   }
 
   async function load() {
+    let latest = null;
     try {
-      const [mock, latest] = await Promise.all([
+      let mock;
+      [mock, latest] = await Promise.all([
         fetch("data/mock_draft.json", { cache: "no-store" }).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); }),
         window.HIM.loadData().catch(() => null),
       ]);
@@ -305,6 +559,18 @@
       return;
     }
     board = Object.fromEntries(data.board.map((e) => [e.key, e]));
+    if (latest && latest.teams) {
+      data.teamNames = Object.fromEntries(Object.entries(latest.teams).map(([k, t]) => [k, t.team]));
+    }
+    try {
+      const h = await fetch("data/highlights.json", { cache: "no-store" });
+      if (h.ok) {
+        const hj = await h.json();
+        highlights = hj.players || {};
+        highlightsEnabled = !!hj.enabled;
+      }
+    } catch (err) { highlights = {}; }
+    setupTeamFilter();
     document.getElementById("title").replaceChildren(document.createTextNode(`${data.draft_year} Rookie `), el("em", "Mock Draft"));
     const when = new Date(data.generated_at);
     document.getElementById("updated").textContent =
