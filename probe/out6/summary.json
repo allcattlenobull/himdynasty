@@ -1,0 +1,26 @@
+{
+ "scoreboard": {
+  "status": 200,
+  "acao": "*",
+  "cache": "max-age=8",
+  "len": 260144
+ },
+ "scoreboard_wk": {
+  "status": 200,
+  "acao": "*",
+  "cache": "max-age=1",
+  "len": 260144
+ },
+ "news": {
+  "status": 200,
+  "acao": "*",
+  "cache": "max-age=1",
+  "len": 107110
+ },
+ "fnews": {
+  "status": 200,
+  "acao": "*",
+  "cache": "max-age=1",
+  "len": 46806
+ }
+}
