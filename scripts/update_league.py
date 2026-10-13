@@ -36,8 +36,12 @@ API = "https://api.sleeper.app/v1"
 LEAGUE_ID = os.environ.get("SLEEPER_LEAGUE_ID", "1312005038838673409")
 SIMULATIONS = int(os.environ.get("SIMULATIONS", "10000"))
 HISTORY_SIMULATIONS = int(os.environ.get("HISTORY_SIMULATIONS", "4000"))
-DEFAULT_SD = 15.0
+DEFAULT_SD = 25.0
 DEFAULT_MEAN = 100.0
+# How many "league average" weeks each team's scoring is blended with. Early in
+# the season a team's few scores say little about its true level, so its
+# expected score leans on the league average; the pull fades as games pile up.
+PRIOR_WEEKS = 3
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "docs" / "data"
@@ -199,18 +203,26 @@ def tally(rids, weeks, median):
 
 
 def score_model(values, rids, default_mean):
-    """Per-team (mean, standard deviation) of weekly points, with fallbacks."""
+    """Per-team (mean, sd, se) of weekly points.
+
+    mean: the team's average, blended with PRIOR_WEEKS of league average.
+    sd:   week-to-week spread, blended the same way with the league spread.
+    se:   uncertainty in the team's true level, shrinking as weeks are played.
+    """
     everything = [p for pts in values.values() for p in pts]
     league_mean = statistics.mean(everything) if everything else default_mean
+    league_sd = statistics.pstdev(everything) if len(everything) >= 4 else DEFAULT_SD
+    league_sd = max(league_sd, 12.0)
     model = {}
     for rid in rids:
         pts = values.get(rid, [])
-        if len(pts) >= 2:
-            model[rid] = (statistics.mean(pts), statistics.stdev(pts) or DEFAULT_SD)
-        elif pts:
-            model[rid] = (pts[0], DEFAULT_SD)
-        else:
-            model[rid] = (league_mean, DEFAULT_SD)
+        n = len(pts)
+        team_mean = statistics.mean(pts) if pts else league_mean
+        team_var = statistics.pvariance(pts) if n >= 2 else league_sd ** 2
+        mean = (n * team_mean + PRIOR_WEEKS * league_mean) / (n + PRIOR_WEEKS)
+        sd = math.sqrt((n * team_var + PRIOR_WEEKS * league_sd ** 2) / (n + PRIOR_WEEKS))
+        se = sd / math.sqrt(n + PRIOR_WEEKS)
+        model[rid] = (mean, sd, se)
     return model
 
 
@@ -227,9 +239,9 @@ def normal_cdf(x):
 
 
 def win_probability(model, a, b):
-    mu_a, sd_a = model[a]
-    mu_b, sd_b = model[b]
-    sd = math.hypot(sd_a, sd_b)
+    mu_a, sd_a, se_a = model[a]
+    mu_b, sd_b, se_b = model[b]
+    sd = math.hypot(sd_a, sd_b, se_a, se_b)
     if sd == 0:
         return 1.0 if mu_a > mu_b else 0.0 if mu_a < mu_b else 0.5
     return normal_cdf((mu_a - mu_b) / sd)
@@ -294,6 +306,9 @@ def simulate(base, remaining_weeks, model, max_model, playoff_teams, actual, sim
     gauss = rng.gauss
 
     for _ in range(sims):
+        # Each simulated season draws every team's true level once.
+        mu = {r: (gauss(model[r][0], model[r][2]), model[r][1]) for r in rids}
+        mx_mu = {r: (gauss(max_model[r][0], max_model[r][2]), max_model[r][1]) for r in rids}
         wins = {r: base[r]["wins"] + 0.5 * base[r]["ties"] for r in rids}
         pf = {r: base[r]["pf"] for r in rids}
         mx = {r: base[r]["max_pf"] for r in rids}
@@ -301,8 +316,8 @@ def simulate(base, remaining_weeks, model, max_model, playoff_teams, actual, sim
         for pairs in remaining_weeks:
             week_scores = {}
             for a, b in pairs:
-                sa = max(0.0, gauss(*model[a]))
-                sb = max(0.0, gauss(*model[b]))
+                sa = max(0.0, gauss(*mu[a]))
+                sb = max(0.0, gauss(*mu[b]))
                 week_scores[a] = sa
                 week_scores[b] = sb
                 if sa > sb:
@@ -311,7 +326,7 @@ def simulate(base, remaining_weeks, model, max_model, playoff_teams, actual, sim
                     wins[b] += 1
             for r, s in week_scores.items():
                 pf[r] += s
-                mx[r] += max(s, gauss(*max_model[r]))
+                mx[r] += max(s, gauss(*mx_mu[r]))
             if median and week_scores:
                 ranked_week = sorted(week_scores, key=week_scores.get, reverse=True)
                 for r in ranked_week[: len(ranked_week) // 2]:
@@ -324,7 +339,7 @@ def simulate(base, remaining_weeks, model, max_model, playoff_teams, actual, sim
             known = actual.get(frozenset((a, b)))
             if known is not None:
                 return known
-            return a if gauss(*model[a]) >= gauss(*model[b]) else b
+            return a if gauss(*mu[a]) >= gauss(*mu[b]) else b
 
         rounds = run_bracket(seeds, decide)
         champion_hits[rounds[-1][0][2]] += 1
