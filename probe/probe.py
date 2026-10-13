@@ -28,3 +28,4 @@ for name, url in URLS.items():
     (out / f"{name}.txt").write_text(body[:300000])
     summary[name] = {"status": str(status), "bytes": len(body), "cors": cors, "head": body[:200]}
 (out / "summary.json").write_text(json.dumps(summary, indent=1))
+# rerun
