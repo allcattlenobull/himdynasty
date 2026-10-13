@@ -13,6 +13,7 @@
       --muted: #8b95a5;
       --accent: #f5b301;
       --good: #3fb97a;
+      --bad: #ff7b72;
     }
     * { box-sizing: border-box; }
     body {
@@ -33,15 +34,10 @@
       letter-spacing: 0.08em;
       color: var(--accent);
     }
-    .slogan {
-      margin: 0.35rem 0 0;
-      font-size: 1.15rem;
-      color: var(--text);
-      font-style: italic;
-    }
+    .slogan { margin: 0.35rem 0 0; font-size: 1.15rem; font-style: italic; }
     .updated { margin: 0.75rem 0 0; color: var(--muted); font-size: 0.85rem; }
     main {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 1.25rem;
       display: grid;
@@ -61,30 +57,55 @@
       letter-spacing: 0.06em;
       color: var(--accent);
     }
-    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-    th, td { padding: 0.55rem 0.5rem; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
-    th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; }
-    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    h3 { margin: 0 0 0.5rem; font-size: 0.95rem; color: var(--muted); font-weight: 600; }
+    .note { margin: 0 0 0.75rem; color: var(--muted); font-size: 0.85rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { padding: 0.5rem 0.45rem; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+    th { color: var(--muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; }
     .team { font-weight: 600; }
-    .owner { color: var(--muted); font-size: 0.85rem; }
-    .odds-cell { min-width: 150px; }
-    .odds-bar {
+    .owner { color: var(--muted); font-size: 0.82rem; }
+    .bar {
       display: inline-block;
       vertical-align: middle;
-      width: 90px;
-      height: 8px;
+      width: 60px;
+      height: 7px;
       background: var(--line);
       border-radius: 4px;
       overflow: hidden;
-      margin-right: 0.5rem;
+      margin-right: 0.4rem;
     }
-    .odds-bar span { display: block; height: 100%; background: var(--good); }
-    .draft-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
-    .draft-grid h3 { margin: 0 0 0.5rem; font-size: 0.95rem; color: var(--muted); font-weight: 600; }
+    .bar span { display: block; height: 100%; background: var(--good); }
+    .draft-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
     ol { margin: 0; padding-left: 1.5rem; }
     ol li { padding: 0.25rem 0; }
-    .empty, .error { color: var(--muted); }
-    .error { color: #ff7b72; }
+    .meta { color: var(--muted); font-size: 0.82rem; }
+    .bracket { display: flex; gap: 1.25rem; align-items: stretch; min-width: 620px; }
+    .round { flex: 1; display: flex; flex-direction: column; justify-content: space-around; gap: 0.75rem; }
+    .round h3 { text-align: center; color: var(--accent); }
+    .game {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--bg);
+      overflow: hidden;
+    }
+    .side {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.6rem;
+      font-size: 0.9rem;
+    }
+    .side + .side { border-top: 1px solid var(--line); }
+    .side.winner .name { color: var(--good); font-weight: 700; }
+    .seed { color: var(--muted); font-size: 0.8rem; min-width: 1.4rem; }
+    .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .pct { color: var(--muted); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+    .status { padding: 0.25rem 0.6rem; font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; border-top: 1px solid var(--line); }
+    .status.final { color: var(--good); }
+    .empty { color: var(--muted); }
+    .error { color: var(--bad); }
   </style>
 </head>
 <body>
@@ -97,18 +118,27 @@
   <main>
     <section>
       <h2>Standings &amp; Playoff Odds</h2>
+      <p class="note">Max PF is each team's potential points (its best possible lineup). Odds come from 10,000 simulations of the rest of the season and playoffs.</p>
       <div id="standings"><p class="empty">Loading…</p></div>
     </section>
 
     <section>
+      <h2>Playoff Bracket</h2>
+      <p class="note">Projected games use current seeds and the favorite in each game, until a game is played. Percentages are each team's chance to win that game.</p>
+      <div id="seeds" class="meta"></div>
+      <div id="bracket"><p class="empty">Loading…</p></div>
+    </section>
+
+    <section>
       <h2>Draft Order</h2>
+      <p class="note">Non-playoff teams pick first (1–6), lowest max PF first. Playoff teams follow by how far they got: round 1 losers, then round 2 losers, then the finals loser, and the champion last. Order below is by average projected pick.</p>
       <div class="draft-grid">
         <div>
-          <h3>Projected next draft (worst record first)</h3>
+          <h3>Projected next draft</h3>
           <div id="projected"><p class="empty">Loading…</p></div>
         </div>
         <div>
-          <h3>Official order</h3>
+          <h3>Official order (if set)</h3>
           <div id="official"><p class="empty">Loading…</p></div>
         </div>
       </div>
@@ -116,8 +146,8 @@
   </main>
 
   <script>
-    // Build an element with text content only. Team and owner names come from
-    // Sleeper, so they are never inserted as HTML.
+    // Text is always set with textContent, so team and owner names from Sleeper
+    // are never parsed as HTML.
     function el(tag, text, className) {
       const node = document.createElement(tag);
       if (text !== undefined && text !== null) node.textContent = text;
@@ -125,20 +155,22 @@
       return node;
     }
 
-    function showError(target, message) {
-      target.replaceChildren(el("p", message, "error"));
+    function fail(id, message) {
+      document.getElementById(id).replaceChildren(el("p", message, "error"));
     }
 
-    function renderStandings(standings) {
+    function renderStandings(rows) {
       const table = el("table");
+      const headers = [
+        ["#", false], ["Team", false], ["Record", true], ["PF", true], ["PA", true],
+        ["Max PF", true], ["Proj W", true], ["Playoff", false], ["Champ", true], ["Avg pick", true],
+      ];
       const head = el("tr");
-      ["#", "Team", "Record", "PF", "PA", "Proj. W", "Playoff odds"].forEach((label, i) => {
-        head.appendChild(el("th", label, i >= 2 && i <= 5 ? "num" : ""));
-      });
+      for (const [label, right] of headers) head.appendChild(el("th", label, right ? "num" : ""));
       table.appendChild(el("thead")).appendChild(head);
 
       const body = el("tbody");
-      for (const row of standings) {
+      for (const row of rows) {
         const tr = el("tr");
         tr.appendChild(el("td", row.rank, "num"));
 
@@ -151,10 +183,11 @@
         tr.appendChild(el("td", record, "num"));
         tr.appendChild(el("td", row.points_for.toFixed(1), "num"));
         tr.appendChild(el("td", row.points_against.toFixed(1), "num"));
+        tr.appendChild(el("td", row.max_pf.toFixed(1), "num"));
         tr.appendChild(el("td", row.projected_wins.toFixed(1), "num"));
 
-        const oddsCell = el("td", null, "odds-cell");
-        const bar = el("span", null, "odds-bar");
+        const oddsCell = el("td");
+        const bar = el("span", null, "bar");
         const fill = el("span");
         fill.style.width = `${Math.min(100, row.playoff_odds)}%`;
         bar.appendChild(fill);
@@ -162,19 +195,53 @@
         oddsCell.appendChild(document.createTextNode(`${row.playoff_odds.toFixed(1)}%`));
         tr.appendChild(oddsCell);
 
+        tr.appendChild(el("td", `${row.champion_odds.toFixed(1)}%`, "num"));
+        tr.appendChild(el("td", row.avg_pick.toFixed(1), "num"));
         body.appendChild(tr);
       }
       table.appendChild(body);
       return table;
     }
 
-    function renderOrder(rows) {
+    function renderSide(side, won, pct) {
+      const row = el("div", null, won ? "side winner" : "side");
+      row.appendChild(el("span", side.seed ? `#${side.seed}` : "", "seed"));
+      const name = el("span", `${side.team}`, "name");
+      row.appendChild(name);
+      row.appendChild(el("span", pct, "pct"));
+      return row;
+    }
+
+    function renderBracket(rounds) {
+      const wrap = el("div", null, "bracket");
+      for (const round of rounds) {
+        const col = el("div", null, "round");
+        col.appendChild(el("h3", round.name));
+        for (const g of round.games) {
+          const box = el("div", null, "game");
+          const aWon = g.winner === g.a.roster_id;
+          const bWon = g.winner === g.b.roster_id;
+          box.appendChild(renderSide(g.a, aWon, `${g.a_win_pct.toFixed(0)}%`));
+          box.appendChild(renderSide(g.b, bWon, `${(100 - g.a_win_pct).toFixed(0)}%`));
+          const status = g.status === "final" ? "Final" : "Projected";
+          box.appendChild(el("div", status, `status ${g.status}`));
+          col.appendChild(box);
+        }
+        wrap.appendChild(col);
+      }
+      return wrap;
+    }
+
+    function renderOrder(rows, showAvg) {
       const list = el("ol");
       for (const row of rows) {
         const li = el("li");
         li.appendChild(el("span", row.team, "team"));
         li.appendChild(document.createTextNode(" "));
         li.appendChild(el("span", `(${row.owner})`, "owner"));
+        if (showAvg) {
+          li.appendChild(el("span", `  avg ${row.avg_pick.toFixed(1)} · most likely #${row.most_likely_pick}`, "meta"));
+        }
         list.appendChild(li);
       }
       return list;
@@ -192,20 +259,24 @@
 
         document.getElementById("standings").replaceChildren(renderStandings(data.standings));
 
-        const projected = document.getElementById("projected");
-        projected.replaceChildren(renderOrder(data.draft.projected_order));
+        document.getElementById("seeds").textContent =
+          "Current seeds: " + data.playoffs.seeds.map((s) => `${s.seed}. ${s.team}`).join("   ·   ");
+        document.getElementById("bracket").replaceChildren(renderBracket(data.playoffs.rounds));
+
+        document.getElementById("projected").replaceChildren(renderOrder(data.draft.projected_order, true));
 
         const official = document.getElementById("official");
         if (data.draft.official_order) {
-          official.replaceChildren(renderOrder(data.draft.official_order));
+          official.replaceChildren(renderOrder(data.draft.official_order, false));
         } else {
           official.replaceChildren(el("p", "No official order set yet.", "empty"));
         }
       } catch (err) {
         const msg = `Could not load league data (${err.message}).`;
-        showError(document.getElementById("standings"), msg);
-        showError(document.getElementById("projected"), msg);
-        showError(document.getElementById("official"), msg);
+        fail("standings", msg);
+        fail("bracket", msg);
+        fail("projected", msg);
+        fail("official", msg);
         document.getElementById("updated").textContent = "Data unavailable";
       }
     }
