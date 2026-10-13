@@ -12,7 +12,7 @@ https://allcattlenobull.github.io/himdynasty/
 | `docs/index.html` | The gate: "Are you HIM?" Yes goes to the league, No goes to the butts. Keys Y and N work too. |
 | `docs/league.html` | Standings, playoff picture, and draft order, each with a week-by-week chart. Click any team to follow it everywhere. |
 | `docs/no.html` | 100 cartoon animal butts for anyone who is not HIM. |
-| `docs/draft.html` | Automatic rookie mock draft and big board (expert boards + college game logs + traded picks + roster needs). |
+| `docs/draft.html` | Automatic rookie mock draft and big board (expert boards + college game logs + traded picks + whole-roster needs + this league's past drafts and each manager's habits). |
 | `docs/trade.html` | Trade center: calculator, team-to-team builder, and trade idea generator, all adjusted for this league's lineup and each team's window. |
 | `docs/buzz.html` | News and live social for the league, a team (`?team=N`), or a player (`?player=ID`): nightly ESPN/RotoWire news, live ESPN news for one player, live Bluesky posts, embedded X insider timelines, live-on-X search, Sleeper trending. |
 | `docs/analytics.html` | Player analytics from nflverse: sortable explorer, player profiles (production, usage, expected points, efficiency, dynasty context, signals, weekly charts), and a team view. |

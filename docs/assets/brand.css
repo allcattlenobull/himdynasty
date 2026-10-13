@@ -1106,3 +1106,8 @@ th.sortable.asc::after { content: " ▲"; color: var(--red); }
 @media (max-width: 560px) { .glossary { grid-template-columns: 1fr; } .glossary dd { margin-bottom: 0.4rem; } .an-photo { width: 64px; height: 64px; } }
 .nav .teams-menu a.tm-link { font: 600 0.92rem var(--body); text-transform: none; letter-spacing: normal; clip-path: none; color: var(--text); padding: 0.55rem 0.7rem; }
 .nav .teams-menu a.tm-link:hover { background: var(--raise); color: var(--text); }
+
+/* Mock draft: draft habits */
+.sub-head { font-family: var(--display); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; font-size: 1rem; margin: 1rem 0 0.5rem; }
+.sub-head:first-child { margin-top: 0; }
+#tendencies td.wrap { min-width: 16rem; }

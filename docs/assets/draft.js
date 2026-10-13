@@ -95,8 +95,12 @@
       if (p.context) {
         const bits = [];
         if (p.context.needs.length) bits.push(`Needs ${p.context.needs.join(", ")}`);
+        if (p.context.thin && p.context.thin.length) bits.push(`Thin at ${p.context.thin.join(", ")}`);
         if (p.context.set.length) bits.push(`Set at ${p.context.set.join(", ")}`);
         if (bits.length) team.appendChild(el("div", bits.join(" · "), "owner need-line"));
+        if (p.context.tendency && p.context.tendency.length) {
+          team.appendChild(el("div", `Drafts: ${p.context.tendency.join(" · ")}`, "owner need-line"));
+        }
       }
       head.appendChild(team);
       card.appendChild(head);
@@ -188,20 +192,99 @@
     document.getElementById("board").replaceChildren(table);
   }
 
+  function renderTendencies() {
+    const host = document.getElementById("tendencies");
+    const hist = data.history;
+    const tend = data.tendencies;
+    if (!host || !hist || !tend || !Object.keys(tend).length) {
+      const panel = document.getElementById("tendency-panel");
+      if (panel) panel.hidden = true;
+      return;
+    }
+    const POS = ["QB", "RB", "WR", "TE"];
+    const rookieDrafts = hist.drafts.filter((d) => d.kind === "rookie").map((d) => d.season);
+    const startup = hist.drafts.find((d) => d.kind === "startup");
+    document.getElementById("tendency-note").textContent =
+      `From ${rookieDrafts.length ? `the ${rookieDrafts.join(" and ")} rookie drafts` : "past drafts"}` +
+      `${startup ? ` and rounds 1–10 of the ${startup.season} startup (counted at 40%)` : ""}. ` +
+      `A lean nudges that manager's mock picks by up to 20%; with only a few picks each, it stays a nudge.`;
+
+    // League-wide: how each round has been spent.
+    const rt = el("table");
+    const rh = el("tr");
+    rh.appendChild(el("th", "Round"));
+    POS.forEach((p) => rh.appendChild(el("th", p, "num")));
+    rh.appendChild(el("th", "Weight now", ""));
+    rt.appendChild(el("thead")).appendChild(rh);
+    const rb = el("tbody");
+    for (const [rnd, c] of Object.entries(hist.round_counts)) {
+      const tr = el("tr");
+      tr.appendChild(el("td", `Round ${rnd}`));
+      POS.forEach((p) => tr.appendChild(el("td", c[p] || 0, "num")));
+      const pr = hist.round_priors[rnd];
+      tr.appendChild(el("td", pr ? POS.map((p) => `${p} ×${pr[p].toFixed(2)}`).join(" · ") : "—", "muted small wrap"));
+      rb.appendChild(tr);
+    }
+    rt.appendChild(rb);
+    const rwrap = el("div", null, "table-wrap");
+    rwrap.appendChild(rt);
+
+    // Per manager.
+    const order = Object.keys(tend).sort((a, b) =>
+      (data.picks.find((p) => String(p.owner) === a) ? 0 : 1) - (data.picks.find((p) => String(p.owner) === b) ? 0 : 1) || Number(a) - Number(b));
+    const names = {};
+    for (const p of data.picks) names[p.owner] = p.owner_team;
+    const t = el("table");
+    const h = el("tr");
+    [["Team", false], ["Rookie picks", false], ["QB", true], ["RB", true], ["WR", true], ["TE", true], ["Habit", false]]
+      .forEach(([l, r]) => h.appendChild(el("th", l, r ? "num" : "")));
+    t.appendChild(el("thead")).appendChild(h);
+    const b = el("tbody");
+    for (const rid of order) {
+      const m = tend[rid];
+      const tr = el("tr");
+      const tc = el("td");
+      const line = el("div", null, "teamcell");
+      line.appendChild(dot(Number(rid)));
+      line.appendChild(teamLink(Number(rid), names[rid] || `Team ${rid}`));
+      tc.appendChild(line);
+      tr.appendChild(tc);
+      const list = m.rookie_picks.map((x) => `${x.season} R${x.round} ${x.pos}${x.name ? ` ${x.name}` : ""}`).join(" · ");
+      tr.appendChild(el("td", list || "None here yet", "muted small wrap"));
+      POS.forEach((p) => {
+        const v = m.pref[p];
+        const cls = v >= 1.06 ? "up" : v <= 0.92 ? "down" : "muted";
+        tr.appendChild(el("td", `${m.rookie_counts[p]} · ×${v.toFixed(2)}`, `num ${cls}`));
+      });
+      tr.appendChild(el("td", m.labels.length ? m.labels.join(", ") : "Balanced"));
+      b.appendChild(tr);
+    }
+    t.appendChild(b);
+    const wrap = el("div", null, "table-wrap");
+    wrap.appendChild(t);
+    host.replaceChildren(el("h3", "How this league spends each round", "sub-head"), rwrap,
+      el("h3", "Each manager", "sub-head"), wrap);
+  }
+
   function renderMethod() {
     const w = data.weights;
     const f = data.format;
     const m = f.position_multipliers;
     const s = data.sources;
+    const hist = data.history;
+    const POSITIONS = ["QB", "RB", "WR", "TE"];
     const items = [
       `Prospect pool: ${s.consensus_board} prospects from the NFL Mock Draft Database consensus board and ${s.espn_board} from ESPN's big board, plus productive juniors and seniors from ${s.college_players} college stat lines. Only QB, RB, WR, and TE count.`,
       `Consensus value: the average of each prospect's board ranks, falling off quickly after the top picks the way real draft capital does.`,
       `Production value: college fantasy points per game with this league's scoring (${f.ppr} PPR), as a percentile among the top college players at the position, nudged by the last three games.`,
       `Blend: ${Math.round(w.consensus * 100)}% consensus, ${Math.round(w.production * 100)}% production right now. Production starts at 20% before the college season and grows to 40% as games are played.`,
-      `League format: ${f.superflex ? "superflex" : "1-QB"} lineups, so value is multiplied by QB ${m.QB}, RB ${m.RB}, WR ${m.WR}, TE ${m.TE}.`,
+      `League format: ${f.superflex ? "superflex" : "1-QB"} lineups, so value is multiplied by QB ${m.QB}, RB ${m.RB}, WR ${m.WR}, TE ${m.TE}. Expert boards rank NFL prospects, not fantasy value, so this is where a 1-QB league's lower QB value comes in.`,
+      hist && Object.keys(hist.round_counts || {}).length
+        ? `League history: Sleeper keeps every past season of this league. Each round is weighted by how this league has actually spent it (see Draft Habits): in round 1, for example, ${POSITIONS.map((p) => `${p} ×${hist.round_priors["1"][p].toFixed(2)}`).join(", ")}. On top of that, each manager's own habits nudge their picks.`
+        : `League history: not available right now, so every round and manager is treated the same.`,
       `Draft order: the projected order from the simulations, ${data.rounds} linear rounds, with traded picks going to their current owners.`,
-      `Team needs: each roster's starters at every position are valued with dynasty values and compared with the league. Thin positions get a boost of up to 32%; deep positions are marked down. In a 1-QB league, a team with a starter-level QB and a real backup is "set at QB" and its QB prospects drop by about half.`,
-      `Each pick: the owner takes the best value after that need adjustment. Each pick at a position eases that need for later rounds.`,
+      `Team needs look at the whole roster, not just the starting lineup. Starter slots (QB1, RB1–2, WR1–3, TE1) are compared with the league median at the same slot, and being better than the median earns only a small credit, so one star can't hide an empty bench. Depth slots (QB2, RB3–4, WR4–5, TE2) are compared with a replacement-level starter at that position and only count against you when they're missing. "Thin at" means the depth behind the starters is mostly empty.`,
+      `${f.superflex ? "" : "In a 1-QB league a starting QB is easy to find, so a QB hole pulls less than other holes, and a team with a starter-level QB and a real backup is set at QB. "}Each pick: the owner takes the best value × round weight × manager habit × roster need. Each pick at a position eases that need for later rounds.`,
     ];
     document.getElementById("method").replaceChildren(...items.map((t) => el("li", t)));
   }
@@ -228,6 +311,7 @@
       `${data.rounds} rounds · ${data.teams} teams · updated ${when.toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}`;
     renderPicks();
     renderBoard();
+    renderTendencies();
     renderMethod();
   }
 

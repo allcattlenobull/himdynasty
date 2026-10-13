@@ -8,7 +8,8 @@ Sources
     published boards) and ESPN's draft big board: who the experts like.
   * ESPN college stats and game logs: how each prospect is actually playing,
     scored with this league's own Sleeper scoring settings.
-  * Sleeper: league format, number of rookie rounds, and traded picks.
+  * Sleeper: league format, number of rookie rounds, traded picks, rosters,
+    and every past draft in the league.
   * docs/data/latest.json: projected draft order and each roster.
 
 How a prospect is valued
@@ -19,13 +20,18 @@ How a prospect is valued
      last three games.
   3. Blend: production counts for 20% before the college season and grows to
      40% as games are played. Consensus counts for the rest.
-  4. League format: QBs are worth less in a 1-QB league and more in superflex;
-     TEs get a bump with TE premium scoring.
+  4. League format: a mild base weight (QBs a bit lower in 1-QB, higher in
+     superflex; TEs up with TE premium).
 
 How each pick is made
-  The team that owns the pick (after trades) takes the best prospect by value,
-  nudged toward positions where its roster is thin. Each pick at a position
-  eases that team's need there.
+  The team that owns the pick (after trades) takes the prospect with the best
+  value x round prior x manager tendency x roster need:
+    * Round prior: how this league has actually spent each round of its past
+      rookie drafts (walking Sleeper's previous_league_id chain).
+    * Manager tendency: each manager's own position habits from every past
+      draft here (rookie drafts fully, startup rounds 1-10 at 40%).
+    * Roster need: the whole roster, starters and depth (see team_needs).
+  Each pick at a position eases that team's need there.
 
 Output: docs/data/mock_draft.json and docs/data/prospects_history.json.
 """
@@ -267,14 +273,20 @@ def percentile(value, population):
 
 
 def format_multipliers(league):
+    """Base position weights for the league format.
+
+    These are deliberately mild. How this league actually drafts each position
+    by round (league_history) does most of the format calibration, so a QB in
+    this 1-QB league is not penalized twice.
+    """
     positions = league.get("roster_positions") or []
     superflex = "SUPER_FLEX" in positions or positions.count("QB") > 1
     te_premium = (league.get("scoring_settings") or {}).get("bonus_rec_te") or 0
     return {
-        "QB": 1.2 if superflex else 0.72,
-        "RB": 1.1,
-        "WR": 1.05,
-        "TE": 0.82 + min(0.2, te_premium * 0.3),
+        "QB": 1.15 if superflex else 0.7,
+        "RB": 1.0,
+        "WR": 1.0,
+        "TE": 0.9 + min(0.2, te_premium * 0.3),
     }, superflex, te_premium
 
 
@@ -286,60 +298,232 @@ def ordinal(n):
     return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
 
 
+# Weights per roster slot: (starter slots, depth slots). Starters are measured
+# against the league median at that slot; depth against a replacement-level bar.
+NEED_SLOTS_1QB = {
+    "QB": ([1.0], [0.25]),
+    "RB": ([0.35, 0.30], [0.20, 0.15]),
+    "WR": ([0.26, 0.24, 0.20], [0.17, 0.13]),
+    "TE": ([0.85], [0.15]),
+}
+NEED_SLOTS_SF = dict(NEED_SLOTS_1QB, QB=([0.5, 0.4], [0.1]))
+
+
 def team_needs(latest, superflex):
-    """How badly each team needs each position, from its actual roster.
+    """How badly each team needs each position, from its whole roster.
 
-    Strength at a position = dynasty value (trade.json) of the players a team
-    would start there (QB 1, or 2 in superflex; RB 3 and WR 3 including a share
-    of flex; TE 1). Need = how far below the league median that is, from -0.6
-    (loaded) to +0.4 (empty). In a 1-QB league, a team with a starter-level QB
-    and a real backup is "set at QB" and gets the full -0.6.
+    Every slot counts, not just the starters. For each position:
+      * Starter slots (QB1; RB1-2; WR1-3; TE1) compare a team's best players
+        with the league median at the same slot. Being better than the median
+        earns at most a small credit, so one star cannot hide an empty bench.
+      * Depth slots (QB2; RB3-4; WR4-5; TE2) compare the next players with a
+        replacement-level bar: the value of the league's Nth-best rostered
+        player at that position, where N = teams x (starters + 1/2). Depth
+        earns no credit for being good, only a penalty for being missing.
+    Values are dynasty values from trade.json (or points scored as a fallback).
+    Need runs from -0.6 (loaded) to +0.45 (empty; +0.2 for QB in 1-QB). In a 1-QB league a team
+    with a starter-level QB and a real backup is "set at QB" (-0.6).
 
-    Returns (needs, position ranks) keyed by roster id.
+    Returns (needs, position ranks, thin) keyed by roster id; thin lists the
+    positions where the depth slots are mostly empty.
     """
-    starters_at = {"QB": 2 if superflex else 1, "RB": 3, "WR": 3, "TE": 1}
+    slots = NEED_SLOTS_SF if superflex else NEED_SLOTS_1QB
     rids = [int(r) for r in (latest.get("teams") or {})]
-    by_team = {r: {} for r in rids}
+    by_team = {r: {pos: [] for pos in slots} for r in rids}
     try:
         trade = json.loads((DATA_DIR / "trade.json").read_text())
         for a in trade["assets"]:
-            if a.get("owner") in by_team and a["kind"] == "player" and a["pos"] in starters_at:
-                by_team[a["owner"]].setdefault(a["pos"], []).append(a["value"])
+            if a.get("owner") in by_team and a["kind"] == "player" and a["pos"] in slots:
+                by_team[a["owner"]][a["pos"]].append(a["value"])
     except (FileNotFoundError, KeyError, ValueError):
-        # Fallback: points scored this season.
         for rid, t in latest["teams"].items():
             r = t["roster"]
             for p in [x["player"] for x in r["starters"] if x.get("player")] + r["bench"] + r["taxi"] + r["ir"]:
-                if p["pos"] in starters_at:
-                    by_team[int(rid)].setdefault(p["pos"], []).append(p.get("pts") or 0.0)
-    for r in rids:
-        for pos in starters_at:
-            by_team[r][pos] = sorted(by_team[r].get(pos, []), reverse=True)
+                if p["pos"] in slots:
+                    by_team[int(rid)][p["pos"]].append(p.get("pts") or 0.0)
 
     needs = {r: {} for r in rids}
     ranks = {r: {} for r in rids}
-    for pos, k in starters_at.items():
-        strength = {r: sum(by_team[r][pos][:k]) for r in rids}
-        median = statistics.median(strength.values()) if strength else 0
+    thin = {r: [] for r in rids}
+    n = len(rids) or 1
+    for pos, (starter_w, depth_w) in slots.items():
+        depth = len(starter_w) + len(depth_w)
+        vals = {r: (sorted(by_team[r][pos], reverse=True) + [0.0] * depth)[:depth] for r in rids}
+        everyone = sorted((v for r in rids for v in by_team[r][pos]), reverse=True)
+        bar_index = int(n * (len(starter_w) + 0.5)) - 1
+        bar = everyone[min(bar_index, len(everyone) - 1)] if everyone else 0.0
+        medians = [statistics.median(vals[r][i] for r in rids) for i in range(len(starter_w))]
+        strength = {r: sum(vals[r][:len(starter_w)]) for r in rids}
         for i, r in enumerate(sorted(rids, key=lambda x: -strength[x]), start=1):
             ranks[r][pos] = i
         for r in rids:
-            need = (median - strength[r]) / median if median else 0.0
-            need = max(-0.6, min(0.4, need))
+            v = vals[r]
+            starter = sum(w * max(-0.3, min(1.0, (m - v[i]) / m)) if m else 0.0
+                          for i, (w, m) in enumerate(zip(starter_w, medians)))
+            gaps = [max(0.0, min(1.0, (bar - v[len(starter_w) + j]) / bar)) if bar else 0.0
+                    for j in range(len(depth_w))]
+            depth_need = sum(w * g for w, g in zip(depth_w, gaps))
+            # One starting QB is easy to find in a 1-QB league, so a QB hole
+            # pulls much less than a hole anywhere else.
+            cap = 0.2 if pos == "QB" and not superflex else 0.45
+            need = max(-0.6, min(cap, starter + depth_need))
             if pos == "QB" and not superflex:
-                qbs = by_team[r]["QB"]
-                if qbs and qbs[0] >= median and len(qbs) > 1 and qbs[1] >= 0.4 * median:
-                    need = -0.6
+                qbs = v
+                if qbs[0] >= medians[0] and qbs[1] >= 0.4 * medians[0]:
+                    need, depth_need = -0.6, 0.0
             needs[r][pos] = need
-    return needs, ranks
+            if depth_need >= 0.1 and (pos != "QB" or superflex):
+                thin[r].append(pos)
+    return needs, ranks, thin
 
 
-def needs_summary(need, rank):
+def needs_summary(need, rank, thin=()):
+    top = [p for p, v in sorted(need.items(), key=lambda kv: -kv[1]) if v >= 0.15][:2]
     return {
-        "needs": [p for p, v in sorted(need.items(), key=lambda kv: -kv[1]) if v >= 0.15][:2],
-        "set": [p for p, v in need.items() if v <= -0.4],
+        "needs": top,
+        "set": [p for p, v in need.items() if v <= -0.15 and p not in thin],
+        "thin": [p for p in thin if p not in top],
         "ranks": rank,
     }
+
+
+# --------------------------------------------------------------------------- #
+# League draft history: position priors by round and manager tendencies
+# --------------------------------------------------------------------------- #
+
+def league_history(rosters):
+    """Every completed draft in this league's history (previous_league_id chain).
+
+    Returns a list of {season, kind ("rookie"/"startup"), rounds, picks}, each
+    pick {round, pos, user, name}. Rookie drafts are drafts of 5 rounds or less.
+    """
+    drafts, league_id, seen = [], LEAGUE_ID, set()
+    while league_id and league_id not in seen and len(seen) < 10:
+        seen.add(league_id)
+        try:
+            lg = fetch(f"{SLEEPER}/league/{league_id}")
+            listing = fetch(f"{SLEEPER}/league/{league_id}/drafts") or []
+        except Exception as exc:  # noqa: BLE001
+            log(f"History: could not read league {league_id}: {exc}")
+            break
+        for d in listing:
+            if d.get("status") != "complete":
+                continue
+            try:
+                raw = fetch(f"{SLEEPER}/draft/{d['draft_id']}/picks") or []
+            except Exception as exc:  # noqa: BLE001
+                log(f"History: could not read draft {d.get('draft_id')}: {exc}")
+                continue
+            rounds = (d.get("settings") or {}).get("rounds") or max((p.get("round") or 0 for p in raw), default=0)
+            picks = [{
+                "round": p.get("round"),
+                "pos": (p.get("metadata") or {}).get("position"),
+                "user": p.get("picked_by"),
+                "name": " ".join(x for x in ((p.get("metadata") or {}).get("first_name"),
+                                             (p.get("metadata") or {}).get("last_name")) if x),
+            } for p in raw]
+            drafts.append({"season": str(d.get("season") or lg.get("season")),
+                           "kind": "rookie" if rounds <= 5 else "startup",
+                           "rounds": rounds, "picks": picks})
+        league_id = lg.get("previous_league_id")
+    drafts.sort(key=lambda d: d["season"])
+    log(f"History: {len(drafts)} completed drafts "
+        f"({', '.join(d['season'] + ' ' + d['kind'] for d in drafts)})")
+    return drafts
+
+
+def round_priors(drafts, rounds):
+    """How this league actually spends rookie picks by round.
+
+    For each round, each position's share of picks vs an even 25% split,
+    smoothed (+1 per position) and square-root damped, clamped 0.55-1.35, then
+    used as the round weight. Rounds past the history reuse the last one.
+    """
+    counts = {}
+    for d in drafts:
+        if d["kind"] != "rookie":
+            continue
+        for p in d["picks"]:
+            if p["pos"] in FANTASY_POS and p["round"]:
+                counts.setdefault(p["round"], {pos: 0 for pos in FANTASY_POS})[p["pos"]] += 1
+    if not counts:
+        return {}, {}
+    priors = {}
+    for rnd in range(1, rounds + 1):
+        c = counts.get(rnd) or counts[max(counts)]
+        total = sum(c.values())
+        priors[rnd] = {}
+        for pos in FANTASY_POS:
+            share = (c[pos] + 1) / (total + 4)
+            hist = max(0.55, min(1.35, (share / 0.25) ** 0.5))
+            priors[rnd][pos] = round(hist, 3)
+    return priors, {str(r): c for r, c in sorted(counts.items())}
+
+
+def manager_tendencies(drafts, rosters, teams):
+    """Each current manager's draft habits, from every draft they made here.
+
+    Rookie picks count fully; startup picks in rounds 1-10 count 0.4 (startup
+    boards are mostly about veterans). Preference for a position = the
+    manager's share there vs the league's, shrunk toward the league with six
+    phantom league-average picks, square-root damped, clamped 0.85-1.2.
+    """
+    user_to_roster = {r.get("owner_id"): r["roster_id"] for r in rosters or [] if r.get("owner_id")}
+    for r in rosters or []:
+        for co in r.get("co_owners") or []:
+            user_to_roster.setdefault(co, r["roster_id"])
+    own = {}
+    league = {pos: 0.0 for pos in FANTASY_POS}
+    rookie_log = {}
+    for d in drafts:
+        for p in d["picks"]:
+            if p["pos"] not in FANTASY_POS:
+                continue
+            if d["kind"] == "rookie":
+                weight = 1.0
+            elif (p["round"] or 99) <= 10:
+                weight = 0.4
+            else:
+                continue
+            league[p["pos"]] += weight
+            rid = user_to_roster.get(p["user"])
+            if rid is None:
+                continue
+            own.setdefault(rid, {pos: 0.0 for pos in FANTASY_POS})[p["pos"]] += weight
+            if d["kind"] == "rookie":
+                rookie_log.setdefault(rid, []).append(
+                    {"season": d["season"], "round": p["round"], "pos": p["pos"], "name": p["name"]})
+    league_total = sum(league.values())
+    if not league_total:
+        return {}
+    shares = {pos: league[pos] / league_total for pos in FANTASY_POS}
+    out = {}
+    k = 6.0
+    for rid in teams:
+        mine = own.get(rid, {pos: 0.0 for pos in FANTASY_POS})
+        total = sum(mine.values())
+        pref, labels = {}, []
+        for pos in FANTASY_POS:
+            if not shares[pos]:
+                pref[pos] = 1.0
+                continue
+            raw = ((mine[pos] + k * shares[pos]) / (total + k)) / shares[pos]
+            pref[pos] = round(max(0.85, min(1.2, raw ** 0.5)), 3)
+        for pos in sorted(FANTASY_POS, key=lambda x: -pref[x]):
+            if pref[pos] >= 1.06:
+                labels.append(f"Leans {pos}")
+        for pos in sorted(FANTASY_POS, key=lambda x: pref[x]):
+            if pref[pos] <= 0.92:
+                labels.append(f"Avoids {pos}")
+        rookie = rookie_log.get(rid, [])
+        out[rid] = {
+            "pref": pref,
+            "labels": labels[:2],
+            "rookie_picks": sorted(rookie, key=lambda x: (x["season"], x["round"])),
+            "rookie_counts": {pos: sum(1 for x in rookie if x["pos"] == pos) for pos in FANTASY_POS},
+            "weighted_picks": round(total, 1),
+        }
+    return out
 
 
 def pick_owners(traded, year, rounds, original_order):
@@ -537,8 +721,20 @@ def main():
     update_history(board, today)
 
     # Run the draft.
-    needs, pos_ranks = team_needs(latest, superflex)
+    needs, pos_ranks, thin = team_needs(latest, superflex)
     start_needs = {r: dict(n) for r, n in needs.items()}
+
+    # This league's own draft history: how each round is spent, and each
+    # manager's habits.
+    try:
+        rosters = fetch(f"{SLEEPER}/league/{LEAGUE_ID}/rosters")
+        drafts = league_history(rosters)
+    except Exception as exc:  # noqa: BLE001
+        log(f"History unavailable: {exc}")
+        rosters, drafts = [], []
+    priors, round_counts = round_priors(drafts, rounds)
+    tendencies = manager_tendencies(drafts, rosters, teams)
+
     owners = pick_owners(traded, draft_year, rounds, order)
     taken = set()
     picks = []
@@ -550,18 +746,27 @@ def main():
             for e in board:
                 if e["key"] in taken:
                     continue
-                score = e["value"] * (1 + 0.8 * team_need.get(e["pos"], 0.0))
+                score = (e["value"]
+                         * priors.get(rnd, {}).get(e["pos"], 1.0)
+                         * tendencies.get(owner, {}).get("pref", {}).get(e["pos"], 1.0)
+                         * (1 + 0.8 * team_need.get(e["pos"], 0.0)))
                 if score > best_score:
                     best, best_score = e, score
             if best is None:
                 break
-            context = needs_summary(team_need, pos_ranks.get(owner, {}))
+            context = needs_summary(team_need, pos_ranks.get(owner, {}), thin.get(owner, ()))
+            context["tendency"] = tendencies.get(owner, {}).get("labels", [])
             taken.add(best["key"])
             top_available = next(e for e in board if e["key"] not in taken or e is best)
             need_here = team_need.get(best["pos"], 0.0)
             pos_rank = pos_ranks.get(owner, {}).get(best["pos"])
+            leans = f"Leans {best['pos']}" in context["tendency"]
             if need_here >= 0.15:
                 reason = f"Fills a {best['pos']} need ({ordinal(pos_rank)} at {best['pos']})" if pos_rank else f"Fills a {best['pos']} need"
+            elif best["pos"] in context["thin"]:
+                reason = f"Adds {best['pos']} depth"
+            elif leans and best is not top_available:
+                reason = f"Manager leans {best['pos']}"
             elif best is top_available:
                 reason = "Best available"
             else:
@@ -602,6 +807,14 @@ def main():
         "board": [public(e) for e in board],
         "needs": {str(k): {p: round(v, 3) for p, v in n.items()} for k, n in start_needs.items()},
         "needs_ranks": {str(k): v for k, v in pos_ranks.items()},
+        "thin": {str(k): v for k, v in thin.items()},
+        "history": {
+            "drafts": [{"season": d["season"], "kind": d["kind"], "rounds": d["rounds"], "picks": len(d["picks"])}
+                       for d in drafts],
+            "round_counts": round_counts,
+            "round_priors": {str(r): v for r, v in priors.items()},
+        },
+        "tendencies": {str(k): v for k, v in tendencies.items()},
     }
     (DATA_DIR / "mock_draft.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     log(f"Wrote {len(picks)} picks and a {len(board)}-player board (production weight {w}).")
