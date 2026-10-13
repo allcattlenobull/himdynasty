@@ -11,13 +11,16 @@ Bluesky posts, and embedded X timelines); this file is the nightly backbone.
 Reads docs/data/latest.json; writes docs/data/news.json (last 21 days).
 """
 
+import csv
 import datetime as dt
+import io
 import json
 import time
 import urllib.request
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "docs" / "data"
+IDS = "https://raw.githubusercontent.com/dynastyprocess/data/master/files/db_playerids.csv"
 FEED = "https://site.api.espn.com/apis/fantasy/v2/games/ffl/news/players?limit=12&playerId={}"
 KEEP_DAYS = 21
 
@@ -33,6 +36,18 @@ def fetch(url):
     return None
 
 
+def sleeper_to_espn():
+    """Fallback id map from DynastyProcess, for players Sleeper has no ESPN id for."""
+    try:
+        req = urllib.request.Request(IDS, headers={"User-Agent": "him-dynasty-buzz"})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            rows = csv.DictReader(io.StringIO(r.read().decode("utf-8", "replace")))
+            return {x["sleeper_id"]: x["espn_id"] for x in rows
+                    if x.get("sleeper_id") not in (None, "", "NA") and x.get("espn_id") not in (None, "", "NA")}
+    except Exception:  # noqa: BLE001
+        return {}
+
+
 def clip(text, n):
     text = " ".join((text or "").split())
     return text if len(text) <= n else text[: n - 1].rsplit(" ", 1)[0] + "…"
@@ -41,11 +56,14 @@ def clip(text, n):
 def main():
     latest = json.loads((DATA_DIR / "latest.json").read_text())
     players = {}
+    fallback = sleeper_to_espn()
     for rid, t in latest["teams"].items():
         r = t["roster"]
         for p in [x["player"] for x in r["starters"] if x.get("player")] + r["bench"] + r["taxi"] + r["ir"]:
-            if p.get("espn_id"):
-                players[str(p["espn_id"])] = {"sleeper_id": p["id"], "name": p["name"], "pos": p["pos"],
+            espn = p.get("espn_id") or fallback.get(p["id"])
+            if espn:
+                p["espn_id"] = espn
+                players[str(espn)] = {"sleeper_id": p["id"], "name": p["name"], "pos": p["pos"],
                                               "nfl": p["nfl"], "owner": int(rid)}
 
     cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=KEEP_DAYS)

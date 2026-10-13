@@ -357,6 +357,9 @@
         players[p.id] = Object.assign({}, p, { owner: Number(rid) });
       }
     }
+    if (news && news.players) {
+      for (const [sid, info] of Object.entries(news.players)) if (players[sid] && !players[sid].espn_id) players[sid].espn_id = info.espn_id;
+    }
     document.getElementById("updated").textContent = news
       ? `${news.items.length} stories from the last 21 days · collected ${new Date(news.generated_at).toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}`
       : "News collects every morning; live social works now.";
