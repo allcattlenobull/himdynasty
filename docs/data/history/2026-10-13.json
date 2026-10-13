@@ -1,12 +1,29 @@
 {
-  "generated_at": "2026-10-13T03:35:48+00:00",
+  "generated_at": "2026-10-13T03:59:22+00:00",
   "league": {
     "id": "1312005038838673409",
     "name": "The HIM Dynasty",
     "season": "2026",
     "status": "in_season",
     "playoff_teams": 6,
-    "weeks_completed": 4
+    "weeks_completed": 4,
+    "start_week": 1,
+    "playoff_week_start": 15,
+    "last_week": 17,
+    "season_start": "2026-09-09",
+    "nfl_week": 5,
+    "slots": [
+      "QB",
+      "RB",
+      "RB",
+      "WR",
+      "WR",
+      "TE",
+      "FLEX",
+      "FLEX",
+      "K",
+      "DEF"
+    ]
   },
   "simulations": 10000,
   "remaining_games": 60,
@@ -2078,7 +2095,7 @@
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
           "win_pct": 29.5,
-          "points": 132.94,
+          "points": 136.38,
           "opp_points": 166.86
         },
         {
@@ -3634,7 +3651,7 @@
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
           "win_pct": 27.5,
-          "points": 163.06,
+          "points": 164.56,
           "opp_points": 132.12
         },
         {
@@ -4163,7 +4180,7 @@
           "opponent_owner": "JudasJudge",
           "win_pct": 72.5,
           "points": 132.12,
-          "opp_points": 163.06
+          "opp_points": 164.56
         },
         {
           "week": 6,
@@ -5634,7 +5651,7 @@
           "opponent_owner": "RefMitch128",
           "win_pct": 70.5,
           "points": 166.86,
-          "opp_points": 132.94
+          "opp_points": 136.38
         },
         {
           "week": 6,
@@ -7721,6 +7738,1297 @@
     "median": false,
     "actual": []
   },
+  "transactions": [
+    {
+      "id": "1415422345685831680",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791825493788,
+      "rosters": [
+        1
+      ],
+      "adds": {},
+      "drops": {
+        "10235": 1
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1415108092416299008",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791750569970,
+      "rosters": [
+        5
+      ],
+      "adds": {
+        "7083": 5
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1415107659199262720",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791750466683,
+      "rosters": [
+        5
+      ],
+      "adds": {},
+      "drops": {
+        "9502": 5
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1415036817933078528",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791733576810,
+      "rosters": [
+        3
+      ],
+      "adds": {
+        "4454": 3
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1414329042546544640",
+      "type": "waiver",
+      "week": 5,
+      "time": 1791725019736,
+      "rosters": [
+        7
+      ],
+      "adds": {
+        "6083": 7
+      },
+      "drops": {
+        "1945": 7
+      },
+      "picks": [],
+      "faab": 5
+    },
+    {
+      "id": "1414863813446045696",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791692329326,
+      "rosters": [
+        4
+      ],
+      "adds": {
+        "WAS": 4
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1414753016308838400",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791665913230,
+      "rosters": [
+        11
+      ],
+      "adds": {
+        "2078": 11
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1414701850585817088",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791653714370,
+      "rosters": [
+        8
+      ],
+      "adds": {},
+      "drops": {
+        "7049": 8
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1414328018180038656",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791564585779,
+      "rosters": [
+        1
+      ],
+      "adds": {
+        "10235": 1
+      },
+      "drops": {
+        "947": 1
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1414310837774000128",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791560489651,
+      "rosters": [
+        3
+      ],
+      "adds": {
+        "3271": 3
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1414290384846127104",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791555613294,
+      "rosters": [
+        9
+      ],
+      "adds": {
+        "8259": 9
+      },
+      "drops": {
+        "6083": 9
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1414072088318267392",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791503567345,
+      "rosters": [
+        5
+      ],
+      "adds": {
+        "13425": 5
+      },
+      "drops": {
+        "7083": 5
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413979474076127232",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791481486389,
+      "rosters": [
+        3
+      ],
+      "adds": {},
+      "drops": {
+        "9504": 3
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413967780318822400",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791478698381,
+      "rosters": [
+        3
+      ],
+      "adds": {},
+      "drops": {
+        "6828": 3
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413635967251718144",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791399587981,
+      "rosters": [
+        1
+      ],
+      "adds": {
+        "947": 1
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413614000637284352",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791394350732,
+      "rosters": [
+        5
+      ],
+      "adds": {
+        "7083": 5
+      },
+      "drops": {
+        "8161": 5
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413590285379715072",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791388696573,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "ATL": 2
+      },
+      "drops": {
+        "IND": 2
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413580187710283776",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791386289102,
+      "rosters": [
+        11
+      ],
+      "adds": {
+        "2306": 11
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413529369007181824",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791374172979,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "10955": 2
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413529338292240384",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791374165655,
+      "rosters": [
+        2
+      ],
+      "adds": {},
+      "drops": {
+        "7571": 2
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413524759601233920",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791373074010,
+      "rosters": [
+        1
+      ],
+      "adds": {
+        "2020": 1
+      },
+      "drops": {
+        "12711": 1
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413512283530825728",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791370099483,
+      "rosters": [
+        6
+      ],
+      "adds": {
+        "NE": 6
+      },
+      "drops": {
+        "12048": 6
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413504810413527040",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791368317754,
+      "rosters": [
+        12
+      ],
+      "adds": {
+        "4993": 12
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413414807834525696",
+      "type": "waiver",
+      "week": 4,
+      "time": 1791357214707,
+      "rosters": [
+        7
+      ],
+      "adds": {
+        "13264": 7
+      },
+      "drops": {
+        "8676": 7
+      },
+      "picks": [],
+      "faab": 10
+    },
+    {
+      "id": "1413397387224817664",
+      "type": "waiver",
+      "week": 4,
+      "time": 1791357214707,
+      "rosters": [
+        12
+      ],
+      "adds": {
+        "11577": 12
+      },
+      "drops": {},
+      "picks": [],
+      "faab": 21
+    },
+    {
+      "id": "1413352770752217088",
+      "type": "waiver",
+      "week": 4,
+      "time": 1791357214707,
+      "rosters": [
+        9
+      ],
+      "adds": {
+        "9482": 9
+      },
+      "drops": {
+        "12502": 9
+      },
+      "picks": [],
+      "faab": 7
+    },
+    {
+      "id": "1413317097198526464",
+      "type": "waiver",
+      "week": 4,
+      "time": 1791357214707,
+      "rosters": [
+        6
+      ],
+      "adds": {
+        "1166": 6
+      },
+      "drops": {
+        "NYJ": 6
+      },
+      "picks": [],
+      "faab": 11
+    },
+    {
+      "id": "1413317031834513408",
+      "type": "waiver",
+      "week": 4,
+      "time": 1791357214707,
+      "rosters": [
+        6
+      ],
+      "adds": {
+        "13833": 6
+      },
+      "drops": {
+        "6650": 6
+      },
+      "picks": [],
+      "faab": 2
+    },
+    {
+      "id": "1413262717447405568",
+      "type": "waiver",
+      "week": 4,
+      "time": 1791357214707,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "4663": 2
+      },
+      "drops": {},
+      "picks": [],
+      "faab": 1
+    },
+    {
+      "id": "1413261882067800064",
+      "type": "waiver",
+      "week": 4,
+      "time": 1791357214707,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "6783": 2
+      },
+      "drops": {},
+      "picks": [],
+      "faab": 1
+    },
+    {
+      "id": "1413261833850064896",
+      "type": "waiver",
+      "week": 4,
+      "time": 1791357214707,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "12497": 2
+      },
+      "drops": {},
+      "picks": [],
+      "faab": 1
+    },
+    {
+      "id": "1413261662865174528",
+      "type": "waiver",
+      "week": 4,
+      "time": 1791357214707,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "7571": 2
+      },
+      "drops": {},
+      "picks": [],
+      "faab": 1
+    },
+    {
+      "id": "1413226568527921152",
+      "type": "waiver",
+      "week": 4,
+      "time": 1791357214707,
+      "rosters": [
+        7
+      ],
+      "adds": {
+        "13413": 7
+      },
+      "drops": {
+        "3634": 7
+      },
+      "picks": [],
+      "faab": 5
+    },
+    {
+      "id": "1413180973176160256",
+      "type": "waiver",
+      "week": 4,
+      "time": 1791357214707,
+      "rosters": [
+        3
+      ],
+      "adds": {
+        "CIN": 3
+      },
+      "drops": {
+        "GB": 3
+      },
+      "picks": [],
+      "faab": 10
+    },
+    {
+      "id": "1413397751911256064",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791342793018,
+      "rosters": [
+        12
+      ],
+      "adds": {},
+      "drops": {
+        "3214": 12
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413397310221631488",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791342687710,
+      "rosters": [
+        12
+      ],
+      "adds": {},
+      "drops": {
+        "LV": 12
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413247868063551488",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791307057923,
+      "rosters": [
+        9
+      ],
+      "adds": {},
+      "drops": {
+        "11783": 9
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413244900157243392",
+      "type": "trade",
+      "week": 4,
+      "time": 1791306821028,
+      "rosters": [
+        2,
+        9
+      ],
+      "adds": {
+        "4984": 2,
+        "7523": 9,
+        "8137": 9
+      },
+      "drops": {
+        "4984": 9,
+        "7523": 2,
+        "8137": 2
+      },
+      "picks": [
+        {
+          "season": "2029",
+          "round": 3,
+          "original": 2,
+          "from": 2,
+          "to": 9
+        }
+      ],
+      "faab": null
+    },
+    {
+      "id": "1413198411653558272",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791295266596,
+      "rosters": [
+        2
+      ],
+      "adds": {},
+      "drops": {
+        "KC": 2
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413198353088425984",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791295252634,
+      "rosters": [
+        2
+      ],
+      "adds": {},
+      "drops": {
+        "2505": 2
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1413198305961242624",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791295241398,
+      "rosters": [
+        2
+      ],
+      "adds": {},
+      "drops": {
+        "4227": 2
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1412974404941467648",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791241859234,
+      "rosters": [
+        1
+      ],
+      "adds": {},
+      "drops": {
+        "4018": 1
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1412515264985137152",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791132391738,
+      "rosters": [
+        10
+      ],
+      "adds": {
+        "7528": 10
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1412477860458872832",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791123473804,
+      "rosters": [
+        4
+      ],
+      "adds": {
+        "3257": 4
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1412275966981541888",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791075338648,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "KC": 2
+      },
+      "drops": {
+        "NE": 2
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1412216651067166720",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791061196632,
+      "rosters": [
+        1
+      ],
+      "adds": {
+        "4018": 1
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411530245189746688",
+      "type": "waiver",
+      "week": 4,
+      "time": 1791030816640,
+      "rosters": [
+        7
+      ],
+      "adds": {
+        "9486": 7
+      },
+      "drops": {},
+      "picks": [],
+      "faab": 40
+    },
+    {
+      "id": "1412084387658444800",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791029662578,
+      "rosters": [
+        9
+      ],
+      "adds": {
+        "6083": 9
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1412084107722199040",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791029595836,
+      "rosters": [
+        9
+      ],
+      "adds": {
+        "4137": 9
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1412084031952035840",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1791029577771,
+      "rosters": [
+        9
+      ],
+      "adds": {},
+      "drops": {
+        "5189": 9
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411914899835150336",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790989253533,
+      "rosters": [
+        3
+      ],
+      "adds": {
+        "9758": 3
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411747893609537536",
+      "type": "waiver",
+      "week": 4,
+      "time": 1790976835095,
+      "rosters": [
+        12
+      ],
+      "adds": {
+        "LV": 12
+      },
+      "drops": {},
+      "picks": [],
+      "faab": 1
+    },
+    {
+      "id": "1411075354176565248",
+      "type": "waiver",
+      "week": 4,
+      "time": 1790958219764,
+      "rosters": [
+        4
+      ],
+      "adds": {
+        "10222": 4
+      },
+      "drops": {
+        "CAR": 4
+      },
+      "picks": [],
+      "faab": 20
+    },
+    {
+      "id": "1411527815429472256",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790896965419,
+      "rosters": [
+        3
+      ],
+      "adds": {},
+      "drops": {
+        "3271": 3
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411527742532354048",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790896948038,
+      "rosters": [
+        3
+      ],
+      "adds": {},
+      "drops": {
+        "1166": 3
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411507366158983168",
+      "type": "trade",
+      "week": 4,
+      "time": 1790896918067,
+      "rosters": [
+        3,
+        7
+      ],
+      "adds": {
+        "13317": 7,
+        "421": 3,
+        "9504": 3
+      },
+      "drops": {
+        "13317": 3,
+        "421": 7,
+        "9504": 7
+      },
+      "picks": [
+        {
+          "season": "2027",
+          "round": 1,
+          "original": 3,
+          "from": 3,
+          "to": 7
+        },
+        {
+          "season": "2027",
+          "round": 2,
+          "original": 9,
+          "from": 7,
+          "to": 3
+        }
+      ],
+      "faab": null
+    },
+    {
+      "id": "1411377204390105088",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790861056949,
+      "rosters": [
+        5
+      ],
+      "adds": {
+        "JAX": 5
+      },
+      "drops": {
+        "9486": 5
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411137628618653696",
+      "type": "waiver",
+      "week": 4,
+      "time": 1790860429067,
+      "rosters": [
+        3
+      ],
+      "adds": {
+        "3451": 3
+      },
+      "drops": {
+        "6083": 3
+      },
+      "picks": [],
+      "faab": 1
+    },
+    {
+      "id": "1411351923256217600",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790855029456,
+      "rosters": [
+        1
+      ],
+      "adds": {},
+      "drops": {
+        "MIA": 1
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411153316901072896",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790807678011,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "IND": 2
+      },
+      "drops": {
+        "CIN": 2
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411153126320324608",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790807632573,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "4227": 2
+      },
+      "drops": {
+        "LV": 2
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411138271878144000",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790804090999,
+      "rosters": [
+        3
+      ],
+      "adds": {
+        "3271": 3
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411124665379782656",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790800846956,
+      "rosters": [
+        11
+      ],
+      "adds": {},
+      "drops": {
+        "7090": 11
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411087911574626304",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790792084166,
+      "rosters": [
+        6
+      ],
+      "adds": {
+        "9757": 6
+      },
+      "drops": {
+        "10218": 6
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411074737584488448",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790788943242,
+      "rosters": [
+        3
+      ],
+      "adds": {},
+      "drops": {
+        "4177": 3
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411074619087089664",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790788914991,
+      "rosters": [
+        1
+      ],
+      "adds": {
+        "MIA": 1
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411074456788447232",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790788876295,
+      "rosters": [
+        3
+      ],
+      "adds": {},
+      "drops": {
+        "10222": 3
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1411037974497406976",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790780178239,
+      "rosters": [
+        6
+      ],
+      "adds": {
+        "NYJ": 6
+      },
+      "drops": {
+        "SF": 6
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1410983448365068288",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790767178196,
+      "rosters": [
+        1
+      ],
+      "adds": {
+        "CLE": 1
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1410983404450615296",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790767167726,
+      "rosters": [
+        1
+      ],
+      "adds": {},
+      "drops": {
+        "NYG": 1
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1410925508807446528",
+      "type": "free_agent",
+      "week": 4,
+      "time": 1790753364329,
+      "rosters": [
+        7
+      ],
+      "adds": {
+        "3634": 7
+      },
+      "drops": {
+        "13413": 7
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1410888690602942464",
+      "type": "waiver",
+      "week": 3,
+      "time": 1790752418455,
+      "rosters": [
+        11
+      ],
+      "adds": {
+        "650": 11
+      },
+      "drops": {
+        "13545": 11
+      },
+      "picks": [],
+      "faab": 1
+    },
+    {
+      "id": "1410747595189395456",
+      "type": "waiver",
+      "week": 3,
+      "time": 1790752418455,
+      "rosters": [
+        5
+      ],
+      "adds": {
+        "12495": 5
+      },
+      "drops": {},
+      "picks": [],
+      "faab": 66
+    },
+    {
+      "id": "1410682041481146368",
+      "type": "waiver",
+      "week": 3,
+      "time": 1790752418455,
+      "rosters": [
+        12
+      ],
+      "adds": {
+        "11630": 12
+      },
+      "drops": {},
+      "picks": [],
+      "faab": 3
+    },
+    {
+      "id": "1410663295093841920",
+      "type": "waiver",
+      "week": 3,
+      "time": 1790752418455,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "LV": 2
+      },
+      "drops": {},
+      "picks": [],
+      "faab": 5
+    },
+    {
+      "id": "1410663199849639936",
+      "type": "waiver",
+      "week": 3,
+      "time": 1790752418455,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "CIN": 2
+      },
+      "drops": {},
+      "picks": [],
+      "faab": 5
+    },
+    {
+      "id": "1410321783663394816",
+      "type": "waiver",
+      "week": 3,
+      "time": 1790752418455,
+      "rosters": [
+        3
+      ],
+      "adds": {
+        "1166": 3
+      },
+      "drops": {
+        "9758": 3
+      },
+      "picks": [],
+      "faab": 1
+    },
+    {
+      "id": "1410056441791885312",
+      "type": "waiver",
+      "week": 3,
+      "time": 1790752418455,
+      "rosters": [
+        9
+      ],
+      "adds": {
+        "13394": 9
+      },
+      "drops": {
+        "12530": 9
+      },
+      "picks": [],
+      "faab": 7
+    },
+    {
+      "id": "1410844853276794880",
+      "type": "free_agent",
+      "week": 3,
+      "time": 1790734134552,
+      "rosters": [
+        1
+      ],
+      "adds": {},
+      "drops": {
+        "4663": 1
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1410747088613982209",
+      "type": "free_agent",
+      "week": 3,
+      "time": 1790710825640,
+      "rosters": [
+        5
+      ],
+      "adds": {},
+      "drops": {
+        "KC": 5
+      },
+      "picks": [],
+      "faab": null
+    }
+  ],
   "diagnostics": {
     "max_pf_check": [
       {
