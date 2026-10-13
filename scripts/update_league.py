@@ -371,6 +371,8 @@ def main():
             {
                 "team": teams[rid]["team"],
                 "owner": teams[rid]["owner"],
+                "max_pf": teams[rid]["max_pf"],
+                "playoff_odds": round(sims[rid]["playoff_odds"] * 100, 1),
                 "avg_pick": round(sims[rid]["avg_pick"], 1),
                 "most_likely_pick": sims[rid]["most_likely_pick"],
             }

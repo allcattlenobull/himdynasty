@@ -76,9 +76,6 @@
       margin-right: 0.4rem;
     }
     .bar span { display: block; height: 100%; background: var(--good); }
-    .draft-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
-    ol { margin: 0; padding-left: 1.5rem; }
-    ol li { padding: 0.25rem 0; }
     .meta { color: var(--muted); font-size: 0.82rem; }
     .bracket { display: flex; gap: 1.25rem; align-items: stretch; min-width: 620px; }
     .round { flex: 1; display: flex; flex-direction: column; justify-content: space-around; gap: 0.75rem; }
@@ -131,17 +128,9 @@
 
     <section>
       <h2>Draft Order</h2>
-      <p class="note">Non-playoff teams pick first (1–6), lowest max PF first. Playoff teams follow by how far they got: round 1 losers, then round 2 losers, then the finals loser, and the champion last. Order below is by average projected pick.</p>
-      <div class="draft-grid">
-        <div>
-          <h3>Projected next draft</h3>
-          <div id="projected"><p class="empty">Loading…</p></div>
-        </div>
-        <div>
-          <h3>Official order (if set)</h3>
-          <div id="official"><p class="empty">Loading…</p></div>
-        </div>
-      </div>
+      <p class="note">Non-playoff teams pick first (1–6), lowest max PF first. Playoff teams follow by how far they got: round 1 losers, then round 2 losers, then the finals loser, and the champion last. Order is by average projected pick. "vs #1" is how far each team's max PF is above the team projected at pick 1.</p>
+      <h3>Projected next draft</h3>
+      <div id="projected"><p class="empty">Loading…</p></div>
     </section>
   </main>
 
@@ -163,7 +152,7 @@
       const table = el("table");
       const headers = [
         ["#", false], ["Team", false], ["Record", true], ["PF", true], ["PA", true],
-        ["Max PF", true], ["Proj W", true], ["Playoff", false], ["Champ", true], ["Avg pick", true],
+        ["Max PF", true], ["Proj W", true], ["Playoff", false], ["Champ", true],
       ];
       const head = el("tr");
       for (const [label, right] of headers) head.appendChild(el("th", label, right ? "num" : ""));
@@ -196,7 +185,6 @@
         tr.appendChild(oddsCell);
 
         tr.appendChild(el("td", `${row.champion_odds.toFixed(1)}%`, "num"));
-        tr.appendChild(el("td", row.avg_pick.toFixed(1), "num"));
         body.appendChild(tr);
       }
       table.appendChild(body);
@@ -232,19 +220,42 @@
       return wrap;
     }
 
-    function renderOrder(rows, showAvg) {
-      const list = el("ol");
-      for (const row of rows) {
-        const li = el("li");
-        li.appendChild(el("span", row.team, "team"));
-        li.appendChild(document.createTextNode(" "));
-        li.appendChild(el("span", `(${row.owner})`, "owner"));
-        if (showAvg) {
-          li.appendChild(el("span", `  avg ${row.avg_pick.toFixed(1)} · most likely #${row.most_likely_pick}`, "meta"));
-        }
-        list.appendChild(li);
+    function renderProjected(rows) {
+      const table = el("table");
+      const head = el("tr");
+      for (const [label, right] of [["Pick", true], ["Team", false], ["Max PF", true], ["vs #1", true], ["Playoff", false]]) {
+        head.appendChild(el("th", label, right ? "num" : ""));
       }
-      return list;
+      table.appendChild(el("thead")).appendChild(head);
+
+      const topMaxPf = rows.length ? rows[0].max_pf : 0;
+      const body = el("tbody");
+      rows.forEach((row, i) => {
+        const tr = el("tr");
+        tr.appendChild(el("td", i + 1, "num"));
+
+        const teamCell = el("td");
+        teamCell.appendChild(el("div", row.team, "team"));
+        teamCell.appendChild(el("div", row.owner, "owner"));
+        tr.appendChild(teamCell);
+
+        tr.appendChild(el("td", row.max_pf.toFixed(1), "num"));
+        const gap = row.max_pf - topMaxPf;
+        tr.appendChild(el("td", i === 0 ? "#1 pick" : `+${gap.toFixed(1)}`, "num"));
+
+        const oddsCell = el("td");
+        const bar = el("span", null, "bar");
+        const fill = el("span");
+        fill.style.width = `${Math.min(100, row.playoff_odds)}%`;
+        bar.appendChild(fill);
+        oddsCell.appendChild(bar);
+        oddsCell.appendChild(document.createTextNode(`${row.playoff_odds.toFixed(1)}%`));
+        tr.appendChild(oddsCell);
+
+        body.appendChild(tr);
+      });
+      table.appendChild(body);
+      return table;
     }
 
     async function load() {
@@ -263,20 +274,12 @@
           "Current seeds: " + data.playoffs.seeds.map((s) => `${s.seed}. ${s.team}`).join("   ·   ");
         document.getElementById("bracket").replaceChildren(renderBracket(data.playoffs.rounds));
 
-        document.getElementById("projected").replaceChildren(renderOrder(data.draft.projected_order, true));
-
-        const official = document.getElementById("official");
-        if (data.draft.official_order) {
-          official.replaceChildren(renderOrder(data.draft.official_order, false));
-        } else {
-          official.replaceChildren(el("p", "No official order set yet.", "empty"));
-        }
+        document.getElementById("projected").replaceChildren(renderProjected(data.draft.projected_order));
       } catch (err) {
         const msg = `Could not load league data (${err.message}).`;
         fail("standings", msg);
         fail("bracket", msg);
         fail("projected", msg);
-        fail("official", msg);
         document.getElementById("updated").textContent = "Data unavailable";
       }
     }
