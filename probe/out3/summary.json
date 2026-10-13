@@ -1,0 +1,80 @@
+{
+ "espn_nfl_news": {
+  "status": "200",
+  "bytes": 213775,
+  "cors": "*",
+  "head": "{\"header\":\"NFL News\",\"link\":{\"language\":\"en\",\"rel\":[\"index\",\"desktop\",\"league\"],\"href\":\"https://www.espn.com/nfl/\",\"text\":\"All NFL News\",\"shortText\":\"All News\",\"isExternal\":false,\"isPremium\":false},\"a"
+ },
+ "espn_ffl_player_news": {
+  "status": "200",
+  "bytes": 114772,
+  "cors": "*",
+  "head": "{\"timestamp\":\"2026-10-13T02:34:50Z\",\"resultsOffset\":0,\"status\":\"success\",\"resultsLimit\":20,\"resultsCount\":20,\"feed\":[{\"id\":64220528,\"nowId\":\"23-64220528\",\"contentKey\":\"64220528-23-1-1\",\"dataSourceIden"
+ },
+ "espn_athlete_news": {
+  "status": "ERR HTTP Error 404: Not Found",
+  "bytes": 0,
+  "cors": null,
+  "head": ""
+ },
+ "espn_now": {
+  "status": "200",
+  "bytes": 393934,
+  "cors": "*",
+  "head": "{\"resultsCount\":20,\"resultsLimit\":20,\"resultsOffset\":0,\"headlines\":[{\"id\":50170516,\"nowId\":\"1-50170516\",\"contentKey\":\"50170516-1-5-1\",\"dataSourceIdentifier\":\"c963c8510ca1f\",\"publishedkey\":\"50170516\",\""
+ },
+ "rotowire_rss": {
+  "status": "200",
+  "bytes": 3208,
+  "cors": "*",
+  "head": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\">\n  <channel>\n    <title>RotoWire.com Latest NFL News</title>\n    <copyright>Copyright (c) 2026 Roto Sports, Inc, All rights reserved.</copyrig"
+ },
+ "rotowire_robots": {
+  "status": "200",
+  "bytes": 4809,
+  "cors": null,
+  "head": "# Sitemaps\nSitemap: https://www.rotowire.com/sitemap.xml\nSitemap: https://www.rotowire.com/news-sitemap.php\nSitemap: https://www.rotowire.com/start-sit.xml\n\nLLM-policy: https://www.rotowire.com/llms.t"
+ },
+ "gnews_rss": {
+  "status": "200",
+  "bytes": 134763,
+  "cors": null,
+  "head": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><rss version=\"2.0\" xmlns:media=\"http://search.yahoo.com/mrss/\"><channel><generator>NFE/5.0</generator><title>\"\"Lamar Jackson\"\" - Google News</tit"
+ },
+ "gnews_robots": {
+  "status": "200",
+  "bytes": 515,
+  "cors": null,
+  "head": "User-agent: *\nDisallow: /\nAllow: /$\nAllow: /?\nAllow: /home$\nAllow: /home?\nAllow: /home/\nAllow: /nwshp$\nAllow: /topics/\nAllow: /publications/\nAllow: /stories/\nAllow: /swg/\nAllow: /about$\nAllow: /about?"
+ },
+ "bsky_public": {
+  "status": "ERR HTTP Error 403: Forbidden",
+  "bytes": 0,
+  "cors": null,
+  "head": ""
+ },
+ "bsky_api": {
+  "status": "200",
+  "bytes": 21594,
+  "cors": "*",
+  "head": "{\"posts\":[{\"uri\":\"at://did:plc:5bpq2qyomzyrcl5fvlt7okpq/app.bsky.feed.post/3mxprzrdrjr2n\",\"cid\":\"bafyreigqpekipdhzyug2vtalqxjk7ndvvqkt5lt2rwhkyvwtihcl37z3c4\",\"author\":{\"did\":\"did:plc:5bpq2qyomzyrcl5fv"
+ },
+ "cbs_rss": {
+  "status": "200",
+  "bytes": 36495,
+  "cors": "*",
+  "head": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<rss \n            xmlns:atom=\"http://www.w3.org/2005/Atom\"\n            xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n        version=\"2.0\"\n>\n            \n        "
+ },
+ "x_oembed": {
+  "status": "200",
+  "bytes": 441,
+  "cors": "https://allcattlenobull.github.io",
+  "head": "{\"url\":\"https:\\/\\/x.com\\/AdamSchefter\",\"title\":\"\",\"html\":\"\\u003Ca class=\\\"twitter-timeline\\\" href=\\\"https:\\/\\/x.com\\/AdamSchefter?ref_src=twsrc%5Etfw\\\"\\u003EPosts by AdamSchefter\\u003C\\/a\\u003E\\n\\u003"
+ },
+ "sleeper_trending": {
+  "status": "200",
+  "bytes": 362,
+  "cors": "*",
+  "head": "[{\"count\":364896,\"player_id\":\"11581\"},{\"count\":288272,\"player_id\":\"8129\"},{\"count\":274316,\"player_id\":\"13150\"},{\"count\":227898,\"player_id\":\"9480\"},{\"count\":174285,\"player_id\":\"3271\"},{\"count\":140238,\""
+ }
+}

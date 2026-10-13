@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>RotoWire.com Latest NFL News</title>
+    <copyright>Copyright (c) 2026 Roto Sports, Inc, All rights reserved.</copyright>
+    <description>Fantasy Sports from RotoWire.com</description>
+    <category>Fantasy Sports</category>
+    <language>en-us</language>
+    <ttl>10</ttl>
+    <image>
+      <title>RotoWire.com Fantasy Sports</title>
+      <width>120</width>
+      <height>30</height>
+      <link>https://www.rotowire.com</link>
+      <url>https://assets.rotowire.com/images/logo_roto_small.gif</url>
+    </image>
+    <link>https://www.rotowire.com</link>
+    <item>
+        <guid>nfl642228</guid>
+        <title>DJ Moore: Inactive in Week 5</title>
+        <link>https://www.rotowire.com//football/player/dj-moore-12477</link>
+        <description>Moore (shoulder) is listed as inactive Monday at the Rams.
+
+        Visit RotoWire.com for more analysis on this update.</description>
+        <pubDate>Mon, 12 Oct 2026 3:50:00 PM PDT</pubDate>
+    </item>
+    <item>
+        <guid>nfl642216</guid>
+        <title>Jaxon Smith-Njigba: Limited on first Week 6 report</title>
+        <link>https://www.rotowire.com//football/player/jaxon-smith-njigba-16654</link>
+        <description>Smith-Njigba was estimated as a limited practice participant Monday due to an ankle injury, Bob Condotta of The Seattle Times reports.
+
+        Visit RotoWire.com for more analysis on this update.</description>
+        <pubDate>Mon, 12 Oct 2026 1:29:00 PM PDT</pubDate>
+    </item>
+    <item>
+        <guid>nfl642213</guid>
+        <title>Rico Dowdle: Expected back for Week 6</title>
+        <link>https://www.rotowire.com//football/player/rico-dowdle-14657</link>
+        <description>Steelers offensive coordinator Brian Angelichio said Monday that he anticipates Dowdle (toe) returning to action in Week 6 against the Buccaneers, Mike DeFabo of The Athletic reports.
+
+        Visit RotoWire.com for more analysis on this update.</description>
+        <pubDate>Mon, 12 Oct 2026 1:08:00 PM PDT</pubDate>
+    </item>
+    <item>
+        <guid>nfl642212</guid>
+        <title>DeVonta Smith: Chance to return for Week 6</title>
+        <link>https://www.rotowire.com//football/player/devonta-smith-15406</link>
+        <description>Head coach Nick Sirianni expressed hope Monday that Smith (hamstring) will return for this Sunday's game against the Panthers, Zach Berman of The Athletic reports.
+
+        Visit RotoWire.com for more analysis on this update.</description>
+        <pubDate>Mon, 12 Oct 2026 12:59:00 PM PDT</pubDate>
+    </item>
+    <item>
+        <guid>nfl642211</guid>
+        <title>Saquon Barkley: Could return for Week 6</title>
+        <link>https://www.rotowire.com//football/player/saquon-barkley-12507</link>
+        <description>Head coach Nick Sirianni said Monday that he's "hopeful" that both Barkley (hamstring) and DeVonta Smith (hamstring) will both be cleared to play against the Panthers this coming Sunday, Zach Berman of The Athletic reports.
+
+        Visit RotoWire.com for more analysis on this update.</description>
+        <pubDate>Mon, 12 Oct 2026 12:55:00 PM PDT</pubDate>
+    </item>
+  </channel>
+</rss>
