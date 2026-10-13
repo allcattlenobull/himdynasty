@@ -612,14 +612,28 @@
   // ---------------------------------------------------------------- //
   // Explorer
   // ---------------------------------------------------------------- //
-  const ex = { pos: "WR", scope: "s", groups: null, owner: "all", nfl: "", min: 20, q: "", sort: "ppg", dir: -1, shown: 50 };
+  const FLEX = ["RB", "WR", "TE"];
+  // QB stands alone; RB, WR and TE can be mixed (flex view).
+  function groupsFor(list) {
+    if (list.length === 1) return GROUPS[list[0]];
+    const merged = new Map();
+    for (const pos of list) for (const [name, keys] of GROUPS[pos]) {
+      const have = merged.get(name) || [];
+      keys.forEach((k) => { if (!have.includes(k)) have.push(k); });
+      merged.set(name, have);
+    }
+    return [...merged.entries()];
+  }
+  const defaultsFor = (list) => new Set(list.flatMap((pos) => DEFAULT_GROUPS[pos]));
+  const volumeFor = (list) => (list.length === 1 ? VOLUME[list[0]] : ["opp", "carries + targets", 100]);
+  const ex = { pos: ["WR"], scope: "s", groups: null, owner: "all", nfl: "", min: 20, q: "", sort: "ppg", dir: -1, shown: 50 };
 
   function exRows() {
-    const [vkey, , vmax] = VOLUME[ex.pos];
+    const [vkey, , vmax] = volumeFor(ex.pos);
     const minVol = Math.round((ex.min / 100) * vmax);
     const q = ex.q.trim().toLowerCase();
     return Object.values(byId).filter((p) => {
-      if (p.pos !== ex.pos || !p.s) return false;
+      if (!ex.pos.includes(p.pos) || !p.s) return false;
       const sc = p[ex.scope] || {};
       const vol = vkey === "opp" ? (sc.tgt || 0) + (sc.car || 0) : (sc[vkey] || 0);
       if (vol < minVol && !(q && p.name.toLowerCase().includes(q))) return false;
@@ -646,16 +660,31 @@
   }
 
   function renderExplorer() {
-    const groups = GROUPS[ex.pos];
-    if (!ex.groups) ex.groups = new Set(DEFAULT_GROUPS[ex.pos]);
+    const groups = groupsFor(ex.pos);
+    if (!ex.groups) ex.groups = defaultsFor(ex.pos);
     // Controls
     const pt = document.getElementById("ex-pos");
     pt.replaceChildren(...["QB", "RB", "WR", "TE"].map((v) => {
-      const b = el("button", v, v === ex.pos ? "chip is-current" : "chip");
+      const on = ex.pos.includes(v);
+      const b = el("button", v, on ? "chip is-current" : "chip");
       b.type = "button";
-      b.addEventListener("click", () => { ex.pos = v; ex.groups = new Set(DEFAULT_GROUPS[v]); ex.sort = "ppg"; ex.dir = -1; ex.shown = 50; renderExplorer(); });
+      b.setAttribute("aria-pressed", String(on));
+      b.title = v === "QB" ? "Quarterbacks (on their own)" : "Tap RB, WR and TE together to compare flex options";
+      b.addEventListener("click", () => {
+        let next;
+        if (v === "QB" || ex.pos.includes("QB")) next = [v];
+        else if (on) next = ex.pos.length > 1 ? ex.pos.filter((x) => x !== v) : ex.pos;
+        else next = FLEX.filter((x) => ex.pos.includes(x) || x === v);
+        if (next.join() === ex.pos.join()) return;
+        ex.pos = next;
+        ex.groups = defaultsFor(next);
+        const cols = groupsFor(next).flatMap(([, ks]) => ks);
+        if (ex.sort !== "name" && !cols.includes(ex.sort)) { ex.sort = "ppg"; ex.dir = -1; }
+        ex.shown = 50;
+        renderExplorer();
+      });
       return b;
-    }));
+    }), el("span", "QB alone, or mix RB / WR / TE", "owner ex-pos-hint"));
     const st = document.getElementById("ex-scope");
     st.replaceChildren(...[["s", "Season"], ["l3", "Last 3 games"]].map(([k, lab]) => {
       const b = el("button", lab, k === ex.scope ? "chip is-current" : "chip");
@@ -672,7 +701,7 @@
       b.addEventListener("click", () => { if (on && ex.groups.size > 1) ex.groups.delete(name); else ex.groups.add(name); renderExplorer(); });
       return b;
     }));
-    const [, vlabel, vmax] = VOLUME[ex.pos];
+    const [, vlabel, vmax] = volumeFor(ex.pos);
     document.getElementById("ex-min-label").textContent = `Minimum ${vlabel}: ${Math.round((ex.min / 100) * vmax)}`;
 
     // Columns
@@ -680,14 +709,21 @@
     for (const [name, keys] of groups) if (ex.groups.has(name)) keys.forEach((k) => { if (!cols.includes(k)) cols.push(k); });
     const rows = exRows();
     // Percentile ranks per column
+    // Colors rank each player against his own position, and only on stats
+    // that belong to that position (no red "carries" for a WR).
     const ranks = {};
+    const posKeys = {};
+    for (const pos of ex.pos) posKeys[pos] = new Set(GROUPS[pos].flatMap(([, ks]) => ks));
     for (const k of cols) {
-      const vals = rows.map((p) => metricVal(p, k, ex.scope)).filter(isNum).sort((a, b) => a - b);
-      ranks[k] = { vals, n: vals.length };
+      ranks[k] = {};
+      for (const pos of ex.pos) {
+        const vals = rows.filter((p) => p.pos === pos).map((p) => metricVal(p, k, ex.scope)).filter(isNum).sort((a, b) => a - b);
+        ranks[k][pos] = { vals, n: vals.length };
+      }
     }
-    const rankOf = (k, v) => {
-      if (!isNum(v)) return null;
-      const arr = ranks[k].vals;
+    const rankOf = (k, v, pos) => {
+      if (!isNum(v) || !posKeys[pos].has(k)) return null;
+      const arr = ranks[k][pos].vals;
       let lo = 0, hi = arr.length;
       while (lo < hi) { const mid = (lo + hi) >> 1; if (arr[mid] < v) lo = mid + 1; else hi = mid; }
       return lo;
@@ -725,7 +761,10 @@
       const w = el("div", null, "player");
       w.appendChild(headshot(p));
       const t = el("div");
-      t.appendChild(el("div", p.name, "team"));
+      const nmRow = el("div", null, "ex-name");
+      nmRow.appendChild(el("span", p.name, "team"));
+      if (ex.pos.length > 1) nmRow.appendChild(posBadge(p.pos));
+      t.appendChild(nmRow);
       t.appendChild(el("div", `${p.nfl || "FA"}${p.age ? ` · ${p.age.toFixed(1)}` : ""}`, "owner"));
       w.appendChild(t);
       who.appendChild(w);
@@ -742,7 +781,7 @@
       }
       for (const k of cols) {
         const v = metricVal(p, k, ex.scope);
-        tr.appendChild(el("td", fmtv(v, M[k][1]), `num ${heatClass(rankOf(k, v), ranks[k].n, M[k][2])}`));
+        tr.appendChild(el("td", fmtv(v, M[k][1]), `num ${heatClass(rankOf(k, v, p.pos), ranks[k][p.pos].n, M[k][2])}`));
       }
       body.appendChild(tr);
     }
@@ -756,7 +795,7 @@
       host.appendChild(more);
     }
     document.getElementById("ex-note").textContent =
-      `${rows.length} ${ex.pos}s · ${ex.scope === "s" ? `season (weeks ${SP.weeks[0]}–${SP.weeks[SP.weeks.length - 1]})` : "each player's last 3 games"} · * routes are estimated from snap share and team dropbacks.`;
+      `${rows.length} ${ex.pos.join("/")}${ex.pos.length === 1 ? "s" : ""} · ${ex.scope === "s" ? `season (weeks ${SP.weeks[0]}–${SP.weeks[SP.weeks.length - 1]})` : "each player's last 3 games"} · * routes are estimated from snap share and team dropbacks.`;
   }
 
   let exTimer = 0;
@@ -783,7 +822,8 @@
     const min = document.getElementById("ex-min");
     min.addEventListener("input", () => {
       ex.min = Number(min.value); ex.shown = 50;
-      document.getElementById("ex-min-label").textContent = `Minimum ${VOLUME[ex.pos][1]}: ${Math.round((ex.min / 100) * VOLUME[ex.pos][2])}`;
+      const vol = volumeFor(ex.pos);
+      document.getElementById("ex-min-label").textContent = `Minimum ${vol[1]}: ${Math.round((ex.min / 100) * vol[2])}`;
       scheduleExplorer(120);
     });
     const q = document.getElementById("ex-search");
