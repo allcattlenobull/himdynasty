@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analytics · HIM Dynasty</title>
+  <meta name="theme-color" content="#09090b">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/brand.css">
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+  <header class="topbar" data-topbar></header>
+
+  <main class="league-main">
+    <div class="strip">
+      <p class="kicker">Player <em>Analytics</em></p>
+      <p class="updated" id="updated">Loading analytics…</p>
+    </div>
+
+    <section class="panel" id="detail" hidden></section>
+
+    <section class="panel">
+      <div class="round-tabs" id="view-tabs" role="tablist" aria-label="View">
+        <button class="chip is-current" type="button" data-view="players">Players</button>
+        <button class="chip" type="button" data-view="teams">Teams</button>
+      </div>
+
+      <div id="players-view">
+        <div class="an-controls">
+          <div class="round-tabs" id="pos-tabs" role="tablist" aria-label="Position"></div>
+          <label>Show <select id="owner-filter"></select></label>
+          <label>Signal <select id="signal-filter"></select></label>
+          <label>Search <input id="search" type="search" placeholder="Player name…"></label>
+        </div>
+        <p class="note" id="table-note"></p>
+        <div class="table-wrap" id="players-table"></div>
+      </div>
+
+      <div id="teams-view" hidden>
+        <p class="note">How each roster's players are producing versus what their usage predicts, how old the core is, and how many players are flashing buy-low or sell-high signals.</p>
+        <div class="table-wrap" id="teams-table"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2>What the numbers mean</h2></div>
+      <dl class="glossary" id="glossary"></dl>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <img src="assets/logo.svg" alt="" width="28" height="28">
+    HIM DYNASTY · ARE YOU HIM?
+    <br><a class="credit" href="mailto:paforprince@gmail.com">Built by P Saah</a>
+  </footer>
+
+  <script src="assets/vendor/chart.umd.js"></script>
+  <script src="assets/common.js"></script>
+  <script src="assets/analytics.js"></script>
+</body>
+</html>

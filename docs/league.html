@@ -13,40 +13,47 @@
   <script src="assets/theme.js"></script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-row">
-      <a class="brand" href="index.html" aria-label="HIM Dynasty home">
-        <img src="assets/logo.svg" alt="" width="40" height="40">
-        <span class="wordmark"><span class="wm-him">HIM</span><span class="wm-dyn">DYNASTY</span></span>
-      </a>
-      <nav class="nav" aria-label="Sections">
-        <a href="#standings">Standings</a>
-        <a href="#playoffs">Playoffs</a>
-        <a href="#draft">Draft</a>
-        <a href="draft.html">Mock</a>
-        <a href="trade.html">Trade</a>
-        <a href="buzz.html">Buzz</a>
-      </nav>
-      <div class="team-jump" data-team-jump></div>
-      <div data-theme-toggle></div>
-    </div>
-    <div class="focusbar">
-      <span class="focus-label">Focus</span>
-      <div class="chips" id="chips" role="toolbar" aria-label="Focus a team"></div>
-    </div>
-  </header>
+  <header class="topbar" data-topbar></header>
 
   <main class="league-main">
     <div class="strip">
       <p class="kicker">Are you <em>HIM?</em></p>
       <p class="updated" id="updated">Loading league data…</p>
     </div>
+    <nav class="section-jump" aria-label="On this page">
+      <a href="#matchups">Matchups</a><a href="#transactions">Transactions</a><a href="#standings">Standings</a><a href="#playoffs">Playoffs</a><a href="#draft">Draft</a>
+    </nav>
+
+    <section id="matchups" class="panel">
+      <div class="panel-head">
+        <h2>Matchups</h2>
+        <p class="note" id="matchups-note">Live scores from Sleeper. The current week stays up through Wednesday 11:59 PM Central, then the next week takes over.</p>
+      </div>
+      <div class="week-bar">
+        <button class="week-arrow" type="button" id="week-prev" aria-label="Previous week">‹</button>
+        <div class="week-pills" id="week-pills" role="tablist" aria-label="Week"></div>
+        <button class="week-arrow" type="button" id="week-next" aria-label="Next week">›</button>
+      </div>
+      <div id="matchup-list" class="matchups"></div>
+    </section>
+
+    <section id="transactions" class="panel">
+      <div class="panel-head">
+        <h2>Latest Transactions</h2>
+        <p class="note">Trades, waiver claims, and free-agent moves, newest first.</p>
+      </div>
+      <div id="tx-list" class="tx-list"></div>
+    </section>
 
     <section id="standings" class="panel">
       <div class="panel-head">
         <h2>Standings</h2>
         <p class="note">Max PF is each team's best possible lineup. Odds come from 10,000 simulations of the rest of the season and playoffs. Click a row or line to follow a team across every table and chart; click a team name to open its page.</p>
       </div>
+    <div class="focusbar inline standings-focus">
+      <span class="focus-label">Focus</span>
+      <div class="chips" id="chips" role="toolbar" aria-label="Focus a team"></div>
+    </div>
       <div class="table-wrap" id="standings-table"></div>
       <div class="chart-card">
         <div class="chart-head"><h3>Rank by week</h3><span class="hint">Click a line to focus</span></div>
@@ -94,5 +101,6 @@
   <script src="assets/vendor/chart.umd.js"></script>
   <script src="assets/common.js"></script>
   <script src="assets/league.js"></script>
+  <script src="assets/matchups.js"></script>
 </body>
 </html>

@@ -50,6 +50,11 @@ jobs:
         continue-on-error: true
         run: python scripts/trade_values.py
 
+      - name: Build player analytics (nflverse)
+        if: steps.gate.outputs.run == 'true'
+        continue-on-error: true
+        run: python scripts/analytics_data.py
+
       - name: Write team analysis
         if: steps.gate.outputs.run == 'true'
         continue-on-error: true

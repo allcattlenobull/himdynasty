@@ -112,6 +112,56 @@
   }
 
   // ------------------------------------------------------------------ //
+  // Player analytics (nflverse)
+  // ------------------------------------------------------------------ //
+  function renderPlayerAnalytics(A, rid) {
+    const mine = A.players.filter((p) => p.owner === rid);
+    if (!mine.length) return;
+    document.getElementById("player-analytics").hidden = false;
+    const order = { QB: 0, RB: 1, WR: 2, TE: 3 };
+    mine.sort((a, b) => (order[a.pos] - order[b.pos]) || ((b.ppg || 0) - (a.ppg || 0)));
+    const f = (v, d = 1) => (v === null || v === undefined ? "—" : Number(v).toFixed(d));
+    const share = (p) => (p.pos === "RB" ? (p.rush_share || 0) + (p.tgt_share || 0) : p.pos === "QB" ? p.rush_share : p.tgt_share);
+    const table = el("table");
+    const head = el("tr");
+    [["Player", 0], ["Pos", 0], ["Age", 1], ["PPG", 1], ["xFP", 1], ["FPOE", 1], ["Snap%", 1], ["Share%", 1], ["Start%", 1], ["Value", 1], ["Signals", 0]]
+      .forEach(([l, n]) => head.appendChild(el("th", l, n ? "num" : "")));
+    table.appendChild(el("thead")).appendChild(head);
+    const body = el("tbody");
+    for (const p of mine) {
+      const tr = el("tr");
+      const td = el("td");
+      const a = el("a", p.name, "team");
+      a.href = `analytics.html?player=${encodeURIComponent(p.id)}`;
+      td.appendChild(a);
+      tr.appendChild(td);
+      tr.appendChild(el("td", p.pos, "pos"));
+      tr.appendChild(el("td", f(p.age), "num"));
+      tr.appendChild(el("td", p.ppg === null ? "—" : `${f(p.ppg)}${p.ppg_rank ? ` · ${p.pos}${p.ppg_rank}` : ""}`, "num"));
+      tr.appendChild(el("td", f(p.xfp_pg), "num"));
+      const fp = p.fpoe_pg;
+      tr.appendChild(el("td", fp === null ? "—" : `${fp > 0 ? "+" : ""}${f(fp)}`, `num ${fp >= 2 ? "up" : fp <= -2 ? "down" : ""}`));
+      tr.appendChild(el("td", f(p.snap, 0), "num"));
+      tr.appendChild(el("td", f(share(p)), "num"));
+      tr.appendChild(el("td", f(p.starter_rate, 0), "num"));
+      tr.appendChild(el("td", p.value ? p.value.toLocaleString() : "—", "num"));
+      const sig = el("td", null, "small wrap");
+      sig.textContent = p.signals.map((s) => s[0]).join(", ") || "—";
+      if (p.signals.length) sig.title = p.signals.map((s) => `${s[0]}: ${s[1]}`).join("\n");
+      tr.appendChild(sig);
+      body.appendChild(tr);
+    }
+    table.appendChild(body);
+    document.getElementById("pa-table").replaceChildren(table);
+    const buy = mine.filter((p) => p.signals.some((s) => s[0] === "Buy low")).map((p) => p.name);
+    const sell = mine.filter((p) => p.signals.some((s) => s[0] === "Sell high" || s[0] === "Running hot")).map((p) => p.name);
+    const parts = [];
+    if (sell.length) parts.push(`Running hot / sell candidates: ${sell.join(", ")}.`);
+    if (buy.length) parts.push(`Buy-low types already here: ${buy.join(", ")}.`);
+    if (parts.length) document.getElementById("pa-note").textContent = parts.join(" ") + " Click a player for the full profile.";
+  }
+
+  // ------------------------------------------------------------------ //
   // Draft picks
   // ------------------------------------------------------------------ //
   function renderPicks(ts, trade, rid) {
@@ -318,6 +368,7 @@
   // ------------------------------------------------------------------ //
   function renderChips(standings, currentId) {
     const box = document.getElementById("chips");
+    if (!box) return;
     box.replaceChildren();
     for (const row of standings) {
       const a = el("a", null, "chip");
@@ -339,9 +390,10 @@
     let data;
     let trade = null;
     let analysis = null;
+    let analytics = null;
     try {
       const get = (u) => fetch(u, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
-      [data, trade, analysis] = await Promise.all([loadData(), get("data/trade.json"), get("data/analysis.json")]);
+      [data, trade, analysis, analytics] = await Promise.all([loadData(), get("data/trade.json"), get("data/analysis.json"), get("data/analytics.json")]);
     } catch (err) {
       document.getElementById("hero").replaceChildren(el("p", `Could not load league data (${err.message}).`, "error"));
       return;
@@ -367,6 +419,7 @@
     renderHero(t, data.league.playoff_teams, ts);
     renderPicks(ts, trade, Number(id));
     if (analysis && analysis.teams) renderAnalysis(analysis.teams[id], analysis.generated_at);
+    if (analytics) renderPlayerAnalytics(analytics, Number(id));
     document.getElementById("roster").replaceChildren(renderRoster(t.roster));
     document.getElementById("schedule").replaceChildren(renderSchedule(t.schedule, t.playoffs_start_week));
     renderTrend(data.history, t.roster_id);

@@ -13,28 +13,7 @@
   <script src="assets/theme.js"></script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-row">
-      <a class="brand" href="index.html" aria-label="HIM Dynasty home">
-        <img src="assets/logo.svg" alt="" width="40" height="40">
-        <span class="wordmark"><span class="wm-him">HIM</span><span class="wm-dyn">DYNASTY</span></span>
-      </a>
-      <nav class="nav" aria-label="League">
-        <a href="league.html#standings">Standings</a>
-        <a href="league.html#playoffs">Playoffs</a>
-        <a href="league.html#draft">Draft</a>
-        <a href="draft.html">Mock</a>
-        <a href="trade.html">Trade</a>
-        <a href="buzz.html">Buzz</a>
-      </nav>
-      <div class="team-jump" data-team-jump></div>
-      <div data-theme-toggle></div>
-    </div>
-    <div class="focusbar">
-      <span class="focus-label">Teams</span>
-      <div class="chips" id="chips" aria-label="Switch team"></div>
-    </div>
-  </header>
+  <header class="topbar" data-topbar></header>
 
   <main class="league-main">
     <div id="hero" class="team-hero"><p class="muted">Loading team…</p></div>
@@ -68,6 +47,14 @@
         <div class="table-wrap" id="schedule"></div>
       </section>
     </div>
+
+    <section class="panel" id="player-analytics" hidden>
+      <div class="panel-head">
+        <h2>Player Analytics</h2>
+        <p class="note" id="pa-note">Every player on this roster through the nflverse lens: production, usage, expected points, and dynasty signals. Click a player for the full profile.</p>
+      </div>
+      <div class="table-wrap" id="pa-table"></div>
+    </section>
 
     <section class="panel" id="picks-panel">
       <div class="panel-head">

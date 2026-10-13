@@ -408,6 +408,33 @@ def describe_bracket(rounds, playoff_teams, teams, seed_of, model, actual):
 # Main
 # --------------------------------------------------------------------------- #
 
+def read_transactions(weeks, players):
+    """Completed league transactions, newest first, with player names."""
+    out = []
+    for w in weeks:
+        try:
+            items = get(f"/league/{LEAGUE_ID}/transactions/{w}") or []
+        except Exception:  # noqa: BLE001
+            continue
+        for t in items:
+            if t.get("status") != "complete":
+                continue
+            out.append({
+                "id": t.get("transaction_id"),
+                "type": t.get("type"),
+                "week": w,
+                "time": t.get("status_updated") or t.get("created"),
+                "rosters": t.get("roster_ids") or [],
+                "adds": t.get("adds") or {},
+                "drops": t.get("drops") or {},
+                "picks": [{"season": d.get("season"), "round": d.get("round"), "original": d.get("roster_id"),
+                           "from": d.get("previous_owner_id"), "to": d.get("owner_id")} for d in (t.get("draft_picks") or [])],
+                "faab": (t.get("settings") or {}).get("waiver_bid"),
+            })
+    out.sort(key=lambda x: x["time"] or 0, reverse=True)
+    return out
+
+
 def build_teams(rosters, users):
     teams = {}
     for r in rosters:
@@ -589,6 +616,15 @@ def main():
     done = min(played // games_per_week, len(schedule))
 
     diagnostics = reconcile_max(schedule, done, {r: t["max_pf"] for r, t in teams.items()})
+
+    # NFL calendar (for the matchup week shown on the site) and transactions.
+    try:
+        state = get("/state/nfl") or {}
+    except Exception:  # noqa: BLE001
+        state = {}
+    last_week = playoff_start + max(1, (playoff_teams - 1).bit_length()) - 1
+    tx_weeks = range(start_week, min(last_week, max(done + 1, int(state.get("week") or 0))) + 1)
+    transactions = read_transactions(tx_weeks, players)
     actual = read_bracket_results()
 
     def evaluate(n_weeks, is_current):
@@ -699,6 +735,12 @@ def main():
             "status": league.get("status"),
             "playoff_teams": playoff_teams,
             "weeks_completed": done,
+            "start_week": start_week,
+            "playoff_week_start": playoff_start,
+            "last_week": last_week,
+            "season_start": state.get("season_start_date") if str(state.get("season")) == season else None,
+            "nfl_week": state.get("week"),
+            "slots": [x for x in (league.get("roster_positions") or []) if x not in ("BN", "IR", "TAXI")],
         },
         "simulations": SIMULATIONS,
         "remaining_games": sum(len(g) for g in (wk["games"] for wk in schedule[done:])),
@@ -718,8 +760,24 @@ def main():
         },
         "teams": team_pages,
         "sim": sim_inputs,
+        "transactions": transactions[:80],
         "diagnostics": {"max_pf_check": diagnostics},
     }
+
+    lite_ids = set()
+    for wk in schedule:
+        for pts in wk["player_pts"].values():
+            lite_ids.update(pts.keys())
+    for t in teams.values():
+        lite_ids.update(t["players"])
+    for tx in transactions:
+        lite_ids.update(tx["adds"].keys())
+        lite_ids.update(tx["drops"].keys())
+    lite = {}
+    for pid in lite_ids:
+        c = player_card(pid, players)
+        lite[pid] = [c["name"], c["pos"], c["nfl"]]
+    (DATA_DIR / "players_lite.json").write_text(json.dumps(lite, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
 
     payload = json.dumps(snapshot, indent=2, ensure_ascii=False)
     (DATA_DIR / "history").mkdir(parents=True, exist_ok=True)
