@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T00:45:29+00:00",
+  "generated_at": "2026-10-13T00:53:22+00:00",
   "league": {
     "id": "1312005038838673409",
     "name": "The HIM Dynasty",
@@ -19,8 +19,12 @@
       "ties": 0,
       "points_for": 623.4,
       "points_against": 474.18,
+      "max_pf": 713.94,
       "playoff_odds": 100.0,
-      "projected_wins": 11.1
+      "champion_odds": 35.6,
+      "projected_wins": 11.1,
+      "avg_pick": 10.9,
+      "most_likely_pick": 12
     },
     {
       "rank": 2,
@@ -31,8 +35,12 @@
       "ties": 0,
       "points_for": 558.46,
       "points_against": 465.56,
-      "playoff_odds": 99.3,
-      "projected_wins": 9.5
+      "max_pf": 624.04,
+      "playoff_odds": 98.9,
+      "champion_odds": 7.4,
+      "projected_wins": 9.5,
+      "avg_pick": 9.5,
+      "most_likely_pick": 10
     },
     {
       "rank": 3,
@@ -43,8 +51,12 @@
       "ties": 0,
       "points_for": 612.72,
       "points_against": 533.24,
-      "playoff_odds": 99.8,
-      "projected_wins": 10.2
+      "max_pf": 732.3,
+      "playoff_odds": 99.9,
+      "champion_odds": 45.3,
+      "projected_wins": 10.2,
+      "avg_pick": 11.1,
+      "most_likely_pick": 12
     },
     {
       "rank": 4,
@@ -55,8 +67,12 @@
       "ties": 0,
       "points_for": 480.78,
       "points_against": 466.74,
-      "playoff_odds": 58.5,
-      "projected_wins": 7.0
+      "max_pf": 542.38,
+      "playoff_odds": 59.4,
+      "champion_odds": 0.6,
+      "projected_wins": 7.0,
+      "avg_pick": 5.5,
+      "most_likely_pick": 2
     },
     {
       "rank": 5,
@@ -67,8 +83,12 @@
       "ties": 0,
       "points_for": 528.78,
       "points_against": 523.36,
-      "playoff_odds": 68.5,
-      "projected_wins": 6.8
+      "max_pf": 599.98,
+      "playoff_odds": 68.7,
+      "champion_odds": 1.6,
+      "projected_wins": 6.8,
+      "avg_pick": 7.2,
+      "most_likely_pick": 9
     },
     {
       "rank": 6,
@@ -79,8 +99,12 @@
       "ties": 0,
       "points_for": 528.34,
       "points_against": 584.56,
-      "playoff_odds": 75.5,
-      "projected_wins": 7.2
+      "max_pf": 613.32,
+      "playoff_odds": 75.1,
+      "champion_odds": 6.1,
+      "projected_wins": 7.2,
+      "avg_pick": 7.9,
+      "most_likely_pick": 8
     },
     {
       "rank": 7,
@@ -91,8 +115,12 @@
       "ties": 0,
       "points_for": 506.7,
       "points_against": 519.6,
-      "playoff_odds": 28.5,
-      "projected_wins": 5.7
+      "max_pf": 580.6,
+      "playoff_odds": 28.1,
+      "champion_odds": 0.4,
+      "projected_wins": 5.7,
+      "avg_pick": 4.7,
+      "most_likely_pick": 3
     },
     {
       "rank": 8,
@@ -103,8 +131,12 @@
       "ties": 0,
       "points_for": 479.16,
       "points_against": 431.48,
-      "playoff_odds": 15.3,
-      "projected_wins": 5.2
+      "max_pf": 586.32,
+      "playoff_odds": 15.5,
+      "champion_odds": 0.0,
+      "projected_wins": 5.3,
+      "avg_pick": 4.6,
+      "most_likely_pick": 4
     },
     {
       "rank": 9,
@@ -115,8 +147,12 @@
       "ties": 0,
       "points_for": 531.28,
       "points_against": 526.38,
+      "max_pf": 649.72,
       "playoff_odds": 50.0,
-      "projected_wins": 6.1
+      "champion_odds": 3.0,
+      "projected_wins": 6.1,
+      "avg_pick": 7.6,
+      "most_likely_pick": 6
     },
     {
       "rank": 10,
@@ -127,8 +163,12 @@
       "ties": 0,
       "points_for": 493.36,
       "points_against": 538.58,
+      "max_pf": 557.06,
       "playoff_odds": 4.1,
-      "projected_wins": 4.2
+      "champion_odds": 0.0,
+      "projected_wins": 4.2,
+      "avg_pick": 2.6,
+      "most_likely_pick": 2
     },
     {
       "rank": 11,
@@ -139,8 +179,12 @@
       "ties": 0,
       "points_for": 456.3,
       "points_against": 623.26,
+      "max_pf": 620.98,
       "playoff_odds": 0.1,
-      "projected_wins": 2.5
+      "champion_odds": 0.0,
+      "projected_wins": 2.5,
+      "avg_pick": 5.5,
+      "most_likely_pick": 5
     },
     {
       "rank": 12,
@@ -151,10 +195,150 @@
       "ties": 0,
       "points_for": 398.0,
       "points_against": 510.34,
-      "playoff_odds": 0.3,
-      "projected_wins": 2.5
+      "max_pf": 510.84,
+      "playoff_odds": 0.2,
+      "champion_odds": 0.0,
+      "projected_wins": 2.5,
+      "avg_pick": 1.0,
+      "most_likely_pick": 1
     }
   ],
+  "playoffs": {
+    "seeds": [
+      {
+        "seed": 1,
+        "team": "Vanilla Diamonds",
+        "owner": "VanillaDiamonds"
+      },
+      {
+        "seed": 2,
+        "team": "K-9\u2019s Unit",
+        "owner": "sleepymike09"
+      },
+      {
+        "seed": 3,
+        "team": "Top 5 Top 5 Top 5",
+        "owner": "NewEleven"
+      },
+      {
+        "seed": 4,
+        "team": "Chocolate Gold ",
+        "owner": "JudasJudge"
+      },
+      {
+        "seed": 5,
+        "team": "MIP",
+        "owner": "toobizzie"
+      },
+      {
+        "seed": 6,
+        "team": "The Lab",
+        "owner": "JamesQua"
+      }
+    ],
+    "rounds": [
+      {
+        "name": "Wild Card",
+        "games": [
+          {
+            "status": "projected",
+            "a": {
+              "roster_id": 9,
+              "seed": 3,
+              "team": "Top 5 Top 5 Top 5",
+              "owner": "NewEleven"
+            },
+            "b": {
+              "roster_id": 4,
+              "seed": 6,
+              "team": "The Lab",
+              "owner": "JamesQua"
+            },
+            "a_win_pct": 67.7,
+            "winner": 9
+          },
+          {
+            "status": "projected",
+            "a": {
+              "roster_id": 5,
+              "seed": 4,
+              "team": "Chocolate Gold ",
+              "owner": "JudasJudge"
+            },
+            "b": {
+              "roster_id": 8,
+              "seed": 5,
+              "team": "MIP",
+              "owner": "toobizzie"
+            },
+            "a_win_pct": 35.0,
+            "winner": 8
+          }
+        ]
+      },
+      {
+        "name": "Semifinals",
+        "games": [
+          {
+            "status": "projected",
+            "a": {
+              "roster_id": 6,
+              "seed": 1,
+              "team": "Vanilla Diamonds",
+              "owner": "VanillaDiamonds"
+            },
+            "b": {
+              "roster_id": 8,
+              "seed": 5,
+              "team": "MIP",
+              "owner": "toobizzie"
+            },
+            "a_win_pct": 80.4,
+            "winner": 6
+          },
+          {
+            "status": "projected",
+            "a": {
+              "roster_id": 3,
+              "seed": 2,
+              "team": "K-9\u2019s Unit",
+              "owner": "sleepymike09"
+            },
+            "b": {
+              "roster_id": 9,
+              "seed": 3,
+              "team": "Top 5 Top 5 Top 5",
+              "owner": "NewEleven"
+            },
+            "a_win_pct": 21.1,
+            "winner": 9
+          }
+        ]
+      },
+      {
+        "name": "Championship",
+        "games": [
+          {
+            "status": "projected",
+            "a": {
+              "roster_id": 6,
+              "seed": 1,
+              "team": "Vanilla Diamonds",
+              "owner": "VanillaDiamonds"
+            },
+            "b": {
+              "roster_id": 9,
+              "seed": 3,
+              "team": "Top 5 Top 5 Top 5",
+              "owner": "NewEleven"
+            },
+            "a_win_pct": 42.9,
+            "winner": 9
+          }
+        ]
+      }
+    ]
+  },
   "draft": {
     "official_order": [
       {
@@ -220,64 +404,76 @@
     ],
     "projected_order": [
       {
-        "slot": 1,
         "team": "Finesse\ud83e\udd76\ud83e\udd34\ud83c\udfff",
-        "owner": "JustinFreshly"
+        "owner": "JustinFreshly",
+        "avg_pick": 1.0,
+        "most_likely_pick": 1
       },
       {
-        "slot": 2,
-        "team": "\u201889 Earthquake",
-        "owner": "TheeDarryKing"
-      },
-      {
-        "slot": 3,
         "team": "Daejon Mustard ",
-        "owner": "JHam4Hunnid"
+        "owner": "JHam4Hunnid",
+        "avg_pick": 2.6,
+        "most_likely_pick": 2
       },
       {
-        "slot": 4,
-        "team": "Ryan Poles",
-        "owner": "TribalChief13"
-      },
-      {
-        "slot": 5,
         "team": "DOLLA BILLZ",
-        "owner": "RefMitch128"
+        "owner": "RefMitch128",
+        "avg_pick": 4.6,
+        "most_likely_pick": 4
       },
       {
-        "slot": 6,
         "team": "\ud83c\udf28\ufe0f\ud83e\uddf1Brick by Brick\ud83e\uddf1\ud83c\udf28\ufe0f",
-        "owner": "BryanGichaba"
+        "owner": "BryanGichaba",
+        "avg_pick": 4.7,
+        "most_likely_pick": 3
       },
       {
-        "slot": 7,
-        "team": "The Lab",
-        "owner": "JamesQua"
+        "team": "\u201889 Earthquake",
+        "owner": "TheeDarryKing",
+        "avg_pick": 5.5,
+        "most_likely_pick": 5
       },
       {
-        "slot": 8,
-        "team": "MIP",
-        "owner": "toobizzie"
-      },
-      {
-        "slot": 9,
         "team": "Chocolate Gold ",
-        "owner": "JudasJudge"
+        "owner": "JudasJudge",
+        "avg_pick": 5.5,
+        "most_likely_pick": 2
       },
       {
-        "slot": 10,
-        "team": "Top 5 Top 5 Top 5",
-        "owner": "NewEleven"
+        "team": "MIP",
+        "owner": "toobizzie",
+        "avg_pick": 7.2,
+        "most_likely_pick": 9
       },
       {
-        "slot": 11,
+        "team": "Ryan Poles",
+        "owner": "TribalChief13",
+        "avg_pick": 7.6,
+        "most_likely_pick": 6
+      },
+      {
+        "team": "The Lab",
+        "owner": "JamesQua",
+        "avg_pick": 7.9,
+        "most_likely_pick": 8
+      },
+      {
         "team": "K-9\u2019s Unit",
-        "owner": "sleepymike09"
+        "owner": "sleepymike09",
+        "avg_pick": 9.5,
+        "most_likely_pick": 10
       },
       {
-        "slot": 12,
         "team": "Vanilla Diamonds",
-        "owner": "VanillaDiamonds"
+        "owner": "VanillaDiamonds",
+        "avg_pick": 10.9,
+        "most_likely_pick": 12
+      },
+      {
+        "team": "Top 5 Top 5 Top 5",
+        "owner": "NewEleven",
+        "avg_pick": 11.1,
+        "most_likely_pick": 12
       }
     ]
   }
