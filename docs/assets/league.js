@@ -307,8 +307,10 @@
       buildChart("chart-odds", "playoff_odds", {
         min: 0, max: 100, step: 20, format: (v) => `${v.toFixed(1)}%`, tick: (v) => `${v}%`,
       });
-      buildChart("chart-pick", "avg_pick", {
-        reverse: true, min: 1, max: n, step: 1, format: (v) => `pick ${v.toFixed(1)}`, title: "Avg pick",
+      const pickKey = data.history && data.history.teams.length &&
+        data.history.series[String(data.history.teams[0].roster_id)].draft_slot ? "draft_slot" : "avg_pick";
+      buildChart("chart-pick", pickKey, {
+        reverse: true, min: 1, max: n, step: 1, format: (v) => `pick ${Math.round(v * 10) / 10}`, title: "Pick",
       });
     }
     applyFocus();

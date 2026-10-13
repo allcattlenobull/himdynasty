@@ -715,3 +715,62 @@ td.wrap { white-space: normal; min-width: 220px; }
 }
 .credit:hover { color: var(--red); border-color: var(--red); }
 .gate-credit { position: fixed; bottom: 14px; left: 0; right: 0; text-align: center; }
+
+/* ------------------------------------------------------------------ */
+/* Trade center                                                        */
+/* ------------------------------------------------------------------ */
+.tool-tabs { margin-bottom: 0; }
+.sides { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 820px) { .sides { grid-template-columns: 1fr 1fr; } }
+.side-box { background: var(--bg); border: 1px solid var(--line); padding: 0.8rem; min-width: 0; }
+.side-box h3 { margin-bottom: 0.5rem; }
+.search, .team-select select, .idea-controls select {
+  width: 100%;
+  font: 500 0.95rem var(--body);
+  color: var(--text);
+  background: var(--raise);
+  border: 1px solid var(--line);
+  padding: 0.55rem 0.65rem;
+}
+.search:focus, select:focus { outline: 2px solid var(--red); outline-offset: 1px; }
+.asset-list { list-style: none; margin: 0.6rem 0 0; padding: 0; }
+.asset { display: flex; align-items: center; gap: 0.6rem; padding: 0.45rem 0; border-bottom: 1px solid var(--line); }
+.asset > div { flex: 1; min-width: 0; }
+.remove { border: 0; background: transparent; color: var(--muted); font-size: 1.3rem; cursor: pointer; line-height: 1; padding: 0 0.3rem; }
+.remove:hover { color: var(--red); }
+.side-total { margin-top: 0.5rem; color: var(--muted); font-size: 0.85rem; text-align: right; }
+.result { margin-top: 1.2rem; }
+.verdict { font-family: var(--display); font-size: 1.6rem; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 0.5rem; }
+.meter { position: relative; height: 12px; background: var(--raise-2); margin-bottom: 1rem; overflow: hidden; }
+.meter-fill { position: absolute; top: 0; bottom: 0; background: var(--red); }
+.meter-mid { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 2px; background: var(--text); }
+.result-grid { display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.result-grid .value.up { color: var(--good); }
+.result-grid .value.down { color: var(--bad); }
+.notes { margin: 1rem 0 0; padding-left: 1.2rem; display: grid; gap: 0.35rem; font-size: 0.9rem; }
+.notes li::marker { color: var(--red); }
+.balance { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+.team-select { display: grid; gap: 0.35rem; font-family: var(--display); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem; color: var(--muted); }
+.mode { color: var(--muted); font-size: 0.82rem; margin: 0.5rem 0 0.4rem; }
+.roster-pick { max-height: 460px; overflow-y: auto; padding-right: 0.25rem; }
+.group-title { font-family: var(--display); letter-spacing: 0.12em; font-size: 0.75rem; color: var(--red); text-transform: uppercase; margin: 0.7rem 0 0.25rem; }
+.pick-row { display: flex; align-items: center; gap: 0.55rem; padding: 0.35rem 0.25rem; border-bottom: 1px solid var(--line); cursor: pointer; }
+.pick-row:hover { background: var(--raise); }
+.pick-row input { accent-color: var(--red); width: 16px; height: 16px; flex: none; }
+.pick-row-info { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; gap: 0 0.45rem; align-items: baseline; }
+.starter-tag { font-family: var(--display); font-size: 0.65rem; background: var(--inverse-bg); color: var(--inverse-text); padding: 0 0.3rem; }
+.idea-controls { display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); align-items: end; margin-bottom: 1rem; }
+.idea-controls label { display: grid; gap: 0.35rem; font-family: var(--display); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem; color: var(--muted); }
+.small-btn { font-size: 1.1rem; padding: 0.55rem 1.4rem; }
+.ideas { display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.idea { background: var(--bg); border: 1px solid var(--line); padding: 0.75rem; display: grid; gap: 0.55rem; align-content: start; }
+.idea .chip { justify-self: start; }
+.swap { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.swap-row { display: flex; gap: 0.3rem; align-items: baseline; font-size: 0.9rem; }
+.swap-row .num { margin-left: auto; }
+
+/* Team page: draft picks */
+.picks-list { display: grid; gap: 0.5rem; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+.pick-chip { background: var(--bg); border: 1px solid var(--line); border-left: 4px solid var(--red); padding: 0.5rem 0.65rem; }
+.pick-chip.acquired { border-left-color: var(--good); }
+.pick-chip .label { font-family: var(--display); font-size: 1.15rem; }

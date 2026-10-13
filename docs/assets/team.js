@@ -38,7 +38,7 @@
     return box;
   }
 
-  function renderHero(t, playoffTeams) {
+  function renderHero(t, playoffTeams, ts) {
     const hero = document.getElementById("hero");
     hero.style.setProperty("--team-color", teamVar(t.roster_id));
     hero.replaceChildren();
@@ -68,9 +68,44 @@
       stat("Playoff", `${t.playoff_odds.toFixed(1)}%`),
       stat("Title", `${t.champion_odds.toFixed(1)}%`),
       stat("#1 pick", `${t.first_pick_odds.toFixed(1)}%`),
-      stat("Proj pick", t.avg_pick.toFixed(1)),
+      stat("Proj pick", t.draft_slot ? `#${t.draft_slot}` : t.avg_pick.toFixed(1)),
     );
+    if (ts) {
+      stats.append(
+        stat("Avg age", ts.avg_age ? `${ts.avg_age}` : "—"),
+        stat("Value age", ts.value_age ? `${ts.value_age}` : "—"),
+        stat("Dynasty value", `#${ts.value_rank}`),
+        stat("Picks owned", String(ts.picks.length)),
+      );
+    }
     hero.appendChild(stats);
+  }
+
+  // ------------------------------------------------------------------ //
+  // Draft picks
+  // ------------------------------------------------------------------ //
+  function renderPicks(ts, trade, rid) {
+    const host = document.getElementById("picks");
+    if (!ts) {
+      host.replaceChildren(el("p", "Pick data appears after the next update.", "muted"));
+      return;
+    }
+    const byId = Object.fromEntries(trade.assets.map((a) => [a.id, a]));
+    const picks = ts.picks.map((id) => byId[id]).filter(Boolean);
+    host.replaceChildren();
+    if (!picks.length) {
+      host.appendChild(el("p", "No draft picks owned.", "muted"));
+    }
+    for (const a of picks) {
+      const acquired = a.original !== rid;
+      const chip = el("div", null, acquired ? "pick-chip acquired" : "pick-chip");
+      chip.appendChild(el("div", a.slot ? `${a.season} ${a.round}.${String(a.slot).padStart(2, "0")}` : `${a.season} Round ${a.round}`, "label"));
+      chip.appendChild(el("div", acquired ? `via ${a.original_team.trim()}` : "Own pick", "owner"));
+      chip.appendChild(el("div", `Value ${Math.round(a.value).toLocaleString()}`, "owner"));
+      host.appendChild(chip);
+    }
+    document.getElementById("picks-note").textContent =
+      `${picks.length} picks worth ${Math.round(ts.picks_value).toLocaleString()} in dynasty value. Green edge = acquired in a trade. Next year's picks show the projected slot; later years use generic round values.`;
   }
 
   // ------------------------------------------------------------------ //
@@ -272,8 +307,12 @@
 
   async function load() {
     let data;
+    let trade = null;
     try {
-      data = await loadData();
+      [data, trade] = await Promise.all([
+        loadData(),
+        fetch("data/trade.json", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+      ]);
     } catch (err) {
       document.getElementById("hero").replaceChildren(el("p", `Could not load league data (${err.message}).`, "error"));
       return;
@@ -284,6 +323,10 @@
     let id = new URLSearchParams(location.search).get("id");
     if (!pages[id]) id = String(data.standings[0].roster_id);
     const t = pages[id];
+    if (t) {
+      const slot = (data.draft.projected_order || []).find((r) => String(r.roster_id) === id);
+      if (slot) t.draft_slot = slot.slot;
+    }
     if (!t) {
       document.getElementById("hero").replaceChildren(el("p", "Team pages appear after the next data update.", "muted"));
       return;
@@ -291,7 +334,9 @@
     document.title = `${t.team} · HIM Dynasty`;
 
     renderChips(data.standings, id);
-    renderHero(t, data.league.playoff_teams);
+    const ts = trade && trade.teams ? trade.teams[id] : null;
+    renderHero(t, data.league.playoff_teams, ts);
+    renderPicks(ts, trade, Number(id));
     document.getElementById("roster").replaceChildren(renderRoster(t.roster));
     document.getElementById("schedule").replaceChildren(renderSchedule(t.schedule, t.playoffs_start_week));
     renderTrend(data.history, t.roster_id);

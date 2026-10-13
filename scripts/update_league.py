@@ -435,6 +435,27 @@ def build_teams(rosters, users):
     return teams
 
 
+def projected_draft_order(rids, st, ranked, model, playoff_teams, actual):
+    """Draft order if the season ended today.
+
+    Picks 1..N: teams currently outside the playoffs, lowest max PF first.
+    Remaining picks: current playoff teams in the order the projected bracket
+    (current seeds, favorite wins each game) eliminates them, lowest max PF
+    first within a round, champion last.
+    """
+    seeds = {i + 1: ranked[i] for i in range(playoff_teams)}
+
+    def favorite(a, b):
+        known = actual.get(frozenset((a, b)))
+        if known is not None:
+            return known
+        return a if win_probability(model, a, b) >= 0.5 else b
+
+    rounds = run_bracket(seeds, favorite)
+    order = pick_order(rids, set(seeds.values()), rounds, {r: st[r]["max_pf"] for r in rids})
+    return order, rounds
+
+
 def build_team_pages(teams, rids, schedule, done, players, league, model, ranked, sims, st, playoff_start):
     """Roster and schedule for each team's page."""
     starting_slots = [x for x in (league.get("roster_positions") or []) if x not in ("BN", "IR", "TAXI")]
@@ -565,14 +586,16 @@ def main():
                         actual if is_current else {},
                         SIMULATIONS if is_current else HISTORY_SIMULATIONS, rng, median)
         ranked = sorted(rids, key=standing_key(st), reverse=True)
-        return st, model, ranked, sims, len(remaining)
+        order, rounds = projected_draft_order(rids, st, ranked, model, playoff_teams, actual if is_current else {})
+        return st, model, ranked, sims, len(remaining), order, rounds
 
     # Week-by-week history
     series = {r: {k: [] for k in ("rank", "wins", "points_for", "max_pf", "playoff_odds",
-                                  "champion_odds", "avg_pick", "first_pick_odds")} for r in rids}
+                                  "champion_odds", "avg_pick", "first_pick_odds", "draft_slot")} for r in rids}
     history_weeks = []
     for n in range(1, done + 1):
-        st, _, ranked, sims, _ = evaluate(n, is_current=(n == done))
+        st, _, ranked, sims, _, order, _ = evaluate(n, is_current=(n == done))
+        slot_of = {r: i for i, r in enumerate(order, start=1)}
         history_weeks.append(schedule[n - 1]["week"])
         for rank, r in enumerate(ranked, start=1):
             s = series[r]
@@ -584,9 +607,10 @@ def main():
             s["champion_odds"].append(round(sims[r]["champion_odds"] * 100, 1))
             s["avg_pick"].append(round(sims[r]["avg_pick"], 2))
             s["first_pick_odds"].append(round(sims[r]["first_pick_odds"] * 100, 1))
+            s["draft_slot"].append(slot_of[r])
 
     # Current state (same as the last history point, or preseason if no games yet)
-    st, model, ranked, sims, remaining_games = evaluate(done, is_current=True)
+    st, model, ranked, sims, remaining_games, draft_order, bracket_rounds = evaluate(done, is_current=True)
 
     standings = []
     for rank, r in enumerate(ranked, start=1):
@@ -610,30 +634,23 @@ def main():
     seeds_now = {i + 1: ranked[i] for i in range(playoff_teams)}
     seed_of = {rid: seed for seed, rid in seeds_now.items()}
 
-    def favorite(a, b):
-        known = actual.get(frozenset((a, b)))
-        if known is not None:
-            return known
-        return a if win_probability(model, a, b) >= 0.5 else b
+    bracket = describe_bracket(bracket_rounds, playoff_teams, teams, seed_of, model, actual)
 
-    bracket = describe_bracket(run_bracket(seeds_now, favorite), playoff_teams, teams, seed_of, model, actual)
-
-    projected = sorted(
-        (
-            {
-                "roster_id": r,
-                "team": teams[r]["team"],
-                "owner": teams[r]["owner"],
-                "max_pf": round(st[r]["max_pf"], 2),
-                "playoff_odds": round(sims[r]["playoff_odds"] * 100, 1),
-                "first_pick_odds": round(sims[r]["first_pick_odds"] * 100, 1),
-                "avg_pick": round(sims[r]["avg_pick"], 2),
-                "most_likely_pick": sims[r]["most_likely_pick"],
-            }
-            for r in rids
-        ),
-        key=lambda row: row["avg_pick"],
-    )
+    projected = [
+        {
+            "slot": slot,
+            "roster_id": r,
+            "team": teams[r]["team"],
+            "owner": teams[r]["owner"],
+            "max_pf": round(st[r]["max_pf"], 2),
+            "in_playoffs": r in seed_of,
+            "playoff_odds": round(sims[r]["playoff_odds"] * 100, 1),
+            "first_pick_odds": round(sims[r]["first_pick_odds"] * 100, 1),
+            "avg_pick": round(sims[r]["avg_pick"], 2),
+            "most_likely_pick": sims[r]["most_likely_pick"],
+        }
+        for slot, r in enumerate(draft_order, start=1)
+    ]
 
     team_pages = build_team_pages(teams, rids, schedule, done, players, league, model,
                                   ranked, sims, st, playoff_start)

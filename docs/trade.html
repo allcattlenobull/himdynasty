@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trade Center · HIM Dynasty</title>
+  <meta name="theme-color" content="#09090b">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/brand.css">
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-row">
+      <a class="brand" href="index.html" aria-label="HIM Dynasty home">
+        <img src="assets/logo.svg" alt="" width="40" height="40">
+        <span class="wordmark"><span class="wm-him">HIM</span><span class="wm-dyn">DYNASTY</span></span>
+      </a>
+      <nav class="nav" aria-label="League">
+        <a href="league.html#standings">Standings</a>
+        <a href="league.html#draft">Draft</a>
+        <a href="draft.html">Mock</a>
+        <a href="trade.html" aria-current="page">Trade</a>
+      </nav>
+      <div data-theme-toggle></div>
+    </div>
+  </header>
+
+  <main class="league-main">
+    <div class="strip">
+      <p class="kicker">Trade <em>Center</em></p>
+      <p class="updated" id="updated">Loading values…</p>
+    </div>
+
+    <div class="round-tabs tool-tabs" role="tablist" aria-label="Trade tools">
+      <button class="chip" type="button" role="tab" data-tab="calc">Calculator</button>
+      <button class="chip" type="button" role="tab" data-tab="build">Trade Builder</button>
+      <button class="chip" type="button" role="tab" data-tab="ideas">Trade Ideas</button>
+    </div>
+
+    <!-- Calculator -->
+    <section class="panel tool" id="tool-calc" hidden>
+      <div class="panel-head">
+        <h2>Trade Calculator</h2>
+        <p class="note">Any players or picks, in or out of the league. Values are tuned to this league's format: a star beats a pile of depth, and extra QBs are discounted because only one starts.</p>
+      </div>
+      <div class="sides">
+        <div class="side-box" data-side="A">
+          <h3>Side A gives</h3>
+          <input class="search" type="search" placeholder="Add a player or pick…" list="all-assets" aria-label="Add to side A">
+          <ul class="asset-list"></ul>
+          <div class="side-total"></div>
+        </div>
+        <div class="side-box" data-side="B">
+          <h3>Side B gives</h3>
+          <input class="search" type="search" placeholder="Add a player or pick…" list="all-assets" aria-label="Add to side B">
+          <ul class="asset-list"></ul>
+          <div class="side-total"></div>
+        </div>
+      </div>
+      <datalist id="all-assets"></datalist>
+      <div class="result" id="calc-result"></div>
+    </section>
+
+    <!-- Builder -->
+    <section class="panel tool" id="tool-build" hidden>
+      <div class="panel-head">
+        <h2>Trade Builder</h2>
+        <p class="note">Pick two teams and check what each sends. The verdict comes from how each roster changes: who would start, who would sit, roster limits, and whether each team is contending or rebuilding.</p>
+      </div>
+      <div class="sides">
+        <div class="side-box" data-team="A">
+          <label class="team-select">Team A <select></select></label>
+          <div class="mode"></div>
+          <div class="roster-pick"></div>
+        </div>
+        <div class="side-box" data-team="B">
+          <label class="team-select">Team B <select></select></label>
+          <div class="mode"></div>
+          <div class="roster-pick"></div>
+        </div>
+      </div>
+      <div class="result" id="build-result"></div>
+    </section>
+
+    <!-- Ideas -->
+    <section class="panel tool" id="tool-ideas" hidden>
+      <div class="panel-head">
+        <h2>Trade Ideas</h2>
+        <p class="note">Trades where both rosters come out ahead after context: lineup fit, depth, roster limits, and each team's window. Raw values stay within about 30% so offers are realistic.</p>
+      </div>
+      <div class="idea-controls">
+        <label>My team <select id="idea-team"></select></label>
+        <label>Target <select id="idea-pos">
+          <option value="ANY">Any position</option><option value="QB">QB</option><option value="RB">RB</option>
+          <option value="WR">WR</option><option value="TE">TE</option><option value="PICK">Draft picks</option>
+        </select></label>
+        <label>Goal <select id="idea-goal">
+          <option value="balanced">Best for both</option><option value="win">Win now</option>
+          <option value="younger">Get younger</option><option value="picks">Add picks</option>
+        </select></label>
+        <button class="btn btn-yes small-btn" type="button" id="idea-go">Find trades</button>
+      </div>
+      <div id="idea-results"></div>
+    </section>
+
+    <p class="note" id="source-note"></p>
+  </main>
+
+  <footer class="foot">
+    <img src="assets/logo.svg" alt="" width="28" height="28">
+    HIM DYNASTY · ARE YOU HIM?
+    <br><a class="credit" href="mailto:paforprince@gmail.com">Built by P Saah</a>
+  </footer>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/trade-engine.js"></script>
+  <script src="assets/trade.js"></script>
+</body>
+</html>
