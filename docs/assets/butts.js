@@ -14,7 +14,7 @@
   }
 
   // ---- building blocks (viewBox 0 0 120 120, animal seen from behind) ----
-  const shadow = `<ellipse cx="60" cy="108" rx="40" ry="5" fill="rgba(0,0,0,.45)"/>`;
+  const shadow = `<ellipse cx="60" cy="108" rx="40" ry="5" fill="var(--shadow)"/>`;
   const body = (c, rx = 36, ry = 32, cy = 64) => `<ellipse cx="60" cy="${cy}" rx="${rx}" ry="${ry}" fill="${c}"/>`;
   const legs = (c, o = {}) => {
     const { x1 = 38, x2 = 68, w = 14, y = 80, h = 26 } = o;
@@ -157,7 +157,6 @@
     [entries[i], entries[j]] = [entries[j], entries[i]];
   }
 
-  const BACKDROPS = ["#16161b", "#1a1214", "#12161a", "#17141c", "#141814"];
   const grid = document.getElementById("butts");
   const frag = document.createDocumentFragment();
 
@@ -168,7 +167,7 @@
     card.className = "butt-card";
     const stage = document.createElement("div");
     stage.className = "stage";
-    stage.style.background = BACKDROPS[i % BACKDROPS.length];
+    stage.style.background = `var(--bd${i % 5})`;
     stage.innerHTML =
       `<svg viewBox="0 0 120 120" role="img" aria-label="Cartoon ${e.sp.name.toLowerCase()} seen from behind" style="rotate:${tilt}deg">` +
       shadow + e.sp.draw(e.color, id) + `</svg>`;

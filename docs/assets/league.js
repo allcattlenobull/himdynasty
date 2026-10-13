@@ -1,55 +1,24 @@
 /* HIM Dynasty league page.
-   Renders standings, bracket, draft order, and week-by-week charts from
-   data/latest.json. Clicking a team anywhere focuses it everywhere.
-   Team and owner names come from Sleeper, so they are only ever set with
-   textContent, never parsed as HTML. */
+   Standings, bracket, draft order, and week-by-week charts from data/latest.json.
+   Clicking a row, line, chip, or bracket slot focuses that team everywhere;
+   clicking a team name opens its team page. */
 (() => {
   "use strict";
+  const { el, dot, teamLink, oddsCell, withAlpha, teamColor, themeChart, assignColors, loadData, updatedText } = window.HIM;
 
-  const PALETTE = [
-    "#ff3b30", "#ff9f0a", "#ffd60a", "#30d158", "#00c7be", "#64d2ff",
-    "#0a84ff", "#7d7aff", "#bf5af2", "#ff4fa3", "#d9b48f", "#e5e5ea",
-    "#a2845e", "#8e8e93", "#66d4cf", "#ffb3a7",
-  ];
-
-  const state = { data: null, focus: null, charts: [], colors: {} };
-
-  // ------------------------------------------------------------------ //
-  // Helpers
-  // ------------------------------------------------------------------ //
-  function el(tag, text, className) {
-    const node = document.createElement(tag);
-    if (text !== undefined && text !== null) node.textContent = text;
-    if (className) node.className = className;
-    return node;
-  }
-
-  function dot(rid) {
-    const d = el("span", null, "dot");
-    d.style.background = state.colors[rid] || "#888";
-    return d;
-  }
+  const state = { data: null, focus: null, charts: [] };
 
   function teamCell(row) {
     const td = el("td");
     const wrap = el("div", null, "teamcell");
     wrap.appendChild(dot(row.roster_id));
     const text = el("div");
-    text.appendChild(el("div", row.team, "team"));
+    const name = el("div");
+    name.appendChild(teamLink(row.roster_id, row.team));
+    text.appendChild(name);
     text.appendChild(el("div", row.owner, "owner"));
     wrap.appendChild(text);
     td.appendChild(wrap);
-    return td;
-  }
-
-  function oddsCell(value) {
-    const td = el("td");
-    const bar = el("span", null, "bar");
-    const fill = el("span");
-    fill.style.width = `${Math.max(0, Math.min(100, value))}%`;
-    bar.appendChild(fill);
-    td.appendChild(bar);
-    td.appendChild(document.createTextNode(`${value.toFixed(1)}%`));
     return td;
   }
 
@@ -73,12 +42,13 @@
   }
 
   function styleDataset(ds) {
-    const c = state.colors[ds.rid];
+    const c = teamColor(ds.rid);
     const focused = state.focus === ds.rid;
     const on = state.focus === null || focused;
-    ds.borderColor = on ? c : `${c}2e`;
-    ds.backgroundColor = on ? c : `${c}2e`;
-    ds.pointBorderColor = on ? c : `${c}2e`;
+    const faded = withAlpha(c, "2e");
+    ds.borderColor = on ? c : faded;
+    ds.backgroundColor = on ? c : faded;
+    ds.pointBorderColor = on ? c : faded;
     ds.borderWidth = focused ? 4 : on ? 2.25 : 1.25;
     ds.pointRadius = focused ? 5 : on ? 2.5 : 0;
     ds.order = focused ? 0 : 1;
@@ -96,6 +66,17 @@
       chart.update("none");
     }
   }
+
+  function retheme() {
+    if (typeof Chart === "undefined") return;
+    Chart.defaults.color = window.HIM.chartTheme().text;
+    for (const chart of state.charts) {
+      themeChart(chart);
+      chart.data.datasets.forEach(styleDataset);
+      chart.update("none");
+    }
+  }
+  document.addEventListener("him-themechange", retheme);
 
   // ------------------------------------------------------------------ //
   // Chips
@@ -158,7 +139,7 @@
 
   function renderDraft(rows, playoffTeams) {
     const table = el("table");
-    table.appendChild(header([["Pick", true], ["Team", false], ["Max PF", true], ["vs #1", true], ["Playoff", false]]));
+    table.appendChild(header([["Pick", true], ["Team", false], ["Max PF", true], ["vs #1", true], ["#1 pick", false]]));
     const top = rows.length ? rows[0].max_pf : 0;
     const lastNonPlayoff = rows.length - playoffTeams - 1;
     const body = el("tbody");
@@ -168,8 +149,9 @@
       tr.appendChild(el("td", i + 1, "num rank"));
       tr.appendChild(teamCell(row));
       tr.appendChild(el("td", row.max_pf.toFixed(1), "num"));
-      tr.appendChild(el("td", i === 0 ? "—" : `+${(row.max_pf - top).toFixed(1)}`, "num gap"));
-      tr.appendChild(oddsCell(row.playoff_odds));
+      const diff = row.max_pf - top;
+      tr.appendChild(el("td", i === 0 ? "—" : `${diff >= 0 ? "+" : ""}${diff.toFixed(1)}`, "num gap"));
+      tr.appendChild(oddsCell(row.first_pick_odds ?? 0));
       body.appendChild(tr);
     });
     table.appendChild(body);
@@ -186,7 +168,7 @@
     const row = focusable(el("div", null, won ? "side winner" : "side"), side.roster_id);
     row.appendChild(el("span", side.seed ? `#${side.seed}` : "", "seed"));
     row.appendChild(dot(side.roster_id));
-    row.appendChild(el("span", side.team, "name"));
+    row.appendChild(teamLink(side.roster_id, side.team, "name team"));
     row.appendChild(el("span", pct, "pct"));
     return row;
   }
@@ -211,12 +193,6 @@
   // ------------------------------------------------------------------ //
   // Charts
   // ------------------------------------------------------------------ //
-  function setupChartDefaults() {
-    Chart.defaults.color = "#9a9aa6";
-    Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
-    Chart.defaults.font.size = 12;
-  }
-
   function buildChart(canvasId, key, opts) {
     const canvas = document.getElementById(canvasId);
     const history = state.data.history;
@@ -239,7 +215,6 @@
       return ds;
     });
 
-    const grid = "rgba(255,255,255,0.06)";
     const chart = new Chart(canvas, {
       type: "line",
       data: { labels, datasets },
@@ -252,8 +227,6 @@
         plugins: {
           legend: { display: false },
           tooltip: {
-            backgroundColor: "#0b0b0d",
-            borderColor: "#e3121b",
             borderWidth: 1,
             padding: 10,
             boxPadding: 4,
@@ -264,25 +237,21 @@
             callbacks: {
               label: (item) => ` ${item.dataset.label}: ${opts.format(item.parsed.y)}`,
               labelColor: (item) => {
-                const c = state.colors[item.dataset.rid];
+                const c = teamColor(item.dataset.rid);
                 return { borderColor: c, backgroundColor: c };
               },
             },
           },
         },
         scales: {
-          x: { grid: { color: grid }, ticks: { color: "#9a9aa6" } },
+          x: { grid: {}, ticks: {} },
           y: {
             reverse: !!opts.reverse,
             min: opts.min,
             max: opts.max,
-            grid: { color: grid },
-            ticks: {
-              color: "#9a9aa6",
-              stepSize: opts.step,
-              callback: (v) => (opts.tick ? opts.tick(v) : v),
-            },
-            title: opts.title ? { display: true, text: opts.title, color: "#9a9aa6" } : undefined,
+            grid: {},
+            ticks: { stepSize: opts.step, callback: (v) => (opts.tick ? opts.tick(v) : v) },
+            title: opts.title ? { display: true, text: opts.title } : undefined,
           },
         },
         onClick: (evt, _elements, c) => {
@@ -291,6 +260,8 @@
         },
       },
     });
+    themeChart(chart);
+    chart.update("none");
     state.charts.push(chart);
   }
 
@@ -300,9 +271,7 @@
   async function load() {
     let data;
     try {
-      const res = await fetch("data/latest.json", { cache: "no-store" });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      data = await res.json();
+      data = await loadData();
     } catch (err) {
       const msg = `Could not load league data (${err.message}).`;
       ["standings-table", "bracket", "draft-table"].forEach((id) => fail(id, msg));
@@ -310,19 +279,11 @@
       return;
     }
     state.data = data;
-
-    const ids = (data.history && data.history.teams.length ? data.history.teams : data.standings)
-      .map((t) => t.roster_id)
-      .sort((a, b) => a - b);
-    ids.forEach((rid, i) => { state.colors[rid] = PALETTE[i % PALETTE.length]; });
+    assignColors((data.history && data.history.teams.length ? data.history.teams : data.standings).map((t) => t.roster_id));
 
     const n = data.standings.length;
     const playoffTeams = data.league.playoff_teams;
-    const when = new Date(data.generated_at);
-    const week = data.league.weeks_completed;
-    document.getElementById("updated").textContent =
-      `${data.league.name || "League"} · ${data.league.season} · ` +
-      `${week ? `through week ${week}` : "preseason"} · updated ${when.toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}`;
+    document.getElementById("updated").textContent = updatedText(data);
 
     renderChips(data.standings);
     document.getElementById("standings-table").replaceChildren(renderStandings(data.standings, playoffTeams));
@@ -337,7 +298,9 @@
         if (c) c.parentElement.replaceChildren(el("p", "Charts could not load.", "chart-empty"));
       });
     } else {
-      setupChartDefaults();
+      Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
+      Chart.defaults.font.size = 12;
+      Chart.defaults.color = window.HIM.chartTheme().text;
       buildChart("chart-rank", "rank", {
         reverse: true, min: 1, max: n, step: 1, format: (v) => `#${v}`, title: "Rank",
       });

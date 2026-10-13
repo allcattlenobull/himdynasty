@@ -12,8 +12,9 @@ https://allcattlenobull.github.io/himdynasty/
 | `docs/index.html` | The gate: "Are you HIM?" Yes goes to the league, No goes to the butts. Keys Y and N work too. |
 | `docs/league.html` | Standings, playoff picture, and draft order, each with a week-by-week chart. Click any team to follow it everywhere. |
 | `docs/no.html` | 100 cartoon animal butts for anyone who is not HIM. |
+| `docs/team.html?id=N` | One team: stats, roster (starters, bench, taxi, IR), full schedule with results and win odds, season trend. |
 
-Branding lives in `docs/assets/` (`logo.svg`, `brand.css`). Charts use Chart.js 4.4.1, included in `docs/assets/vendor/`.
+Branding lives in `docs/assets/` (`logo.svg`, `brand.css`). Every page has an Auto / Light / Dark theme switch (`theme.js`); Auto follows the device setting. Charts use Chart.js 4.4.1, included in `docs/assets/vendor/`.
 
 ## Daily update
 

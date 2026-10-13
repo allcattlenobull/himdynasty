@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team · HIM Dynasty</title>
+  <meta name="theme-color" content="#09090b">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/brand.css">
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-row">
+      <a class="brand" href="index.html" aria-label="HIM Dynasty home">
+        <img src="assets/logo.svg" alt="" width="40" height="40">
+        <span class="wordmark"><span class="wm-him">HIM</span><span class="wm-dyn">DYNASTY</span></span>
+      </a>
+      <nav class="nav" aria-label="League">
+        <a href="league.html#standings">Standings</a>
+        <a href="league.html#playoffs">Playoffs</a>
+        <a href="league.html#draft">Draft</a>
+      </nav>
+      <div data-theme-toggle></div>
+    </div>
+    <div class="focusbar">
+      <span class="focus-label">Teams</span>
+      <div class="chips" id="chips" aria-label="Switch team"></div>
+    </div>
+  </header>
+
+  <main class="league-main">
+    <div id="hero" class="team-hero"><p class="muted">Loading team…</p></div>
+
+    <div class="split team">
+      <section class="panel" id="roster-panel">
+        <div class="panel-head">
+          <h2>Roster</h2>
+          <p class="note">Current lineup and bench from Sleeper. Points are what each player has scored for this team this season.</p>
+        </div>
+        <div class="table-wrap" id="roster"></div>
+      </section>
+
+      <section class="panel" id="schedule-panel">
+        <div class="panel-head">
+          <h2>Schedule</h2>
+          <p class="note">Win chances for upcoming games come from both teams' scoring so far.</p>
+        </div>
+        <div class="table-wrap" id="schedule"></div>
+      </section>
+    </div>
+
+    <section class="panel">
+      <div class="panel-head"><h2>Season Trend</h2></div>
+      <div class="chart-card" style="margin-top:0">
+        <div class="chart-box"><canvas id="chart-team" aria-label="Playoff, title, and first pick odds by week"></canvas></div>
+      </div>
+    </section>
+
+    <p class="updated" id="updated"></p>
+  </main>
+
+  <footer class="foot">
+    <img src="assets/logo.svg" alt="" width="28" height="28">
+    HIM DYNASTY · ARE YOU HIM?
+  </footer>
+
+  <script src="assets/vendor/chart.umd.js"></script>
+  <script src="assets/common.js"></script>
+  <script src="assets/team.js"></script>
+</body>
+</html>

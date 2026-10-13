@@ -80,13 +80,28 @@ def sleeper_points(settings, name):
     return settings.get(name, 0) + settings.get(f"{name}_decimal", 0) / 100.0
 
 
-def load_positions():
+def load_players():
+    """Return (eligible positions by player id, full Sleeper player records)."""
     players = get("/players/nfl") or {}
     positions = {}
     for pid, p in players.items():
         pos = p.get("fantasy_positions") or ([p["position"]] if p.get("position") else [])
         positions[pid] = set(pos)
-    return positions
+    return positions, players
+
+
+def player_card(pid, players):
+    p = players.get(pid) or {}
+    name = p.get("full_name") or " ".join(x for x in (p.get("first_name"), p.get("last_name")) if x) or pid
+    return {
+        "id": pid,
+        "name": name,
+        "pos": p.get("position") or (p.get("fantasy_positions") or ["?"])[0],
+        "nfl": p.get("team") or "FA",
+        "age": p.get("age"),
+        "exp": p.get("years_exp"),
+        "injury": p.get("injury_status"),
+    }
 
 
 def read_bracket_results():
@@ -132,7 +147,7 @@ def read_schedule(weeks, slots, positions):
         for m in matchups:
             if m.get("matchup_id") is not None:
                 grouped.setdefault(m["matchup_id"], []).append(m)
-        games, scores, maxes = [], {}, {}
+        games, scores, maxes, player_pts = [], {}, {}, {}
         for pair in grouped.values():
             if len(pair) != 2:
                 continue
@@ -141,7 +156,8 @@ def read_schedule(weeks, slots, positions):
             for side in pair:
                 scores[side["roster_id"]] = float(side.get("points") or 0.0)
                 maxes[side["roster_id"]] = best_lineup_points(side, slots, positions)
-        schedule.append({"week": week, "games": games, "scores": scores, "max": maxes})
+                player_pts[side["roster_id"]] = side.get("players_points") or {}
+        schedule.append({"week": week, "games": games, "scores": scores, "max": maxes, "player_pts": player_pts})
     return schedule
 
 
@@ -360,6 +376,7 @@ def simulate(base, remaining_weeks, model, max_model, playoff_teams, actual, sim
             "projected_wins": win_total[r] / sims,
             "avg_pick": slot_total[r] / sims,
             "most_likely_pick": max(range(1, n + 1), key=lambda s: counts[s]),
+            "first_pick_odds": counts[1] / sims,
         }
     return out
 
@@ -397,10 +414,17 @@ def build_teams(rosters, users):
         meta = user.get("metadata") or {}
         owner = user.get("display_name") or "Unknown"
         s = r.get("settings") or {}
+        avatar = meta.get("avatar") or (
+            f"https://sleepercdn.com/avatars/thumbs/{user['avatar']}" if user.get("avatar") else None)
         teams[r["roster_id"]] = {
             "roster_id": r["roster_id"],
             "team": meta.get("team_name") or owner,
             "owner": owner,
+            "avatar": avatar,
+            "players": [x for x in (r.get("players") or []) if x],
+            "starters": r.get("starters") or [],
+            "reserve": [x for x in (r.get("reserve") or []) if x],
+            "taxi": [x for x in (r.get("taxi") or []) if x],
             "wins": s.get("wins", 0),
             "losses": s.get("losses", 0),
             "ties": s.get("ties", 0),
@@ -409,6 +433,88 @@ def build_teams(rosters, users):
             "max_pf": sleeper_points(s, "ppts"),
         }
     return teams
+
+
+def build_team_pages(teams, rids, schedule, done, players, league, model, ranked, sims, st, playoff_start):
+    """Roster and schedule for each team's page."""
+    starting_slots = [x for x in (league.get("roster_positions") or []) if x not in ("BN", "IR", "TAXI")]
+    rank_of = {r: i for i, r in enumerate(ranked, start=1)}
+    pages = {}
+    for r in rids:
+        t = teams[r]
+
+        # Fantasy points each player scored for this team, over completed weeks.
+        season_pts, last_pts = {}, {}
+        for i, wk in enumerate(schedule[:done]):
+            for pid, pts in (wk["player_pts"].get(r) or {}).items():
+                season_pts[pid] = season_pts.get(pid, 0.0) + (pts or 0.0)
+                if i == done - 1:
+                    last_pts[pid] = pts or 0.0
+
+        def card(pid):
+            c = player_card(pid, players)
+            c["pts"] = round(season_pts.get(pid, 0.0), 2)
+            c["last"] = round(last_pts[pid], 2) if pid in last_pts else None
+            return c
+
+        starters = []
+        for slot, pid in zip(starting_slots, t["starters"]):
+            starters.append({"slot": slot, "player": card(pid) if pid and pid != "0" else None})
+        taken = set(t["starters"]) | set(t["reserve"]) | set(t["taxi"])
+        bench = sorted((card(pid) for pid in t["players"] if pid not in taken), key=lambda c: -c["pts"])
+
+        games = []
+        for i, wk in enumerate(schedule):
+            opp = next((b if a == r else a for a, b in wk["games"] if r in (a, b)), None)
+            if opp is None:
+                games.append({"week": wk["week"], "status": "bye"})
+                continue
+            mine, theirs = wk["scores"].get(r, 0.0), wk["scores"].get(opp, 0.0)
+            if i < done:
+                status = "final"
+            elif i == done and (mine > 0 or theirs > 0):
+                status = "live"
+            else:
+                status = "upcoming"
+            game = {
+                "week": wk["week"],
+                "status": status,
+                "opponent": opp,
+                "opponent_team": teams[opp]["team"],
+                "opponent_owner": teams[opp]["owner"],
+                "win_pct": round(win_probability(model, r, opp) * 100, 1),
+            }
+            if status != "upcoming":
+                game.update(points=round(mine, 2), opp_points=round(theirs, 2))
+            if status == "final":
+                game["max"] = round(wk["max"].get(r, 0.0), 2)
+                game["result"] = "W" if mine > theirs else "L" if theirs > mine else "T"
+            games.append(game)
+
+        pages[str(r)] = {
+            "roster_id": r,
+            "team": t["team"],
+            "owner": t["owner"],
+            "avatar": t["avatar"],
+            "rank": rank_of[r],
+            "record": {"wins": st[r]["wins"], "losses": st[r]["losses"], "ties": st[r]["ties"]},
+            "points_for": round(st[r]["pf"], 2),
+            "points_against": round(st[r]["pa"], 2),
+            "max_pf": round(st[r]["max_pf"], 2),
+            "playoff_odds": round(sims[r]["playoff_odds"] * 100, 1),
+            "champion_odds": round(sims[r]["champion_odds"] * 100, 1),
+            "first_pick_odds": round(sims[r]["first_pick_odds"] * 100, 1),
+            "avg_pick": round(sims[r]["avg_pick"], 2),
+            "roster": {
+                "starters": starters,
+                "bench": bench,
+                "taxi": [card(pid) for pid in t["taxi"]],
+                "ir": [card(pid) for pid in t["reserve"]],
+            },
+            "schedule": games,
+            "playoffs_start_week": playoff_start,
+        }
+    return pages
 
 
 def main():
@@ -432,7 +538,7 @@ def main():
         (s for s in league.get("roster_positions") or [] if s in SLOT_ELIGIBILITY),
         key=lambda s: len(SLOT_ELIGIBILITY[s]),
     )
-    positions = load_positions()
+    positions, players = load_players()
     schedule = read_schedule(range(start_week, playoff_start), slots, positions)
 
     # Completed regular-season weeks, from the official records.
@@ -463,7 +569,7 @@ def main():
 
     # Week-by-week history
     series = {r: {k: [] for k in ("rank", "wins", "points_for", "max_pf", "playoff_odds",
-                                  "champion_odds", "avg_pick")} for r in rids}
+                                  "champion_odds", "avg_pick", "first_pick_odds")} for r in rids}
     history_weeks = []
     for n in range(1, done + 1):
         st, _, ranked, sims, _ = evaluate(n, is_current=(n == done))
@@ -477,6 +583,7 @@ def main():
             s["playoff_odds"].append(round(sims[r]["playoff_odds"] * 100, 1))
             s["champion_odds"].append(round(sims[r]["champion_odds"] * 100, 1))
             s["avg_pick"].append(round(sims[r]["avg_pick"], 2))
+            s["first_pick_odds"].append(round(sims[r]["first_pick_odds"] * 100, 1))
 
     # Current state (same as the last history point, or preseason if no games yet)
     st, model, ranked, sims, remaining_games = evaluate(done, is_current=True)
@@ -519,6 +626,7 @@ def main():
                 "owner": teams[r]["owner"],
                 "max_pf": round(st[r]["max_pf"], 2),
                 "playoff_odds": round(sims[r]["playoff_odds"] * 100, 1),
+                "first_pick_odds": round(sims[r]["first_pick_odds"] * 100, 1),
                 "avg_pick": round(sims[r]["avg_pick"], 2),
                 "most_likely_pick": sims[r]["most_likely_pick"],
             }
@@ -526,6 +634,9 @@ def main():
         ),
         key=lambda row: row["avg_pick"],
     )
+
+    team_pages = build_team_pages(teams, rids, schedule, done, players, league, model,
+                                  ranked, sims, st, playoff_start)
 
     now = dt.datetime.now(dt.timezone.utc)
     snapshot = {
@@ -554,6 +665,7 @@ def main():
             "teams": [{"roster_id": r, "team": teams[r]["team"], "owner": teams[r]["owner"]} for r in rids],
             "series": {str(r): series[r] for r in rids},
         },
+        "teams": team_pages,
         "diagnostics": {"max_pf_check": diagnostics},
     }
 
