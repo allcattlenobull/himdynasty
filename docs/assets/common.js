@@ -130,5 +130,31 @@ window.HIM = (() => {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initExpand);
   else initExpand();
 
+  // Header team picker: jump straight to any team's page.
+  async function initTeamJump() {
+    const hosts = document.querySelectorAll("[data-team-jump]");
+    if (!hosts.length) return;
+    let data;
+    try { data = await loadData(); } catch (e) { return; }
+    const current = location.pathname.endsWith("team.html") ? new URLSearchParams(location.search).get("id") : null;
+    hosts.forEach((host) => {
+      const select = document.createElement("select");
+      select.setAttribute("aria-label", "Go to a team page");
+      const first = el("option", "Teams");
+      first.value = "";
+      select.appendChild(first);
+      for (const row of data.standings) {
+        const o = el("option", `${row.rank}. ${row.team.trim()}`);
+        o.value = String(row.roster_id);
+        select.appendChild(o);
+      }
+      select.value = current && data.standings.some((r) => String(r.roster_id) === current) ? current : "";
+      select.addEventListener("change", () => { if (select.value) location.href = teamHref(select.value); });
+      host.replaceChildren(select);
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initTeamJump);
+  else initTeamJump();
+
   return { el, cssVar, assignColors, teamVar, teamColor, dot, teamHref, teamLink, oddsCell, withAlpha, chartTheme, themeChart, loadData, updatedText };
 })();

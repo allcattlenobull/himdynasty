@@ -282,27 +282,64 @@ def format_multipliers(league):
 # Team needs and draft order
 # --------------------------------------------------------------------------- #
 
-STARTERS_AT = {"QB": 1, "RB": 3, "WR": 3, "TE": 1}  # rough starters incl. flex share
+def ordinal(n):
+    return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
 
 
-def team_needs(latest):
-    """Positive need = roster is thinner than the league average at a position."""
-    strength = {}
-    for rid, t in (latest.get("teams") or {}).items():
-        roster = t["roster"]
-        players = [s["player"] for s in roster["starters"] if s.get("player")] + roster["bench"] + roster["taxi"] + roster["ir"]
-        by_pos = {}
-        for p in players:
-            by_pos.setdefault(p["pos"], []).append(p.get("pts") or 0.0)
-        strength[int(rid)] = {pos: sum(sorted(by_pos.get(pos, []), reverse=True)[:k]) for pos, k in STARTERS_AT.items()}
-    needs = {}
-    for pos in FANTASY_POS:
-        values = [s[pos] for s in strength.values()]
-        mean = statistics.mean(values) if values else 0
-        for rid, s in strength.items():
-            need = (mean - s[pos]) / mean if mean else 0.0
-            needs.setdefault(rid, {})[pos] = max(-0.15, min(0.25, need))
-    return needs
+def team_needs(latest, superflex):
+    """How badly each team needs each position, from its actual roster.
+
+    Strength at a position = dynasty value (trade.json) of the players a team
+    would start there (QB 1, or 2 in superflex; RB 3 and WR 3 including a share
+    of flex; TE 1). Need = how far below the league median that is, from -0.6
+    (loaded) to +0.4 (empty). In a 1-QB league, a team with a starter-level QB
+    and a real backup is "set at QB" and gets the full -0.6.
+
+    Returns (needs, position ranks) keyed by roster id.
+    """
+    starters_at = {"QB": 2 if superflex else 1, "RB": 3, "WR": 3, "TE": 1}
+    rids = [int(r) for r in (latest.get("teams") or {})]
+    by_team = {r: {} for r in rids}
+    try:
+        trade = json.loads((DATA_DIR / "trade.json").read_text())
+        for a in trade["assets"]:
+            if a.get("owner") in by_team and a["kind"] == "player" and a["pos"] in starters_at:
+                by_team[a["owner"]].setdefault(a["pos"], []).append(a["value"])
+    except (FileNotFoundError, KeyError, ValueError):
+        # Fallback: points scored this season.
+        for rid, t in latest["teams"].items():
+            r = t["roster"]
+            for p in [x["player"] for x in r["starters"] if x.get("player")] + r["bench"] + r["taxi"] + r["ir"]:
+                if p["pos"] in starters_at:
+                    by_team[int(rid)].setdefault(p["pos"], []).append(p.get("pts") or 0.0)
+    for r in rids:
+        for pos in starters_at:
+            by_team[r][pos] = sorted(by_team[r].get(pos, []), reverse=True)
+
+    needs = {r: {} for r in rids}
+    ranks = {r: {} for r in rids}
+    for pos, k in starters_at.items():
+        strength = {r: sum(by_team[r][pos][:k]) for r in rids}
+        median = statistics.median(strength.values()) if strength else 0
+        for i, r in enumerate(sorted(rids, key=lambda x: -strength[x]), start=1):
+            ranks[r][pos] = i
+        for r in rids:
+            need = (median - strength[r]) / median if median else 0.0
+            need = max(-0.6, min(0.4, need))
+            if pos == "QB" and not superflex:
+                qbs = by_team[r]["QB"]
+                if qbs and qbs[0] >= median and len(qbs) > 1 and qbs[1] >= 0.4 * median:
+                    need = -0.6
+            needs[r][pos] = need
+    return needs, ranks
+
+
+def needs_summary(need, rank):
+    return {
+        "needs": [p for p, v in sorted(need.items(), key=lambda kv: -kv[1]) if v >= 0.15][:2],
+        "set": [p for p, v in need.items() if v <= -0.4],
+        "ranks": rank,
+    }
 
 
 def pick_owners(traded, year, rounds, original_order):
@@ -500,7 +537,8 @@ def main():
     update_history(board, today)
 
     # Run the draft.
-    needs = team_needs(latest)
+    needs, pos_ranks = team_needs(latest, superflex)
+    start_needs = {r: dict(n) for r, n in needs.items()}
     owners = pick_owners(traded, draft_year, rounds, order)
     taken = set()
     picks = []
@@ -512,22 +550,24 @@ def main():
             for e in board:
                 if e["key"] in taken:
                     continue
-                score = e["value"] * (1 + 0.5 * team_need.get(e["pos"], 0.0))
+                score = e["value"] * (1 + 0.8 * team_need.get(e["pos"], 0.0))
                 if score > best_score:
                     best, best_score = e, score
             if best is None:
                 break
+            context = needs_summary(team_need, pos_ranks.get(owner, {}))
             taken.add(best["key"])
             top_available = next(e for e in board if e["key"] not in taken or e is best)
             need_here = team_need.get(best["pos"], 0.0)
-            if best is top_available:
+            pos_rank = pos_ranks.get(owner, {}).get(best["pos"])
+            if need_here >= 0.15:
+                reason = f"Fills a {best['pos']} need ({ordinal(pos_rank)} at {best['pos']})" if pos_rank else f"Fills a {best['pos']} need"
+            elif best is top_available:
                 reason = "Best available"
-            elif need_here > 0.05:
-                reason = f"Fills a {best['pos']} need"
             else:
                 reason = "Value pick"
             if owner in needs:
-                needs[owner][best["pos"]] = needs[owner].get(best["pos"], 0.0) - 0.15
+                needs[owner][best["pos"]] = needs[owner].get(best["pos"], 0.0) - 0.3
             picks.append({
                 "round": rnd,
                 "pick": slot,
@@ -540,6 +580,7 @@ def main():
                 "traded": owner != original,
                 "prospect": best["key"],
                 "reason": reason,
+                "context": context,
             })
 
     def public(e):
@@ -559,7 +600,8 @@ def main():
         "sources": counts,
         "picks": picks,
         "board": [public(e) for e in board],
-        "needs": {str(k): {p: round(v, 3) for p, v in n.items()} for k, n in team_needs(latest).items()},
+        "needs": {str(k): {p: round(v, 3) for p, v in n.items()} for k, n in start_needs.items()},
+        "needs_ranks": {str(k): v for k, v in pos_ranks.items()},
     }
     (DATA_DIR / "mock_draft.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     log(f"Wrote {len(picks)} picks and a {len(board)}-player board (production weight {w}).")

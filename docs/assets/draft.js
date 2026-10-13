@@ -92,6 +92,12 @@
       line.appendChild(teamLink(p.owner, p.owner_team));
       team.appendChild(line);
       if (p.traded) team.appendChild(el("div", `via ${p.original_team}`, "owner"));
+      if (p.context) {
+        const bits = [];
+        if (p.context.needs.length) bits.push(`Needs ${p.context.needs.join(", ")}`);
+        if (p.context.set.length) bits.push(`Set at ${p.context.set.join(", ")}`);
+        if (bits.length) team.appendChild(el("div", bits.join(" · "), "owner need-line"));
+      }
       head.appendChild(team);
       card.appendChild(head);
 
@@ -194,7 +200,8 @@
       `Blend: ${Math.round(w.consensus * 100)}% consensus, ${Math.round(w.production * 100)}% production right now. Production starts at 20% before the college season and grows to 40% as games are played.`,
       `League format: ${f.superflex ? "superflex" : "1-QB"} lineups, so value is multiplied by QB ${m.QB}, RB ${m.RB}, WR ${m.WR}, TE ${m.TE}.`,
       `Draft order: the projected order from the simulations, ${data.rounds} linear rounds, with traded picks going to their current owners.`,
-      `Each pick: the owner takes the best value, nudged toward positions where its roster has scored less than the league average. Each pick at a position eases that need.`,
+      `Team needs: each roster's starters at every position are valued with dynasty values and compared with the league. Thin positions get a boost of up to 32%; deep positions are marked down. In a 1-QB league, a team with a starter-level QB and a real backup is "set at QB" and its QB prospects drop by about half.`,
+      `Each pick: the owner takes the best value after that need adjustment. Each pick at a position eases that need for later rounds.`,
     ];
     document.getElementById("method").replaceChildren(...items.map((t) => el("li", t)));
   }

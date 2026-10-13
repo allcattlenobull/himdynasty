@@ -127,7 +127,76 @@
   // ------------------------------------------------------------------ //
   // Shared result: odds for both teams, fair meter, roster change, notes
   // ------------------------------------------------------------------ //
-  function renderTradeResult(out, A, B, give, get, onAdd) {
+  function lineupNotes(A, B, imp) {
+    const box = el("div", null, "season-box");
+    box.appendChild(el("div", "This season's starting lineups", "group-title"));
+    const ul = el("ul", null, "notes");
+    let changed = false;
+    for (const [t, side] of [[A, imp.a], [B, imp.b]]) {
+      const { in: ins, out: outs } = side.starters;
+      if (!ins.length && !outs.length) {
+        ul.appendChild(el("li", `${t.name}: no change to the projected starting lineup.`));
+        continue;
+      }
+      changed = true;
+      const fmtP = (a) => `${a.name} (${(a.proj || 0).toFixed(1)}/wk${a.injury ? `, ${a.injury}` : ""})`;
+      const parts = [];
+      if (ins.length) parts.push(`in: ${ins.map(fmtP).join(", ")}`);
+      if (outs.length) parts.push(`out: ${outs.map(fmtP).join(", ")}`);
+      ul.appendChild(el("li", `${t.name} ${parts.join(" · ")} → ${side.weekly >= 0 ? "+" : "−"}${Math.abs(side.weekly).toFixed(1)} pts/week.`));
+    }
+    box.appendChild(ul);
+    if (!changed) {
+      box.appendChild(el("p", "Neither team's projected starting lineup changes this season, so playoff, title, and #1 pick odds stay where they are. This trade is about long-term dynasty value; the fair meter below covers that.", "muted small"));
+    }
+    return box;
+  }
+
+  /* Ways to even a lopsided trade: the team that's ahead adds one asset, or the
+     team that's overpaying takes one asset back. */
+  function evenOptions(A, B, give, get) {
+    const ev = E.evaluate(A, B, give, get);
+    const gap0 = ev.dA - ev.dB;
+    const aheadIsA = gap0 > 0;
+    const opts = [];
+    const addFrom = aheadIsA ? A : B;
+    const sending = new Set((aheadIsA ? give : get).map((a) => a.id));
+    const tryAdd = (extra) => {
+      const e2 = aheadIsA ? E.evaluate(A, B, give.concat(extra), get) : E.evaluate(A, B, give, get.concat(extra));
+      return { gap: Math.abs(e2.dA - e2.dB), label: e2.verdict.label };
+    };
+    const singles = [];
+    for (const a of addFrom.assets) {
+      if (sending.has(a.id) || !(a.value > 0) || a.pos === "K" || a.pos === "DEF") continue;
+      const r = tryAdd([a]);
+      singles.push({ kind: "add", side: aheadIsA ? "A" : "B", team: addFrom, assets: [a], gap: r.gap, label: r.label });
+    }
+    opts.push(...singles);
+    // If no single asset gets it to fair, try two-piece packages from the most useful candidates.
+    if (!singles.some((o) => o.label.includes("Fair"))) {
+      const pool = singles.slice().sort((x, y) => x.gap - y.gap).slice(0, 14).map((o) => o.assets[0]);
+      for (let i = 0; i < pool.length; i++) {
+        for (let j = i + 1; j < pool.length; j++) {
+          const r = tryAdd([pool[i], pool[j]]);
+          opts.push({ kind: "add", side: aheadIsA ? "A" : "B", team: addFrom, assets: [pool[i], pool[j]], gap: r.gap, label: r.label });
+        }
+      }
+    }
+    const behindList = aheadIsA ? get : give;
+    if (behindList.length > 1) {
+      for (const a of behindList) {
+        const e2 = aheadIsA ? E.evaluate(A, B, give, get.filter((x) => x.id !== a.id)) : E.evaluate(A, B, give.filter((x) => x.id !== a.id), get);
+        opts.push({ kind: "remove", side: aheadIsA ? "B" : "A", team: aheadIsA ? B : A, assets: [a], gap: Math.abs(e2.dA - e2.dB), label: e2.verdict.label });
+      }
+    }
+    // Fair results first, then the smallest remaining gap; prefer fewer pieces on ties.
+    const fair = (o) => (o.label.includes("Fair") ? 0 : 1);
+    return opts.filter((o) => o.gap < Math.abs(gap0) * 0.7)
+      .sort((x, y) => fair(x) - fair(y) || x.assets.length - y.assets.length || x.gap - y.gap)
+      .slice(0, 4);
+  }
+
+  function renderTradeResult(out, A, B, give, get, onAdd, onRemove) {
     out.replaceChildren();
     if (!give.length && !get.length) {
       out.appendChild(el("p", "Add assets to either side to see how the trade moves both teams.", "muted"));
@@ -139,6 +208,7 @@
       odds.appendChild(oddsBlock(A.rid === me ? `You (${A.name})` : A.name, A.rid, imp.a, A.rid === me || B.rid !== me));
       odds.appendChild(oddsBlock(B.rid === me ? `You (${B.name})` : B.name, B.rid, imp.b, B.rid === me));
       out.appendChild(odds);
+      if (give.length || get.length) out.appendChild(lineupNotes(A, B, imp));
     }
     if (!give.length || !get.length) {
       out.appendChild(el("p", `${!give.length ? A.name : B.name} isn't sending anything yet. Add assets to both sides for the fair meter.`, "muted"));
@@ -168,29 +238,28 @@
     out.appendChild(grid);
     if (ev.notes.length) out.appendChild(notesList(ev.notes));
 
-    // Balancing suggestions: one more asset from the team that is ahead.
+    // How to even it
     if (!ev.verdict.label.includes("Fair") && onAdd) {
-      const aheadIsA = ev.dA - ev.dB > 0;
-      const fromTeam = aheadIsA ? A : B;
-      const taken = new Set((aheadIsA ? give : get).map((a) => a.id));
-      const scored = fromTeam.assets
-        .filter((a) => !taken.has(a.id) && a.value > 0 && a.pos !== "K" && a.pos !== "DEF")
-        .map((a) => {
-          const e2 = E.evaluate(A, B, aheadIsA ? give.concat([a]) : give, aheadIsA ? get : get.concat([a]));
-          return { a, gap: Math.abs(e2.dA - e2.dB), ok: e2.dA > -50 && e2.dB > -50 };
-        })
-        .filter((x) => x.ok).sort((x, y) => x.gap - y.gap).slice(0, 3);
-      if (scored.length) {
-        const box = el("div", null, "balance");
-        box.appendChild(el("span", `To even it out, ${fromTeam.name} could add: `, "muted"));
-        for (const sc of scored) {
-          const b = el("button", `${sc.a.name} (${fmtNum(sc.a.value)})`, "chip");
-          b.type = "button";
-          b.addEventListener("click", () => onAdd(aheadIsA ? "A" : "B", sc.a.id));
-          box.appendChild(b);
-        }
-        out.appendChild(box);
+      const opts = evenOptions(A, B, give, get);
+      const box = el("div", null, "even-box");
+      box.appendChild(el("div", "How to even it", "group-title"));
+      if (!opts.length) {
+        box.appendChild(el("p", "No single add or removal gets this close to fair. Try swapping a bigger piece.", "muted small"));
       }
+      for (const o of opts) {
+        const names = o.assets.map((a) => `${a.name} (${fmtNum(a.value)})`).join(" + ");
+        const text = o.kind === "add" ? `${o.team.name} adds ${names}` : `${o.team.name} takes back ${names}`;
+        const b = el("button", null, "even-option");
+        b.type = "button";
+        b.appendChild(el("span", text, "team"));
+        b.appendChild(el("span", `→ ${o.label}`, "owner"));
+        b.addEventListener("click", () => {
+          if (o.kind === "add") o.assets.forEach((a, i) => onAdd(o.side, a.id, i < o.assets.length - 1));
+          else onRemove(o.side, o.assets[0].id);
+        });
+        box.appendChild(b);
+      }
+      out.insertBefore(box, out.querySelector(".result-grid"));
     }
   }
 
@@ -256,7 +325,8 @@
     writeCalcHash();
     renderTradeResult(document.getElementById("calc-result"), team(calc.a), team(calc.b),
       calc.A.map((id) => byId[id]), calc.B.map((id) => byId[id]),
-      (side, id) => { calc[side].push(id); renderCalc(); });
+      (side, id, defer) => { if (!calc[side].includes(id)) calc[side].push(id); if (!defer) renderCalc(); },
+      (side, id) => { calc[side] = calc[side].filter((x) => x !== id); renderCalc(); });
   }
 
   function writeCalcHash() {
@@ -360,7 +430,8 @@
     if (!document.getElementById("tool-build").hidden) writeHash("build");
     renderTradeResult(document.getElementById("build-result"), team(build.a), team(build.b),
       [...build.ga].map((id) => byId[id]).filter(Boolean), [...build.gb].map((id) => byId[id]).filter(Boolean),
-      (side, id) => { (side === "A" ? build.ga : build.gb).add(id); renderRosterPick(side); renderBuildResult(); });
+      (side, id, defer) => { (side === "A" ? build.ga : build.gb).add(id); if (!defer) { renderRosterPick(side); renderBuildResult(); } },
+      (side, id) => { (side === "A" ? build.ga : build.gb).delete(id); renderRosterPick(side); renderBuildResult(); });
   }
 
   function fillTeamSelect(select, value) {
@@ -485,7 +556,9 @@
           card.appendChild(odds);
         }
         card.appendChild(el("div", `Roster value: yours ${signed(r.ev.dA)} · theirs ${signed(r.ev.dB)} · ${r.ev.verdict.label}`, "small muted"));
-        const why = r.ev.notes.filter((n) => n.includes("would start") || n.includes("younger") || n.includes("older")).slice(0, 2);
+        const why = [];
+        if (r.imp && r.imp.a.starters.in.length) why.push(`${r.imp.a.starters.in.map((a) => a.name).join(", ")} would start for you this season.`);
+        why.push(...r.ev.notes.filter((n) => n.includes("younger") || n.includes("older") || n.includes("QBs")).slice(0, 2 - why.length));
         if (why.length) card.appendChild(notesList(why));
         const actions = el("div", null, "idea-actions");
         const b = el("button", "Open in calculator", "chip");

@@ -27,7 +27,7 @@ window.TradeSim = (sim, fmt) => {
   const actual = new Map((sim.actual || []).map(([a, b, w]) => [`${a}-${b}`, w]));
 
   /* Best projected weekly lineup points for a set of assets. */
-  function lineupPoints(assets) {
+  function lineup(assets) {
     const pool = assets.filter((a) => a.kind === "player").sort((a, b) => (b.proj || 0) - (a.proj || 0));
     const used = new Set();
     let total = 0;
@@ -35,8 +35,9 @@ window.TradeSim = (sim, fmt) => {
       const p = pool.find((x) => !used.has(x.id) && SLOT_ELIGIBLE[slot].includes(x.pos));
       if (p) { used.add(p.id); total += p.proj || 0; }
     }
-    return total;
+    return { total, ids: used };
   }
+  const lineupPoints = (assets) => lineup(assets).total;
 
   // Seeded random numbers (mulberry32) and normal draws.
   function rng(seed) {
@@ -151,19 +152,30 @@ window.TradeSim = (sim, fmt) => {
   function impact(teamA, teamB, give, get, n = 4000, baseline = null) {
     const giveIds = new Set(give.map((a) => a.id));
     const getIds = new Set(get.map((a) => a.id));
-    const aBefore = lineupPoints(teamA.assets);
-    const bBefore = lineupPoints(teamB.assets);
-    const aAfter = lineupPoints(teamA.assets.filter((a) => !giveIds.has(a.id)).concat(get));
-    const bAfter = lineupPoints(teamB.assets.filter((a) => !getIds.has(a.id)).concat(give));
+    const aB = lineup(teamA.assets);
+    const bB = lineup(teamB.assets);
+    const aA = lineup(teamA.assets.filter((a) => !giveIds.has(a.id)).concat(get));
+    const bA = lineup(teamB.assets.filter((a) => !getIds.has(a.id)).concat(give));
+    const aBefore = aB.total, bBefore = bB.total, aAfter = aA.total, bAfter = bA.total;
+    const moves = (before, after, pool) => ({
+      in: pool.filter((a) => after.ids.has(a.id) && !before.ids.has(a.id)),
+      out: pool.filter((a) => before.ids.has(a.id) && !after.ids.has(a.id)),
+    });
+    const poolA = teamA.assets.concat(get), poolB = teamB.assets.concat(give);
     const before = baseline || run({}, n);
     const after = run({ [teamA.rid]: aAfter - aBefore, [teamB.rid]: bAfter - bBefore }, n);
-    const side = (rid, lb, la) => ({
+    const side = (rid, lb, la, mv) => ({
       weekly: la - lb,
+      starters: mv,
       playoff: [before.playoff[rid], after.playoff[rid]],
       champ: [before.champ[rid], after.champ[rid]],
       first: [before.first[rid], after.first[rid]],
     });
-    return { a: side(teamA.rid, aBefore, aAfter), b: side(teamB.rid, bBefore, bAfter), before };
+    return {
+      a: side(teamA.rid, aBefore, aAfter, moves(aB, aA, poolA)),
+      b: side(teamB.rid, bBefore, bAfter, moves(bB, bA, poolB)),
+      before,
+    };
   }
 
   return { run, impact, lineupPoints };

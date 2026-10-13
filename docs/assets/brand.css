@@ -896,3 +896,29 @@ body.no-scroll { overflow: hidden; }
 .meter-ends span:nth-child(2) { font-family: var(--display); letter-spacing: 0.1em; text-transform: uppercase; }
 .idea-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .odds-tile .owner { white-space: normal; overflow: visible; }
+
+/* Trade result: lineup and evening */
+.season-box { background: var(--bg); border: 1px solid var(--line); padding: 0.6rem 0.8rem 0.75rem; margin-bottom: 1rem; }
+.season-box .group-title { margin-top: 0; }
+.season-box .notes { margin-top: 0.3rem; }
+.even-box { background: var(--bg); border: 1px solid var(--red); padding: 0.6rem 0.8rem 0.8rem; margin-bottom: 1rem; display: grid; gap: 0.45rem; }
+.even-box .group-title { margin-top: 0; }
+.even-option { display: flex; flex-wrap: wrap; gap: 0.25rem 0.6rem; align-items: baseline; text-align: left; background: var(--raise); border: 1px solid var(--line); color: var(--text); padding: 0.5rem 0.7rem; cursor: pointer; font: inherit; }
+.even-option:hover { border-color: var(--red); }
+.even-option::before { content: "+"; font-family: var(--display); color: var(--red); }
+.need-line { color: var(--muted); font-size: 0.75rem; }
+
+/* Header team picker */
+.team-jump { flex: none; }
+.team-jump select {
+  font: 700 0.8rem var(--body);
+  color: var(--text);
+  background: var(--raise);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  max-width: 170px;
+  cursor: pointer;
+}
+.team-jump select:hover, .team-jump select:focus { border-color: var(--red); outline: none; }
+@media (max-width: 600px) { .team-jump select { max-width: 92px; padding: 0.3rem 0.45rem; } }

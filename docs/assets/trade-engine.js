@@ -152,15 +152,6 @@ window.TradeEngine = (fmt) => {
       const qbsAfter = (team === teamA ? aAfterAssets : bAfterAssets).filter((a) => a.pos === "QB").length;
       if (!fmt.superflex && qbsIn >= 2) notes.push(`${name} gets ${qbsIn} QBs but can start only ${qbStarters}.`);
       else if (!fmt.superflex && qbsIn && qbsAfter >= 3) notes.push(`${name} would carry ${qbsAfter} QBs in a ${qbStarters}-QB league.`);
-      const newStarters = received.filter((a) => after.starters.has(a.id));
-      if (newStarters.length) notes.push(`${newStarters.map((a) => a.name).join(", ")} would start for ${name}.`);
-      const benched = received.filter((a) => a.kind === "player" && !after.starters.has(a.id));
-      if (benched.length && received.length > 1) notes.push(`${benched.map((a) => a.name).join(", ")} would sit on ${name}'s bench.`);
-      const lostStarters = sent.filter((a) => before.starters.has(a.id));
-      const lineupChange = after.lineupValue - before.lineupValue;
-      if (lostStarters.length && lineupChange < 0) {
-        notes.push(`${name} loses starter${lostStarters.length > 1 ? "s" : ""} ${lostStarters.map((a) => a.name).join(", ")}; starting lineup value drops ${Math.round(-lineupChange).toLocaleString()}.`);
-      }
       if (after.cuts.length) notes.push(`${name} would have to cut ${after.cuts.length} to fit the roster: ${after.cuts.map((a) => a.name).join(", ")}.`);
       const ageIn = avgAge(received), ageOut = avgAge(sent);
       if (ageIn && ageOut && Math.abs(ageIn - ageOut) >= 1.5) {
