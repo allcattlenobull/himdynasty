@@ -427,7 +427,7 @@ window.HIM = (() => {
       if (!reduce) {
         requestAnimationFrame(() => {
           const w = run.scrollWidth;
-          track.style.setProperty("--tk-dur", `${Math.max(30, w / 70)}s`);
+          track.style.setProperty("--tk-dur", `${Math.max(60, w / 32)}s`); // ~32 px per second
           track.classList.add("tk-move");
         });
       }

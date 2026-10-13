@@ -38,18 +38,74 @@
     return box;
   }
 
-  function renderHero(t, playoffTeams, ts) {
+  // Championships for the manager who runs this roster now (careers follow
+  // the Sleeper account, so a renamed team keeps its titles). The champion of
+  // the most recent finished season is the reigning champ and wears the crown.
+  function titlesFor(hist, rid) {
+    if (!hist || !hist.managers) return null;
+    const mgr = Object.values(hist.managers).find((m) => m.current_rid === rid);
+    if (!mgr || !mgr.titles || !mgr.titles.length) return null;
+    const done = (hist.seasons || []).filter((x) => x.complete && x.champion).map((x) => x.season).sort();
+    const latest = done[done.length - 1];
+    const years = mgr.titles.slice().sort().reverse();
+    return { years, reigning: years.includes(latest) ? latest : null, user: mgr.user };
+  }
+
+  const SVGNS = "http://www.w3.org/2000/svg";
+  function svgIcon(viewBox, shapes, cls) {
+    const svg = document.createElementNS(SVGNS, "svg");
+    svg.setAttribute("viewBox", viewBox);
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("class", cls);
+    for (const [tag, attrs] of shapes) {
+      const n = document.createElementNS(SVGNS, tag);
+      for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+      svg.appendChild(n);
+    }
+    return svg;
+  }
+  // The crown from the HIM logo.
+  const crownIcon = (cls = "crown-icon") => svgIcon("26 9 48 33", [
+    ["polygon", { points: "27,35 32,17 41,28 50,10 59,28 68,17 73,35" }],
+    ["polygon", { points: "27,35 73,35 71,41 29,41" }],
+  ], cls);
+  const trophyIcon = () => svgIcon("0 0 24 24", [
+    ["path", { d: "M7 3h10v2h4v3a5 5 0 0 1-4.6 5A5 5 0 0 1 13 16.9V19h3v2H8v-2h3v-2.1A5 5 0 0 1 7.6 13 5 5 0 0 1 3 8V5h4V3zm0 4H5v1a3 3 0 0 0 2 2.8V7zm10 0v3.8A3 3 0 0 0 19 8V7h-2z" }],
+  ], "trophy-icon");
+
+  function champBadges(titles) {
+    const row = el("div", null, "champ-badges");
+    for (const y of titles.years) {
+      const reigning = y === titles.reigning;
+      const b = el("a", null, `champ-badge${reigning ? " reigning" : ""}`);
+      b.href = `history.html#seasons/${encodeURIComponent(y)}`;
+      b.title = reigning ? `Reigning champion: won the ${y} title` : `${y} champion`;
+      b.appendChild(reigning ? crownIcon("crown-icon") : trophyIcon());
+      const txt = el("span");
+      txt.append(el("span", reigning ? "Reigning champ" : "Champion", "cb-k"), el("span", y, "cb-y"));
+      b.appendChild(txt);
+      row.appendChild(b);
+    }
+    return row;
+  }
+
+  function renderHero(t, playoffTeams, ts, titles) {
     const hero = document.getElementById("hero");
     hero.style.setProperty("--team-color", teamVar(t.roster_id));
     hero.replaceChildren();
 
     const avatarUrl = safeUrl(t.avatar);
+    const avWrap = el("div", null, "team-avatar-wrap");
     if (avatarUrl) {
-      const a = img(avatarUrl, "team-avatar", `${t.team} avatar`);
-      hero.appendChild(a);
+      avWrap.appendChild(img(avatarUrl, "team-avatar", `${t.team} avatar`));
     } else {
-      hero.appendChild(el("div", (t.team || "?").trim().charAt(0).toUpperCase(), "team-avatar fallback"));
+      avWrap.appendChild(el("div", (t.team || "?").trim().charAt(0).toUpperCase(), "team-avatar fallback"));
     }
+    if (titles && titles.reigning) {
+      avWrap.classList.add("is-champ");
+      avWrap.appendChild(crownIcon("avatar-crown"));
+    }
+    hero.appendChild(avWrap);
 
     const text = el("div");
     text.appendChild(el("h1", t.team, "team-title"));
@@ -59,11 +115,13 @@
     const record = r.ties ? `${r.wins}-${r.losses}-${r.ties}` : `${r.wins}-${r.losses}`;
     const inPlayoffs = t.rank <= playoffTeams ? "in playoff position" : "outside the playoffs";
     text.appendChild(el("p", `${t.owner} · ${record} · #${t.rank} in the league, ${inPlayoffs}`, "team-sub"));
-    text.appendChild(buzz);
+    if (titles) text.appendChild(champBadges(titles));
+    const links = el("div", null, "hero-links");
     const career = el("a", "Career & history →", "chip buzz-link");
     career.href = `history.html#managers/rid:${encodeURIComponent(t.roster_id)}`;
-    text.appendChild(career);
-    text.appendChild(shareButton(() => `share/team-${encodeURIComponent(t.roster_id)}.html`, `${t.team} · HIM Dynasty`, "Share team"));
+    const share = shareButton(() => `share/team-${encodeURIComponent(t.roster_id)}.html`, `${t.team} · HIM Dynasty`, "Share team");
+    links.append(buzz, career, share);
+    text.appendChild(links);
     hero.appendChild(text);
 
     const stats = el("div", null, "stats");
@@ -395,9 +453,10 @@
     let trade = null;
     let analysis = null;
     let analytics = null;
+    let hist = null;
     try {
       const get = (u) => fetch(u, { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
-      [data, trade, analysis, analytics] = await Promise.all([loadData(), get("data/trade.json"), get("data/analysis.json"), get("data/analytics.json")]);
+      [data, trade, analysis, analytics, hist] = await Promise.all([loadData(), get("data/trade.json"), get("data/analysis.json"), get("data/analytics.json"), get("data/history.json")]);
     } catch (err) {
       document.getElementById("hero").replaceChildren(el("p", `Could not load league data (${err.message}).`, "error"));
       return;
@@ -420,7 +479,7 @@
 
     renderChips(data.standings, id);
     const ts = trade && trade.teams ? trade.teams[id] : null;
-    renderHero(t, data.league.playoff_teams, ts);
+    renderHero(t, data.league.playoff_teams, ts, titlesFor(hist, Number(id)));
     renderPicks(ts, trade, Number(id));
     if (analysis && analysis.teams) renderAnalysis(analysis.teams[id], analysis.generated_at);
     if (analytics) renderPlayerAnalytics(analytics, Number(id));
