@@ -6,7 +6,7 @@ on:
     # so there are several off-peak attempts between 09:00 and 12:59 UTC
     # (4:00-7:59 AM CDT, 3:00-6:59 AM CST). The gate below makes the first
     # attempt at or after 4:00 AM Central do the update; later ones skip.
-    - cron: "7,27,47 9-12 * * *"
+    - cron: "8,28,48 9-12 * * *"
   workflow_dispatch:
 
 permissions:
