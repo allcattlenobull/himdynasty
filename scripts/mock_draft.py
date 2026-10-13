@@ -750,6 +750,8 @@ def main():
                          * priors.get(rnd, {}).get(e["pos"], 1.0)
                          * tendencies.get(owner, {}).get("pref", {}).get(e["pos"], 1.0)
                          * (1 + 0.8 * team_need.get(e["pos"], 0.0)))
+                if e["pos"] == "QB" and not superflex and start_needs.get(owner, {}).get("QB", 0.0) <= -0.6:
+                    score *= 0.6  # set at QB in a 1-QB league: a third QB rarely plays
                 if score > best_score:
                     best, best_score = e, score
             if best is None:
@@ -772,7 +774,7 @@ def main():
             else:
                 reason = "Value pick"
             if owner in needs:
-                needs[owner][best["pos"]] = needs[owner].get(best["pos"], 0.0) - 0.3
+                needs[owner][best["pos"]] = max(-0.6, needs[owner].get(best["pos"], 0.0) - 0.2)
             picks.append({
                 "round": rnd,
                 "pick": slot,
