@@ -104,8 +104,9 @@ def main():
                 continue
             videos.append({"id": vid, "title": title, "channel": unescape(sn.get("channelTitle") or ""),
                            "date": (sn.get("publishedAt") or "")[:10]})
-            if len(videos) == 5:
-                break
+        # Prefer clips about this season over recaps of last season.
+        videos.sort(key=lambda v: (str(season - 1) in v["title"] and str(season) not in v["title"]))
+        videos = videos[:5]
         players[e["key"]] = {"fetched": today.isoformat(), "query": query, "videos": videos}
 
     keep = {e["key"] for e in board}
