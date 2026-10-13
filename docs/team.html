@@ -25,6 +25,7 @@
         <a href="league.html#draft">Draft</a>
         <a href="draft.html">Mock</a>
         <a href="trade.html">Trade</a>
+        <a href="buzz.html">Buzz</a>
       </nav>
       <div data-theme-toggle></div>
     </div>
@@ -36,6 +37,18 @@
 
   <main class="league-main">
     <div id="hero" class="team-hero"><p class="muted">Loading team…</p></div>
+
+    <section class="panel verdict-panel" id="analysis" hidden>
+      <div class="panel-head">
+        <h2>The Verdict</h2>
+        <p class="note" id="analysis-note"></p>
+      </div>
+      <div id="verdict" class="verdict-row"></div>
+      <div class="him-ass">
+        <div class="him-col"><h3>Why you are HIM</h3><ul id="him-list"></ul></div>
+        <div class="ass-col"><h3>Why you are Ass</h3><ul id="ass-list"></ul></div>
+      </div>
+    </section>
 
     <div class="split team">
       <section class="panel" id="roster-panel">
@@ -66,6 +79,7 @@
     <section class="panel">
       <div class="panel-head"><h2>Season Trend</h2></div>
       <div class="chart-card" style="margin-top:0">
+        <div class="chart-head"><h3>Odds by week</h3></div>
         <div class="chart-box"><canvas id="chart-team" aria-label="Playoff, title, and first pick odds by week"></canvas></div>
       </div>
     </section>

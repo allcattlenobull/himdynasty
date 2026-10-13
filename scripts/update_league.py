@@ -101,6 +101,7 @@ def player_card(pid, players):
         "age": p.get("age"),
         "exp": p.get("years_exp"),
         "injury": p.get("injury_status"),
+        "espn_id": p.get("espn_id"),
     }
 
 
@@ -456,8 +457,24 @@ def projected_draft_order(rids, st, ranked, model, playoff_teams, actual):
     return order, rounds
 
 
+AVAILABILITY = {"IR": 0.0, "PUP": 0.0, "Sus": 0.0, "NA": 0.0, "Out": 0.5, "Doubtful": 0.7, "Questionable": 0.95}
+
+
+def player_rates(schedule, done):
+    """League-wide fantasy points per game for every player, from weeks he scored."""
+    total, games = {}, {}
+    for wk in schedule[:done]:
+        for pts_by_player in wk["player_pts"].values():
+            for pid, pts in pts_by_player.items():
+                if pts:
+                    total[pid] = total.get(pid, 0.0) + pts
+                    games[pid] = games.get(pid, 0) + 1
+    return {pid: total[pid] / games[pid] for pid in total}
+
+
 def build_team_pages(teams, rids, schedule, done, players, league, model, ranked, sims, st, playoff_start):
     """Roster and schedule for each team's page."""
+    rates = player_rates(schedule, done)
     starting_slots = [x for x in (league.get("roster_positions") or []) if x not in ("BN", "IR", "TAXI")]
     rank_of = {r: i for i, r in enumerate(ranked, start=1)}
     pages = {}
@@ -476,6 +493,10 @@ def build_team_pages(teams, rids, schedule, done, players, league, model, ranked
             c = player_card(pid, players)
             c["pts"] = round(season_pts.get(pid, 0.0), 2)
             c["last"] = round(last_pts[pid], 2) if pid in last_pts else None
+            ppg = rates.get(pid, 0.0)
+            c["ppg"] = round(ppg, 2)
+            # Rest-of-season weekly projection: scoring rate times availability.
+            c["proj"] = round(ppg * AVAILABILITY.get(c.get("injury") or "", 1.0), 2)
             return c
 
         starters = []
@@ -652,6 +673,19 @@ def main():
         for slot, r in enumerate(draft_order, start=1)
     ]
 
+    _, _, maxes_now = tally(rids, schedule[:done], median)
+    max_model_now = score_model(maxes_now, rids, DEFAULT_MEAN * 1.15)
+    sim_inputs = {
+        "remaining": [[list(g) for g in wk["games"]] for wk in schedule[done:]],
+        "base": {str(r): {"wins": st[r]["wins"] + 0.5 * st[r]["ties"], "pf": round(st[r]["pf"], 2),
+                          "max_pf": round(st[r]["max_pf"], 2)} for r in rids},
+        "model": {str(r): [round(x, 3) for x in model[r]] for r in rids},
+        "max_model": {str(r): [round(x, 3) for x in max_model_now[r]] for r in rids},
+        "playoff_teams": playoff_teams,
+        "median": median,
+        "actual": [[min(k), max(k), w] for k, w in actual.items()],
+    }
+
     team_pages = build_team_pages(teams, rids, schedule, done, players, league, model,
                                   ranked, sims, st, playoff_start)
 
@@ -683,6 +717,7 @@ def main():
             "series": {str(r): series[r] for r in rids},
         },
         "teams": team_pages,
+        "sim": sim_inputs,
         "diagnostics": {"max_pf_check": diagnostics},
     }
 

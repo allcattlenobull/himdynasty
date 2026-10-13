@@ -53,10 +53,13 @@
 
     const text = el("div");
     text.appendChild(el("h1", t.team, "team-title"));
+    const buzz = el("a", "Team Buzz →", "chip buzz-link");
+    buzz.href = `buzz.html?team=${encodeURIComponent(t.roster_id)}`;
     const r = t.record;
     const record = r.ties ? `${r.wins}-${r.losses}-${r.ties}` : `${r.wins}-${r.losses}`;
     const inPlayoffs = t.rank <= playoffTeams ? "in playoff position" : "outside the playoffs";
     text.appendChild(el("p", `${t.owner} · ${record} · #${t.rank} in the league, ${inPlayoffs}`, "team-sub"));
+    text.appendChild(buzz);
     hero.appendChild(text);
 
     const stats = el("div", null, "stats");
@@ -79,6 +82,33 @@
       );
     }
     hero.appendChild(stats);
+  }
+
+  // ------------------------------------------------------------------ //
+  // The Verdict (analysis)
+  // ------------------------------------------------------------------ //
+  function renderAnalysis(a, when) {
+    const panel = document.getElementById("analysis");
+    if (!a) return;
+    panel.hidden = false;
+    const row = document.getElementById("verdict");
+    row.replaceChildren();
+    const badge = el("div", null, `verdict-badge ${a.score >= 58 ? "him" : a.score < 42 ? "ass" : "mid"}`);
+    badge.appendChild(el("div", String(a.score), "verdict-score"));
+    badge.appendChild(el("div", "HIM score", "label"));
+    row.appendChild(badge);
+    const text = el("div");
+    text.appendChild(el("div", a.verdict, "verdict"));
+    text.appendChild(el("p", a.summary, "muted"));
+    row.appendChild(text);
+    const fill = (id, list) => {
+      const ul = document.getElementById(id);
+      ul.replaceChildren(...list.map((t) => el("li", t)));
+    };
+    fill("him-list", a.him);
+    fill("ass-list", a.ass);
+    document.getElementById("analysis-note").textContent =
+      `Written by The Analyst: generated automatically from league data every morning, so every line is backed by a number. Updated ${new Date(when).toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}.`;
   }
 
   // ------------------------------------------------------------------ //
@@ -308,11 +338,10 @@
   async function load() {
     let data;
     let trade = null;
+    let analysis = null;
     try {
-      [data, trade] = await Promise.all([
-        loadData(),
-        fetch("data/trade.json", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
-      ]);
+      const get = (u) => fetch(u, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+      [data, trade, analysis] = await Promise.all([loadData(), get("data/trade.json"), get("data/analysis.json")]);
     } catch (err) {
       document.getElementById("hero").replaceChildren(el("p", `Could not load league data (${err.message}).`, "error"));
       return;
@@ -337,6 +366,7 @@
     const ts = trade && trade.teams ? trade.teams[id] : null;
     renderHero(t, data.league.playoff_teams, ts);
     renderPicks(ts, trade, Number(id));
+    if (analysis && analysis.teams) renderAnalysis(analysis.teams[id], analysis.generated_at);
     document.getElementById("roster").replaceChildren(renderRoster(t.roster));
     document.getElementById("schedule").replaceChildren(renderSchedule(t.schedule, t.playoffs_start_week));
     renderTrend(data.history, t.roster_id);

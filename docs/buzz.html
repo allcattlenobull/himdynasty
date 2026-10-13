@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buzz · HIM Dynasty</title>
+  <meta name="theme-color" content="#09090b">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/brand.css">
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-row">
+      <a class="brand" href="index.html" aria-label="HIM Dynasty home">
+        <img src="assets/logo.svg" alt="" width="40" height="40">
+        <span class="wordmark"><span class="wm-him">HIM</span><span class="wm-dyn">DYNASTY</span></span>
+      </a>
+      <nav class="nav" aria-label="League">
+        <a href="league.html#standings">Standings</a>
+        <a href="draft.html">Mock</a>
+        <a href="trade.html">Trade</a>
+        <a href="buzz.html" aria-current="page">Buzz</a>
+      </nav>
+      <div data-theme-toggle></div>
+    </div>
+  </header>
+
+  <main class="league-main">
+    <div class="strip">
+      <p class="kicker">The <em>Buzz</em></p>
+      <p class="updated" id="updated">Loading…</p>
+    </div>
+
+    <div class="buzz-controls panel">
+      <div class="round-tabs" id="scope-tabs" role="tablist" aria-label="Scope"></div>
+      <div class="buzz-pickers">
+        <label>Team <select id="team-pick"></select></label>
+        <label>Player <input id="player-pick" type="search" list="player-list" placeholder="Search a rostered player…"></label>
+        <datalist id="player-list"></datalist>
+      </div>
+      <p class="scope-title" id="scope-title"></p>
+    </div>
+
+    <div class="buzz-grid">
+      <section class="panel">
+        <div class="panel-head">
+          <h2>News</h2>
+          <p class="note">ESPN and RotoWire player news, collected every morning for every rostered player. A single player also pulls the newest items live.</p>
+        </div>
+        <div id="news"></div>
+      </section>
+
+      <div class="buzz-side">
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Live Social</h2>
+            <p class="note">Newest Bluesky posts that mention <span id="social-who">these players</span>. Refreshes every two minutes while open.</p>
+          </div>
+          <div class="x-links" id="x-links"></div>
+          <div id="social"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Insiders on X</h2>
+            <p class="note">Live timelines through X's official embed. If a timeline stays blank, X wants you signed in; the buttons open it on X.</p>
+          </div>
+          <div class="round-tabs" id="x-tabs" role="tablist" aria-label="Insider timelines"></div>
+          <div id="x-embed" class="x-embed"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Trending on Sleeper</h2>
+            <p class="note">Most-added players across Sleeper in the last 24 hours.</p>
+          </div>
+          <ol id="trending" class="trending"></ol>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <img src="assets/logo.svg" alt="" width="28" height="28">
+    HIM DYNASTY · ARE YOU HIM?
+    <br><a class="credit" href="mailto:paforprince@gmail.com">Built by P Saah</a>
+  </footer>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/buzz.js"></script>
+</body>
+</html>

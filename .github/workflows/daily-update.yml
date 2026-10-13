@@ -50,6 +50,16 @@ jobs:
         continue-on-error: true
         run: python scripts/trade_values.py
 
+      - name: Write team analysis
+        if: steps.gate.outputs.run == 'true'
+        continue-on-error: true
+        run: python scripts/analysis.py
+
+      - name: Collect player news
+        if: steps.gate.outputs.run == 'true'
+        continue-on-error: true
+        run: python scripts/news.py
+
       - name: Build the rookie mock draft
         if: steps.gate.outputs.run == 'true'
         # A source being down should never block the league update.

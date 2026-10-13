@@ -24,6 +24,7 @@
         <a href="league.html#draft">Draft</a>
         <a href="draft.html">Mock</a>
         <a href="trade.html" aria-current="page">Trade</a>
+        <a href="buzz.html">Buzz</a>
       </nav>
       <div data-theme-toggle></div>
     </div>
@@ -33,6 +34,11 @@
     <div class="strip">
       <p class="kicker">Trade <em>Center</em></p>
       <p class="updated" id="updated">Loading values…</p>
+    </div>
+
+    <div class="me-bar">
+      <label class="me-select">You are <select id="me" aria-label="Your team"></select></label>
+      <p class="note">Every trade is measured by what it does to <strong>your</strong> playoff odds, title odds, and chance at the #1 pick, using the same season simulation as the standings.</p>
     </div>
 
     <div class="round-tabs tool-tabs" role="tablist" aria-label="Trade tools">
@@ -90,7 +96,7 @@
     <section class="panel tool" id="tool-ideas" hidden>
       <div class="panel-head">
         <h2>Trade Ideas</h2>
-        <p class="note">Trades where both rosters come out ahead after context: lineup fit, depth, roster limits, and each team's window. Raw values stay within about 30% so offers are realistic.</p>
+        <p class="note">Trades where both rosters come out ahead after context (lineup fit, depth, roster limits, each team's window), ranked by what they do for your odds. Raw values stay within about 30% so offers are realistic.</p>
       </div>
       <div class="idea-controls">
         <label>My team <select id="idea-team"></select></label>
@@ -118,6 +124,7 @@
 
   <script src="assets/common.js"></script>
   <script src="assets/trade-engine.js"></script>
+  <script src="assets/trade-sim.js"></script>
   <script src="assets/trade.js"></script>
 </body>
 </html>

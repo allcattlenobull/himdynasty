@@ -147,7 +147,8 @@ def main():
             dp = dp_players.get(p["id"]) or dp_by_name.get(norm(p["name"]))
             value = dp["value"] if dp and dp["pos"] == p["pos"] else (dp["value"] if dp else 0.0)
             a = {"id": f"p{p['id']}", "kind": "player", "name": p["name"], "pos": p["pos"], "nfl": p["nfl"],
-                 "age": p.get("age") or (dp or {}).get("age"), "value": round(value), "owner": rid, "section": section}
+                 "age": p.get("age") or (dp or {}).get("age"), "value": round(value), "owner": rid, "section": section,
+                 "ppg": p.get("ppg", 0.0), "proj": p.get("proj", 0.0), "injury": p.get("injury")}
             assets.append(a)
             owner_assets[rid].append(a)
             rostered.add(p["id"])

@@ -92,5 +92,43 @@ window.HIM = (() => {
       when.toLocaleString([], { dateStyle: "medium", timeStyle: "short" });
   }
 
+  // Full-screen charts: every .chart-card gets an Expand button. Uses a fixed
+  // overlay (not the Fullscreen API) so it also works on iPhone Safari.
+  function initExpand() {
+    let open = null;
+    const close = () => {
+      if (!open) return;
+      open.card.classList.remove("is-expanded");
+      open.button.textContent = "⤢ Expand";
+      open.button.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("no-scroll");
+      open = null;
+    };
+    document.querySelectorAll(".chart-card").forEach((card) => {
+      let head = card.querySelector(".chart-head");
+      if (!head) {
+        head = el("div", null, "chart-head");
+        card.insertBefore(head, card.firstChild);
+      }
+      if (head.querySelector(".expand-btn")) return;
+      const button = el("button", "⤢ Expand", "expand-btn");
+      button.type = "button";
+      button.setAttribute("aria-expanded", "false");
+      button.addEventListener("click", () => {
+        if (open && open.card === card) { close(); return; }
+        close();
+        card.classList.add("is-expanded");
+        document.body.classList.add("no-scroll");
+        button.textContent = "✕ Close";
+        button.setAttribute("aria-expanded", "true");
+        open = { card, button };
+      });
+      head.appendChild(button);
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initExpand);
+  else initExpand();
+
   return { el, cssVar, assignColors, teamVar, teamColor, dot, teamHref, teamLink, oddsCell, withAlpha, chartTheme, themeChart, loadData, updatedText };
 })();
