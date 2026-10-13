@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T02:51:23+00:00",
+ "generated_at": "2026-10-13T03:37:41+00:00",
  "draft_year": 2027,
  "college_season": 2026,
  "rounds": 3,
@@ -36,7 +36,21 @@
    "original_team": "Finesse🥶🤴🏿",
    "traded": true,
    "prospect": "jeremiah smith",
-   "reason": "Best available"
+   "reason": "Best available",
+   "context": {
+    "needs": [],
+    "set": [
+     "QB",
+     "RB",
+     "WR"
+    ],
+    "ranks": {
+     "QB": 3,
+     "RB": 3,
+     "WR": 2,
+     "TE": 4
+    }
+   }
   },
   {
    "round": 1,
@@ -48,8 +62,21 @@
    "original": 12,
    "original_team": "Daejon Mustard ",
    "traded": false,
-   "prospect": "charlie becker",
-   "reason": "Best available"
+   "prospect": "jadan baugh",
+   "reason": "Fills a RB need (11th at RB)",
+   "context": {
+    "needs": [
+     "RB",
+     "TE"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 5,
+     "RB": 11,
+     "WR": 7,
+     "TE": 9
+    }
+   }
   },
   {
    "round": 1,
@@ -61,8 +88,21 @@
    "original": 10,
    "original_team": "🌨️🧱Brick by Brick🧱🌨️",
    "traded": false,
-   "prospect": "jadan baugh",
-   "reason": "Best available"
+   "prospect": "charlie becker",
+   "reason": "Fills a WR need (11th at WR)",
+   "context": {
+    "needs": [
+     "QB",
+     "TE"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 11,
+     "RB": 10,
+     "WR": 11,
+     "TE": 11
+    }
+   }
   },
   {
    "round": 1,
@@ -74,8 +114,22 @@
    "original": 2,
    "original_team": "DOLLA BILLZ",
    "traded": true,
-   "prospect": "darian mensah",
-   "reason": "Fills a QB need"
+   "prospect": "treydez green",
+   "reason": "Value pick",
+   "context": {
+    "needs": [],
+    "set": [
+     "QB",
+     "RB",
+     "WR"
+    ],
+    "ranks": {
+     "QB": 3,
+     "RB": 3,
+     "WR": 2,
+     "TE": 4
+    }
+   }
   },
   {
    "round": 1,
@@ -88,7 +142,20 @@
    "original_team": "‘89 Earthquake",
    "traded": false,
    "prospect": "cam coleman",
-   "reason": "Best available"
+   "reason": "Fills a WR need (9th at WR)",
+   "context": {
+    "needs": [
+     "TE",
+     "WR"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 7,
+     "RB": 7,
+     "WR": 9,
+     "TE": 8
+    }
+   }
   },
   {
    "round": 1,
@@ -101,7 +168,19 @@
    "original_team": "Ryan Poles",
    "traded": false,
    "prospect": "nick marsh",
-   "reason": "Best available"
+   "reason": "Fills a WR need (10th at WR)",
+   "context": {
+    "needs": [
+     "WR"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 4,
+     "RB": 8,
+     "WR": 10,
+     "TE": 5
+    }
+   }
   },
   {
    "round": 1,
@@ -113,8 +192,20 @@
    "original": 5,
    "original_team": "Chocolate Gold ",
    "traded": false,
-   "prospect": "kj duff",
-   "reason": "Best available"
+   "prospect": "jamari johnson",
+   "reason": "Fills a TE need (12th at TE)",
+   "context": {
+    "needs": [
+     "TE"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 2,
+     "RB": 5,
+     "WR": 5,
+     "TE": 12
+    }
+   }
   },
   {
    "round": 1,
@@ -126,8 +217,23 @@
    "original": 4,
    "original_team": "The Lab",
    "traded": true,
-   "prospect": "treydez green",
-   "reason": "Fills a TE need"
+   "prospect": "kewan lacy",
+   "reason": "Value pick",
+   "context": {
+    "needs": [],
+    "set": [
+     "QB",
+     "RB",
+     "WR",
+     "TE"
+    ],
+    "ranks": {
+     "QB": 3,
+     "RB": 3,
+     "WR": 2,
+     "TE": 4
+    }
+   }
   },
   {
    "round": 1,
@@ -139,8 +245,18 @@
    "original": 8,
    "original_team": "MIP",
    "traded": true,
-   "prospect": "trinidad chambliss",
-   "reason": "Best available"
+   "prospect": "kj duff",
+   "reason": "Value pick",
+   "context": {
+    "needs": [],
+    "set": [],
+    "ranks": {
+     "QB": 4,
+     "RB": 8,
+     "WR": 10,
+     "TE": 5
+    }
+   }
   },
   {
    "round": 1,
@@ -152,8 +268,21 @@
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": true,
-   "prospect": "kewan lacy",
-   "reason": "Best available"
+   "prospect": "darian mensah",
+   "reason": "Fills a QB need (12th at QB)",
+   "context": {
+    "needs": [
+     "QB",
+     "RB"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 12,
+     "RB": 12,
+     "WR": 6,
+     "TE": 3
+    }
+   }
   },
   {
    "round": 1,
@@ -165,8 +294,22 @@
    "original": 9,
    "original_team": "Top 5 Top 5 Top 5",
    "traded": true,
-   "prospect": "drew mestemaker",
-   "reason": "Best available"
+   "prospect": "trinidad chambliss",
+   "reason": "Fills a QB need (10th at QB)",
+   "context": {
+    "needs": [
+     "QB"
+    ],
+    "set": [
+     "WR"
+    ],
+    "ranks": {
+     "QB": 10,
+     "RB": 4,
+     "WR": 1,
+     "TE": 7
+    }
+   }
   },
   {
    "round": 1,
@@ -178,8 +321,20 @@
    "original": 6,
    "original_team": "Vanilla Diamonds",
    "traded": true,
-   "prospect": "reed harris",
-   "reason": "Fills a WR need"
+   "prospect": "drew mestemaker",
+   "reason": "Best available",
+   "context": {
+    "needs": [
+     "RB"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 12,
+     "RB": 12,
+     "WR": 6,
+     "TE": 3
+    }
+   }
   },
   {
    "round": 2,
@@ -191,8 +346,20 @@
    "original": 7,
    "original_team": "Finesse🥶🤴🏿",
    "traded": false,
-   "prospect": "cj carr",
-   "reason": "Fills a QB need"
+   "prospect": "reed harris",
+   "reason": "Best available",
+   "context": {
+    "needs": [
+     "RB"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 12,
+     "RB": 12,
+     "WR": 6,
+     "TE": 3
+    }
+   }
   },
   {
    "round": 2,
@@ -204,8 +371,20 @@
    "original": 12,
    "original_team": "Daejon Mustard ",
    "traded": false,
-   "prospect": "jamari johnson",
-   "reason": "Best available"
+   "prospect": "deuce alexander",
+   "reason": "Value pick",
+   "context": {
+    "needs": [
+     "TE"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 5,
+     "RB": 11,
+     "WR": 7,
+     "TE": 9
+    }
+   }
   },
   {
    "round": 2,
@@ -217,8 +396,21 @@
    "original": 10,
    "original_team": "🌨️🧱Brick by Brick🧱🌨️",
    "traded": false,
-   "prospect": "deuce alexander",
-   "reason": "Value pick"
+   "prospect": "cj carr",
+   "reason": "Fills a QB need (11th at QB)",
+   "context": {
+    "needs": [
+     "QB",
+     "TE"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 11,
+     "RB": 10,
+     "WR": 11,
+     "TE": 11
+    }
+   }
   },
   {
    "round": 2,
@@ -231,7 +423,19 @@
    "original_team": "DOLLA BILLZ",
    "traded": true,
    "prospect": "arch manning",
-   "reason": "Best available"
+   "reason": "Best available",
+   "context": {
+    "needs": [],
+    "set": [
+     "WR"
+    ],
+    "ranks": {
+     "QB": 10,
+     "RB": 4,
+     "WR": 1,
+     "TE": 7
+    }
+   }
   },
   {
    "round": 2,
@@ -243,8 +447,20 @@
    "original": 1,
    "original_team": "‘89 Earthquake",
    "traded": true,
-   "prospect": "dante moore",
-   "reason": "Best available"
+   "prospect": "luke reynolds",
+   "reason": "Value pick",
+   "context": {
+    "needs": [],
+    "set": [
+     "WR"
+    ],
+    "ranks": {
+     "QB": 10,
+     "RB": 4,
+     "WR": 1,
+     "TE": 7
+    }
+   }
   },
   {
    "round": 2,
@@ -256,8 +472,18 @@
    "original": 11,
    "original_team": "Ryan Poles",
    "traded": false,
-   "prospect": "ryan coleman williams",
-   "reason": "Best available"
+   "prospect": "dante moore",
+   "reason": "Best available",
+   "context": {
+    "needs": [],
+    "set": [],
+    "ranks": {
+     "QB": 4,
+     "RB": 8,
+     "WR": 10,
+     "TE": 5
+    }
+   }
   },
   {
    "round": 2,
@@ -269,8 +495,20 @@
    "original": 5,
    "original_team": "Chocolate Gold ",
    "traded": true,
-   "prospect": "mark fletcher",
-   "reason": "Best available"
+   "prospect": "ryan coleman williams",
+   "reason": "Best available",
+   "context": {
+    "needs": [
+     "TE"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 7,
+     "RB": 7,
+     "WR": 9,
+     "TE": 8
+    }
+   }
   },
   {
    "round": 2,
@@ -282,8 +520,22 @@
    "original": 4,
    "original_team": "The Lab",
    "traded": true,
-   "prospect": "luke reynolds",
-   "reason": "Value pick"
+   "prospect": "mark fletcher",
+   "reason": "Best available",
+   "context": {
+    "needs": [
+     "TE"
+    ],
+    "set": [
+     "WR"
+    ],
+    "ranks": {
+     "QB": 7,
+     "RB": 7,
+     "WR": 9,
+     "TE": 8
+    }
+   }
   },
   {
    "round": 2,
@@ -296,7 +548,19 @@
    "original_team": "MIP",
    "traded": true,
    "prospect": "jamal roberts",
-   "reason": "Best available"
+   "reason": "Fills a RB need (12th at RB)",
+   "context": {
+    "needs": [
+     "RB"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 12,
+     "RB": 12,
+     "WR": 6,
+     "TE": 3
+    }
+   }
   },
   {
    "round": 2,
@@ -308,8 +572,23 @@
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": false,
-   "prospect": "julian sayin",
-   "reason": "Fills a QB need"
+   "prospect": "collin dixon",
+   "reason": "Fills a WR need (12th at WR)",
+   "context": {
+    "needs": [
+     "TE",
+     "WR"
+    ],
+    "set": [
+     "RB"
+    ],
+    "ranks": {
+     "QB": 8,
+     "RB": 1,
+     "WR": 12,
+     "TE": 10
+    }
+   }
   },
   {
    "round": 2,
@@ -321,8 +600,22 @@
    "original": 9,
    "original_team": "Top 5 Top 5 Top 5",
    "traded": true,
-   "prospect": "collin dixon",
-   "reason": "Fills a WR need"
+   "prospect": "julian sayin",
+   "reason": "Value pick",
+   "context": {
+    "needs": [
+     "TE"
+    ],
+    "set": [
+     "RB"
+    ],
+    "ranks": {
+     "QB": 8,
+     "RB": 1,
+     "WR": 12,
+     "TE": 10
+    }
+   }
   },
   {
    "round": 2,
@@ -335,7 +628,19 @@
    "original_team": "Vanilla Diamonds",
    "traded": false,
    "prospect": "jahiem white",
-   "reason": "Best available"
+   "reason": "Best available",
+   "context": {
+    "needs": [],
+    "set": [
+     "WR"
+    ],
+    "ranks": {
+     "QB": 10,
+     "RB": 4,
+     "WR": 1,
+     "TE": 7
+    }
+   }
   },
   {
    "round": 3,
@@ -348,7 +653,20 @@
    "original_team": "Finesse🥶🤴🏿",
    "traded": true,
    "prospect": "austin simmons",
-   "reason": "Value pick"
+   "reason": "Value pick",
+   "context": {
+    "needs": [],
+    "set": [
+     "RB",
+     "TE"
+    ],
+    "ranks": {
+     "QB": 6,
+     "RB": 2,
+     "WR": 8,
+     "TE": 2
+    }
+   }
   },
   {
    "round": 3,
@@ -360,8 +678,20 @@
    "original": 12,
    "original_team": "Daejon Mustard ",
    "traded": false,
-   "prospect": "umari hatcher",
-   "reason": "Fills a WR need"
+   "prospect": "wayshawn parker",
+   "reason": "Best available",
+   "context": {
+    "needs": [
+     "TE"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 5,
+     "RB": 11,
+     "WR": 7,
+     "TE": 9
+    }
+   }
   },
   {
    "round": 3,
@@ -373,8 +703,21 @@
    "original": 10,
    "original_team": "🌨️🧱Brick by Brick🧱🌨️",
    "traded": false,
-   "prospect": "wayshawn parker",
-   "reason": "Best available"
+   "prospect": "dylan riley",
+   "reason": "Fills a RB need (10th at RB)",
+   "context": {
+    "needs": [
+     "TE",
+     "RB"
+    ],
+    "set": [],
+    "ranks": {
+     "QB": 11,
+     "RB": 10,
+     "WR": 11,
+     "TE": 11
+    }
+   }
   },
   {
    "round": 3,
@@ -386,8 +729,21 @@
    "original": 2,
    "original_team": "DOLLA BILLZ",
    "traded": true,
-   "prospect": "dylan riley",
-   "reason": "Best available"
+   "prospect": "umari hatcher",
+   "reason": "Value pick",
+   "context": {
+    "needs": [],
+    "set": [
+     "RB",
+     "TE"
+    ],
+    "ranks": {
+     "QB": 6,
+     "RB": 2,
+     "WR": 8,
+     "TE": 2
+    }
+   }
   },
   {
    "round": 3,
@@ -399,8 +755,22 @@
    "original": 1,
    "original_team": "‘89 Earthquake",
    "traded": false,
-   "prospect": "wayne knight",
-   "reason": "Best available"
+   "prospect": "lanorris sellers",
+   "reason": "Value pick",
+   "context": {
+    "needs": [
+     "TE"
+    ],
+    "set": [
+     "WR"
+    ],
+    "ranks": {
+     "QB": 7,
+     "RB": 7,
+     "WR": 9,
+     "TE": 8
+    }
+   }
   },
   {
    "round": 3,
@@ -412,8 +782,20 @@
    "original": 11,
    "original_team": "Ryan Poles",
    "traded": false,
-   "prospect": "cam cook",
-   "reason": "Best available"
+   "prospect": "wayne knight",
+   "reason": "Best available",
+   "context": {
+    "needs": [],
+    "set": [
+     "QB"
+    ],
+    "ranks": {
+     "QB": 4,
+     "RB": 8,
+     "WR": 10,
+     "TE": 5
+    }
+   }
   },
   {
    "round": 3,
@@ -425,8 +807,18 @@
    "original": 5,
    "original_team": "Chocolate Gold ",
    "traded": false,
-   "prospect": "desean bishop",
-   "reason": "Best available"
+   "prospect": "cam cook",
+   "reason": "Best available",
+   "context": {
+    "needs": [],
+    "set": [],
+    "ranks": {
+     "QB": 2,
+     "RB": 5,
+     "WR": 5,
+     "TE": 12
+    }
+   }
   },
   {
    "round": 3,
@@ -438,8 +830,23 @@
    "original": 4,
    "original_team": "The Lab",
    "traded": true,
-   "prospect": "lanorris sellers",
-   "reason": "Best available"
+   "prospect": "jayden maiava",
+   "reason": "Value pick",
+   "context": {
+    "needs": [],
+    "set": [
+     "QB",
+     "RB",
+     "WR",
+     "TE"
+    ],
+    "ranks": {
+     "QB": 3,
+     "RB": 3,
+     "WR": 2,
+     "TE": 4
+    }
+   }
   },
   {
    "round": 3,
@@ -451,8 +858,24 @@
    "original": 8,
    "original_team": "MIP",
    "traded": false,
-   "prospect": "anthony evans",
-   "reason": "Best available"
+   "prospect": "desean bishop",
+   "reason": "Fills a RB need (9th at RB)",
+   "context": {
+    "needs": [
+     "RB",
+     "QB"
+    ],
+    "set": [
+     "WR",
+     "TE"
+    ],
+    "ranks": {
+     "QB": 9,
+     "RB": 9,
+     "WR": 3,
+     "TE": 1
+    }
+   }
   },
   {
    "round": 3,
@@ -464,8 +887,22 @@
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": false,
-   "prospect": "carlos hernandez",
-   "reason": "Best available"
+   "prospect": "anthony evans",
+   "reason": "Best available",
+   "context": {
+    "needs": [
+     "TE"
+    ],
+    "set": [
+     "RB"
+    ],
+    "ranks": {
+     "QB": 8,
+     "RB": 1,
+     "WR": 12,
+     "TE": 10
+    }
+   }
   },
   {
    "round": 3,
@@ -477,8 +914,23 @@
    "original": 9,
    "original_team": "Top 5 Top 5 Top 5",
    "traded": false,
-   "prospect": "jayden maiava",
-   "reason": "Value pick"
+   "prospect": "nate frazier",
+   "reason": "Value pick",
+   "context": {
+    "needs": [],
+    "set": [
+     "QB",
+     "RB",
+     "WR",
+     "TE"
+    ],
+    "ranks": {
+     "QB": 3,
+     "RB": 3,
+     "WR": 2,
+     "TE": 4
+    }
+   }
   },
   {
    "round": 3,
@@ -490,8 +942,21 @@
    "original": 6,
    "original_team": "Vanilla Diamonds",
    "traded": false,
-   "prospect": "kelby valsin",
-   "reason": "Best available"
+   "prospect": "sam leavitt",
+   "reason": "Value pick",
+   "context": {
+    "needs": [],
+    "set": [
+     "RB",
+     "WR"
+    ],
+    "ranks": {
+     "QB": 10,
+     "RB": 4,
+     "WR": 1,
+     "TE": 7
+    }
+   }
   }
  ],
  "board": [
@@ -4204,76 +4669,150 @@
  ],
  "needs": {
   "1": {
-   "QB": -0.15,
-   "RB": -0.053,
-   "WR": 0.083,
-   "TE": -0.054
+   "QB": 0.022,
+   "RB": 0.032,
+   "WR": 0.175,
+   "TE": 0.204
   },
   "2": {
-   "QB": 0.25,
-   "RB": 0.008,
-   "WR": -0.15,
-   "TE": 0.036
+   "QB": -0.6,
+   "RB": -0.032,
+   "WR": -0.246,
+   "TE": -0.068
   },
   "3": {
-   "QB": 0.178,
-   "RB": -0.15,
-   "WR": 0.231,
-   "TE": -0.102
+   "QB": 0.074,
+   "RB": -0.6,
+   "WR": 0.321,
+   "TE": 0.345
   },
   "4": {
-   "QB": 0.02,
-   "RB": -0.15,
-   "WR": 0.054,
-   "TE": -0.15
+   "QB": -0.022,
+   "RB": -0.6,
+   "WR": 0.065,
+   "TE": -0.6
   },
   "5": {
-   "QB": -0.121,
-   "RB": 0.25,
-   "WR": 0.192,
-   "TE": -0.15
+   "QB": -0.381,
+   "RB": -0.106,
+   "WR": -0.181,
+   "TE": 0.4
   },
   "6": {
-   "QB": 0.156,
-   "RB": 0.116,
-   "WR": -0.15,
-   "TE": 0.243
+   "QB": 0.301,
+   "RB": -0.213,
+   "WR": -0.6,
+   "TE": 0.068
   },
   "7": {
-   "QB": 0.05,
-   "RB": 0.25,
-   "WR": 0.25,
-   "TE": -0.15
+   "QB": 0.4,
+   "RB": 0.4,
+   "WR": -0.021,
+   "TE": -0.295
   },
   "8": {
-   "QB": -0.15,
-   "RB": 0.25,
-   "WR": 0.012,
-   "TE": -0.15
+   "QB": 0.285,
+   "RB": 0.353,
+   "WR": -0.6,
+   "TE": -0.6
   },
   "9": {
-   "QB": 0.233,
-   "RB": -0.15,
-   "WR": -0.15,
-   "TE": 0.25
+   "QB": -0.6,
+   "RB": -0.53,
+   "WR": -0.6,
+   "TE": -0.207
   },
   "10": {
-   "QB": -0.15,
-   "RB": 0.25,
-   "WR": 0.013,
-   "TE": -0.111
+   "QB": 0.4,
+   "RB": 0.398,
+   "WR": 0.297,
+   "TE": 0.4
   },
   "11": {
-   "QB": -0.15,
-   "RB": -0.145,
-   "WR": -0.116,
-   "TE": -0.016
+   "QB": -0.174,
+   "RB": 0.119,
+   "WR": 0.243,
+   "TE": -0.073
   },
   "12": {
-   "QB": -0.115,
-   "RB": -0.15,
-   "WR": 0.25,
-   "TE": 0.25
+   "QB": -0.121,
+   "RB": 0.4,
+   "WR": 0.021,
+   "TE": 0.26
+  }
+ },
+ "needs_ranks": {
+  "1": {
+   "QB": 7,
+   "RB": 7,
+   "WR": 9,
+   "TE": 8
+  },
+  "2": {
+   "QB": 1,
+   "RB": 6,
+   "WR": 4,
+   "TE": 6
+  },
+  "3": {
+   "QB": 8,
+   "RB": 1,
+   "WR": 12,
+   "TE": 10
+  },
+  "4": {
+   "QB": 6,
+   "RB": 2,
+   "WR": 8,
+   "TE": 2
+  },
+  "5": {
+   "QB": 2,
+   "RB": 5,
+   "WR": 5,
+   "TE": 12
+  },
+  "6": {
+   "QB": 10,
+   "RB": 4,
+   "WR": 1,
+   "TE": 7
+  },
+  "7": {
+   "QB": 12,
+   "RB": 12,
+   "WR": 6,
+   "TE": 3
+  },
+  "8": {
+   "QB": 9,
+   "RB": 9,
+   "WR": 3,
+   "TE": 1
+  },
+  "9": {
+   "QB": 3,
+   "RB": 3,
+   "WR": 2,
+   "TE": 4
+  },
+  "10": {
+   "QB": 11,
+   "RB": 10,
+   "WR": 11,
+   "TE": 11
+  },
+  "11": {
+   "QB": 4,
+   "RB": 8,
+   "WR": 10,
+   "TE": 5
+  },
+  "12": {
+   "QB": 5,
+   "RB": 11,
+   "WR": 7,
+   "TE": 9
   }
  }
 }
