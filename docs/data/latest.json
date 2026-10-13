@@ -1,0 +1,284 @@
+{
+  "generated_at": "2026-10-13T00:45:29+00:00",
+  "league": {
+    "id": "1312005038838673409",
+    "name": "The HIM Dynasty",
+    "season": "2026",
+    "status": "in_season",
+    "playoff_teams": 6
+  },
+  "simulations": 10000,
+  "remaining_games": 54,
+  "standings": [
+    {
+      "rank": 1,
+      "team": "Vanilla Diamonds",
+      "owner": "VanillaDiamonds",
+      "wins": 4,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 623.4,
+      "points_against": 474.18,
+      "playoff_odds": 100.0,
+      "projected_wins": 11.1
+    },
+    {
+      "rank": 2,
+      "team": "K-9\u2019s Unit",
+      "owner": "sleepymike09",
+      "wins": 4,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 558.46,
+      "points_against": 465.56,
+      "playoff_odds": 99.3,
+      "projected_wins": 9.5
+    },
+    {
+      "rank": 3,
+      "team": "Top 5 Top 5 Top 5",
+      "owner": "NewEleven",
+      "wins": 3,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 612.72,
+      "points_against": 533.24,
+      "playoff_odds": 99.8,
+      "projected_wins": 10.2
+    },
+    {
+      "rank": 4,
+      "team": "Chocolate Gold ",
+      "owner": "JudasJudge",
+      "wins": 3,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 480.78,
+      "points_against": 466.74,
+      "playoff_odds": 58.5,
+      "projected_wins": 7.0
+    },
+    {
+      "rank": 5,
+      "team": "MIP",
+      "owner": "toobizzie",
+      "wins": 2,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 528.78,
+      "points_against": 523.36,
+      "playoff_odds": 68.5,
+      "projected_wins": 6.8
+    },
+    {
+      "rank": 6,
+      "team": "The Lab",
+      "owner": "JamesQua",
+      "wins": 2,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 528.34,
+      "points_against": 584.56,
+      "playoff_odds": 75.5,
+      "projected_wins": 7.2
+    },
+    {
+      "rank": 7,
+      "team": "\ud83c\udf28\ufe0f\ud83e\uddf1Brick by Brick\ud83e\uddf1\ud83c\udf28\ufe0f",
+      "owner": "BryanGichaba",
+      "wins": 2,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 506.7,
+      "points_against": 519.6,
+      "playoff_odds": 28.5,
+      "projected_wins": 5.7
+    },
+    {
+      "rank": 8,
+      "team": "DOLLA BILLZ",
+      "owner": "RefMitch128",
+      "wins": 2,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 479.16,
+      "points_against": 431.48,
+      "playoff_odds": 15.3,
+      "projected_wins": 5.2
+    },
+    {
+      "rank": 9,
+      "team": "Ryan Poles",
+      "owner": "TribalChief13",
+      "wins": 1,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 531.28,
+      "points_against": 526.38,
+      "playoff_odds": 50.0,
+      "projected_wins": 6.1
+    },
+    {
+      "rank": 10,
+      "team": "Daejon Mustard ",
+      "owner": "JHam4Hunnid",
+      "wins": 1,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 493.36,
+      "points_against": 538.58,
+      "playoff_odds": 4.1,
+      "projected_wins": 4.2
+    },
+    {
+      "rank": 11,
+      "team": "\u201889 Earthquake",
+      "owner": "TheeDarryKing",
+      "wins": 0,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 456.3,
+      "points_against": 623.26,
+      "playoff_odds": 0.1,
+      "projected_wins": 2.5
+    },
+    {
+      "rank": 12,
+      "team": "Finesse\ud83e\udd76\ud83e\udd34\ud83c\udfff",
+      "owner": "JustinFreshly",
+      "wins": 0,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 398.0,
+      "points_against": 510.34,
+      "playoff_odds": 0.3,
+      "projected_wins": 2.5
+    }
+  ],
+  "draft": {
+    "official_order": [
+      {
+        "slot": 1,
+        "team": "K-9\u2019s Unit",
+        "owner": "sleepymike09"
+      },
+      {
+        "slot": 2,
+        "team": "\u201889 Earthquake",
+        "owner": "TheeDarryKing"
+      },
+      {
+        "slot": 3,
+        "team": "DOLLA BILLZ",
+        "owner": "RefMitch128"
+      },
+      {
+        "slot": 4,
+        "team": "Daejon Mustard ",
+        "owner": "JHam4Hunnid"
+      },
+      {
+        "slot": 5,
+        "team": "Vanilla Diamonds",
+        "owner": "VanillaDiamonds"
+      },
+      {
+        "slot": 6,
+        "team": "The Lab",
+        "owner": "JamesQua"
+      },
+      {
+        "slot": 7,
+        "team": "\ud83c\udf28\ufe0f\ud83e\uddf1Brick by Brick\ud83e\uddf1\ud83c\udf28\ufe0f",
+        "owner": "BryanGichaba"
+      },
+      {
+        "slot": 8,
+        "team": "Ryan Poles",
+        "owner": "TribalChief13"
+      },
+      {
+        "slot": 9,
+        "team": "Top 5 Top 5 Top 5",
+        "owner": "NewEleven"
+      },
+      {
+        "slot": 10,
+        "team": "MIP",
+        "owner": "toobizzie"
+      },
+      {
+        "slot": 11,
+        "team": "Finesse\ud83e\udd76\ud83e\udd34\ud83c\udfff",
+        "owner": "JustinFreshly"
+      },
+      {
+        "slot": 12,
+        "team": "Chocolate Gold ",
+        "owner": "JudasJudge"
+      }
+    ],
+    "projected_order": [
+      {
+        "slot": 1,
+        "team": "Finesse\ud83e\udd76\ud83e\udd34\ud83c\udfff",
+        "owner": "JustinFreshly"
+      },
+      {
+        "slot": 2,
+        "team": "\u201889 Earthquake",
+        "owner": "TheeDarryKing"
+      },
+      {
+        "slot": 3,
+        "team": "Daejon Mustard ",
+        "owner": "JHam4Hunnid"
+      },
+      {
+        "slot": 4,
+        "team": "Ryan Poles",
+        "owner": "TribalChief13"
+      },
+      {
+        "slot": 5,
+        "team": "DOLLA BILLZ",
+        "owner": "RefMitch128"
+      },
+      {
+        "slot": 6,
+        "team": "\ud83c\udf28\ufe0f\ud83e\uddf1Brick by Brick\ud83e\uddf1\ud83c\udf28\ufe0f",
+        "owner": "BryanGichaba"
+      },
+      {
+        "slot": 7,
+        "team": "The Lab",
+        "owner": "JamesQua"
+      },
+      {
+        "slot": 8,
+        "team": "MIP",
+        "owner": "toobizzie"
+      },
+      {
+        "slot": 9,
+        "team": "Chocolate Gold ",
+        "owner": "JudasJudge"
+      },
+      {
+        "slot": 10,
+        "team": "Top 5 Top 5 Top 5",
+        "owner": "NewEleven"
+      },
+      {
+        "slot": 11,
+        "team": "K-9\u2019s Unit",
+        "owner": "sleepymike09"
+      },
+      {
+        "slot": 12,
+        "team": "Vanilla Diamonds",
+        "owner": "VanillaDiamonds"
+      }
+    ]
+  }
+}
