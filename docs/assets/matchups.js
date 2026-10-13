@@ -35,10 +35,11 @@
   function weekStart(week) {
     const lg = data.league;
     const [y, mo, d] = lg.season_start.split("-").map(Number);
-    // Sleeper's season start can be any day of week 1; back up to that week's Thursday.
+    // Sleeper's season start is the day before kickoff (a Wednesday); week 1
+    // begins on the Thursday on or after it.
     const first = new Date(Date.UTC(y, mo - 1, d));
-    const back = (first.getUTCDay() - 4 + 7) % 7;
-    const thursday = Date.UTC(y, mo - 1, d - back + 7 * (week - lg.start_week));
+    const ahead = (4 - first.getUTCDay() + 7) % 7;
+    const thursday = Date.UTC(y, mo - 1, d + ahead + 7 * (week - lg.start_week));
     const guess = new Date(thursday);
     return new Date(thursday - chicagoOffsetMinutes(guess) * 60000);
   }
