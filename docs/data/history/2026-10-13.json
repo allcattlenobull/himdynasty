@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T12:36:01+00:00",
+  "generated_at": "2026-10-13T13:23:36+00:00",
   "league": {
     "id": "1312005038838673409",
     "name": "The HIM Dynasty",
@@ -3525,6 +3525,20 @@
         ],
         "bench": [
           {
+            "id": "4881",
+            "name": "Lamar Jackson",
+            "pos": "QB",
+            "nfl": "BAL",
+            "age": 29,
+            "exp": 8,
+            "injury": "Out",
+            "espn_id": 3916387,
+            "pts": 80.08,
+            "last": 0.0,
+            "ppg": 20.02,
+            "proj": 10.01
+          },
+          {
             "id": "8148",
             "name": "Jameson Williams",
             "pos": "WR",
@@ -3579,20 +3593,6 @@
             "last": 14.8,
             "ppg": 16.4,
             "proj": 15.58
-          },
-          {
-            "id": "7543",
-            "name": "Travis Etienne",
-            "pos": "RB",
-            "nfl": "NO",
-            "age": 27,
-            "exp": 5,
-            "injury": "IR",
-            "espn_id": null,
-            "pts": 30.9,
-            "last": 0.0,
-            "ppg": 10.3,
-            "proj": 0.0
           },
           {
             "id": "7083",
@@ -3683,18 +3683,18 @@
         ],
         "ir": [
           {
-            "id": "4881",
-            "name": "Lamar Jackson",
-            "pos": "QB",
-            "nfl": "BAL",
-            "age": 29,
-            "exp": 8,
-            "injury": "Out",
-            "espn_id": 3916387,
-            "pts": 80.08,
+            "id": "7543",
+            "name": "Travis Etienne",
+            "pos": "RB",
+            "nfl": "NO",
+            "age": 27,
+            "exp": 5,
+            "injury": "IR",
+            "espn_id": null,
+            "pts": 30.9,
             "last": 0.0,
-            "ppg": 20.02,
-            "proj": 10.01
+            "ppg": 10.3,
+            "proj": 0.0
           },
           {
             "id": "9226",

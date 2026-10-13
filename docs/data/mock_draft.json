@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T12:37:36+00:00",
+ "generated_at": "2026-10-13T13:25:20+00:00",
  "draft_year": 2027,
  "college_season": 2026,
  "rounds": 3,
@@ -5844,6 +5844,3346 @@
     "TE": 0
    },
    "weighted_picks": 8.0
+  }
+ },
+ "rosters": {
+  "limits": {
+   "active": 18,
+   "taxi": 4,
+   "ir": 2
+  },
+  "teams": {
+   "1": {
+    "current": [
+     {
+      "id": "3163",
+      "name": "Jared Goff",
+      "pos": "QB",
+      "nfl": "DET",
+      "age": 31,
+      "exp": 10,
+      "ppg": 23.0,
+      "value": 901,
+      "group": "starter"
+     },
+     {
+      "id": "12507",
+      "name": "Omarion Hampton",
+      "pos": "RB",
+      "nfl": "LAC",
+      "age": 23,
+      "exp": 1,
+      "ppg": 9.92,
+      "value": 6486,
+      "group": "starter"
+     },
+     {
+      "id": "11435",
+      "name": "Emanuel Wilson",
+      "pos": "RB",
+      "nfl": "SEA",
+      "age": 27,
+      "exp": 3,
+      "ppg": 13.87,
+      "value": 21,
+      "group": "starter"
+     },
+     {
+      "id": "12519",
+      "name": "Luther Burden",
+      "pos": "WR",
+      "nfl": "CHI",
+      "age": 22,
+      "exp": 1,
+      "ppg": 11.16,
+      "value": 3960,
+      "group": "starter"
+     },
+     {
+      "id": "13279",
+      "name": "Carnell Tate",
+      "pos": "WR",
+      "nfl": "TEN",
+      "age": 21,
+      "exp": 0,
+      "ppg": 9.68,
+      "value": 4927,
+      "group": "starter"
+     },
+     {
+      "id": "12506",
+      "name": "Harold Fannin",
+      "pos": "TE",
+      "nfl": "CLE",
+      "age": 22,
+      "exp": 1,
+      "ppg": 10.34,
+      "value": 2417,
+      "group": "starter"
+     },
+     {
+      "id": "6790",
+      "name": "D'Andre Swift",
+      "pos": "RB",
+      "nfl": "CHI",
+      "age": 27,
+      "exp": 6,
+      "ppg": 16.16,
+      "value": 1391,
+      "group": "starter"
+     },
+     {
+      "id": "12501",
+      "name": "Matthew Golden",
+      "pos": "WR",
+      "nfl": "GB",
+      "age": 23,
+      "exp": 1,
+      "ppg": 15.66,
+      "value": 1045,
+      "group": "starter"
+     },
+     {
+      "id": "2020",
+      "name": "Cairo Santos",
+      "pos": "K",
+      "nfl": "CHI",
+      "age": 34,
+      "exp": 12,
+      "ppg": 0.0,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "CLE",
+      "name": "Cleveland Browns",
+      "pos": "DEF",
+      "nfl": "CLE",
+      "age": null,
+      "exp": null,
+      "ppg": 11.0,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "10213",
+      "name": "Tre Tucker",
+      "pos": "WR",
+      "nfl": "LV",
+      "age": 25,
+      "exp": 3,
+      "ppg": 10.36,
+      "value": 233,
+      "group": "bench"
+     },
+     {
+      "id": "11560",
+      "name": "Caleb Williams",
+      "pos": "QB",
+      "nfl": "CHI",
+      "age": 24,
+      "exp": 2,
+      "ppg": 22.99,
+      "value": 3742,
+      "group": "bench"
+     },
+     {
+      "id": "8134",
+      "name": "Khalil Shakir",
+      "pos": "WR",
+      "nfl": "BUF",
+      "age": 26,
+      "exp": 4,
+      "ppg": 8.32,
+      "value": 583,
+      "group": "bench"
+     },
+     {
+      "id": "1479",
+      "name": "Keenan Allen",
+      "pos": "WR",
+      "nfl": "IND",
+      "age": 34,
+      "exp": 13,
+      "ppg": 9.62,
+      "value": 31,
+      "group": "bench"
+     },
+     {
+      "id": "8210",
+      "name": "Chig Okonkwo",
+      "pos": "TE",
+      "nfl": "WAS",
+      "age": 27,
+      "exp": 4,
+      "ppg": 5.37,
+      "value": 313,
+      "group": "bench"
+     },
+     {
+      "id": "13414",
+      "name": "Kaelon Black",
+      "pos": "RB",
+      "nfl": "SF",
+      "age": 24,
+      "exp": 0,
+      "ppg": 3.02,
+      "value": 148,
+      "group": "bench"
+     },
+     {
+      "id": "12498",
+      "name": "Mason Taylor",
+      "pos": "TE",
+      "nfl": "NYJ",
+      "age": 22,
+      "exp": 1,
+      "ppg": 3.6,
+      "value": 102,
+      "group": "taxi"
+     },
+     {
+      "id": "13293",
+      "name": "Ja'Kobi Lane",
+      "pos": "WR",
+      "nfl": "BAL",
+      "age": 22,
+      "exp": 0,
+      "ppg": 2.1,
+      "value": 267,
+      "group": "taxi"
+     },
+     {
+      "id": "12484",
+      "name": "Jayden Higgins",
+      "pos": "WR",
+      "nfl": "HOU",
+      "age": 23,
+      "exp": 1,
+      "ppg": 0.0,
+      "value": 907,
+      "group": "ir"
+     },
+     {
+      "id": "12534",
+      "name": "Kyle Monangai",
+      "pos": "RB",
+      "nfl": "CHI",
+      "age": 24,
+      "exp": 1,
+      "ppg": 14.82,
+      "value": 810,
+      "group": "ir"
+     }
+    ],
+    "draftees": [
+     {
+      "label": "1.04",
+      "key": "jadan baugh",
+      "name": "Jadan Baugh",
+      "pos": "RB"
+     },
+     {
+      "label": "2.07",
+      "key": "umari hatcher",
+      "name": "Umari Hatcher",
+      "pos": "WR"
+     },
+     {
+      "label": "2.09",
+      "key": "anthony evans",
+      "name": "Anthony Evans III",
+      "pos": "WR"
+     },
+     {
+      "label": "3.04",
+      "key": "wayne knight",
+      "name": "Wayne Knight",
+      "pos": "RB"
+     }
+    ],
+    "cuts": [],
+    "counts": {
+     "active": 16,
+     "taxi": 2,
+     "ir": 2
+    }
+   },
+   "2": {
+    "current": [
+     {
+      "id": "4984",
+      "name": "Josh Allen",
+      "pos": "QB",
+      "nfl": "BUF",
+      "age": 30,
+      "exp": 8,
+      "ppg": 29.39,
+      "value": 7125,
+      "group": "starter"
+     },
+     {
+      "id": "8138",
+      "name": "James Cook",
+      "pos": "RB",
+      "nfl": "BUF",
+      "age": 27,
+      "exp": 4,
+      "ppg": 17.86,
+      "value": 7646,
+      "group": "starter"
+     },
+     {
+      "id": "8228",
+      "name": "Jaylen Warren",
+      "pos": "RB",
+      "nfl": "PIT",
+      "age": 27,
+      "exp": 4,
+      "ppg": 18.6,
+      "value": 967,
+      "group": "starter"
+     },
+     {
+      "id": "7547",
+      "name": "Amon-Ra St. Brown",
+      "pos": "WR",
+      "nfl": "DET",
+      "age": 26,
+      "exp": 5,
+      "ppg": 20.84,
+      "value": 9270,
+      "group": "starter"
+     },
+     {
+      "id": "10232",
+      "name": "Michael Wilson",
+      "pos": "WR",
+      "nfl": "ARI",
+      "age": 26,
+      "exp": 3,
+      "ppg": 12.82,
+      "value": 1521,
+      "group": "starter"
+     },
+     {
+      "id": "10236",
+      "name": "Dalton Kincaid",
+      "pos": "TE",
+      "nfl": "BUF",
+      "age": 26,
+      "exp": 3,
+      "ppg": 9.94,
+      "value": 3243,
+      "group": "starter"
+     },
+     {
+      "id": "7526",
+      "name": "Jaylen Waddle",
+      "pos": "WR",
+      "nfl": "DEN",
+      "age": 27,
+      "exp": 5,
+      "ppg": 9.74,
+      "value": 4219,
+      "group": "starter"
+     },
+     {
+      "id": "4035",
+      "name": "Alvin Kamara",
+      "pos": "RB",
+      "nfl": "NO",
+      "age": 31,
+      "exp": 9,
+      "ppg": 9.43,
+      "value": 67,
+      "group": "starter"
+     },
+     {
+      "id": "10955",
+      "name": "Chad Ryland",
+      "pos": "K",
+      "nfl": "ARI",
+      "age": 26,
+      "exp": 3,
+      "ppg": 2.0,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "ATL",
+      "name": "Atlanta Falcons",
+      "pos": "DEF",
+      "nfl": "ATL",
+      "age": null,
+      "exp": null,
+      "ppg": 12.0,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "5001",
+      "name": "Dalton Schultz",
+      "pos": "TE",
+      "nfl": "HOU",
+      "age": 30,
+      "exp": 8,
+      "ppg": 9.68,
+      "value": 297,
+      "group": "bench"
+     },
+     {
+      "id": "7600",
+      "name": "Pat Freiermuth",
+      "pos": "TE",
+      "nfl": "PIT",
+      "age": 27,
+      "exp": 5,
+      "ppg": 11.18,
+      "value": 72,
+      "group": "bench"
+     },
+     {
+      "id": "5849",
+      "name": "Kyler Murray",
+      "pos": "QB",
+      "nfl": "MIN",
+      "age": 29,
+      "exp": 7,
+      "ppg": 10.45,
+      "value": 467,
+      "group": "bench"
+     },
+     {
+      "id": "7567",
+      "name": "Kenny Gainwell",
+      "pos": "RB",
+      "nfl": "TB",
+      "age": 27,
+      "exp": 5,
+      "ppg": 5.36,
+      "value": 205,
+      "group": "bench"
+     },
+     {
+      "id": "11586",
+      "name": "Blake Corum",
+      "pos": "RB",
+      "nfl": "LAR",
+      "age": 25,
+      "exp": 2,
+      "ppg": 7.68,
+      "value": 653,
+      "group": "bench"
+     },
+     {
+      "id": "6783",
+      "name": "Jerry Jeudy",
+      "pos": "WR",
+      "nfl": "CLE",
+      "age": 27,
+      "exp": 6,
+      "ppg": 4.75,
+      "value": 193,
+      "group": "bench"
+     },
+     {
+      "id": "4663",
+      "name": "Austin Ekeler",
+      "pos": "RB",
+      "nfl": "WAS",
+      "age": 31,
+      "exp": 9,
+      "ppg": 2.4,
+      "value": 0,
+      "group": "bench"
+     },
+     {
+      "id": "12497",
+      "name": "Tory Horton",
+      "pos": "WR",
+      "nfl": "SEA",
+      "age": 23,
+      "exp": 1,
+      "ppg": 0.0,
+      "value": 70,
+      "group": "bench"
+     },
+     {
+      "id": "13272",
+      "name": "Carson Beck",
+      "pos": "QB",
+      "nfl": "ARI",
+      "age": 23,
+      "exp": 0,
+      "ppg": 0.0,
+      "value": 36,
+      "group": "taxi"
+     }
+    ],
+    "draftees": [],
+    "cuts": [],
+    "counts": {
+     "active": 18,
+     "taxi": 1,
+     "ir": 0
+    }
+   },
+   "3": {
+    "current": [
+     {
+      "id": "421",
+      "name": "Matthew Stafford",
+      "pos": "QB",
+      "nfl": "LAR",
+      "age": 38,
+      "exp": 17,
+      "ppg": 19.0,
+      "value": 507,
+      "group": "starter"
+     },
+     {
+      "id": "8155",
+      "name": "Breece Hall",
+      "pos": "RB",
+      "nfl": "NYJ",
+      "age": 25,
+      "exp": 4,
+      "ppg": 14.17,
+      "value": 5960,
+      "group": "starter"
+     },
+     {
+      "id": "8151",
+      "name": "Kenneth Walker",
+      "pos": "RB",
+      "nfl": "KC",
+      "age": 25,
+      "exp": 4,
+      "ppg": 27.52,
+      "value": 7176,
+      "group": "starter"
+     },
+     {
+      "id": "4037",
+      "name": "Chris Godwin",
+      "pos": "WR",
+      "nfl": "TB",
+      "age": 30,
+      "exp": 9,
+      "ppg": 7.74,
+      "value": 556,
+      "group": "starter"
+     },
+     {
+      "id": "12514",
+      "name": "Emeka Egbuka",
+      "pos": "WR",
+      "nfl": "TB",
+      "age": 23,
+      "exp": 1,
+      "ppg": 10.66,
+      "value": 5946,
+      "group": "starter"
+     },
+     {
+      "id": "1466",
+      "name": "Travis Kelce",
+      "pos": "TE",
+      "nfl": "KC",
+      "age": 37,
+      "exp": 13,
+      "ppg": 13.15,
+      "value": 633,
+      "group": "starter"
+     },
+     {
+      "id": "7594",
+      "name": "Chuba Hubbard",
+      "pos": "RB",
+      "nfl": "CAR",
+      "age": 27,
+      "exp": 5,
+      "ppg": 19.75,
+      "value": 944,
+      "group": "starter"
+     },
+     {
+      "id": "7611",
+      "name": "Rhamondre Stevenson",
+      "pos": "RB",
+      "nfl": "NE",
+      "age": 28,
+      "exp": 5,
+      "ppg": 12.16,
+      "value": 412,
+      "group": "starter"
+     },
+     {
+      "id": "3451",
+      "name": "Ka'imi Fairbairn",
+      "pos": "K",
+      "nfl": "HOU",
+      "age": 32,
+      "exp": 10,
+      "ppg": 10.6,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "CIN",
+      "name": "Cincinnati Bengals",
+      "pos": "DEF",
+      "nfl": "CIN",
+      "age": null,
+      "exp": null,
+      "ppg": 10.0,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "11566",
+      "name": "Jayden Daniels",
+      "pos": "QB",
+      "nfl": "WAS",
+      "age": 25,
+      "exp": 2,
+      "ppg": 21.55,
+      "value": 3545,
+      "group": "bench"
+     },
+     {
+      "id": "5872",
+      "name": "Deebo Samuel",
+      "pos": "WR",
+      "nfl": "SF",
+      "age": 30,
+      "exp": 7,
+      "ppg": 12.08,
+      "value": 394,
+      "group": "bench"
+     },
+     {
+      "id": "9758",
+      "name": "C.J. Stroud",
+      "pos": "QB",
+      "nfl": "HOU",
+      "age": 25,
+      "exp": 3,
+      "ppg": 17.84,
+      "value": 1401,
+      "group": "bench"
+     },
+     {
+      "id": "13287",
+      "name": "Jeremiyah Love",
+      "pos": "RB",
+      "nfl": "ARI",
+      "age": 21,
+      "exp": 0,
+      "ppg": 10.22,
+      "value": 7346,
+      "group": "bench"
+     },
+     {
+      "id": "11576",
+      "name": "Braelon Allen",
+      "pos": "RB",
+      "nfl": "NYJ",
+      "age": 22,
+      "exp": 2,
+      "ppg": 8.9,
+      "value": 144,
+      "group": "bench"
+     },
+     {
+      "id": "9756",
+      "name": "Jordan Addison",
+      "pos": "WR",
+      "nfl": "MIN",
+      "age": 24,
+      "exp": 3,
+      "ppg": 11.07,
+      "value": 1671,
+      "group": "bench"
+     },
+     {
+      "id": "3271",
+      "name": "Tyler Higbee",
+      "pos": "TE",
+      "nfl": "LAR",
+      "age": 33,
+      "exp": 10,
+      "ppg": 13.3,
+      "value": 3,
+      "group": "bench"
+     },
+     {
+      "id": "4454",
+      "name": "Kendrick Bourne",
+      "pos": "WR",
+      "nfl": "ARI",
+      "age": 31,
+      "exp": 9,
+      "ppg": 12.0,
+      "value": 2,
+      "group": "bench"
+     },
+     {
+      "id": "12522",
+      "name": "Cam Ward",
+      "pos": "QB",
+      "nfl": "TEN",
+      "age": 24,
+      "exp": 1,
+      "ppg": 12.95,
+      "value": 399,
+      "group": "taxi"
+     },
+     {
+      "id": "13269",
+      "name": "Fernando Mendoza",
+      "pos": "QB",
+      "nfl": "LV",
+      "age": 23,
+      "exp": 0,
+      "ppg": 2.22,
+      "value": 773,
+      "group": "taxi"
+     },
+     {
+      "id": "13274",
+      "name": "Germie Bernard",
+      "pos": "WR",
+      "nfl": "PIT",
+      "age": 22,
+      "exp": 0,
+      "ppg": 6.85,
+      "value": 159,
+      "group": "taxi"
+     },
+     {
+      "id": "13330",
+      "name": "Kenyon Sadiq",
+      "pos": "TE",
+      "nfl": "NYJ",
+      "age": 21,
+      "exp": 0,
+      "ppg": 9.72,
+      "value": 1989,
+      "group": "ir"
+     },
+     {
+      "id": "7021",
+      "name": "Rico Dowdle",
+      "pos": "RB",
+      "nfl": "PIT",
+      "age": 28,
+      "exp": 6,
+      "ppg": 5.25,
+      "value": 382,
+      "group": "ir"
+     }
+    ],
+    "draftees": [
+     {
+      "label": "2.11",
+      "key": "carlos hernandez",
+      "name": "Carlos Hernandez",
+      "pos": "WR"
+     },
+     {
+      "label": "2.12",
+      "key": "kelby valsin",
+      "name": "Kelby Valsin",
+      "pos": "WR"
+     },
+     {
+      "label": "3.11",
+      "key": "dante moore",
+      "name": "Dante Moore",
+      "pos": "QB"
+     }
+    ],
+    "cuts": [
+     "4454",
+     "3271"
+    ],
+    "counts": {
+     "active": 18,
+     "taxi": 3,
+     "ir": 2
+    }
+   },
+   "4": {
+    "current": [
+     {
+      "id": "3257",
+      "name": "Jacoby Brissett",
+      "pos": "QB",
+      "nfl": "ARI",
+      "age": 33,
+      "exp": 10,
+      "ppg": 19.86,
+      "value": 163,
+      "group": "starter"
+     },
+     {
+      "id": "9221",
+      "name": "Jahmyr Gibbs",
+      "pos": "RB",
+      "nfl": "DET",
+      "age": 24,
+      "exp": 3,
+      "ppg": 30.74,
+      "value": 9162,
+      "group": "starter"
+     },
+     {
+      "id": "9224",
+      "name": "Chase Brown",
+      "pos": "RB",
+      "nfl": "CIN",
+      "age": 26,
+      "exp": 3,
+      "ppg": 13.0,
+      "value": 4453,
+      "group": "starter"
+     },
+     {
+      "id": "9997",
+      "name": "Zay Flowers",
+      "pos": "WR",
+      "nfl": "BAL",
+      "age": 26,
+      "exp": 3,
+      "ppg": 20.45,
+      "value": 4422,
+      "group": "starter"
+     },
+     {
+      "id": "5045",
+      "name": "Courtland Sutton",
+      "pos": "WR",
+      "nfl": "DEN",
+      "age": 31,
+      "exp": 8,
+      "ppg": 5.48,
+      "value": 581,
+      "group": "starter"
+     },
+     {
+      "id": "8130",
+      "name": "Trey McBride",
+      "pos": "TE",
+      "nfl": "ARI",
+      "age": 26,
+      "exp": 4,
+      "ppg": 18.16,
+      "value": 5451,
+      "group": "starter"
+     },
+     {
+      "id": "8132",
+      "name": "Tyler Allgeier",
+      "pos": "RB",
+      "nfl": "ARI",
+      "age": 26,
+      "exp": 4,
+      "ppg": 6.86,
+      "value": 205,
+      "group": "starter"
+     },
+     {
+      "id": "12533",
+      "name": "Jacory Croskey-Merritt",
+      "pos": "RB",
+      "nfl": "WAS",
+      "age": 25,
+      "exp": 1,
+      "ppg": 8.98,
+      "value": 294,
+      "group": "starter"
+     },
+     {
+      "id": "11786",
+      "name": "Cam Little",
+      "pos": "K",
+      "nfl": "JAX",
+      "age": 23,
+      "exp": 2,
+      "ppg": 9.0,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "WAS",
+      "name": "Washington Commanders",
+      "pos": "DEF",
+      "nfl": "WAS",
+      "age": null,
+      "exp": null,
+      "ppg": 8.0,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "6904",
+      "name": "Jalen Hurts",
+      "pos": "QB",
+      "nfl": "PHI",
+      "age": 28,
+      "exp": 6,
+      "ppg": 16.6,
+      "value": 3913,
+      "group": "bench"
+     },
+     {
+      "id": "2449",
+      "name": "Stefon Diggs",
+      "pos": "WR",
+      "nfl": "WAS",
+      "age": 32,
+      "exp": 11,
+      "ppg": 13.25,
+      "value": 563,
+      "group": "bench"
+     },
+     {
+      "id": "11635",
+      "name": "Ladd McConkey",
+      "pos": "WR",
+      "nfl": "LAC",
+      "age": 24,
+      "exp": 2,
+      "ppg": 12.1,
+      "value": 4668,
+      "group": "bench"
+     },
+     {
+      "id": "4983",
+      "name": "DJ Moore",
+      "pos": "WR",
+      "nfl": "BUF",
+      "age": 29,
+      "exp": 8,
+      "ppg": 9.07,
+      "value": 2175,
+      "group": "bench"
+     },
+     {
+      "id": "11624",
+      "name": "Xavier Worthy",
+      "pos": "WR",
+      "nfl": "KC",
+      "age": 23,
+      "exp": 2,
+      "ppg": 8.32,
+      "value": 990,
+      "group": "bench"
+     },
+     {
+      "id": "BAL",
+      "name": "Baltimore Ravens",
+      "pos": "DEF",
+      "nfl": "BAL",
+      "age": null,
+      "exp": null,
+      "ppg": 6.0,
+      "value": 0,
+      "group": "bench"
+     },
+     {
+      "id": "9508",
+      "name": "Tyjae Spears",
+      "pos": "RB",
+      "nfl": "TEN",
+      "age": 25,
+      "exp": 3,
+      "ppg": 5.06,
+      "value": 175,
+      "group": "bench"
+     },
+     {
+      "id": "13405",
+      "name": "Kaytron Allen",
+      "pos": "RB",
+      "nfl": "MIA",
+      "age": 23,
+      "exp": 0,
+      "ppg": 1.37,
+      "value": 82,
+      "group": "bench"
+     },
+     {
+      "id": "12504",
+      "name": "Kaleb Johnson",
+      "pos": "RB",
+      "nfl": "GB",
+      "age": 23,
+      "exp": 1,
+      "ppg": 2.65,
+      "value": 52,
+      "group": "taxi"
+     },
+     {
+      "id": "13311",
+      "name": "Chris Bell",
+      "pos": "WR",
+      "nfl": "MIA",
+      "age": 22,
+      "exp": 0,
+      "ppg": 5.6,
+      "value": 348,
+      "group": "taxi"
+     },
+     {
+      "id": "13337",
+      "name": "Emmett Johnson",
+      "pos": "RB",
+      "nfl": "KC",
+      "age": 23,
+      "exp": 0,
+      "ppg": 4.5,
+      "value": 220,
+      "group": "taxi"
+     },
+     {
+      "id": "13347",
+      "name": "Demond Claiborne",
+      "pos": "RB",
+      "nfl": "MIN",
+      "age": 23,
+      "exp": 0,
+      "ppg": 1.02,
+      "value": 31,
+      "group": "taxi"
+     },
+     {
+      "id": "10222",
+      "name": "Jayden Reed",
+      "pos": "WR",
+      "nfl": "GB",
+      "age": 26,
+      "exp": 3,
+      "ppg": 3.2,
+      "value": 537,
+      "group": "ir"
+     },
+     {
+      "id": "4866",
+      "name": "Saquon Barkley",
+      "pos": "RB",
+      "nfl": "PHI",
+      "age": 29,
+      "exp": 8,
+      "ppg": 5.75,
+      "value": 3220,
+      "group": "ir"
+     }
+    ],
+    "draftees": [
+     {
+      "label": "3.01",
+      "key": "drew mestemaker",
+      "name": "Drew Mestemaker",
+      "pos": "QB"
+     },
+     {
+      "label": "3.05",
+      "key": "cam cook",
+      "name": "Cam Cook",
+      "pos": "RB"
+     }
+    ],
+    "cuts": [
+     "BAL",
+     "13347"
+    ],
+    "counts": {
+     "active": 18,
+     "taxi": 4,
+     "ir": 2
+    }
+   },
+   "5": {
+    "current": [
+     {
+      "id": "13425",
+      "name": "Jalon Daniels",
+      "pos": "QB",
+      "nfl": "TB",
+      "age": 23,
+      "exp": 0,
+      "ppg": 13.86,
+      "value": 3,
+      "group": "starter"
+     },
+     {
+      "id": "9511",
+      "name": "Keaton Mitchell",
+      "pos": "RB",
+      "nfl": "LAC",
+      "age": 24,
+      "exp": 3,
+      "ppg": 7.34,
+      "value": 77,
+      "group": "starter"
+     },
+     {
+      "id": "11584",
+      "name": "Bucky Irving",
+      "pos": "RB",
+      "nfl": "TB",
+      "age": 24,
+      "exp": 2,
+      "ppg": 15.74,
+      "value": 2334,
+      "group": "starter"
+     },
+     {
+      "id": "9493",
+      "name": "Puka Nacua",
+      "pos": "WR",
+      "nfl": "LAR",
+      "age": 25,
+      "exp": 3,
+      "ppg": 25.93,
+      "value": 8907,
+      "group": "starter"
+     },
+     {
+      "id": "2216",
+      "name": "Mike Evans",
+      "pos": "WR",
+      "nfl": "SF",
+      "age": 33,
+      "exp": 12,
+      "ppg": 15.32,
+      "value": 938,
+      "group": "starter"
+     },
+     {
+      "id": "4217",
+      "name": "George Kittle",
+      "pos": "TE",
+      "nfl": "SF",
+      "age": 33,
+      "exp": 9,
+      "ppg": 14.36,
+      "value": 1194,
+      "group": "starter"
+     },
+     {
+      "id": "5846",
+      "name": "DK Metcalf",
+      "pos": "WR",
+      "nfl": "PIT",
+      "age": 28,
+      "exp": 7,
+      "ppg": 9.72,
+      "value": 1980,
+      "group": "starter"
+     },
+     {
+      "id": "9480",
+      "name": "Brenton Strange",
+      "pos": "TE",
+      "nfl": "JAX",
+      "age": 25,
+      "exp": 3,
+      "ppg": 10.1,
+      "value": 586,
+      "group": "starter"
+     },
+     {
+      "id": "7839",
+      "name": "Evan McPherson",
+      "pos": "K",
+      "nfl": "CIN",
+      "age": 27,
+      "exp": 5,
+      "ppg": 10.5,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "JAX",
+      "name": "Jacksonville Jaguars",
+      "pos": "DEF",
+      "nfl": "JAX",
+      "age": null,
+      "exp": null,
+      "ppg": 8.33,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "4881",
+      "name": "Lamar Jackson",
+      "pos": "QB",
+      "nfl": "BAL",
+      "age": 29,
+      "exp": 8,
+      "ppg": 20.02,
+      "value": 5287,
+      "group": "bench"
+     },
+     {
+      "id": "8148",
+      "name": "Jameson Williams",
+      "pos": "WR",
+      "nfl": "DET",
+      "age": 25,
+      "exp": 4,
+      "ppg": 11.52,
+      "value": 3335,
+      "group": "bench"
+     },
+     {
+      "id": "5012",
+      "name": "Mark Andrews",
+      "pos": "TE",
+      "nfl": "BAL",
+      "age": 31,
+      "exp": 8,
+      "ppg": 8.74,
+      "value": 509,
+      "group": "bench"
+     },
+     {
+      "id": "4892",
+      "name": "Baker Mayfield",
+      "pos": "QB",
+      "nfl": "TB",
+      "age": 31,
+      "exp": 8,
+      "ppg": 12.37,
+      "value": 495,
+      "group": "bench"
+     },
+     {
+      "id": "12495",
+      "name": "Ollie Gordon",
+      "pos": "RB",
+      "nfl": "MIA",
+      "age": 22,
+      "exp": 1,
+      "ppg": 16.4,
+      "value": 67,
+      "group": "bench"
+     },
+     {
+      "id": "7083",
+      "name": "Tyler Huntley",
+      "pos": "QB",
+      "nfl": "BAL",
+      "age": 28,
+      "exp": 6,
+      "ppg": 24.04,
+      "value": 2,
+      "group": "bench"
+     },
+     {
+      "id": "13345",
+      "name": "Jonah Coleman",
+      "pos": "RB",
+      "nfl": "DEN",
+      "age": 23,
+      "exp": 0,
+      "ppg": 14.8,
+      "value": 513,
+      "group": "bench"
+     },
+     {
+      "id": "3321",
+      "name": "Tyreek Hill",
+      "pos": "WR",
+      "nfl": "FA",
+      "age": 31,
+      "exp": 10,
+      "ppg": 0.0,
+      "value": 234,
+      "group": "bench"
+     },
+     {
+      "id": "12492",
+      "name": "Pat Bryant",
+      "pos": "WR",
+      "nfl": "DEN",
+      "age": 23,
+      "exp": 1,
+      "ppg": 7.97,
+      "value": 350,
+      "group": "taxi"
+     },
+     {
+      "id": "13288",
+      "name": "Nicholas Singleton",
+      "pos": "RB",
+      "nfl": "TEN",
+      "age": 22,
+      "exp": 0,
+      "ppg": 0.6,
+      "value": 126,
+      "group": "taxi"
+     },
+     {
+      "id": "13421",
+      "name": "Eli Raridon",
+      "pos": "TE",
+      "nfl": "NE",
+      "age": 22,
+      "exp": 0,
+      "ppg": 6.02,
+      "value": 231,
+      "group": "taxi"
+     },
+     {
+      "id": "7543",
+      "name": "Travis Etienne",
+      "pos": "RB",
+      "nfl": "NO",
+      "age": 27,
+      "exp": 5,
+      "ppg": 10.3,
+      "value": 2134,
+      "group": "ir"
+     },
+     {
+      "id": "9226",
+      "name": "De'Von Achane",
+      "pos": "RB",
+      "nfl": "MIA",
+      "age": 25,
+      "exp": 3,
+      "ppg": 8.2,
+      "value": 5463,
+      "group": "ir"
+     }
+    ],
+    "draftees": [
+     {
+      "label": "1.07",
+      "key": "kj duff",
+      "name": "KJ Duff",
+      "pos": "WR"
+     },
+     {
+      "label": "3.07",
+      "key": "nate frazier",
+      "name": "Nate Frazier",
+      "pos": "RB"
+     }
+    ],
+    "cuts": [
+     "7083"
+    ],
+    "counts": {
+     "active": 18,
+     "taxi": 3,
+     "ir": 2
+    }
+   },
+   "6": {
+    "current": [
+     {
+      "id": "11563",
+      "name": "Bo Nix",
+      "pos": "QB",
+      "nfl": "DEN",
+      "age": 26,
+      "exp": 2,
+      "ppg": 13.64,
+      "value": 1970,
+      "group": "starter"
+     },
+     {
+      "id": "7588",
+      "name": "Javonte Williams",
+      "pos": "RB",
+      "nfl": "DAL",
+      "age": 26,
+      "exp": 5,
+      "ppg": 19.2,
+      "value": 1699,
+      "group": "starter"
+     },
+     {
+      "id": "12527",
+      "name": "Ashton Jeanty",
+      "pos": "RB",
+      "nfl": "LV",
+      "age": 22,
+      "exp": 1,
+      "ppg": 16.92,
+      "value": 8498,
+      "group": "starter"
+     },
+     {
+      "id": "6786",
+      "name": "CeeDee Lamb",
+      "pos": "WR",
+      "nfl": "DAL",
+      "age": 27,
+      "exp": 6,
+      "ppg": 23.02,
+      "value": 9205,
+      "group": "starter"
+     },
+     {
+      "id": "7569",
+      "name": "Nico Collins",
+      "pos": "WR",
+      "nfl": "HOU",
+      "age": 27,
+      "exp": 5,
+      "ppg": 20.87,
+      "value": 6002,
+      "group": "starter"
+     },
+     {
+      "id": "9484",
+      "name": "Tucker Kraft",
+      "pos": "TE",
+      "nfl": "GB",
+      "age": 25,
+      "exp": 3,
+      "ppg": 9.54,
+      "value": 2829,
+      "group": "starter"
+     },
+     {
+      "id": "9488",
+      "name": "Jaxon Smith-Njigba",
+      "pos": "WR",
+      "nfl": "SEA",
+      "age": 24,
+      "exp": 3,
+      "ppg": 27.89,
+      "value": 10136,
+      "group": "starter"
+     },
+     {
+      "id": "9487",
+      "name": "Parker Washington",
+      "pos": "WR",
+      "nfl": "JAX",
+      "age": 24,
+      "exp": 3,
+      "ppg": 16.3,
+      "value": 2952,
+      "group": "starter"
+     },
+     {
+      "id": "13833",
+      "name": "Dominic Zvada",
+      "pos": "K",
+      "nfl": "NYG",
+      "age": 22,
+      "exp": 0,
+      "ppg": 10.0,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "MIN",
+      "name": "Minnesota Vikings",
+      "pos": "DEF",
+      "nfl": "MIN",
+      "age": null,
+      "exp": null,
+      "ppg": 13.75,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "6797",
+      "name": "Justin Herbert",
+      "pos": "QB",
+      "nfl": "LAC",
+      "age": 28,
+      "exp": 6,
+      "ppg": 12.14,
+      "value": 2674,
+      "group": "bench"
+     },
+     {
+      "id": "13298",
+      "name": "KC Concepcion",
+      "pos": "WR",
+      "nfl": "CLE",
+      "age": 22,
+      "exp": 0,
+      "ppg": 6.36,
+      "value": 1711,
+      "group": "bench"
+     },
+     {
+      "id": "13285",
+      "name": "Malachi Fields",
+      "pos": "WR",
+      "nfl": "NYG",
+      "age": 23,
+      "exp": 0,
+      "ppg": 6.12,
+      "value": 98,
+      "group": "bench"
+     },
+     {
+      "id": "11603",
+      "name": "AJ Barner",
+      "pos": "TE",
+      "nfl": "SEA",
+      "age": 24,
+      "exp": 2,
+      "ppg": 6.06,
+      "value": 220,
+      "group": "bench"
+     },
+     {
+      "id": "9225",
+      "name": "Tank Bigsby",
+      "pos": "RB",
+      "nfl": "PHI",
+      "age": 24,
+      "exp": 3,
+      "ppg": 4.28,
+      "value": 99,
+      "group": "bench"
+     },
+     {
+      "id": "1166",
+      "name": "Kirk Cousins",
+      "pos": "QB",
+      "nfl": "LV",
+      "age": 38,
+      "exp": 14,
+      "ppg": 13.72,
+      "value": 49,
+      "group": "bench"
+     },
+     {
+      "id": "9757",
+      "name": "Kendre Miller",
+      "pos": "RB",
+      "nfl": "NO",
+      "age": 24,
+      "exp": 3,
+      "ppg": 5.45,
+      "value": 25,
+      "group": "bench"
+     },
+     {
+      "id": "NE",
+      "name": "New England Patriots",
+      "pos": "DEF",
+      "nfl": "NE",
+      "age": null,
+      "exp": null,
+      "ppg": 9.0,
+      "value": 0,
+      "group": "bench"
+     },
+     {
+      "id": "12467",
+      "name": "Jordan James",
+      "pos": "RB",
+      "nfl": "SF",
+      "age": 22,
+      "exp": 1,
+      "ppg": 1.5,
+      "value": 9,
+      "group": "taxi"
+     },
+     {
+      "id": "12487",
+      "name": "Terrance Ferguson",
+      "pos": "TE",
+      "nfl": "LAR",
+      "age": 23,
+      "exp": 1,
+      "ppg": 9.65,
+      "value": 563,
+      "group": "taxi"
+     },
+     {
+      "id": "12535",
+      "name": "Isaac TeSlaa",
+      "pos": "WR",
+      "nfl": "DET",
+      "age": 24,
+      "exp": 1,
+      "ppg": 9.23,
+      "value": 156,
+      "group": "taxi"
+     },
+     {
+      "id": "13349",
+      "name": "Eli Stowers",
+      "pos": "TE",
+      "nfl": "PHI",
+      "age": 23,
+      "exp": 0,
+      "ppg": 0.0,
+      "value": 504,
+      "group": "taxi"
+     },
+     {
+      "id": "11583",
+      "name": "Jonathon Brooks",
+      "pos": "RB",
+      "nfl": "CAR",
+      "age": 23,
+      "exp": 2,
+      "ppg": 4.65,
+      "value": 688,
+      "group": "ir"
+     },
+     {
+      "id": "13417",
+      "name": "De'Zhaun Stribling",
+      "pos": "WR",
+      "nfl": "SF",
+      "age": 23,
+      "exp": 0,
+      "ppg": 0.0,
+      "value": 525,
+      "group": "ir"
+     }
+    ],
+    "draftees": [
+     {
+      "label": "1.12",
+      "key": "jamari johnson",
+      "name": "Jamari Johnson",
+      "pos": "TE"
+     },
+     {
+      "label": "2.04",
+      "key": "collin dixon",
+      "name": "Collin Dixon",
+      "pos": "WR"
+     },
+     {
+      "label": "2.05",
+      "key": "darian mensah",
+      "name": "Darian Mensah",
+      "pos": "QB"
+     },
+     {
+      "label": "2.10",
+      "key": "luke reynolds",
+      "name": "Luke Reynolds",
+      "pos": "TE"
+     },
+     {
+      "label": "3.10",
+      "key": "arch manning",
+      "name": "Arch Manning",
+      "pos": "QB"
+     }
+    ],
+    "cuts": [
+     "NE",
+     "12467",
+     "9757",
+     "1166",
+     "13285"
+    ],
+    "counts": {
+     "active": 18,
+     "taxi": 4,
+     "ir": 2
+    }
+   },
+   "7": {
+    "current": [
+     {
+      "id": "6804",
+      "name": "Jordan Love",
+      "pos": "QB",
+      "nfl": "GB",
+      "age": 27,
+      "exp": 6,
+      "ppg": 18.62,
+      "value": 1237,
+      "group": "starter"
+     },
+     {
+      "id": "12481",
+      "name": "Cam Skattebo",
+      "pos": "RB",
+      "nfl": "NYG",
+      "age": 24,
+      "exp": 1,
+      "ppg": 10.26,
+      "value": 1880,
+      "group": "starter"
+     },
+     {
+      "id": "12474",
+      "name": "Woody Marks",
+      "pos": "RB",
+      "nfl": "HOU",
+      "age": 25,
+      "exp": 1,
+      "ppg": 8.66,
+      "value": 283,
+      "group": "starter"
+     },
+     {
+      "id": "11632",
+      "name": "Malik Nabers",
+      "pos": "WR",
+      "nfl": "NYG",
+      "age": 23,
+      "exp": 2,
+      "ppg": 14.78,
+      "value": 7736,
+      "group": "starter"
+     },
+     {
+      "id": "8121",
+      "name": "Romeo Doubs",
+      "pos": "WR",
+      "nfl": "NE",
+      "age": 26,
+      "exp": 4,
+      "ppg": 11.72,
+      "value": 417,
+      "group": "starter"
+     },
+     {
+      "id": "10859",
+      "name": "Sam LaPorta",
+      "pos": "TE",
+      "nfl": "DET",
+      "age": 25,
+      "exp": 3,
+      "ppg": 15.32,
+      "value": 3932,
+      "group": "starter"
+     },
+     {
+      "id": "8126",
+      "name": "Wan'Dale Robinson",
+      "pos": "WR",
+      "nfl": "TEN",
+      "age": 25,
+      "exp": 4,
+      "ppg": 10.34,
+      "value": 866,
+      "group": "starter"
+     },
+     {
+      "id": "5844",
+      "name": "T.J. Hockenson",
+      "pos": "TE",
+      "nfl": "MIN",
+      "age": 29,
+      "exp": 7,
+      "ppg": 9.84,
+      "value": 239,
+      "group": "starter"
+     },
+     {
+      "id": "6083",
+      "name": "Matt Gay",
+      "pos": "K",
+      "nfl": "LV",
+      "age": 32,
+      "exp": 7,
+      "ppg": 10.25,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "HOU",
+      "name": "Houston Texans",
+      "pos": "DEF",
+      "nfl": "HOU",
+      "age": null,
+      "exp": null,
+      "ppg": 7.6,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "4943",
+      "name": "Sam Darnold",
+      "pos": "QB",
+      "nfl": "SEA",
+      "age": 29,
+      "exp": 8,
+      "ppg": 13.7,
+      "value": 459,
+      "group": "bench"
+     },
+     {
+      "id": "11628",
+      "name": "Marvin Harrison",
+      "pos": "WR",
+      "nfl": "HOU",
+      "age": 24,
+      "exp": 2,
+      "ppg": 6.5,
+      "value": 3699,
+      "group": "bench"
+     },
+     {
+      "id": "9754",
+      "name": "Quentin Johnston",
+      "pos": "WR",
+      "nfl": "LAC",
+      "age": 25,
+      "exp": 3,
+      "ppg": 4.53,
+      "value": 675,
+      "group": "bench"
+     },
+     {
+      "id": "9486",
+      "name": "Dontayvion Wicks",
+      "pos": "WR",
+      "nfl": "PHI",
+      "age": 25,
+      "exp": 3,
+      "ppg": 9.8,
+      "value": 177,
+      "group": "bench"
+     },
+     {
+      "id": "10219",
+      "name": "Chris Rodriguez",
+      "pos": "RB",
+      "nfl": "JAX",
+      "age": 27,
+      "exp": 3,
+      "ppg": 4.98,
+      "value": 100,
+      "group": "bench"
+     },
+     {
+      "id": "13317",
+      "name": "Ted Hurst",
+      "pos": "WR",
+      "nfl": "TB",
+      "age": 22,
+      "exp": 0,
+      "ppg": 6.7,
+      "value": 158,
+      "group": "bench"
+     },
+     {
+      "id": "13264",
+      "name": "Dohnte Meyers",
+      "pos": "WR",
+      "nfl": "CIN",
+      "age": 26,
+      "exp": 0,
+      "ppg": 3.2,
+      "value": 3,
+      "group": "bench"
+     },
+     {
+      "id": "13413",
+      "name": "Cyrus Allen",
+      "pos": "WR",
+      "nfl": "KC",
+      "age": 23,
+      "exp": 0,
+      "ppg": 0.0,
+      "value": 36,
+      "group": "bench"
+     },
+     {
+      "id": "11625",
+      "name": "Adonai Mitchell",
+      "pos": "WR",
+      "nfl": "NYJ",
+      "age": 24,
+      "exp": 2,
+      "ppg": 10.65,
+      "value": 407,
+      "group": "taxi"
+     },
+     {
+      "id": "13268",
+      "name": "Elijah Sarratt",
+      "pos": "WR",
+      "nfl": "BAL",
+      "age": 23,
+      "exp": 0,
+      "ppg": 2.3,
+      "value": 70,
+      "group": "taxi"
+     },
+     {
+      "id": "13324",
+      "name": "Matt Hibner",
+      "pos": "TE",
+      "nfl": "BAL",
+      "age": 24,
+      "exp": 0,
+      "ppg": 6.0,
+      "value": 0,
+      "group": "taxi"
+     },
+     {
+      "id": "12469",
+      "name": "Dylan Sampson",
+      "pos": "RB",
+      "nfl": "CLE",
+      "age": 22,
+      "exp": 1,
+      "ppg": 0.0,
+      "value": 113,
+      "group": "ir"
+     },
+     {
+      "id": "13302",
+      "name": "Adam Randall",
+      "pos": "RB",
+      "nfl": "BAL",
+      "age": 22,
+      "exp": 0,
+      "ppg": 0.0,
+      "value": 4,
+      "group": "ir"
+     }
+    ],
+    "draftees": [
+     {
+      "label": "1.10",
+      "key": "deuce alexander",
+      "name": "Deuce Alexander",
+      "pos": "WR"
+     },
+     {
+      "label": "1.11",
+      "key": "mark fletcher",
+      "name": "Mark Fletcher",
+      "pos": "RB"
+     },
+     {
+      "label": "2.01",
+      "key": "ryan coleman williams",
+      "name": "Ryan Coleman-Williams",
+      "pos": "WR"
+     },
+     {
+      "label": "2.08",
+      "key": "wayshawn parker",
+      "name": "Wayshawn Parker",
+      "pos": "RB"
+     }
+    ],
+    "cuts": [
+     "13324",
+     "13264",
+     "13413"
+    ],
+    "counts": {
+     "active": 18,
+     "taxi": 3,
+     "ir": 2
+    }
+   },
+   "8": {
+    "current": [
+     {
+      "id": "8183",
+      "name": "Brock Purdy",
+      "pos": "QB",
+      "nfl": "SF",
+      "age": 26,
+      "exp": 4,
+      "ppg": 23.73,
+      "value": 2738,
+      "group": "starter"
+     },
+     {
+      "id": "12512",
+      "name": "Quinshon Judkins",
+      "pos": "RB",
+      "nfl": "CLE",
+      "age": 22,
+      "exp": 1,
+      "ppg": 11.26,
+      "value": 2700,
+      "group": "starter"
+     },
+     {
+      "id": "12489",
+      "name": "RJ Harvey",
+      "pos": "RB",
+      "nfl": "DEN",
+      "age": 25,
+      "exp": 1,
+      "ppg": 9.7,
+      "value": 430,
+      "group": "starter"
+     },
+     {
+      "id": "8146",
+      "name": "Garrett Wilson",
+      "pos": "WR",
+      "nfl": "NYJ",
+      "age": 26,
+      "exp": 4,
+      "ppg": 17.28,
+      "value": 6501,
+      "group": "starter"
+     },
+     {
+      "id": "6794",
+      "name": "Justin Jefferson",
+      "pos": "WR",
+      "nfl": "MIN",
+      "age": 27,
+      "exp": 6,
+      "ppg": 15.93,
+      "value": 8866,
+      "group": "starter"
+     },
+     {
+      "id": "11604",
+      "name": "Brock Bowers",
+      "pos": "TE",
+      "nfl": "LV",
+      "age": 23,
+      "exp": 2,
+      "ppg": 23.73,
+      "value": 5606,
+      "group": "starter"
+     },
+     {
+      "id": "9500",
+      "name": "Josh Downs",
+      "pos": "WR",
+      "nfl": "IND",
+      "age": 25,
+      "exp": 3,
+      "ppg": 8.98,
+      "value": 1175,
+      "group": "starter"
+     },
+     {
+      "id": "7002",
+      "name": "Juwan Johnson",
+      "pos": "TE",
+      "nfl": "NO",
+      "age": 30,
+      "exp": 6,
+      "ppg": 13.16,
+      "value": 507,
+      "group": "starter"
+     },
+     {
+      "id": "12185",
+      "name": "Spencer Shrader",
+      "pos": "K",
+      "nfl": "IND",
+      "age": 27,
+      "exp": 2,
+      "ppg": 15.0,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "SEA",
+      "name": "Seattle Seahawks",
+      "pos": "DEF",
+      "nfl": "SEA",
+      "age": null,
+      "exp": null,
+      "ppg": 8.8,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "11834",
+      "name": "Devaughn Vele",
+      "pos": "WR",
+      "nfl": "NO",
+      "age": 28,
+      "exp": 2,
+      "ppg": 12.44,
+      "value": 66,
+      "group": "bench"
+     },
+     {
+      "id": "10229",
+      "name": "Rashee Rice",
+      "pos": "WR",
+      "nfl": "KC",
+      "age": 26,
+      "exp": 3,
+      "ppg": 12.67,
+      "value": 4506,
+      "group": "bench"
+     },
+     {
+      "id": "11539",
+      "name": "Jake Bates",
+      "pos": "K",
+      "nfl": "DET",
+      "age": 27,
+      "exp": 3,
+      "ppg": 10.5,
+      "value": 0,
+      "group": "bench"
+     },
+     {
+      "id": "LAR",
+      "name": "Los Angeles Rams",
+      "pos": "DEF",
+      "nfl": "LAR",
+      "age": null,
+      "exp": null,
+      "ppg": 5.4,
+      "value": 0,
+      "group": "bench"
+     },
+     {
+      "id": "13286",
+      "name": "Jadarian Price",
+      "pos": "RB",
+      "nfl": "SEA",
+      "age": 23,
+      "exp": 0,
+      "ppg": 4.67,
+      "value": 2334,
+      "group": "bench"
+     },
+     {
+      "id": "5850",
+      "name": "Josh Jacobs",
+      "pos": "RB",
+      "nfl": "GB",
+      "age": 28,
+      "exp": 7,
+      "ppg": 0.0,
+      "value": 777,
+      "group": "bench"
+     },
+     {
+      "id": "12508",
+      "name": "Jaxson Dart",
+      "pos": "QB",
+      "nfl": "NYG",
+      "age": 23,
+      "exp": 1,
+      "ppg": 13.7,
+      "value": 1148,
+      "group": "ir"
+     },
+     {
+      "id": "9753",
+      "name": "Zach Charbonnet",
+      "pos": "RB",
+      "nfl": "SEA",
+      "age": 25,
+      "exp": 3,
+      "ppg": 0.0,
+      "value": 283,
+      "group": "ir"
+     }
+    ],
+    "draftees": [
+     {
+      "label": "3.08",
+      "key": "cj carr",
+      "name": "CJ Carr",
+      "pos": "QB"
+     }
+    ],
+    "cuts": [],
+    "counts": {
+     "active": 16,
+     "taxi": 0,
+     "ir": 2
+    }
+   },
+   "9": {
+    "current": [
+     {
+      "id": "11564",
+      "name": "Drake Maye",
+      "pos": "QB",
+      "nfl": "NE",
+      "age": 24,
+      "exp": 2,
+      "ppg": 18.84,
+      "value": 4745,
+      "group": "starter"
+     },
+     {
+      "id": "9509",
+      "name": "Bijan Robinson",
+      "pos": "RB",
+      "nfl": "ATL",
+      "age": 24,
+      "exp": 3,
+      "ppg": 24.24,
+      "value": 9558,
+      "group": "starter"
+     },
+     {
+      "id": "12490",
+      "name": "Bhayshul Tuten",
+      "pos": "RB",
+      "nfl": "JAX",
+      "age": 23,
+      "exp": 1,
+      "ppg": 12.74,
+      "value": 1486,
+      "group": "starter"
+     },
+     {
+      "id": "8137",
+      "name": "George Pickens",
+      "pos": "WR",
+      "nfl": "DAL",
+      "age": 25,
+      "exp": 4,
+      "ppg": 13.7,
+      "value": 4892,
+      "group": "starter"
+     },
+     {
+      "id": "7564",
+      "name": "Ja'Marr Chase",
+      "pos": "WR",
+      "nfl": "CIN",
+      "age": 26,
+      "exp": 5,
+      "ppg": 15.98,
+      "value": 10113,
+      "group": "starter"
+     },
+     {
+      "id": "12517",
+      "name": "Colston Loveland",
+      "pos": "TE",
+      "nfl": "CHI",
+      "age": 22,
+      "exp": 1,
+      "ppg": 6.0,
+      "value": 3664,
+      "group": "starter"
+     },
+     {
+      "id": "8112",
+      "name": "Drake London",
+      "pos": "WR",
+      "nfl": "ATL",
+      "age": 25,
+      "exp": 4,
+      "ppg": 15.24,
+      "value": 7486,
+      "group": "starter"
+     },
+     {
+      "id": "8144",
+      "name": "Chris Olave",
+      "pos": "WR",
+      "nfl": "NO",
+      "age": 26,
+      "exp": 4,
+      "ppg": 19.74,
+      "value": 6501,
+      "group": "starter"
+     },
+     {
+      "id": "8259",
+      "name": "Cameron Dicker",
+      "pos": "K",
+      "nfl": "LAC",
+      "age": 26,
+      "exp": 4,
+      "ppg": 3.0,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "DEN",
+      "name": "Denver Broncos",
+      "pos": "DEF",
+      "nfl": "DEN",
+      "age": null,
+      "exp": null,
+      "ppg": 8.6,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "12526",
+      "name": "Tetairoa McMillan",
+      "pos": "WR",
+      "nfl": "CAR",
+      "age": 23,
+      "exp": 1,
+      "ppg": 18.62,
+      "value": 6911,
+      "group": "bench"
+     },
+     {
+      "id": "8154",
+      "name": "Brian Robinson",
+      "pos": "RB",
+      "nfl": "ATL",
+      "age": 27,
+      "exp": 4,
+      "ppg": 10.02,
+      "value": 108,
+      "group": "bench"
+     },
+     {
+      "id": "11637",
+      "name": "Keon Coleman",
+      "pos": "WR",
+      "nfl": "BUF",
+      "age": 23,
+      "exp": 2,
+      "ppg": 12.0,
+      "value": 114,
+      "group": "bench"
+     },
+     {
+      "id": "7523",
+      "name": "Trevor Lawrence",
+      "pos": "QB",
+      "nfl": "JAX",
+      "age": 27,
+      "exp": 5,
+      "ppg": 17.97,
+      "value": 2938,
+      "group": "bench"
+     },
+     {
+      "id": "13394",
+      "name": "Josh Cameron",
+      "pos": "WR",
+      "nfl": "JAX",
+      "age": 23,
+      "exp": 0,
+      "ppg": 6.75,
+      "value": 3,
+      "group": "bench"
+     },
+     {
+      "id": "13424",
+      "name": "Seth McGowan",
+      "pos": "RB",
+      "nfl": "IND",
+      "age": 24,
+      "exp": 0,
+      "ppg": 2.52,
+      "value": 11,
+      "group": "bench"
+     },
+     {
+      "id": "9482",
+      "name": "Michael Mayer",
+      "pos": "TE",
+      "nfl": "LV",
+      "age": 25,
+      "exp": 3,
+      "ppg": 5.23,
+      "value": 113,
+      "group": "bench"
+     },
+     {
+      "id": "12493",
+      "name": "Oronde Gadsden",
+      "pos": "TE",
+      "nfl": "LAC",
+      "age": 23,
+      "exp": 1,
+      "ppg": 7.93,
+      "value": 633,
+      "group": "taxi"
+     },
+     {
+      "id": "12509",
+      "name": "Tre' Harris",
+      "pos": "WR",
+      "nfl": "LAC",
+      "age": 24,
+      "exp": 1,
+      "ppg": 7.5,
+      "value": 311,
+      "group": "taxi"
+     },
+     {
+      "id": "13276",
+      "name": "Omar Cooper",
+      "pos": "WR",
+      "nfl": "NYJ",
+      "age": 22,
+      "exp": 0,
+      "ppg": 4.0,
+      "value": 807,
+      "group": "taxi"
+     },
+     {
+      "id": "13296",
+      "name": "Caleb Douglas",
+      "pos": "WR",
+      "nfl": "MIA",
+      "age": 23,
+      "exp": 0,
+      "ppg": 9.15,
+      "value": 314,
+      "group": "taxi"
+     },
+     {
+      "id": "12529",
+      "name": "TreVeyon Henderson",
+      "pos": "RB",
+      "nfl": "NE",
+      "age": 23,
+      "exp": 1,
+      "ppg": 6.62,
+      "value": 2687,
+      "group": "ir"
+     },
+     {
+      "id": "4137",
+      "name": "James Conner",
+      "pos": "RB",
+      "nfl": "ARI",
+      "age": 31,
+      "exp": 9,
+      "ppg": 0.0,
+      "value": 4,
+      "group": "ir"
+     }
+    ],
+    "draftees": [
+     {
+      "label": "1.01",
+      "key": "jeremiah smith",
+      "name": "Jeremiah Smith",
+      "pos": "WR"
+     },
+     {
+      "label": "1.05",
+      "key": "kewan lacy",
+      "name": "Kewan Lacy",
+      "pos": "RB"
+     },
+     {
+      "label": "1.09",
+      "key": "treydez green",
+      "name": "Trey'Dez Green",
+      "pos": "TE"
+     },
+     {
+      "label": "3.09",
+      "key": "ahmad hardy",
+      "name": "Ahmad Hardy",
+      "pos": "RB"
+     },
+     {
+      "label": "3.12",
+      "key": "cayden lee",
+      "name": "Cayden Lee",
+      "pos": "WR"
+     }
+    ],
+    "cuts": [
+     "13394",
+     "13424",
+     "8154",
+     "9482"
+    ],
+    "counts": {
+     "active": 17,
+     "taxi": 4,
+     "ir": 2
+    }
+   },
+   "10": {
+    "current": [
+     {
+      "id": "3294",
+      "name": "Dak Prescott",
+      "pos": "QB",
+      "nfl": "DAL",
+      "age": 33,
+      "exp": 10,
+      "ppg": 19.37,
+      "value": 1633,
+      "group": "starter"
+     },
+     {
+      "id": "4034",
+      "name": "Christian McCaffrey",
+      "pos": "RB",
+      "nfl": "SF",
+      "age": 30,
+      "exp": 9,
+      "ppg": 18.26,
+      "value": 4985,
+      "group": "starter"
+     },
+     {
+      "id": "8136",
+      "name": "Rachaad White",
+      "pos": "RB",
+      "nfl": "WAS",
+      "age": 27,
+      "exp": 4,
+      "ppg": 8.28,
+      "value": 199,
+      "group": "starter"
+     },
+     {
+      "id": "2133",
+      "name": "Davante Adams",
+      "pos": "WR",
+      "nfl": "LAR",
+      "age": 33,
+      "exp": 12,
+      "ppg": 19.02,
+      "value": 1602,
+      "group": "starter"
+     },
+     {
+      "id": "5947",
+      "name": "Jakobi Meyers",
+      "pos": "WR",
+      "nfl": "JAX",
+      "age": 29,
+      "exp": 7,
+      "ppg": 9.48,
+      "value": 528,
+      "group": "starter"
+     },
+     {
+      "id": "8131",
+      "name": "Isaiah Likely",
+      "pos": "TE",
+      "nfl": "NYG",
+      "age": 26,
+      "exp": 4,
+      "ppg": 17.08,
+      "value": 1687,
+      "group": "starter"
+     },
+     {
+      "id": "8110",
+      "name": "Jake Ferguson",
+      "pos": "TE",
+      "nfl": "DAL",
+      "age": 27,
+      "exp": 4,
+      "ppg": 8.24,
+      "value": 659,
+      "group": "starter"
+     },
+     {
+      "id": "11610",
+      "name": "Malik Washington",
+      "pos": "WR",
+      "nfl": "MIA",
+      "age": 25,
+      "exp": 2,
+      "ppg": 10.04,
+      "value": 109,
+      "group": "starter"
+     },
+     {
+      "id": "11533",
+      "name": "Brandon Aubrey",
+      "pos": "K",
+      "nfl": "DAL",
+      "age": 31,
+      "exp": 3,
+      "ppg": 8.4,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "DAL",
+      "name": "Dallas Cowboys",
+      "pos": "DEF",
+      "nfl": "DAL",
+      "age": null,
+      "exp": null,
+      "ppg": 2.6,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "96",
+      "name": "Aaron Rodgers",
+      "pos": "QB",
+      "nfl": "PIT",
+      "age": 42,
+      "exp": 21,
+      "ppg": 17.43,
+      "value": 66,
+      "group": "bench"
+     },
+     {
+      "id": "11792",
+      "name": "Will Reichard",
+      "pos": "K",
+      "nfl": "MIN",
+      "age": 25,
+      "exp": 2,
+      "ppg": 13.6,
+      "value": 0,
+      "group": "bench"
+     },
+     {
+      "id": "7525",
+      "name": "DeVonta Smith",
+      "pos": "WR",
+      "nfl": "PHI",
+      "age": 27,
+      "exp": 5,
+      "ppg": 16.17,
+      "value": 5164,
+      "group": "bench"
+     },
+     {
+      "id": "5927",
+      "name": "Terry McLaurin",
+      "pos": "WR",
+      "nfl": "WAS",
+      "age": 31,
+      "exp": 7,
+      "ppg": 10.57,
+      "value": 1699,
+      "group": "bench"
+     },
+     {
+      "id": "TB",
+      "name": "Tampa Bay Buccaneers",
+      "pos": "DEF",
+      "nfl": "TB",
+      "age": null,
+      "exp": null,
+      "ppg": 6.0,
+      "value": 0,
+      "group": "bench"
+     },
+     {
+      "id": "7528",
+      "name": "Najee Harris",
+      "pos": "RB",
+      "nfl": "NYG",
+      "age": 28,
+      "exp": 5,
+      "ppg": 2.0,
+      "value": 7,
+      "group": "bench"
+     },
+     {
+      "id": "10226",
+      "name": "Andrei Iosivas",
+      "pos": "WR",
+      "nfl": "CIN",
+      "age": 26,
+      "exp": 3,
+      "ppg": 2.45,
+      "value": 16,
+      "group": "bench"
+     },
+     {
+      "id": "6149",
+      "name": "Darius Slayton",
+      "pos": "WR",
+      "nfl": "IND",
+      "age": 29,
+      "exp": 7,
+      "ppg": 0.0,
+      "value": 32,
+      "group": "bench"
+     },
+     {
+      "id": "12510",
+      "name": "Jalen Milroe",
+      "pos": "QB",
+      "nfl": "SEA",
+      "age": 23,
+      "exp": 1,
+      "ppg": 0.0,
+      "value": 18,
+      "group": "taxi"
+     },
+     {
+      "id": "12523",
+      "name": "Jimmy Horn",
+      "pos": "WR",
+      "nfl": "CLE",
+      "age": 24,
+      "exp": 1,
+      "ppg": -2.0,
+      "value": 1,
+      "group": "taxi"
+     },
+     {
+      "id": "13278",
+      "name": "Max Klare",
+      "pos": "TE",
+      "nfl": "LAR",
+      "age": 23,
+      "exp": 0,
+      "ppg": 0.0,
+      "value": 148,
+      "group": "taxi"
+     },
+     {
+      "id": "13353",
+      "name": "Chris Brazzell",
+      "pos": "WR",
+      "nfl": "CAR",
+      "age": 23,
+      "exp": 0,
+      "ppg": 0.0,
+      "value": 91,
+      "group": "taxi"
+     },
+     {
+      "id": "8408",
+      "name": "Jordan Mason",
+      "pos": "RB",
+      "nfl": "MIN",
+      "age": 27,
+      "exp": 4,
+      "ppg": 11.9,
+      "value": 217,
+      "group": "ir"
+     }
+    ],
+    "draftees": [
+     {
+      "label": "1.03",
+      "key": "cam coleman",
+      "name": "Cam Coleman",
+      "pos": "WR"
+     },
+     {
+      "label": "2.03",
+      "key": "wyatt young",
+      "name": "Wyatt Young",
+      "pos": "WR"
+     },
+     {
+      "label": "3.03",
+      "key": "trinidad chambliss",
+      "name": "Trinidad Chambliss",
+      "pos": "QB"
+     }
+    ],
+    "cuts": [
+     "DAL",
+     "11533",
+     "12523"
+    ],
+    "counts": {
+     "active": 18,
+     "taxi": 4,
+     "ir": 1
+    }
+   },
+   "11": {
+    "current": [
+     {
+      "id": "2306",
+      "name": "Jameis Winston",
+      "pos": "QB",
+      "nfl": "NYG",
+      "age": 32,
+      "exp": 11,
+      "ppg": 25.74,
+      "value": 4,
+      "group": "starter"
+     },
+     {
+      "id": "6813",
+      "name": "Jonathan Taylor",
+      "pos": "RB",
+      "nfl": "IND",
+      "age": 27,
+      "exp": 6,
+      "ppg": 19.48,
+      "value": 6782,
+      "group": "starter"
+     },
+     {
+      "id": "5967",
+      "name": "Tony Pollard",
+      "pos": "RB",
+      "nfl": "TEN",
+      "age": 29,
+      "exp": 7,
+      "ppg": 8.74,
+      "value": 338,
+      "group": "starter"
+     },
+     {
+      "id": "8167",
+      "name": "Christian Watson",
+      "pos": "WR",
+      "nfl": "GB",
+      "age": 27,
+      "exp": 4,
+      "ppg": 21.88,
+      "value": 3008,
+      "group": "starter"
+     },
+     {
+      "id": "11620",
+      "name": "Rome Odunze",
+      "pos": "WR",
+      "nfl": "CHI",
+      "age": 24,
+      "exp": 2,
+      "ppg": 8.46,
+      "value": 4179,
+      "group": "starter"
+     },
+     {
+      "id": "12518",
+      "name": "Tyler Warren",
+      "pos": "TE",
+      "nfl": "IND",
+      "age": 24,
+      "exp": 1,
+      "ppg": 13.98,
+      "value": 3258,
+      "group": "starter"
+     },
+     {
+      "id": "6806",
+      "name": "J.K. Dobbins",
+      "pos": "RB",
+      "nfl": "DEN",
+      "age": 27,
+      "exp": 6,
+      "ppg": 7.22,
+      "value": 211,
+      "group": "starter"
+     },
+     {
+      "id": "11646",
+      "name": "Jalen Coker",
+      "pos": "WR",
+      "nfl": "CAR",
+      "age": 24,
+      "exp": 2,
+      "ppg": 17.4,
+      "value": 997,
+      "group": "starter"
+     },
+     {
+      "id": "650",
+      "name": "Nick Folk",
+      "pos": "K",
+      "nfl": "ATL",
+      "age": 41,
+      "exp": 19,
+      "ppg": 10.5,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "CHI",
+      "name": "Chicago Bears",
+      "pos": "DEF",
+      "nfl": "CHI",
+      "age": null,
+      "exp": null,
+      "ppg": 7.0,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "9228",
+      "name": "Bryce Young",
+      "pos": "QB",
+      "nfl": "CAR",
+      "age": 25,
+      "exp": 3,
+      "ppg": 23.16,
+      "value": 701,
+      "group": "bench"
+     },
+     {
+      "id": "4046",
+      "name": "Patrick Mahomes",
+      "pos": "QB",
+      "nfl": "KC",
+      "age": 31,
+      "exp": 9,
+      "ppg": 21.39,
+      "value": 4495,
+      "group": "bench"
+     },
+     {
+      "id": "4199",
+      "name": "Aaron Jones",
+      "pos": "RB",
+      "nfl": "MIN",
+      "age": 31,
+      "exp": 9,
+      "ppg": 14.04,
+      "value": 154,
+      "group": "bench"
+     },
+     {
+      "id": "5022",
+      "name": "Dallas Goedert",
+      "pos": "TE",
+      "nfl": "PHI",
+      "age": 31,
+      "exp": 8,
+      "ppg": 11.63,
+      "value": 586,
+      "group": "bench"
+     },
+     {
+      "id": "4039",
+      "name": "Cooper Kupp",
+      "pos": "WR",
+      "nfl": "SEA",
+      "age": 33,
+      "exp": 9,
+      "ppg": 5.98,
+      "value": 63,
+      "group": "bench"
+     },
+     {
+      "id": "11631",
+      "name": "Brian Thomas",
+      "pos": "WR",
+      "nfl": "JAX",
+      "age": 24,
+      "exp": 2,
+      "ppg": 6.38,
+      "value": 1934,
+      "group": "bench"
+     },
+     {
+      "id": "BUF",
+      "name": "Buffalo Bills",
+      "pos": "DEF",
+      "nfl": "BUF",
+      "age": null,
+      "exp": null,
+      "ppg": 4.0,
+      "value": 0,
+      "group": "bench"
+     },
+     {
+      "id": "13301",
+      "name": "Antonio Williams",
+      "pos": "WR",
+      "nfl": "WAS",
+      "age": 22,
+      "exp": 0,
+      "ppg": 7.3,
+      "value": 701,
+      "group": "taxi"
+     },
+     {
+      "id": "13346",
+      "name": "Denzel Boston",
+      "pos": "WR",
+      "nfl": "CLE",
+      "age": 22,
+      "exp": 0,
+      "ppg": 13.8,
+      "value": 1845,
+      "group": "taxi"
+     },
+     {
+      "id": "13411",
+      "name": "Zavion Thomas",
+      "pos": "WR",
+      "nfl": "CHI",
+      "age": 22,
+      "exp": 0,
+      "ppg": 2.15,
+      "value": 4,
+      "group": "taxi"
+     },
+     {
+      "id": "13420",
+      "name": "Bryce Lance",
+      "pos": "WR",
+      "nfl": "NO",
+      "age": 24,
+      "exp": 0,
+      "ppg": 3.57,
+      "value": 5,
+      "group": "taxi"
+     },
+     {
+      "id": "2078",
+      "name": "Odell Beckham",
+      "pos": "WR",
+      "nfl": "MIN",
+      "age": 33,
+      "exp": 12,
+      "ppg": 0.0,
+      "value": 0,
+      "group": "ir"
+     },
+     {
+      "id": "5892",
+      "name": "David Montgomery",
+      "pos": "RB",
+      "nfl": "HOU",
+      "age": 29,
+      "exp": 7,
+      "ppg": 9.1,
+      "value": 788,
+      "group": "ir"
+     }
+    ],
+    "draftees": [
+     {
+      "label": "1.06",
+      "key": "nick marsh",
+      "name": "Nick Marsh",
+      "pos": "WR"
+     },
+     {
+      "label": "1.08",
+      "key": "reed harris",
+      "name": "Reed Harris",
+      "pos": "WR"
+     },
+     {
+      "label": "2.06",
+      "key": "jahiem white",
+      "name": "Jahiem White",
+      "pos": "RB"
+     },
+     {
+      "label": "3.06",
+      "key": "desean bishop",
+      "name": "DeSean Bishop",
+      "pos": "RB"
+     }
+    ],
+    "cuts": [
+     "BUF",
+     "13411",
+     "2306"
+    ],
+    "counts": {
+     "active": 17,
+     "taxi": 4,
+     "ir": 2
+    }
+   },
+   "12": {
+    "current": [
+     {
+      "id": "6770",
+      "name": "Joe Burrow",
+      "pos": "QB",
+      "nfl": "CIN",
+      "age": 29,
+      "exp": 6,
+      "ppg": 20.85,
+      "value": 4289,
+      "group": "starter"
+     },
+     {
+      "id": "3198",
+      "name": "Derrick Henry",
+      "pos": "RB",
+      "nfl": "BAL",
+      "age": 32,
+      "exp": 10,
+      "ppg": 22.36,
+      "value": 1699,
+      "group": "starter"
+     },
+     {
+      "id": "8150",
+      "name": "Kyren Williams",
+      "pos": "RB",
+      "nfl": "LAR",
+      "age": 26,
+      "exp": 4,
+      "ppg": 21.86,
+      "value": 3258,
+      "group": "starter"
+     },
+     {
+      "id": "11630",
+      "name": "Roman Wilson",
+      "pos": "WR",
+      "nfl": "PIT",
+      "age": 25,
+      "exp": 2,
+      "ppg": 12.1,
+      "value": 8,
+      "group": "starter"
+     },
+     {
+      "id": "6801",
+      "name": "Tee Higgins",
+      "pos": "WR",
+      "nfl": "CIN",
+      "age": 27,
+      "exp": 6,
+      "ppg": 15.06,
+      "value": 3630,
+      "group": "starter"
+     },
+     {
+      "id": "7553",
+      "name": "Kyle Pitts",
+      "pos": "TE",
+      "nfl": "ATL",
+      "age": 26,
+      "exp": 5,
+      "ppg": 6.72,
+      "value": 2247,
+      "group": "starter"
+     },
+     {
+      "id": "11581",
+      "name": "MarShawn Lloyd",
+      "pos": "RB",
+      "nfl": "GB",
+      "age": 25,
+      "exp": 2,
+      "ppg": 8.54,
+      "value": 30,
+      "group": "starter"
+     },
+     {
+      "id": "11577",
+      "name": "Will Shipley",
+      "pos": "RB",
+      "nfl": "PHI",
+      "age": 24,
+      "exp": 2,
+      "ppg": 8.3,
+      "value": 6,
+      "group": "starter"
+     },
+     {
+      "id": "2747",
+      "name": "Jason Myers",
+      "pos": "K",
+      "nfl": "SEA",
+      "age": 35,
+      "exp": 11,
+      "ppg": 10.2,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "PIT",
+      "name": "Pittsburgh Steelers",
+      "pos": "DEF",
+      "nfl": "PIT",
+      "age": null,
+      "exp": null,
+      "ppg": 8.8,
+      "value": 0,
+      "group": "starter"
+     },
+     {
+      "id": "12545",
+      "name": "Tyler Shough",
+      "pos": "QB",
+      "nfl": "NO",
+      "age": 27,
+      "exp": 1,
+      "ppg": 18.03,
+      "value": 1132,
+      "group": "bench"
+     },
+     {
+      "id": "13294",
+      "name": "Makai Lemon",
+      "pos": "WR",
+      "nfl": "PHI",
+      "age": 22,
+      "exp": 0,
+      "ppg": 5.06,
+      "value": 3108,
+      "group": "bench"
+     },
+     {
+      "id": "13305",
+      "name": "Mike Washington",
+      "pos": "RB",
+      "nfl": "LV",
+      "age": 23,
+      "exp": 0,
+      "ppg": 4.18,
+      "value": 130,
+      "group": "bench"
+     },
+     {
+      "id": "6819",
+      "name": "Michael Pittman",
+      "pos": "WR",
+      "nfl": "PIT",
+      "age": 29,
+      "exp": 6,
+      "ppg": 5.3,
+      "value": 1421,
+      "group": "bench"
+     },
+     {
+      "id": "8142",
+      "name": "Alec Pierce",
+      "pos": "WR",
+      "nfl": "IND",
+      "age": 26,
+      "exp": 4,
+      "ppg": 6.1,
+      "value": 1214,
+      "group": "bench"
+     },
+     {
+      "id": "4993",
+      "name": "Mike Gesicki",
+      "pos": "TE",
+      "nfl": "CIN",
+      "age": 31,
+      "exp": 8,
+      "ppg": 7.4,
+      "value": 4,
+      "group": "bench"
+     },
+     {
+      "id": "5859",
+      "name": "A.J. Brown",
+      "pos": "WR",
+      "nfl": "NE",
+      "age": 29,
+      "exp": 7,
+      "ppg": 5.6,
+      "value": 4745,
+      "group": "bench"
+     },
+     {
+      "id": "6803",
+      "name": "Brandon Aiyuk",
+      "pos": "WR",
+      "nfl": "SF",
+      "age": 28,
+      "exp": 6,
+      "ppg": 0.0,
+      "value": 290,
+      "group": "bench"
+     },
+     {
+      "id": "11575",
+      "name": "Ray Davis",
+      "pos": "RB",
+      "nfl": "BUF",
+      "age": 26,
+      "exp": 2,
+      "ppg": 2.1,
+      "value": 22,
+      "group": "taxi"
+     },
+     {
+      "id": "11643",
+      "name": "Jaylen Wright",
+      "pos": "RB",
+      "nfl": "MIA",
+      "age": 23,
+      "exp": 2,
+      "ppg": 0.7,
+      "value": 36,
+      "group": "taxi"
+     },
+     {
+      "id": "12499",
+      "name": "Elic Ayomanor",
+      "pos": "WR",
+      "nfl": "TEN",
+      "age": 23,
+      "exp": 1,
+      "ppg": 5.0,
+      "value": 180,
+      "group": "taxi"
+     },
+     {
+      "id": "12524",
+      "name": "Shedeur Sanders",
+      "pos": "QB",
+      "nfl": "CLE",
+      "age": 24,
+      "exp": 1,
+      "ppg": 0.0,
+      "value": 90,
+      "group": "taxi"
+     },
+     {
+      "id": "11638",
+      "name": "Ricky Pearsall",
+      "pos": "WR",
+      "nfl": "SF",
+      "age": 26,
+      "exp": 2,
+      "ppg": 0.0,
+      "value": 597,
+      "group": "ir"
+     },
+     {
+      "id": "13281",
+      "name": "Jordyn Tyson",
+      "pos": "WR",
+      "nfl": "NO",
+      "age": 22,
+      "exp": 0,
+      "ppg": 0.0,
+      "value": 3415,
+      "group": "ir"
+     }
+    ],
+    "draftees": [
+     {
+      "label": "1.02",
+      "key": "charlie becker",
+      "name": "Charlie Becker",
+      "pos": "WR"
+     },
+     {
+      "label": "2.02",
+      "key": "jamal roberts",
+      "name": "Jamal Roberts",
+      "pos": "RB"
+     },
+     {
+      "label": "3.02",
+      "key": "dylan riley",
+      "name": "Dylan Riley",
+      "pos": "RB"
+     }
+    ],
+    "cuts": [
+     "4993",
+     "11577",
+     "11630"
+    ],
+    "counts": {
+     "active": 18,
+     "taxi": 4,
+     "ir": 2
+    }
+   }
   }
  }
 }
