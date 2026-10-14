@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T20:37:44+00:00",
+  "generated_at": "2026-10-14T09:00:31+00:00",
   "league": {
     "id": "1312005038838673409",
     "name": "The HIM Dynasty",
@@ -1382,12 +1382,12 @@
               "nfl": "CHI",
               "age": 24,
               "exp": 2,
-              "injury": "Out",
+              "injury": "Questionable",
               "espn_id": null,
               "pts": 45.98,
               "last": 0.0,
               "ppg": 22.99,
-              "proj": 11.49
+              "proj": 21.84
             }
           },
           {
@@ -1550,7 +1550,7 @@
             "name": "Jared Goff",
             "pos": "QB",
             "nfl": "DET",
-            "age": 31,
+            "age": 32,
             "exp": 10,
             "injury": null,
             "espn_id": 3046779,
@@ -1682,12 +1682,12 @@
             "nfl": "CHI",
             "age": 24,
             "exp": 1,
-            "injury": "Out",
+            "injury": "Questionable",
             "espn_id": null,
             "pts": 59.3,
             "last": 0.0,
             "ppg": 14.82,
-            "proj": 7.41
+            "proj": 14.08
           }
         ]
       },
@@ -2140,7 +2140,7 @@
             "nfl": "ARI",
             "age": 23,
             "exp": 0,
-            "injury": "Out",
+            "injury": null,
             "espn_id": null,
             "pts": 0.0,
             "last": 0.0,
@@ -2332,12 +2332,12 @@
               "nfl": "NYJ",
               "age": 25,
               "exp": 4,
-              "injury": "Out",
+              "injury": "Questionable",
               "espn_id": null,
               "pts": 42.5,
               "last": 0.0,
               "ppg": 14.17,
-              "proj": 7.08
+              "proj": 13.46
             }
           },
           {
@@ -2381,7 +2381,7 @@
               "name": "Emeka Egbuka",
               "pos": "WR",
               "nfl": "TB",
-              "age": 23,
+              "age": 24,
               "exp": 1,
               "injury": null,
               "espn_id": null,
@@ -2461,20 +2461,7 @@
           },
           {
             "slot": "DEF",
-            "player": {
-              "id": "CIN",
-              "name": "Cincinnati Bengals",
-              "pos": "DEF",
-              "nfl": "CIN",
-              "age": null,
-              "exp": null,
-              "injury": null,
-              "espn_id": null,
-              "pts": 10.0,
-              "last": 10.0,
-              "ppg": 10.0,
-              "proj": 10.0
-            }
+            "player": null
           }
         ],
         "bench": [
@@ -2577,6 +2564,20 @@
             "proj": 13.3
           },
           {
+            "id": "KC",
+            "name": "Kansas City Chiefs",
+            "pos": "DEF",
+            "nfl": "KC",
+            "age": null,
+            "exp": null,
+            "injury": null,
+            "espn_id": null,
+            "pts": 13.0,
+            "last": 0.0,
+            "ppg": 6.75,
+            "proj": 6.75
+          },
+          {
             "id": "4454",
             "name": "Kendrick Bourne",
             "pos": "WR",
@@ -2643,12 +2644,12 @@
             "nfl": "NYJ",
             "age": 21,
             "exp": 0,
-            "injury": "Out",
+            "injury": "Questionable",
             "espn_id": null,
             "pts": 38.9,
             "last": 0.3,
             "ppg": 9.72,
-            "proj": 4.86
+            "proj": 9.24
           },
           {
             "id": "7021",
@@ -2657,12 +2658,12 @@
             "nfl": "PIT",
             "age": 28,
             "exp": 6,
-            "injury": "Out",
+            "injury": "Questionable",
             "espn_id": 4038815,
             "pts": 10.5,
             "last": 0.0,
             "ppg": 5.25,
-            "proj": 2.62
+            "proj": 4.99
           }
         ]
       },
@@ -3015,12 +3016,12 @@
             "nfl": "WAS",
             "age": 32,
             "exp": 11,
-            "injury": "Out",
+            "injury": "Questionable",
             "espn_id": 2976212,
             "pts": 53.0,
             "last": 0.0,
             "ppg": 13.25,
-            "proj": 6.62
+            "proj": 12.59
           },
           {
             "id": "11635",
@@ -3043,12 +3044,12 @@
             "nfl": "BUF",
             "age": 29,
             "exp": 8,
-            "injury": "Out",
+            "injury": "Questionable",
             "espn_id": 3915416,
             "pts": 36.3,
             "last": 0.0,
             "ppg": 9.07,
-            "proj": 4.54
+            "proj": 8.62
           },
           {
             "id": "11624",
@@ -3187,12 +3188,12 @@
             "nfl": "PHI",
             "age": 29,
             "exp": 8,
-            "injury": "Out",
+            "injury": "Questionable",
             "espn_id": 3929630,
             "pts": 23.0,
             "last": 0.0,
             "ppg": 5.75,
-            "proj": 2.88
+            "proj": 5.46
           }
         ]
       },
@@ -3355,18 +3356,18 @@
           {
             "slot": "QB",
             "player": {
-              "id": "13425",
-              "name": "Jalon Daniels",
+              "id": "4881",
+              "name": "Lamar Jackson",
               "pos": "QB",
-              "nfl": "TB",
-              "age": 23,
-              "exp": 0,
-              "injury": null,
-              "espn_id": null,
-              "pts": 13.86,
-              "last": 13.86,
-              "ppg": 13.86,
-              "proj": 13.86
+              "nfl": "BAL",
+              "age": 29,
+              "exp": 8,
+              "injury": "Questionable",
+              "espn_id": 3916387,
+              "pts": 80.08,
+              "last": 0.0,
+              "ppg": 20.02,
+              "proj": 19.02
             }
           },
           {
@@ -3491,18 +3492,18 @@
           {
             "slot": "K",
             "player": {
-              "id": "7839",
-              "name": "Evan McPherson",
+              "id": "12711",
+              "name": "Tyler Loop",
               "pos": "K",
-              "nfl": "CIN",
-              "age": 27,
-              "exp": 5,
+              "nfl": "BAL",
+              "age": 25,
+              "exp": 1,
               "injury": null,
               "espn_id": null,
-              "pts": 23.0,
-              "last": 7.0,
-              "ppg": 10.5,
-              "proj": 10.5
+              "pts": 0.0,
+              "last": null,
+              "ppg": 8.0,
+              "proj": 8.0
             }
           },
           {
@@ -3524,20 +3525,6 @@
           }
         ],
         "bench": [
-          {
-            "id": "4881",
-            "name": "Lamar Jackson",
-            "pos": "QB",
-            "nfl": "BAL",
-            "age": 29,
-            "exp": 8,
-            "injury": "Out",
-            "espn_id": 3916387,
-            "pts": 80.08,
-            "last": 0.0,
-            "ppg": 20.02,
-            "proj": 10.01
-          },
           {
             "id": "8148",
             "name": "Jameson Williams",
@@ -3565,6 +3552,20 @@
             "last": 4.8,
             "ppg": 8.74,
             "proj": 8.74
+          },
+          {
+            "id": "8161",
+            "name": "Malik Willis",
+            "pos": "QB",
+            "nfl": "MIA",
+            "age": 27,
+            "exp": 4,
+            "injury": null,
+            "espn_id": null,
+            "pts": 43.68,
+            "last": null,
+            "ppg": 10.92,
+            "proj": 10.92
           },
           {
             "id": "4892",
@@ -3609,6 +3610,20 @@
             "proj": 24.04
           },
           {
+            "id": "7839",
+            "name": "Evan McPherson",
+            "pos": "K",
+            "nfl": "CIN",
+            "age": 27,
+            "exp": 5,
+            "injury": null,
+            "espn_id": null,
+            "pts": 23.0,
+            "last": 7.0,
+            "ppg": 10.5,
+            "proj": 10.5
+          },
+          {
             "id": "13345",
             "name": "Jonah Coleman",
             "pos": "RB",
@@ -3620,20 +3635,6 @@
             "pts": 14.8,
             "last": 0.0,
             "ppg": 14.8,
-            "proj": 0.0
-          },
-          {
-            "id": "3321",
-            "name": "Tyreek Hill",
-            "pos": "WR",
-            "nfl": "FA",
-            "age": 31,
-            "exp": 10,
-            "injury": "",
-            "espn_id": 3116406,
-            "pts": 0.0,
-            "last": 0.0,
-            "ppg": 0.0,
             "proj": 0.0
           }
         ],
@@ -3659,12 +3660,12 @@
             "nfl": "TEN",
             "age": 22,
             "exp": 0,
-            "injury": "Out",
+            "injury": null,
             "espn_id": null,
             "pts": 1.2,
             "last": 0.0,
             "ppg": 0.6,
-            "proj": 0.3
+            "proj": 0.6
           },
           {
             "id": "13421",
@@ -4089,12 +4090,12 @@
             "nfl": "CLE",
             "age": 22,
             "exp": 0,
-            "injury": "Out",
+            "injury": "Questionable",
             "espn_id": null,
             "pts": 31.8,
             "last": 1.5,
             "ppg": 6.36,
-            "proj": 3.18
+            "proj": 6.04
           },
           {
             "id": "13285",
@@ -4536,20 +4537,7 @@
           },
           {
             "slot": "K",
-            "player": {
-              "id": "6083",
-              "name": "Matt Gay",
-              "pos": "K",
-              "nfl": "LV",
-              "age": 32,
-              "exp": 7,
-              "injury": null,
-              "espn_id": 4249087,
-              "pts": 5.0,
-              "last": 5.0,
-              "ppg": 10.25,
-              "proj": 10.25
-            }
+            "player": null
           },
           {
             "slot": "DEF",
@@ -4599,18 +4587,32 @@
             "proj": 4.92
           },
           {
+            "id": "1945",
+            "name": "Chris Boswell",
+            "pos": "K",
+            "nfl": "PIT",
+            "age": 35,
+            "exp": 12,
+            "injury": null,
+            "espn_id": 17372,
+            "pts": 28.0,
+            "last": null,
+            "ppg": 7.0,
+            "proj": 7.0
+          },
+          {
             "id": "11628",
             "name": "Marvin Harrison",
             "pos": "WR",
             "nfl": "HOU",
             "age": 24,
             "exp": 2,
-            "injury": "Out",
+            "injury": null,
             "espn_id": null,
             "pts": 19.5,
             "last": 0.0,
             "ppg": 6.5,
-            "proj": 3.25
+            "proj": 6.5
           },
           {
             "id": "9754",
@@ -4619,12 +4621,12 @@
             "nfl": "LAC",
             "age": 25,
             "exp": 3,
-            "injury": "Out",
+            "injury": "Questionable",
             "espn_id": null,
             "pts": 18.1,
             "last": 0.0,
             "ppg": 4.53,
-            "proj": 2.26
+            "proj": 4.3
           },
           {
             "id": "10219",
@@ -4691,12 +4693,12 @@
             "nfl": "NYJ",
             "age": 24,
             "exp": 2,
-            "injury": "Out",
+            "injury": "Questionable",
             "espn_id": null,
             "pts": 21.3,
             "last": 0.0,
             "ppg": 10.65,
-            "proj": 5.33
+            "proj": 10.12
           },
           {
             "id": "13268",
@@ -4705,12 +4707,12 @@
             "nfl": "BAL",
             "age": 23,
             "exp": 0,
-            "injury": "Out",
+            "injury": null,
             "espn_id": null,
             "pts": 2.3,
             "last": 0.0,
             "ppg": 2.3,
-            "proj": 1.15
+            "proj": 2.3
           },
           {
             "id": "13324",
@@ -4719,12 +4721,12 @@
             "nfl": "BAL",
             "age": 24,
             "exp": 0,
-            "injury": "Questionable",
+            "injury": null,
             "espn_id": null,
             "pts": 18.0,
             "last": 0.0,
             "ppg": 6.0,
-            "proj": 5.7
+            "proj": 6.0
           }
         ],
         "ir": [
@@ -5588,32 +5590,18 @@
             "proj": 17.97
           },
           {
-            "id": "13394",
-            "name": "Josh Cameron",
+            "id": "12536",
+            "name": "Jaylin Noel",
             "pos": "WR",
-            "nfl": "JAX",
-            "age": 23,
-            "exp": 0,
-            "injury": null,
-            "espn_id": null,
-            "pts": 13.5,
-            "last": 7.3,
-            "ppg": 6.75,
-            "proj": 6.75
-          },
-          {
-            "id": "13424",
-            "name": "Seth McGowan",
-            "pos": "RB",
-            "nfl": "IND",
+            "nfl": "HOU",
             "age": 24,
-            "exp": 0,
+            "exp": 1,
             "injury": null,
             "espn_id": null,
-            "pts": 10.1,
-            "last": 2.9,
-            "ppg": 2.52,
-            "proj": 2.52
+            "pts": 12.7,
+            "last": null,
+            "ppg": 5.73,
+            "proj": 5.73
           },
           {
             "id": "9482",
@@ -5628,6 +5616,34 @@
             "last": 1.2,
             "ppg": 5.23,
             "proj": 5.23
+          },
+          {
+            "id": "11647",
+            "name": "Kimani Vidal",
+            "pos": "RB",
+            "nfl": "LAC",
+            "age": 25,
+            "exp": 2,
+            "injury": null,
+            "espn_id": null,
+            "pts": 0.0,
+            "last": null,
+            "ppg": 0.0,
+            "proj": 0.0
+          },
+          {
+            "id": "3214",
+            "name": "Hunter Henry",
+            "pos": "TE",
+            "nfl": "NE",
+            "age": 31,
+            "exp": 10,
+            "injury": null,
+            "espn_id": 3046439,
+            "pts": 0.0,
+            "last": null,
+            "ppg": 6.32,
+            "proj": 6.32
           }
         ],
         "taxi": [
@@ -5652,12 +5668,12 @@
             "nfl": "LAC",
             "age": 24,
             "exp": 1,
-            "injury": "Questionable",
+            "injury": "Doubtful",
             "espn_id": null,
             "pts": 37.5,
             "last": 3.6,
             "ppg": 7.5,
-            "proj": 7.12
+            "proj": 5.25
           },
           {
             "id": "13276",
@@ -5696,12 +5712,12 @@
             "nfl": "NE",
             "age": 23,
             "exp": 1,
-            "injury": "Out",
+            "injury": "Doubtful",
             "espn_id": null,
             "pts": 26.5,
             "last": 4.8,
             "ppg": 6.62,
-            "proj": 3.31
+            "proj": 4.64
           },
           {
             "id": "4137",
@@ -6082,12 +6098,12 @@
             "nfl": "PHI",
             "age": 27,
             "exp": 5,
-            "injury": "Out",
+            "injury": "Questionable",
             "espn_id": null,
             "pts": 48.5,
             "last": 0.0,
             "ppg": 16.17,
-            "proj": 8.08
+            "proj": 15.36
           },
           {
             "id": "5927",
@@ -6152,7 +6168,7 @@
             "nfl": "IND",
             "age": 29,
             "exp": 7,
-            "injury": "Out",
+            "injury": "Questionable",
             "espn_id": 3916945,
             "pts": 0.0,
             "last": 0.0,
@@ -6168,7 +6184,7 @@
             "nfl": "SEA",
             "age": 23,
             "exp": 1,
-            "injury": "Out",
+            "injury": null,
             "espn_id": null,
             "pts": 0.0,
             "last": 0.0,
@@ -6196,7 +6212,7 @@
             "nfl": "LAR",
             "age": 23,
             "exp": 0,
-            "injury": "Out",
+            "injury": null,
             "espn_id": null,
             "pts": 0.0,
             "last": 0.0,
@@ -6519,12 +6535,12 @@
               "nfl": "CAR",
               "age": 24,
               "exp": 2,
-              "injury": "Out",
+              "injury": "Questionable",
               "espn_id": null,
               "pts": 52.2,
               "last": 0.0,
               "ppg": 17.4,
-              "proj": 8.7
+              "proj": 16.53
             }
           },
           {
@@ -6742,12 +6758,12 @@
             "nfl": "HOU",
             "age": 29,
             "exp": 7,
-            "injury": "Out",
+            "injury": "Doubtful",
             "espn_id": 4035538,
             "pts": 45.5,
             "last": 1.1,
             "ppg": 9.1,
-            "proj": 4.55
+            "proj": 6.37
           }
         ]
       },
@@ -6910,18 +6926,18 @@
           {
             "slot": "QB",
             "player": {
-              "id": "6770",
-              "name": "Joe Burrow",
+              "id": "12545",
+              "name": "Tyler Shough",
               "pos": "QB",
-              "nfl": "CIN",
-              "age": 29,
-              "exp": 6,
+              "nfl": "NO",
+              "age": 27,
+              "exp": 1,
               "injury": null,
-              "espn_id": 3915511,
-              "pts": 104.24,
-              "last": 24.6,
-              "ppg": 20.85,
-              "proj": 20.85
+              "espn_id": null,
+              "pts": 42.58,
+              "last": 1.84,
+              "ppg": 18.03,
+              "proj": 18.03
             }
           },
           {
@@ -6960,36 +6976,23 @@
           },
           {
             "slot": "WR",
-            "player": {
-              "id": "11630",
-              "name": "Roman Wilson",
-              "pos": "WR",
-              "nfl": "PIT",
-              "age": 25,
-              "exp": 2,
-              "injury": "Out",
-              "espn_id": null,
-              "pts": 16.4,
-              "last": 0.0,
-              "ppg": 12.1,
-              "proj": 6.05
-            }
+            "player": null
           },
           {
             "slot": "WR",
             "player": {
-              "id": "6801",
-              "name": "Tee Higgins",
+              "id": "13294",
+              "name": "Makai Lemon",
               "pos": "WR",
-              "nfl": "CIN",
-              "age": 27,
-              "exp": 6,
+              "nfl": "PHI",
+              "age": 22,
+              "exp": 0,
               "injury": null,
-              "espn_id": 4239993,
-              "pts": 75.3,
-              "last": 4.2,
-              "ppg": 15.06,
-              "proj": 15.06
+              "espn_id": null,
+              "pts": 25.3,
+              "last": 9.3,
+              "ppg": 5.06,
+              "proj": 5.06
             }
           },
           {
@@ -7028,20 +7031,7 @@
           },
           {
             "slot": "FLEX",
-            "player": {
-              "id": "11577",
-              "name": "Will Shipley",
-              "pos": "RB",
-              "nfl": "PHI",
-              "age": 24,
-              "exp": 2,
-              "injury": "Out",
-              "espn_id": null,
-              "pts": 8.3,
-              "last": 8.3,
-              "ppg": 8.3,
-              "proj": 4.15
-            }
+            "player": null
           },
           {
             "slot": "K",
@@ -7080,32 +7070,32 @@
         ],
         "bench": [
           {
-            "id": "12545",
-            "name": "Tyler Shough",
+            "id": "6770",
+            "name": "Joe Burrow",
             "pos": "QB",
-            "nfl": "NO",
-            "age": 27,
-            "exp": 1,
+            "nfl": "CIN",
+            "age": 29,
+            "exp": 6,
             "injury": null,
-            "espn_id": null,
-            "pts": 42.58,
-            "last": 1.84,
-            "ppg": 18.03,
-            "proj": 18.03
+            "espn_id": 3915511,
+            "pts": 104.24,
+            "last": 24.6,
+            "ppg": 20.85,
+            "proj": 20.85
           },
           {
-            "id": "13294",
-            "name": "Makai Lemon",
+            "id": "6801",
+            "name": "Tee Higgins",
             "pos": "WR",
-            "nfl": "PHI",
-            "age": 22,
-            "exp": 0,
+            "nfl": "CIN",
+            "age": 27,
+            "exp": 6,
             "injury": null,
-            "espn_id": null,
-            "pts": 25.3,
-            "last": 9.3,
-            "ppg": 5.06,
-            "proj": 5.06
+            "espn_id": 4239993,
+            "pts": 75.3,
+            "last": 4.2,
+            "ppg": 15.06,
+            "proj": 15.06
           },
           {
             "id": "13305",
@@ -7120,6 +7110,20 @@
             "last": 2.0,
             "ppg": 4.18,
             "proj": 4.18
+          },
+          {
+            "id": "11630",
+            "name": "Roman Wilson",
+            "pos": "WR",
+            "nfl": "PIT",
+            "age": 25,
+            "exp": 2,
+            "injury": "Out",
+            "espn_id": null,
+            "pts": 16.4,
+            "last": 0.0,
+            "ppg": 12.1,
+            "proj": 6.05
           },
           {
             "id": "6819",
@@ -7150,20 +7154,6 @@
             "proj": 0.0
           },
           {
-            "id": "4993",
-            "name": "Mike Gesicki",
-            "pos": "TE",
-            "nfl": "CIN",
-            "age": 31,
-            "exp": 8,
-            "injury": null,
-            "espn_id": 3116164,
-            "pts": 7.4,
-            "last": 7.4,
-            "ppg": 7.4,
-            "proj": 7.4
-          },
-          {
             "id": "5859",
             "name": "A.J. Brown",
             "pos": "WR",
@@ -7188,6 +7178,20 @@
             "espn_id": 4360438,
             "pts": 0.0,
             "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
+          },
+          {
+            "id": "8129",
+            "name": "Dameon Pierce",
+            "pos": "RB",
+            "nfl": "PHI",
+            "age": 26,
+            "exp": 4,
+            "injury": null,
+            "espn_id": null,
+            "pts": 0.0,
+            "last": null,
             "ppg": 0.0,
             "proj": 0.0
           }
@@ -7846,6 +7850,168 @@
     "actual": []
   },
   "transactions": [
+    {
+      "id": "1415936693927731200",
+      "type": "waiver",
+      "week": 5,
+      "time": 1791962048778,
+      "rosters": [
+        12
+      ],
+      "adds": {
+        "8129": 12
+      },
+      "drops": {},
+      "picks": [],
+      "faab": 1
+    },
+    {
+      "id": "1415932014611152896",
+      "type": "waiver",
+      "week": 5,
+      "time": 1791962048778,
+      "rosters": [
+        9
+      ],
+      "adds": {
+        "3214": 9
+      },
+      "drops": {},
+      "picks": [],
+      "faab": 27
+    },
+    {
+      "id": "1415689609769123840",
+      "type": "waiver",
+      "week": 5,
+      "time": 1791962048778,
+      "rosters": [
+        3
+      ],
+      "adds": {
+        "KC": 3
+      },
+      "drops": {
+        "CIN": 3
+      },
+      "picks": [],
+      "faab": 5
+    },
+    {
+      "id": "1415595823768551424",
+      "type": "waiver",
+      "week": 5,
+      "time": 1791962048778,
+      "rosters": [
+        5
+      ],
+      "adds": {
+        "12711": 5
+      },
+      "drops": {
+        "3321": 5
+      },
+      "picks": [],
+      "faab": 6
+    },
+    {
+      "id": "1415205290168614912",
+      "type": "waiver",
+      "week": 5,
+      "time": 1791962048778,
+      "rosters": [
+        9
+      ],
+      "adds": {
+        "12536": 9
+      },
+      "drops": {
+        "13394": 9
+      },
+      "picks": [],
+      "faab": 27
+    },
+    {
+      "id": "1415158328832638976",
+      "type": "waiver",
+      "week": 5,
+      "time": 1791962048778,
+      "rosters": [
+        9
+      ],
+      "adds": {
+        "11647": 9
+      },
+      "drops": {
+        "13424": 9
+      },
+      "picks": [],
+      "faab": 17
+    },
+    {
+      "id": "1415151937698988032",
+      "type": "waiver",
+      "week": 5,
+      "time": 1791962048778,
+      "rosters": [
+        7
+      ],
+      "adds": {
+        "1945": 7
+      },
+      "drops": {
+        "6083": 7
+      },
+      "picks": [],
+      "faab": 6
+    },
+    {
+      "id": "1415108197605265408",
+      "type": "waiver",
+      "week": 5,
+      "time": 1791962048778,
+      "rosters": [
+        5
+      ],
+      "adds": {
+        "8161": 5
+      },
+      "drops": {
+        "13425": 5
+      },
+      "picks": [],
+      "faab": 9
+    },
+    {
+      "id": "1415936556895596544",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791948091294,
+      "rosters": [
+        12
+      ],
+      "adds": {},
+      "drops": {
+        "11577": 12
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1415936430261186560",
+      "type": "free_agent",
+      "week": 5,
+      "time": 1791948061102,
+      "rosters": [
+        12
+      ],
+      "adds": {},
+      "drops": {
+        "4993": 12
+      },
+      "picks": [],
+      "faab": null
+    },
     {
       "id": "1415422345685831680",
       "type": "free_agent",
@@ -8973,164 +9139,6 @@
       "adds": {},
       "drops": {
         "NYG": 1
-      },
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1410925508807446528",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790753364329,
-      "rosters": [
-        7
-      ],
-      "adds": {
-        "3634": 7
-      },
-      "drops": {
-        "13413": 7
-      },
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1410888690602942464",
-      "type": "waiver",
-      "week": 3,
-      "time": 1790752418455,
-      "rosters": [
-        11
-      ],
-      "adds": {
-        "650": 11
-      },
-      "drops": {
-        "13545": 11
-      },
-      "picks": [],
-      "faab": 1
-    },
-    {
-      "id": "1410747595189395456",
-      "type": "waiver",
-      "week": 3,
-      "time": 1790752418455,
-      "rosters": [
-        5
-      ],
-      "adds": {
-        "12495": 5
-      },
-      "drops": {},
-      "picks": [],
-      "faab": 66
-    },
-    {
-      "id": "1410682041481146368",
-      "type": "waiver",
-      "week": 3,
-      "time": 1790752418455,
-      "rosters": [
-        12
-      ],
-      "adds": {
-        "11630": 12
-      },
-      "drops": {},
-      "picks": [],
-      "faab": 3
-    },
-    {
-      "id": "1410663295093841920",
-      "type": "waiver",
-      "week": 3,
-      "time": 1790752418455,
-      "rosters": [
-        2
-      ],
-      "adds": {
-        "LV": 2
-      },
-      "drops": {},
-      "picks": [],
-      "faab": 5
-    },
-    {
-      "id": "1410663199849639936",
-      "type": "waiver",
-      "week": 3,
-      "time": 1790752418455,
-      "rosters": [
-        2
-      ],
-      "adds": {
-        "CIN": 2
-      },
-      "drops": {},
-      "picks": [],
-      "faab": 5
-    },
-    {
-      "id": "1410321783663394816",
-      "type": "waiver",
-      "week": 3,
-      "time": 1790752418455,
-      "rosters": [
-        3
-      ],
-      "adds": {
-        "1166": 3
-      },
-      "drops": {
-        "9758": 3
-      },
-      "picks": [],
-      "faab": 1
-    },
-    {
-      "id": "1410056441791885312",
-      "type": "waiver",
-      "week": 3,
-      "time": 1790752418455,
-      "rosters": [
-        9
-      ],
-      "adds": {
-        "13394": 9
-      },
-      "drops": {
-        "12530": 9
-      },
-      "picks": [],
-      "faab": 7
-    },
-    {
-      "id": "1410844853276794880",
-      "type": "free_agent",
-      "week": 3,
-      "time": 1790734134552,
-      "rosters": [
-        1
-      ],
-      "adds": {},
-      "drops": {
-        "4663": 1
-      },
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1410747088613982209",
-      "type": "free_agent",
-      "week": 3,
-      "time": 1790710825640,
-      "rosters": [
-        5
-      ],
-      "adds": {},
-      "drops": {
-        "KC": 5
       },
       "picks": [],
       "faab": null

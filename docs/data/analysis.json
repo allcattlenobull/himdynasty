@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T20:37:54+00:00",
+ "generated_at": "2026-10-14T09:00:36+00:00",
  "weeks_completed": 5,
  "author": "The Analyst (written automatically from league data every morning)",
  "teams": {
@@ -80,21 +80,20 @@
   },
   "3": {
    "team": "K-9’s Unit",
-   "score": 76,
+   "score": 75,
    "verdict": "Certified HIM",
    "summary": "K-9’s Unit is Certified HIM: 95.5% to make the playoffs, 13.7% to win it all, 3rd in dynasty value.",
    "him": [
     "RB room is elite: Kenneth Walker, Chuba Hubbard and Breece Hall put up 61.4 a week (1st at RB).",
-    "Built to last: value-weighted age 24.2, the 2nd youngest core in the league.",
     "Scoring machine: 701.0 points, 3rd in the league (140.2 a week).",
     "Lineup genius: started 89.5% of your max possible points (3rd in efficiency).",
-    "Would be 38-17 playing everyone every week (3rd in all-play)."
+    "Would be 38-17 playing everyone every week (3rd in all-play).",
+    "Dynasty bank: roster and picks worth 43,874 in trade value, 3rd in the league."
    ],
    "ass": [
     "Gauntlet ahead: remaining opponents average 132.7 a week, the toughest schedule left.",
     "WR is a black hole: 35.1 a week from Deebo Samuel, Kendrick Bourne and Jordan Addison (11th of 12 at WR).",
     "Schedule merchant: 5 wins but only 3.5 expected from all-play. That's 1.5 gift wins.",
-    "Walking wounded: Breece Hall (Out) in the starting lineup.",
     "Mortgaged the future: 9 picks worth 3,532 (9th in draft capital)."
    ],
    "ranks": {
@@ -108,7 +107,7 @@
     "WR": 11,
     "TE": 7,
     "value": 3,
-    "youth": 2,
+    "youth": 3,
     "picks": 9,
     "sched": 12
    },
@@ -169,7 +168,7 @@
    ],
    "ass": [
     "Schedule merchant: 4 wins but only 2.5 expected from all-play. That's 1.5 gift wins.",
-    "AARP roster: value-weighted age 26.5, the 4th oldest core in the league."
+    "AARP roster: value-weighted age 26.4, the 4th oldest core in the league."
    ],
    "ranks": {
     "pf": 7,
@@ -232,13 +231,13 @@
   },
   "7": {
    "team": "Finesse🥶🤴🏿",
-   "score": 25,
+   "score": 26,
    "verdict": "Mostly Ass",
    "summary": "Finesse🥶🤴🏿 is Mostly Ass: 0.8% to make the playoffs, 0.1% to win it all, 11th in dynasty value.",
    "him": [
     "Heating up: 123.6 a week over the last 3, +18.0 versus your season pace.",
+    "Built to last: value-weighted age 24.3, the 2nd youngest core in the league.",
     "Robbed: 1.0 expected wins from all-play, only 0 on the board. The scoreboard owes you 1.0.",
-    "Built to last: value-weighted age 24.3, the 3rd youngest core in the league.",
     "Pick hoarder: 9 picks worth 7,566 (3rd in draft capital).",
     "TE room is elite: Sam LaPorta put up 15.3 a week (4th at TE)."
    ],
@@ -260,7 +259,7 @@
     "WR": 10,
     "TE": 4,
     "value": 11,
-    "youth": 3,
+    "youth": 2,
     "picks": 3,
     "sched": 5
    },
@@ -315,7 +314,7 @@
    "him": [
     "Scoring machine: 779.6 points, 1st in the league (155.9 a week).",
     "Would be 44-11 playing everyone every week (1st in all-play).",
-    "Dynasty bank: roster and picks worth 76,429 in trade value, 1st in the league.",
+    "Dynasty bank: roster and picks worth 76,874 in trade value, 1st in the league.",
     "Pick hoarder: 19 picks worth 13,030 (1st in draft capital).",
     "Heating up: 167.8 a week over the last 3, +11.9 versus your season pace."
    ],
@@ -393,7 +392,6 @@
    ],
    "ass": [
     "Ice cold: 120.6 a week over the last 3, -14.7 versus your season pace.",
-    "Walking wounded: Jalen Coker (Out) in the starting lineup.",
     "Your bench is your best unit: 135.7 points left on the pine (27.1 a week), 9th in lineup efficiency."
    ],
    "ranks": {
@@ -430,7 +428,7 @@
    ],
    "ass": [
     "WR is a black hole: 33.3 a week from Tee Higgins, Roman Wilson and Alec Pierce (12th of 12 at WR).",
-    "TE is a black hole: 7.4 a week from Mike Gesicki (12th of 12 at TE).",
+    "TE is a black hole: 6.7 a week from Kyle Pitts (12th of 12 at TE).",
     "AARP roster: value-weighted age 26.6, the 3rd oldest core in the league.",
     "Gauntlet ahead: remaining opponents average 132.4 a week, the 3rd toughest schedule left.",
     "Sliding: playoff odds down 10.0 points in the last week, now 9.8%."
