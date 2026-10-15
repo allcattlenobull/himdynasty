@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T09:00:31+00:00",
+  "generated_at": "2026-10-15T09:00:31+00:00",
   "league": {
     "id": "1312005038838673409",
     "name": "The HIM Dynasty",
@@ -40,7 +40,7 @@
       "points_against": 595.94,
       "max_pf": 783.3,
       "playoff_odds": 95.5,
-      "champion_odds": 13.7,
+      "champion_odds": 13.6,
       "projected_wins": 10.0
     },
     {
@@ -55,8 +55,8 @@
       "points_against": 669.62,
       "max_pf": 899.16,
       "playoff_odds": 97.1,
-      "champion_odds": 30.5,
-      "projected_wins": 10.1
+      "champion_odds": 30.6,
+      "projected_wins": 10.0
     },
     {
       "rank": 3,
@@ -84,7 +84,7 @@
       "points_for": 645.34,
       "points_against": 598.86,
       "max_pf": 728.92,
-      "playoff_odds": 72.8,
+      "playoff_odds": 72.7,
       "champion_odds": 6.5,
       "projected_wins": 8.5
     },
@@ -96,11 +96,11 @@
       "wins": 3,
       "losses": 2,
       "ties": 0,
-      "points_for": 679.12,
+      "points_for": 680.12,
       "points_against": 702.7,
-      "max_pf": 770.3,
-      "playoff_odds": 67.8,
-      "champion_odds": 9.1,
+      "max_pf": 771.3,
+      "playoff_odds": 68.2,
+      "champion_odds": 9.2,
       "projected_wins": 7.9
     },
     {
@@ -114,7 +114,7 @@
       "points_for": 663.14,
       "points_against": 632.9,
       "max_pf": 735.34,
-      "playoff_odds": 59.9,
+      "playoff_odds": 59.8,
       "champion_odds": 4.7,
       "projected_wins": 7.5
     },
@@ -142,9 +142,9 @@
       "losses": 3,
       "ties": 0,
       "points_for": 624.84,
-      "points_against": 670.38,
+      "points_against": 671.38,
       "max_pf": 730.4,
-      "playoff_odds": 27.3,
+      "playoff_odds": 27.2,
       "champion_odds": 2.3,
       "projected_wins": 6.1
     },
@@ -159,7 +159,7 @@
       "points_for": 615.54,
       "points_against": 598.34,
       "max_pf": 755.3,
-      "playoff_odds": 26.2,
+      "playoff_odds": 26.1,
       "champion_odds": 1.7,
       "projected_wins": 6.2
     },
@@ -283,7 +283,7 @@
               "team": "The Lab",
               "owner": "JamesQua"
             },
-            "a_win_pct": 46.1,
+            "a_win_pct": 46.0,
             "winner": 4
           }
         ]
@@ -305,7 +305,7 @@
               "team": "The Lab",
               "owner": "JamesQua"
             },
-            "a_win_pct": 52.9,
+            "a_win_pct": 52.7,
             "winner": 3
           },
           {
@@ -384,9 +384,9 @@
         "owner": "BryanGichaba",
         "max_pf": 730.4,
         "in_playoffs": false,
-        "playoff_odds": 27.3,
+        "playoff_odds": 27.2,
         "first_pick_odds": 3.3,
-        "avg_pick": 5.21,
+        "avg_pick": 5.2,
         "most_likely_pick": 5
       },
       {
@@ -408,7 +408,7 @@
         "owner": "RefMitch128",
         "max_pf": 755.3,
         "in_playoffs": false,
-        "playoff_odds": 26.2,
+        "playoff_odds": 26.1,
         "first_pick_odds": 0.9,
         "avg_pick": 5.42,
         "most_likely_pick": 5
@@ -432,7 +432,7 @@
         "owner": "JudasJudge",
         "max_pf": 728.92,
         "in_playoffs": true,
-        "playoff_odds": 72.8,
+        "playoff_odds": 72.7,
         "first_pick_odds": 1.5,
         "avg_pick": 7.41,
         "most_likely_pick": 7
@@ -444,7 +444,7 @@
         "owner": "toobizzie",
         "max_pf": 735.34,
         "in_playoffs": true,
-        "playoff_odds": 59.9,
+        "playoff_odds": 59.8,
         "first_pick_odds": 1.4,
         "avg_pick": 6.66,
         "most_likely_pick": 7
@@ -454,11 +454,11 @@
         "roster_id": 4,
         "team": "The Lab",
         "owner": "JamesQua",
-        "max_pf": 770.3,
+        "max_pf": 771.3,
         "in_playoffs": true,
-        "playoff_odds": 67.8,
+        "playoff_odds": 68.2,
         "first_pick_odds": 0.2,
-        "avg_pick": 7.81,
+        "avg_pick": 7.83,
         "most_likely_pick": 8
       },
       {
@@ -482,7 +482,7 @@
         "in_playoffs": true,
         "playoff_odds": 95.5,
         "first_pick_odds": 0.0,
-        "avg_pick": 9.36,
+        "avg_pick": 9.35,
         "most_likely_pick": 9
       },
       {
@@ -669,7 +669,7 @@
           73.9,
           49.4,
           35.7,
-          26.2
+          26.1
         ],
         "champion_odds": [
           6.3,
@@ -741,14 +741,14 @@
           10.3,
           11.5,
           12.7,
-          13.7
+          13.6
         ],
         "avg_pick": [
           7.55,
           7.85,
           8.49,
           9.19,
-          9.36
+          9.35
         ],
         "first_pick_odds": [
           2.5,
@@ -785,35 +785,35 @@
           291.78,
           416.5,
           528.34,
-          679.12
+          680.12
         ],
         "max_pf": [
           202.32,
           333.78,
           473.7,
           613.32,
-          770.3
+          771.3
         ],
         "playoff_odds": [
           84.0,
           63.8,
           64.9,
           57.0,
-          67.8
+          68.2
         ],
         "champion_odds": [
           21.3,
           12.9,
           12.1,
           7.8,
-          9.1
+          9.2
         ],
         "avg_pick": [
           9.3,
           8.05,
           7.96,
           7.24,
-          7.81
+          7.83
         ],
         "first_pick_odds": [
           0.2,
@@ -864,7 +864,7 @@
           30.8,
           30.2,
           52.5,
-          72.8
+          72.7
         ],
         "champion_odds": [
           7.4,
@@ -1059,7 +1059,7 @@
           42.1,
           46.2,
           57.9,
-          59.9
+          59.8
         ],
         "champion_odds": [
           8.6,
@@ -1131,7 +1131,7 @@
           9.7,
           16.4,
           23.2,
-          30.5
+          30.6
         ],
         "avg_pick": [
           6.24,
@@ -1189,7 +1189,7 @@
           53.4,
           68.4,
           46.0,
-          27.3
+          27.2
         ],
         "champion_odds": [
           2.9,
@@ -1203,7 +1203,7 @@
           7.18,
           7.96,
           6.19,
-          5.21
+          5.2
         ],
         "first_pick_odds": [
           19.1,
@@ -1410,18 +1410,18 @@
           {
             "slot": "RB",
             "player": {
-              "id": "6790",
-              "name": "D'Andre Swift",
+              "id": "11435",
+              "name": "Emanuel Wilson",
               "pos": "RB",
-              "nfl": "CHI",
+              "nfl": "SEA",
               "age": 27,
-              "exp": 6,
+              "exp": 3,
               "injury": null,
-              "espn_id": 4259545,
-              "pts": 80.8,
-              "last": 17.3,
-              "ppg": 16.16,
-              "proj": 16.16
+              "espn_id": null,
+              "pts": 41.6,
+              "last": 13.2,
+              "ppg": 13.87,
+              "proj": 13.87
             }
           },
           {
@@ -1512,16 +1512,16 @@
           {
             "slot": "K",
             "player": {
-              "id": "2020",
-              "name": "Cairo Santos",
+              "id": "12713",
+              "name": "Andy Borregales",
               "pos": "K",
-              "nfl": "CHI",
-              "age": 34,
-              "exp": 12,
+              "nfl": "NE",
+              "age": 23,
+              "exp": 1,
               "injury": null,
-              "espn_id": 17427,
+              "espn_id": null,
               "pts": 0.0,
-              "last": 0.0,
+              "last": null,
               "ppg": 0.0,
               "proj": 0.0
             }
@@ -1560,6 +1560,20 @@
             "proj": 23.0
           },
           {
+            "id": "12534",
+            "name": "Kyle Monangai",
+            "pos": "RB",
+            "nfl": "CHI",
+            "age": 24,
+            "exp": 1,
+            "injury": "Questionable",
+            "espn_id": null,
+            "pts": 59.3,
+            "last": 0.0,
+            "ppg": 14.82,
+            "proj": 14.08
+          },
+          {
             "id": "10213",
             "name": "Tre Tucker",
             "pos": "WR",
@@ -1572,20 +1586,6 @@
             "last": 7.5,
             "ppg": 10.36,
             "proj": 10.36
-          },
-          {
-            "id": "11435",
-            "name": "Emanuel Wilson",
-            "pos": "RB",
-            "nfl": "SEA",
-            "age": 27,
-            "exp": 3,
-            "injury": null,
-            "espn_id": null,
-            "pts": 41.6,
-            "last": 13.2,
-            "ppg": 13.87,
-            "proj": 13.87
           },
           {
             "id": "1479",
@@ -1628,6 +1628,20 @@
             "last": 1.6,
             "ppg": 3.02,
             "proj": 3.02
+          },
+          {
+            "id": "6039",
+            "name": "Ty Johnson",
+            "pos": "RB",
+            "nfl": "BUF",
+            "age": 29,
+            "exp": 7,
+            "injury": "Questionable",
+            "espn_id": 3915411,
+            "pts": 0.0,
+            "last": null,
+            "ppg": 0.0,
+            "proj": 0.0
           }
         ],
         "taxi": [
@@ -1644,20 +1658,6 @@
             "last": 5.4,
             "ppg": 3.6,
             "proj": 3.6
-          },
-          {
-            "id": "13293",
-            "name": "Ja'Kobi Lane",
-            "pos": "WR",
-            "nfl": "BAL",
-            "age": 22,
-            "exp": 0,
-            "injury": "IR",
-            "espn_id": null,
-            "pts": 2.1,
-            "last": 0.0,
-            "ppg": 2.1,
-            "proj": 0.0
           }
         ],
         "ir": [
@@ -1676,18 +1676,18 @@
             "proj": 0.0
           },
           {
-            "id": "12534",
-            "name": "Kyle Monangai",
-            "pos": "RB",
-            "nfl": "CHI",
-            "age": 24,
-            "exp": 1,
-            "injury": "Questionable",
+            "id": "13293",
+            "name": "Ja'Kobi Lane",
+            "pos": "WR",
+            "nfl": "BAL",
+            "age": 22,
+            "exp": 0,
+            "injury": "IR",
             "espn_id": null,
-            "pts": 59.3,
+            "pts": 2.1,
             "last": 0.0,
-            "ppg": 14.82,
-            "proj": 14.08
+            "ppg": 2.1,
+            "proj": 0.0
           }
         ]
       },
@@ -1766,7 +1766,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 35.6
+          "win_pct": 35.5
         },
         {
           "week": 8,
@@ -1841,7 +1841,7 @@
       "points_for": 615.54,
       "points_against": 598.34,
       "max_pf": 755.3,
-      "playoff_odds": 26.2,
+      "playoff_odds": 26.1,
       "champion_odds": 1.7,
       "first_pick_odds": 0.9,
       "avg_pick": 5.42,
@@ -1901,18 +1901,18 @@
           {
             "slot": "WR",
             "player": {
-              "id": "7547",
-              "name": "Amon-Ra St. Brown",
+              "id": "7526",
+              "name": "Jaylen Waddle",
               "pos": "WR",
-              "nfl": "DET",
-              "age": 26,
+              "nfl": "DEN",
+              "age": 27,
               "exp": 5,
               "injury": null,
               "espn_id": null,
-              "pts": 104.2,
-              "last": 12.9,
-              "ppg": 20.84,
-              "proj": 20.84
+              "pts": 48.7,
+              "last": 4.8,
+              "ppg": 9.74,
+              "proj": 9.74
             }
           },
           {
@@ -1952,18 +1952,18 @@
           {
             "slot": "FLEX",
             "player": {
-              "id": "7526",
-              "name": "Jaylen Waddle",
-              "pos": "WR",
-              "nfl": "DEN",
+              "id": "7600",
+              "name": "Pat Freiermuth",
+              "pos": "TE",
+              "nfl": "PIT",
               "age": 27,
               "exp": 5,
               "injury": null,
               "espn_id": null,
-              "pts": 48.7,
-              "last": 4.8,
-              "ppg": 9.74,
-              "proj": 9.74
+              "pts": 44.7,
+              "last": 21.5,
+              "ppg": 11.18,
+              "proj": 11.18
             }
           },
           {
@@ -1975,50 +1975,64 @@
               "nfl": "NO",
               "age": 31,
               "exp": 9,
-              "injury": null,
+              "injury": "Questionable",
               "espn_id": 3054850,
               "pts": 37.7,
               "last": 2.6,
               "ppg": 9.43,
-              "proj": 9.43
+              "proj": 8.95
             }
           },
           {
             "slot": "K",
             "player": {
-              "id": "10955",
-              "name": "Chad Ryland",
+              "id": "7042",
+              "name": "Tyler Bass",
               "pos": "K",
-              "nfl": "ARI",
-              "age": 26,
-              "exp": 3,
+              "nfl": "BUF",
+              "age": 29,
+              "exp": 6,
               "injury": null,
-              "espn_id": null,
-              "pts": 2.0,
-              "last": 2.0,
-              "ppg": 2.0,
-              "proj": 2.0
+              "espn_id": 3917232,
+              "pts": 0.0,
+              "last": null,
+              "ppg": 4.0,
+              "proj": 4.0
             }
           },
           {
             "slot": "DEF",
             "player": {
-              "id": "ATL",
-              "name": "Atlanta Falcons",
+              "id": "SF",
+              "name": "San Francisco 49ers",
               "pos": "DEF",
-              "nfl": "ATL",
+              "nfl": "SF",
               "age": null,
               "exp": null,
               "injury": null,
               "espn_id": null,
-              "pts": 12.0,
-              "last": 12.0,
-              "ppg": 12.0,
-              "proj": 12.0
+              "pts": 0.0,
+              "last": null,
+              "ppg": 5.0,
+              "proj": 5.0
             }
           }
         ],
         "bench": [
+          {
+            "id": "7547",
+            "name": "Amon-Ra St. Brown",
+            "pos": "WR",
+            "nfl": "DET",
+            "age": 26,
+            "exp": 5,
+            "injury": null,
+            "espn_id": null,
+            "pts": 104.2,
+            "last": 12.9,
+            "ppg": 20.84,
+            "proj": 20.84
+          },
           {
             "id": "5001",
             "name": "Dalton Schultz",
@@ -2032,20 +2046,6 @@
             "last": 6.0,
             "ppg": 9.68,
             "proj": 9.68
-          },
-          {
-            "id": "7600",
-            "name": "Pat Freiermuth",
-            "pos": "TE",
-            "nfl": "PIT",
-            "age": 27,
-            "exp": 5,
-            "injury": null,
-            "espn_id": null,
-            "pts": 44.7,
-            "last": 21.5,
-            "ppg": 11.18,
-            "proj": 11.18
           },
           {
             "id": "5849",
@@ -2104,30 +2104,30 @@
             "proj": 4.75
           },
           {
-            "id": "4663",
-            "name": "Austin Ekeler",
+            "id": "11439",
+            "name": "Jaleel McLaughlin",
             "pos": "RB",
-            "nfl": "WAS",
-            "age": 31,
-            "exp": 9,
+            "nfl": "CLE",
+            "age": 26,
+            "exp": 3,
             "injury": null,
-            "espn_id": 3068267,
-            "pts": 2.4,
-            "last": 2.4,
-            "ppg": 2.4,
-            "proj": 2.4
+            "espn_id": null,
+            "pts": 0.0,
+            "last": null,
+            "ppg": 0.0,
+            "proj": 0.0
           },
           {
-            "id": "12497",
-            "name": "Tory Horton",
+            "id": "13150",
+            "name": "Darius Cooper",
             "pos": "WR",
-            "nfl": "SEA",
-            "age": 23,
+            "nfl": "PHI",
+            "age": 24,
             "exp": 1,
             "injury": null,
             "espn_id": null,
             "pts": 0.0,
-            "last": 0.0,
+            "last": null,
             "ppg": 0.0,
             "proj": 0.0
           }
@@ -2169,7 +2169,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 42.4,
+          "win_pct": 42.3,
           "points": 154.36,
           "opp_points": 95.96,
           "max": 179.66,
@@ -2273,7 +2273,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 42.4
+          "win_pct": 42.3
         },
         {
           "week": 14,
@@ -2301,9 +2301,9 @@
       "points_against": 595.94,
       "max_pf": 783.3,
       "playoff_odds": 95.5,
-      "champion_odds": 13.7,
+      "champion_odds": 13.6,
       "first_pick_odds": 0.0,
-      "avg_pick": 9.36,
+      "avg_pick": 9.35,
       "roster": {
         "starters": [
           {
@@ -2326,18 +2326,18 @@
           {
             "slot": "RB",
             "player": {
-              "id": "8155",
-              "name": "Breece Hall",
+              "id": "11576",
+              "name": "Braelon Allen",
               "pos": "RB",
               "nfl": "NYJ",
-              "age": 25,
-              "exp": 4,
-              "injury": "Questionable",
+              "age": 22,
+              "exp": 2,
+              "injury": null,
               "espn_id": null,
-              "pts": 42.5,
-              "last": 0.0,
-              "ppg": 14.17,
-              "proj": 13.46
+              "pts": 44.5,
+              "last": 18.6,
+              "ppg": 8.9,
+              "proj": 8.9
             }
           },
           {
@@ -2360,18 +2360,18 @@
           {
             "slot": "WR",
             "player": {
-              "id": "4037",
-              "name": "Chris Godwin",
+              "id": "4454",
+              "name": "Kendrick Bourne",
               "pos": "WR",
-              "nfl": "TB",
-              "age": 30,
+              "nfl": "ARI",
+              "age": 31,
               "exp": 9,
               "injury": null,
-              "espn_id": 3116165,
-              "pts": 38.7,
-              "last": 7.0,
-              "ppg": 7.74,
-              "proj": 7.74
+              "espn_id": 3045523,
+              "pts": 12.0,
+              "last": 12.0,
+              "ppg": 12.0,
+              "proj": 12.0
             }
           },
           {
@@ -2461,7 +2461,20 @@
           },
           {
             "slot": "DEF",
-            "player": null
+            "player": {
+              "id": "KC",
+              "name": "Kansas City Chiefs",
+              "pos": "DEF",
+              "nfl": "KC",
+              "age": null,
+              "exp": null,
+              "injury": null,
+              "espn_id": null,
+              "pts": 13.0,
+              "last": 0.0,
+              "ppg": 6.75,
+              "proj": 6.75
+            }
           }
         ],
         "bench": [
@@ -2478,20 +2491,6 @@
             "last": 32.26,
             "ppg": 21.55,
             "proj": 21.55
-          },
-          {
-            "id": "5872",
-            "name": "Deebo Samuel",
-            "pos": "WR",
-            "nfl": "SF",
-            "age": 30,
-            "exp": 7,
-            "injury": "Out",
-            "espn_id": 3126486,
-            "pts": 60.4,
-            "last": 2.5,
-            "ppg": 12.08,
-            "proj": 6.04
           },
           {
             "id": "9758",
@@ -2514,40 +2513,54 @@
             "nfl": "ARI",
             "age": 21,
             "exp": 0,
-            "injury": null,
+            "injury": "Questionable",
             "espn_id": null,
             "pts": 51.1,
             "last": 2.2,
             "ppg": 10.22,
-            "proj": 10.22
+            "proj": 9.71
           },
           {
-            "id": "11576",
-            "name": "Braelon Allen",
+            "id": "8155",
+            "name": "Breece Hall",
             "pos": "RB",
             "nfl": "NYJ",
-            "age": 22,
-            "exp": 2,
-            "injury": null,
+            "age": 25,
+            "exp": 4,
+            "injury": "Doubtful",
             "espn_id": null,
-            "pts": 44.5,
-            "last": 18.6,
-            "ppg": 8.9,
-            "proj": 8.9
+            "pts": 42.5,
+            "last": 0.0,
+            "ppg": 14.17,
+            "proj": 9.92
           },
           {
-            "id": "9756",
-            "name": "Jordan Addison",
-            "pos": "WR",
-            "nfl": "MIN",
-            "age": 24,
-            "exp": 3,
-            "injury": "Out",
+            "id": "13330",
+            "name": "Kenyon Sadiq",
+            "pos": "TE",
+            "nfl": "NYJ",
+            "age": 21,
+            "exp": 0,
+            "injury": "Questionable",
             "espn_id": null,
-            "pts": 33.2,
-            "last": 0.0,
-            "ppg": 11.07,
-            "proj": 5.53
+            "pts": 38.9,
+            "last": 0.3,
+            "ppg": 9.72,
+            "proj": 9.24
+          },
+          {
+            "id": "4037",
+            "name": "Chris Godwin",
+            "pos": "WR",
+            "nfl": "TB",
+            "age": 30,
+            "exp": 9,
+            "injury": null,
+            "espn_id": 3116165,
+            "pts": 38.7,
+            "last": 7.0,
+            "ppg": 7.74,
+            "proj": 7.74
           },
           {
             "id": "3271",
@@ -2564,32 +2577,18 @@
             "proj": 13.3
           },
           {
-            "id": "KC",
-            "name": "Kansas City Chiefs",
-            "pos": "DEF",
-            "nfl": "KC",
-            "age": null,
-            "exp": null,
-            "injury": null,
-            "espn_id": null,
-            "pts": 13.0,
+            "id": "7021",
+            "name": "Rico Dowdle",
+            "pos": "RB",
+            "nfl": "PIT",
+            "age": 28,
+            "exp": 6,
+            "injury": "Questionable",
+            "espn_id": 4038815,
+            "pts": 10.5,
             "last": 0.0,
-            "ppg": 6.75,
-            "proj": 6.75
-          },
-          {
-            "id": "4454",
-            "name": "Kendrick Bourne",
-            "pos": "WR",
-            "nfl": "ARI",
-            "age": 31,
-            "exp": 9,
-            "injury": null,
-            "espn_id": 3045523,
-            "pts": 12.0,
-            "last": 12.0,
-            "ppg": 12.0,
-            "proj": 12.0
+            "ppg": 5.25,
+            "proj": 4.99
           }
         ],
         "taxi": [
@@ -2638,32 +2637,32 @@
         ],
         "ir": [
           {
-            "id": "13330",
-            "name": "Kenyon Sadiq",
-            "pos": "TE",
-            "nfl": "NYJ",
-            "age": 21,
-            "exp": 0,
-            "injury": "Questionable",
-            "espn_id": null,
-            "pts": 38.9,
-            "last": 0.3,
-            "ppg": 9.72,
-            "proj": 9.24
+            "id": "5872",
+            "name": "Deebo Samuel",
+            "pos": "WR",
+            "nfl": "SF",
+            "age": 30,
+            "exp": 7,
+            "injury": "Out",
+            "espn_id": 3126486,
+            "pts": 60.4,
+            "last": 2.5,
+            "ppg": 12.08,
+            "proj": 6.04
           },
           {
-            "id": "7021",
-            "name": "Rico Dowdle",
-            "pos": "RB",
-            "nfl": "PIT",
-            "age": 28,
-            "exp": 6,
-            "injury": "Questionable",
-            "espn_id": 4038815,
-            "pts": 10.5,
+            "id": "9756",
+            "name": "Jordan Addison",
+            "pos": "WR",
+            "nfl": "MIN",
+            "age": 24,
+            "exp": 3,
+            "injury": "Out",
+            "espn_id": null,
+            "pts": 33.2,
             "last": 0.0,
-            "ppg": 5.25,
-            "proj": 4.99
+            "ppg": 11.07,
+            "proj": 5.53
           }
         ]
       },
@@ -2766,7 +2765,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 52.9
+          "win_pct": 52.7
         },
         {
           "week": 11,
@@ -2814,64 +2813,64 @@
         "losses": 2,
         "ties": 0
       },
-      "points_for": 679.12,
+      "points_for": 680.12,
       "points_against": 702.7,
-      "max_pf": 770.3,
-      "playoff_odds": 67.8,
-      "champion_odds": 9.1,
+      "max_pf": 771.3,
+      "playoff_odds": 68.2,
+      "champion_odds": 9.2,
       "first_pick_odds": 0.2,
-      "avg_pick": 7.81,
+      "avg_pick": 7.83,
       "roster": {
         "starters": [
           {
             "slot": "QB",
             "player": {
-              "id": "3257",
-              "name": "Jacoby Brissett",
+              "id": "6904",
+              "name": "Jalen Hurts",
               "pos": "QB",
-              "nfl": "ARI",
-              "age": 33,
-              "exp": 10,
+              "nfl": "PHI",
+              "age": 28,
+              "exp": 6,
               "injury": null,
-              "espn_id": 2578570,
-              "pts": 39.72,
-              "last": 26.28,
-              "ppg": 19.86,
-              "proj": 19.86
+              "espn_id": 4040715,
+              "pts": 83.02,
+              "last": 13.0,
+              "ppg": 16.6,
+              "proj": 16.6
             }
           },
           {
             "slot": "RB",
             "player": {
-              "id": "9221",
-              "name": "Jahmyr Gibbs",
+              "id": "12533",
+              "name": "Jacory Croskey-Merritt",
               "pos": "RB",
-              "nfl": "DET",
-              "age": 24,
-              "exp": 3,
+              "nfl": "WAS",
+              "age": 25,
+              "exp": 1,
               "injury": null,
               "espn_id": null,
-              "pts": 153.7,
-              "last": 37.7,
-              "ppg": 30.74,
-              "proj": 30.74
+              "pts": 44.9,
+              "last": 14.2,
+              "ppg": 8.98,
+              "proj": 8.98
             }
           },
           {
             "slot": "RB",
             "player": {
-              "id": "9224",
-              "name": "Chase Brown",
+              "id": "4866",
+              "name": "Saquon Barkley",
               "pos": "RB",
-              "nfl": "CIN",
-              "age": 26,
-              "exp": 3,
-              "injury": null,
-              "espn_id": null,
-              "pts": 65.0,
-              "last": 7.0,
-              "ppg": 13.0,
-              "proj": 13.0
+              "nfl": "PHI",
+              "age": 29,
+              "exp": 8,
+              "injury": "Questionable",
+              "espn_id": 3929630,
+              "pts": 23.0,
+              "last": 0.0,
+              "ppg": 5.75,
+              "proj": 5.46
             }
           },
           {
@@ -2945,18 +2944,18 @@
           {
             "slot": "FLEX",
             "player": {
-              "id": "12533",
-              "name": "Jacory Croskey-Merritt",
-              "pos": "RB",
-              "nfl": "WAS",
-              "age": 25,
-              "exp": 1,
-              "injury": null,
-              "espn_id": null,
-              "pts": 44.9,
-              "last": 14.2,
-              "ppg": 8.98,
-              "proj": 8.98
+              "id": "4983",
+              "name": "DJ Moore",
+              "pos": "WR",
+              "nfl": "BUF",
+              "age": 29,
+              "exp": 8,
+              "injury": "Questionable",
+              "espn_id": 3915416,
+              "pts": 36.3,
+              "last": 0.0,
+              "ppg": 9.07,
+              "proj": 8.62
             }
           },
           {
@@ -2979,35 +2978,49 @@
           {
             "slot": "DEF",
             "player": {
-              "id": "WAS",
-              "name": "Washington Commanders",
+              "id": "BAL",
+              "name": "Baltimore Ravens",
               "pos": "DEF",
-              "nfl": "WAS",
+              "nfl": "BAL",
               "age": null,
               "exp": null,
               "injury": null,
               "espn_id": null,
-              "pts": 8.0,
-              "last": 8.0,
-              "ppg": 8.0,
-              "proj": 8.0
+              "pts": 30.0,
+              "last": 7.0,
+              "ppg": 6.0,
+              "proj": 6.0
             }
           }
         ],
         "bench": [
           {
-            "id": "6904",
-            "name": "Jalen Hurts",
-            "pos": "QB",
-            "nfl": "PHI",
-            "age": 28,
-            "exp": 6,
+            "id": "9221",
+            "name": "Jahmyr Gibbs",
+            "pos": "RB",
+            "nfl": "DET",
+            "age": 24,
+            "exp": 3,
             "injury": null,
-            "espn_id": 4040715,
-            "pts": 83.02,
-            "last": 13.0,
-            "ppg": 16.6,
-            "proj": 16.6
+            "espn_id": null,
+            "pts": 153.7,
+            "last": 37.7,
+            "ppg": 30.74,
+            "proj": 30.74
+          },
+          {
+            "id": "9224",
+            "name": "Chase Brown",
+            "pos": "RB",
+            "nfl": "CIN",
+            "age": 26,
+            "exp": 3,
+            "injury": null,
+            "espn_id": null,
+            "pts": 65.0,
+            "last": 7.0,
+            "ppg": 13.0,
+            "proj": 13.0
           },
           {
             "id": "2449",
@@ -3024,6 +3037,20 @@
             "proj": 12.59
           },
           {
+            "id": "3257",
+            "name": "Jacoby Brissett",
+            "pos": "QB",
+            "nfl": "ARI",
+            "age": 33,
+            "exp": 10,
+            "injury": null,
+            "espn_id": 2578570,
+            "pts": 39.72,
+            "last": 26.28,
+            "ppg": 19.86,
+            "proj": 19.86
+          },
+          {
             "id": "11635",
             "name": "Ladd McConkey",
             "pos": "WR",
@@ -3036,20 +3063,6 @@
             "last": 0.0,
             "ppg": 12.1,
             "proj": 11.49
-          },
-          {
-            "id": "4983",
-            "name": "DJ Moore",
-            "pos": "WR",
-            "nfl": "BUF",
-            "age": 29,
-            "exp": 8,
-            "injury": "Questionable",
-            "espn_id": 3915416,
-            "pts": 36.3,
-            "last": 0.0,
-            "ppg": 9.07,
-            "proj": 8.62
           },
           {
             "id": "11624",
@@ -3066,32 +3079,18 @@
             "proj": 8.32
           },
           {
-            "id": "BAL",
-            "name": "Baltimore Ravens",
-            "pos": "DEF",
-            "nfl": "BAL",
-            "age": null,
-            "exp": null,
-            "injury": null,
-            "espn_id": null,
-            "pts": 30.0,
-            "last": 7.0,
-            "ppg": 6.0,
-            "proj": 6.0
-          },
-          {
             "id": "9508",
             "name": "Tyjae Spears",
             "pos": "RB",
             "nfl": "TEN",
             "age": 25,
             "exp": 3,
-            "injury": null,
+            "injury": "Questionable",
             "espn_id": null,
             "pts": 25.3,
             "last": 9.8,
             "ppg": 5.06,
-            "proj": 5.06
+            "proj": 4.81
           },
           {
             "id": "13405",
@@ -3180,20 +3179,6 @@
             "last": 0.0,
             "ppg": 3.2,
             "proj": 0.0
-          },
-          {
-            "id": "4866",
-            "name": "Saquon Barkley",
-            "pos": "RB",
-            "nfl": "PHI",
-            "age": 29,
-            "exp": 8,
-            "injury": "Questionable",
-            "espn_id": 3929630,
-            "pts": 23.0,
-            "last": 0.0,
-            "ppg": 5.75,
-            "proj": 5.46
           }
         ]
       },
@@ -3204,7 +3189,7 @@
           "opponent": 5,
           "opponent_team": "Chocolate Gold ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 53.9,
+          "win_pct": 54.0,
           "points": 195.82,
           "opp_points": 134.36,
           "max": 202.32,
@@ -3216,7 +3201,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 57.6,
+          "win_pct": 57.7,
           "points": 95.96,
           "opp_points": 154.36,
           "max": 131.46,
@@ -3228,7 +3213,7 @@
           "opponent": 7,
           "opponent_team": "Finesse🥶🤴🏿",
           "opponent_owner": "JustinFreshly",
-          "win_pct": 67.4,
+          "win_pct": 67.5,
           "points": 124.72,
           "opp_points": 118.18,
           "max": 139.92,
@@ -3240,7 +3225,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 40.5,
+          "win_pct": 40.7,
           "points": 111.84,
           "opp_points": 177.66,
           "max": 139.62,
@@ -3252,10 +3237,10 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 56.1,
-          "points": 150.78,
+          "win_pct": 56.2,
+          "points": 151.78,
           "opp_points": 118.14,
-          "max": 156.98,
+          "max": 157.98,
           "result": "W"
         },
         {
@@ -3264,7 +3249,7 @@
           "opponent": 11,
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
-          "win_pct": 50.3
+          "win_pct": 50.5
         },
         {
           "week": 7,
@@ -3272,7 +3257,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 64.4
+          "win_pct": 64.5
         },
         {
           "week": 8,
@@ -3280,7 +3265,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 52.1
+          "win_pct": 52.2
         },
         {
           "week": 9,
@@ -3288,7 +3273,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 56.8
+          "win_pct": 56.9
         },
         {
           "week": 10,
@@ -3296,7 +3281,7 @@
           "opponent": 3,
           "opponent_team": "K-9’s Unit",
           "opponent_owner": "sleepymike09",
-          "win_pct": 47.1
+          "win_pct": 47.3
         },
         {
           "week": 11,
@@ -3304,7 +3289,7 @@
           "opponent": 9,
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
-          "win_pct": 37.7
+          "win_pct": 37.9
         },
         {
           "week": 12,
@@ -3312,7 +3297,7 @@
           "opponent": 5,
           "opponent_team": "Chocolate Gold ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 53.9
+          "win_pct": 54.0
         },
         {
           "week": 13,
@@ -3320,7 +3305,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 57.6
+          "win_pct": 57.7
         },
         {
           "week": 14,
@@ -3328,7 +3313,7 @@
           "opponent": 7,
           "opponent_team": "Finesse🥶🤴🏿",
           "opponent_owner": "JustinFreshly",
-          "win_pct": 67.4
+          "win_pct": 67.5
         }
       ],
       "playoffs_start_week": 15
@@ -3347,7 +3332,7 @@
       "points_for": 645.34,
       "points_against": 598.86,
       "max_pf": 728.92,
-      "playoff_odds": 72.8,
+      "playoff_odds": 72.7,
       "champion_odds": 6.5,
       "first_pick_odds": 1.5,
       "avg_pick": 7.41,
@@ -3574,12 +3559,12 @@
             "nfl": "TB",
             "age": 31,
             "exp": 8,
-            "injury": "Out",
+            "injury": "Doubtful",
             "espn_id": 3052587,
             "pts": 37.1,
             "last": 0.0,
             "ppg": 12.37,
-            "proj": 6.18
+            "proj": 8.66
           },
           {
             "id": "12495",
@@ -3610,20 +3595,6 @@
             "proj": 24.04
           },
           {
-            "id": "7839",
-            "name": "Evan McPherson",
-            "pos": "K",
-            "nfl": "CIN",
-            "age": 27,
-            "exp": 5,
-            "injury": null,
-            "espn_id": null,
-            "pts": 23.0,
-            "last": 7.0,
-            "ppg": 10.5,
-            "proj": 10.5
-          },
-          {
             "id": "13345",
             "name": "Jonah Coleman",
             "pos": "RB",
@@ -3636,6 +3607,20 @@
             "last": 0.0,
             "ppg": 14.8,
             "proj": 0.0
+          },
+          {
+            "id": "11783",
+            "name": "Ryan Flournoy",
+            "pos": "WR",
+            "nfl": "DAL",
+            "age": 26,
+            "exp": 2,
+            "injury": null,
+            "espn_id": null,
+            "pts": 0.0,
+            "last": null,
+            "ppg": 5.95,
+            "proj": 5.95
           }
         ],
         "taxi": [
@@ -3720,7 +3705,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 46.1,
+          "win_pct": 46.0,
           "points": 134.36,
           "opp_points": 195.82,
           "max": 142.56,
@@ -3828,7 +3813,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 46.1
+          "win_pct": 46.0
         },
         {
           "week": 13,
@@ -3929,12 +3914,12 @@
               "nfl": "SEA",
               "age": 24,
               "exp": 3,
-              "injury": "Questionable",
+              "injury": null,
               "espn_id": null,
               "pts": 139.46,
               "last": 22.8,
               "ppg": 27.89,
-              "proj": 26.5
+              "proj": 27.89
             }
           },
           {
@@ -3980,12 +3965,12 @@
               "nfl": "DAL",
               "age": 27,
               "exp": 6,
-              "injury": "Questionable",
+              "injury": null,
               "espn_id": 4241389,
               "pts": 115.1,
               "last": 2.9,
               "ppg": 23.02,
-              "proj": 21.87
+              "proj": 23.02
             }
           },
           {
@@ -4286,7 +4271,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 59.5,
+          "win_pct": 59.3,
           "points": 177.66,
           "opp_points": 111.84,
           "max": 189.76,
@@ -4436,18 +4421,18 @@
           {
             "slot": "RB",
             "player": {
-              "id": "12474",
-              "name": "Woody Marks",
+              "id": "6790",
+              "name": "D'Andre Swift",
               "pos": "RB",
-              "nfl": "HOU",
-              "age": 25,
-              "exp": 1,
+              "nfl": "CHI",
+              "age": 27,
+              "exp": 6,
               "injury": null,
-              "espn_id": null,
-              "pts": 43.3,
-              "last": 12.5,
-              "ppg": 8.66,
-              "proj": 8.66
+              "espn_id": 4259545,
+              "pts": 0.0,
+              "last": null,
+              "ppg": 16.16,
+              "proj": 16.16
             }
           },
           {
@@ -4487,18 +4472,18 @@
           {
             "slot": "TE",
             "player": {
-              "id": "10859",
-              "name": "Sam LaPorta",
+              "id": "2505",
+              "name": "Darren Waller",
               "pos": "TE",
-              "nfl": "DET",
-              "age": 25,
-              "exp": 3,
-              "injury": null,
-              "espn_id": null,
-              "pts": 76.6,
-              "last": 19.8,
-              "ppg": 15.32,
-              "proj": 15.32
+              "nfl": "CAR",
+              "age": 34,
+              "exp": 11,
+              "injury": "Questionable",
+              "espn_id": 2576925,
+              "pts": 0.0,
+              "last": null,
+              "ppg": 8.35,
+              "proj": 7.93
             }
           },
           {
@@ -4521,23 +4506,36 @@
           {
             "slot": "FLEX",
             "player": {
-              "id": "9486",
-              "name": "Dontayvion Wicks",
-              "pos": "WR",
-              "nfl": "PHI",
+              "id": "12474",
+              "name": "Woody Marks",
+              "pos": "RB",
+              "nfl": "HOU",
               "age": 25,
-              "exp": 3,
+              "exp": 1,
               "injury": null,
               "espn_id": null,
-              "pts": 16.1,
-              "last": 11.3,
-              "ppg": 9.8,
-              "proj": 9.8
+              "pts": 43.3,
+              "last": 12.5,
+              "ppg": 8.66,
+              "proj": 8.66
             }
           },
           {
             "slot": "K",
-            "player": null
+            "player": {
+              "id": "1945",
+              "name": "Chris Boswell",
+              "pos": "K",
+              "nfl": "PIT",
+              "age": 35,
+              "exp": 12,
+              "injury": null,
+              "espn_id": 17372,
+              "pts": 28.0,
+              "last": null,
+              "ppg": 7.0,
+              "proj": 7.0
+            }
           },
           {
             "slot": "DEF",
@@ -4558,6 +4556,20 @@
           }
         ],
         "bench": [
+          {
+            "id": "10859",
+            "name": "Sam LaPorta",
+            "pos": "TE",
+            "nfl": "DET",
+            "age": 25,
+            "exp": 3,
+            "injury": null,
+            "espn_id": null,
+            "pts": 76.6,
+            "last": 19.8,
+            "ppg": 15.32,
+            "proj": 15.32
+          },
           {
             "id": "4943",
             "name": "Sam Darnold",
@@ -4585,20 +4597,6 @@
             "last": 1.7,
             "ppg": 9.84,
             "proj": 4.92
-          },
-          {
-            "id": "1945",
-            "name": "Chris Boswell",
-            "pos": "K",
-            "nfl": "PIT",
-            "age": 35,
-            "exp": 12,
-            "injury": null,
-            "espn_id": 17372,
-            "pts": 28.0,
-            "last": null,
-            "ppg": 7.0,
-            "proj": 7.0
           },
           {
             "id": "11628",
@@ -4629,18 +4627,18 @@
             "proj": 4.3
           },
           {
-            "id": "10219",
-            "name": "Chris Rodriguez",
-            "pos": "RB",
-            "nfl": "JAX",
-            "age": 27,
+            "id": "9486",
+            "name": "Dontayvion Wicks",
+            "pos": "WR",
+            "nfl": "PHI",
+            "age": 25,
             "exp": 3,
-            "injury": null,
+            "injury": "Questionable",
             "espn_id": null,
-            "pts": 11.6,
-            "last": 2.1,
-            "ppg": 4.98,
-            "proj": 4.98
+            "pts": 16.1,
+            "last": 11.3,
+            "ppg": 9.8,
+            "proj": 9.31
           },
           {
             "id": "13317",
@@ -4655,20 +4653,6 @@
             "last": 0.0,
             "ppg": 6.7,
             "proj": 6.7
-          },
-          {
-            "id": "13264",
-            "name": "Dohnte Meyers",
-            "pos": "WR",
-            "nfl": "CIN",
-            "age": 26,
-            "exp": 0,
-            "injury": null,
-            "espn_id": null,
-            "pts": 3.2,
-            "last": 3.2,
-            "ppg": 3.2,
-            "proj": 3.2
           },
           {
             "id": "13413",
@@ -4693,12 +4677,12 @@
             "nfl": "NYJ",
             "age": 24,
             "exp": 2,
-            "injury": "Questionable",
+            "injury": "Doubtful",
             "espn_id": null,
             "pts": 21.3,
             "last": 0.0,
             "ppg": 10.65,
-            "proj": 10.12
+            "proj": 7.46
           },
           {
             "id": "13268",
@@ -4721,12 +4705,12 @@
             "nfl": "BAL",
             "age": 24,
             "exp": 0,
-            "injury": null,
+            "injury": "Questionable",
             "espn_id": null,
             "pts": 18.0,
             "last": 0.0,
             "ppg": 6.0,
-            "proj": 6.0
+            "proj": 5.7
           }
         ],
         "ir": [
@@ -4791,7 +4775,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 32.6,
+          "win_pct": 32.5,
           "points": 118.18,
           "opp_points": 124.72,
           "max": 137.26,
@@ -4891,7 +4875,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 32.6
+          "win_pct": 32.5
         }
       ],
       "playoffs_start_week": 15
@@ -4910,7 +4894,7 @@
       "points_for": 663.14,
       "points_against": 632.9,
       "max_pf": 735.34,
-      "playoff_odds": 59.9,
+      "playoff_odds": 59.8,
       "champion_odds": 4.7,
       "first_pick_odds": 1.4,
       "avg_pick": 6.66,
@@ -4935,20 +4919,7 @@
           },
           {
             "slot": "RB",
-            "player": {
-              "id": "12512",
-              "name": "Quinshon Judkins",
-              "pos": "RB",
-              "nfl": "CLE",
-              "age": 22,
-              "exp": 1,
-              "injury": "Questionable",
-              "espn_id": null,
-              "pts": 56.3,
-              "last": 8.0,
-              "ppg": 11.26,
-              "proj": 10.7
-            }
+            "player": null
           },
           {
             "slot": "RB",
@@ -4987,18 +4958,18 @@
           {
             "slot": "WR",
             "player": {
-              "id": "6794",
-              "name": "Justin Jefferson",
+              "id": "10229",
+              "name": "Rashee Rice",
               "pos": "WR",
-              "nfl": "MIN",
-              "age": 27,
-              "exp": 6,
-              "injury": null,
-              "espn_id": 4262921,
-              "pts": 63.7,
-              "last": 18.8,
-              "ppg": 15.93,
-              "proj": 15.93
+              "nfl": "KC",
+              "age": 26,
+              "exp": 3,
+              "injury": "Questionable",
+              "espn_id": null,
+              "pts": 38.0,
+              "last": 0.0,
+              "ppg": 12.67,
+              "proj": 12.03
             }
           },
           {
@@ -5010,12 +4981,12 @@
               "nfl": "LV",
               "age": 23,
               "exp": 2,
-              "injury": null,
+              "injury": "Questionable",
               "espn_id": null,
               "pts": 71.2,
               "last": 23.0,
               "ppg": 23.73,
-              "proj": 23.73
+              "proj": 22.55
             }
           },
           {
@@ -5027,12 +4998,12 @@
               "nfl": "IND",
               "age": 25,
               "exp": 3,
-              "injury": null,
+              "injury": "Questionable",
               "espn_id": null,
               "pts": 44.9,
               "last": 7.7,
               "ppg": 8.98,
-              "proj": 8.98
+              "proj": 8.53
             }
           },
           {
@@ -5089,6 +5060,20 @@
         ],
         "bench": [
           {
+            "id": "6794",
+            "name": "Justin Jefferson",
+            "pos": "WR",
+            "nfl": "MIN",
+            "age": 27,
+            "exp": 6,
+            "injury": null,
+            "espn_id": 4262921,
+            "pts": 63.7,
+            "last": 18.8,
+            "ppg": 15.93,
+            "proj": 15.93
+          },
+          {
             "id": "11834",
             "name": "Devaughn Vele",
             "pos": "WR",
@@ -5103,18 +5088,18 @@
             "proj": 12.44
           },
           {
-            "id": "10229",
-            "name": "Rashee Rice",
-            "pos": "WR",
-            "nfl": "KC",
-            "age": 26,
-            "exp": 3,
+            "id": "12512",
+            "name": "Quinshon Judkins",
+            "pos": "RB",
+            "nfl": "CLE",
+            "age": 22,
+            "exp": 1,
             "injury": "Questionable",
             "espn_id": null,
-            "pts": 38.0,
-            "last": 0.0,
-            "ppg": 12.67,
-            "proj": 12.03
+            "pts": 56.3,
+            "last": 8.0,
+            "ppg": 11.26,
+            "proj": 10.7
           },
           {
             "id": "11539",
@@ -5169,6 +5154,20 @@
             "espn_id": 4047365,
             "pts": 0.0,
             "last": 0.0,
+            "ppg": 0.0,
+            "proj": 0.0
+          },
+          {
+            "id": "5995",
+            "name": "Justice Hill",
+            "pos": "RB",
+            "nfl": "BAL",
+            "age": 28,
+            "exp": 7,
+            "injury": null,
+            "espn_id": 4038441,
+            "pts": 0.0,
+            "last": null,
             "ppg": 0.0,
             "proj": 0.0
           }
@@ -5236,7 +5235,7 @@
           "opponent": 9,
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
-          "win_pct": 30.6,
+          "win_pct": 30.7,
           "points": 149.38,
           "opp_points": 162.36,
           "max": 178.98,
@@ -5288,7 +5287,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 47.9
+          "win_pct": 47.8
         },
         {
           "week": 9,
@@ -5336,7 +5335,7 @@
           "opponent": 9,
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
-          "win_pct": 30.6
+          "win_pct": 30.7
         }
       ],
       "playoffs_start_week": 15
@@ -5356,7 +5355,7 @@
       "points_against": 669.62,
       "max_pf": 899.16,
       "playoff_odds": 97.1,
-      "champion_odds": 30.5,
+      "champion_odds": 30.6,
       "first_pick_odds": 0.0,
       "avg_pick": 10.41,
       "roster": {
@@ -5489,12 +5488,12 @@
               "nfl": "NO",
               "age": 26,
               "exp": 4,
-              "injury": null,
+              "injury": "Questionable",
               "espn_id": null,
               "pts": 98.7,
               "last": 8.6,
               "ppg": 19.74,
-              "proj": 19.74
+              "proj": 18.75
             }
           },
           {
@@ -5712,12 +5711,12 @@
             "nfl": "NE",
             "age": 23,
             "exp": 1,
-            "injury": "Doubtful",
+            "injury": "Questionable",
             "espn_id": null,
             "pts": 26.5,
             "last": 4.8,
             "ppg": 6.62,
-            "proj": 4.64
+            "proj": 6.29
           },
           {
             "id": "4137",
@@ -5766,7 +5765,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 69.4,
+          "win_pct": 69.3,
           "points": 162.36,
           "opp_points": 149.38,
           "max": 185.36,
@@ -5842,7 +5841,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 62.3
+          "win_pct": 62.1
         },
         {
           "week": 12,
@@ -5866,7 +5865,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 69.4
+          "win_pct": 69.3
         }
       ],
       "playoffs_start_week": 15
@@ -5883,12 +5882,12 @@
         "ties": 0
       },
       "points_for": 624.84,
-      "points_against": 670.38,
+      "points_against": 671.38,
       "max_pf": 730.4,
-      "playoff_odds": 27.3,
+      "playoff_odds": 27.2,
       "champion_odds": 2.3,
       "first_pick_odds": 3.3,
-      "avg_pick": 5.21,
+      "avg_pick": 5.2,
       "roster": {
         "starters": [
           {
@@ -5996,35 +5995,35 @@
           {
             "slot": "FLEX",
             "player": {
-              "id": "8110",
-              "name": "Jake Ferguson",
-              "pos": "TE",
-              "nfl": "DAL",
-              "age": 27,
-              "exp": 4,
+              "id": "5927",
+              "name": "Terry McLaurin",
+              "pos": "WR",
+              "nfl": "WAS",
+              "age": 31,
+              "exp": 7,
               "injury": null,
-              "espn_id": null,
-              "pts": 41.2,
-              "last": 4.9,
-              "ppg": 8.24,
-              "proj": 8.24
+              "espn_id": 3121422,
+              "pts": 42.3,
+              "last": 12.2,
+              "ppg": 10.57,
+              "proj": 10.57
             }
           },
           {
             "slot": "FLEX",
             "player": {
-              "id": "11610",
-              "name": "Malik Washington",
+              "id": "7525",
+              "name": "DeVonta Smith",
               "pos": "WR",
-              "nfl": "MIA",
-              "age": 25,
-              "exp": 2,
-              "injury": null,
+              "nfl": "PHI",
+              "age": 27,
+              "exp": 5,
+              "injury": "Questionable",
               "espn_id": null,
-              "pts": 50.2,
-              "last": 12.1,
-              "ppg": 10.04,
-              "proj": 10.04
+              "pts": 48.5,
+              "last": 0.0,
+              "ppg": 16.17,
+              "proj": 15.36
             }
           },
           {
@@ -6047,18 +6046,18 @@
           {
             "slot": "DEF",
             "player": {
-              "id": "DAL",
-              "name": "Dallas Cowboys",
+              "id": "TB",
+              "name": "Tampa Bay Buccaneers",
               "pos": "DEF",
-              "nfl": "DAL",
+              "nfl": "TB",
               "age": null,
               "exp": null,
               "injury": null,
               "espn_id": null,
-              "pts": 13.0,
-              "last": 1.0,
-              "ppg": 2.6,
-              "proj": 2.6
+              "pts": 30.0,
+              "last": 7.0,
+              "ppg": 6.0,
+              "proj": 6.0
             }
           }
         ],
@@ -6092,46 +6091,46 @@
             "proj": 13.6
           },
           {
-            "id": "7525",
-            "name": "DeVonta Smith",
+            "id": "11610",
+            "name": "Malik Washington",
             "pos": "WR",
-            "nfl": "PHI",
-            "age": 27,
-            "exp": 5,
-            "injury": "Questionable",
-            "espn_id": null,
-            "pts": 48.5,
-            "last": 0.0,
-            "ppg": 16.17,
-            "proj": 15.36
-          },
-          {
-            "id": "5927",
-            "name": "Terry McLaurin",
-            "pos": "WR",
-            "nfl": "WAS",
-            "age": 31,
-            "exp": 7,
+            "nfl": "MIA",
+            "age": 25,
+            "exp": 2,
             "injury": null,
-            "espn_id": 3121422,
-            "pts": 42.3,
-            "last": 12.2,
-            "ppg": 10.57,
-            "proj": 10.57
+            "espn_id": null,
+            "pts": 50.2,
+            "last": 12.1,
+            "ppg": 10.04,
+            "proj": 10.04
           },
           {
-            "id": "TB",
-            "name": "Tampa Bay Buccaneers",
+            "id": "8110",
+            "name": "Jake Ferguson",
+            "pos": "TE",
+            "nfl": "DAL",
+            "age": 27,
+            "exp": 4,
+            "injury": null,
+            "espn_id": null,
+            "pts": 41.2,
+            "last": 4.9,
+            "ppg": 8.24,
+            "proj": 8.24
+          },
+          {
+            "id": "DAL",
+            "name": "Dallas Cowboys",
             "pos": "DEF",
-            "nfl": "TB",
+            "nfl": "DAL",
             "age": null,
             "exp": null,
             "injury": null,
             "espn_id": null,
-            "pts": 30.0,
-            "last": 7.0,
-            "ppg": 6.0,
-            "proj": 6.0
+            "pts": 13.0,
+            "last": 1.0,
+            "ppg": 2.6,
+            "proj": 2.6
           },
           {
             "id": "7528",
@@ -6152,7 +6151,7 @@
             "name": "Andrei Iosivas",
             "pos": "WR",
             "nfl": "CIN",
-            "age": 26,
+            "age": 27,
             "exp": 3,
             "injury": "IR",
             "espn_id": null,
@@ -6168,7 +6167,7 @@
             "nfl": "IND",
             "age": 29,
             "exp": 7,
-            "injury": "Questionable",
+            "injury": null,
             "espn_id": 3916945,
             "pts": 0.0,
             "last": 0.0,
@@ -6306,9 +6305,9 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 43.9,
+          "win_pct": 43.8,
           "points": 118.14,
-          "opp_points": 150.78,
+          "opp_points": 151.78,
           "max": 149.8,
           "result": "L"
         },
@@ -6410,18 +6409,18 @@
           {
             "slot": "QB",
             "player": {
-              "id": "2306",
-              "name": "Jameis Winston",
+              "id": "4046",
+              "name": "Patrick Mahomes",
               "pos": "QB",
-              "nfl": "NYG",
-              "age": 32,
-              "exp": 11,
+              "nfl": "KC",
+              "age": 31,
+              "exp": 9,
               "injury": null,
-              "espn_id": 2969939,
-              "pts": 25.74,
-              "last": 25.74,
-              "ppg": 25.74,
-              "proj": 25.74
+              "espn_id": 3139477,
+              "pts": 85.58,
+              "last": 0.0,
+              "ppg": 21.39,
+              "proj": 21.39
             }
           },
           {
@@ -6512,18 +6511,18 @@
           {
             "slot": "FLEX",
             "player": {
-              "id": "6806",
-              "name": "J.K. Dobbins",
-              "pos": "RB",
-              "nfl": "DEN",
-              "age": 27,
-              "exp": 6,
+              "id": "5022",
+              "name": "Dallas Goedert",
+              "pos": "TE",
+              "nfl": "PHI",
+              "age": 31,
+              "exp": 8,
               "injury": null,
-              "espn_id": 4241985,
-              "pts": 36.1,
-              "last": 15.4,
-              "ppg": 7.22,
-              "proj": 7.22
+              "espn_id": 3121023,
+              "pts": 34.9,
+              "last": 9.8,
+              "ppg": 11.63,
+              "proj": 11.63
             }
           },
           {
@@ -6535,12 +6534,12 @@
               "nfl": "CAR",
               "age": 24,
               "exp": 2,
-              "injury": "Questionable",
+              "injury": null,
               "espn_id": null,
               "pts": 52.2,
               "last": 0.0,
               "ppg": 17.4,
-              "proj": 16.53
+              "proj": 17.4
             }
           },
           {
@@ -6594,20 +6593,6 @@
             "proj": 23.16
           },
           {
-            "id": "4046",
-            "name": "Patrick Mahomes",
-            "pos": "QB",
-            "nfl": "KC",
-            "age": 31,
-            "exp": 9,
-            "injury": null,
-            "espn_id": 3139477,
-            "pts": 85.58,
-            "last": 0.0,
-            "ppg": 21.39,
-            "proj": 21.39
-          },
-          {
             "id": "4199",
             "name": "Aaron Jones",
             "pos": "RB",
@@ -6622,18 +6607,32 @@
             "proj": 13.34
           },
           {
-            "id": "5022",
-            "name": "Dallas Goedert",
-            "pos": "TE",
-            "nfl": "PHI",
-            "age": 31,
-            "exp": 8,
+            "id": "5892",
+            "name": "David Montgomery",
+            "pos": "RB",
+            "nfl": "HOU",
+            "age": 29,
+            "exp": 7,
+            "injury": "Doubtful",
+            "espn_id": 4035538,
+            "pts": 45.5,
+            "last": 1.1,
+            "ppg": 9.1,
+            "proj": 6.37
+          },
+          {
+            "id": "6806",
+            "name": "J.K. Dobbins",
+            "pos": "RB",
+            "nfl": "DEN",
+            "age": 27,
+            "exp": 6,
             "injury": null,
-            "espn_id": 3121023,
-            "pts": 34.9,
-            "last": 9.8,
-            "ppg": 11.63,
-            "proj": 11.63
+            "espn_id": 4241985,
+            "pts": 36.1,
+            "last": 15.4,
+            "ppg": 7.22,
+            "proj": 7.22
           },
           {
             "id": "4039",
@@ -6648,6 +6647,20 @@
             "last": 3.5,
             "ppg": 5.98,
             "proj": 5.98
+          },
+          {
+            "id": "2306",
+            "name": "Jameis Winston",
+            "pos": "QB",
+            "nfl": "NYG",
+            "age": 32,
+            "exp": 11,
+            "injury": null,
+            "espn_id": 2969939,
+            "pts": 25.74,
+            "last": 25.74,
+            "ppg": 25.74,
+            "proj": 25.74
           },
           {
             "id": "11631",
@@ -6700,12 +6713,12 @@
             "nfl": "CLE",
             "age": 22,
             "exp": 0,
-            "injury": null,
+            "injury": "Questionable",
             "espn_id": null,
             "pts": 69.0,
             "last": 13.6,
             "ppg": 13.8,
-            "proj": 13.8
+            "proj": 13.11
           },
           {
             "id": "13411",
@@ -6750,20 +6763,6 @@
             "last": 0.0,
             "ppg": 0.0,
             "proj": 0.0
-          },
-          {
-            "id": "5892",
-            "name": "David Montgomery",
-            "pos": "RB",
-            "nfl": "HOU",
-            "age": 29,
-            "exp": 7,
-            "injury": "Doubtful",
-            "espn_id": 4035538,
-            "pts": 45.5,
-            "last": 1.1,
-            "ppg": 9.1,
-            "proj": 6.37
           }
         ]
       },
@@ -6834,7 +6833,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 49.7
+          "win_pct": 49.5
         },
         {
           "week": 7,
@@ -6976,7 +6975,20 @@
           },
           {
             "slot": "WR",
-            "player": null
+            "player": {
+              "id": "12542",
+              "name": "Efton Chism",
+              "pos": "WR",
+              "nfl": "NE",
+              "age": 24,
+              "exp": 1,
+              "injury": null,
+              "espn_id": null,
+              "pts": 0.0,
+              "last": null,
+              "ppg": 0.0,
+              "proj": 0.0
+            }
           },
           {
             "slot": "WR",
@@ -7031,7 +7043,20 @@
           },
           {
             "slot": "FLEX",
-            "player": null
+            "player": {
+              "id": "8129",
+              "name": "Dameon Pierce",
+              "pos": "RB",
+              "nfl": "PHI",
+              "age": 26,
+              "exp": 4,
+              "injury": null,
+              "espn_id": null,
+              "pts": 0.0,
+              "last": null,
+              "ppg": 0.0,
+              "proj": 0.0
+            }
           },
           {
             "slot": "K",
@@ -7178,20 +7203,6 @@
             "espn_id": 4360438,
             "pts": 0.0,
             "last": 0.0,
-            "ppg": 0.0,
-            "proj": 0.0
-          },
-          {
-            "id": "8129",
-            "name": "Dameon Pierce",
-            "pos": "RB",
-            "nfl": "PHI",
-            "age": 26,
-            "exp": 4,
-            "injury": null,
-            "espn_id": null,
-            "pts": 0.0,
-            "last": null,
             "ppg": 0.0,
             "proj": 0.0
           }
@@ -7376,7 +7387,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 43.2
+          "win_pct": 43.1
         },
         {
           "week": 10,
@@ -7677,8 +7688,8 @@
       },
       "4": {
         "wins": 3.0,
-        "pf": 679.12,
-        "max_pf": 770.3
+        "pf": 680.12,
+        "max_pf": 771.3
       },
       "5": {
         "wins": 4.0,
@@ -7723,125 +7734,125 @@
     },
     "model": {
       "1": [
-        119.864,
-        17.498,
-        6.187
+        119.87,
+        17.505,
+        6.189
       ],
       "2": [
-        126.076,
-        22.808,
-        8.064
+        126.082,
+        22.813,
+        8.066
       ],
       "3": [
-        136.761,
-        16.754,
-        5.923
+        136.767,
+        16.761,
+        5.926
       ],
       "4": [
-        134.024,
-        31.652,
-        11.191
+        134.155,
+        31.717,
+        11.214
       ],
       "5": [
-        129.801,
-        26.01,
-        9.196
+        129.808,
+        26.015,
+        9.198
       ],
       "6": [
-        143.574,
-        20.169,
-        7.131
+        143.58,
+        20.176,
+        7.133
       ],
       "7": [
-        115.181,
-        23.566,
-        8.332
+        115.188,
+        23.571,
+        8.334
       ],
       "8": [
-        132.026,
-        17.394,
-        6.15
+        132.032,
+        17.401,
+        6.152
       ],
       "9": [
-        146.581,
-        20.821,
-        7.361
+        146.587,
+        20.827,
+        7.364
       ],
       "10": [
-        127.239,
-        27.315,
-        9.657
+        127.245,
+        27.319,
+        9.659
       ],
       "11": [
-        133.649,
-        26.495,
-        9.368
+        133.655,
+        26.5,
+        9.369
       ],
       "12": [
-        127.504,
-        16.743,
-        5.92
+        127.51,
+        16.751,
+        5.922
       ]
     },
     "max_model": {
       "1": [
-        151.51,
-        17.387,
-        6.147
+        151.516,
+        17.389,
+        6.148
       ],
       "2": [
-        151.77,
-        21.776,
-        7.699
+        151.776,
+        21.778,
+        7.7
       ],
       "3": [
-        155.27,
-        17.47,
+        155.276,
+        17.472,
         6.177
       ],
       "4": [
-        153.645,
-        25.296,
-        8.943
+        153.776,
+        25.313,
+        8.95
       ],
       "5": [
-        148.472,
-        25.379,
+        148.478,
+        25.381,
         8.973
       ],
       "6": [
-        164.602,
-        21.169,
+        164.608,
+        21.171,
         7.485
       ],
       "7": [
-        138.785,
-        18.778,
+        138.791,
+        18.779,
         6.639
       ],
       "8": [
-        149.275,
-        21.044,
-        7.44
+        149.281,
+        21.046,
+        7.441
       ],
       "9": [
-        169.752,
-        21.245,
-        7.511
+        169.758,
+        21.246,
+        7.512
       ],
       "10": [
-        148.657,
-        27.715,
+        148.663,
+        27.716,
         9.799
       ],
       "11": [
-        158.84,
-        32.233,
+        158.846,
+        32.234,
         11.396
       ],
       "12": [
-        144.852,
-        18.248,
+        144.858,
+        18.249,
         6.452
       ]
     },
@@ -7850,6 +7861,256 @@
     "actual": []
   },
   "transactions": [
+    {
+      "id": "1416249871635169280",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1792022791350,
+      "rosters": [
+        5
+      ],
+      "adds": {
+        "11783": 5
+      },
+      "drops": {
+        "4018": 5
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1416247480546295808",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1792022221269,
+      "rosters": [
+        5
+      ],
+      "adds": {
+        "4018": 5
+      },
+      "drops": {
+        "7839": 5
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1416244140663898112",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1792021424979,
+      "rosters": [
+        1
+      ],
+      "adds": {
+        "12713": 1
+      },
+      "drops": {
+        "2020": 1
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1416187574254395392",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1792007938497,
+      "rosters": [
+        7
+      ],
+      "adds": {},
+      "drops": {
+        "10219": 7
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1416181724517326848",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1792006543811,
+      "rosters": [
+        1
+      ],
+      "adds": {
+        "6039": 1
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1416181005525528576",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1792006372390,
+      "rosters": [
+        8
+      ],
+      "adds": {
+        "5995": 8
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1416175503227834368",
+      "type": "trade",
+      "week": 6,
+      "time": 1792006080438,
+      "rosters": [
+        1,
+        7
+      ],
+      "adds": {
+        "6790": 7
+      },
+      "drops": {
+        "6790": 1
+      },
+      "picks": [
+        {
+          "season": "2027",
+          "round": 1,
+          "original": 6,
+          "from": 7,
+          "to": 1
+        }
+      ],
+      "faab": null
+    },
+    {
+      "id": "1416138309758926848",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1791996192925,
+      "rosters": [
+        12
+      ],
+      "adds": {
+        "12542": 12
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1416107164027621376",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1791988767204,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "SF": 2
+      },
+      "drops": {
+        "ATL": 2
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1416094091975876608",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1791985650584,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "13150": 2
+      },
+      "drops": {
+        "4663": 2
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1416093795979743232",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1791985580014,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "7042": 2
+      },
+      "drops": {
+        "10955": 2
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1416087838381953024",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1791984159611,
+      "rosters": [
+        7
+      ],
+      "adds": {
+        "2505": 7
+      },
+      "drops": {},
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1416086235541192704",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1791983777464,
+      "rosters": [
+        7
+      ],
+      "adds": {},
+      "drops": {
+        "13264": 7
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1416077648274137088",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1791981730101,
+      "rosters": [
+        4
+      ],
+      "adds": {},
+      "drops": {
+        "WAS": 4
+      },
+      "picks": [],
+      "faab": null
+    },
+    {
+      "id": "1416072954306924544",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1791980610971,
+      "rosters": [
+        2
+      ],
+      "adds": {
+        "11439": 2
+      },
+      "drops": {
+        "12497": 2
+      },
+      "picks": [],
+      "faab": null
+    },
     {
       "id": "1415936693927731200",
       "type": "waiver",
@@ -8883,265 +9144,6 @@
       },
       "picks": [],
       "faab": null
-    },
-    {
-      "id": "1411507366158983168",
-      "type": "trade",
-      "week": 4,
-      "time": 1790896918067,
-      "rosters": [
-        3,
-        7
-      ],
-      "adds": {
-        "13317": 7,
-        "421": 3,
-        "9504": 3
-      },
-      "drops": {
-        "13317": 3,
-        "421": 7,
-        "9504": 7
-      },
-      "picks": [
-        {
-          "season": "2027",
-          "round": 1,
-          "original": 3,
-          "from": 3,
-          "to": 7
-        },
-        {
-          "season": "2027",
-          "round": 2,
-          "original": 9,
-          "from": 7,
-          "to": 3
-        }
-      ],
-      "faab": null
-    },
-    {
-      "id": "1411377204390105088",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790861056949,
-      "rosters": [
-        5
-      ],
-      "adds": {
-        "JAX": 5
-      },
-      "drops": {
-        "9486": 5
-      },
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1411137628618653696",
-      "type": "waiver",
-      "week": 4,
-      "time": 1790860429067,
-      "rosters": [
-        3
-      ],
-      "adds": {
-        "3451": 3
-      },
-      "drops": {
-        "6083": 3
-      },
-      "picks": [],
-      "faab": 1
-    },
-    {
-      "id": "1411351923256217600",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790855029456,
-      "rosters": [
-        1
-      ],
-      "adds": {},
-      "drops": {
-        "MIA": 1
-      },
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1411153316901072896",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790807678011,
-      "rosters": [
-        2
-      ],
-      "adds": {
-        "IND": 2
-      },
-      "drops": {
-        "CIN": 2
-      },
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1411153126320324608",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790807632573,
-      "rosters": [
-        2
-      ],
-      "adds": {
-        "4227": 2
-      },
-      "drops": {
-        "LV": 2
-      },
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1411138271878144000",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790804090999,
-      "rosters": [
-        3
-      ],
-      "adds": {
-        "3271": 3
-      },
-      "drops": {},
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1411124665379782656",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790800846956,
-      "rosters": [
-        11
-      ],
-      "adds": {},
-      "drops": {
-        "7090": 11
-      },
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1411087911574626304",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790792084166,
-      "rosters": [
-        6
-      ],
-      "adds": {
-        "9757": 6
-      },
-      "drops": {
-        "10218": 6
-      },
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1411074737584488448",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790788943242,
-      "rosters": [
-        3
-      ],
-      "adds": {},
-      "drops": {
-        "4177": 3
-      },
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1411074619087089664",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790788914991,
-      "rosters": [
-        1
-      ],
-      "adds": {
-        "MIA": 1
-      },
-      "drops": {},
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1411074456788447232",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790788876295,
-      "rosters": [
-        3
-      ],
-      "adds": {},
-      "drops": {
-        "10222": 3
-      },
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1411037974497406976",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790780178239,
-      "rosters": [
-        6
-      ],
-      "adds": {
-        "NYJ": 6
-      },
-      "drops": {
-        "SF": 6
-      },
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1410983448365068288",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790767178196,
-      "rosters": [
-        1
-      ],
-      "adds": {
-        "CLE": 1
-      },
-      "drops": {},
-      "picks": [],
-      "faab": null
-    },
-    {
-      "id": "1410983404450615296",
-      "type": "free_agent",
-      "week": 4,
-      "time": 1790767167726,
-      "rosters": [
-        1
-      ],
-      "adds": {},
-      "drops": {
-        "NYG": 1
-      },
-      "picks": [],
-      "faab": null
     }
   ],
   "diagnostics": {
@@ -9163,8 +9165,8 @@
       },
       {
         "roster_id": 4,
-        "computed": 770.3,
-        "official": 770.3
+        "computed": 771.3,
+        "official": 771.3
       },
       {
         "roster_id": 5,

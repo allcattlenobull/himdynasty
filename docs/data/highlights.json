@@ -1,6 +1,6 @@
 {
  "enabled": true,
- "updated": "2026-10-14T09:01:36+00:00",
+ "updated": "2026-10-15T09:02:35+00:00",
  "players": {
   "jeremiah smith": {
    "fetched": "2026-10-13",
@@ -1795,42 +1795,6 @@
     }
    ]
   },
-  "caden creel": {
-   "fetched": "2026-10-13",
-   "query": "Caden Creel Jacksonville State Gamecocks 2026 highlights",
-   "videos": [
-    {
-     "id": "sVBJJFg7uwg",
-     "title": "You Can’t Let Caden Creel Do This to You at the Goal Line 🔥",
-     "channel": "Cut Day Media",
-     "date": "2026-10-08"
-    },
-    {
-     "id": "Ma0ma9Bf61M",
-     "title": "Tay'vion Lawson intercepts the Caden Creel pass vs. Jacksonville State Gamecocks",
-     "channel": "Conference USA",
-     "date": "2026-10-08"
-    },
-    {
-     "id": "ocOX3OMp4sc",
-     "title": "Caden Creel with a pass completion to Deondre Johnson for a 43-yard Gain vs. Georgia Southern Eagles",
-     "channel": "Conference USA",
-     "date": "2026-09-20"
-    },
-    {
-     "id": "B3LbF8JhovM",
-     "title": "Caden Creel rushes for a 48-yard Gain vs. Middle Tennessee Blue Raiders",
-     "channel": "Conference USA",
-     "date": "2026-09-26"
-    },
-    {
-     "id": "MV29DgaEfXo",
-     "title": "Why Caden Creel makes Jacksonville State a team to watch.",
-     "channel": "Tokyo Brandon",
-     "date": "2026-08-21"
-    }
-   ]
-  },
   "mario craver": {
    "fetched": "2026-10-13",
    "query": "Mario Craver Texas A&M 2026 highlights",
@@ -1966,6 +1930,18 @@
      "title": "Florida State WR Duce Robinson | 2026 ACC Returning Players To Watch",
      "channel": "ACC Digital Network",
      "date": "2026-08-24"
+    }
+   ]
+  },
+  "maguire anderson": {
+   "fetched": "2026-10-15",
+   "query": "Maguire Anderson Florida International Panthers 2026 highlights",
+   "videos": [
+    {
+     "id": "C4HEPg9P-Fg",
+     "title": "CUSA Football Week 2 Recap + Interview with FIU’s Maguire Anderson",
+     "channel": "Conference USA",
+     "date": "2026-09-16"
     }
    ]
   }
