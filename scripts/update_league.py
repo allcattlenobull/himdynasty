@@ -37,6 +37,7 @@ API = "https://api.sleeper.app/v1"
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from league_pointer import current_league_id  # noqa: E402
 from recap import build_recap, write_recap  # noqa: E402
+import roster_strength as RS  # noqa: E402
 
 LEAGUE_ID = current_league_id()
 SIMULATIONS = int(os.environ.get("SIMULATIONS", "10000"))
@@ -47,6 +48,13 @@ DEFAULT_MEAN = 100.0
 # the season a team's few scores say little about its true level, so its
 # expected score leans on the league average; the pull fades as games pile up.
 PRIOR_WEEKS = 3
+# How many weeks of results today's roster outlook is worth. The outlook
+# (projections for the players on the roster now, with injuries and
+# replacements; see roster_strength.py) is what lets trades, waiver moves and
+# injuries move the odds before any games are played. With 5 weeks played,
+# results carry 5/(5+6+1) of the weight; by week 12 about 2/3.
+ROSTER_WEEKS = 6
+ROSTER_PRIOR = 1
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "docs" / "data"
@@ -226,10 +234,13 @@ def tally(rids, weeks, median):
     return st, scores, maxes
 
 
-def score_model(values, rids, default_mean):
+def score_model(values, rids, default_mean, roster=None):
     """Per-team (mean, sd, se) of weekly points.
 
     mean: the team's average, blended with PRIOR_WEEKS of league average.
+          With a roster outlook, it blends results (one share per week
+          played), the outlook (ROSTER_WEEKS shares) and the league average
+          (ROSTER_PRIOR share).
     sd:   week-to-week spread, blended the same way with the league spread.
     se:   uncertainty in the team's true level, shrinking as weeks are played.
     """
@@ -243,11 +254,27 @@ def score_model(values, rids, default_mean):
         n = len(pts)
         team_mean = statistics.mean(pts) if pts else league_mean
         team_var = statistics.pvariance(pts) if n >= 2 else league_sd ** 2
-        mean = (n * team_mean + PRIOR_WEEKS * league_mean) / (n + PRIOR_WEEKS)
+        if roster and rid in roster:
+            mean = (n * team_mean + ROSTER_WEEKS * roster[rid] + ROSTER_PRIOR * league_mean) / (n + ROSTER_WEEKS + ROSTER_PRIOR)
+        else:
+            mean = (n * team_mean + PRIOR_WEEKS * league_mean) / (n + PRIOR_WEEKS)
         sd = math.sqrt((n * team_var + PRIOR_WEEKS * league_sd ** 2) / (n + PRIOR_WEEKS))
         se = sd / math.sqrt(n + PRIOR_WEEKS)
         model[rid] = (mean, sd, se)
     return model
+
+
+def with_roster(scores, maxes, rids, roster):
+    """Score and max-PF models with the roster outlook blended in. The max-PF
+    model moves by the same amount as the score model."""
+    base = score_model(scores, rids, DEFAULT_MEAN)
+    model = score_model(scores, rids, DEFAULT_MEAN, roster)
+    max_model = score_model(maxes, rids, DEFAULT_MEAN * 1.15)
+    if roster:
+        for r in rids:
+            m, sd, se = max_model[r]
+            max_model[r] = (m + model[r][0] - base[r][0], sd, se)
+    return model, max_model, base
 
 
 def standing_key(st):
@@ -649,6 +676,31 @@ def main():
     transactions = read_transactions(tx_weeks, players)
     actual = read_bracket_results()
 
+    # Rest-of-season roster outlook (trades, moves, injuries, replacements).
+    roster_now, outlook = None, {}
+    try:
+        sc = league.get("scoring_settings") or {}
+        first = start_week + done
+        weeks_left = list(range(first, last_week + 1))
+        if weeks_left:
+            proj = RS.load_projections(season, weeks_left[:RS.MAX_WEEKS], sc)
+            outlook = RS.roster_strength(rosters, players, positions, league.get("roster_positions") or [],
+                                         schedule, done, weeks_left, proj, now_week=first, seed=f"{LEAGUE_ID}-{season}")
+        if outlook:
+            raw = {r: o["mean"] for r, o in outlook.items() if r in teams}
+            # Projections run on their own scale; match the league's actual
+            # scoring level so only the differences between rosters matter.
+            _, sc_hist, _ = tally(rids, schedule[:done], median)
+            played = [p for v in sc_hist.values() for p in v]
+            factor = (statistics.mean(played) / statistics.mean(raw.values())) if played and raw else 1.0
+            roster_now = {r: v * factor for r, v in raw.items()}
+            for r, o in outlook.items():
+                o["scaled"] = round(o["mean"] * factor, 2)
+            print(f"Roster outlook for {len(roster_now)} teams over weeks {outlook[next(iter(outlook))]['weeks']} (scale {factor:.3f})")
+    except Exception as exc:  # noqa: BLE001 - odds fall back to results only
+        print(f"Roster outlook skipped: {exc}")
+        roster_now, outlook = None, {}
+
     def evaluate(n_weeks, is_current):
         st, scores, maxes = tally(rids, schedule[:n_weeks], median)
         if is_current:
@@ -656,8 +708,7 @@ def main():
                 t = teams[r]
                 st[r].update(wins=t["wins"], losses=t["losses"], ties=t["ties"],
                              pf=t["pf"], pa=t["pa"], max_pf=t["max_pf"])
-        model = score_model(scores, rids, DEFAULT_MEAN)
-        max_model = score_model(maxes, rids, DEFAULT_MEAN * 1.15)
+        model, max_model, _ = with_roster(scores, maxes, rids, roster_now if is_current else None)
         remaining = [wk["games"] for wk in schedule[n_weeks:]]
         week_label = schedule[n_weeks - 1]["week"] if n_weeks else 0
         rng = random.Random(f"{LEAGUE_ID}-{season}-{week_label}")
@@ -708,6 +759,7 @@ def main():
             "playoff_odds": round(s["playoff_odds"] * 100, 1),
             "champion_odds": round(s["champion_odds"] * 100, 1),
             "projected_wins": round(s["projected_wins"], 1),
+            "roster_ppg": outlook[r]["scaled"] if r in outlook and "scaled" in outlook[r] else None,
         })
 
     seeds_now = {i + 1: ranked[i] for i in range(playoff_teams)}
@@ -731,8 +783,8 @@ def main():
         for slot, r in enumerate(draft_order, start=1)
     ]
 
-    _, _, maxes_now = tally(rids, schedule[:done], median)
-    max_model_now = score_model(maxes_now, rids, DEFAULT_MEAN * 1.15)
+    _, scores_now, maxes_now = tally(rids, schedule[:done], median)
+    _, max_model_now, _ = with_roster(scores_now, maxes_now, rids, roster_now)
     sim_inputs = {
         "remaining": [[list(g) for g in wk["games"]] for wk in schedule[done:]],
         "base": {str(r): {"wins": st[r]["wins"] + 0.5 * st[r]["ties"], "pf": round(st[r]["pf"], 2),
@@ -742,6 +794,10 @@ def main():
         "playoff_teams": playoff_teams,
         "median": median,
         "actual": [[min(k), max(k), w] for k, w in actual.items()],
+        # Share of each team's strength that comes from its roster outlook; the
+        # trade calculator scales a trade's lineup change by this so its
+        # "after" odds match what the daily odds will do once the trade happens.
+        "roster_share": round(ROSTER_WEEKS / (done + ROSTER_WEEKS + ROSTER_PRIOR), 3) if roster_now else 1.0,
     }
 
     team_pages = build_team_pages(teams, rids, schedule, done, players, league, model,
@@ -781,6 +837,17 @@ def main():
             "series": {str(r): series[r] for r in rids},
         },
         "teams": team_pages,
+        "outlook": {
+            "method": ("Odds blend each team's results with its roster outlook: projected points per week "
+                       "from here for the players on the roster today, scored with league settings, with injured "
+                       "players' chances of playing and waiver-level replacements filling holes. "
+                       f"Results count one share per week played, the roster outlook {ROSTER_WEEKS} shares."),
+            "roster_weeks": ROSTER_WEEKS,
+            "results_weight": round(done / (done + ROSTER_WEEKS + ROSTER_PRIOR), 3) if roster_now else 1.0,
+            "teams": {str(r): {**o, "results_ppg": round(statistics.mean(scores_now[r]), 2) if scores_now.get(r) else None,
+                                "blended_ppg": round(model[r][0], 2)}
+                      for r, o in outlook.items() if r in teams},
+        },
         "sim": sim_inputs,
         "transactions": transactions[:80],
         "diagnostics": {"max_pf_check": diagnostics},

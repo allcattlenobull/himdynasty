@@ -35,6 +35,8 @@ Branding lives in `docs/assets/` (`logo.svg`, `brand.css`). Every page has an Au
 - **Draft order (if the season ended today):** picks 1–6 are current non-playoff teams by lowest max PF; picks 7–12 are current playoff teams in the order the projected bracket eliminates them, lowest max PF first within a round, champion last
 - **History:** for every completed week, the standings as of that week and the playoff odds and projected draft pick from re-simulating the rest of the season from that point
 
+**Odds and rosters:** each team's expected weekly score blends its results so far with a roster outlook (`scripts/roster_strength.py`): Sleeper projections for the rest of the season for the players on the roster today, scored with league settings and blended with each player's own average, with injured players' chances of playing (Out, IR, Doubtful, Questionable, recovering over the following weeks), a small injury risk for everyone, and waiver-level replacements filling holes, averaged over many draws of who is available so depth counts. Results count one share per week played and the outlook six, so trades, pickups and injuries move the odds the next morning while results matter more as the season goes on. The trade calculator scales a trade's lineup change by the same share. The outlook appears as Roster/wk in the standings and on team pages.
+
 Weekly max PF is computed from each team's best possible lineup and scaled to match Sleeper's season total. `diagnostics.max_pf_check` in `latest.json` shows the raw comparison.
 
 ## Sharing

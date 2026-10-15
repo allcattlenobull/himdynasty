@@ -89,7 +89,7 @@
     return row;
   }
 
-  function renderHero(t, playoffTeams, ts, titles) {
+  function renderHero(t, playoffTeams, ts, titles, outlook) {
     const hero = document.getElementById("hero");
     hero.style.setProperty("--team-color", teamVar(t.roster_id));
     hero.replaceChildren();
@@ -135,6 +135,11 @@
       stat("#1 pick", `${t.first_pick_odds.toFixed(1)}%`),
       stat("Proj pick", t.draft_slot ? `#${t.draft_slot}` : t.avg_pick.toFixed(1)),
     );
+    if (outlook && typeof outlook.scaled === "number") {
+      const s = stat("Roster/wk", outlook.scaled.toFixed(1));
+      s.title = "Projected points per week from here with today's roster, injuries and replacements (on the league's scoring scale)";
+      stats.appendChild(s);
+    }
     if (ts) {
       stats.append(
         stat("Avg age", ts.avg_age ? `${ts.avg_age}` : "—"),
@@ -144,6 +149,18 @@
       );
     }
     hero.appendChild(stats);
+    if (outlook && typeof outlook.scaled === "number") {
+      const line = el("p", null, "outlook-line");
+      const res = typeof outlook.results_ppg === "number" ? `${outlook.results_ppg.toFixed(1)} per week so far` : "";
+      line.append(el("strong", "Roster outlook: "),
+        `${outlook.scaled.toFixed(1)} points per week projected from here${res ? ` vs ${res}` : ""}. `);
+      if (outlook.hurt && outlook.hurt.length) {
+        line.append(`Hurt: ${outlook.hurt.map((h) => `${h.name} (${h.status})`).join(", ")}`);
+        line.append(outlook.injury_cost >= 0.5 ? `, costing about ${outlook.injury_cost.toFixed(1)} a week after backups. ` : ", covered by depth. ");
+      }
+      line.append("Odds blend this outlook with results so far, so trades, pickups and injuries move them the next morning.");
+      hero.appendChild(line);
+    }
   }
 
   // ------------------------------------------------------------------ //
@@ -479,7 +496,7 @@
 
     renderChips(data.standings, id);
     const ts = trade && trade.teams ? trade.teams[id] : null;
-    renderHero(t, data.league.playoff_teams, ts, titlesFor(hist, Number(id)));
+    renderHero(t, data.league.playoff_teams, ts, titlesFor(hist, Number(id)), data.outlook && data.outlook.teams ? data.outlook.teams[id] : null);
     renderPicks(ts, trade, Number(id));
     if (analysis && analysis.teams) renderAnalysis(analysis.teams[id], analysis.generated_at);
     if (analytics) renderPlayerAnalytics(analytics, Number(id));

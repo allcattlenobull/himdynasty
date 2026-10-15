@@ -1664,3 +1664,6 @@ th.sortable.asc::after { content: " ▲"; color: var(--red); }
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.35));
 }
 .team-hero:has(.is-champ) { padding-top: 1.6rem; }
+
+.outlook-line { grid-column: 1 / -1; margin: 0; font-size: 0.85rem; color: var(--muted); max-width: 95ch; }
+.outlook-line strong { color: var(--text); }

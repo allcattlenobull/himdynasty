@@ -163,7 +163,10 @@ window.TradeSim = (sim, fmt) => {
     });
     const poolA = teamA.assets.concat(get), poolB = teamB.assets.concat(give);
     const before = baseline || run({}, n);
-    const after = run({ [teamA.rid]: aAfter - aBefore, [teamB.rid]: bAfter - bBefore }, n);
+    // The daily odds weigh roster outlook by roster_share (the rest is results
+    // so far), so a lineup change moves a team's expected score by that share.
+    const share = typeof sim.roster_share === "number" ? sim.roster_share : 1;
+    const after = run({ [teamA.rid]: (aAfter - aBefore) * share, [teamB.rid]: (bAfter - bBefore) * share }, n);
     const side = (rid, lb, la, mv) => ({
       weekly: la - lb,
       starters: mv,

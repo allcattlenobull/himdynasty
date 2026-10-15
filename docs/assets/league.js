@@ -118,6 +118,8 @@
     { key: "pa", label: "PA", num: true, val: (r) => r.points_against, dir: -1 },
     { key: "max", label: "Max PF", num: true, val: (r) => r.max_pf, dir: -1 },
     { key: "projw", label: "Proj W", num: true, val: (r) => r.projected_wins, dir: -1 },
+    { key: "roster", label: "Roster/wk", num: true, val: (r) => (typeof r.roster_ppg === "number" ? r.roster_ppg : -1), dir: -1,
+      title: "Projected points per week from here with today's roster, injuries and replacements" },
     { key: "playoff", label: "Playoff", num: false, val: (r) => r.playoff_odds, dir: -1 },
     { key: "champ", label: "Champ", num: true, val: (r) => r.champion_odds, dir: -1 },
   ];
@@ -144,7 +146,7 @@
       th.setAttribute("aria-sort", active ? (state.sort.dir === 1 ? "ascending" : "descending") : "none");
       const btn = el("button", c.label, "sort-btn" + (active ? " on" : ""));
       btn.type = "button";
-      btn.title = `Sort by ${c.label === "#" ? "rank" : c.label}`;
+      btn.title = c.title || `Sort by ${c.label === "#" ? "rank" : c.label}`;
       if (active) btn.appendChild(el("span", state.sort.dir === 1 ? "▲" : "▼", "sort-arrow"));
       btn.addEventListener("click", () => {
         state.sort = active ? { key: c.key, dir: -state.sort.dir } : { key: c.key, dir: c.dir };
@@ -172,6 +174,7 @@
       tr.appendChild(el("td", row.points_against.toFixed(1), "num"));
       tr.appendChild(el("td", row.max_pf.toFixed(1), "num"));
       tr.appendChild(el("td", row.projected_wins.toFixed(1), "num"));
+      tr.appendChild(el("td", typeof row.roster_ppg === "number" ? row.roster_ppg.toFixed(1) : "—", "num"));
       tr.appendChild(oddsCell(row.playoff_odds));
       tr.appendChild(el("td", `${row.champion_odds.toFixed(1)}%`, "num"));
       body.appendChild(tr);
