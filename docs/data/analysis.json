@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T09:00:41+00:00",
+ "generated_at": "2026-10-15T15:21:49+00:00",
  "weeks_completed": 5,
  "author": "The Analyst (written automatically from league data every morning)",
  "teams": {
@@ -7,19 +7,19 @@
    "team": "‘89 Earthquake",
    "score": 30,
    "verdict": "Mostly Ass",
-   "summary": "‘89 Earthquake is Mostly Ass: 0.6% to make the playoffs, 0.0% to win it all, 10th in dynasty value.",
+   "summary": "‘89 Earthquake is Mostly Ass: 0.1% to make the playoffs, 0.0% to win it all, 10th in dynasty value.",
    "him": [
     "Built to last: value-weighted age 23.0, the youngest core in the league.",
     "Robbed: 1.4 expected wins from all-play, only 0 on the board. The scoreboard owes you 1.4.",
-    "Pick hoarder: 12 picks worth 7,909 (3rd in draft capital).",
+    "Pick hoarder: 12 picks worth 7,584 (3rd in draft capital).",
     "Heating up: 119.2 a week over the last 3, +6.0 versus your season pace."
    ],
    "ass": [
     "Your bench is your best unit: 187.4 points left on the pine (37.5 a week), 12th in lineup efficiency.",
     "The offense is a rumor: 565.8 points, 11th of 12 (113.2 a week).",
     "Would be 15-40 playing everyone every week (11th in all-play). The record is not lying.",
-    "Gauntlet ahead: remaining opponents average 132.6 a week, the 2nd toughest schedule left.",
-    "Asset-poor: 34,802 in total trade value, 10th of 12."
+    "Gauntlet ahead: remaining opponents average 133.6 a week, the 2nd toughest schedule left.",
+    "Asset-poor: 34,477 in total trade value, 10th of 12."
    ],
    "ranks": {
     "pf": 11,
@@ -44,12 +44,12 @@
   },
   "2": {
    "team": "DOLLA BILLZ",
-   "score": 18,
+   "score": 19,
    "verdict": "Certified Ass",
-   "summary": "DOLLA BILLZ is Certified Ass: 26.1% to make the playoffs, 1.7% to win it all, 9th in dynasty value.",
+   "summary": "DOLLA BILLZ is Certified Ass: 28.1% to make the playoffs, 1.7% to win it all, 9th in dynasty value.",
    "him": [
     "QB room is elite: Josh Allen put up 29.4 a week (1st at QB).",
-    "Soft road ahead: remaining opponents average 129.2 a week, the easiest schedule left."
+    "Soft road ahead: remaining opponents average 129.0 a week, the 3rd easiest schedule left."
    ],
    "ass": [
     "Mortgaged the future: 0 picks worth 0 (12th in draft capital).",
@@ -63,7 +63,7 @@
     "eff": 10,
     "ap": 10,
     "form": 11,
-    "playoff": 9,
+    "playoff": 8,
     "QB": 1,
     "RB": 6,
     "WR": 8,
@@ -71,7 +71,7 @@
     "value": 9,
     "youth": 11,
     "picks": 12,
-    "sched": 1
+    "sched": 3
    },
    "all_play": [
     20,
@@ -83,7 +83,7 @@
    "team": "K-9’s Unit",
    "score": 76,
    "verdict": "Certified HIM",
-   "summary": "K-9’s Unit is Certified HIM: 95.5% to make the playoffs, 13.6% to win it all, 3rd in dynasty value.",
+   "summary": "K-9’s Unit is Certified HIM: 94.6% to make the playoffs, 10.0% to win it all, 3rd in dynasty value.",
    "him": [
     "RB room is elite: Kenneth Walker, Chuba Hubbard and Breece Hall put up 61.4 a week (1st at RB).",
     "Built to last: value-weighted age 24.4, the 2nd youngest core in the league.",
@@ -92,10 +92,10 @@
     "Would be 38-17 playing everyone every week (3rd in all-play)."
    ],
    "ass": [
-    "Gauntlet ahead: remaining opponents average 132.7 a week, the toughest schedule left.",
     "WR is a black hole: 35.1 a week from Deebo Samuel, Kendrick Bourne and Jordan Addison (11th of 12 at WR).",
     "Schedule merchant: 5 wins but only 3.5 expected from all-play. That's 1.5 gift wins.",
-    "Mortgaged the future: 9 picks worth 3,532 (9th in draft capital)."
+    "Gauntlet ahead: remaining opponents average 132.9 a week, the 3rd toughest schedule left.",
+    "Mortgaged the future: 9 picks worth 3,599 (9th in draft capital)."
    ],
    "ranks": {
     "pf": 3,
@@ -110,7 +110,7 @@
     "value": 3,
     "youth": 2,
     "picks": 9,
-    "sched": 12
+    "sched": 10
    },
    "all_play": [
     38,
@@ -122,12 +122,12 @@
    "team": "The Lab",
    "score": 57,
    "verdict": "Undecided",
-   "summary": "The Lab is Undecided: 68.2% to make the playoffs, 9.2% to win it all, 4th in dynasty value.",
+   "summary": "The Lab is Undecided: 74.9% to make the playoffs, 11.1% to win it all, 4th in dynasty value.",
    "him": [
     "TE room is elite: Trey McBride put up 18.2 a week (2nd at TE).",
+    "Soft road ahead: remaining opponents average 128.8 a week, the 2nd easiest schedule left.",
     "RB room is elite: Jahmyr Gibbs, Chase Brown and Jacory Croskey-Merritt put up 52.7 a week (3rd at RB).",
-    "Soft road ahead: remaining opponents average 129.7 a week, the 3rd easiest schedule left.",
-    "Momentum: playoff odds up 11.2 points in the last week, now 68.2%.",
+    "Momentum: playoff odds up 17.9 points in the last week, now 74.9%.",
     "Scoring machine: 680.1 points, 4th in the league (136.0 a week)."
    ],
    "ass": [
@@ -147,7 +147,7 @@
     "value": 4,
     "youth": 7,
     "picks": 11,
-    "sched": 3
+    "sched": 2
    },
    "all_play": [
     30,
@@ -159,11 +159,11 @@
    "team": "Chocolate Gold ",
    "score": 49,
    "verdict": "Undecided",
-   "summary": "Chocolate Gold is Undecided: 72.7% to make the playoffs, 6.5% to win it all, 7th in dynasty value.",
+   "summary": "Chocolate Gold is Undecided: 78.0% to make the playoffs, 7.4% to win it all, 7th in dynasty value.",
    "him": [
     "Heating up: 140.8 a week over the last 3, +11.7 versus your season pace.",
     "QB room is elite: Tyler Huntley put up 24.0 a week (3rd at QB).",
-    "Momentum: playoff odds up 20.2 points in the last week, now 72.7%.",
+    "Momentum: playoff odds up 25.5 points in the last week, now 78.0%.",
     "Lineup genius: started 88.5% of your max possible points (4th in efficiency).",
     "WR room is elite: Puka Nacua, Mike Evans and Jameson Williams put up 52.8 a week (4th at WR)."
    ],
@@ -194,15 +194,15 @@
   },
   "6": {
    "team": "Vanilla Diamonds",
-   "score": 81,
+   "score": 83,
    "verdict": "Certified HIM",
-   "summary": "Vanilla Diamonds is Certified HIM: 96.8% to make the playoffs, 25.5% to win it all, 2nd in dynasty value.",
+   "summary": "Vanilla Diamonds is Certified HIM: 98.7% to make the playoffs, 33.1% to win it all, 2nd in dynasty value.",
    "him": [
     "WR room is elite: Jaxon Smith-Njigba, CeeDee Lamb and Nico Collins put up 71.8 a week (1st at WR).",
+    "Soft road ahead: remaining opponents average 128.0 a week, the easiest schedule left.",
     "Scoring machine: 755.5 points, 2nd in the league (151.1 a week).",
     "Would be 39-16 playing everyone every week (2nd in all-play).",
-    "Dynasty bank: roster and picks worth 55,655 in trade value, 2nd in the league.",
-    "Soft road ahead: remaining opponents average 129.4 a week, the 2nd easiest schedule left."
+    "Dynasty bank: roster and picks worth 55,913 in trade value, 2nd in the league."
    ],
    "ass": [
     "QB is a black hole: 13.7 a week from Kirk Cousins (12th of 12 at QB).",
@@ -213,7 +213,7 @@
     "eff": 6,
     "ap": 2,
     "form": 8,
-    "playoff": 2,
+    "playoff": 1,
     "QB": 12,
     "RB": 8,
     "WR": 1,
@@ -221,7 +221,7 @@
     "value": 2,
     "youth": 5,
     "picks": 7,
-    "sched": 2
+    "sched": 1
    },
    "all_play": [
     39,
@@ -231,9 +231,9 @@
   },
   "7": {
    "team": "Finesse🥶🤴🏿",
-   "score": 21,
+   "score": 22,
    "verdict": "Certified Ass",
-   "summary": "Finesse🥶🤴🏿 is Certified Ass: 0.8% to make the playoffs, 0.1% to win it all, 11th in dynasty value.",
+   "summary": "Finesse🥶🤴🏿 is Certified Ass: 0.4% to make the playoffs, 0.0% to win it all, 11th in dynasty value.",
    "him": [
     "Heating up: 123.6 a week over the last 3, +18.0 versus your season pace.",
     "Robbed: 1.0 expected wins from all-play, only 0 on the board. The scoreboard owes you 1.0.",
@@ -259,8 +259,8 @@
     "TE": 4,
     "value": 11,
     "youth": 3,
-    "picks": 6,
-    "sched": 5
+    "picks": 5,
+    "sched": 6
    },
    "all_play": [
     11,
@@ -272,7 +272,7 @@
    "team": "MIP",
    "score": 55,
    "verdict": "Undecided",
-   "summary": "MIP is Undecided: 59.8% to make the playoffs, 4.7% to win it all, 5th in dynasty value.",
+   "summary": "MIP is Undecided: 61.2% to make the playoffs, 4.5% to win it all, 5th in dynasty value.",
    "him": [
     "Lineup genius: started 90.2% of your max possible points (1st in efficiency).",
     "TE room is elite: Brock Bowers put up 23.7 a week (1st at TE).",
@@ -282,7 +282,7 @@
    "ass": [
     "RB is a black hole: 25.6 a week from Quinshon Judkins, RJ Harvey and Jadarian Price (12th of 12 at RB).",
     "Mortgaged the future: 5 picks worth 3,041 (10th in draft capital).",
-    "Gauntlet ahead: remaining opponents average 131.9 a week, the 4th toughest schedule left."
+    "Gauntlet ahead: remaining opponents average 132.4 a week, the 4th toughest schedule left."
    ],
    "ranks": {
     "pf": 6,
@@ -307,14 +307,14 @@
   },
   "9": {
    "team": "Top 5 Top 5 Top 5",
-   "score": 96,
+   "score": 95,
    "verdict": "Certified HIM",
-   "summary": "Top 5 Top 5 Top 5 is Certified HIM: 97.1% to make the playoffs, 30.6% to win it all, 1st in dynasty value.",
+   "summary": "Top 5 Top 5 Top 5 is Certified HIM: 97.1% to make the playoffs, 26.6% to win it all, 1st in dynasty value.",
    "him": [
     "Scoring machine: 779.6 points, 1st in the league (155.9 a week).",
     "Would be 44-11 playing everyone every week (1st in all-play).",
-    "Dynasty bank: roster and picks worth 76,874 in trade value, 1st in the league.",
-    "Pick hoarder: 19 picks worth 13,030 (1st in draft capital).",
+    "Dynasty bank: roster and picks worth 76,581 in trade value, 1st in the league.",
+    "Pick hoarder: 19 picks worth 12,737 (1st in draft capital).",
     "Heating up: 167.8 a week over the last 3, +11.9 versus your season pace."
    ],
    "ass": [
@@ -326,7 +326,7 @@
     "eff": 7,
     "ap": 1,
     "form": 2,
-    "playoff": 1,
+    "playoff": 2,
     "QB": 10,
     "RB": 4,
     "WR": 2,
@@ -344,34 +344,34 @@
   },
   "10": {
    "team": "🌨️🧱Brick by Brick🧱🌨️",
-   "score": 27,
-   "verdict": "Mostly Ass",
-   "summary": "🌨️🧱Brick by Brick🧱🌨️ is Mostly Ass: 27.2% to make the playoffs, 2.3% to win it all, 12th in dynasty value.",
+   "score": 24,
+   "verdict": "Certified Ass",
+   "summary": "🌨️🧱Brick by Brick🧱🌨️ is Certified Ass: 22.4% to make the playoffs, 1.5% to win it all, 12th in dynasty value.",
    "him": [
     "TE room is elite: Isaiah Likely put up 17.1 a week (3rd at TE).",
-    "Silver lining: 5th in draft capital."
+    "Silver lining: 5th in schedule ease."
    ],
    "ass": [
     "Asset-poor: 25,319 in total trade value, 12th of 12.",
     "AARP roster: value-weighted age 29.1, the oldest core in the league.",
     "Ice cold: 118.2 a week over the last 3, -6.7 versus your season pace.",
     "RB is a black hole: 38.4 a week from Christian McCaffrey, Jordan Mason and Rachaad White (10th of 12 at RB).",
-    "Sliding: playoff odds down 18.8 points in the last week, now 27.2%."
+    "Sliding: playoff odds down 23.6 points in the last week, now 22.4%."
    ],
    "ranks": {
     "pf": 9,
     "eff": 8,
     "ap": 9,
     "form": 10,
-    "playoff": 8,
+    "playoff": 9,
     "QB": 9,
     "RB": 10,
     "WR": 7,
     "TE": 3,
     "value": 12,
     "youth": 12,
-    "picks": 5,
-    "sched": 7
+    "picks": 6,
+    "sched": 5
    },
    "all_play": [
     22,
@@ -383,7 +383,7 @@
    "team": "Ryan Poles",
    "score": 50,
    "verdict": "Undecided",
-   "summary": "Ryan Poles is Undecided: 45.3% to make the playoffs, 5.3% to win it all, 8th in dynasty value.",
+   "summary": "Ryan Poles is Undecided: 41.2% to make the playoffs, 4.0% to win it all, 8th in dynasty value.",
    "him": [
     "QB room is elite: Jameis Winston put up 25.7 a week (2nd at QB).",
     "WR room is elite: Christian Watson, Jalen Coker and Denzel Boston put up 53.1 a week (3rd at WR).",
@@ -406,7 +406,7 @@
     "value": 8,
     "youth": 8,
     "picks": 4,
-    "sched": 6
+    "sched": 7
    },
    "all_play": [
     28,
@@ -418,7 +418,7 @@
    "team": "Daejon Mustard ",
    "score": 40,
    "verdict": "Mostly Ass",
-   "summary": "Daejon Mustard is Mostly Ass: 9.8% to make the playoffs, 0.6% to win it all, 6th in dynasty value.",
+   "summary": "Daejon Mustard is Mostly Ass: 3.2% to make the playoffs, 0.1% to win it all, 6th in dynasty value.",
    "him": [
     "Lineup genius: started 89.6% of your max possible points (2nd in efficiency).",
     "RB room is elite: Derrick Henry, Kyren Williams and MarShawn Lloyd put up 52.8 a week (2nd at RB).",
@@ -428,9 +428,9 @@
    "ass": [
     "WR is a black hole: 33.3 a week from Tee Higgins, Roman Wilson and Alec Pierce (12th of 12 at WR).",
     "TE is a black hole: 6.7 a week from Kyle Pitts (12th of 12 at TE).",
+    "Gauntlet ahead: remaining opponents average 133.6 a week, the toughest schedule left.",
     "AARP roster: value-weighted age 26.6, the 3rd oldest core in the league.",
-    "Gauntlet ahead: remaining opponents average 132.4 a week, the 3rd toughest schedule left.",
-    "Sliding: playoff odds down 10.0 points in the last week, now 9.8%."
+    "Sliding: playoff odds down 16.6 points in the last week, now 3.2%."
    ],
    "ranks": {
     "pf": 8,
@@ -445,7 +445,7 @@
     "value": 6,
     "youth": 10,
     "picks": 2,
-    "sched": 10
+    "sched": 12
    },
    "all_play": [
     23,

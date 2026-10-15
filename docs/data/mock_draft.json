@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T09:02:34+00:00",
+ "generated_at": "2026-10-15T15:24:07+00:00",
  "draft_year": 2027,
  "college_season": 2026,
  "rounds": 3,
@@ -284,77 +284,13 @@
    "pick": 9,
    "label": "1.09",
    "overall": 9,
-   "owner": 9,
-   "owner_team": "Top 5 Top 5 Top 5",
-   "original": 4,
-   "original_team": "The Lab",
-   "traded": true,
-   "prospect": "deuce alexander",
-   "reason": "Value pick",
-   "context": {
-    "needs": [],
-    "set": [
-     "QB",
-     "WR",
-     "TE"
-    ],
-    "thin": [
-     "RB"
-    ],
-    "ranks": {
-     "QB": 3,
-     "RB": 3,
-     "WR": 2,
-     "TE": 4
-    },
-    "tendency": [
-     "Leans TE"
-    ]
-   }
-  },
-  {
-   "round": 1,
-   "pick": 10,
-   "label": "1.10",
-   "overall": 10,
-   "owner": 1,
-   "owner_team": "‘89 Earthquake",
-   "original": 6,
-   "original_team": "Vanilla Diamonds",
-   "traded": true,
-   "prospect": "ryan coleman williams",
-   "reason": "Fills a WR need (9th at WR)",
-   "context": {
-    "needs": [
-     "WR",
-     "RB"
-    ],
-    "set": [],
-    "thin": [],
-    "ranks": {
-     "QB": 7,
-     "RB": 8,
-     "WR": 9,
-     "TE": 8
-    },
-    "tendency": [
-     "Leans RB",
-     "Avoids QB"
-    ]
-   }
-  },
-  {
-   "round": 1,
-   "pick": 11,
-   "label": "1.11",
-   "overall": 11,
    "owner": 7,
    "owner_team": "Finesse🥶🤴🏿",
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": true,
-   "prospect": "mark fletcher",
-   "reason": "Fills a RB need (12th at RB)",
+   "prospect": "deuce alexander",
+   "reason": "Fills a WR need (6th at WR)",
    "context": {
     "needs": [
      "RB",
@@ -378,9 +314,9 @@
   },
   {
    "round": 1,
-   "pick": 12,
-   "label": "1.12",
-   "overall": 12,
+   "pick": 10,
+   "label": "1.10",
+   "overall": 10,
    "owner": 6,
    "owner_team": "Vanilla Diamonds",
    "original": 9,
@@ -411,6 +347,70 @@
    }
   },
   {
+   "round": 1,
+   "pick": 11,
+   "label": "1.11",
+   "overall": 11,
+   "owner": 9,
+   "owner_team": "Top 5 Top 5 Top 5",
+   "original": 4,
+   "original_team": "The Lab",
+   "traded": true,
+   "prospect": "jamari johnson",
+   "reason": "Manager leans TE",
+   "context": {
+    "needs": [],
+    "set": [
+     "QB",
+     "WR",
+     "TE"
+    ],
+    "thin": [
+     "RB"
+    ],
+    "ranks": {
+     "QB": 3,
+     "RB": 3,
+     "WR": 2,
+     "TE": 4
+    },
+    "tendency": [
+     "Leans TE"
+    ]
+   }
+  },
+  {
+   "round": 1,
+   "pick": 12,
+   "label": "1.12",
+   "overall": 12,
+   "owner": 1,
+   "owner_team": "‘89 Earthquake",
+   "original": 6,
+   "original_team": "Vanilla Diamonds",
+   "traded": true,
+   "prospect": "ryan coleman williams",
+   "reason": "Fills a WR need (9th at WR)",
+   "context": {
+    "needs": [
+     "WR",
+     "RB"
+    ],
+    "set": [],
+    "thin": [],
+    "ranks": {
+     "QB": 7,
+     "RB": 8,
+     "WR": 9,
+     "TE": 8
+    },
+    "tendency": [
+     "Leans RB",
+     "Avoids QB"
+    ]
+   }
+  },
+  {
    "round": 2,
    "pick": 1,
    "label": "2.01",
@@ -420,17 +420,19 @@
    "original": 7,
    "original_team": "Finesse🥶🤴🏿",
    "traded": false,
-   "prospect": "jamal roberts",
+   "prospect": "mark fletcher",
    "reason": "Fills a RB need (12th at RB)",
    "context": {
     "needs": [
      "RB",
-     "WR"
+     "QB"
     ],
     "set": [
      "TE"
     ],
-    "thin": [],
+    "thin": [
+     "WR"
+    ],
     "ranks": {
      "QB": 12,
      "RB": 12,
@@ -453,8 +455,8 @@
    "original": 12,
    "original_team": "Daejon Mustard ",
    "traded": false,
-   "prospect": "jamari johnson",
-   "reason": "Fills a TE need (9th at TE)",
+   "prospect": "jamal roberts",
+   "reason": "Fills a RB need (11th at RB)",
    "context": {
     "needs": [
      "RB",
@@ -652,18 +654,18 @@
    "original": 8,
    "original_team": "MIP",
    "traded": true,
-   "prospect": "wyatt young",
-   "reason": "Fills a WR need (6th at WR)",
+   "prospect": "dylan riley",
+   "reason": "Fills a RB need (12th at RB)",
    "context": {
     "needs": [
-     "WR",
+     "RB",
      "QB"
     ],
     "set": [
      "TE"
     ],
     "thin": [
-     "RB"
+     "WR"
     ],
     "ranks": {
      "QB": 12,
@@ -682,12 +684,74 @@
    "pick": 9,
    "label": "2.09",
    "overall": 21,
+   "owner": 3,
+   "owner_team": "K-9’s Unit",
+   "original": 3,
+   "original_team": "K-9’s Unit",
+   "traded": false,
+   "prospect": "wyatt young",
+   "reason": "Fills a WR need (12th at WR)",
+   "context": {
+    "needs": [
+     "WR",
+     "TE"
+    ],
+    "set": [],
+    "thin": [],
+    "ranks": {
+     "QB": 8,
+     "RB": 1,
+     "WR": 12,
+     "TE": 10
+    },
+    "tendency": [
+     "Leans QB",
+     "Avoids RB"
+    ]
+   }
+  },
+  {
+   "round": 2,
+   "pick": 10,
+   "label": "2.10",
+   "overall": 22,
+   "owner": 3,
+   "owner_team": "K-9’s Unit",
+   "original": 9,
+   "original_team": "Top 5 Top 5 Top 5",
+   "traded": true,
+   "prospect": "anthony evans",
+   "reason": "Fills a WR need (12th at WR)",
+   "context": {
+    "needs": [
+     "TE",
+     "WR"
+    ],
+    "set": [],
+    "thin": [],
+    "ranks": {
+     "QB": 8,
+     "RB": 1,
+     "WR": 12,
+     "TE": 10
+    },
+    "tendency": [
+     "Leans QB",
+     "Avoids RB"
+    ]
+   }
+  },
+  {
+   "round": 2,
+   "pick": 11,
+   "label": "2.11",
+   "overall": 23,
    "owner": 1,
    "owner_team": "‘89 Earthquake",
    "original": 4,
    "original_team": "The Lab",
    "traded": true,
-   "prospect": "anthony evans",
+   "prospect": "carlos hernandez",
    "reason": "Adds WR depth",
    "context": {
     "needs": [
@@ -712,15 +776,15 @@
   },
   {
    "round": 2,
-   "pick": 10,
-   "label": "2.10",
-   "overall": 22,
+   "pick": 12,
+   "label": "2.12",
+   "overall": 24,
    "owner": 6,
    "owner_team": "Vanilla Diamonds",
    "original": 6,
    "original_team": "Vanilla Diamonds",
    "traded": false,
-   "prospect": "dylan riley",
+   "prospect": "wayne knight",
    "reason": "Adds RB depth",
    "context": {
     "needs": [],
@@ -739,68 +803,6 @@
     "tendency": [
      "Leans TE",
      "Avoids QB"
-    ]
-   }
-  },
-  {
-   "round": 2,
-   "pick": 11,
-   "label": "2.11",
-   "overall": 23,
-   "owner": 3,
-   "owner_team": "K-9’s Unit",
-   "original": 3,
-   "original_team": "K-9’s Unit",
-   "traded": false,
-   "prospect": "carlos hernandez",
-   "reason": "Fills a WR need (12th at WR)",
-   "context": {
-    "needs": [
-     "WR",
-     "TE"
-    ],
-    "set": [],
-    "thin": [],
-    "ranks": {
-     "QB": 8,
-     "RB": 1,
-     "WR": 12,
-     "TE": 10
-    },
-    "tendency": [
-     "Leans QB",
-     "Avoids RB"
-    ]
-   }
-  },
-  {
-   "round": 2,
-   "pick": 12,
-   "label": "2.12",
-   "overall": 24,
-   "owner": 3,
-   "owner_team": "K-9’s Unit",
-   "original": 9,
-   "original_team": "Top 5 Top 5 Top 5",
-   "traded": true,
-   "prospect": "kelby valsin",
-   "reason": "Fills a WR need (12th at WR)",
-   "context": {
-    "needs": [
-     "TE",
-     "WR"
-    ],
-    "set": [],
-    "thin": [],
-    "ranks": {
-     "QB": 8,
-     "RB": 1,
-     "WR": 12,
-     "TE": 10
-    },
-    "tendency": [
-     "Leans QB",
-     "Avoids RB"
     ]
    }
   },
@@ -846,12 +848,12 @@
    "original": 12,
    "original_team": "Daejon Mustard ",
    "traded": false,
-   "prospect": "wayne knight",
+   "prospect": "cam cook",
    "reason": "Fills a RB need (11th at RB)",
    "context": {
     "needs": [
-     "RB",
-     "TE"
+     "TE",
+     "RB"
     ],
     "set": [
      "WR"
@@ -912,7 +914,7 @@
    "original": 1,
    "original_team": "‘89 Earthquake",
    "traded": false,
-   "prospect": "cam cook",
+   "prospect": "desean bishop",
    "reason": "Adds RB depth",
    "context": {
     "needs": [
@@ -975,7 +977,7 @@
    "original": 11,
    "original_team": "Ryan Poles",
    "traded": false,
-   "prospect": "desean bishop",
+   "prospect": "nate frazier",
    "reason": "Fills a RB need (7th at RB)",
    "context": {
     "needs": [
@@ -1071,77 +1073,12 @@
    "pick": 9,
    "label": "3.09",
    "overall": 33,
-   "owner": 9,
-   "owner_team": "Top 5 Top 5 Top 5",
-   "original": 4,
-   "original_team": "The Lab",
-   "traded": true,
-   "prospect": "nate frazier",
-   "reason": "Adds RB depth",
-   "context": {
-    "needs": [],
-    "set": [
-     "QB",
-     "WR",
-     "TE"
-    ],
-    "thin": [
-     "RB"
-    ],
-    "ranks": {
-     "QB": 3,
-     "RB": 3,
-     "WR": 2,
-     "TE": 4
-    },
-    "tendency": [
-     "Leans TE"
-    ]
-   }
-  },
-  {
-   "round": 3,
-   "pick": 10,
-   "label": "3.10",
-   "overall": 34,
-   "owner": 6,
-   "owner_team": "Vanilla Diamonds",
-   "original": 6,
-   "original_team": "Vanilla Diamonds",
-   "traded": false,
-   "prospect": "dante moore",
-   "reason": "Best available",
-   "context": {
-    "needs": [],
-    "set": [
-     "WR"
-    ],
-    "thin": [
-     "RB"
-    ],
-    "ranks": {
-     "QB": 10,
-     "RB": 4,
-     "WR": 1,
-     "TE": 7
-    },
-    "tendency": [
-     "Leans TE",
-     "Avoids QB"
-    ]
-   }
-  },
-  {
-   "round": 3,
-   "pick": 11,
-   "label": "3.11",
-   "overall": 35,
    "owner": 3,
    "owner_team": "K-9’s Unit",
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": false,
-   "prospect": "austin simmons",
+   "prospect": "dante moore",
    "reason": "Best available",
    "context": {
     "needs": [
@@ -1165,9 +1102,9 @@
   },
   {
    "round": 3,
-   "pick": 12,
-   "label": "3.12",
-   "overall": 36,
+   "pick": 10,
+   "label": "3.10",
+   "overall": 34,
    "owner": 9,
    "owner_team": "Top 5 Top 5 Top 5",
    "original": 9,
@@ -1193,6 +1130,71 @@
     },
     "tendency": [
      "Leans TE"
+    ]
+   }
+  },
+  {
+   "round": 3,
+   "pick": 11,
+   "label": "3.11",
+   "overall": 35,
+   "owner": 9,
+   "owner_team": "Top 5 Top 5 Top 5",
+   "original": 4,
+   "original_team": "The Lab",
+   "traded": true,
+   "prospect": "kelby valsin",
+   "reason": "Value pick",
+   "context": {
+    "needs": [],
+    "set": [
+     "QB",
+     "WR",
+     "TE"
+    ],
+    "thin": [
+     "RB"
+    ],
+    "ranks": {
+     "QB": 3,
+     "RB": 3,
+     "WR": 2,
+     "TE": 4
+    },
+    "tendency": [
+     "Leans TE"
+    ]
+   }
+  },
+  {
+   "round": 3,
+   "pick": 12,
+   "label": "3.12",
+   "overall": 36,
+   "owner": 6,
+   "owner_team": "Vanilla Diamonds",
+   "original": 6,
+   "original_team": "Vanilla Diamonds",
+   "traded": false,
+   "prospect": "austin simmons",
+   "reason": "Best available",
+   "context": {
+    "needs": [],
+    "set": [
+     "WR"
+    ],
+    "thin": [
+     "RB"
+    ],
+    "ranks": {
+     "QB": 10,
+     "RB": 4,
+     "WR": 1,
+     "TE": 7
+    },
+    "tendency": [
+     "Leans TE",
+     "Avoids QB"
     ]
    }
   }
@@ -6075,7 +6077,7 @@
       "pos": "RB"
      },
      {
-      "label": "1.10",
+      "label": "1.12",
       "key": "ryan coleman williams",
       "name": "Ryan Coleman-Williams",
       "pos": "WR"
@@ -6087,15 +6089,15 @@
       "pos": "RB"
      },
      {
-      "label": "2.09",
-      "key": "anthony evans",
-      "name": "Anthony Evans III",
+      "label": "2.11",
+      "key": "carlos hernandez",
+      "name": "Carlos Hernandez",
       "pos": "WR"
      },
      {
       "label": "3.04",
-      "key": "cam cook",
-      "name": "Cam Cook",
+      "key": "desean bishop",
+      "name": "DeSean Bishop",
       "pos": "RB"
      }
     ],
@@ -6586,21 +6588,21 @@
     ],
     "draftees": [
      {
-      "label": "2.11",
-      "key": "carlos hernandez",
-      "name": "Carlos Hernandez",
+      "label": "2.09",
+      "key": "wyatt young",
+      "name": "Wyatt Young",
       "pos": "WR"
      },
      {
-      "label": "2.12",
-      "key": "kelby valsin",
-      "name": "Kelby Valsin",
+      "label": "2.10",
+      "key": "anthony evans",
+      "name": "Anthony Evans III",
       "pos": "WR"
      },
      {
-      "label": "3.11",
-      "key": "austin simmons",
-      "name": "Austin Simmons",
+      "label": "3.09",
+      "key": "dante moore",
+      "name": "Dante Moore",
       "pos": "QB"
      }
     ],
@@ -7442,7 +7444,7 @@
     ],
     "draftees": [
      {
-      "label": "1.12",
+      "label": "1.10",
       "key": "treydez green",
       "name": "Trey'Dez Green",
       "pos": "TE"
@@ -7460,15 +7462,15 @@
       "pos": "QB"
      },
      {
-      "label": "2.10",
-      "key": "dylan riley",
-      "name": "Dylan Riley",
+      "label": "2.12",
+      "key": "wayne knight",
+      "name": "Wayne Knight",
       "pos": "RB"
      },
      {
-      "label": "3.10",
-      "key": "dante moore",
-      "name": "Dante Moore",
+      "label": "3.12",
+      "key": "austin simmons",
+      "name": "Austin Simmons",
       "pos": "QB"
      }
     ],
@@ -7743,22 +7745,22 @@
     ],
     "draftees": [
      {
-      "label": "1.11",
+      "label": "1.09",
+      "key": "deuce alexander",
+      "name": "Deuce Alexander",
+      "pos": "WR"
+     },
+     {
+      "label": "2.01",
       "key": "mark fletcher",
       "name": "Mark Fletcher",
       "pos": "RB"
      },
      {
-      "label": "2.01",
-      "key": "jamal roberts",
-      "name": "Jamal Roberts",
-      "pos": "RB"
-     },
-     {
       "label": "2.08",
-      "key": "wyatt young",
-      "name": "Wyatt Young",
-      "pos": "WR"
+      "key": "dylan riley",
+      "name": "Dylan Riley",
+      "pos": "RB"
      }
     ],
     "cuts": [
@@ -8279,22 +8281,22 @@
       "pos": "RB"
      },
      {
-      "label": "1.09",
-      "key": "deuce alexander",
-      "name": "Deuce Alexander",
-      "pos": "WR"
+      "label": "1.11",
+      "key": "jamari johnson",
+      "name": "Jamari Johnson",
+      "pos": "TE"
      },
      {
-      "label": "3.09",
-      "key": "nate frazier",
-      "name": "Nate Frazier",
-      "pos": "RB"
-     },
-     {
-      "label": "3.12",
+      "label": "3.10",
       "key": "ahmad hardy",
       "name": "Ahmad Hardy",
       "pos": "RB"
+     },
+     {
+      "label": "3.11",
+      "key": "kelby valsin",
+      "name": "Kelby Valsin",
+      "pos": "WR"
      }
     ],
     "cuts": [
@@ -8874,8 +8876,8 @@
      },
      {
       "label": "3.06",
-      "key": "desean bishop",
-      "name": "DeSean Bishop",
+      "key": "nate frazier",
+      "name": "Nate Frazier",
       "pos": "RB"
      }
     ],
@@ -8927,14 +8929,14 @@
       "group": "starter"
      },
      {
-      "id": "12542",
-      "name": "Efton Chism",
+      "id": "5859",
+      "name": "A.J. Brown",
       "pos": "WR",
       "nfl": "NE",
-      "age": 24,
-      "exp": 1,
-      "ppg": 0.0,
-      "value": 0,
+      "age": 29,
+      "exp": 7,
+      "ppg": 5.6,
+      "value": 4745,
       "group": "starter"
      },
      {
@@ -9070,14 +9072,14 @@
       "group": "bench"
      },
      {
-      "id": "5859",
-      "name": "A.J. Brown",
+      "id": "12542",
+      "name": "Efton Chism",
       "pos": "WR",
       "nfl": "NE",
-      "age": 29,
-      "exp": 7,
-      "ppg": 5.6,
-      "value": 4745,
+      "age": 24,
+      "exp": 1,
+      "ppg": 0.0,
+      "value": 0,
       "group": "bench"
      },
      {
@@ -9167,20 +9169,20 @@
      },
      {
       "label": "2.02",
-      "key": "jamari johnson",
-      "name": "Jamari Johnson",
-      "pos": "TE"
+      "key": "jamal roberts",
+      "name": "Jamal Roberts",
+      "pos": "RB"
      },
      {
       "label": "3.02",
-      "key": "wayne knight",
-      "name": "Wayne Knight",
+      "key": "cam cook",
+      "name": "Cam Cook",
       "pos": "RB"
      }
     ],
     "cuts": [
-     "12542",
      "8129",
+     "12542",
      "11630"
     ],
     "counts": {
