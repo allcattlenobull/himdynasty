@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T15:24:07+00:00",
+ "generated_at": "2026-10-16T09:02:11+00:00",
  "draft_year": 2027,
  "college_season": 2026,
  "rounds": 3,
@@ -79,7 +79,7 @@
     "thin": [],
     "ranks": {
      "QB": 5,
-     "RB": 11,
+     "RB": 9,
      "WR": 7,
      "TE": 9
     },
@@ -110,7 +110,7 @@
     "thin": [],
     "ranks": {
      "QB": 11,
-     "RB": 9,
+     "RB": 10,
      "WR": 11,
      "TE": 11
     },
@@ -135,14 +135,16 @@
    "context": {
     "needs": [
      "RB",
-     "WR"
+     "TE"
     ],
     "set": [],
-    "thin": [],
+    "thin": [
+     "WR"
+    ],
     "ranks": {
      "QB": 7,
      "RB": 8,
-     "WR": 9,
+     "WR": 8,
      "TE": 8
     },
     "tendency": [
@@ -161,8 +163,8 @@
    "original": 2,
    "original_team": "DOLLA BILLZ",
    "traded": true,
-   "prospect": "kewan lacy",
-   "reason": "Adds RB depth",
+   "prospect": "nick marsh",
+   "reason": "Value pick",
    "context": {
     "needs": [],
     "set": [
@@ -194,20 +196,22 @@
    "original": 11,
    "original_team": "Ryan Poles",
    "traded": false,
-   "prospect": "nick marsh",
-   "reason": "Fills a WR need (10th at WR)",
+   "prospect": "kj duff",
+   "reason": "Manager leans WR",
    "context": {
     "needs": [
-     "RB",
-     "WR"
+     "RB"
     ],
-    "set": [],
+    "set": [
+     "QB",
+     "TE"
+    ],
     "thin": [],
     "ranks": {
      "QB": 4,
      "RB": 7,
      "WR": 10,
-     "TE": 5
+     "TE": 3
     },
     "tendency": [
      "Leans WR",
@@ -221,11 +225,11 @@
    "label": "1.07",
    "overall": 7,
    "owner": 5,
-   "owner_team": "Chocolate Gold ",
+   "owner_team": "‘97 Stability ",
    "original": 5,
-   "original_team": "Chocolate Gold ",
+   "original_team": "‘97 Stability ",
    "traded": false,
-   "prospect": "kj duff",
+   "prospect": "deuce alexander",
    "reason": "Adds WR depth",
    "context": {
     "needs": [
@@ -265,13 +269,16 @@
     "needs": [
      "RB"
     ],
-    "set": [],
+    "set": [
+     "QB",
+     "TE"
+    ],
     "thin": [],
     "ranks": {
      "QB": 4,
      "RB": 7,
      "WR": 10,
-     "TE": 5
+     "TE": 3
     },
     "tendency": [
      "Leans WR",
@@ -289,22 +296,20 @@
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": true,
-   "prospect": "deuce alexander",
-   "reason": "Fills a WR need (6th at WR)",
+   "prospect": "kewan lacy",
+   "reason": "Fills a RB need (12th at RB)",
    "context": {
     "needs": [
      "RB",
      "WR"
     ],
-    "set": [
-     "TE"
-    ],
+    "set": [],
     "thin": [],
     "ranks": {
      "QB": 12,
      "RB": 12,
-     "WR": 6,
-     "TE": 3
+     "WR": 9,
+     "TE": 5
     },
     "tendency": [
      "Leans RB",
@@ -323,7 +328,7 @@
    "original_team": "Top 5 Top 5 Top 5",
    "traded": true,
    "prospect": "treydez green",
-   "reason": "Best available",
+   "reason": "Manager leans TE",
    "context": {
     "needs": [
      "QB"
@@ -390,18 +395,20 @@
    "original_team": "Vanilla Diamonds",
    "traded": true,
    "prospect": "ryan coleman williams",
-   "reason": "Fills a WR need (9th at WR)",
+   "reason": "Fills a WR need (8th at WR)",
    "context": {
     "needs": [
-     "WR",
-     "RB"
+     "TE",
+     "WR"
     ],
     "set": [],
-    "thin": [],
+    "thin": [
+     "RB"
+    ],
     "ranks": {
      "QB": 7,
      "RB": 8,
-     "WR": 9,
+     "WR": 8,
      "TE": 8
     },
     "tendency": [
@@ -420,24 +427,20 @@
    "original": 7,
    "original_team": "Finesse🥶🤴🏿",
    "traded": false,
-   "prospect": "mark fletcher",
+   "prospect": "jamal roberts",
    "reason": "Fills a RB need (12th at RB)",
    "context": {
     "needs": [
-     "RB",
-     "QB"
+     "WR",
+     "RB"
     ],
-    "set": [
-     "TE"
-    ],
-    "thin": [
-     "WR"
-    ],
+    "set": [],
+    "thin": [],
     "ranks": {
      "QB": 12,
      "RB": 12,
-     "WR": 6,
-     "TE": 3
+     "WR": 9,
+     "TE": 5
     },
     "tendency": [
      "Leans RB",
@@ -455,20 +458,18 @@
    "original": 12,
    "original_team": "Daejon Mustard ",
    "traded": false,
-   "prospect": "jamal roberts",
-   "reason": "Fills a RB need (11th at RB)",
+   "prospect": "jahiem white",
+   "reason": "Fills a RB need (9th at RB)",
    "context": {
     "needs": [
      "RB",
      "TE"
     ],
-    "set": [
-     "WR"
-    ],
+    "set": [],
     "thin": [],
     "ranks": {
      "QB": 5,
-     "RB": 11,
+     "RB": 9,
      "WR": 7,
      "TE": 9
     },
@@ -501,7 +502,7 @@
     ],
     "ranks": {
      "QB": 11,
-     "RB": 9,
+     "RB": 10,
      "WR": 11,
      "TE": 11
     },
@@ -528,7 +529,8 @@
      "QB"
     ],
     "set": [
-     "WR"
+     "WR",
+     "TE"
     ],
     "thin": [
      "RB"
@@ -562,7 +564,8 @@
      "QB"
     ],
     "set": [
-     "WR"
+     "WR",
+     "TE"
     ],
     "thin": [
      "RB"
@@ -589,21 +592,23 @@
    "original": 11,
    "original_team": "Ryan Poles",
    "traded": false,
-   "prospect": "jahiem white",
+   "prospect": "wayshawn parker",
    "reason": "Fills a RB need (7th at RB)",
    "context": {
     "needs": [
      "RB"
     ],
     "set": [
-     "WR"
+     "QB",
+     "WR",
+     "TE"
     ],
     "thin": [],
     "ranks": {
      "QB": 4,
      "RB": 7,
      "WR": 10,
-     "TE": 5
+     "TE": 3
     },
     "tendency": [
      "Leans WR",
@@ -619,14 +624,14 @@
    "owner": 1,
    "owner_team": "‘89 Earthquake",
    "original": 5,
-   "original_team": "Chocolate Gold ",
+   "original_team": "‘97 Stability ",
    "traded": true,
-   "prospect": "wayshawn parker",
+   "prospect": "dylan riley",
    "reason": "Fills a RB need (8th at RB)",
    "context": {
     "needs": [
-     "RB",
-     "TE"
+     "TE",
+     "RB"
     ],
     "set": [],
     "thin": [
@@ -635,7 +640,7 @@
     "ranks": {
      "QB": 7,
      "RB": 8,
-     "WR": 9,
+     "WR": 8,
      "TE": 8
     },
     "tendency": [
@@ -654,24 +659,22 @@
    "original": 8,
    "original_team": "MIP",
    "traded": true,
-   "prospect": "dylan riley",
-   "reason": "Fills a RB need (12th at RB)",
+   "prospect": "wyatt young",
+   "reason": "Fills a WR need (9th at WR)",
    "context": {
     "needs": [
-     "RB",
+     "WR",
      "QB"
     ],
-    "set": [
-     "TE"
-    ],
+    "set": [],
     "thin": [
-     "WR"
+     "RB"
     ],
     "ranks": {
      "QB": 12,
      "RB": 12,
-     "WR": 6,
-     "TE": 3
+     "WR": 9,
+     "TE": 5
     },
     "tendency": [
      "Leans RB",
@@ -689,14 +692,16 @@
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": false,
-   "prospect": "wyatt young",
+   "prospect": "anthony evans",
    "reason": "Fills a WR need (12th at WR)",
    "context": {
     "needs": [
      "WR",
      "TE"
     ],
-    "set": [],
+    "set": [
+     "RB"
+    ],
     "thin": [],
     "ranks": {
      "QB": 8,
@@ -720,14 +725,16 @@
    "original": 9,
    "original_team": "Top 5 Top 5 Top 5",
    "traded": true,
-   "prospect": "anthony evans",
+   "prospect": "carlos hernandez",
    "reason": "Fills a WR need (12th at WR)",
    "context": {
     "needs": [
      "TE",
      "WR"
     ],
-    "set": [],
+    "set": [
+     "RB"
+    ],
     "thin": [],
     "ranks": {
      "QB": 8,
@@ -751,7 +758,7 @@
    "original": 4,
    "original_team": "The Lab",
    "traded": true,
-   "prospect": "carlos hernandez",
+   "prospect": "isaiah myers",
    "reason": "Adds WR depth",
    "context": {
     "needs": [
@@ -765,7 +772,7 @@
     "ranks": {
      "QB": 7,
      "RB": 8,
-     "WR": 9,
+     "WR": 8,
      "TE": 8
     },
     "tendency": [
@@ -784,12 +791,13 @@
    "original": 6,
    "original_team": "Vanilla Diamonds",
    "traded": false,
-   "prospect": "wayne knight",
-   "reason": "Adds RB depth",
+   "prospect": "luke reynolds",
+   "reason": "Manager leans TE",
    "context": {
     "needs": [],
     "set": [
-     "WR"
+     "WR",
+     "TE"
     ],
     "thin": [
      "RB"
@@ -824,12 +832,13 @@
     ],
     "set": [],
     "thin": [
+     "WR",
      "TE"
     ],
     "ranks": {
      "QB": 6,
      "RB": 2,
-     "WR": 8,
+     "WR": 6,
      "TE": 2
     },
     "tendency": [
@@ -848,20 +857,18 @@
    "original": 12,
    "original_team": "Daejon Mustard ",
    "traded": false,
-   "prospect": "cam cook",
-   "reason": "Fills a RB need (11th at RB)",
+   "prospect": "wayne knight",
+   "reason": "Fills a RB need (9th at RB)",
    "context": {
     "needs": [
      "TE",
      "RB"
     ],
-    "set": [
-     "WR"
-    ],
+    "set": [],
     "thin": [],
     "ranks": {
      "QB": 5,
-     "RB": 11,
+     "RB": 9,
      "WR": 7,
      "TE": 9
     },
@@ -894,7 +901,7 @@
     ],
     "ranks": {
      "QB": 11,
-     "RB": 9,
+     "RB": 10,
      "WR": 11,
      "TE": 11
     },
@@ -914,7 +921,7 @@
    "original": 1,
    "original_team": "‘89 Earthquake",
    "traded": false,
-   "prospect": "desean bishop",
+   "prospect": "cam cook",
    "reason": "Adds RB depth",
    "context": {
     "needs": [
@@ -928,7 +935,7 @@
     "ranks": {
      "QB": 7,
      "RB": 8,
-     "WR": 9,
+     "WR": 8,
      "TE": 8
     },
     "tendency": [
@@ -953,12 +960,13 @@
     "needs": [],
     "set": [],
     "thin": [
+     "WR",
      "TE"
     ],
     "ranks": {
      "QB": 6,
      "RB": 2,
-     "WR": 8,
+     "WR": 6,
      "TE": 2
     },
     "tendency": [
@@ -977,21 +985,23 @@
    "original": 11,
    "original_team": "Ryan Poles",
    "traded": false,
-   "prospect": "nate frazier",
+   "prospect": "desean bishop",
    "reason": "Fills a RB need (7th at RB)",
    "context": {
     "needs": [
      "RB"
     ],
     "set": [
-     "WR"
+     "QB",
+     "WR",
+     "TE"
     ],
     "thin": [],
     "ranks": {
      "QB": 4,
      "RB": 7,
      "WR": 10,
-     "TE": 5
+     "TE": 3
     },
     "tendency": [
      "Leans WR",
@@ -1005,12 +1015,12 @@
    "label": "3.07",
    "overall": 31,
    "owner": 5,
-   "owner_team": "Chocolate Gold ",
+   "owner_team": "‘97 Stability ",
    "original": 5,
-   "original_team": "Chocolate Gold ",
+   "original_team": "‘97 Stability ",
    "traded": false,
-   "prospect": "luke reynolds",
-   "reason": "Fills a TE need (12th at TE)",
+   "prospect": "kelby valsin",
+   "reason": "Adds WR depth",
    "context": {
     "needs": [
      "TE"
@@ -1047,8 +1057,8 @@
    "reason": "Fills a QB need (9th at QB)",
    "context": {
     "needs": [
-     "QB",
-     "RB"
+     "RB",
+     "QB"
     ],
     "set": [
      "TE"
@@ -1058,7 +1068,7 @@
     ],
     "ranks": {
      "QB": 9,
-     "RB": 10,
+     "RB": 11,
      "WR": 3,
      "TE": 1
     },
@@ -1084,7 +1094,9 @@
     "needs": [
      "TE"
     ],
-    "set": [],
+    "set": [
+     "RB"
+    ],
     "thin": [
      "WR"
     ],
@@ -1143,8 +1155,8 @@
    "original": 4,
    "original_team": "The Lab",
    "traded": true,
-   "prospect": "kelby valsin",
-   "reason": "Value pick",
+   "prospect": "nate frazier",
+   "reason": "Adds RB depth",
    "context": {
     "needs": [],
     "set": [
@@ -1181,7 +1193,8 @@
    "context": {
     "needs": [],
     "set": [
-     "WR"
+     "WR",
+     "TE"
     ],
     "thin": [
      "RB"
@@ -1275,9 +1288,9 @@
    "espn_id": "5146735",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146735.png",
    "rank": 2,
-   "value": 82.34,
-   "cons_rank": 8.5,
-   "mddb_rank": 9,
+   "value": 81.62,
+   "cons_rank": 9.0,
+   "mddb_rank": 10,
    "espn_rank": 8,
    "prod_pct": 81.0,
    "ppg": 21.8,
@@ -1459,54 +1472,6 @@
    "consensus": true
   },
   {
-   "key": "treydez green",
-   "name": "Trey'Dez Green",
-   "pos": "TE",
-   "school": "LSU",
-   "cls": null,
-   "espn_id": "5079420",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079420.png",
-   "rank": 5,
-   "value": 60.13,
-   "cons_rank": 23.0,
-   "mddb_rank": 23,
-   "espn_rank": 23,
-   "prod_pct": 88.1,
-   "ppg": 14.3,
-   "last3": 14.3,
-   "games": 3,
-   "last": {
-    "week": 3,
-    "opp": "MISS",
-    "at": "@",
-    "result": "L",
-    "pts": 10.0,
-    "line": "4 rec, 60 yds, 0 TD"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 9.8,
-     "opp": "CLEM",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 23.1,
-     "opp": "LT",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 10.0,
-     "opp": "MISS",
-     "at": "@"
-    }
-   ],
-   "move7": 6,
-   "consensus": true
-  },
-  {
    "key": "drew mestemaker",
    "name": "Drew Mestemaker",
    "pos": "QB",
@@ -1514,10 +1479,10 @@
    "cls": null,
    "espn_id": "5219834",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5219834.png",
-   "rank": 6,
-   "value": 59.19,
-   "cons_rank": 9.5,
-   "mddb_rank": 8,
+   "rank": 5,
+   "value": 60.71,
+   "cons_rank": 8.0,
+   "mddb_rank": 5,
    "espn_rank": 11,
    "prod_pct": 93.2,
    "ppg": 26.6,
@@ -1563,52 +1528,52 @@
      "at": "vs"
     }
    ],
-   "move7": 4,
+   "move7": 5,
    "consensus": true
   },
   {
-   "key": "jamari johnson",
-   "name": "Jamari Johnson",
+   "key": "treydez green",
+   "name": "Trey'Dez Green",
    "pos": "TE",
-   "school": "Oregon",
+   "school": "LSU",
    "cls": null,
-   "espn_id": "4922988",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4922988.png",
-   "rank": 7,
-   "value": 58.95,
-   "cons_rank": 21.5,
-   "mddb_rank": 22,
-   "espn_rank": 21,
-   "prod_pct": 78.6,
-   "ppg": 12.3,
-   "last3": 12.3,
+   "espn_id": "5079420",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079420.png",
+   "rank": 6,
+   "value": 59.24,
+   "cons_rank": 24.0,
+   "mddb_rank": 25,
+   "espn_rank": 23,
+   "prod_pct": 88.1,
+   "ppg": 14.3,
+   "last3": 14.3,
    "games": 3,
    "last": {
-    "week": 6,
-    "opp": "UCLA",
-    "at": "vs",
+    "week": 3,
+    "opp": "MISS",
+    "at": "@",
     "result": "L",
-    "pts": 2.3,
-    "line": "1 rec, 13 yds, 0 TD"
+    "pts": 10.0,
+    "line": "4 rec, 60 yds, 0 TD"
    },
    "weekly": [
     {
      "week": 1,
-     "pts": 15.7,
-     "opp": "BOIS",
+     "pts": 9.8,
+     "opp": "CLEM",
      "at": "vs"
     },
     {
-     "week": 4,
-     "pts": 18.9,
-     "opp": "USC",
+     "week": 2,
+     "pts": 23.1,
+     "opp": "LT",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 10.0,
+     "opp": "MISS",
      "at": "@"
-    },
-    {
-     "week": 6,
-     "pts": 2.3,
-     "opp": "UCLA",
-     "at": "vs"
     }
    ],
    "move7": 5,
@@ -1622,10 +1587,10 @@
    "cls": null,
    "espn_id": "5079600",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079600.png",
-   "rank": 8,
-   "value": 58.62,
-   "cons_rank": 29.0,
-   "mddb_rank": 31,
+   "rank": 7,
+   "value": 59.05,
+   "cons_rank": 28.5,
+   "mddb_rank": 30,
    "espn_rank": 27,
    "prod_pct": 79.5,
    "ppg": 19.6,
@@ -1677,7 +1642,55 @@
      "at": "@"
     }
    ],
-   "move7": -2,
+   "move7": -1,
+   "consensus": true
+  },
+  {
+   "key": "jamari johnson",
+   "name": "Jamari Johnson",
+   "pos": "TE",
+   "school": "Oregon",
+   "cls": null,
+   "espn_id": "4922988",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4922988.png",
+   "rank": 8,
+   "value": 58.95,
+   "cons_rank": 21.5,
+   "mddb_rank": 22,
+   "espn_rank": 21,
+   "prod_pct": 78.6,
+   "ppg": 12.3,
+   "last3": 12.3,
+   "games": 3,
+   "last": {
+    "week": 6,
+    "opp": "UCLA",
+    "at": "vs",
+    "result": "L",
+    "pts": 2.3,
+    "line": "1 rec, 13 yds, 0 TD"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 15.7,
+     "opp": "BOIS",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 18.9,
+     "opp": "USC",
+     "at": "@"
+    },
+    {
+     "week": 6,
+     "pts": 2.3,
+     "opp": "UCLA",
+     "at": "vs"
+    }
+   ],
+   "move7": 4,
    "consensus": true
   },
   {
@@ -1749,9 +1762,9 @@
    "espn_id": "5084771",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5084771.png",
    "rank": 10,
-   "value": 56.09,
-   "cons_rank": 38.0,
-   "mddb_rank": 38,
+   "value": 56.8,
+   "cons_rank": 37.0,
+   "mddb_rank": 36,
    "espn_rank": 38,
    "prod_pct": 94.5,
    "ppg": 27.6,
@@ -1861,120 +1874,6 @@
    "consensus": true
   },
   {
-   "key": "kewan lacy",
-   "name": "Kewan Lacy",
-   "pos": "RB",
-   "school": "Mississippi",
-   "cls": null,
-   "espn_id": "5086388",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5086388.png",
-   "rank": 12,
-   "value": 52.28,
-   "cons_rank": 37.0,
-   "mddb_rank": 46,
-   "espn_rank": 28,
-   "prod_pct": 79.4,
-   "ppg": 15.4,
-   "last3": 14.5,
-   "games": 4,
-   "last": {
-    "week": 6,
-    "opp": "VAN",
-    "at": "@",
-    "result": "W",
-    "pts": 9.9,
-    "line": "7-39-1 rushing"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 18.0,
-     "opp": "LOU",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 21.6,
-     "opp": "CLT",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 12.1,
-     "opp": "LSU",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 9.9,
-     "opp": "VAN",
-     "at": "@"
-    }
-   ],
-   "move7": -3,
-   "consensus": true
-  },
-  {
-   "key": "reed harris",
-   "name": "Reed Harris",
-   "pos": "WR",
-   "school": "Arizona State",
-   "cls": null,
-   "espn_id": "5031157",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5031157.png",
-   "rank": 13,
-   "value": 51.25,
-   "cons_rank": 44.5,
-   "mddb_rank": 43,
-   "espn_rank": 46,
-   "prod_pct": 92.2,
-   "ppg": 27.0,
-   "last3": 21.1,
-   "games": 5,
-   "last": {
-    "week": 6,
-    "opp": "HAW",
-    "at": "vs",
-    "result": "W",
-    "pts": 29.1,
-    "line": "8 rec, 91 yds, 2 TD"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 31.7,
-     "opp": "MORG",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 39.9,
-     "opp": "TA&M",
-     "at": "@"
-    },
-    {
-     "week": 3,
-     "pts": 14.8,
-     "opp": "KU",
-     "at": "vs"
-    },
-    {
-     "week": 5,
-     "pts": 19.5,
-     "opp": "BAY",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 29.1,
-     "opp": "HAW",
-     "at": "vs"
-    }
-   ],
-   "move7": 0,
-   "consensus": true
-  },
-  {
    "key": "deuce alexander",
    "name": "Deuce Alexander",
    "pos": "WR",
@@ -1982,7 +1881,7 @@
    "cls": null,
    "espn_id": "5152158",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5152158.png",
-   "rank": 14,
+   "rank": 12,
    "value": 50.92,
    "cons_rank": 42.5,
    "mddb_rank": 56,
@@ -2031,7 +1930,121 @@
      "at": "@"
     }
    ],
-   "move7": 2,
+   "move7": 4,
+   "consensus": true
+  },
+  {
+   "key": "kewan lacy",
+   "name": "Kewan Lacy",
+   "pos": "RB",
+   "school": "Mississippi",
+   "cls": null,
+   "espn_id": "5086388",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5086388.png",
+   "rank": 13,
+   "value": 50.56,
+   "cons_rank": 39.5,
+   "mddb_rank": 51,
+   "espn_rank": 28,
+   "prod_pct": 79.4,
+   "ppg": 15.4,
+   "last3": 14.5,
+   "games": 4,
+   "last": {
+    "week": 6,
+    "opp": "VAN",
+    "at": "@",
+    "result": "W",
+    "pts": 9.9,
+    "line": "7-39-1 rushing"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 18.0,
+     "opp": "LOU",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 21.6,
+     "opp": "CLT",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 12.1,
+     "opp": "LSU",
+     "at": "vs"
+    },
+    {
+     "week": 6,
+     "pts": 9.9,
+     "opp": "VAN",
+     "at": "@"
+    }
+   ],
+   "move7": -4,
+   "consensus": true
+  },
+  {
+   "key": "reed harris",
+   "name": "Reed Harris",
+   "pos": "WR",
+   "school": "Arizona State",
+   "cls": null,
+   "espn_id": "5031157",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5031157.png",
+   "rank": 14,
+   "value": 48.74,
+   "cons_rank": 49.0,
+   "mddb_rank": 52,
+   "espn_rank": 46,
+   "prod_pct": 92.2,
+   "ppg": 27.0,
+   "last3": 21.1,
+   "games": 5,
+   "last": {
+    "week": 6,
+    "opp": "HAW",
+    "at": "vs",
+    "result": "W",
+    "pts": 29.1,
+    "line": "8 rec, 91 yds, 2 TD"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 31.7,
+     "opp": "MORG",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 39.9,
+     "opp": "TA&M",
+     "at": "@"
+    },
+    {
+     "week": 3,
+     "pts": 14.8,
+     "opp": "KU",
+     "at": "vs"
+    },
+    {
+     "week": 5,
+     "pts": 19.5,
+     "opp": "BAY",
+     "at": "vs"
+    },
+    {
+     "week": 6,
+     "pts": 29.1,
+     "opp": "HAW",
+     "at": "vs"
+    }
+   ],
+   "move7": -1,
    "consensus": true
   },
   {
@@ -2109,11 +2122,11 @@
    "espn_id": "4870906",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870906.png",
    "rank": 16,
-   "value": 47.3,
+   "value": 47.56,
    "cons_rank": 9.5,
    "mddb_rank": 2,
    "espn_rank": 17,
-   "prod_pct": 36.6,
+   "prod_pct": 37.8,
    "ppg": 18.0,
    "last3": 16.3,
    "games": 5,
@@ -2169,11 +2182,11 @@
    "espn_id": "4870921",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870921.png",
    "rank": 17,
-   "value": 44.56,
-   "cons_rank": 12.5,
-   "mddb_rank": 5,
+   "value": 44.36,
+   "cons_rank": 13.0,
+   "mddb_rank": 6,
    "espn_rank": 20,
-   "prod_pct": 37.1,
+   "prod_pct": 38.4,
    "ppg": 18.1,
    "last3": 15.2,
    "games": 4,
@@ -2223,9 +2236,9 @@
    "espn_id": "5141711",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5141711.png",
    "rank": 18,
-   "value": 40.6,
-   "cons_rank": 33.5,
-   "mddb_rank": 33,
+   "value": 40.99,
+   "cons_rank": 33.0,
+   "mddb_rank": 32,
    "espn_rank": 34,
    "prod_pct": 31.8,
    "ppg": 15.0,
@@ -2355,9 +2368,9 @@
    "espn_id": "5141684",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5141684.png",
    "rank": 20,
-   "value": 35.0,
-   "cons_rank": 27.0,
-   "mddb_rank": 27,
+   "value": 32.56,
+   "cons_rank": 31.0,
+   "mddb_rank": 31,
    "espn_rank": null,
    "prod_pct": 44.8,
    "ppg": 19.2,
@@ -2413,57 +2426,69 @@
    "consensus": true
   },
   {
-   "key": "mark fletcher",
-   "name": "Mark Fletcher",
-   "pos": "RB",
-   "school": "Miami (FL)",
+   "key": "julian sayin",
+   "name": "Julian Sayin",
+   "pos": "QB",
+   "school": "Ohio State",
    "cls": null,
-   "espn_id": "4870736",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870736.png",
+   "espn_id": "5079712",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079712.png",
    "rank": 21,
-   "value": 32.37,
-   "cons_rank": 94.0,
-   "mddb_rank": 94,
+   "value": 32.4,
+   "cons_rank": 50.0,
+   "mddb_rank": 50,
    "espn_rank": null,
-   "prod_pct": 85.1,
-   "ppg": 16.8,
-   "last3": 20.1,
-   "games": 4,
+   "prod_pct": 85.7,
+   "ppg": 25.1,
+   "last3": 30.1,
+   "games": 6,
    "last": {
-    "week": 5,
-    "opp": "CLEM",
-    "at": "@",
+    "week": 6,
+    "opp": "MD",
+    "at": "vs",
     "result": "W",
-    "pts": 23.3,
-    "line": "16-77-2 rushing; 2-16-0 receiving"
+    "pts": 25.8,
+    "line": "13/21, 242 yds, 4 TD, 1 INT; 11 rush yds"
    },
    "weekly": [
     {
      "week": 1,
-     "pts": 7.0,
-     "opp": "STAN",
-     "at": "@"
-    },
-    {
-     "week": 2,
-     "pts": 22.5,
-     "opp": "FAMU",
+     "pts": 29.9,
+     "opp": "BALL",
      "at": "vs"
     },
     {
-     "week": 3,
-     "pts": 14.5,
-     "opp": "WAKE",
+     "week": 2,
+     "pts": 13.4,
+     "opp": "TEX",
      "at": "@"
     },
     {
+     "week": 3,
+     "pts": 17.0,
+     "opp": "KENT",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 39.6,
+     "opp": "ILL",
+     "at": "vs"
+    },
+    {
      "week": 5,
-     "pts": 23.3,
-     "opp": "CLEM",
+     "pts": 24.9,
+     "opp": "IOWA",
      "at": "@"
+    },
+    {
+     "week": 6,
+     "pts": 25.8,
+     "opp": "MD",
+     "at": "vs"
     }
    ],
-   "move7": -2,
+   "move7": 3,
    "consensus": true
   },
   {
@@ -2533,72 +2558,6 @@
    "consensus": false
   },
   {
-   "key": "julian sayin",
-   "name": "Julian Sayin",
-   "pos": "QB",
-   "school": "Ohio State",
-   "cls": null,
-   "espn_id": "5079712",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079712.png",
-   "rank": 23,
-   "value": 32.04,
-   "cons_rank": 51.0,
-   "mddb_rank": 51,
-   "espn_rank": null,
-   "prod_pct": 85.7,
-   "ppg": 25.1,
-   "last3": 30.1,
-   "games": 6,
-   "last": {
-    "week": 6,
-    "opp": "MD",
-    "at": "vs",
-    "result": "W",
-    "pts": 25.8,
-    "line": "13/21, 242 yds, 4 TD, 1 INT; 11 rush yds"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 29.9,
-     "opp": "BALL",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 13.4,
-     "opp": "TEX",
-     "at": "@"
-    },
-    {
-     "week": 3,
-     "pts": 17.0,
-     "opp": "KENT",
-     "at": "vs"
-    },
-    {
-     "week": 4,
-     "pts": 39.6,
-     "opp": "ILL",
-     "at": "vs"
-    },
-    {
-     "week": 5,
-     "pts": 24.9,
-     "opp": "IOWA",
-     "at": "@"
-    },
-    {
-     "week": 6,
-     "pts": 25.8,
-     "opp": "MD",
-     "at": "vs"
-    }
-   ],
-   "move7": 1,
-   "consensus": true
-  },
-  {
    "key": "jahiem white",
    "name": "Jahiem White",
    "pos": "RB",
@@ -2606,7 +2565,7 @@
    "cls": "Senior",
    "espn_id": "4911971",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4911971.png",
-   "rank": 24,
+   "rank": 23,
    "value": 32.03,
    "cons_rank": null,
    "mddb_rank": null,
@@ -2661,7 +2620,7 @@
      "at": "vs"
     }
    ],
-   "move7": -3,
+   "move7": -2,
    "consensus": false
   },
   {
@@ -2672,7 +2631,7 @@
    "cls": "Junior",
    "espn_id": "5173431",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5173431.png",
-   "rank": 25,
+   "rank": 24,
    "value": 32.02,
    "cons_rank": null,
    "mddb_rank": null,
@@ -2721,7 +2680,7 @@
      "at": "vs"
     }
    ],
-   "move7": -3,
+   "move7": -2,
    "consensus": false
   },
   {
@@ -2732,7 +2691,7 @@
    "cls": "Junior",
    "espn_id": "5146712",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5146712.png",
-   "rank": 26,
+   "rank": 25,
    "value": 31.76,
    "cons_rank": null,
    "mddb_rank": null,
@@ -2787,7 +2746,7 @@
      "at": "@"
     }
    ],
-   "move7": -3,
+   "move7": -2,
    "consensus": false
   },
   {
@@ -2798,7 +2757,7 @@
    "cls": "Senior",
    "espn_id": "4912342",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4912342.png",
-   "rank": 27,
+   "rank": 26,
    "value": 31.38,
    "cons_rank": null,
    "mddb_rank": null,
@@ -2847,7 +2806,7 @@
      "at": "@"
     }
    ],
-   "move7": -1,
+   "move7": 0,
    "consensus": false
   },
   {
@@ -2858,7 +2817,7 @@
    "cls": "Senior",
    "espn_id": "4918103",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4918103.png",
-   "rank": 28,
+   "rank": 27,
    "value": 30.84,
    "cons_rank": null,
    "mddb_rank": null,
@@ -2913,7 +2872,7 @@
      "at": "vs"
     }
    ],
-   "move7": 0,
+   "move7": 1,
    "consensus": false
   },
   {
@@ -2924,7 +2883,7 @@
    "cls": "Senior",
    "espn_id": "4923226",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4923226.png",
-   "rank": 29,
+   "rank": 28,
    "value": 30.24,
    "cons_rank": null,
    "mddb_rank": null,
@@ -2979,7 +2938,7 @@
      "at": "@"
     }
    ],
-   "move7": 1,
+   "move7": 2,
    "consensus": false
   },
   {
@@ -2990,7 +2949,7 @@
    "cls": "Junior",
    "espn_id": "4921108",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4921108.png",
-   "rank": 30,
+   "rank": 29,
    "value": 30.13,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3045,7 +3004,7 @@
      "at": "@"
     }
    ],
-   "move7": -1,
+   "move7": 0,
    "consensus": false
   },
   {
@@ -3056,7 +3015,7 @@
    "cls": "Senior",
    "espn_id": "4691315",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4691315.png",
-   "rank": 31,
+   "rank": 30,
    "value": 30.05,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3105,7 +3064,7 @@
      "at": "@"
     }
    ],
-   "move7": 0,
+   "move7": 1,
    "consensus": false
   },
   {
@@ -3116,7 +3075,7 @@
    "cls": null,
    "espn_id": "5148787",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5148787.png",
-   "rank": 32,
+   "rank": 31,
    "value": 29.96,
    "cons_rank": 97.0,
    "mddb_rank": 97,
@@ -3165,7 +3124,7 @@
      "at": "vs"
     }
    ],
-   "move7": 11,
+   "move7": 12,
    "consensus": true
   },
   {
@@ -3176,7 +3135,7 @@
    "cls": "Senior",
    "espn_id": "4907671",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4907671.png",
-   "rank": 33,
+   "rank": 32,
    "value": 29.57,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3225,7 +3184,7 @@
      "at": "vs"
     }
    ],
-   "move7": 0,
+   "move7": 1,
    "consensus": false
   },
   {
@@ -3236,7 +3195,7 @@
    "cls": "Senior",
    "espn_id": "5153074",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5153074.png",
-   "rank": 34,
+   "rank": 33,
    "value": 29.09,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3291,7 +3250,67 @@
      "at": "@"
     }
    ],
-   "move7": 0,
+   "move7": 1,
+   "consensus": false
+  },
+  {
+   "key": "isaiah myers",
+   "name": "Isaiah Myers",
+   "pos": "WR",
+   "school": "Missouri State Bears",
+   "cls": "Senior",
+   "espn_id": "5219476",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5219476.png",
+   "rank": 34,
+   "value": 28.83,
+   "cons_rank": null,
+   "mddb_rank": null,
+   "espn_rank": null,
+   "prod_pct": 88.9,
+   "ppg": 24.3,
+   "last3": 21.6,
+   "games": 5,
+   "last": {
+    "week": 7,
+    "opp": "KENN",
+    "at": "vs",
+    "result": "W",
+    "pts": 32.5,
+    "line": "7 rec, 135 yds, 2 TD"
+   },
+   "weekly": [
+    {
+     "week": 2,
+     "pts": 34.9,
+     "opp": "LIN",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 21.7,
+     "opp": "MRSH",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 15.6,
+     "opp": "SMU",
+     "at": "@"
+    },
+    {
+     "week": 6,
+     "pts": 16.7,
+     "opp": "WKU",
+     "at": "@"
+    },
+    {
+     "week": 7,
+     "pts": 32.5,
+     "opp": "KENN",
+     "at": "vs"
+    }
+   ],
+   "move7": null,
    "consensus": false
   },
   {
@@ -3553,6 +3572,66 @@
    "consensus": false
   },
   {
+   "key": "justin bowick",
+   "name": "Justin Bowick",
+   "pos": "WR",
+   "school": "Oklahoma State Cowboys",
+   "cls": "Senior",
+   "espn_id": "5083747",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5083747.png",
+   "rank": 39,
+   "value": 26.63,
+   "cons_rank": null,
+   "mddb_rank": null,
+   "espn_rank": null,
+   "prod_pct": 81.5,
+   "ppg": 20.0,
+   "last3": 25.6,
+   "games": 5,
+   "last": {
+    "week": 6,
+    "opp": "UCF",
+    "at": "vs",
+    "result": "W",
+    "pts": 21.8,
+    "line": "6 rec, 98 yds, 1 TD"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 10.2,
+     "opp": "TLSA",
+     "at": "@"
+    },
+    {
+     "week": 2,
+     "pts": 13.1,
+     "opp": "ORE",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 38.8,
+     "opp": "MUR",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 16.3,
+     "opp": "WVU",
+     "at": "@"
+    },
+    {
+     "week": 6,
+     "pts": 21.8,
+     "opp": "UCF",
+     "at": "vs"
+    }
+   ],
+   "move7": 0,
+   "consensus": false
+  },
+  {
    "key": "lanorris sellers",
    "name": "LaNorris Sellers",
    "pos": "QB",
@@ -3560,10 +3639,10 @@
    "cls": null,
    "espn_id": "4875127",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4875127.png",
-   "rank": 39,
-   "value": 26.8,
-   "cons_rank": 69.0,
-   "mddb_rank": 69,
+   "rank": 40,
+   "value": 26.36,
+   "cons_rank": 71.0,
+   "mddb_rank": 71,
    "espn_rank": null,
    "prod_pct": 85.0,
    "ppg": 25.1,
@@ -3615,68 +3694,8 @@
      "at": "@"
     }
    ],
-   "move7": -7,
+   "move7": -8,
    "consensus": true
-  },
-  {
-   "key": "justin bowick",
-   "name": "Justin Bowick",
-   "pos": "WR",
-   "school": "Oklahoma State Cowboys",
-   "cls": "Senior",
-   "espn_id": "5083747",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5083747.png",
-   "rank": 40,
-   "value": 26.63,
-   "cons_rank": null,
-   "mddb_rank": null,
-   "espn_rank": null,
-   "prod_pct": 81.5,
-   "ppg": 20.0,
-   "last3": 25.6,
-   "games": 5,
-   "last": {
-    "week": 6,
-    "opp": "UCF",
-    "at": "vs",
-    "result": "W",
-    "pts": 21.8,
-    "line": "6 rec, 98 yds, 1 TD"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 10.2,
-     "opp": "TLSA",
-     "at": "@"
-    },
-    {
-     "week": 2,
-     "pts": 13.1,
-     "opp": "ORE",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 38.8,
-     "opp": "MUR",
-     "at": "vs"
-    },
-    {
-     "week": 4,
-     "pts": 16.3,
-     "opp": "WVU",
-     "at": "@"
-    },
-    {
-     "week": 6,
-     "pts": 21.8,
-     "opp": "UCF",
-     "at": "vs"
-    }
-   ],
-   "move7": -1,
-   "consensus": false
   },
   {
    "key": "mario sanders",
@@ -3865,60 +3884,6 @@
    "consensus": false
   },
   {
-   "key": "nate frazier",
-   "name": "Nate Frazier",
-   "pos": "RB",
-   "school": "Georgia",
-   "cls": null,
-   "espn_id": "5084047",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5084047.png",
-   "rank": 44,
-   "value": 25.04,
-   "cons_rank": 81.0,
-   "mddb_rank": 81,
-   "espn_rank": null,
-   "prod_pct": 51.9,
-   "ppg": 13.2,
-   "last3": 9.1,
-   "games": 4,
-   "last": {
-    "week": 5,
-    "opp": "VAN",
-    "at": "vs",
-    "result": "W",
-    "pts": 0.9,
-    "line": "2-9-0 rushing"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 25.2,
-     "opp": "TNST",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 13.0,
-     "opp": "WKU",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 13.5,
-     "opp": "ARK",
-     "at": "@"
-    },
-    {
-     "week": 5,
-     "pts": 0.9,
-     "opp": "VAN",
-     "at": "vs"
-    }
-   ],
-   "move7": -3,
-   "consensus": true
-  },
-  {
    "key": "maguire anderson",
    "name": "Maguire Anderson",
    "pos": "WR",
@@ -3926,7 +3891,7 @@
    "cls": "Junior",
    "espn_id": "4879999",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4879999.png",
-   "rank": 45,
+   "rank": 44,
    "value": 24.67,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3983,6 +3948,66 @@
    ],
    "move7": null,
    "consensus": false
+  },
+  {
+   "key": "omarion miller",
+   "name": "Omarion Miller",
+   "pos": "WR",
+   "school": "Arizona State",
+   "cls": null,
+   "espn_id": "4870850",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870850.png",
+   "rank": 45,
+   "value": 24.61,
+   "cons_rank": 60.0,
+   "mddb_rank": 60,
+   "espn_rank": null,
+   "prod_pct": 28.7,
+   "ppg": 14.9,
+   "last3": 12.9,
+   "games": 5,
+   "last": {
+    "week": 6,
+    "opp": "HAW",
+    "at": "vs",
+    "result": "W",
+    "pts": 13.8,
+    "line": "6 rec, 78 yds, 0 TD"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 24.2,
+     "opp": "MORG",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 11.9,
+     "opp": "TA&M",
+     "at": "@"
+    },
+    {
+     "week": 3,
+     "pts": 4.8,
+     "opp": "KU",
+     "at": "vs"
+    },
+    {
+     "week": 5,
+     "pts": 20.0,
+     "opp": "BAY",
+     "at": "vs"
+    },
+    {
+     "week": 6,
+     "pts": 13.8,
+     "opp": "HAW",
+     "at": "vs"
+    }
+   ],
+   "move7": 1,
+   "consensus": true
   },
   {
    "key": "chris marshall",
@@ -4051,66 +4076,6 @@
    "consensus": false
   },
   {
-   "key": "omarion miller",
-   "name": "Omarion Miller",
-   "pos": "WR",
-   "school": "Arizona State",
-   "cls": null,
-   "espn_id": "4870850",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870850.png",
-   "rank": 47,
-   "value": 24.22,
-   "cons_rank": 61.0,
-   "mddb_rank": 61,
-   "espn_rank": null,
-   "prod_pct": 28.7,
-   "ppg": 14.9,
-   "last3": 12.9,
-   "games": 5,
-   "last": {
-    "week": 6,
-    "opp": "HAW",
-    "at": "vs",
-    "result": "W",
-    "pts": 13.8,
-    "line": "6 rec, 78 yds, 0 TD"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 24.2,
-     "opp": "MORG",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 11.9,
-     "opp": "TA&M",
-     "at": "@"
-    },
-    {
-     "week": 3,
-     "pts": 4.8,
-     "opp": "KU",
-     "at": "vs"
-    },
-    {
-     "week": 5,
-     "pts": 20.0,
-     "opp": "BAY",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 13.8,
-     "opp": "HAW",
-     "at": "vs"
-    }
-   ],
-   "move7": -1,
-   "consensus": true
-  },
-  {
    "key": "eli wood",
    "name": "Eli Wood",
    "pos": "WR",
@@ -4118,7 +4083,7 @@
    "cls": "Senior",
    "espn_id": "5081209",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5081209.png",
-   "rank": 48,
+   "rank": 47,
    "value": 23.86,
    "cons_rank": null,
    "mddb_rank": null,
@@ -4173,30 +4138,8 @@
      "at": "vs"
     }
    ],
-   "move7": 0,
+   "move7": 1,
    "consensus": false
-  },
-  {
-   "key": "ahmad hardy",
-   "name": "Ahmad Hardy",
-   "pos": "RB",
-   "school": "Missouri",
-   "cls": null,
-   "espn_id": null,
-   "headshot": null,
-   "rank": 49,
-   "value": 23.61,
-   "cons_rank": 68.0,
-   "mddb_rank": 68,
-   "espn_rank": null,
-   "prod_pct": null,
-   "ppg": null,
-   "last3": null,
-   "games": 0,
-   "last": null,
-   "weekly": [],
-   "move7": -4,
-   "consensus": true
   },
   {
    "key": "easton messer",
@@ -4206,7 +4149,7 @@
    "cls": "Senior",
    "espn_id": "4914830",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4914830.png",
-   "rank": 50,
+   "rank": 48,
    "value": 22.59,
    "cons_rank": null,
    "mddb_rank": null,
@@ -4255,8 +4198,30 @@
      "at": "vs"
     }
    ],
-   "move7": 0,
+   "move7": 2,
    "consensus": false
+  },
+  {
+   "key": "ahmad hardy",
+   "name": "Ahmad Hardy",
+   "pos": "RB",
+   "school": "Missouri",
+   "cls": null,
+   "espn_id": null,
+   "headshot": null,
+   "rank": 49,
+   "value": 22.36,
+   "cons_rank": 72.0,
+   "mddb_rank": 72,
+   "espn_rank": null,
+   "prod_pct": null,
+   "ppg": null,
+   "last3": null,
+   "games": 0,
+   "last": null,
+   "weekly": [],
+   "move7": -4,
+   "consensus": true
   },
   {
    "key": "gio lopez",
@@ -4266,7 +4231,7 @@
    "cls": "Junior",
    "espn_id": "4920227",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4920227.png",
-   "rank": 51,
+   "rank": 50,
    "value": 22.34,
    "cons_rank": null,
    "mddb_rank": null,
@@ -4321,8 +4286,62 @@
      "at": "@"
     }
    ],
-   "move7": 1,
+   "move7": 2,
    "consensus": false
+  },
+  {
+   "key": "nate frazier",
+   "name": "Nate Frazier",
+   "pos": "RB",
+   "school": "Georgia",
+   "cls": null,
+   "espn_id": "5084047",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5084047.png",
+   "rank": 51,
+   "value": 22.08,
+   "cons_rank": 96.0,
+   "mddb_rank": 96,
+   "espn_rank": null,
+   "prod_pct": 51.9,
+   "ppg": 13.2,
+   "last3": 9.1,
+   "games": 4,
+   "last": {
+    "week": 5,
+    "opp": "VAN",
+    "at": "vs",
+    "result": "W",
+    "pts": 0.9,
+    "line": "2-9-0 rushing"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 25.2,
+     "opp": "TNST",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 13.0,
+     "opp": "WKU",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 13.5,
+     "opp": "ARK",
+     "at": "@"
+    },
+    {
+     "week": 5,
+     "pts": 0.9,
+     "opp": "VAN",
+     "at": "vs"
+    }
+   ],
+   "move7": -10,
+   "consensus": true
   },
   {
    "key": "ashton daniels",
@@ -4399,11 +4418,11 @@
    "espn_id": "5127885",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5127885.png",
    "rank": 53,
-   "value": 21.97,
+   "value": 21.6,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
-   "prod_pct": 66.0,
+   "prod_pct": 64.8,
    "ppg": 18.3,
    "last3": 21.3,
    "games": 6,
@@ -4465,11 +4484,11 @@
    "espn_id": "4869601",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4869601.png",
    "rank": 54,
-   "value": 21.76,
+   "value": 21.39,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
-   "prod_pct": 65.3,
+   "prod_pct": 64.1,
    "ppg": 18.6,
    "last3": 12.2,
    "games": 6,
@@ -4663,9 +4682,9 @@
    "espn_id": "5079345",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079345.png",
    "rank": 57,
-   "value": 14.86,
-   "cons_rank": 63.0,
-   "mddb_rank": 63,
+   "value": 14.13,
+   "cons_rank": 65.0,
+   "mddb_rank": 65,
    "espn_rank": null,
    "prod_pct": 0.0,
    "ppg": 10.1,
@@ -4729,9 +4748,9 @@
    "espn_id": "5218633",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5218633.png",
    "rank": 58,
-   "value": 14.49,
-   "cons_rank": 64.0,
-   "mddb_rank": 64,
+   "value": 12.79,
+   "cons_rank": 69.0,
+   "mddb_rank": 69,
    "espn_rank": null,
    "prod_pct": 0.0,
    "ppg": 13.5,
@@ -4789,9 +4808,9 @@
    "espn_id": "4870922",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870922.png",
    "rank": 59,
-   "value": 11.57,
-   "cons_rank": 73.0,
-   "mddb_rank": 73,
+   "value": 12.47,
+   "cons_rank": 70.0,
+   "mddb_rank": 70,
    "espn_rank": null,
    "prod_pct": 0.0,
    "ppg": 9.5,
@@ -4855,9 +4874,9 @@
    "espn_id": "5112674",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5112674.png",
    "rank": 60,
-   "value": 8.31,
-   "cons_rank": 90.0,
-   "mddb_rank": 90,
+   "value": 9.76,
+   "cons_rank": 83.0,
+   "mddb_rank": 83,
    "espn_rank": null,
    "prod_pct": 2.5,
    "ppg": 11.2,
@@ -4909,83 +4928,83 @@
  ],
  "needs": {
   "1": {
-   "QB": 0.022,
+   "QB": 0.001,
    "RB": 0.45,
-   "WR": 0.262,
-   "TE": 0.24
+   "WR": 0.272,
+   "TE": 0.289
   },
   "2": {
-   "QB": -0.18,
-   "RB": 0.191,
-   "WR": 0.214,
-   "TE": 0.013
+   "QB": -0.158,
+   "RB": 0.116,
+   "WR": 0.231,
+   "TE": 0.112
   },
   "3": {
-   "QB": 0.074,
-   "RB": -0.128,
+   "QB": 0.047,
+   "RB": -0.195,
    "WR": 0.45,
-   "TE": 0.293
+   "TE": 0.412
   },
   "4": {
-   "QB": 0.182,
-   "RB": -0.109,
-   "WR": 0.116,
+   "QB": 0.2,
+   "RB": -0.117,
+   "WR": 0.147,
    "TE": -0.105
   },
   "5": {
-   "QB": -0.187,
-   "RB": 0.01,
-   "WR": 0.076,
+   "QB": -0.193,
+   "RB": -0.024,
+   "WR": 0.129,
    "TE": 0.45
   },
   "6": {
    "QB": 0.2,
-   "RB": 0.03,
+   "RB": -0.042,
    "WR": -0.21,
-   "TE": 0.058
+   "TE": 0.013
   },
   "7": {
    "QB": 0.2,
    "RB": 0.45,
-   "WR": 0.242,
-   "TE": -0.165
+   "WR": 0.357,
+   "TE": -0.052
   },
   "8": {
-   "QB": 0.2,
-   "RB": 0.174,
+   "QB": 0.195,
+   "RB": 0.24,
    "WR": -0.086,
-   "TE": -0.24
+   "TE": -0.255
   },
   "9": {
    "QB": -0.6,
-   "RB": -0.069,
+   "RB": -0.064,
    "WR": -0.21,
-   "TE": -0.176
+   "TE": -0.155
   },
   "10": {
    "QB": 0.2,
    "RB": 0.45,
-   "WR": 0.445,
-   "TE": 0.378
+   "WR": 0.45,
+   "TE": 0.391
   },
   "11": {
-   "QB": -0.119,
-   "RB": 0.359,
-   "WR": 0.175,
-   "TE": -0.062
+   "QB": -0.198,
+   "RB": 0.367,
+   "WR": 0.126,
+   "TE": -0.218
   },
   "12": {
-   "QB": -0.121,
+   "QB": -0.082,
    "RB": 0.45,
-   "WR": 0.032,
-   "TE": 0.371
+   "WR": 0.053,
+   "TE": 0.45
   }
  },
  "needs_ranks": {
   "1": {
    "QB": 7,
    "RB": 8,
-   "WR": 9,
+   "WR": 8,
    "TE": 8
   },
   "2": {
@@ -5003,7 +5022,7 @@
   "4": {
    "QB": 6,
    "RB": 2,
-   "WR": 8,
+   "WR": 6,
    "TE": 2
   },
   "5": {
@@ -5021,12 +5040,12 @@
   "7": {
    "QB": 12,
    "RB": 12,
-   "WR": 6,
-   "TE": 3
+   "WR": 9,
+   "TE": 5
   },
   "8": {
    "QB": 9,
-   "RB": 10,
+   "RB": 11,
    "WR": 3,
    "TE": 1
   },
@@ -5038,7 +5057,7 @@
   },
   "10": {
    "QB": 11,
-   "RB": 9,
+   "RB": 10,
    "WR": 11,
    "TE": 11
   },
@@ -5046,11 +5065,11 @@
    "QB": 4,
    "RB": 7,
    "WR": 10,
-   "TE": 5
+   "TE": 3
   },
   "12": {
    "QB": 5,
-   "RB": 11,
+   "RB": 9,
    "WR": 7,
    "TE": 9
   }
@@ -5061,13 +5080,14 @@
    "WR"
   ],
   "2": [
-   "RB",
-   "WR"
+   "WR",
+   "TE"
   ],
   "3": [
    "WR"
   ],
   "4": [
+   "WR",
    "TE"
   ],
   "5": [
@@ -5856,7 +5876,7 @@
       "age": 24,
       "exp": 2,
       "ppg": 22.99,
-      "value": 3742,
+      "value": 3734,
       "group": "starter"
      },
      {
@@ -5867,7 +5887,7 @@
       "age": 23,
       "exp": 1,
       "ppg": 9.92,
-      "value": 6486,
+      "value": 5164,
       "group": "starter"
      },
      {
@@ -5878,7 +5898,7 @@
       "age": 27,
       "exp": 3,
       "ppg": 13.87,
-      "value": 21,
+      "value": 14,
       "group": "starter"
      },
      {
@@ -5889,7 +5909,7 @@
       "age": 22,
       "exp": 1,
       "ppg": 11.16,
-      "value": 3960,
+      "value": 4179,
       "group": "starter"
      },
      {
@@ -5900,7 +5920,7 @@
       "age": 21,
       "exp": 0,
       "ppg": 9.68,
-      "value": 4927,
+      "value": 5188,
       "group": "starter"
      },
      {
@@ -5911,7 +5931,7 @@
       "age": 22,
       "exp": 1,
       "ppg": 10.34,
-      "value": 2417,
+      "value": 2457,
       "group": "starter"
      },
      {
@@ -5922,7 +5942,7 @@
       "age": 26,
       "exp": 4,
       "ppg": 8.32,
-      "value": 583,
+      "value": 404,
       "group": "starter"
      },
      {
@@ -5933,7 +5953,7 @@
       "age": 23,
       "exp": 1,
       "ppg": 15.66,
-      "value": 1045,
+      "value": 1231,
       "group": "starter"
      },
      {
@@ -5966,7 +5986,7 @@
       "age": 32,
       "exp": 10,
       "ppg": 23.0,
-      "value": 901,
+      "value": 983,
       "group": "bench"
      },
      {
@@ -5977,7 +5997,7 @@
       "age": 24,
       "exp": 1,
       "ppg": 14.82,
-      "value": 810,
+      "value": 886,
       "group": "bench"
      },
      {
@@ -5988,7 +6008,7 @@
       "age": 25,
       "exp": 3,
       "ppg": 10.36,
-      "value": 233,
+      "value": 124,
       "group": "bench"
      },
      {
@@ -5999,7 +6019,7 @@
       "age": 34,
       "exp": 13,
       "ppg": 9.62,
-      "value": 31,
+      "value": 55,
       "group": "bench"
      },
      {
@@ -6010,7 +6030,7 @@
       "age": 27,
       "exp": 4,
       "ppg": 5.37,
-      "value": 313,
+      "value": 299,
       "group": "bench"
      },
      {
@@ -6021,7 +6041,7 @@
       "age": 24,
       "exp": 0,
       "ppg": 3.02,
-      "value": 148,
+      "value": 171,
       "group": "bench"
      },
      {
@@ -6032,7 +6052,7 @@
       "age": 29,
       "exp": 7,
       "ppg": 0.0,
-      "value": 0,
+      "value": 3,
       "group": "bench"
      },
      {
@@ -6043,7 +6063,7 @@
       "age": 22,
       "exp": 1,
       "ppg": 3.6,
-      "value": 102,
+      "value": 70,
       "group": "taxi"
      },
      {
@@ -6054,7 +6074,7 @@
       "age": 23,
       "exp": 1,
       "ppg": 0.0,
-      "value": 907,
+      "value": 846,
       "group": "ir"
      },
      {
@@ -6065,7 +6085,7 @@
       "age": 22,
       "exp": 0,
       "ppg": 2.1,
-      "value": 267,
+      "value": 243,
       "group": "ir"
      }
     ],
@@ -6084,20 +6104,20 @@
      },
      {
       "label": "2.07",
-      "key": "wayshawn parker",
-      "name": "Wayshawn Parker",
+      "key": "dylan riley",
+      "name": "Dylan Riley",
       "pos": "RB"
      },
      {
       "label": "2.11",
-      "key": "carlos hernandez",
-      "name": "Carlos Hernandez",
+      "key": "isaiah myers",
+      "name": "Isaiah Myers",
       "pos": "WR"
      },
      {
       "label": "3.04",
-      "key": "desean bishop",
-      "name": "DeSean Bishop",
+      "key": "cam cook",
+      "name": "Cam Cook",
       "pos": "RB"
      }
     ],
@@ -6120,7 +6140,7 @@
       "age": 30,
       "exp": 8,
       "ppg": 29.39,
-      "value": 7125,
+      "value": 6911,
       "group": "starter"
      },
      {
@@ -6131,7 +6151,7 @@
       "age": 27,
       "exp": 4,
       "ppg": 17.86,
-      "value": 7646,
+      "value": 7556,
       "group": "starter"
      },
      {
@@ -6142,7 +6162,7 @@
       "age": 27,
       "exp": 4,
       "ppg": 18.6,
-      "value": 967,
+      "value": 1137,
       "group": "starter"
      },
      {
@@ -6153,7 +6173,7 @@
       "age": 27,
       "exp": 5,
       "ppg": 9.74,
-      "value": 4219,
+      "value": 4474,
       "group": "starter"
      },
      {
@@ -6164,7 +6184,7 @@
       "age": 26,
       "exp": 3,
       "ppg": 12.82,
-      "value": 1521,
+      "value": 1472,
       "group": "starter"
      },
      {
@@ -6175,7 +6195,7 @@
       "age": 26,
       "exp": 3,
       "ppg": 9.94,
-      "value": 3243,
+      "value": 3407,
       "group": "starter"
      },
      {
@@ -6186,7 +6206,7 @@
       "age": 27,
       "exp": 5,
       "ppg": 11.18,
-      "value": 72,
+      "value": 85,
       "group": "starter"
      },
      {
@@ -6197,7 +6217,7 @@
       "age": 31,
       "exp": 9,
       "ppg": 9.43,
-      "value": 67,
+      "value": 64,
       "group": "starter"
      },
      {
@@ -6230,18 +6250,7 @@
       "age": 26,
       "exp": 5,
       "ppg": 20.84,
-      "value": 9270,
-      "group": "bench"
-     },
-     {
-      "id": "5001",
-      "name": "Dalton Schultz",
-      "pos": "TE",
-      "nfl": "HOU",
-      "age": 30,
-      "exp": 8,
-      "ppg": 9.68,
-      "value": 297,
+      "value": 9184,
       "group": "bench"
      },
      {
@@ -6252,7 +6261,7 @@
       "age": 29,
       "exp": 7,
       "ppg": 10.45,
-      "value": 467,
+      "value": 424,
       "group": "bench"
      },
      {
@@ -6263,7 +6272,7 @@
       "age": 27,
       "exp": 5,
       "ppg": 5.36,
-      "value": 205,
+      "value": 237,
       "group": "bench"
      },
      {
@@ -6274,7 +6283,7 @@
       "age": 25,
       "exp": 2,
       "ppg": 7.68,
-      "value": 653,
+      "value": 830,
       "group": "bench"
      },
      {
@@ -6285,7 +6294,7 @@
       "age": 27,
       "exp": 6,
       "ppg": 4.75,
-      "value": 193,
+      "value": 97,
       "group": "bench"
      },
      {
@@ -6311,6 +6320,17 @@
       "group": "bench"
      },
      {
+      "id": "CIN",
+      "name": "Cincinnati Bengals",
+      "pos": "DEF",
+      "nfl": "CIN",
+      "age": null,
+      "exp": null,
+      "ppg": 10.0,
+      "value": 0,
+      "group": "bench"
+     },
+     {
       "id": "13272",
       "name": "Carson Beck",
       "pos": "QB",
@@ -6318,7 +6338,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 0.0,
-      "value": 36,
+      "value": 31,
       "group": "taxi"
      }
     ],
@@ -6340,7 +6360,7 @@
       "age": 38,
       "exp": 17,
       "ppg": 19.0,
-      "value": 507,
+      "value": 386,
       "group": "starter"
      },
      {
@@ -6351,7 +6371,7 @@
       "age": 22,
       "exp": 2,
       "ppg": 8.9,
-      "value": 144,
+      "value": 133,
       "group": "starter"
      },
      {
@@ -6362,7 +6382,7 @@
       "age": 25,
       "exp": 4,
       "ppg": 27.52,
-      "value": 7176,
+      "value": 7700,
       "group": "starter"
      },
      {
@@ -6373,7 +6393,7 @@
       "age": 31,
       "exp": 9,
       "ppg": 12.0,
-      "value": 2,
+      "value": 3,
       "group": "starter"
      },
      {
@@ -6384,7 +6404,7 @@
       "age": 24,
       "exp": 1,
       "ppg": 10.66,
-      "value": 5946,
+      "value": 5541,
       "group": "starter"
      },
      {
@@ -6395,7 +6415,7 @@
       "age": 37,
       "exp": 13,
       "ppg": 13.15,
-      "value": 633,
+      "value": 379,
       "group": "starter"
      },
      {
@@ -6406,7 +6426,7 @@
       "age": 27,
       "exp": 5,
       "ppg": 19.75,
-      "value": 944,
+      "value": 969,
       "group": "starter"
      },
      {
@@ -6417,7 +6437,7 @@
       "age": 28,
       "exp": 5,
       "ppg": 12.16,
-      "value": 412,
+      "value": 465,
       "group": "starter"
      },
      {
@@ -6450,7 +6470,7 @@
       "age": 25,
       "exp": 2,
       "ppg": 21.55,
-      "value": 3545,
+      "value": 3562,
       "group": "bench"
      },
      {
@@ -6461,7 +6481,7 @@
       "age": 25,
       "exp": 3,
       "ppg": 17.84,
-      "value": 1401,
+      "value": 1483,
       "group": "bench"
      },
      {
@@ -6472,7 +6492,7 @@
       "age": 21,
       "exp": 0,
       "ppg": 10.22,
-      "value": 7346,
+      "value": 7846,
       "group": "bench"
      },
      {
@@ -6483,7 +6503,7 @@
       "age": 25,
       "exp": 4,
       "ppg": 14.17,
-      "value": 5960,
+      "value": 6687,
       "group": "bench"
      },
      {
@@ -6494,7 +6514,7 @@
       "age": 21,
       "exp": 0,
       "ppg": 9.72,
-      "value": 1989,
+      "value": 1880,
       "group": "bench"
      },
      {
@@ -6505,7 +6525,7 @@
       "age": 30,
       "exp": 9,
       "ppg": 7.74,
-      "value": 556,
+      "value": 564,
       "group": "bench"
      },
      {
@@ -6527,7 +6547,7 @@
       "age": 28,
       "exp": 6,
       "ppg": 5.25,
-      "value": 382,
+      "value": 346,
       "group": "bench"
      },
      {
@@ -6538,7 +6558,7 @@
       "age": 24,
       "exp": 1,
       "ppg": 12.95,
-      "value": 399,
+      "value": 393,
       "group": "taxi"
      },
      {
@@ -6549,7 +6569,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 2.22,
-      "value": 773,
+      "value": 895,
       "group": "taxi"
      },
      {
@@ -6560,7 +6580,7 @@
       "age": 22,
       "exp": 0,
       "ppg": 6.85,
-      "value": 159,
+      "value": 158,
       "group": "taxi"
      },
      {
@@ -6571,7 +6591,7 @@
       "age": 30,
       "exp": 7,
       "ppg": 12.08,
-      "value": 394,
+      "value": 266,
       "group": "ir"
      },
      {
@@ -6582,21 +6602,21 @@
       "age": 24,
       "exp": 3,
       "ppg": 11.07,
-      "value": 1671,
+      "value": 1411,
       "group": "ir"
      }
     ],
     "draftees": [
      {
       "label": "2.09",
-      "key": "wyatt young",
-      "name": "Wyatt Young",
+      "key": "anthony evans",
+      "name": "Anthony Evans III",
       "pos": "WR"
      },
      {
       "label": "2.10",
-      "key": "anthony evans",
-      "name": "Anthony Evans III",
+      "key": "carlos hernandez",
+      "name": "Carlos Hernandez",
       "pos": "WR"
      },
      {
@@ -6619,14 +6639,14 @@
    "4": {
     "current": [
      {
-      "id": "6904",
-      "name": "Jalen Hurts",
+      "id": "3257",
+      "name": "Jacoby Brissett",
       "pos": "QB",
-      "nfl": "PHI",
-      "age": 28,
-      "exp": 6,
-      "ppg": 16.6,
-      "value": 3913,
+      "nfl": "ARI",
+      "age": 33,
+      "exp": 10,
+      "ppg": 19.86,
+      "value": 74,
       "group": "starter"
      },
      {
@@ -6637,51 +6657,7 @@
       "age": 25,
       "exp": 1,
       "ppg": 8.98,
-      "value": 294,
-      "group": "starter"
-     },
-     {
-      "id": "4866",
-      "name": "Saquon Barkley",
-      "pos": "RB",
-      "nfl": "PHI",
-      "age": 29,
-      "exp": 8,
-      "ppg": 5.75,
-      "value": 3220,
-      "group": "starter"
-     },
-     {
-      "id": "9997",
-      "name": "Zay Flowers",
-      "pos": "WR",
-      "nfl": "BAL",
-      "age": 26,
-      "exp": 3,
-      "ppg": 20.45,
-      "value": 4422,
-      "group": "starter"
-     },
-     {
-      "id": "5045",
-      "name": "Courtland Sutton",
-      "pos": "WR",
-      "nfl": "DEN",
-      "age": 31,
-      "exp": 8,
-      "ppg": 5.48,
-      "value": 581,
-      "group": "starter"
-     },
-     {
-      "id": "8130",
-      "name": "Trey McBride",
-      "pos": "TE",
-      "nfl": "ARI",
-      "age": 26,
-      "exp": 4,
-      "ppg": 18.16,
-      "value": 5451,
+      "value": 330,
       "group": "starter"
      },
      {
@@ -6692,18 +6668,62 @@
       "age": 26,
       "exp": 4,
       "ppg": 6.86,
-      "value": 205,
+      "value": 152,
       "group": "starter"
      },
      {
-      "id": "4983",
-      "name": "DJ Moore",
+      "id": "5045",
+      "name": "Courtland Sutton",
       "pos": "WR",
-      "nfl": "BUF",
-      "age": 29,
+      "nfl": "DEN",
+      "age": 31,
       "exp": 8,
-      "ppg": 9.07,
-      "value": 2175,
+      "ppg": 5.48,
+      "value": 672,
+      "group": "starter"
+     },
+     {
+      "id": "11624",
+      "name": "Xavier Worthy",
+      "pos": "WR",
+      "nfl": "KC",
+      "age": 23,
+      "exp": 2,
+      "ppg": 8.32,
+      "value": 724,
+      "group": "starter"
+     },
+     {
+      "id": "8130",
+      "name": "Trey McBride",
+      "pos": "TE",
+      "nfl": "ARI",
+      "age": 26,
+      "exp": 4,
+      "ppg": 18.16,
+      "value": 5904,
+      "group": "starter"
+     },
+     {
+      "id": "9997",
+      "name": "Zay Flowers",
+      "pos": "WR",
+      "nfl": "BAL",
+      "age": 26,
+      "exp": 3,
+      "ppg": 20.45,
+      "value": 5249,
+      "group": "starter"
+     },
+     {
+      "id": "9508",
+      "name": "Tyjae Spears",
+      "pos": "RB",
+      "nfl": "TEN",
+      "age": 25,
+      "exp": 3,
+      "ppg": 5.06,
+      "value": 106,
       "group": "starter"
      },
      {
@@ -6736,7 +6756,18 @@
       "age": 24,
       "exp": 3,
       "ppg": 30.74,
-      "value": 9162,
+      "value": 9292,
+      "group": "bench"
+     },
+     {
+      "id": "6904",
+      "name": "Jalen Hurts",
+      "pos": "QB",
+      "nfl": "PHI",
+      "age": 28,
+      "exp": 6,
+      "ppg": 16.6,
+      "value": 3742,
       "group": "bench"
      },
      {
@@ -6747,7 +6778,7 @@
       "age": 26,
       "exp": 3,
       "ppg": 13.0,
-      "value": 4453,
+      "value": 4299,
       "group": "bench"
      },
      {
@@ -6758,18 +6789,7 @@
       "age": 32,
       "exp": 11,
       "ppg": 13.25,
-      "value": 563,
-      "group": "bench"
-     },
-     {
-      "id": "3257",
-      "name": "Jacoby Brissett",
-      "pos": "QB",
-      "nfl": "ARI",
-      "age": 33,
-      "exp": 10,
-      "ppg": 19.86,
-      "value": 163,
+      "value": 551,
       "group": "bench"
      },
      {
@@ -6780,29 +6800,29 @@
       "age": 24,
       "exp": 2,
       "ppg": 12.1,
-      "value": 4668,
+      "value": 4279,
       "group": "bench"
      },
      {
-      "id": "11624",
-      "name": "Xavier Worthy",
+      "id": "4983",
+      "name": "DJ Moore",
       "pos": "WR",
-      "nfl": "KC",
-      "age": 23,
-      "exp": 2,
-      "ppg": 8.32,
-      "value": 990,
+      "nfl": "BUF",
+      "age": 29,
+      "exp": 8,
+      "ppg": 9.07,
+      "value": 2317,
       "group": "bench"
      },
      {
-      "id": "9508",
-      "name": "Tyjae Spears",
+      "id": "4866",
+      "name": "Saquon Barkley",
       "pos": "RB",
-      "nfl": "TEN",
-      "age": 25,
-      "exp": 3,
-      "ppg": 5.06,
-      "value": 175,
+      "nfl": "PHI",
+      "age": 29,
+      "exp": 8,
+      "ppg": 5.75,
+      "value": 2856,
       "group": "bench"
      },
      {
@@ -6813,7 +6833,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 1.37,
-      "value": 82,
+      "value": 32,
       "group": "bench"
      },
      {
@@ -6824,7 +6844,7 @@
       "age": 23,
       "exp": 1,
       "ppg": 2.65,
-      "value": 52,
+      "value": 59,
       "group": "taxi"
      },
      {
@@ -6835,7 +6855,7 @@
       "age": 22,
       "exp": 0,
       "ppg": 5.6,
-      "value": 348,
+      "value": 659,
       "group": "taxi"
      },
      {
@@ -6846,7 +6866,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 4.5,
-      "value": 220,
+      "value": 287,
       "group": "taxi"
      },
      {
@@ -6857,7 +6877,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 1.02,
-      "value": 31,
+      "value": 15,
       "group": "taxi"
      },
      {
@@ -6868,7 +6888,7 @@
       "age": 26,
       "exp": 3,
       "ppg": 3.2,
-      "value": 537,
+      "value": 564,
       "group": "ir"
      }
     ],
@@ -6888,7 +6908,7 @@
     ],
     "cuts": [
      "13347",
-     "12504"
+     "13405"
     ],
     "counts": {
      "active": 18,
@@ -6906,7 +6926,7 @@
       "age": 29,
       "exp": 8,
       "ppg": 20.02,
-      "value": 5287,
+      "value": 5274,
       "group": "starter"
      },
      {
@@ -6917,7 +6937,7 @@
       "age": 24,
       "exp": 3,
       "ppg": 7.34,
-      "value": 77,
+      "value": 132,
       "group": "starter"
      },
      {
@@ -6928,7 +6948,7 @@
       "age": 24,
       "exp": 2,
       "ppg": 15.74,
-      "value": 2334,
+      "value": 2290,
       "group": "starter"
      },
      {
@@ -6939,29 +6959,7 @@
       "age": 25,
       "exp": 3,
       "ppg": 25.93,
-      "value": 8907,
-      "group": "starter"
-     },
-     {
-      "id": "2216",
-      "name": "Mike Evans",
-      "pos": "WR",
-      "nfl": "SF",
-      "age": 33,
-      "exp": 12,
-      "ppg": 15.32,
-      "value": 938,
-      "group": "starter"
-     },
-     {
-      "id": "4217",
-      "name": "George Kittle",
-      "pos": "TE",
-      "nfl": "SF",
-      "age": 33,
-      "exp": 9,
-      "ppg": 14.36,
-      "value": 1194,
+      "value": 8866,
       "group": "starter"
      },
      {
@@ -6972,7 +6970,7 @@
       "age": 28,
       "exp": 7,
       "ppg": 9.72,
-      "value": 1980,
+      "value": 2060,
       "group": "starter"
      },
      {
@@ -6983,7 +6981,29 @@
       "age": 25,
       "exp": 3,
       "ppg": 10.1,
-      "value": 586,
+      "value": 659,
+      "group": "starter"
+     },
+     {
+      "id": "2216",
+      "name": "Mike Evans",
+      "pos": "WR",
+      "nfl": "SF",
+      "age": 33,
+      "exp": 12,
+      "ppg": 15.32,
+      "value": 920,
+      "group": "starter"
+     },
+     {
+      "id": "4217",
+      "name": "George Kittle",
+      "pos": "TE",
+      "nfl": "SF",
+      "age": 33,
+      "exp": 9,
+      "ppg": 14.36,
+      "value": 1303,
       "group": "starter"
      },
      {
@@ -6998,13 +7018,13 @@
       "group": "starter"
      },
      {
-      "id": "JAX",
-      "name": "Jacksonville Jaguars",
+      "id": "CAR",
+      "name": "Carolina Panthers",
       "pos": "DEF",
-      "nfl": "JAX",
+      "nfl": "CAR",
       "age": null,
       "exp": null,
-      "ppg": 8.33,
+      "ppg": 15.0,
       "value": 0,
       "group": "starter"
      },
@@ -7016,7 +7036,7 @@
       "age": 25,
       "exp": 4,
       "ppg": 11.52,
-      "value": 3335,
+      "value": 3036,
       "group": "bench"
      },
      {
@@ -7027,7 +7047,7 @@
       "age": 31,
       "exp": 8,
       "ppg": 8.74,
-      "value": 509,
+      "value": 377,
       "group": "bench"
      },
      {
@@ -7038,7 +7058,7 @@
       "age": 27,
       "exp": 4,
       "ppg": 10.92,
-      "value": 418,
+      "value": 341,
       "group": "bench"
      },
      {
@@ -7049,7 +7069,7 @@
       "age": 31,
       "exp": 8,
       "ppg": 12.37,
-      "value": 495,
+      "value": 564,
       "group": "bench"
      },
      {
@@ -7060,7 +7080,7 @@
       "age": 22,
       "exp": 1,
       "ppg": 16.4,
-      "value": 67,
+      "value": 51,
       "group": "bench"
      },
      {
@@ -7071,7 +7091,7 @@
       "age": 28,
       "exp": 6,
       "ppg": 24.04,
-      "value": 2,
+      "value": 4,
       "group": "bench"
      },
      {
@@ -7082,7 +7102,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 14.8,
-      "value": 513,
+      "value": 570,
       "group": "bench"
      },
      {
@@ -7093,7 +7113,7 @@
       "age": 26,
       "exp": 2,
       "ppg": 5.95,
-      "value": 64,
+      "value": 78,
       "group": "bench"
      },
      {
@@ -7104,7 +7124,7 @@
       "age": 23,
       "exp": 1,
       "ppg": 7.97,
-      "value": 350,
+      "value": 260,
       "group": "taxi"
      },
      {
@@ -7115,7 +7135,7 @@
       "age": 22,
       "exp": 0,
       "ppg": 0.6,
-      "value": 126,
+      "value": 108,
       "group": "taxi"
      },
      {
@@ -7126,7 +7146,7 @@
       "age": 22,
       "exp": 0,
       "ppg": 6.02,
-      "value": 231,
+      "value": 223,
       "group": "taxi"
      },
      {
@@ -7137,7 +7157,7 @@
       "age": 27,
       "exp": 5,
       "ppg": 10.3,
-      "value": 2134,
+      "value": 2446,
       "group": "ir"
      },
      {
@@ -7148,22 +7168,22 @@
       "age": 25,
       "exp": 3,
       "ppg": 8.2,
-      "value": 5463,
+      "value": 5225,
       "group": "ir"
      }
     ],
     "draftees": [
      {
       "label": "1.07",
-      "key": "kj duff",
-      "name": "KJ Duff",
+      "key": "deuce alexander",
+      "name": "Deuce Alexander",
       "pos": "WR"
      },
      {
       "label": "3.07",
-      "key": "luke reynolds",
-      "name": "Luke Reynolds",
-      "pos": "TE"
+      "key": "kelby valsin",
+      "name": "Kelby Valsin",
+      "pos": "WR"
      }
     ],
     "cuts": [
@@ -7185,7 +7205,7 @@
       "age": 38,
       "exp": 14,
       "ppg": 13.72,
-      "value": 49,
+      "value": 61,
       "group": "starter"
      },
      {
@@ -7196,7 +7216,7 @@
       "age": 26,
       "exp": 5,
       "ppg": 19.2,
-      "value": 1699,
+      "value": 2279,
       "group": "starter"
      },
      {
@@ -7207,7 +7227,7 @@
       "age": 22,
       "exp": 1,
       "ppg": 16.92,
-      "value": 8498,
+      "value": 8340,
       "group": "starter"
      },
      {
@@ -7218,7 +7238,7 @@
       "age": 24,
       "exp": 3,
       "ppg": 27.89,
-      "value": 10136,
+      "value": 10160,
       "group": "starter"
      },
      {
@@ -7229,7 +7249,7 @@
       "age": 27,
       "exp": 5,
       "ppg": 20.87,
-      "value": 6002,
+      "value": 5862,
       "group": "starter"
      },
      {
@@ -7240,7 +7260,7 @@
       "age": 25,
       "exp": 3,
       "ppg": 9.54,
-      "value": 2829,
+      "value": 3304,
       "group": "starter"
      },
      {
@@ -7251,7 +7271,7 @@
       "age": 27,
       "exp": 6,
       "ppg": 23.02,
-      "value": 9205,
+      "value": 8928,
       "group": "starter"
      },
      {
@@ -7262,7 +7282,7 @@
       "age": 24,
       "exp": 3,
       "ppg": 16.3,
-      "value": 2952,
+      "value": 4464,
       "group": "starter"
      },
      {
@@ -7295,7 +7315,7 @@
       "age": 26,
       "exp": 2,
       "ppg": 13.64,
-      "value": 1970,
+      "value": 1915,
       "group": "bench"
      },
      {
@@ -7306,7 +7326,7 @@
       "age": 28,
       "exp": 6,
       "ppg": 12.14,
-      "value": 2674,
+      "value": 2423,
       "group": "bench"
      },
      {
@@ -7328,7 +7348,7 @@
       "age": 22,
       "exp": 0,
       "ppg": 6.36,
-      "value": 1711,
+      "value": 2094,
       "group": "bench"
      },
      {
@@ -7339,7 +7359,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 6.12,
-      "value": 98,
+      "value": 99,
       "group": "bench"
      },
      {
@@ -7350,7 +7370,7 @@
       "age": 24,
       "exp": 2,
       "ppg": 6.06,
-      "value": 220,
+      "value": 197,
       "group": "bench"
      },
      {
@@ -7361,7 +7381,7 @@
       "age": 24,
       "exp": 3,
       "ppg": 4.28,
-      "value": 99,
+      "value": 91,
       "group": "bench"
      },
      {
@@ -7372,7 +7392,7 @@
       "age": 24,
       "exp": 3,
       "ppg": 5.45,
-      "value": 25,
+      "value": 12,
       "group": "bench"
      },
      {
@@ -7383,7 +7403,7 @@
       "age": 22,
       "exp": 1,
       "ppg": 1.5,
-      "value": 9,
+      "value": 10,
       "group": "taxi"
      },
      {
@@ -7394,7 +7414,7 @@
       "age": 23,
       "exp": 1,
       "ppg": 9.65,
-      "value": 563,
+      "value": 807,
       "group": "taxi"
      },
      {
@@ -7405,7 +7425,7 @@
       "age": 24,
       "exp": 1,
       "ppg": 9.23,
-      "value": 156,
+      "value": 90,
       "group": "taxi"
      },
      {
@@ -7416,7 +7436,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 0.0,
-      "value": 504,
+      "value": 509,
       "group": "taxi"
      },
      {
@@ -7427,7 +7447,7 @@
       "age": 23,
       "exp": 2,
       "ppg": 4.65,
-      "value": 688,
+      "value": 681,
       "group": "ir"
      },
      {
@@ -7438,7 +7458,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 0.0,
-      "value": 525,
+      "value": 846,
       "group": "ir"
      }
     ],
@@ -7463,9 +7483,9 @@
      },
      {
       "label": "2.12",
-      "key": "wayne knight",
-      "name": "Wayne Knight",
-      "pos": "RB"
+      "key": "luke reynolds",
+      "name": "Luke Reynolds",
+      "pos": "TE"
      },
      {
       "label": "3.12",
@@ -7479,7 +7499,7 @@
      "12467",
      "9757",
      "1166",
-     "13285"
+     "12535"
     ],
     "counts": {
      "active": 18,
@@ -7497,7 +7517,7 @@
       "age": 27,
       "exp": 6,
       "ppg": 18.62,
-      "value": 1237,
+      "value": 1279,
       "group": "starter"
      },
      {
@@ -7508,7 +7528,7 @@
       "age": 24,
       "exp": 1,
       "ppg": 10.26,
-      "value": 1880,
+      "value": 1679,
       "group": "starter"
      },
      {
@@ -7519,7 +7539,7 @@
       "age": 27,
       "exp": 6,
       "ppg": 16.16,
-      "value": 1391,
+      "value": 1521,
       "group": "starter"
      },
      {
@@ -7530,7 +7550,7 @@
       "age": 23,
       "exp": 2,
       "ppg": 14.78,
-      "value": 7736,
+      "value": 7920,
       "group": "starter"
      },
      {
@@ -7541,7 +7561,7 @@
       "age": 26,
       "exp": 4,
       "ppg": 11.72,
-      "value": 417,
+      "value": 509,
       "group": "starter"
      },
      {
@@ -7552,7 +7572,7 @@
       "age": 34,
       "exp": 11,
       "ppg": 8.35,
-      "value": 0,
+      "value": 11,
       "group": "starter"
      },
      {
@@ -7563,7 +7583,7 @@
       "age": 25,
       "exp": 4,
       "ppg": 10.34,
-      "value": 866,
+      "value": 951,
       "group": "starter"
      },
      {
@@ -7574,7 +7594,7 @@
       "age": 25,
       "exp": 1,
       "ppg": 8.66,
-      "value": 283,
+      "value": 194,
       "group": "starter"
      },
      {
@@ -7618,7 +7638,7 @@
       "age": 29,
       "exp": 8,
       "ppg": 13.7,
-      "value": 459,
+      "value": 477,
       "group": "bench"
      },
      {
@@ -7629,7 +7649,7 @@
       "age": 29,
       "exp": 7,
       "ppg": 9.84,
-      "value": 239,
+      "value": 191,
       "group": "bench"
      },
      {
@@ -7640,7 +7660,7 @@
       "age": 24,
       "exp": 2,
       "ppg": 6.5,
-      "value": 3699,
+      "value": 1695,
       "group": "bench"
      },
      {
@@ -7651,7 +7671,7 @@
       "age": 25,
       "exp": 3,
       "ppg": 4.53,
-      "value": 675,
+      "value": 684,
       "group": "bench"
      },
      {
@@ -7662,7 +7682,7 @@
       "age": 25,
       "exp": 3,
       "ppg": 9.8,
-      "value": 177,
+      "value": 151,
       "group": "bench"
      },
      {
@@ -7673,7 +7693,7 @@
       "age": 22,
       "exp": 0,
       "ppg": 6.7,
-      "value": 158,
+      "value": 298,
       "group": "bench"
      },
      {
@@ -7684,7 +7704,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 0.0,
-      "value": 36,
+      "value": 52,
       "group": "bench"
      },
      {
@@ -7695,7 +7715,7 @@
       "age": 24,
       "exp": 2,
       "ppg": 10.65,
-      "value": 407,
+      "value": 412,
       "group": "taxi"
      },
      {
@@ -7706,7 +7726,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 2.3,
-      "value": 70,
+      "value": 107,
       "group": "taxi"
      },
      {
@@ -7717,7 +7737,7 @@
       "age": 24,
       "exp": 0,
       "ppg": 6.0,
-      "value": 0,
+      "value": 65,
       "group": "taxi"
      },
      {
@@ -7728,7 +7748,7 @@
       "age": 22,
       "exp": 1,
       "ppg": 0.0,
-      "value": 113,
+      "value": 100,
       "group": "ir"
      },
      {
@@ -7739,33 +7759,33 @@
       "age": 22,
       "exp": 0,
       "ppg": 0.0,
-      "value": 4,
+      "value": 17,
       "group": "ir"
      }
     ],
     "draftees": [
      {
       "label": "1.09",
-      "key": "deuce alexander",
-      "name": "Deuce Alexander",
-      "pos": "WR"
+      "key": "kewan lacy",
+      "name": "Kewan Lacy",
+      "pos": "RB"
      },
      {
       "label": "2.01",
-      "key": "mark fletcher",
-      "name": "Mark Fletcher",
+      "key": "jamal roberts",
+      "name": "Jamal Roberts",
       "pos": "RB"
      },
      {
       "label": "2.08",
-      "key": "dylan riley",
-      "name": "Dylan Riley",
-      "pos": "RB"
+      "key": "wyatt young",
+      "name": "Wyatt Young",
+      "pos": "WR"
      }
     ],
     "cuts": [
-     "13324",
-     "2505"
+     "2505",
+     "13413"
     ],
     "counts": {
      "active": 18,
@@ -7783,7 +7803,7 @@
       "age": 26,
       "exp": 4,
       "ppg": 23.73,
-      "value": 2738,
+      "value": 3008,
       "group": "starter"
      },
      {
@@ -7794,7 +7814,7 @@
       "age": 25,
       "exp": 1,
       "ppg": 9.7,
-      "value": 430,
+      "value": 495,
       "group": "starter"
      },
      {
@@ -7805,7 +7825,7 @@
       "age": 26,
       "exp": 4,
       "ppg": 17.28,
-      "value": 6501,
+      "value": 6380,
       "group": "starter"
      },
      {
@@ -7816,7 +7836,7 @@
       "age": 26,
       "exp": 3,
       "ppg": 12.67,
-      "value": 4506,
+      "value": 3138,
       "group": "starter"
      },
      {
@@ -7827,7 +7847,7 @@
       "age": 23,
       "exp": 2,
       "ppg": 23.73,
-      "value": 5606,
+      "value": 6002,
       "group": "starter"
      },
      {
@@ -7838,7 +7858,7 @@
       "age": 25,
       "exp": 3,
       "ppg": 8.98,
-      "value": 1175,
+      "value": 1303,
       "group": "starter"
      },
      {
@@ -7849,7 +7869,7 @@
       "age": 30,
       "exp": 6,
       "ppg": 13.16,
-      "value": 507,
+      "value": 745,
       "group": "starter"
      },
      {
@@ -7882,7 +7902,7 @@
       "age": 27,
       "exp": 6,
       "ppg": 15.93,
-      "value": 8866,
+      "value": 8907,
       "group": "bench"
      },
      {
@@ -7893,7 +7913,7 @@
       "age": 28,
       "exp": 2,
       "ppg": 12.44,
-      "value": 66,
+      "value": 63,
       "group": "bench"
      },
      {
@@ -7904,7 +7924,7 @@
       "age": 22,
       "exp": 1,
       "ppg": 11.26,
-      "value": 2700,
+      "value": 2389,
       "group": "bench"
      },
      {
@@ -7937,7 +7957,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 4.67,
-      "value": 2334,
+      "value": 1915,
       "group": "bench"
      },
      {
@@ -7948,7 +7968,7 @@
       "age": 28,
       "exp": 7,
       "ppg": 0.0,
-      "value": 777,
+      "value": 688,
       "group": "bench"
      },
      {
@@ -7959,7 +7979,7 @@
       "age": 28,
       "exp": 7,
       "ppg": 0.0,
-      "value": 6,
+      "value": 5,
       "group": "bench"
      },
      {
@@ -7970,7 +7990,7 @@
       "age": 23,
       "exp": 1,
       "ppg": 13.7,
-      "value": 1148,
+      "value": 1425,
       "group": "ir"
      },
      {
@@ -7981,7 +8001,7 @@
       "age": 25,
       "exp": 3,
       "ppg": 0.0,
-      "value": 283,
+      "value": 330,
       "group": "ir"
      }
     ],
@@ -8010,7 +8030,7 @@
       "age": 24,
       "exp": 2,
       "ppg": 18.84,
-      "value": 4745,
+      "value": 5068,
       "group": "starter"
      },
      {
@@ -8021,7 +8041,7 @@
       "age": 24,
       "exp": 3,
       "ppg": 24.24,
-      "value": 9558,
+      "value": 9580,
       "group": "starter"
      },
      {
@@ -8032,7 +8052,7 @@
       "age": 23,
       "exp": 1,
       "ppg": 12.74,
-      "value": 1486,
+      "value": 1543,
       "group": "starter"
      },
      {
@@ -8043,18 +8063,18 @@
       "age": 25,
       "exp": 4,
       "ppg": 13.7,
-      "value": 4892,
+      "value": 4881,
       "group": "starter"
      },
      {
-      "id": "7564",
-      "name": "Ja'Marr Chase",
+      "id": "12526",
+      "name": "Tetairoa McMillan",
       "pos": "WR",
-      "nfl": "CIN",
-      "age": 26,
-      "exp": 5,
-      "ppg": 15.98,
-      "value": 10113,
+      "nfl": "CAR",
+      "age": 23,
+      "exp": 1,
+      "ppg": 18.62,
+      "value": 6625,
       "group": "starter"
      },
      {
@@ -8065,7 +8085,7 @@
       "age": 22,
       "exp": 1,
       "ppg": 6.0,
-      "value": 3664,
+      "value": 3969,
       "group": "starter"
      },
      {
@@ -8076,7 +8096,7 @@
       "age": 25,
       "exp": 4,
       "ppg": 15.24,
-      "value": 7486,
+      "value": 7381,
       "group": "starter"
      },
      {
@@ -8087,7 +8107,7 @@
       "age": 26,
       "exp": 4,
       "ppg": 19.74,
-      "value": 6501,
+      "value": 6798,
       "group": "starter"
      },
      {
@@ -8113,14 +8133,14 @@
       "group": "starter"
      },
      {
-      "id": "12526",
-      "name": "Tetairoa McMillan",
+      "id": "7564",
+      "name": "Ja'Marr Chase",
       "pos": "WR",
-      "nfl": "CAR",
-      "age": 23,
-      "exp": 1,
-      "ppg": 18.62,
-      "value": 6911,
+      "nfl": "CIN",
+      "age": 26,
+      "exp": 5,
+      "ppg": 15.98,
+      "value": 10160,
       "group": "bench"
      },
      {
@@ -8131,7 +8151,7 @@
       "age": 27,
       "exp": 4,
       "ppg": 10.02,
-      "value": 108,
+      "value": 85,
       "group": "bench"
      },
      {
@@ -8142,7 +8162,18 @@
       "age": 23,
       "exp": 2,
       "ppg": 12.0,
-      "value": 114,
+      "value": 50,
+      "group": "bench"
+     },
+     {
+      "id": "12529",
+      "name": "TreVeyon Henderson",
+      "pos": "RB",
+      "nfl": "NE",
+      "age": 23,
+      "exp": 1,
+      "ppg": 6.62,
+      "value": 2751,
       "group": "bench"
      },
      {
@@ -8153,7 +8184,7 @@
       "age": 27,
       "exp": 5,
       "ppg": 17.97,
-      "value": 2938,
+      "value": 3079,
       "group": "bench"
      },
      {
@@ -8164,18 +8195,7 @@
       "age": 24,
       "exp": 1,
       "ppg": 5.73,
-      "value": 221,
-      "group": "bench"
-     },
-     {
-      "id": "9482",
-      "name": "Michael Mayer",
-      "pos": "TE",
-      "nfl": "LV",
-      "age": 25,
-      "exp": 3,
-      "ppg": 5.23,
-      "value": 113,
+      "value": 189,
       "group": "bench"
      },
      {
@@ -8186,7 +8206,7 @@
       "age": 25,
       "exp": 2,
       "ppg": 0.0,
-      "value": 60,
+      "value": 42,
       "group": "bench"
      },
      {
@@ -8197,7 +8217,7 @@
       "age": 31,
       "exp": 10,
       "ppg": 6.32,
-      "value": 178,
+      "value": 170,
       "group": "bench"
      },
      {
@@ -8208,7 +8228,7 @@
       "age": 23,
       "exp": 1,
       "ppg": 7.93,
-      "value": 633,
+      "value": 554,
       "group": "taxi"
      },
      {
@@ -8219,7 +8239,7 @@
       "age": 24,
       "exp": 1,
       "ppg": 7.5,
-      "value": 311,
+      "value": 312,
       "group": "taxi"
      },
      {
@@ -8230,7 +8250,7 @@
       "age": 22,
       "exp": 0,
       "ppg": 4.0,
-      "value": 807,
+      "value": 818,
       "group": "taxi"
      },
      {
@@ -8241,19 +8261,8 @@
       "age": 23,
       "exp": 0,
       "ppg": 9.15,
-      "value": 314,
+      "value": 242,
       "group": "taxi"
-     },
-     {
-      "id": "12529",
-      "name": "TreVeyon Henderson",
-      "pos": "RB",
-      "nfl": "NE",
-      "age": 23,
-      "exp": 1,
-      "ppg": 6.62,
-      "value": 2687,
-      "group": "ir"
      },
      {
       "id": "4137",
@@ -8263,7 +8272,7 @@
       "age": 31,
       "exp": 9,
       "ppg": 0.0,
-      "value": 4,
+      "value": 30,
       "group": "ir"
      }
     ],
@@ -8276,9 +8285,9 @@
      },
      {
       "label": "1.05",
-      "key": "kewan lacy",
-      "name": "Kewan Lacy",
-      "pos": "RB"
+      "key": "nick marsh",
+      "name": "Nick Marsh",
+      "pos": "WR"
      },
      {
       "label": "1.11",
@@ -8294,22 +8303,22 @@
      },
      {
       "label": "3.11",
-      "key": "kelby valsin",
-      "name": "Kelby Valsin",
-      "pos": "WR"
+      "key": "nate frazier",
+      "name": "Nate Frazier",
+      "pos": "RB"
      }
     ],
     "cuts": [
      "11647",
-     "8154",
-     "9482",
      "11637",
-     "3214"
+     "8154",
+     "3214",
+     "12536"
     ],
     "counts": {
      "active": 18,
      "taxi": 4,
-     "ir": 2
+     "ir": 1
     }
    },
    "10": {
@@ -8322,7 +8331,7 @@
       "age": 33,
       "exp": 10,
       "ppg": 19.37,
-      "value": 1633,
+      "value": 1493,
       "group": "starter"
      },
      {
@@ -8333,7 +8342,7 @@
       "age": 30,
       "exp": 9,
       "ppg": 18.26,
-      "value": 4985,
+      "value": 4259,
       "group": "starter"
      },
      {
@@ -8344,7 +8353,7 @@
       "age": 27,
       "exp": 4,
       "ppg": 8.28,
-      "value": 199,
+      "value": 218,
       "group": "starter"
      },
      {
@@ -8355,7 +8364,7 @@
       "age": 33,
       "exp": 12,
       "ppg": 19.02,
-      "value": 1602,
+      "value": 1110,
       "group": "starter"
      },
      {
@@ -8366,7 +8375,7 @@
       "age": 29,
       "exp": 7,
       "ppg": 9.48,
-      "value": 528,
+      "value": 562,
       "group": "starter"
      },
      {
@@ -8377,7 +8386,7 @@
       "age": 26,
       "exp": 4,
       "ppg": 17.08,
-      "value": 1687,
+      "value": 1810,
       "group": "starter"
      },
      {
@@ -8388,18 +8397,18 @@
       "age": 31,
       "exp": 7,
       "ppg": 10.57,
-      "value": 1699,
+      "value": 1425,
       "group": "starter"
      },
      {
-      "id": "7525",
-      "name": "DeVonta Smith",
-      "pos": "WR",
-      "nfl": "PHI",
+      "id": "8110",
+      "name": "Jake Ferguson",
+      "pos": "TE",
+      "nfl": "DAL",
       "age": 27,
-      "exp": 5,
-      "ppg": 16.17,
-      "value": 5164,
+      "exp": 4,
+      "ppg": 8.24,
+      "value": 647,
       "group": "starter"
      },
      {
@@ -8432,7 +8441,7 @@
       "age": 42,
       "exp": 21,
       "ppg": 17.43,
-      "value": 66,
+      "value": 49,
       "group": "bench"
      },
      {
@@ -8454,18 +8463,18 @@
       "age": 25,
       "exp": 2,
       "ppg": 10.04,
-      "value": 109,
+      "value": 67,
       "group": "bench"
      },
      {
-      "id": "8110",
-      "name": "Jake Ferguson",
-      "pos": "TE",
-      "nfl": "DAL",
+      "id": "7525",
+      "name": "DeVonta Smith",
+      "pos": "WR",
+      "nfl": "PHI",
       "age": 27,
-      "exp": 4,
-      "ppg": 8.24,
-      "value": 659,
+      "exp": 5,
+      "ppg": 16.17,
+      "value": 5092,
       "group": "bench"
      },
      {
@@ -8498,7 +8507,7 @@
       "age": 27,
       "exp": 3,
       "ppg": 2.45,
-      "value": 16,
+      "value": 10,
       "group": "bench"
      },
      {
@@ -8509,7 +8518,7 @@
       "age": 29,
       "exp": 7,
       "ppg": 0.0,
-      "value": 32,
+      "value": 22,
       "group": "bench"
      },
      {
@@ -8520,7 +8529,7 @@
       "age": 23,
       "exp": 1,
       "ppg": 0.0,
-      "value": 18,
+      "value": 19,
       "group": "taxi"
      },
      {
@@ -8531,7 +8540,7 @@
       "age": 24,
       "exp": 1,
       "ppg": -2.0,
-      "value": 1,
+      "value": 3,
       "group": "taxi"
      },
      {
@@ -8542,7 +8551,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 0.0,
-      "value": 148,
+      "value": 109,
       "group": "taxi"
      },
      {
@@ -8553,7 +8562,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 0.0,
-      "value": 91,
+      "value": 71,
       "group": "taxi"
      },
      {
@@ -8564,7 +8573,7 @@
       "age": 27,
       "exp": 4,
       "ppg": 11.9,
-      "value": 217,
+      "value": 244,
       "group": "ir"
      }
     ],
@@ -8609,7 +8618,7 @@
       "age": 31,
       "exp": 9,
       "ppg": 21.39,
-      "value": 4495,
+      "value": 4689,
       "group": "starter"
      },
      {
@@ -8620,7 +8629,7 @@
       "age": 27,
       "exp": 6,
       "ppg": 19.48,
-      "value": 6782,
+      "value": 6593,
       "group": "starter"
      },
      {
@@ -8631,7 +8640,7 @@
       "age": 29,
       "exp": 7,
       "ppg": 8.74,
-      "value": 338,
+      "value": 260,
       "group": "starter"
      },
      {
@@ -8642,7 +8651,7 @@
       "age": 27,
       "exp": 4,
       "ppg": 21.88,
-      "value": 3008,
+      "value": 3913,
       "group": "starter"
      },
      {
@@ -8653,7 +8662,7 @@
       "age": 24,
       "exp": 2,
       "ppg": 8.46,
-      "value": 4179,
+      "value": 3630,
       "group": "starter"
      },
      {
@@ -8664,7 +8673,7 @@
       "age": 24,
       "exp": 1,
       "ppg": 13.98,
-      "value": 3258,
+      "value": 4319,
       "group": "starter"
      },
      {
@@ -8675,7 +8684,7 @@
       "age": 31,
       "exp": 8,
       "ppg": 11.63,
-      "value": 586,
+      "value": 420,
       "group": "starter"
      },
      {
@@ -8686,7 +8695,7 @@
       "age": 24,
       "exp": 2,
       "ppg": 17.4,
-      "value": 997,
+      "value": 1445,
       "group": "starter"
      },
      {
@@ -8719,7 +8728,7 @@
       "age": 25,
       "exp": 3,
       "ppg": 23.16,
-      "value": 701,
+      "value": 762,
       "group": "bench"
      },
      {
@@ -8730,7 +8739,7 @@
       "age": 31,
       "exp": 9,
       "ppg": 14.04,
-      "value": 154,
+      "value": 118,
       "group": "bench"
      },
      {
@@ -8741,7 +8750,7 @@
       "age": 29,
       "exp": 7,
       "ppg": 9.1,
-      "value": 788,
+      "value": 741,
       "group": "bench"
      },
      {
@@ -8752,7 +8761,7 @@
       "age": 27,
       "exp": 6,
       "ppg": 7.22,
-      "value": 211,
+      "value": 216,
       "group": "bench"
      },
      {
@@ -8763,7 +8772,7 @@
       "age": 33,
       "exp": 9,
       "ppg": 5.98,
-      "value": 63,
+      "value": 32,
       "group": "bench"
      },
      {
@@ -8774,7 +8783,7 @@
       "age": 32,
       "exp": 11,
       "ppg": 25.74,
-      "value": 4,
+      "value": 13,
       "group": "bench"
      },
      {
@@ -8785,7 +8794,7 @@
       "age": 24,
       "exp": 2,
       "ppg": 6.38,
-      "value": 1934,
+      "value": 1794,
       "group": "bench"
      },
      {
@@ -8807,7 +8816,7 @@
       "age": 22,
       "exp": 0,
       "ppg": 7.3,
-      "value": 701,
+      "value": 691,
       "group": "taxi"
      },
      {
@@ -8818,7 +8827,7 @@
       "age": 22,
       "exp": 0,
       "ppg": 13.8,
-      "value": 1845,
+      "value": 2046,
       "group": "taxi"
      },
      {
@@ -8829,7 +8838,7 @@
       "age": 22,
       "exp": 0,
       "ppg": 2.15,
-      "value": 4,
+      "value": 10,
       "group": "taxi"
      },
      {
@@ -8840,7 +8849,7 @@
       "age": 24,
       "exp": 0,
       "ppg": 3.57,
-      "value": 5,
+      "value": 137,
       "group": "taxi"
      },
      {
@@ -8858,8 +8867,8 @@
     "draftees": [
      {
       "label": "1.06",
-      "key": "nick marsh",
-      "name": "Nick Marsh",
+      "key": "kj duff",
+      "name": "KJ Duff",
       "pos": "WR"
      },
      {
@@ -8870,14 +8879,14 @@
      },
      {
       "label": "2.06",
-      "key": "jahiem white",
-      "name": "Jahiem White",
+      "key": "wayshawn parker",
+      "name": "Wayshawn Parker",
       "pos": "RB"
      },
      {
       "label": "3.06",
-      "key": "nate frazier",
-      "name": "Nate Frazier",
+      "key": "desean bishop",
+      "name": "DeSean Bishop",
       "pos": "RB"
      }
     ],
@@ -8885,7 +8894,7 @@
      "BUF",
      "13411",
      "2306",
-     "13420"
+     "4039"
     ],
     "counts": {
      "active": 18,
@@ -8903,7 +8912,7 @@
       "age": 27,
       "exp": 1,
       "ppg": 18.03,
-      "value": 1132,
+      "value": 1186,
       "group": "starter"
      },
      {
@@ -8914,7 +8923,7 @@
       "age": 32,
       "exp": 10,
       "ppg": 22.36,
-      "value": 1699,
+      "value": 1785,
       "group": "starter"
      },
      {
@@ -8925,7 +8934,7 @@
       "age": 26,
       "exp": 4,
       "ppg": 21.86,
-      "value": 3258,
+      "value": 3190,
       "group": "starter"
      },
      {
@@ -8936,7 +8945,7 @@
       "age": 29,
       "exp": 7,
       "ppg": 5.6,
-      "value": 4745,
+      "value": 4259,
       "group": "starter"
      },
      {
@@ -8947,7 +8956,7 @@
       "age": 22,
       "exp": 0,
       "ppg": 5.06,
-      "value": 3108,
+      "value": 2687,
       "group": "starter"
      },
      {
@@ -8958,7 +8967,7 @@
       "age": 26,
       "exp": 5,
       "ppg": 6.72,
-      "value": 2247,
+      "value": 2134,
       "group": "starter"
      },
      {
@@ -8969,7 +8978,7 @@
       "age": 25,
       "exp": 2,
       "ppg": 8.54,
-      "value": 30,
+      "value": 47,
       "group": "starter"
      },
      {
@@ -9013,7 +9022,7 @@
       "age": 29,
       "exp": 6,
       "ppg": 20.85,
-      "value": 4289,
+      "value": 4044,
       "group": "bench"
      },
      {
@@ -9024,7 +9033,7 @@
       "age": 27,
       "exp": 6,
       "ppg": 15.06,
-      "value": 3630,
+      "value": 3613,
       "group": "bench"
      },
      {
@@ -9035,7 +9044,7 @@
       "age": 23,
       "exp": 0,
       "ppg": 4.18,
-      "value": 130,
+      "value": 161,
       "group": "bench"
      },
      {
@@ -9046,7 +9055,7 @@
       "age": 25,
       "exp": 2,
       "ppg": 12.1,
-      "value": 8,
+      "value": 5,
       "group": "bench"
      },
      {
@@ -9057,7 +9066,7 @@
       "age": 29,
       "exp": 6,
       "ppg": 5.3,
-      "value": 1421,
+      "value": 1438,
       "group": "bench"
      },
      {
@@ -9068,7 +9077,7 @@
       "age": 26,
       "exp": 4,
       "ppg": 6.1,
-      "value": 1214,
+      "value": 1565,
       "group": "bench"
      },
      {
@@ -9079,7 +9088,7 @@
       "age": 24,
       "exp": 1,
       "ppg": 0.0,
-      "value": 0,
+      "value": 7,
       "group": "bench"
      },
      {
@@ -9090,7 +9099,7 @@
       "age": 28,
       "exp": 6,
       "ppg": 0.0,
-      "value": 290,
+      "value": 265,
       "group": "bench"
      },
      {
@@ -9101,7 +9110,7 @@
       "age": 26,
       "exp": 2,
       "ppg": 2.1,
-      "value": 22,
+      "value": 17,
       "group": "taxi"
      },
      {
@@ -9112,7 +9121,7 @@
       "age": 23,
       "exp": 2,
       "ppg": 0.7,
-      "value": 36,
+      "value": 40,
       "group": "taxi"
      },
      {
@@ -9123,7 +9132,7 @@
       "age": 23,
       "exp": 1,
       "ppg": 5.0,
-      "value": 180,
+      "value": 50,
       "group": "taxi"
      },
      {
@@ -9134,7 +9143,7 @@
       "age": 24,
       "exp": 1,
       "ppg": 0.0,
-      "value": 90,
+      "value": 66,
       "group": "taxi"
      },
      {
@@ -9145,7 +9154,7 @@
       "age": 26,
       "exp": 2,
       "ppg": 0.0,
-      "value": 597,
+      "value": 377,
       "group": "ir"
      },
      {
@@ -9156,7 +9165,7 @@
       "age": 22,
       "exp": 0,
       "ppg": 0.0,
-      "value": 3415,
+      "value": 3258,
       "group": "ir"
      }
     ],
@@ -9169,21 +9178,21 @@
      },
      {
       "label": "2.02",
-      "key": "jamal roberts",
-      "name": "Jamal Roberts",
+      "key": "jahiem white",
+      "name": "Jahiem White",
       "pos": "RB"
      },
      {
       "label": "3.02",
-      "key": "cam cook",
-      "name": "Cam Cook",
+      "key": "wayne knight",
+      "name": "Wayne Knight",
       "pos": "RB"
      }
     ],
     "cuts": [
      "8129",
-     "12542",
-     "11630"
+     "11630",
+     "12542"
     ],
     "counts": {
      "active": 18,

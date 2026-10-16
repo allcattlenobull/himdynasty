@@ -1,6 +1,6 @@
 {
  "enabled": true,
- "updated": "2026-10-15T15:24:07+00:00",
+ "updated": "2026-10-16T09:02:12+00:00",
  "players": {
   "jeremiah smith": {
    "fetched": "2026-10-13",
@@ -683,42 +683,6 @@
      "title": "Luke Reynolds was too much for ODU 😤 #virginiatech #collegefootball #accfootball #cfb #gohokies",
      "channel": "ACC Digital Network",
      "date": "2026-09-12"
-    }
-   ]
-  },
-  "mark fletcher": {
-   "fetched": "2026-10-13",
-   "query": "Mark Fletcher Miami (FL) 2026 highlights",
-   "videos": [
-    {
-     "id": "1h_BaH2ApNQ",
-     "title": "Mark Fletcher Jr. | 2025 Highlights",
-     "channel": "Sports Productions ",
-     "date": "2026-08-18"
-    },
-    {
-     "id": "PFJPXspJBX8",
-     "title": "AIR FLETCHER. 😱🔥 Mark Fletcher Jr. extends Miami’s lead:",
-     "channel": "CanesWear",
-     "date": "2026-10-05"
-    },
-    {
-     "id": "c_HrbxI713Y",
-     "title": "Mark Fletcher Jr. Ran Him Over 😲",
-     "channel": "Cut Day Media",
-     "date": "2026-09-19"
-    },
-    {
-     "id": "CPBABiLuDO8",
-     "title": "Mark Fletcher Jr. 2026 CFB Game Highlights vs Florida A&M",
-     "channel": "The Highlight Hub",
-     "date": "2026-09-11"
-    },
-    {
-     "id": "5Yh3p3vviyM",
-     "title": "Mark Fletcher Jr. Is A BEAST 😤",
-     "channel": "B/R CFB",
-     "date": "2026-09-19"
     }
    ]
   },
@@ -1942,6 +1906,24 @@
      "title": "CUSA Football Week 2 Recap + Interview with FIU’s Maguire Anderson",
      "channel": "Conference USA",
      "date": "2026-09-16"
+    }
+   ]
+  },
+  "isaiah myers": {
+   "fetched": "2026-10-16",
+   "query": "Isaiah Myers Missouri State Bears 2026 highlights",
+   "videos": [
+    {
+     "id": "naZNtZM8whE",
+     "title": "Isaiah Myers with a spectacular catch for a 49-yard Gain vs. Lindenwood Lions",
+     "channel": "Conference USA",
+     "date": "2026-09-13"
+    },
+    {
+     "id": "9xJy-mKxtYA",
+     "title": "Isaiah Myers with a 72-yard touchdown catch from Skyler Locklear vs. Lindenwood Lions",
+     "channel": "Conference USA",
+     "date": "2026-09-13"
     }
    ]
   }
