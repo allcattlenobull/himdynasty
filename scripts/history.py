@@ -39,7 +39,7 @@ ARCHIVE_DIR = DATA_DIR / "archive"
 SLEEPER = "https://api.sleeper.app/v1"
 DP = "https://raw.githubusercontent.com/dynastyprocess/data/master/files"
 LOCAL = os.environ.get("HISTORY_LOCAL")
-ARCHIVE_VERSION = 5
+ARCHIVE_VERSION = 6
 PACKAGE_WEIGHTS = [1, 0.78, 0.62, 0.52, 0.45, 0.4, 0.36]
 
 
@@ -215,20 +215,31 @@ def build_season(league_id, weeks_done_hint=None):
             md = p.get("metadata") or {}
             picks.append({"no": p.get("pick_no"), "r": p.get("round"), "slot": p.get("draft_slot"), "rid": p.get("roster_id"),
                           "user": p.get("picked_by"), "orig": slot_to_rid.get(p.get("draft_slot")),
+                          "time": p.get("picked_at") or meta.get("start_time"),
                           "pid": p.get("player_id"), "name": f"{md.get('first_name', '')} {md.get('last_name', '')}".strip(),
                           "pos": md.get("position"), "nfl": md.get("team")})
         rounds = (d.get("settings") or {}).get("rounds") or max((p["r"] or 0 for p in picks), default=0)
         drafts.append({"id": d["draft_id"], "season": str(d.get("season") or season), "type": d.get("type"),
                        "kind": "rookie" if rounds <= 5 else "startup", "rounds": rounds, "picks": sorted(picks, key=lambda x: x["no"] or 0)})
 
-    # Trades
+    # Transactions. Player moves are retained so the current owner's continuous
+    # tenure can be reconstructed across seasons. Sleeper rosters only expose
+    # who owns a player today, not when that ownership spell began.
     trades = []
+    moves = []
     for w in range(0, 19):
         for t in sleeper(f"/league/{league_id}/transactions/{w}") or []:
-            if t.get("type") != "trade" or t.get("status") != "complete":
+            if t.get("status") != "complete":
+                continue
+            tx_time = t.get("status_updated") or t.get("created")
+            adds, drops = t.get("adds") or {}, t.get("drops") or {}
+            for pid in sorted(set(adds) | set(drops)):
+                moves.append({"id": t.get("transaction_id"), "time": tx_time, "week": t.get("leg") or w,
+                              "type": t.get("type"), "pid": str(pid), "from": drops.get(pid), "to": adds.get(pid)})
+            if t.get("type") != "trade":
                 continue
             sides = {str(r): {"players": [], "picks": []} for r in t.get("roster_ids") or []}
-            for pid, rid in (t.get("adds") or {}).items():
+            for pid, rid in adds.items():
                 sides.setdefault(str(rid), {"players": [], "picks": []})["players"].append(pid)
             for wb in t.get("waiver_budget") or []:
                 sides.setdefault(str(wb["receiver"]), {"players": [], "picks": []}).setdefault("faab", 0)
@@ -236,9 +247,10 @@ def build_season(league_id, weeks_done_hint=None):
             for pk in t.get("draft_picks") or []:
                 sides.setdefault(str(pk["owner_id"]), {"players": [], "picks": []})["picks"].append(
                     {"season": str(pk["season"]), "round": pk["round"], "orig": pk["roster_id"]})
-            trades.append({"id": t["transaction_id"], "time": t.get("status_updated") or t.get("created"),
+            trades.append({"id": t["transaction_id"], "time": tx_time,
                            "week": t.get("leg") or w, "sides": sides})
     trades.sort(key=lambda t: t["time"] or 0)
+    moves.sort(key=lambda t: (t["time"] or 0, t["pid"]))
 
     return {
         "version": ARCHIVE_VERSION, "season": season, "league_id": league_id, "name": lg.get("name"), "status": status,
@@ -247,7 +259,7 @@ def build_season(league_id, weeks_done_hint=None):
                      "weeks_scored": last},
         "managers": managers, "standings": standings, "games": games,
         "champion": champion, "runner_up": runner_up, "places": {str(k): v for k, v in places.items()},
-        "drafts": drafts, "trades": trades, "started": started,
+        "drafts": drafts, "trades": trades, "moves": moves, "started": started,
     }
 
 
@@ -348,6 +360,100 @@ def main():
         M["team"] = cur["team"] if cur else list(M["seasons"].values())[-1]["team"]
         M.update({"w": 0, "l": 0, "t": 0, "pf": 0.0, "pa": 0.0, "games": 0, "titles": [], "runner_up": [], "playoffs": 0,
                   "finishes": {}, "high": 0.0, "po_w": 0, "po_l": 0})
+
+    # Reconstruct continuous player ownership spells from drafts and every
+    # completed add/drop. This lets the Trade Center distinguish a recent
+    # acquisition from a player a manager drafted and has protected for years.
+    def event_ms(value, season, offset=0):
+        try:
+            value = int(value)
+            return value * 1000 if value < 100_000_000_000 else value
+        except (TypeError, ValueError):
+            return int(dt.datetime(int(season), 1, 1, tzinfo=dt.timezone.utc).timestamp() * 1000) + offset
+
+    ownership_events = defaultdict(list)  # (user, pid) -> acquisition/release events
+    event_offset = 0
+    for s in seasons:
+        for d in s.get("drafts") or []:
+            for p in d.get("picks") or []:
+                u = uid_of.get((s["season"], int(p["rid"]))) if p.get("rid") is not None else None
+                if not u or not p.get("pid"):
+                    continue
+                event_offset += 1
+                ownership_events[(u, str(p["pid"]))].append({
+                    "time": event_ms(p.get("time"), s["season"], event_offset), "action": "acquire",
+                    "source": f"{d['kind']}_draft", "season": s["season"], "round": p.get("r"),
+                })
+        for move in s.get("moves") or []:
+            pid = str(move.get("pid") or "")
+            if not pid:
+                continue
+            when = event_ms(move.get("time"), s["season"])
+            from_u = uid_of.get((s["season"], int(move["from"]))) if move.get("from") is not None else None
+            to_u = uid_of.get((s["season"], int(move["to"]))) if move.get("to") is not None else None
+            if from_u:
+                ownership_events[(from_u, pid)].append({"time": when, "action": "release", "source": move.get("type"), "season": s["season"]})
+            if to_u:
+                ownership_events[(to_u, pid)].append({"time": when, "action": "acquire", "source": move.get("type"), "season": s["season"]})
+    for events in ownership_events.values():
+        events.sort(key=lambda x: (x["time"], 0 if x["action"] == "release" else 1))
+
+    def acquisition_before(user, pid, before=None):
+        """Latest still-active acquisition strictly before a moment, or now."""
+        acquired = None
+        for event in ownership_events.get((user, str(pid)), []):
+            if before is not None and event["time"] >= before:
+                break
+            acquired = event if event["action"] == "acquire" else None
+        return acquired
+
+    now_ms = int(dt.datetime.now(dt.timezone.utc).timestamp() * 1000)
+    first_season = min(int(s["season"]) for s in seasons)
+    player_tenure = {}
+    tenure_by_user = defaultdict(list)
+    for rid, m in current["managers"].items():
+        u = m.get("user") or f"r{rid}"
+        roster = m.get("roster") or {}
+        pids = list(dict.fromkeys((roster.get("players") or []) + (roster.get("taxi") or []) + (roster.get("reserve") or [])))
+        for pid in pids:
+            acquired = acquisition_before(u, pid)
+            if not acquired:
+                # Rare commissioner imports may lack a public transaction. The
+                # earliest continuously observed season is still useful, but is
+                # explicitly marked as an estimate.
+                continuous = []
+                for observed_season in reversed(seasons):
+                    season_rid = (managers[u]["seasons"].get(observed_season["season"]) or {}).get("rid")
+                    snapshot = (observed_season["managers"].get(str(season_rid)) or {}).get("roster") or {}
+                    if pid not in snapshot.get("players", []):
+                        break
+                    continuous.append(observed_season["season"])
+                season = continuous[-1] if continuous else current["season"]
+                acquired = {"time": event_ms(None, season), "source": "observed_roster", "season": season}
+                estimated = True
+            else:
+                estimated = False
+            days = max(0, round((now_ms - acquired["time"]) / 86_400_000))
+            source = acquired.get("source") or "transaction"
+            homegrown = source in ("startup_draft", "rookie_draft")
+            inception = source == "startup_draft" and int(acquired.get("season") or 9999) == first_season
+            if inception:
+                label = "With manager since league inception"
+            elif source == "rookie_draft":
+                label = f"Drafted by manager in {acquired['season']}"
+            elif source == "startup_draft":
+                label = f"Drafted by manager in {acquired['season']}"
+            elif source == "trade":
+                label = f"Acquired by trade in {acquired['season']}"
+            elif source in ("waiver", "free_agent"):
+                label = f"Added in {acquired['season']}"
+            else:
+                label = f"On roster since at least {acquired['season']}"
+            row = {"user": u, "rid": int(rid), "acquired_at": acquired["time"], "season": str(acquired.get("season") or current["season"]),
+                   "source": source, "days": days, "years": round(days / 365.25, 1), "homegrown": homegrown,
+                   "inception": inception, "estimated": estimated, "label": label}
+            player_tenure[str(pid)] = row
+            tenure_by_user[u].append(row)
 
     # Games, records, head-to-head
     all_games = []
@@ -610,6 +716,7 @@ def main():
         "production_sample": 0, "proven_producers": 0,
         "consolidate": 0, "depth": 0, "large": 0, "multi_asset": 0,
         "stars_received": 0, "stars_sent": 0,
+        "sent_tenures": [], "long_held_sent": 0, "homegrown_sent": 0, "quick_flips": 0,
         "offseason": 0, "deadline": 0, "weeks": [], "balanced": 0, "value_edges": [],
         "partners": defaultdict(int),
     })
@@ -646,6 +753,16 @@ def main():
             row["future_sent"] += sum(int(p.get("season") or t["season"]) >= int(t["season"]) + 2 for p in sent_picks)
             received = [x for x in side["items"] if x["kind"] != "faab"]
             sent = [x for x in other["items"] if x["kind"] != "faab"]
+            trade_time = event_ms(t.get("time"), t["season"])
+            for player in (x for x in sent if x["kind"] == "player" and x.get("pid")):
+                acquired = acquisition_before(side["user"], player["pid"], trade_time)
+                if not acquired:
+                    continue
+                held_days = max(0, (trade_time - acquired["time"]) / 86_400_000)
+                row["sent_tenures"].append(held_days)
+                row["long_held_sent"] += held_days >= 365
+                row["quick_flips"] += held_days <= 180
+                row["homegrown_sent"] += acquired.get("source") in ("startup_draft", "rookie_draft")
             row["consolidate"] += len(sent) > len(received)
             row["depth"] += len(received) > len(sent)
             row["multi_asset"] += len(received) >= 2 or len(sent) >= 2
@@ -680,6 +797,8 @@ def main():
     league_position_share = {p: n / max(league_position_total, 1) for p, n in league_positions.items()}
     production_sample = sum(x["production_sample"] for x in tendency_rows.values())
     league_production = sum(x["proven_producers"] for x in tendency_rows.values()) / max(production_sample, 1)
+    tenure_sample = sum(len(x["sent_tenures"]) for x in tendency_rows.values())
+    league_long_send = sum(x["long_held_sent"] for x in tendency_rows.values()) / max(tenure_sample, 1)
     activity_rates = [r["deals"] / max(len(managers[u]["seasons"]), 1) for u, r in tendency_rows.items() if u in managers]
     league_activity = statistics.mean(activity_rates) if activity_rates else 0
     clamp = lambda x: max(-1, min(1, x))  # noqa: E731
@@ -705,12 +824,15 @@ def main():
         preferred_pos = max(position_leans, key=position_leans.get) if row["players"] else None
         producer_rate = row["proven_producers"] / row["production_sample"] if row["production_sample"] else league_production
         production_lean = clamp((producer_rate - league_production) / 0.35) * min(1, row["production_sample"] / 8)
+        long_send_rate = row["long_held_sent"] / len(row["sent_tenures"]) if row["sent_tenures"] else league_long_send
+        loyalty_lean = clamp((league_long_send - long_send_rate) / 0.4) * min(1, len(row["sent_tenures"]) / 6)
         youth_label = "Targets young players" if youth_lean >= 0.2 else "Veteran-friendly" if youth_lean <= -0.2 else "Age-balanced"
         pick_label = "Loose with picks" if pick_send_lean >= 0.2 else "Stingy with picks" if pick_send_lean <= -0.2 else "Average pick activity"
         first_label = "Willing to move 1sts" if first_send_lean >= 0.2 else "Protects 1sts" if first_send_lean <= -0.2 else "Average with 1sts"
         package_label = "Consolidates for stars" if package_lean >= 0.2 else "Prefers depth packages" if package_lean <= -0.2 else "Flexible deal structure"
         position_label = f"Targets {preferred_pos}" if preferred_pos and position_leans[preferred_pos] >= 0.18 else "No strong position bias"
         production_label = "Chases proven production" if production_lean >= 0.2 else "Bets on unproven upside" if production_lean <= -0.2 else "Balances production and upside"
+        loyalty_label = "Protects long-held players" if loyalty_lean >= 0.2 else "Will move established roster pieces" if loyalty_lean <= -0.2 else "Mixed player loyalty"
         activity = row["deals"] / max(len(managers.get(u, {}).get("seasons", {})), 1)
         activity_label = "Very active trader" if activity >= league_activity * 1.3 else "Selective trader" if activity <= league_activity * 0.7 else "Average trade frequency"
         large_label = "Comfortable with blockbusters" if large_lean >= 0.2 else "Prefers smaller deals" if large_lean <= -0.2 else "Mixed deal sizes"
@@ -733,6 +855,10 @@ def main():
                 "position_leans": position_leans, "position_label": position_label, "preferred_position": preferred_pos,
                 "production_sample": row["production_sample"], "proven_producers": row["proven_producers"],
                 "production_chase_lean": round(production_lean, 3), "production_label": production_label,
+                "tenure_sample": len(row["sent_tenures"]),
+                "avg_tenure_sent_years": round(statistics.mean(row["sent_tenures"]) / 365.25, 1) if row["sent_tenures"] else None,
+                "long_held_sent": row["long_held_sent"], "homegrown_sent": row["homegrown_sent"], "quick_flips": row["quick_flips"],
+                "long_held_send_rate": round(long_send_rate, 3), "loyalty_lean": round(loyalty_lean, 3), "loyalty_label": loyalty_label,
                 "consolidations": row["consolidate"], "depth_deals": row["depth"],
                 "package_lean": round(package_lean, 3), "package_label": package_label,
                 "large_deals": row["large"], "large_deal_rate": round(large_rate, 3), "large_deal_lean": round(large_lean, 3),
@@ -782,6 +908,16 @@ def main():
             "steals": row["steals"], "reaches": row["reaches"], "best_pick": row["best"],
         }
 
+    for u, tenures in tenure_by_user.items():
+        if u not in managers or "tendencies" not in managers[u]:
+            continue
+        managers[u]["tendencies"].update({
+            "current_long_held": sum(x["days"] >= 365 for x in tenures),
+            "current_homegrown": sum(x["homegrown"] for x in tenures),
+            "current_inception": sum(x["inception"] for x in tenures),
+            "current_avg_tenure_years": round(statistics.mean(x["days"] for x in tenures) / 365.25, 1) if tenures else None,
+        })
+
     for M in managers.values():
         M["pf"], M["pa"] = round(M["pf"], 2), round(M["pa"], 2)
         M["ppg"] = round(M["pf"] / M["games"], 2) if M["games"] else None
@@ -795,6 +931,7 @@ def main():
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "current_season": current["season"], "seasons": season_rows, "managers": managers,
         "records": records, "h2h": h2h, "drafts": drafts_out, "trades": trades_out,
+        "player_tenure": player_tenure,
         "trade_scoring": "Value now (DynastyProcess 1-QB; picks become the player drafted) plus started points since the trade × 25. A side wins when it's 10%+ ahead.",
     }
     (DATA_DIR / "history.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")

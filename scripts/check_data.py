@@ -144,7 +144,7 @@ def highlights(d):
 
 
 def history(d):
-    keys(d, "generated_at", "seasons", "managers", "records", "trades")
+    keys(d, "generated_at", "seasons", "managers", "records", "trades", "player_tenure")
     fresh(d)
     need(len(d["seasons"]) >= 1 and len(d["managers"]) >= 4, "seasons or managers missing")
     finished = [s for s in d["seasons"] if s.get("complete")]
@@ -154,9 +154,10 @@ def history(d):
     need(any((m.get("tendencies") or {}).get("deals", 0) >= 1 for m in active), "manager trade tendencies missing")
     profiles = [m.get("tendencies") or {} for m in active if (m.get("tendencies") or {}).get("deals", 0)]
     profile_keys = ("production_label", "position_label", "package_label", "activity_label",
-                    "timing_label", "value_label", "draft")
+                    "timing_label", "value_label", "loyalty_label", "draft")
     need(all(all(k in profile for k in profile_keys) for profile in profiles),
          "expanded manager trade tendencies missing")
+    need(any(x.get("inception") for x in d["player_tenure"].values()), "player tenure history missing")
 
 
 def league_ids(d):

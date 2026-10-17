@@ -38,6 +38,22 @@
     return m && m.tendencies && m.tendencies.deals >= 2 ? m.tendencies : null;
   }
 
+  function tenureFor(asset, rid) {
+    if (!historyData || asset.kind !== "player") return null;
+    const pid = String(asset.id).replace(/^p/, "");
+    const tenure = (historyData.player_tenure || {})[pid];
+    return tenure && String(tenure.rid) === String(rid) ? tenure : null;
+  }
+
+  function tenureResistance(asset, rid, tendency) {
+    const tenure = tenureFor(asset, rid);
+    if (!tenure) return { score: 0, tenure: null };
+    let score = tenure.inception ? 2.4 : tenure.homegrown && tenure.years >= 1 ? 1.8 : tenure.years >= 2 ? 1.5 : tenure.years >= 1 ? 0.8 : tenure.years >= 0.5 ? 0.3 : 0;
+    if (tenure.estimated) score *= 0.7;
+    score *= 1 + Math.max(-0.5, Math.min(0.5, (tendency && tendency.loyalty_lean) || 0)) * 0.6;
+    return { score, tenure };
+  }
+
   function tendencyAlignment(rid, receives, sends) {
     const t = tendencyFor(rid);
     if (!t) return { score: 0, tendency: null, notes: [] };
@@ -66,11 +82,15 @@
     const firstCost = sends.some((a) => a.kind === "pick" && a.round === 1) ? (t.first_send_lean || 0) * 1.2 : 0;
     const size = Math.max(value(receives), value(sends));
     const dealSize = size >= 5000 ? (t.large_deal_lean || 0) * 0.8 : 0;
+    const sentPlayers = sends.filter((a) => a.kind === "player");
+    const sentPlayerValue = value(sentPlayers);
+    const loyaltyRows = sentPlayers.map((a) => ({ asset: a, ...tenureResistance(a, rid, t) })).filter((x) => x.score > 0);
+    const loyalty = sentPlayerValue ? -loyaltyRows.reduce((sum, x) => sum + x.score * Math.max(x.asset.value || 0, 1), 0) / sentPlayerValue : 0;
     let timing = 0;
     const week = latest && latest.league ? latest.league.nfl_week : null;
     if (week && week >= 10 && t.timing_label === "Deadline mover") timing = 0.35;
     else if ((!week || latest.league.status !== "in_season") && t.timing_label === "Offseason trader") timing = 0.35;
-    const score = Math.max(-4, Math.min(4, youth + picks + position + production + structure + firstCost + dealSize + timing));
+    const score = Math.max(-4, Math.min(4, youth + picks + position + production + structure + firstCost + dealSize + loyalty + timing));
     const notes = [];
     if (Math.abs(youth) >= 0.45) notes.push(youth > 0 ? "The return matches this manager’s history of targeting youth." : "The player age mix runs against this manager’s past trades.");
     if (pickCost >= 0.2 && Math.abs(t.pick_send_lean) >= 0.2) notes.push(t.pick_send_lean > 0 ? "This manager has been willing to move picks." : "This manager has historically protected their picks.");
@@ -78,6 +98,10 @@
     if (Math.abs(position) >= 0.35 && t.preferred_position) notes.push(position > 0 ? `This return matches a history of targeting ${t.preferred_position}.` : "The positions offered do not match this manager’s usual targets.");
     if (Math.abs(production) >= 0.35) notes.push(production > 0 ? `The return matches this manager’s ${t.production_label.toLowerCase()} history.` : `The return runs against this manager’s ${t.production_label.toLowerCase()} history.`);
     if (Math.abs(structure) >= 0.35) notes.push(structure > 0 ? `The package matches this manager’s ${t.package_label.toLowerCase()} habit.` : `The package shape runs against this manager’s ${t.package_label.toLowerCase()} history.`);
+    if (loyaltyRows.length) {
+      const strongest = loyaltyRows.sort((a, b) => b.score - a.score)[0];
+      notes.push(`${strongest.asset.name}: ${strongest.tenure.label.toLowerCase()}, so the model treats that player as harder to acquire.`);
+    }
     return { score, tendency: t, notes };
   }
 
@@ -188,7 +212,7 @@
   function acceptancePanel(A, B, give, get, ev, imp) {
     const box = el("section", null, "acceptance-box");
     box.appendChild(el("div", "Estimated manager acceptance", "group-title"));
-    box.appendChild(el("p", "Based on fairness, competitive fit, and each manager’s completed-trade tendencies. This is an estimate—not the manager’s actual answer.", "small muted acceptance-note"));
+    box.appendChild(el("p", "Based on fairness, competitive fit, player tenure, and each manager’s completed-trade tendencies. This is an estimate—not the manager’s actual answer.", "small muted acceptance-note"));
     const grid = el("div", null, "acceptance-grid");
     const rows = [
       [A, get, give, ev.dA, ev.dB, imp && imp.a],
@@ -220,7 +244,8 @@
       card.appendChild(factors);
       card.appendChild(el("p", estimate.competition.detail, "owner"));
       const hist = estimate.historyFit.tendency;
-      card.appendChild(el("p", hist ? `Past ${hist.deals} trades: ${hist.youth_label.toLowerCase()} · ${hist.production_label.toLowerCase()} · ${hist.pick_label.toLowerCase()} · ${hist.position_label.toLowerCase()} · ${hist.package_label.toLowerCase()}` : "Not enough completed trades for a tendency score.", "owner"));
+      card.appendChild(el("p", hist ? `Past ${hist.deals} trades: ${hist.youth_label.toLowerCase()} · ${hist.production_label.toLowerCase()} · ${hist.pick_label.toLowerCase()} · ${hist.position_label.toLowerCase()} · ${hist.package_label.toLowerCase()} · ${(hist.loyalty_label || "Mixed player loyalty").toLowerCase()}` : "Not enough completed trades for a tendency score.", "owner"));
+      if (estimate.historyFit.notes.length) card.appendChild(notesList(estimate.historyFit.notes.slice(-2)));
       grid.appendChild(card);
     }
     box.appendChild(grid);
@@ -574,7 +599,8 @@
         const name = assetNameNode(a);
         info.appendChild(name);
         if (starters.has(a.id)) info.appendChild(el("span", "S", "starter-tag"));
-        info.appendChild(el("span", a.kind === "pick" ? assetMeta(a) : [a.age ? `${a.age} yrs` : null, a.nfl].filter(Boolean).join(" · "), "owner"));
+        const tenure = tenureFor(a, build[key]);
+        info.appendChild(el("span", a.kind === "pick" ? assetMeta(a) : [a.age ? `${a.age} yrs` : null, a.nfl, tenure && tenure.label].filter(Boolean).join(" · "), "owner"));
         row.appendChild(info);
         row.appendChild(el("span", fmtNum(a.value), "num"));
         host.appendChild(row);
@@ -713,7 +739,7 @@
         card.appendChild(head);
         if (r.fit.tendency) {
           const t = r.fit.tendency;
-          card.appendChild(el("div", `Past ${t.deals} trades · ${t.youth_label} · ${t.production_label} · ${t.pick_label} · ${t.position_label} · ${t.package_label}`, "idea-tendency"));
+          card.appendChild(el("div", `Past ${t.deals} trades · ${t.youth_label} · ${t.production_label} · ${t.pick_label} · ${t.position_label} · ${t.package_label} · ${t.loyalty_label}`, "idea-tendency"));
         }
         const swap = el("div", null, "swap");
         const col = (title, list) => {
@@ -855,6 +881,11 @@
         if (asset.age && t && t.youth_lean < -0.2 && asset.age <= 24) { score += 0.5; reasons.push("may be movable for win-now help"); }
         const productiveCut = { QB: 18, RB: 12, WR: 12, TE: 9 };
         if (t && t.production_chase_lean > 0.2 && productiveCut[asset.pos] && (asset.ppg || 0) >= productiveCut[asset.pos]) score -= 0.6 * t.production_chase_lean;
+        const loyalty = tenureResistance(asset, targetRid, t);
+        if (loyalty.score > 0) {
+          score -= loyalty.score * 2;
+          reasons.unshift(loyalty.tenure.inception ? "with manager since league inception—unlikely to move" : `${loyalty.tenure.label.toLowerCase()}—likely costs a premium`);
+        }
       }
       return { asset, score, reason: reasons.slice(0, 2).join(" · ") || "strong value fit" };
     }).sort((a, b) => b.score - a.score).slice(0, 4);
@@ -903,7 +934,7 @@
     title.appendChild(el("p", `${manager.name} · ${profile.mode} · ${t.deals} completed trades analyzed`, "owner"));
     hero.appendChild(title);
     const badges = el("div", null, "guide-badges");
-    [t.youth_label, t.production_label, t.pick_label, t.position_label, t.package_label, t.activity_label].forEach((x) => badges.appendChild(el("span", x)));
+    [t.youth_label, t.production_label, t.pick_label, t.position_label, t.package_label, t.loyalty_label, t.activity_label].forEach((x) => badges.appendChild(el("span", x)));
     hero.appendChild(badges);
     wrap.appendChild(hero);
 
@@ -925,6 +956,7 @@
     const modeLead = profile.mode === "contender" ? "Lead with a player who improves the starting lineup now" : profile.mode === "rebuilder" ? "Lead with young value or draft capital" : "Lead with a balanced present-and-future return";
     lines.push(`${modeLead}; ${weakest[0]} (ranked #${ranks[weakest[0]].rank}) and ${weakest[1]} (#${ranks[weakest[1]].rank}) are the clearest current roster needs.`);
     lines.push(t.package_lean >= 0.2 ? "Use one premium centerpiece and ask for multiple pieces back; this manager has consolidated in past deals." : t.package_lean <= -0.2 ? "Use a multi-asset package; this manager has historically preferred receiving depth." : "Either a one-for-one or a small package can work; this manager has shown no rigid deal-shape preference.");
+    lines.push(t.loyalty_lean >= 0.2 ? "Avoid building the offer around a long-held or homegrown player; this manager has rarely moved established roster pieces." : t.loyalty_lean <= -0.2 ? "Long tenure is less of a barrier here than it is for most managers, although inception players still carry an attachment penalty." : "Player tenure matters on an asset-by-asset basis; homegrown and inception players will cost more.");
     lines.push(`${t.value_label}. ${t.timing_label}; ${t.trades_per_season.toFixed(1)} completed trades per active season.`);
     const ul = el("ul", null, "notes");
     lines.forEach((x) => ul.appendChild(el("li", x)));
@@ -946,6 +978,7 @@
     const traits = el("div", null, "guide-traits");
     traits.append(
       guideTrait("Player profile", `${t.youth_label} · ${t.production_label} · ${t.position_label}`, `${t.players_acquired} players acquired · ${t.avg_acquired_age ?? "—"} average age at trade · ${t.proven_producers}/${t.production_sample} established recent producers · QB ${t.position_counts.QB || 0}, RB ${t.position_counts.RB || 0}, WR ${t.position_counts.WR || 0}, TE ${t.position_counts.TE || 0}`),
+      guideTrait("Player loyalty", t.loyalty_label, `${t.current_inception} current players held since league inception · ${t.current_homegrown} current homegrown players · ${t.long_held_sent}/${t.tenure_sample} historically traded players had been held at least one year${t.avg_tenure_sent_years !== null ? ` · ${t.avg_tenure_sent_years} average years held before trading` : ""}`),
       guideTrait("Pick behavior", `${t.pick_label} · ${t.first_label}`, `${t.picks_sent} picks sent / ${t.picks_received} acquired · ${t.firsts_sent} firsts sent / ${t.firsts_received} acquired · ${t.future_picks_sent} future picks sent`),
       guideTrait("Deal structure", `${t.package_label} · ${t.large_label}`, `${t.consolidations} consolidation deals · ${t.depth_deals} depth deals · ${t.large_deals} blockbusters · ${t.multi_asset_deals} multi-asset deals`),
       guideTrait("Activity and timing", `${t.activity_label} · ${t.timing_label}`, `${t.trades_per_season.toFixed(1)} trades/season · ${Math.round(t.offseason_rate * 100)}% offseason · ${Math.round(t.deadline_rate * 100)}% week 10 or later`),
