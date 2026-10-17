@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-16T09:02:11+00:00",
+ "generated_at": "2026-10-17T09:02:33+00:00",
  "draft_year": 2027,
  "college_season": 2026,
  "rounds": 3,
@@ -22,7 +22,7 @@
  "sources": {
   "consensus_board": 100,
   "espn_board": 50,
-  "college_players": 715
+  "college_players": 714
  },
  "picks": [
   {
@@ -921,7 +921,7 @@
    "original": 1,
    "original_team": "‘89 Earthquake",
    "traded": false,
-   "prospect": "cam cook",
+   "prospect": "torrance burgess",
    "reason": "Adds RB depth",
    "context": {
     "needs": [
@@ -954,8 +954,8 @@
    "original": 2,
    "original_team": "DOLLA BILLZ",
    "traded": true,
-   "prospect": "cj carr",
-   "reason": "Best available",
+   "prospect": "cam cook",
+   "reason": "Manager leans RB",
    "context": {
     "needs": [],
     "set": [],
@@ -1053,7 +1053,7 @@
    "original": 8,
    "original_team": "MIP",
    "traded": false,
-   "prospect": "arch manning",
+   "prospect": "cj carr",
    "reason": "Fills a QB need (9th at QB)",
    "context": {
     "needs": [
@@ -1088,7 +1088,7 @@
    "original": 3,
    "original_team": "K-9’s Unit",
    "traded": false,
-   "prospect": "dante moore",
+   "prospect": "arch manning",
    "reason": "Best available",
    "context": {
     "needs": [
@@ -1188,7 +1188,7 @@
    "original": 6,
    "original_team": "Vanilla Diamonds",
    "traded": false,
-   "prospect": "austin simmons",
+   "prospect": "dante moore",
    "reason": "Best available",
    "context": {
     "needs": [],
@@ -1480,11 +1480,11 @@
    "espn_id": "5219834",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5219834.png",
    "rank": 5,
-   "value": 60.71,
+   "value": 60.45,
    "cons_rank": 8.0,
    "mddb_rank": 5,
    "espn_rank": 11,
-   "prod_pct": 93.2,
+   "prod_pct": 92.0,
    "ppg": 26.6,
    "last3": 28.5,
    "games": 5,
@@ -1540,11 +1540,11 @@
    "espn_id": "5079420",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079420.png",
    "rank": 6,
-   "value": 59.24,
+   "value": 59.16,
    "cons_rank": 24.0,
    "mddb_rank": 25,
    "espn_rank": 23,
-   "prod_pct": 88.1,
+   "prod_pct": 87.8,
    "ppg": 14.3,
    "last3": 14.3,
    "games": 3,
@@ -1654,11 +1654,11 @@
    "espn_id": "4922988",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4922988.png",
    "rank": 8,
-   "value": 58.95,
+   "value": 58.81,
    "cons_rank": 21.5,
    "mddb_rank": 22,
    "espn_rank": 21,
-   "prod_pct": 78.6,
+   "prod_pct": 78.0,
    "ppg": 12.3,
    "last3": 12.3,
    "games": 3,
@@ -1702,11 +1702,11 @@
    "espn_id": "5121169",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5121169.png",
    "rank": 9,
-   "value": 58.45,
+   "value": 58.18,
    "cons_rank": 10.5,
    "mddb_rank": 7,
    "espn_rank": 14,
-   "prod_pct": 94.3,
+   "prod_pct": 93.1,
    "ppg": 27.5,
    "last3": 25.6,
    "games": 5,
@@ -1762,9 +1762,9 @@
    "espn_id": "5084771",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5084771.png",
    "rank": 10,
-   "value": 56.8,
-   "cons_rank": 37.0,
-   "mddb_rank": 36,
+   "value": 56.44,
+   "cons_rank": 37.5,
+   "mddb_rank": 37,
    "espn_rank": 38,
    "prod_pct": 94.5,
    "ppg": 27.6,
@@ -1822,11 +1822,11 @@
    "espn_id": "4911529",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4911529.png",
    "rank": 11,
-   "value": 54.96,
+   "value": 54.7,
    "cons_rank": 14.5,
    "mddb_rank": 13,
    "espn_rank": 16,
-   "prod_pct": 95.2,
+   "prod_pct": 94.0,
    "ppg": 27.7,
    "last3": 28.3,
    "games": 5,
@@ -1882,9 +1882,9 @@
    "espn_id": "5152158",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5152158.png",
    "rank": 12,
-   "value": 50.92,
-   "cons_rank": 42.5,
-   "mddb_rank": 56,
+   "value": 51.23,
+   "cons_rank": 42.0,
+   "mddb_rank": 55,
    "espn_rank": 29,
    "prod_pct": 87.1,
    "ppg": 22.9,
@@ -1942,11 +1942,11 @@
    "espn_id": "5086388",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5086388.png",
    "rank": 13,
-   "value": 50.56,
+   "value": 50.19,
    "cons_rank": 39.5,
    "mddb_rank": 51,
    "espn_rank": 28,
-   "prod_pct": 79.4,
+   "prod_pct": 78.2,
    "ppg": 15.4,
    "last3": 14.5,
    "games": 4,
@@ -2056,11 +2056,11 @@
    "espn_id": "5079369",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079369.png",
    "rank": 15,
-   "value": 48.27,
+   "value": 48.01,
    "cons_rank": 18.5,
    "mddb_rank": 15,
    "espn_rank": 22,
-   "prod_pct": 79.2,
+   "prod_pct": 78.0,
    "ppg": 23.8,
    "last3": 27.9,
    "games": 6,
@@ -2236,11 +2236,11 @@
    "espn_id": "5141711",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5141711.png",
    "rank": 18,
-   "value": 40.99,
-   "cons_rank": 33.0,
-   "mddb_rank": 32,
+   "value": 40.97,
+   "cons_rank": 33.5,
+   "mddb_rank": 33,
    "espn_rank": 34,
-   "prod_pct": 31.8,
+   "prod_pct": 33.0,
    "ppg": 15.0,
    "last3": 15.8,
    "games": 6,
@@ -2302,11 +2302,11 @@
    "espn_id": "5138451",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5138451.png",
    "rank": 19,
-   "value": 37.07,
-   "cons_rank": 66.0,
-   "mddb_rank": 66,
+   "value": 37.35,
+   "cons_rank": 65.0,
+   "mddb_rank": 65,
    "espn_rank": null,
-   "prod_pct": 91.3,
+   "prod_pct": 91.2,
    "ppg": 18.0,
    "last3": 11.0,
    "games": 6,
@@ -2426,72 +2426,6 @@
    "consensus": true
   },
   {
-   "key": "julian sayin",
-   "name": "Julian Sayin",
-   "pos": "QB",
-   "school": "Ohio State",
-   "cls": null,
-   "espn_id": "5079712",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079712.png",
-   "rank": 21,
-   "value": 32.4,
-   "cons_rank": 50.0,
-   "mddb_rank": 50,
-   "espn_rank": null,
-   "prod_pct": 85.7,
-   "ppg": 25.1,
-   "last3": 30.1,
-   "games": 6,
-   "last": {
-    "week": 6,
-    "opp": "MD",
-    "at": "vs",
-    "result": "W",
-    "pts": 25.8,
-    "line": "13/21, 242 yds, 4 TD, 1 INT; 11 rush yds"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 29.9,
-     "opp": "BALL",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 13.4,
-     "opp": "TEX",
-     "at": "@"
-    },
-    {
-     "week": 3,
-     "pts": 17.0,
-     "opp": "KENT",
-     "at": "vs"
-    },
-    {
-     "week": 4,
-     "pts": 39.6,
-     "opp": "ILL",
-     "at": "vs"
-    },
-    {
-     "week": 5,
-     "pts": 24.9,
-     "opp": "IOWA",
-     "at": "@"
-    },
-    {
-     "week": 6,
-     "pts": 25.8,
-     "opp": "MD",
-     "at": "vs"
-    }
-   ],
-   "move7": 3,
-   "consensus": true
-  },
-  {
    "key": "jamal roberts",
    "name": "Jamal Roberts",
    "pos": "RB",
@@ -2499,7 +2433,7 @@
    "cls": "Senior",
    "espn_id": "4921116",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4921116.png",
-   "rank": 22,
+   "rank": 21,
    "value": 32.17,
    "cons_rank": null,
    "mddb_rank": null,
@@ -2554,8 +2488,74 @@
      "at": "vs"
     }
    ],
-   "move7": -2,
+   "move7": -1,
    "consensus": false
+  },
+  {
+   "key": "julian sayin",
+   "name": "Julian Sayin",
+   "pos": "QB",
+   "school": "Ohio State",
+   "cls": null,
+   "espn_id": "5079712",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079712.png",
+   "rank": 22,
+   "value": 32.14,
+   "cons_rank": 50.0,
+   "mddb_rank": 50,
+   "espn_rank": null,
+   "prod_pct": 84.5,
+   "ppg": 25.1,
+   "last3": 30.1,
+   "games": 6,
+   "last": {
+    "week": 6,
+    "opp": "MD",
+    "at": "vs",
+    "result": "W",
+    "pts": 25.8,
+    "line": "13/21, 242 yds, 4 TD, 1 INT; 11 rush yds"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 29.9,
+     "opp": "BALL",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 13.4,
+     "opp": "TEX",
+     "at": "@"
+    },
+    {
+     "week": 3,
+     "pts": 17.0,
+     "opp": "KENT",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 39.6,
+     "opp": "ILL",
+     "at": "vs"
+    },
+    {
+     "week": 5,
+     "pts": 24.9,
+     "opp": "IOWA",
+     "at": "@"
+    },
+    {
+     "week": 6,
+     "pts": 25.8,
+     "opp": "MD",
+     "at": "vs"
+    }
+   ],
+   "move7": 2,
+   "consensus": true
   },
   {
    "key": "jahiem white",
@@ -2810,6 +2810,72 @@
    "consensus": false
   },
   {
+   "key": "torrance burgess",
+   "name": "Torrance Burgess Jr.",
+   "pos": "RB",
+   "school": "Texas State Bobcats",
+   "cls": "Senior",
+   "espn_id": "5088888",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5088888.png",
+   "rank": 27,
+   "value": 31.08,
+   "cons_rank": null,
+   "mddb_rank": null,
+   "espn_rank": null,
+   "prod_pct": 96.4,
+   "ppg": 21.8,
+   "last3": 28.9,
+   "games": 6,
+   "last": {
+    "week": 7,
+    "opp": "CSU",
+    "at": "vs",
+    "result": "W",
+    "pts": 54.6,
+    "line": "24-224-4 rushing; 3-52-0 receiving"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 3.4,
+     "opp": "TEX",
+     "at": "@"
+    },
+    {
+     "week": 2,
+     "pts": 16.5,
+     "opp": "UTSA",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 24.0,
+     "opp": "UNT",
+     "at": "vs"
+    },
+    {
+     "week": 4,
+     "pts": 21.0,
+     "opp": "UIW",
+     "at": "vs"
+    },
+    {
+     "week": 5,
+     "pts": 11.0,
+     "opp": "SDSU",
+     "at": "@"
+    },
+    {
+     "week": 7,
+     "pts": 54.6,
+     "opp": "CSU",
+     "at": "vs"
+    }
+   ],
+   "move7": null,
+   "consensus": false
+  },
+  {
    "key": "cam cook",
    "name": "Cam Cook",
    "pos": "RB",
@@ -2817,7 +2883,7 @@
    "cls": "Senior",
    "espn_id": "4918103",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4918103.png",
-   "rank": 27,
+   "rank": 28,
    "value": 30.84,
    "cons_rank": null,
    "mddb_rank": null,
@@ -2872,7 +2938,7 @@
      "at": "vs"
     }
    ],
-   "move7": 1,
+   "move7": 0,
    "consensus": false
   },
   {
@@ -2883,7 +2949,7 @@
    "cls": "Senior",
    "espn_id": "4923226",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4923226.png",
-   "rank": 28,
+   "rank": 29,
    "value": 30.24,
    "cons_rank": null,
    "mddb_rank": null,
@@ -2938,7 +3004,7 @@
      "at": "@"
     }
    ],
-   "move7": 2,
+   "move7": 1,
    "consensus": false
   },
   {
@@ -2949,7 +3015,7 @@
    "cls": "Junior",
    "espn_id": "4921108",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4921108.png",
-   "rank": 29,
+   "rank": 30,
    "value": 30.13,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3004,7 +3070,7 @@
      "at": "@"
     }
    ],
-   "move7": 0,
+   "move7": -1,
    "consensus": false
   },
   {
@@ -3015,7 +3081,7 @@
    "cls": "Senior",
    "espn_id": "4691315",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4691315.png",
-   "rank": 30,
+   "rank": 31,
    "value": 30.05,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3064,7 +3130,7 @@
      "at": "@"
     }
    ],
-   "move7": 1,
+   "move7": 0,
    "consensus": false
   },
   {
@@ -3075,7 +3141,7 @@
    "cls": null,
    "espn_id": "5148787",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5148787.png",
-   "rank": 31,
+   "rank": 32,
    "value": 29.96,
    "cons_rank": 97.0,
    "mddb_rank": 97,
@@ -3124,7 +3190,7 @@
      "at": "vs"
     }
    ],
-   "move7": 12,
+   "move7": 11,
    "consensus": true
   },
   {
@@ -3135,7 +3201,7 @@
    "cls": "Senior",
    "espn_id": "4907671",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4907671.png",
-   "rank": 32,
+   "rank": 33,
    "value": 29.57,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3184,7 +3250,7 @@
      "at": "vs"
     }
    ],
-   "move7": 1,
+   "move7": 0,
    "consensus": false
   },
   {
@@ -3195,7 +3261,7 @@
    "cls": "Senior",
    "espn_id": "5153074",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5153074.png",
-   "rank": 33,
+   "rank": 34,
    "value": 29.09,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3250,7 +3316,7 @@
      "at": "@"
     }
    ],
-   "move7": 1,
+   "move7": 0,
    "consensus": false
   },
   {
@@ -3261,7 +3327,7 @@
    "cls": "Senior",
    "espn_id": "5219476",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5219476.png",
-   "rank": 34,
+   "rank": 35,
    "value": 28.83,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3321,7 +3387,7 @@
    "cls": "Senior",
    "espn_id": "4920163",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4920163.png",
-   "rank": 35,
+   "rank": 36,
    "value": 28.71,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3370,7 +3436,7 @@
      "at": "vs"
     }
    ],
-   "move7": 0,
+   "move7": -1,
    "consensus": false
   },
   {
@@ -3381,7 +3447,7 @@
    "cls": "Senior",
    "espn_id": "4870858",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870858.png",
-   "rank": 36,
+   "rank": 37,
    "value": 28.63,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3436,80 +3502,8 @@
      "at": "vs"
     }
    ],
-   "move7": 0,
+   "move7": -1,
    "consensus": false
-  },
-  {
-   "key": "jayden maiava",
-   "name": "Jayden Maiava",
-   "pos": "QB",
-   "school": "USC",
-   "cls": null,
-   "espn_id": "4685454",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4685454.png",
-   "rank": 37,
-   "value": 27.62,
-   "cons_rank": 57.0,
-   "mddb_rank": 57,
-   "espn_rank": null,
-   "prod_pct": 74.0,
-   "ppg": 23.2,
-   "last3": 20.8,
-   "games": 7,
-   "last": {
-    "week": 6,
-    "opp": "PSU",
-    "at": "@",
-    "result": "W",
-    "pts": 23.9,
-    "line": "21/33, 301 yds, 3 TD, 0 INT; -1 rush yds"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 24.5,
-     "opp": "SJSU",
-     "at": "vs"
-    },
-    {
-     "week": 1,
-     "pts": 25.8,
-     "opp": "FRES",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 29.4,
-     "opp": "UL",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 20.0,
-     "opp": "RUTG",
-     "at": "@"
-    },
-    {
-     "week": 4,
-     "pts": 26.1,
-     "opp": "ORE",
-     "at": "vs"
-    },
-    {
-     "week": 5,
-     "pts": 12.5,
-     "opp": "WASH",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 23.9,
-     "opp": "PSU",
-     "at": "@"
-    }
-   ],
-   "move7": 0,
-   "consensus": true
   },
   {
    "key": "joseph williams",
@@ -3640,11 +3634,11 @@
    "espn_id": "4875127",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4875127.png",
    "rank": 40,
-   "value": 26.36,
-   "cons_rank": 71.0,
-   "mddb_rank": 71,
+   "value": 26.31,
+   "cons_rank": 70.0,
+   "mddb_rank": 70,
    "espn_rank": null,
-   "prod_pct": 85.0,
+   "prod_pct": 83.7,
    "ppg": 25.1,
    "last3": 28.2,
    "games": 6,
@@ -3758,6 +3752,138 @@
    "consensus": false
   },
   {
+   "key": "omarion miller",
+   "name": "Omarion Miller",
+   "pos": "WR",
+   "school": "Arizona State",
+   "cls": null,
+   "espn_id": "4870850",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870850.png",
+   "rank": 42,
+   "value": 26.23,
+   "cons_rank": 57.0,
+   "mddb_rank": 57,
+   "espn_rank": null,
+   "prod_pct": 29.9,
+   "ppg": 14.9,
+   "last3": 12.9,
+   "games": 5,
+   "last": {
+    "week": 6,
+    "opp": "HAW",
+    "at": "vs",
+    "result": "W",
+    "pts": 13.8,
+    "line": "6 rec, 78 yds, 0 TD"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 24.2,
+     "opp": "MORG",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 11.9,
+     "opp": "TA&M",
+     "at": "@"
+    },
+    {
+     "week": 3,
+     "pts": 4.8,
+     "opp": "KU",
+     "at": "vs"
+    },
+    {
+     "week": 5,
+     "pts": 20.0,
+     "opp": "BAY",
+     "at": "vs"
+    },
+    {
+     "week": 6,
+     "pts": 13.8,
+     "opp": "HAW",
+     "at": "vs"
+    }
+   ],
+   "move7": 4,
+   "consensus": true
+  },
+  {
+   "key": "jayden maiava",
+   "name": "Jayden Maiava",
+   "pos": "QB",
+   "school": "USC",
+   "cls": null,
+   "espn_id": "4685454",
+   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4685454.png",
+   "rank": 43,
+   "value": 26.2,
+   "cons_rank": 61.0,
+   "mddb_rank": 61,
+   "espn_rank": null,
+   "prod_pct": 72.7,
+   "ppg": 23.2,
+   "last3": 20.8,
+   "games": 7,
+   "last": {
+    "week": 6,
+    "opp": "PSU",
+    "at": "@",
+    "result": "W",
+    "pts": 23.9,
+    "line": "21/33, 301 yds, 3 TD, 0 INT; -1 rush yds"
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "pts": 24.5,
+     "opp": "SJSU",
+     "at": "vs"
+    },
+    {
+     "week": 1,
+     "pts": 25.8,
+     "opp": "FRES",
+     "at": "vs"
+    },
+    {
+     "week": 2,
+     "pts": 29.4,
+     "opp": "UL",
+     "at": "vs"
+    },
+    {
+     "week": 3,
+     "pts": 20.0,
+     "opp": "RUTG",
+     "at": "@"
+    },
+    {
+     "week": 4,
+     "pts": 26.1,
+     "opp": "ORE",
+     "at": "vs"
+    },
+    {
+     "week": 5,
+     "pts": 12.5,
+     "opp": "WASH",
+     "at": "vs"
+    },
+    {
+     "week": 6,
+     "pts": 23.9,
+     "opp": "PSU",
+     "at": "@"
+    }
+   ],
+   "move7": -6,
+   "consensus": true
+  },
+  {
    "key": "gavin freeman",
    "name": "Gavin Freeman",
    "pos": "WR",
@@ -3765,7 +3891,7 @@
    "cls": "Senior",
    "espn_id": "4896289",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4896289.png",
-   "rank": 42,
+   "rank": 44,
    "value": 25.9,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3814,7 +3940,7 @@
      "at": "@"
     }
    ],
-   "move7": 0,
+   "move7": -2,
    "consensus": false
   },
   {
@@ -3825,7 +3951,7 @@
    "cls": "Junior",
    "espn_id": "5193298",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5193298.png",
-   "rank": 43,
+   "rank": 45,
    "value": 25.45,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3880,7 +4006,7 @@
      "at": "@"
     }
    ],
-   "move7": 1,
+   "move7": -1,
    "consensus": false
   },
   {
@@ -3891,7 +4017,7 @@
    "cls": "Junior",
    "espn_id": "4879999",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4879999.png",
-   "rank": 44,
+   "rank": 46,
    "value": 24.67,
    "cons_rank": null,
    "mddb_rank": null,
@@ -3950,66 +4076,6 @@
    "consensus": false
   },
   {
-   "key": "omarion miller",
-   "name": "Omarion Miller",
-   "pos": "WR",
-   "school": "Arizona State",
-   "cls": null,
-   "espn_id": "4870850",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870850.png",
-   "rank": 45,
-   "value": 24.61,
-   "cons_rank": 60.0,
-   "mddb_rank": 60,
-   "espn_rank": null,
-   "prod_pct": 28.7,
-   "ppg": 14.9,
-   "last3": 12.9,
-   "games": 5,
-   "last": {
-    "week": 6,
-    "opp": "HAW",
-    "at": "vs",
-    "result": "W",
-    "pts": 13.8,
-    "line": "6 rec, 78 yds, 0 TD"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 24.2,
-     "opp": "MORG",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 11.9,
-     "opp": "TA&M",
-     "at": "@"
-    },
-    {
-     "week": 3,
-     "pts": 4.8,
-     "opp": "KU",
-     "at": "vs"
-    },
-    {
-     "week": 5,
-     "pts": 20.0,
-     "opp": "BAY",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 13.8,
-     "opp": "HAW",
-     "at": "vs"
-    }
-   ],
-   "move7": 1,
-   "consensus": true
-  },
-  {
    "key": "chris marshall",
    "name": "Chris Marshall",
    "pos": "WR",
@@ -4017,7 +4083,7 @@
    "cls": "Senior",
    "espn_id": "4717430",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4717430.png",
-   "rank": 46,
+   "rank": 47,
    "value": 24.47,
    "cons_rank": null,
    "mddb_rank": null,
@@ -4072,7 +4138,7 @@
      "at": "vs"
     }
    ],
-   "move7": 1,
+   "move7": 0,
    "consensus": false
   },
   {
@@ -4083,7 +4149,7 @@
    "cls": "Senior",
    "espn_id": "5081209",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5081209.png",
-   "rank": 47,
+   "rank": 48,
    "value": 23.86,
    "cons_rank": null,
    "mddb_rank": null,
@@ -4138,8 +4204,30 @@
      "at": "vs"
     }
    ],
-   "move7": 1,
+   "move7": 0,
    "consensus": false
+  },
+  {
+   "key": "ahmad hardy",
+   "name": "Ahmad Hardy",
+   "pos": "RB",
+   "school": "Missouri",
+   "cls": null,
+   "espn_id": null,
+   "headshot": null,
+   "rank": 49,
+   "value": 22.66,
+   "cons_rank": 71.0,
+   "mddb_rank": 71,
+   "espn_rank": null,
+   "prod_pct": null,
+   "ppg": null,
+   "last3": null,
+   "games": 0,
+   "last": null,
+   "weekly": [],
+   "move7": -4,
+   "consensus": true
   },
   {
    "key": "easton messer",
@@ -4149,7 +4237,7 @@
    "cls": "Senior",
    "espn_id": "4914830",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4914830.png",
-   "rank": 48,
+   "rank": 50,
    "value": 22.59,
    "cons_rank": null,
    "mddb_rank": null,
@@ -4198,30 +4286,8 @@
      "at": "vs"
     }
    ],
-   "move7": 2,
+   "move7": 0,
    "consensus": false
-  },
-  {
-   "key": "ahmad hardy",
-   "name": "Ahmad Hardy",
-   "pos": "RB",
-   "school": "Missouri",
-   "cls": null,
-   "espn_id": null,
-   "headshot": null,
-   "rank": 49,
-   "value": 22.36,
-   "cons_rank": 72.0,
-   "mddb_rank": 72,
-   "espn_rank": null,
-   "prod_pct": null,
-   "ppg": null,
-   "last3": null,
-   "games": 0,
-   "last": null,
-   "weekly": [],
-   "move7": -4,
-   "consensus": true
   },
   {
    "key": "gio lopez",
@@ -4231,7 +4297,7 @@
    "cls": "Junior",
    "espn_id": "4920227",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4920227.png",
-   "rank": 50,
+   "rank": 51,
    "value": 22.34,
    "cons_rank": null,
    "mddb_rank": null,
@@ -4286,7 +4352,7 @@
      "at": "@"
     }
    ],
-   "move7": 2,
+   "move7": 1,
    "consensus": false
   },
   {
@@ -4297,7 +4363,7 @@
    "cls": null,
    "espn_id": "5084047",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5084047.png",
-   "rank": 51,
+   "rank": 52,
    "value": 22.08,
    "cons_rank": 96.0,
    "mddb_rank": 96,
@@ -4340,7 +4406,7 @@
      "at": "vs"
     }
    ],
-   "move7": -10,
+   "move7": -11,
    "consensus": true
   },
   {
@@ -4351,7 +4417,7 @@
    "cls": "Senior",
    "espn_id": "4838679",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4838679.png",
-   "rank": 52,
+   "rank": 53,
    "value": 21.97,
    "cons_rank": null,
    "mddb_rank": null,
@@ -4406,73 +4472,7 @@
      "at": "@"
     }
    ],
-   "move7": 2,
-   "consensus": false
-  },
-  {
-   "key": "kwazi gilmer",
-   "name": "Kwazi Gilmer",
-   "pos": "WR",
-   "school": "Nebraska Cornhuskers",
-   "cls": "Junior",
-   "espn_id": "5127885",
-   "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5127885.png",
-   "rank": 53,
-   "value": 21.6,
-   "cons_rank": null,
-   "mddb_rank": null,
-   "espn_rank": null,
-   "prod_pct": 64.8,
-   "ppg": 18.3,
-   "last3": 21.3,
-   "games": 6,
-   "last": {
-    "week": 6,
-    "opp": "IU",
-    "at": "vs",
-    "result": "L",
-    "pts": 6.1,
-    "line": "3 rec, 31 yds, 0 TD"
-   },
-   "weekly": [
-    {
-     "week": 1,
-     "pts": 16.8,
-     "opp": "OHIO",
-     "at": "vs"
-    },
-    {
-     "week": 2,
-     "pts": 21.9,
-     "opp": "BGSU",
-     "at": "vs"
-    },
-    {
-     "week": 3,
-     "pts": 7.2,
-     "opp": "UND",
-     "at": "vs"
-    },
-    {
-     "week": 4,
-     "pts": 20.1,
-     "opp": "MSU",
-     "at": "@"
-    },
-    {
-     "week": 5,
-     "pts": 37.7,
-     "opp": "MD",
-     "at": "vs"
-    },
-    {
-     "week": 6,
-     "pts": 6.1,
-     "opp": "IU",
-     "at": "vs"
-    }
-   ],
-   "move7": -2,
+   "move7": 1,
    "consensus": false
   },
   {
@@ -4550,11 +4550,11 @@
    "espn_id": "5078278",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5078278.png",
    "rank": 55,
-   "value": 21.11,
+   "value": 20.85,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
-   "prod_pct": 93.3,
+   "prod_pct": 92.1,
    "ppg": 27.4,
    "last3": 22.8,
    "games": 6,
@@ -4616,11 +4616,11 @@
    "espn_id": "5078810",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5078810.png",
    "rank": 56,
-   "value": 20.63,
+   "value": 20.36,
    "cons_rank": null,
    "mddb_rank": null,
    "espn_rank": null,
-   "prod_pct": 91.0,
+   "prod_pct": 89.7,
    "ppg": 26.6,
    "last3": 22.6,
    "games": 6,
@@ -4682,9 +4682,9 @@
    "espn_id": "5079345",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5079345.png",
    "rank": 57,
-   "value": 14.13,
-   "cons_rank": 65.0,
-   "mddb_rank": 65,
+   "value": 14.49,
+   "cons_rank": 64.0,
+   "mddb_rank": 64,
    "espn_rank": null,
    "prod_pct": 0.0,
    "ppg": 10.1,
@@ -4808,9 +4808,9 @@
    "espn_id": "4870922",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/4870922.png",
    "rank": 59,
-   "value": 12.47,
-   "cons_rank": 70.0,
-   "mddb_rank": 70,
+   "value": 11.86,
+   "cons_rank": 72.0,
+   "mddb_rank": 72,
    "espn_rank": null,
    "prod_pct": 0.0,
    "ppg": 9.5,
@@ -4874,9 +4874,9 @@
    "espn_id": "5112674",
    "headshot": "https://a.espncdn.com/i/headshots/college-football/players/full/5112674.png",
    "rank": 60,
-   "value": 9.76,
-   "cons_rank": 83.0,
-   "mddb_rank": 83,
+   "value": 9.99,
+   "cons_rank": 82.0,
+   "mddb_rank": 82,
    "espn_rank": null,
    "prod_pct": 2.5,
    "ppg": 11.2,
@@ -6038,7 +6038,7 @@
       "name": "Kaelon Black",
       "pos": "RB",
       "nfl": "SF",
-      "age": 24,
+      "age": 25,
       "exp": 0,
       "ppg": 3.02,
       "value": 171,
@@ -6116,8 +6116,8 @@
      },
      {
       "label": "3.04",
-      "key": "cam cook",
-      "name": "Cam Cook",
+      "key": "torrance burgess",
+      "name": "Torrance Burgess Jr.",
       "pos": "RB"
      }
     ],
@@ -6621,8 +6621,8 @@
      },
      {
       "label": "3.09",
-      "key": "dante moore",
-      "name": "Dante Moore",
+      "key": "arch manning",
+      "name": "Arch Manning",
       "pos": "QB"
      }
     ],
@@ -6901,9 +6901,9 @@
      },
      {
       "label": "3.05",
-      "key": "cj carr",
-      "name": "CJ Carr",
-      "pos": "QB"
+      "key": "cam cook",
+      "name": "Cam Cook",
+      "pos": "RB"
      }
     ],
     "cuts": [
@@ -6919,25 +6919,14 @@
    "5": {
     "current": [
      {
-      "id": "4881",
-      "name": "Lamar Jackson",
+      "id": "7083",
+      "name": "Tyler Huntley",
       "pos": "QB",
       "nfl": "BAL",
-      "age": 29,
-      "exp": 8,
-      "ppg": 20.02,
-      "value": 5274,
-      "group": "starter"
-     },
-     {
-      "id": "9511",
-      "name": "Keaton Mitchell",
-      "pos": "RB",
-      "nfl": "LAC",
-      "age": 24,
-      "exp": 3,
-      "ppg": 7.34,
-      "value": 132,
+      "age": 28,
+      "exp": 6,
+      "ppg": 24.04,
+      "value": 4,
       "group": "starter"
      },
      {
@@ -6949,6 +6938,17 @@
       "exp": 2,
       "ppg": 15.74,
       "value": 2290,
+      "group": "starter"
+     },
+     {
+      "id": "10235",
+      "name": "Roschon Johnson",
+      "pos": "RB",
+      "nfl": "CHI",
+      "age": 25,
+      "exp": 3,
+      "ppg": 9.0,
+      "value": 3,
       "group": "starter"
      },
      {
@@ -7029,6 +7029,17 @@
       "group": "starter"
      },
      {
+      "id": "4881",
+      "name": "Lamar Jackson",
+      "pos": "QB",
+      "nfl": "BAL",
+      "age": 29,
+      "exp": 8,
+      "ppg": 20.02,
+      "value": 5274,
+      "group": "bench"
+     },
+     {
       "id": "8148",
       "name": "Jameson Williams",
       "pos": "WR",
@@ -7073,6 +7084,17 @@
       "group": "bench"
      },
      {
+      "id": "9511",
+      "name": "Keaton Mitchell",
+      "pos": "RB",
+      "nfl": "LAC",
+      "age": 24,
+      "exp": 3,
+      "ppg": 7.34,
+      "value": 132,
+      "group": "bench"
+     },
+     {
       "id": "12495",
       "name": "Ollie Gordon",
       "pos": "RB",
@@ -7084,17 +7106,6 @@
       "group": "bench"
      },
      {
-      "id": "7083",
-      "name": "Tyler Huntley",
-      "pos": "QB",
-      "nfl": "BAL",
-      "age": 28,
-      "exp": 6,
-      "ppg": 24.04,
-      "value": 4,
-      "group": "bench"
-     },
-     {
       "id": "13345",
       "name": "Jonah Coleman",
       "pos": "RB",
@@ -7103,17 +7114,6 @@
       "exp": 0,
       "ppg": 14.8,
       "value": 570,
-      "group": "bench"
-     },
-     {
-      "id": "11783",
-      "name": "Ryan Flournoy",
-      "pos": "WR",
-      "nfl": "DAL",
-      "age": 26,
-      "exp": 2,
-      "ppg": 5.95,
-      "value": 78,
       "group": "bench"
      },
      {
@@ -7187,7 +7187,7 @@
      }
     ],
     "cuts": [
-     "7083"
+     "10235"
     ],
     "counts": {
      "active": 18,
@@ -7489,8 +7489,8 @@
      },
      {
       "label": "3.12",
-      "key": "austin simmons",
-      "name": "Austin Simmons",
+      "key": "dante moore",
+      "name": "Dante Moore",
       "pos": "QB"
      }
     ],
@@ -8008,8 +8008,8 @@
     "draftees": [
      {
       "label": "3.08",
-      "key": "arch manning",
-      "name": "Arch Manning",
+      "key": "cj carr",
+      "name": "CJ Carr",
       "pos": "QB"
      }
     ],
@@ -8514,7 +8514,7 @@
       "id": "6149",
       "name": "Darius Slayton",
       "pos": "WR",
-      "nfl": "IND",
+      "nfl": "FA",
       "age": 29,
       "exp": 7,
       "ppg": 0.0,

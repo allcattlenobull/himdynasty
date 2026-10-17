@@ -1,9 +1,9 @@
 {
  "enabled": true,
- "updated": "2026-10-16T09:02:12+00:00",
+ "updated": "2026-10-17T09:02:34+00:00",
  "players": {
   "jeremiah smith": {
-   "fetched": "2026-10-13",
+   "fetched": "2026-10-17",
    "query": "Jeremiah Smith Ohio State 2026 highlights",
    "videos": [
     {
@@ -19,16 +19,16 @@
      "date": "2026-09-27"
     },
     {
+     "id": "rLBMD9EBSY0",
+     "title": "EVERY CATCH from Ohio State WR Jeremiah Smith's Historic 4 TD Performance vs Illinois",
+     "channel": "CFB ON FOX",
+     "date": "2026-09-26"
+    },
+    {
      "id": "HaD683un_NY",
      "title": "Jeremiah Smith is UNSTOPPABLE 🤯 Maryland vs. Ohio State | First Half HIGHLIGHTS | ESPN CFB",
      "channel": "ESPN College Football",
      "date": "2026-10-10"
-    },
-    {
-     "id": "rLBMD9EBSY0",
-     "title": "EVERY CATCH from Ohio State WR Jeremiah Smith's Historic 4 TD Performance vs Illinoins",
-     "channel": "CFB ON FOX",
-     "date": "2026-09-26"
     },
     {
      "id": "xLvZdUGUnY8",
@@ -39,20 +39,14 @@
    ]
   },
   "charlie becker": {
-   "fetched": "2026-10-13",
+   "fetched": "2026-10-17",
    "query": "Charlie Becker Indiana 2026 highlights",
    "videos": [
     {
-     "id": "F3_QH1tHzWc",
-     "title": "Charlie Becker's Best Plays From The 2025 Season 🔥 | College Football Highlights",
-     "channel": "B/R CFB",
-     "date": "2026-08-04"
-    },
-    {
-     "id": "GOOVhu6CJrQ",
-     "title": "WR Charlie Becker Indiana || 🏈 2025 Highlights 🔥||",
-     "channel": "NFL Draft Coverage",
-     "date": "2026-09-28"
+     "id": "iJTMAStcNOE",
+     "title": "Ohio State's Jeremiah Smith & Indiana's Charlie Becker: Every TD Ahead of Saturday's FOX Showdown",
+     "channel": "CFB ON FOX",
+     "date": "2026-10-16"
     },
     {
      "id": "wr9o2LrBXG8",
@@ -71,11 +65,17 @@
      "title": "Charlie Becker 2026 CFB Game Highlights vs Rutgers",
      "channel": "The Highlight Hub",
      "date": "2026-10-04"
+    },
+    {
+     "id": "QCFZwlYKoZo",
+     "title": "Spotlighting Charlie Becker | Indiana Football | The Journey",
+     "channel": "Big Ten Network",
+     "date": "2026-10-16"
     }
    ]
   },
   "jadan baugh": {
-   "fetched": "2026-10-13",
+   "fetched": "2026-10-17",
    "query": "Jadan Baugh Florida 2026 highlights",
    "videos": [
     {
@@ -1619,42 +1619,6 @@
      "title": "Easton Messer Goes Deep on FAU’s SECOND Play",
      "channel": "ESPN West Palm ",
      "date": "2026-09-13"
-    }
-   ]
-  },
-  "kwazi gilmer": {
-   "fetched": "2026-10-13",
-   "query": "Kwazi Gilmer Nebraska Cornhuskers 2026 highlights",
-   "videos": [
-    {
-     "id": "Y-ITjWWM5rY",
-     "title": "Kwazi Gilmer Highlights vs. Maryland | 2026 Nebraska Football",
-     "channel": "Nebraska Huskers",
-     "date": "2026-10-04"
-    },
-    {
-     "id": "yt16t4Ym-8g",
-     "title": "Nebraska WR Kwazi Gilmer highlights vs Maryland",
-     "channel": "Mark V Sports",
-     "date": "2026-10-05"
-    },
-    {
-     "id": "CwFRwvLYBO0",
-     "title": "Kwazi Gilmer Catches a Dart for the TD vs Bowling Green | Nebraska Football",
-     "channel": "Big Ten Football",
-     "date": "2026-09-12"
-    },
-    {
-     "id": "lYhYc7dQGok",
-     "title": "Nebraska WR Kwazi Gilmer highlights vs Maryland #huskers #nebraska #highlights #collegefootball",
-     "channel": "Mark V Sports",
-     "date": "2026-10-05"
-    },
-    {
-     "id": "oykqvFPNFDU",
-     "title": "NReport: Kwazi Gilmer shines in Huskers' Week 2 win",
-     "channel": "KSNB Local4",
-     "date": "2026-09-14"
     }
    ]
   },

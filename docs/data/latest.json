@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T09:00:40+00:00",
+  "generated_at": "2026-10-17T09:00:33+00:00",
   "league": {
     "id": "1312005038838673409",
     "name": "The HIM Dynasty",
@@ -39,10 +39,10 @@
       "points_for": 701.02,
       "points_against": 595.94,
       "max_pf": 783.3,
-      "playoff_odds": 94.8,
-      "champion_odds": 10.2,
+      "playoff_odds": 94.7,
+      "champion_odds": 10.1,
       "projected_wins": 9.9,
-      "roster_ppg": 134.15
+      "roster_ppg": 134.03
     },
     {
       "rank": 2,
@@ -55,10 +55,10 @@
       "points_for": 779.58,
       "points_against": 669.62,
       "max_pf": 899.16,
-      "playoff_odds": 97.2,
-      "champion_odds": 26.1,
+      "playoff_odds": 97.1,
+      "champion_odds": 26.2,
       "projected_wins": 10.1,
-      "roster_ppg": 142.38
+      "roster_ppg": 142.39
     },
     {
       "rank": 3,
@@ -74,7 +74,7 @@
       "playoff_odds": 98.7,
       "champion_odds": 33.4,
       "projected_wins": 10.7,
-      "roster_ppg": 150.71
+      "roster_ppg": 150.81
     },
     {
       "rank": 4,
@@ -87,10 +87,10 @@
       "points_for": 645.34,
       "points_against": 598.86,
       "max_pf": 728.92,
-      "playoff_odds": 80.2,
-      "champion_odds": 7.8,
+      "playoff_odds": 79.5,
+      "champion_odds": 7.7,
       "projected_wins": 8.9,
-      "roster_ppg": 138.0
+      "roster_ppg": 137.4
     },
     {
       "rank": 5,
@@ -103,8 +103,8 @@
       "points_for": 680.12,
       "points_against": 702.7,
       "max_pf": 771.3,
-      "playoff_odds": 74.6,
-      "champion_odds": 11.0,
+      "playoff_odds": 74.8,
+      "champion_odds": 11.1,
       "projected_wins": 8.3,
       "roster_ppg": 140.92
     },
@@ -119,10 +119,10 @@
       "points_for": 663.14,
       "points_against": 632.9,
       "max_pf": 735.34,
-      "playoff_odds": 60.3,
+      "playoff_odds": 60.1,
       "champion_odds": 4.2,
       "projected_wins": 7.6,
-      "roster_ppg": 134.63
+      "roster_ppg": 134.48
     },
     {
       "rank": 7,
@@ -138,7 +138,7 @@
       "playoff_odds": 40.5,
       "champion_odds": 3.9,
       "projected_wins": 6.6,
-      "roster_ppg": 131.83
+      "roster_ppg": 131.81
     },
     {
       "rank": 8,
@@ -151,10 +151,10 @@
       "points_for": 624.84,
       "points_against": 671.38,
       "max_pf": 730.4,
-      "playoff_odds": 22.0,
+      "playoff_odds": 22.2,
       "champion_odds": 1.5,
       "projected_wins": 6.0,
-      "roster_ppg": 124.33
+      "roster_ppg": 124.76
     },
     {
       "rank": 9,
@@ -167,10 +167,10 @@
       "points_for": 615.54,
       "points_against": 598.34,
       "max_pf": 755.3,
-      "playoff_odds": 27.9,
-      "champion_odds": 1.7,
+      "playoff_odds": 28.3,
+      "champion_odds": 1.8,
       "projected_wins": 6.4,
-      "roster_ppg": 131.37
+      "roster_ppg": 131.74
     },
     {
       "rank": 10,
@@ -183,10 +183,10 @@
       "points_for": 626.96,
       "points_against": 683.42,
       "max_pf": 699.96,
-      "playoff_odds": 3.4,
+      "playoff_odds": 3.5,
       "champion_odds": 0.1,
       "projected_wins": 4.3,
-      "roster_ppg": 119.15
+      "roster_ppg": 119.54
     },
     {
       "rank": 11,
@@ -202,7 +202,7 @@
       "playoff_odds": 0.1,
       "champion_odds": 0.0,
       "projected_wins": 2.5,
-      "roster_ppg": 111.72
+      "roster_ppg": 111.37
     },
     {
       "rank": 12,
@@ -218,7 +218,7 @@
       "playoff_odds": 0.4,
       "champion_odds": 0.0,
       "projected_wins": 2.7,
-      "roster_ppg": 113.29
+      "roster_ppg": 113.23
     }
   ],
   "playoffs": {
@@ -278,7 +278,7 @@
               "team": "MIP",
               "owner": "toobizzie"
             },
-            "a_win_pct": 71.1,
+            "a_win_pct": 71.3,
             "winner": 6
           },
           {
@@ -295,7 +295,7 @@
               "team": "The Lab",
               "owner": "JamesQua"
             },
-            "a_win_pct": 46.0,
+            "a_win_pct": 45.7,
             "winner": 4
           }
         ]
@@ -317,7 +317,7 @@
               "team": "The Lab",
               "owner": "JamesQua"
             },
-            "a_win_pct": 48.3,
+            "a_win_pct": 48.2,
             "winner": 4
           },
           {
@@ -334,7 +334,7 @@
               "team": "Vanilla Diamonds",
               "owner": "VanillaDiamonds"
             },
-            "a_win_pct": 47.2,
+            "a_win_pct": 47.1,
             "winner": 6
           }
         ]
@@ -356,7 +356,7 @@
               "team": "Vanilla Diamonds",
               "owner": "VanillaDiamonds"
             },
-            "a_win_pct": 39.0,
+            "a_win_pct": 38.9,
             "winner": 6
           }
         ]
@@ -373,8 +373,8 @@
         "max_pf": 651.42,
         "in_playoffs": false,
         "playoff_odds": 0.4,
-        "first_pick_odds": 78.1,
-        "avg_pick": 1.3,
+        "first_pick_odds": 78.8,
+        "avg_pick": 1.29,
         "most_likely_pick": 1
       },
       {
@@ -384,9 +384,9 @@
         "owner": "JHam4Hunnid",
         "max_pf": 699.96,
         "in_playoffs": false,
-        "playoff_odds": 3.4,
-        "first_pick_odds": 16.3,
-        "avg_pick": 2.44,
+        "playoff_odds": 3.5,
+        "first_pick_odds": 15.7,
+        "avg_pick": 2.47,
         "most_likely_pick": 2
       },
       {
@@ -396,9 +396,9 @@
         "owner": "BryanGichaba",
         "max_pf": 730.4,
         "in_playoffs": false,
-        "playoff_odds": 22.0,
-        "first_pick_odds": 2.5,
-        "avg_pick": 4.92,
+        "playoff_odds": 22.2,
+        "first_pick_odds": 2.4,
+        "avg_pick": 4.96,
         "most_likely_pick": 4
       },
       {
@@ -409,8 +409,8 @@
         "max_pf": 753.22,
         "in_playoffs": false,
         "playoff_odds": 0.1,
-        "first_pick_odds": 2.3,
-        "avg_pick": 3.45,
+        "first_pick_odds": 2.4,
+        "avg_pick": 3.42,
         "most_likely_pick": 3
       },
       {
@@ -420,9 +420,9 @@
         "owner": "RefMitch128",
         "max_pf": 755.3,
         "in_playoffs": false,
-        "playoff_odds": 27.9,
+        "playoff_odds": 28.3,
         "first_pick_odds": 0.1,
-        "avg_pick": 5.77,
+        "avg_pick": 5.8,
         "most_likely_pick": 5
       },
       {
@@ -444,9 +444,9 @@
         "owner": "JudasJudge",
         "max_pf": 728.92,
         "in_playoffs": true,
-        "playoff_odds": 80.2,
-        "first_pick_odds": 0.2,
-        "avg_pick": 8.03,
+        "playoff_odds": 79.5,
+        "first_pick_odds": 0.3,
+        "avg_pick": 7.98,
         "most_likely_pick": 7
       },
       {
@@ -456,9 +456,9 @@
         "owner": "toobizzie",
         "max_pf": 735.34,
         "in_playoffs": true,
-        "playoff_odds": 60.3,
+        "playoff_odds": 60.1,
         "first_pick_odds": 0.3,
-        "avg_pick": 6.85,
+        "avg_pick": 6.83,
         "most_likely_pick": 7
       },
       {
@@ -468,7 +468,7 @@
         "owner": "sleepymike09",
         "max_pf": 783.3,
         "in_playoffs": true,
-        "playoff_odds": 94.8,
+        "playoff_odds": 94.7,
         "first_pick_odds": 0.0,
         "avg_pick": 9.08,
         "most_likely_pick": 9
@@ -480,9 +480,9 @@
         "owner": "NewEleven",
         "max_pf": 899.16,
         "in_playoffs": true,
-        "playoff_odds": 97.2,
+        "playoff_odds": 97.1,
         "first_pick_odds": 0.0,
-        "avg_pick": 10.26,
+        "avg_pick": 10.27,
         "most_likely_pick": 10
       },
       {
@@ -492,9 +492,9 @@
         "owner": "JamesQua",
         "max_pf": 771.3,
         "in_playoffs": true,
-        "playoff_odds": 74.6,
+        "playoff_odds": 74.8,
         "first_pick_odds": 0.0,
-        "avg_pick": 8.33,
+        "avg_pick": 8.34,
         "most_likely_pick": 8
       },
       {
@@ -630,14 +630,14 @@
           4.44,
           4.62,
           4.58,
-          3.45
+          3.42
         ],
         "first_pick_odds": [
           9.9,
           4.4,
           1.2,
           0.7,
-          2.3
+          2.4
         ],
         "draft_slot": [
           5,
@@ -681,21 +681,21 @@
           73.9,
           49.4,
           35.7,
-          27.9
+          28.3
         ],
         "champion_odds": [
           6.3,
           11.2,
           5.3,
           2.2,
-          1.7
+          1.8
         ],
         "avg_pick": [
           6.21,
           8.19,
           6.53,
           5.4,
-          5.77
+          5.8
         ],
         "first_pick_odds": [
           8.5,
@@ -746,14 +746,14 @@
           71.3,
           82.5,
           93.3,
-          94.8
+          94.7
         ],
         "champion_odds": [
           9.6,
           10.3,
           11.5,
           12.7,
-          10.2
+          10.1
         ],
         "avg_pick": [
           7.55,
@@ -811,21 +811,21 @@
           63.8,
           64.9,
           57.0,
-          74.6
+          74.8
         ],
         "champion_odds": [
           21.3,
           12.9,
           12.1,
           7.8,
-          11.0
+          11.1
         ],
         "avg_pick": [
           9.3,
           8.05,
           7.96,
           7.24,
-          8.33
+          8.34
         ],
         "first_pick_odds": [
           0.2,
@@ -876,28 +876,28 @@
           30.8,
           30.2,
           52.5,
-          80.2
+          79.5
         ],
         "champion_odds": [
           7.4,
           2.9,
           2.2,
           3.4,
-          7.8
+          7.7
         ],
         "avg_pick": [
           6.3,
           4.47,
           4.19,
           5.6,
-          8.03
+          7.98
         ],
         "first_pick_odds": [
           6.4,
           15.9,
           17.6,
           10.3,
-          0.2
+          0.3
         ],
         "draft_slot": [
           4,
@@ -1020,14 +1020,14 @@
           1.89,
           1.71,
           1.53,
-          1.3
+          1.29
         ],
         "first_pick_odds": [
           30.2,
           59.1,
           60.7,
           69.4,
-          78.1
+          78.8
         ],
         "draft_slot": [
           1,
@@ -1071,7 +1071,7 @@
           42.1,
           46.2,
           57.9,
-          60.3
+          60.1
         ],
         "champion_odds": [
           8.6,
@@ -1085,7 +1085,7 @@
           5.58,
           6.48,
           6.88,
-          6.85
+          6.83
         ],
         "first_pick_odds": [
           5.8,
@@ -1136,21 +1136,21 @@
           59.7,
           82.2,
           92.4,
-          97.2
+          97.1
         ],
         "champion_odds": [
           5.7,
           9.7,
           16.4,
           23.2,
-          26.1
+          26.2
         ],
         "avg_pick": [
           6.24,
           7.57,
           9.07,
           9.95,
-          10.26
+          10.27
         ],
         "first_pick_odds": [
           3.9,
@@ -1201,7 +1201,7 @@
           53.4,
           68.4,
           46.0,
-          22.0
+          22.2
         ],
         "champion_odds": [
           2.9,
@@ -1215,14 +1215,14 @@
           7.18,
           7.96,
           6.19,
-          4.92
+          4.96
         ],
         "first_pick_odds": [
           19.1,
           1.5,
           0.4,
           3.5,
-          2.5
+          2.4
         ],
         "draft_slot": [
           2,
@@ -1331,7 +1331,7 @@
           26.7,
           13.9,
           19.8,
-          3.4
+          3.5
         ],
         "champion_odds": [
           5.1,
@@ -1345,14 +1345,14 @@
           4.49,
           3.26,
           3.89,
-          2.44
+          2.47
         ],
         "first_pick_odds": [
           10.0,
           10.8,
           16.8,
           10.4,
-          16.3
+          15.7
         ],
         "draft_slot": [
           3,
@@ -1381,8 +1381,8 @@
       "max_pf": 753.22,
       "playoff_odds": 0.1,
       "champion_odds": 0.0,
-      "first_pick_odds": 2.3,
-      "avg_pick": 3.45,
+      "first_pick_odds": 2.4,
+      "avg_pick": 3.42,
       "roster": {
         "starters": [
           {
@@ -1578,12 +1578,12 @@
             "nfl": "CHI",
             "age": 24,
             "exp": 1,
-            "injury": "Questionable",
+            "injury": "Out",
             "espn_id": null,
             "pts": 59.3,
             "last": 0.0,
             "ppg": 14.82,
-            "proj": 14.08
+            "proj": 7.41
           },
           {
             "id": "10213",
@@ -1632,7 +1632,7 @@
             "name": "Kaelon Black",
             "pos": "RB",
             "nfl": "SF",
-            "age": 24,
+            "age": 25,
             "exp": 0,
             "injury": null,
             "espn_id": null,
@@ -1648,7 +1648,7 @@
             "nfl": "BUF",
             "age": 29,
             "exp": 7,
-            "injury": "Questionable",
+            "injury": null,
             "espn_id": 3915411,
             "pts": 0.0,
             "last": null,
@@ -1710,7 +1710,7 @@
           "opponent": 11,
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
-          "win_pct": 28.4,
+          "win_pct": 28.2,
           "points": 99.24,
           "opp_points": 181.86,
           "max": 149.46,
@@ -1722,7 +1722,7 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 37.2,
+          "win_pct": 36.8,
           "points": 109.02,
           "opp_points": 170.96,
           "max": 149.88,
@@ -1734,7 +1734,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 10.6,
+          "win_pct": 10.5,
           "points": 130.56,
           "opp_points": 135.4,
           "max": 158.76,
@@ -1746,7 +1746,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 36.6,
+          "win_pct": 36.0,
           "points": 117.48,
           "opp_points": 135.04,
           "max": 162.88,
@@ -1758,7 +1758,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 22.7,
+          "win_pct": 22.6,
           "points": 109.54,
           "opp_points": 134.36,
           "max": 132.24,
@@ -1770,7 +1770,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 27.6,
+          "win_pct": 27.7,
           "points": 5.2,
           "opp_points": 0.0
         },
@@ -1780,7 +1780,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 26.5
+          "win_pct": 26.4
         },
         {
           "week": 8,
@@ -1788,7 +1788,7 @@
           "opponent": 9,
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
-          "win_pct": 12.5
+          "win_pct": 12.4
         },
         {
           "week": 9,
@@ -1796,7 +1796,7 @@
           "opponent": 3,
           "opponent_team": "K-9’s Unit",
           "opponent_owner": "sleepymike09",
-          "win_pct": 19.1
+          "win_pct": 19.0
         },
         {
           "week": 10,
@@ -1804,7 +1804,7 @@
           "opponent": 7,
           "opponent_team": "Finesse🥶🤴🏿",
           "opponent_owner": "JustinFreshly",
-          "win_pct": 53.0
+          "win_pct": 52.8
         },
         {
           "week": 11,
@@ -1812,7 +1812,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 32.4
+          "win_pct": 31.9
         },
         {
           "week": 12,
@@ -1820,7 +1820,7 @@
           "opponent": 11,
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
-          "win_pct": 28.4
+          "win_pct": 28.2
         },
         {
           "week": 13,
@@ -1828,7 +1828,7 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 37.2
+          "win_pct": 36.8
         },
         {
           "week": 14,
@@ -1836,7 +1836,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 10.6
+          "win_pct": 10.5
         }
       ],
       "playoffs_start_week": 15
@@ -1855,10 +1855,10 @@
       "points_for": 615.54,
       "points_against": 598.34,
       "max_pf": 755.3,
-      "playoff_odds": 27.9,
-      "champion_odds": 1.7,
+      "playoff_odds": 28.3,
+      "champion_odds": 1.8,
       "first_pick_odds": 0.1,
-      "avg_pick": 5.77,
+      "avg_pick": 5.8,
       "roster": {
         "starters": [
           {
@@ -2171,7 +2171,7 @@
           "opponent": 7,
           "opponent_team": "Finesse🥶🤴🏿",
           "opponent_owner": "JustinFreshly",
-          "win_pct": 68.0,
+          "win_pct": 68.3,
           "points": 122.9,
           "opp_points": 74.0,
           "max": 139.0,
@@ -2183,7 +2183,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 40.3,
+          "win_pct": 40.5,
           "points": 154.36,
           "opp_points": 95.96,
           "max": 179.66,
@@ -2195,7 +2195,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 43.7,
+          "win_pct": 44.2,
           "points": 93.12,
           "opp_points": 111.84,
           "max": 128.68,
@@ -2207,7 +2207,7 @@
           "opponent": 3,
           "opponent_team": "K-9’s Unit",
           "opponent_owner": "sleepymike09",
-          "win_pct": 38.8,
+          "win_pct": 39.2,
           "points": 108.78,
           "opp_points": 149.68,
           "max": 138.98,
@@ -2219,7 +2219,7 @@
           "opponent": 9,
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
-          "win_pct": 27.9,
+          "win_pct": 28.1,
           "points": 136.38,
           "opp_points": 166.86,
           "max": 168.98,
@@ -2231,7 +2231,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 42.7,
+          "win_pct": 43.0,
           "points": 6.4,
           "opp_points": 17.6
         },
@@ -2249,7 +2249,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 25.4
+          "win_pct": 25.6
         },
         {
           "week": 9,
@@ -2265,7 +2265,7 @@
           "opponent": 11,
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
-          "win_pct": 44.3
+          "win_pct": 44.5
         },
         {
           "week": 11,
@@ -2273,7 +2273,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 67.6
+          "win_pct": 68.1
         },
         {
           "week": 12,
@@ -2281,7 +2281,7 @@
           "opponent": 7,
           "opponent_team": "Finesse🥶🤴🏿",
           "opponent_owner": "JustinFreshly",
-          "win_pct": 68.0
+          "win_pct": 68.3
         },
         {
           "week": 13,
@@ -2289,7 +2289,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 40.3
+          "win_pct": 40.5
         },
         {
           "week": 14,
@@ -2297,7 +2297,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 43.7
+          "win_pct": 44.2
         }
       ],
       "playoffs_start_week": 15
@@ -2316,8 +2316,8 @@
       "points_for": 701.02,
       "points_against": 595.94,
       "max_pf": 783.3,
-      "playoff_odds": 94.8,
-      "champion_odds": 10.2,
+      "playoff_odds": 94.7,
+      "champion_odds": 10.1,
       "first_pick_odds": 0.0,
       "avg_pick": 9.08,
       "roster": {
@@ -2529,12 +2529,12 @@
             "nfl": "ARI",
             "age": 21,
             "exp": 0,
-            "injury": "Questionable",
+            "injury": "Out",
             "espn_id": null,
             "pts": 51.1,
             "last": 2.2,
             "ppg": 10.22,
-            "proj": 9.71
+            "proj": 5.11
           },
           {
             "id": "8155",
@@ -2543,12 +2543,12 @@
             "nfl": "NYJ",
             "age": 25,
             "exp": 4,
-            "injury": "Doubtful",
+            "injury": "Out",
             "espn_id": null,
             "pts": 42.5,
             "last": 0.0,
             "ppg": 14.17,
-            "proj": 9.92
+            "proj": 7.08
           },
           {
             "id": "13330",
@@ -2599,12 +2599,12 @@
             "nfl": "PIT",
             "age": 28,
             "exp": 6,
-            "injury": null,
+            "injury": "Questionable",
             "espn_id": 4038815,
             "pts": 10.5,
             "last": 0.0,
             "ppg": 5.25,
-            "proj": 5.25
+            "proj": 4.99
           }
         ],
         "taxi": [
@@ -2701,7 +2701,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 54.5,
+          "win_pct": 54.6,
           "points": 125.64,
           "opp_points": 117.58,
           "max": 138.12,
@@ -2713,7 +2713,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 70.7,
+          "win_pct": 70.3,
           "points": 137.68,
           "opp_points": 115.88,
           "max": 153.48,
@@ -2725,7 +2725,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 61.2,
+          "win_pct": 60.8,
           "points": 149.68,
           "opp_points": 108.78,
           "max": 161.98,
@@ -2737,7 +2737,7 @@
           "opponent": 7,
           "opponent_team": "Finesse🥶🤴🏿",
           "opponent_owner": "JustinFreshly",
-          "win_pct": 79.1,
+          "win_pct": 79.0,
           "points": 142.56,
           "opp_points": 130.38,
           "max": 159.26,
@@ -2749,7 +2749,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 32.2,
+          "win_pct": 32.1,
           "points": 0.0,
           "opp_points": 25.4
         },
@@ -2759,7 +2759,7 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 63.0
+          "win_pct": 62.7
         },
         {
           "week": 8,
@@ -2767,7 +2767,7 @@
           "opponent": 11,
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
-          "win_pct": 53.9
+          "win_pct": 53.8
         },
         {
           "week": 9,
@@ -2775,7 +2775,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 80.9
+          "win_pct": 81.0
         },
         {
           "week": 10,
@@ -2783,7 +2783,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 48.3
+          "win_pct": 48.2
         },
         {
           "week": 11,
@@ -2791,7 +2791,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 53.3
+          "win_pct": 53.6
         },
         {
           "week": 12,
@@ -2807,7 +2807,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 54.5
+          "win_pct": 54.6
         },
         {
           "week": 14,
@@ -2815,7 +2815,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 70.7
+          "win_pct": 70.3
         }
       ],
       "playoffs_start_week": 15
@@ -2834,10 +2834,10 @@
       "points_for": 680.12,
       "points_against": 702.7,
       "max_pf": 771.3,
-      "playoff_odds": 74.6,
-      "champion_odds": 11.0,
+      "playoff_odds": 74.8,
+      "champion_odds": 11.1,
       "first_pick_odds": 0.0,
-      "avg_pick": 8.33,
+      "avg_pick": 8.34,
       "roster": {
         "starters": [
           {
@@ -2951,12 +2951,12 @@
               "nfl": "BAL",
               "age": 26,
               "exp": 3,
-              "injury": "Questionable",
+              "injury": null,
               "espn_id": null,
               "pts": 81.8,
               "last": 14.6,
               "ppg": 20.45,
-              "proj": 19.43
+              "proj": 20.45
             }
           },
           {
@@ -3075,12 +3075,12 @@
             "nfl": "LAC",
             "age": 24,
             "exp": 2,
-            "injury": "Questionable",
+            "injury": null,
             "espn_id": null,
             "pts": 36.3,
             "last": 0.0,
             "ppg": 12.1,
-            "proj": 11.49
+            "proj": 12.1
           },
           {
             "id": "4983",
@@ -3103,12 +3103,12 @@
             "nfl": "PHI",
             "age": 29,
             "exp": 8,
-            "injury": "Questionable",
+            "injury": "Out",
             "espn_id": 3929630,
             "pts": 23.0,
             "last": 0.0,
             "ppg": 5.75,
-            "proj": 5.46
+            "proj": 2.88
           },
           {
             "id": "13405",
@@ -3207,7 +3207,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 54.0,
+          "win_pct": 54.3,
           "points": 195.82,
           "opp_points": 134.36,
           "max": 202.32,
@@ -3219,7 +3219,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 59.7,
+          "win_pct": 59.5,
           "points": 95.96,
           "opp_points": 154.36,
           "max": 131.46,
@@ -3243,7 +3243,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 39.0,
+          "win_pct": 38.9,
           "points": 111.84,
           "opp_points": 177.66,
           "max": 139.62,
@@ -3255,7 +3255,7 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 61.4,
+          "win_pct": 61.2,
           "points": 151.78,
           "opp_points": 118.14,
           "max": 157.98,
@@ -3277,7 +3277,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 73.5
+          "win_pct": 73.6
         },
         {
           "week": 8,
@@ -3285,7 +3285,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 54.7
+          "win_pct": 54.8
         },
         {
           "week": 9,
@@ -3293,7 +3293,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 65.6
+          "win_pct": 65.4
         },
         {
           "week": 10,
@@ -3301,7 +3301,7 @@
           "opponent": 3,
           "opponent_team": "K-9’s Unit",
           "opponent_owner": "sleepymike09",
-          "win_pct": 51.7
+          "win_pct": 51.8
         },
         {
           "week": 11,
@@ -3317,7 +3317,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 54.0
+          "win_pct": 54.3
         },
         {
           "week": 13,
@@ -3325,7 +3325,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 59.7
+          "win_pct": 59.5
         },
         {
           "week": 14,
@@ -3352,44 +3352,27 @@
       "points_for": 645.34,
       "points_against": 598.86,
       "max_pf": 728.92,
-      "playoff_odds": 80.2,
-      "champion_odds": 7.8,
-      "first_pick_odds": 0.2,
-      "avg_pick": 8.03,
+      "playoff_odds": 79.5,
+      "champion_odds": 7.7,
+      "first_pick_odds": 0.3,
+      "avg_pick": 7.98,
       "roster": {
         "starters": [
           {
             "slot": "QB",
             "player": {
-              "id": "4881",
-              "name": "Lamar Jackson",
+              "id": "7083",
+              "name": "Tyler Huntley",
               "pos": "QB",
               "nfl": "BAL",
-              "age": 29,
-              "exp": 8,
-              "injury": "Questionable",
-              "espn_id": 3916387,
-              "pts": 80.08,
-              "last": 0.0,
-              "ppg": 20.02,
-              "proj": 19.02
-            }
-          },
-          {
-            "slot": "RB",
-            "player": {
-              "id": "9511",
-              "name": "Keaton Mitchell",
-              "pos": "RB",
-              "nfl": "LAC",
-              "age": 24,
-              "exp": 3,
+              "age": 28,
+              "exp": 6,
               "injury": null,
-              "espn_id": null,
-              "pts": 36.7,
-              "last": 5.9,
-              "ppg": 7.34,
-              "proj": 7.34
+              "espn_id": 4035671,
+              "pts": 24.04,
+              "last": 24.04,
+              "ppg": 24.04,
+              "proj": 24.04
             }
           },
           {
@@ -3407,6 +3390,23 @@
               "last": 31.5,
               "ppg": 15.74,
               "proj": 15.74
+            }
+          },
+          {
+            "slot": "RB",
+            "player": {
+              "id": "10235",
+              "name": "Roschon Johnson",
+              "pos": "RB",
+              "nfl": "CHI",
+              "age": 25,
+              "exp": 3,
+              "injury": null,
+              "espn_id": null,
+              "pts": 0.0,
+              "last": null,
+              "ppg": 9.0,
+              "proj": 9.0
             }
           },
           {
@@ -3435,12 +3435,12 @@
               "nfl": "PIT",
               "age": 28,
               "exp": 7,
-              "injury": null,
+              "injury": "Questionable",
               "espn_id": 4047650,
               "pts": 48.6,
               "last": 5.3,
               "ppg": 9.72,
-              "proj": 9.72
+              "proj": 9.23
             }
           },
           {
@@ -3531,6 +3531,20 @@
         ],
         "bench": [
           {
+            "id": "4881",
+            "name": "Lamar Jackson",
+            "pos": "QB",
+            "nfl": "BAL",
+            "age": 29,
+            "exp": 8,
+            "injury": "Out",
+            "espn_id": 3916387,
+            "pts": 80.08,
+            "last": 0.0,
+            "ppg": 20.02,
+            "proj": 10.01
+          },
+          {
             "id": "8148",
             "name": "Jameson Williams",
             "pos": "WR",
@@ -3579,12 +3593,26 @@
             "nfl": "TB",
             "age": 31,
             "exp": 8,
-            "injury": "Doubtful",
+            "injury": "Out",
             "espn_id": 3052587,
             "pts": 37.1,
             "last": 0.0,
             "ppg": 12.37,
-            "proj": 8.66
+            "proj": 6.18
+          },
+          {
+            "id": "9511",
+            "name": "Keaton Mitchell",
+            "pos": "RB",
+            "nfl": "LAC",
+            "age": 24,
+            "exp": 3,
+            "injury": null,
+            "espn_id": null,
+            "pts": 36.7,
+            "last": 5.9,
+            "ppg": 7.34,
+            "proj": 7.34
           },
           {
             "id": "12495",
@@ -3601,20 +3629,6 @@
             "proj": 15.58
           },
           {
-            "id": "7083",
-            "name": "Tyler Huntley",
-            "pos": "QB",
-            "nfl": "BAL",
-            "age": 28,
-            "exp": 6,
-            "injury": null,
-            "espn_id": 4035671,
-            "pts": 24.04,
-            "last": 24.04,
-            "ppg": 24.04,
-            "proj": 24.04
-          },
-          {
             "id": "13345",
             "name": "Jonah Coleman",
             "pos": "RB",
@@ -3627,20 +3641,6 @@
             "last": 0.0,
             "ppg": 14.8,
             "proj": 0.0
-          },
-          {
-            "id": "11783",
-            "name": "Ryan Flournoy",
-            "pos": "WR",
-            "nfl": "DAL",
-            "age": 26,
-            "exp": 2,
-            "injury": null,
-            "espn_id": null,
-            "pts": 0.0,
-            "last": null,
-            "ppg": 5.95,
-            "proj": 5.95
           }
         ],
         "taxi": [
@@ -3725,7 +3725,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 46.0,
+          "win_pct": 45.7,
           "points": 134.36,
           "opp_points": 195.82,
           "max": 142.56,
@@ -3737,7 +3737,7 @@
           "opponent": 7,
           "opponent_team": "Finesse🥶🤴🏿",
           "opponent_owner": "JustinFreshly",
-          "win_pct": 72.4,
+          "win_pct": 72.1,
           "points": 88.6,
           "opp_points": 83.5,
           "max": 107.6,
@@ -3749,7 +3749,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 56.3,
+          "win_pct": 55.8,
           "points": 111.84,
           "opp_points": 93.12,
           "max": 137.14,
@@ -3761,7 +3761,7 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 58.5,
+          "win_pct": 58.0,
           "points": 145.98,
           "opp_points": 94.3,
           "max": 155.08,
@@ -3773,7 +3773,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 32.8,
+          "win_pct": 32.5,
           "points": 164.56,
           "opp_points": 132.12,
           "max": 186.54,
@@ -3785,7 +3785,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 72.4,
+          "win_pct": 72.3,
           "points": 0.0,
           "opp_points": 5.2
         },
@@ -3795,7 +3795,7 @@
           "opponent": 11,
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
-          "win_pct": 50.5
+          "win_pct": 50.2
         },
         {
           "week": 8,
@@ -3803,7 +3803,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 63.1
+          "win_pct": 62.5
         },
         {
           "week": 9,
@@ -3811,7 +3811,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 50.2
+          "win_pct": 50.0
         },
         {
           "week": 10,
@@ -3819,7 +3819,7 @@
           "opponent": 9,
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
-          "win_pct": 35.3
+          "win_pct": 34.9
         },
         {
           "week": 11,
@@ -3827,7 +3827,7 @@
           "opponent": 3,
           "opponent_team": "K-9’s Unit",
           "opponent_owner": "sleepymike09",
-          "win_pct": 46.7
+          "win_pct": 46.4
         },
         {
           "week": 12,
@@ -3835,7 +3835,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 46.0
+          "win_pct": 45.7
         },
         {
           "week": 13,
@@ -3843,7 +3843,7 @@
           "opponent": 7,
           "opponent_team": "Finesse🥶🤴🏿",
           "opponent_owner": "JustinFreshly",
-          "win_pct": 72.4
+          "win_pct": 72.1
         },
         {
           "week": 14,
@@ -3851,7 +3851,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 56.3
+          "win_pct": 55.8
         }
       ],
       "playoffs_start_week": 15
@@ -4097,12 +4097,12 @@
             "nfl": "CLE",
             "age": 22,
             "exp": 0,
-            "injury": "Questionable",
+            "injury": null,
             "espn_id": null,
             "pts": 31.8,
             "last": 1.5,
             "ppg": 6.36,
-            "proj": 6.04
+            "proj": 6.36
           },
           {
             "id": "13285",
@@ -4257,7 +4257,7 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 74.8,
+          "win_pct": 74.7,
           "points": 156.76,
           "opp_points": 99.2,
           "max": 156.76,
@@ -4269,7 +4269,7 @@
           "opponent": 11,
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
-          "win_pct": 67.5,
+          "win_pct": 67.6,
           "points": 153.58,
           "opp_points": 132.58,
           "max": 191.42,
@@ -4281,7 +4281,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 89.4,
+          "win_pct": 89.5,
           "points": 135.4,
           "opp_points": 130.56,
           "max": 176.0,
@@ -4293,7 +4293,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 61.0,
+          "win_pct": 61.1,
           "points": 177.66,
           "opp_points": 111.84,
           "max": 189.76,
@@ -4305,7 +4305,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 67.2,
+          "win_pct": 67.5,
           "points": 132.12,
           "opp_points": 164.56,
           "max": 144.02,
@@ -4317,7 +4317,7 @@
           "opponent": 3,
           "opponent_team": "K-9’s Unit",
           "opponent_owner": "sleepymike09",
-          "win_pct": 67.8,
+          "win_pct": 67.9,
           "points": 25.4,
           "opp_points": 0.0
         },
@@ -4327,7 +4327,7 @@
           "opponent": 9,
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
-          "win_pct": 52.8
+          "win_pct": 52.9
         },
         {
           "week": 8,
@@ -4335,7 +4335,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 74.6
+          "win_pct": 74.4
         },
         {
           "week": 9,
@@ -4351,7 +4351,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 71.1
+          "win_pct": 71.3
         },
         {
           "week": 11,
@@ -4359,7 +4359,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 83.0
+          "win_pct": 82.8
         },
         {
           "week": 12,
@@ -4367,7 +4367,7 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 74.8
+          "win_pct": 74.7
         },
         {
           "week": 13,
@@ -4375,7 +4375,7 @@
           "opponent": 11,
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
-          "win_pct": 67.5
+          "win_pct": 67.6
         },
         {
           "week": 14,
@@ -4383,7 +4383,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 89.4
+          "win_pct": 89.5
         }
       ],
       "playoffs_start_week": 15
@@ -4404,8 +4404,8 @@
       "max_pf": 651.42,
       "playoff_odds": 0.4,
       "champion_odds": 0.0,
-      "first_pick_odds": 78.1,
-      "avg_pick": 1.3,
+      "first_pick_odds": 78.8,
+      "avg_pick": 1.29,
       "roster": {
         "starters": [
           {
@@ -4502,12 +4502,12 @@
               "nfl": "CAR",
               "age": 34,
               "exp": 11,
-              "injury": "Questionable",
+              "injury": null,
               "espn_id": 2576925,
               "pts": 0.0,
               "last": null,
               "ppg": 8.35,
-              "proj": 7.93
+              "proj": 8.35
             }
           },
           {
@@ -4643,12 +4643,12 @@
             "nfl": "LAC",
             "age": 25,
             "exp": 3,
-            "injury": "Questionable",
+            "injury": null,
             "espn_id": null,
             "pts": 18.1,
             "last": 0.0,
             "ppg": 4.53,
-            "proj": 4.3
+            "proj": 4.53
           },
           {
             "id": "9486",
@@ -4657,12 +4657,12 @@
             "nfl": "PHI",
             "age": 25,
             "exp": 3,
-            "injury": "Questionable",
+            "injury": null,
             "espn_id": null,
             "pts": 16.1,
             "last": 11.3,
             "ppg": 9.8,
-            "proj": 9.31
+            "proj": 9.8
           },
           {
             "id": "13317",
@@ -4701,12 +4701,12 @@
             "nfl": "NYJ",
             "age": 24,
             "exp": 2,
-            "injury": "Doubtful",
+            "injury": "Out",
             "espn_id": null,
             "pts": 21.3,
             "last": 0.0,
             "ppg": 10.65,
-            "proj": 7.46
+            "proj": 5.33
           },
           {
             "id": "13268",
@@ -4729,12 +4729,12 @@
             "nfl": "BAL",
             "age": 24,
             "exp": 0,
-            "injury": "Questionable",
+            "injury": "Out",
             "espn_id": null,
             "pts": 18.0,
             "last": 0.0,
             "ppg": 6.0,
-            "proj": 5.7
+            "proj": 3.0
           }
         ],
         "ir": [
@@ -4775,7 +4775,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 32.0,
+          "win_pct": 31.7,
           "points": 74.0,
           "opp_points": 122.9,
           "max": 109.68,
@@ -4787,7 +4787,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 27.6,
+          "win_pct": 27.9,
           "points": 83.5,
           "opp_points": 88.6,
           "max": 118.28,
@@ -4823,7 +4823,7 @@
           "opponent": 3,
           "opponent_team": "K-9’s Unit",
           "opponent_owner": "sleepymike09",
-          "win_pct": 20.9,
+          "win_pct": 21.0,
           "points": 130.38,
           "opp_points": 142.56,
           "max": 140.58,
@@ -4835,7 +4835,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 35.8,
+          "win_pct": 35.5,
           "points": 0.0,
           "opp_points": 7.0
         },
@@ -4845,7 +4845,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 24.0
+          "win_pct": 24.1
         },
         {
           "week": 8,
@@ -4853,7 +4853,7 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 36.2
+          "win_pct": 35.9
         },
         {
           "week": 9,
@@ -4869,7 +4869,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 47.0
+          "win_pct": 47.2
         },
         {
           "week": 11,
@@ -4885,7 +4885,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 32.0
+          "win_pct": 31.7
         },
         {
           "week": 13,
@@ -4893,7 +4893,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 27.6
+          "win_pct": 27.9
         },
         {
           "week": 14,
@@ -4920,10 +4920,10 @@
       "points_for": 663.14,
       "points_against": 632.9,
       "max_pf": 735.34,
-      "playoff_odds": 60.3,
+      "playoff_odds": 60.1,
       "champion_odds": 4.2,
       "first_pick_odds": 0.3,
-      "avg_pick": 6.85,
+      "avg_pick": 6.83,
       "roster": {
         "starters": [
           {
@@ -4990,12 +4990,12 @@
               "nfl": "KC",
               "age": 26,
               "exp": 3,
-              "injury": "Questionable",
+              "injury": "Out",
               "espn_id": null,
               "pts": 38.0,
               "last": 0.0,
               "ppg": 12.67,
-              "proj": 12.03
+              "proj": 6.33
             }
           },
           {
@@ -5237,7 +5237,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 66.3,
+          "win_pct": 65.9,
           "points": 130.5,
           "opp_points": 126.36,
           "max": 145.8,
@@ -5249,7 +5249,7 @@
           "opponent": 3,
           "opponent_team": "K-9’s Unit",
           "opponent_owner": "sleepymike09",
-          "win_pct": 45.5,
+          "win_pct": 45.4,
           "points": 117.58,
           "opp_points": 125.64,
           "max": 124.48,
@@ -5261,7 +5261,7 @@
           "opponent": 9,
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
-          "win_pct": 31.9,
+          "win_pct": 31.8,
           "points": 149.38,
           "opp_points": 162.36,
           "max": 178.98,
@@ -5273,7 +5273,7 @@
           "opponent": 11,
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
-          "win_pct": 50.4,
+          "win_pct": 50.3,
           "points": 131.32,
           "opp_points": 109.0,
           "max": 150.72,
@@ -5285,7 +5285,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 77.3,
+          "win_pct": 77.4,
           "points": 134.36,
           "opp_points": 109.54,
           "max": 135.36,
@@ -5297,7 +5297,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 57.3,
+          "win_pct": 57.0,
           "points": 17.6,
           "opp_points": 6.4
         },
@@ -5307,7 +5307,7 @@
           "opponent": 7,
           "opponent_team": "Finesse🥶🤴🏿",
           "opponent_owner": "JustinFreshly",
-          "win_pct": 76.0
+          "win_pct": 75.9
         },
         {
           "week": 8,
@@ -5315,7 +5315,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 45.3
+          "win_pct": 45.2
         },
         {
           "week": 9,
@@ -5323,7 +5323,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 49.8
+          "win_pct": 50.0
         },
         {
           "week": 10,
@@ -5331,7 +5331,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 28.9
+          "win_pct": 28.7
         },
         {
           "week": 11,
@@ -5339,7 +5339,7 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 59.6
+          "win_pct": 59.3
         },
         {
           "week": 12,
@@ -5347,7 +5347,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 66.3
+          "win_pct": 65.9
         },
         {
           "week": 13,
@@ -5355,7 +5355,7 @@
           "opponent": 3,
           "opponent_team": "K-9’s Unit",
           "opponent_owner": "sleepymike09",
-          "win_pct": 45.5
+          "win_pct": 45.4
         },
         {
           "week": 14,
@@ -5363,7 +5363,7 @@
           "opponent": 9,
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
-          "win_pct": 31.9
+          "win_pct": 31.8
         }
       ],
       "playoffs_start_week": 15
@@ -5382,10 +5382,10 @@
       "points_for": 779.58,
       "points_against": 669.62,
       "max_pf": 899.16,
-      "playoff_odds": 97.2,
-      "champion_odds": 26.1,
+      "playoff_odds": 97.1,
+      "champion_odds": 26.2,
       "first_pick_odds": 0.0,
-      "avg_pick": 10.26,
+      "avg_pick": 10.27,
       "roster": {
         "starters": [
           {
@@ -5695,12 +5695,12 @@
             "nfl": "LAC",
             "age": 24,
             "exp": 1,
-            "injury": "Doubtful",
+            "injury": "Out",
             "espn_id": null,
             "pts": 37.5,
             "last": 3.6,
             "ppg": 7.5,
-            "proj": 5.25
+            "proj": 3.75
           },
           {
             "id": "13276",
@@ -5767,7 +5767,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 80.5,
+          "win_pct": 80.3,
           "points": 152.92,
           "opp_points": 116.08,
           "max": 166.72,
@@ -5779,7 +5779,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 68.1,
+          "win_pct": 68.2,
           "points": 162.36,
           "opp_points": 149.38,
           "max": 185.36,
@@ -5803,7 +5803,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 72.1,
+          "win_pct": 71.9,
           "points": 166.86,
           "opp_points": 136.38,
           "max": 166.86,
@@ -5815,7 +5815,7 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 72.6,
+          "win_pct": 72.4,
           "points": 14.0,
           "opp_points": 0.0
         },
@@ -5825,7 +5825,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 47.2
+          "win_pct": 47.1
         },
         {
           "week": 8,
@@ -5833,7 +5833,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 87.5
+          "win_pct": 87.6
         },
         {
           "week": 9,
@@ -5849,7 +5849,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 64.7
+          "win_pct": 65.1
         },
         {
           "week": 11,
@@ -5873,7 +5873,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 80.5
+          "win_pct": 80.3
         },
         {
           "week": 14,
@@ -5881,7 +5881,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 68.1
+          "win_pct": 68.2
         }
       ],
       "playoffs_start_week": 15
@@ -5900,10 +5900,10 @@
       "points_for": 624.84,
       "points_against": 671.38,
       "max_pf": 730.4,
-      "playoff_odds": 22.0,
+      "playoff_odds": 22.2,
       "champion_odds": 1.5,
-      "first_pick_odds": 2.5,
-      "avg_pick": 4.92,
+      "first_pick_odds": 2.4,
+      "avg_pick": 4.96,
       "roster": {
         "starters": [
           {
@@ -5949,12 +5949,12 @@
               "nfl": "WAS",
               "age": 27,
               "exp": 4,
-              "injury": null,
+              "injury": "Questionable",
               "espn_id": null,
               "pts": 33.1,
               "last": 3.0,
               "ppg": 8.28,
-              "proj": 8.28
+              "proj": 7.86
             }
           },
           {
@@ -6127,12 +6127,12 @@
             "nfl": "PHI",
             "age": 27,
             "exp": 5,
-            "injury": "Questionable",
+            "injury": null,
             "espn_id": null,
             "pts": 48.5,
             "last": 0.0,
             "ppg": 16.17,
-            "proj": 15.36
+            "proj": 16.17
           },
           {
             "id": "DAL",
@@ -6180,7 +6180,7 @@
             "id": "6149",
             "name": "Darius Slayton",
             "pos": "WR",
-            "nfl": "IND",
+            "nfl": "FA",
             "age": 29,
             "exp": 7,
             "injury": null,
@@ -6273,7 +6273,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 25.2,
+          "win_pct": 25.3,
           "points": 99.2,
           "opp_points": 156.76,
           "max": 117.3,
@@ -6285,7 +6285,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 62.8,
+          "win_pct": 63.2,
           "points": 170.96,
           "opp_points": 109.02,
           "max": 192.16,
@@ -6297,7 +6297,7 @@
           "opponent": 11,
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
-          "win_pct": 42.1,
+          "win_pct": 42.3,
           "points": 142.24,
           "opp_points": 107.84,
           "max": 158.98,
@@ -6309,7 +6309,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 41.5,
+          "win_pct": 42.0,
           "points": 94.3,
           "opp_points": 145.98,
           "max": 112.16,
@@ -6321,7 +6321,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 38.6,
+          "win_pct": 38.8,
           "points": 118.14,
           "opp_points": 151.78,
           "max": 149.8,
@@ -6333,7 +6333,7 @@
           "opponent": 9,
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
-          "win_pct": 27.4,
+          "win_pct": 27.6,
           "points": 0.0,
           "opp_points": 14.0
         },
@@ -6343,7 +6343,7 @@
           "opponent": 3,
           "opponent_team": "K-9’s Unit",
           "opponent_owner": "sleepymike09",
-          "win_pct": 37.0
+          "win_pct": 37.3
         },
         {
           "week": 8,
@@ -6351,7 +6351,7 @@
           "opponent": 7,
           "opponent_team": "Finesse🥶🤴🏿",
           "opponent_owner": "JustinFreshly",
-          "win_pct": 63.8
+          "win_pct": 64.1
         },
         {
           "week": 9,
@@ -6367,7 +6367,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 52.8
+          "win_pct": 52.9
         },
         {
           "week": 11,
@@ -6375,7 +6375,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 40.4
+          "win_pct": 40.7
         },
         {
           "week": 12,
@@ -6383,7 +6383,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 25.2
+          "win_pct": 25.3
         },
         {
           "week": 13,
@@ -6391,7 +6391,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 62.8
+          "win_pct": 63.2
         },
         {
           "week": 14,
@@ -6399,7 +6399,7 @@
           "opponent": 11,
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
-          "win_pct": 42.1
+          "win_pct": 42.3
         }
       ],
       "playoffs_start_week": 15
@@ -6518,12 +6518,12 @@
               "nfl": "IND",
               "age": 24,
               "exp": 1,
-              "injury": null,
+              "injury": "Questionable",
               "espn_id": null,
               "pts": 69.9,
               "last": 21.4,
               "ppg": 13.98,
-              "proj": 13.98
+              "proj": 13.28
             }
           },
           {
@@ -6731,12 +6731,12 @@
             "nfl": "CLE",
             "age": 22,
             "exp": 0,
-            "injury": "Questionable",
+            "injury": null,
             "espn_id": null,
             "pts": 69.0,
             "last": 13.6,
             "ppg": 13.8,
-            "proj": 13.11
+            "proj": 13.8
           },
           {
             "id": "13411",
@@ -6791,7 +6791,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 71.6,
+          "win_pct": 71.8,
           "points": 181.86,
           "opp_points": 99.24,
           "max": 229.94,
@@ -6803,7 +6803,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 32.5,
+          "win_pct": 32.4,
           "points": 132.58,
           "opp_points": 153.58,
           "max": 154.78,
@@ -6815,7 +6815,7 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 57.9,
+          "win_pct": 57.7,
           "points": 107.84,
           "opp_points": 142.24,
           "max": 127.94,
@@ -6827,7 +6827,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 49.6,
+          "win_pct": 49.7,
           "points": 109.0,
           "opp_points": 131.32,
           "max": 137.06,
@@ -6839,7 +6839,7 @@
           "opponent": 12,
           "opponent_team": "Daejon Mustard ",
           "opponent_owner": "JHam4Hunnid",
-          "win_pct": 62.3,
+          "win_pct": 62.1,
           "points": 144.84,
           "opp_points": 133.6,
           "max": 162.14,
@@ -6861,7 +6861,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 49.5
+          "win_pct": 49.8
         },
         {
           "week": 8,
@@ -6869,7 +6869,7 @@
           "opponent": 3,
           "opponent_team": "K-9’s Unit",
           "opponent_owner": "sleepymike09",
-          "win_pct": 46.1
+          "win_pct": 46.2
         },
         {
           "week": 9,
@@ -6885,7 +6885,7 @@
           "opponent": 2,
           "opponent_team": "DOLLA BILLZ",
           "opponent_owner": "RefMitch128",
-          "win_pct": 55.7
+          "win_pct": 55.5
         },
         {
           "week": 11,
@@ -6901,7 +6901,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 71.6
+          "win_pct": 71.8
         },
         {
           "week": 13,
@@ -6909,7 +6909,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 32.5
+          "win_pct": 32.4
         },
         {
           "week": 14,
@@ -6917,7 +6917,7 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 57.9
+          "win_pct": 57.7
         }
       ],
       "playoffs_start_week": 15
@@ -6936,10 +6936,10 @@
       "points_for": 626.96,
       "points_against": 683.42,
       "max_pf": 699.96,
-      "playoff_odds": 3.4,
+      "playoff_odds": 3.5,
       "champion_odds": 0.1,
-      "first_pick_odds": 16.3,
-      "avg_pick": 2.44,
+      "first_pick_odds": 15.7,
+      "avg_pick": 2.47,
       "roster": {
         "starters": [
           {
@@ -7323,7 +7323,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 33.7,
+          "win_pct": 34.1,
           "points": 126.36,
           "opp_points": 130.5,
           "max": 134.46,
@@ -7335,7 +7335,7 @@
           "opponent": 9,
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
-          "win_pct": 19.5,
+          "win_pct": 19.7,
           "points": 116.08,
           "opp_points": 152.92,
           "max": 127.38,
@@ -7347,7 +7347,7 @@
           "opponent": 3,
           "opponent_team": "K-9’s Unit",
           "opponent_owner": "sleepymike09",
-          "win_pct": 29.3,
+          "win_pct": 29.7,
           "points": 115.88,
           "opp_points": 137.68,
           "max": 132.0,
@@ -7359,7 +7359,7 @@
           "opponent": 1,
           "opponent_team": "‘89 Earthquake",
           "opponent_owner": "TheeDarryKing",
-          "win_pct": 63.4,
+          "win_pct": 64.0,
           "points": 135.04,
           "opp_points": 117.48,
           "max": 163.22,
@@ -7371,7 +7371,7 @@
           "opponent": 11,
           "opponent_team": "Ryan Poles",
           "opponent_owner": "TribalChief13",
-          "win_pct": 37.7,
+          "win_pct": 37.9,
           "points": 133.6,
           "opp_points": 144.84,
           "max": 142.9,
@@ -7383,7 +7383,7 @@
           "opponent": 7,
           "opponent_team": "Finesse🥶🤴🏿",
           "opponent_owner": "JustinFreshly",
-          "win_pct": 64.2,
+          "win_pct": 64.5,
           "points": 7.0,
           "opp_points": 0.0
         },
@@ -7401,7 +7401,7 @@
           "opponent": 5,
           "opponent_team": "‘97 Stability ",
           "opponent_owner": "JudasJudge",
-          "win_pct": 36.9
+          "win_pct": 37.5
         },
         {
           "week": 9,
@@ -7409,7 +7409,7 @@
           "opponent": 4,
           "opponent_team": "The Lab",
           "opponent_owner": "JamesQua",
-          "win_pct": 34.4
+          "win_pct": 34.6
         },
         {
           "week": 10,
@@ -7417,7 +7417,7 @@
           "opponent": 10,
           "opponent_team": "🌨️🧱Brick by Brick🧱🌨️",
           "opponent_owner": "BryanGichaba",
-          "win_pct": 47.2
+          "win_pct": 47.1
         },
         {
           "week": 11,
@@ -7425,7 +7425,7 @@
           "opponent": 6,
           "opponent_team": "Vanilla Diamonds",
           "opponent_owner": "VanillaDiamonds",
-          "win_pct": 17.0
+          "win_pct": 17.2
         },
         {
           "week": 12,
@@ -7433,7 +7433,7 @@
           "opponent": 8,
           "opponent_team": "MIP",
           "opponent_owner": "toobizzie",
-          "win_pct": 33.7
+          "win_pct": 34.1
         },
         {
           "week": 13,
@@ -7441,7 +7441,7 @@
           "opponent": 9,
           "opponent_team": "Top 5 Top 5 Top 5",
           "opponent_owner": "NewEleven",
-          "win_pct": 19.5
+          "win_pct": 19.7
         },
         {
           "week": 14,
@@ -7449,7 +7449,7 @@
           "opponent": 3,
           "opponent_team": "K-9’s Unit",
           "opponent_owner": "sleepymike09",
-          "win_pct": 29.3
+          "win_pct": 29.7
         }
       ],
       "playoffs_start_week": 15
@@ -7461,10 +7461,10 @@
     "results_weight": 0.417,
     "teams": {
       "1": {
-        "mean": 112.33,
-        "healthy": 112.9,
-        "injury_cost": 0.57,
-        "next_week": 115.28,
+        "mean": 112.04,
+        "healthy": 113.21,
+        "injury_cost": 1.17,
+        "next_week": 114.9,
         "weeks": [
           6,
           7,
@@ -7485,19 +7485,19 @@
           {
             "id": "12534",
             "name": "Kyle Monangai",
-            "status": "Questionable",
-            "pts": 10.8
+            "status": "Out",
+            "pts": 11.1
           }
         ],
-        "scaled": 111.72,
+        "scaled": 111.37,
         "results_ppg": 113.17,
-        "blended_ppg": 113.94
+        "blended_ppg": 113.76
       },
       "2": {
-        "mean": 132.08,
-        "healthy": 133.12,
-        "injury_cost": 1.04,
-        "next_week": 129.54,
+        "mean": 132.54,
+        "healthy": 132.85,
+        "injury_cost": 0.31,
+        "next_week": 129.41,
         "weeks": [
           6,
           7,
@@ -7522,15 +7522,15 @@
             "pts": 8.7
           }
         ],
-        "scaled": 131.37,
+        "scaled": 131.74,
         "results_ppg": 123.11,
-        "blended_ppg": 127.9
+        "blended_ppg": 128.09
       },
       "3": {
-        "mean": 134.88,
-        "healthy": 136.22,
-        "injury_cost": 1.34,
-        "next_week": 138.27,
+        "mean": 134.84,
+        "healthy": 136.37,
+        "injury_cost": 1.54,
+        "next_week": 139.29,
         "weeks": [
           6,
           7,
@@ -7545,7 +7545,7 @@
           {
             "id": "8155",
             "name": "Breece Hall",
-            "status": "Doubtful",
+            "status": "Out",
             "pts": 13.8
           },
           {
@@ -7557,7 +7557,7 @@
           {
             "id": "13287",
             "name": "Jeremiyah Love",
-            "status": "Questionable",
+            "status": "Out",
             "pts": 10.5
           },
           {
@@ -7567,15 +7567,15 @@
             "pts": 9.5
           }
         ],
-        "scaled": 134.15,
+        "scaled": 134.03,
         "results_ppg": 140.2,
-        "blended_ppg": 136.41
+        "blended_ppg": 136.35
       },
       "4": {
-        "mean": 141.68,
-        "healthy": 145.35,
-        "injury_cost": 3.66,
-        "next_week": 121.37,
+        "mean": 141.77,
+        "healthy": 144.0,
+        "injury_cost": 2.23,
+        "next_week": 124.07,
         "weeks": [
           6,
           7,
@@ -7588,12 +7588,6 @@
         ],
         "hurt": [
           {
-            "id": "9997",
-            "name": "Zay Flowers",
-            "status": "Questionable",
-            "pts": 19.6
-          },
-          {
             "id": "6904",
             "name": "Jalen Hurts",
             "status": "Out",
@@ -7603,24 +7597,30 @@
             "id": "4983",
             "name": "DJ Moore",
             "status": "Questionable",
-            "pts": 13.5
+            "pts": 13.4
           },
           {
-            "id": "11635",
-            "name": "Ladd McConkey",
+            "id": "2449",
+            "name": "Stefon Diggs",
             "status": "Questionable",
-            "pts": 12.1
+            "pts": 11.7
+          },
+          {
+            "id": "4866",
+            "name": "Saquon Barkley",
+            "status": "Out",
+            "pts": 10.9
           }
         ],
         "scaled": 140.92,
         "results_ppg": 136.02,
-        "blended_ppg": 138.05
+        "blended_ppg": 138.06
       },
       "5": {
-        "mean": 138.75,
-        "healthy": 142.53,
-        "injury_cost": 3.77,
-        "next_week": 135.92,
+        "mean": 138.23,
+        "healthy": 142.46,
+        "injury_cost": 4.23,
+        "next_week": 134.02,
         "weeks": [
           6,
           7,
@@ -7635,8 +7635,8 @@
           {
             "id": "4881",
             "name": "Lamar Jackson",
-            "status": "Questionable",
-            "pts": 21.6
+            "status": "Out",
+            "pts": 21.8
           },
           {
             "id": "2216",
@@ -7653,19 +7653,19 @@
           {
             "id": "4892",
             "name": "Baker Mayfield",
-            "status": "Doubtful",
+            "status": "Out",
             "pts": 14.1
           }
         ],
-        "scaled": 138.0,
+        "scaled": 137.4,
         "results_ppg": 129.07,
-        "blended_ppg": 133.7
+        "blended_ppg": 133.4
       },
       "6": {
-        "mean": 151.53,
-        "healthy": 151.59,
-        "injury_cost": 0.06,
-        "next_week": 159.27,
+        "mean": 151.72,
+        "healthy": 151.4,
+        "injury_cost": 0.0,
+        "next_week": 160.05,
         "weeks": [
           6,
           7,
@@ -7682,23 +7682,17 @@
             "name": "Terrance Ferguson",
             "status": "IR",
             "pts": 8.4
-          },
-          {
-            "id": "13298",
-            "name": "KC Concepcion",
-            "status": "Questionable",
-            "pts": 8.3
           }
         ],
-        "scaled": 150.71,
+        "scaled": 150.81,
         "results_ppg": 151.1,
-        "blended_ppg": 149.24
+        "blended_ppg": 149.28
       },
       "7": {
-        "mean": 113.9,
+        "mean": 113.91,
         "healthy": 114.09,
-        "injury_cost": 0.2,
-        "next_week": 118.27,
+        "injury_cost": 0.18,
+        "next_week": 118.07,
         "weeks": [
           6,
           7,
@@ -7717,33 +7711,21 @@
             "pts": 10.2
           },
           {
-            "id": "2505",
-            "name": "Darren Waller",
-            "status": "Questionable",
-            "pts": 8.6
-          },
-          {
             "id": "11625",
             "name": "Adonai Mitchell",
-            "status": "Doubtful",
+            "status": "Out",
             "pts": 8.4
-          },
-          {
-            "id": "9486",
-            "name": "Dontayvion Wicks",
-            "status": "Questionable",
-            "pts": 8.0
           }
         ],
-        "scaled": 113.29,
+        "scaled": 113.23,
         "results_ppg": 105.68,
-        "blended_ppg": 111.59
+        "blended_ppg": 111.57
       },
       "8": {
-        "mean": 135.36,
-        "healthy": 136.37,
-        "injury_cost": 1.01,
-        "next_week": 134.16,
+        "mean": 135.29,
+        "healthy": 136.38,
+        "injury_cost": 1.09,
+        "next_week": 133.66,
         "weeks": [
           6,
           7,
@@ -7758,7 +7740,7 @@
           {
             "id": "10229",
             "name": "Rashee Rice",
-            "status": "Questionable",
+            "status": "Out",
             "pts": 13.8
           },
           {
@@ -7771,7 +7753,7 @@
             "id": "12512",
             "name": "Quinshon Judkins",
             "status": "Questionable",
-            "pts": 11.1
+            "pts": 11.2
           },
           {
             "id": "9753",
@@ -7780,15 +7762,15 @@
             "pts": 9.8
           }
         ],
-        "scaled": 134.63,
+        "scaled": 134.48,
         "results_ppg": 132.63,
-        "blended_ppg": 133.5
+        "blended_ppg": 133.42
       },
       "9": {
-        "mean": 143.15,
-        "healthy": 144.14,
-        "injury_cost": 0.98,
-        "next_week": 142.51,
+        "mean": 143.25,
+        "healthy": 144.29,
+        "injury_cost": 1.04,
+        "next_week": 142.68,
         "weeks": [
           6,
           7,
@@ -7809,7 +7791,7 @@
           {
             "id": "12509",
             "name": "Tre' Harris",
-            "status": "Doubtful",
+            "status": "Out",
             "pts": 8.7
           },
           {
@@ -7825,15 +7807,15 @@
             "pts": 8.1
           }
         ],
-        "scaled": 142.38,
+        "scaled": 142.39,
         "results_ppg": 155.92,
-        "blended_ppg": 147.07
+        "blended_ppg": 147.08
       },
       "10": {
-        "mean": 125.0,
-        "healthy": 128.99,
-        "injury_cost": 3.99,
-        "next_week": 121.22,
+        "mean": 125.51,
+        "healthy": 127.91,
+        "injury_cost": 2.4,
+        "next_week": 126.07,
         "weeks": [
           6,
           7,
@@ -7846,33 +7828,33 @@
         ],
         "hurt": [
           {
-            "id": "7525",
-            "name": "DeVonta Smith",
-            "status": "Questionable",
-            "pts": 14.6
-          },
-          {
             "id": "5927",
             "name": "Terry McLaurin",
             "status": "Questionable",
-            "pts": 10.9
+            "pts": 11.0
           },
           {
             "id": "8408",
             "name": "Jordan Mason",
             "status": "IR",
             "pts": 10.1
+          },
+          {
+            "id": "8136",
+            "name": "Rachaad White",
+            "status": "Questionable",
+            "pts": 7.1
           }
         ],
-        "scaled": 124.33,
+        "scaled": 124.76,
         "results_ppg": 124.97,
-        "blended_ppg": 125.15
+        "blended_ppg": 125.37
       },
       "11": {
-        "mean": 132.55,
-        "healthy": 133.17,
+        "mean": 132.61,
+        "healthy": 133.23,
         "injury_cost": 0.62,
-        "next_week": 136.61,
+        "next_week": 135.85,
         "weeks": [
           6,
           7,
@@ -7885,10 +7867,10 @@
         ],
         "hurt": [
           {
-            "id": "13346",
-            "name": "Denzel Boston",
+            "id": "12518",
+            "name": "Tyler Warren",
             "status": "Questionable",
-            "pts": 12.0
+            "pts": 12.6
           },
           {
             "id": "5892",
@@ -7903,15 +7885,15 @@
             "pts": 10.9
           }
         ],
-        "scaled": 131.83,
+        "scaled": 131.81,
         "results_ppg": 135.22,
-        "blended_ppg": 133.18
+        "blended_ppg": 133.17
       },
       "12": {
-        "mean": 119.8,
-        "healthy": 123.78,
-        "injury_cost": 3.98,
-        "next_week": 113.72,
+        "mean": 120.26,
+        "healthy": 124.18,
+        "injury_cost": 3.92,
+        "next_week": 118.28,
         "weeks": [
           6,
           7,
@@ -7927,7 +7909,7 @@
             "id": "5859",
             "name": "A.J. Brown",
             "status": "IR",
-            "pts": 10.9
+            "pts": 11.0
           },
           {
             "id": "13281",
@@ -7948,9 +7930,9 @@
             "pts": 8.2
           }
         ],
-        "scaled": 119.15,
+        "scaled": 119.54,
         "results_ppg": 125.39,
-        "blended_ppg": 122.74
+        "blended_ppg": 122.94
       }
     }
   },
@@ -8255,124 +8237,124 @@
     },
     "model": {
       "1": [
-        113.935,
+        113.757,
         17.505,
         6.189
       ],
       "2": [
-        127.899,
+        128.087,
         22.813,
         8.066
       ],
       "3": [
-        136.414,
+        136.354,
         16.761,
         5.926
       ],
       "4": [
-        138.054,
+        138.056,
         31.717,
         11.214
       ],
       "5": [
-        133.699,
+        133.399,
         26.015,
         9.198
       ],
       "6": [
-        149.236,
+        149.285,
         20.176,
         7.133
       ],
       "7": [
-        111.594,
+        111.565,
         23.571,
         8.334
       ],
       "8": [
-        133.497,
+        133.421,
         17.401,
         6.152
       ],
       "9": [
-        147.074,
+        147.08,
         20.827,
         7.364
       ],
       "10": [
-        125.153,
+        125.369,
         27.319,
         9.659
       ],
       "11": [
-        133.181,
+        133.171,
         26.5,
         9.369
       ],
       "12": [
-        122.743,
+        122.936,
         16.751,
         5.922
       ]
     },
     "max_model": {
       "1": [
-        145.581,
+        145.403,
         17.389,
         6.148
       ],
       "2": [
-        153.592,
+        153.781,
         21.778,
         7.7
       ],
       "3": [
-        154.923,
+        154.862,
         17.472,
         6.177
       ],
       "4": [
-        157.675,
+        157.677,
         25.313,
         8.95
       ],
       "5": [
-        152.37,
+        152.07,
         25.381,
         8.973
       ],
       "6": [
-        170.265,
+        170.313,
         21.171,
         7.485
       ],
       "7": [
-        135.198,
+        135.168,
         18.779,
         6.639
       ],
       "8": [
-        150.745,
+        150.669,
         21.046,
         7.441
       ],
       "9": [
-        170.245,
+        170.251,
         21.246,
         7.512
       ],
       "10": [
-        146.571,
+        146.787,
         27.716,
         9.799
       ],
       "11": [
-        158.372,
+        158.361,
         32.234,
         11.396
       ],
       "12": [
-        140.092,
+        140.284,
         18.249,
         6.452
       ]
@@ -8383,6 +8365,23 @@
     "roster_share": 0.5
   },
   "transactions": [
+    {
+      "id": "1416933996981473280",
+      "type": "free_agent",
+      "week": 6,
+      "time": 1792185899542,
+      "rosters": [
+        5
+      ],
+      "adds": {
+        "10235": 5
+      },
+      "drops": {
+        "11783": 5
+      },
+      "picks": [],
+      "faab": null
+    },
     {
       "id": "1416107121145094144",
       "type": "waiver",
@@ -9653,21 +9652,6 @@
       "drops": {},
       "picks": [],
       "faab": null
-    },
-    {
-      "id": "1411747893609537536",
-      "type": "waiver",
-      "week": 4,
-      "time": 1790976835095,
-      "rosters": [
-        12
-      ],
-      "adds": {
-        "LV": 12
-      },
-      "drops": {},
-      "picks": [],
-      "faab": 1
     }
   ],
   "diagnostics": {
