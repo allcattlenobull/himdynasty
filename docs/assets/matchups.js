@@ -136,6 +136,14 @@
     return row;
   }
 
+  function chanceLabel(a, b, aPct) {
+    if (aPct === null) return null;
+    const aShown = Math.round(aPct);
+    const bShown = Math.round(100 - aPct);
+    if (aShown === 50 && bShown === 50) return "Toss up";
+    return aPct > 50 ? `${teamName(a.roster_id)} ${aShown}%` : `${teamName(b.roster_id)} ${bShown}%`;
+  }
+
   async function renderWeek(week) {
     shownWeek = week;
     renderPills();
@@ -155,13 +163,17 @@
     for (const [a, b] of games) {
       const st = status(week, a, b);
       if (st === "live") anyLive = true;
-      const pa = st === "upcoming" ? winPct(String(a.roster_id), String(b.roster_id)) : null;
+      const pa = st === "final" ? null : winPct(String(a.roster_id), String(b.roster_id));
       const card = el("article", null, `matchup ${st}`);
       const head = el("div", null, "mhead");
       head.appendChild(el("span", st === "final" ? "Final" : st === "live" ? "Live" : "Upcoming", `mstatus ${st}`));
-      if (st !== "upcoming") {
+      if (st === "final") {
         const diff = Math.abs((a.points || 0) - (b.points || 0));
         head.appendChild(el("span", `margin ${diff.toFixed(2)}`, "owner"));
+      } else if (st === "live") {
+        const diff = Math.abs((a.points || 0) - (b.points || 0));
+        const chance = chanceLabel(a, b, pa);
+        head.appendChild(el("span", `${chance ? `${chance} · ` : ""}margin ${diff.toFixed(2)}`, "owner matchup-summary"));
       } else {
         head.appendChild(el("span", "win chance", "owner"));
       }

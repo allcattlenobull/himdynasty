@@ -1057,6 +1057,7 @@ body.no-scroll { overflow: hidden; }
 .matchup { background: var(--bg); border: 1px solid var(--line); min-width: 0; }
 .matchup.live { border-color: var(--red); }
 .mhead { display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.7rem; border-bottom: 1px solid var(--line); }
+.matchup-summary { min-width: 0; max-width: 72%; margin-left: 0.75rem; line-height: 1.25; overflow-wrap: anywhere; text-align: right; }
 .mstatus { font-family: var(--display); letter-spacing: 0.12em; font-size: 0.75rem; text-transform: uppercase; color: var(--muted); }
 .mstatus.final { color: var(--good); }
 .mstatus.live { color: var(--red); }
