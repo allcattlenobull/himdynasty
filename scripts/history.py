@@ -486,12 +486,14 @@ def main():
     # Started points by user, player, season, week (for trades and drafts)
     started_by = defaultdict(list)       # (user, pid) -> [(season, week, pts)]
     league_pts = defaultdict(float)      # pid -> started points anywhere in the league
+    league_started_log = defaultdict(list)  # pid -> [(season, week, pts)] across every manager
     for s in seasons:
         for rid, w, pid, pts in s["started"]:
             if not s["complete"] and w > (weeks_done or 99):
                 continue
             started_by[(uid_of[(s["season"], rid)], pid)].append((s["season"], w, pts))
             league_pts[pid] += pts
+            league_started_log[pid].append((s["season"], w, pts))
 
     # Draft re-grades (rookie drafts)
     drafts_out = []
@@ -530,11 +532,12 @@ def main():
             if hit:
                 info = pinfo(hit["pid"])
                 return {"kind": "pick", "label": f"{pk['season']} {pk['round']}.{hit['slot']:02d}", "became": info["name"], "pos": info["pos"],
-                        "pid": str(hit["pid"]), "value": info["value"]}
+                        "pid": str(hit["pid"]), "season": int(pk["season"]), "round": pk["round"], "value": info["value"]}
         v = future_pick_value.get(f"k{pk['season']}-{pk['round']}-{pk['orig']}")
         if v is None:
             v = pick_market.get(f"{pk['season']} Mid {['1st', '2nd', '3rd', '4th', '5th'][min(pk['round'], 5) - 1]}", 0) or 0
-        return {"kind": "pick", "label": f"{pk['season']} Round {pk['round']}", "became": None, "pos": "PICK", "pid": None, "value": round(v)}
+        return {"kind": "pick", "label": f"{pk['season']} Round {pk['round']}", "became": None, "pos": "PICK", "pid": None,
+                "season": int(pk["season"]), "round": pk["round"], "value": round(v)}
 
     trades_out = []
     for s in seasons:
@@ -548,8 +551,14 @@ def main():
                     age = info["age"]
                     if age is not None:
                         age = round(max(18, age - (int(current["season"]) - int(s["season"]))), 1)
+                    trade_week = int(t.get("week") or 0)
+                    before = [(ss, w, pts) for ss, w, pts in league_started_log.get(str(pid), [])
+                              if ss < s["season"] or (ss == s["season"] and trade_week and w < trade_week)]
+                    recent = sorted(before, key=lambda x: (x[0], x[1]))[-8:]
                     items.append({"kind": "player", "label": info["name"], "pos": info["pos"], "pid": str(pid),
-                                  "age_at_trade": age, "value": info["value"]})
+                                  "age_at_trade": age, "recent_starts": len(recent),
+                                  "recent_ppg": round(statistics.mean(x[2] for x in recent), 1) if recent else None,
+                                  "value": info["value"]})
                 for pk in got["picks"]:
                     items.append(pick_asset(pk, s["season"]))
                 if got.get("faab"):
@@ -593,9 +602,17 @@ def main():
     # Acceptance tendencies from completed trades. Leans are measured against
     # the whole league and shrunk toward neutral for small samples; this keeps a
     # single deal from branding a manager as youth-only or pick-stingy.
-    tendency_rows = defaultdict(lambda: {"deals": 0, "ages": [], "young": 0, "players": 0,
-                                          "picks_sent": 0, "picks_received": 0,
-                                          "pick_send_deals": 0, "pick_receive_deals": 0})
+    tendency_rows = defaultdict(lambda: {
+        "deals": 0, "ages": [], "young": 0, "players": 0,
+        "picks_sent": 0, "picks_received": 0, "pick_send_deals": 0, "pick_receive_deals": 0,
+        "firsts_sent": 0, "firsts_received": 0, "future_sent": 0, "future_received": 0,
+        "positions": defaultdict(int), "position_value": defaultdict(float),
+        "production_sample": 0, "proven_producers": 0,
+        "consolidate": 0, "depth": 0, "large": 0, "multi_asset": 0,
+        "stars_received": 0, "stars_sent": 0,
+        "offseason": 0, "deadline": 0, "weeks": [], "balanced": 0, "value_edges": [],
+        "partners": defaultdict(int),
+    })
     for t in trades_out:
         for side in t["sides"]:
             other = next((x for x in t["sides"] if x is not side), None)
@@ -603,7 +620,8 @@ def main():
                 continue
             row = tendency_rows[side["user"]]
             row["deals"] += 1
-            received_players = [x for x in side["items"] if x["kind"] == "player" and x.get("age_at_trade") is not None]
+            received_player_items = [x for x in side["items"] if x["kind"] == "player"]
+            received_players = [x for x in received_player_items if x.get("age_at_trade") is not None]
             received_picks = [x for x in side["items"] if x["kind"] == "pick"]
             sent_picks = [x for x in other["items"] if x["kind"] == "pick"]
             row["ages"].extend(x["age_at_trade"] for x in received_players)
@@ -613,12 +631,57 @@ def main():
             row["picks_sent"] += len(sent_picks)
             row["pick_receive_deals"] += bool(received_picks)
             row["pick_send_deals"] += bool(sent_picks)
+            for p in received_players:
+                row["positions"][p["pos"]] += 1
+                row["position_value"][p["pos"]] += p["value"]
+            productive_cut = {"QB": 18, "RB": 12, "WR": 12, "TE": 9}
+            for p in received_player_items:
+                if (p.get("recent_starts") or 0) < 3 or p["pos"] not in productive_cut:
+                    continue
+                row["production_sample"] += 1
+                row["proven_producers"] += p.get("recent_ppg", 0) >= productive_cut[p["pos"]]
+            row["firsts_received"] += sum(p.get("round") == 1 for p in received_picks)
+            row["firsts_sent"] += sum(p.get("round") == 1 for p in sent_picks)
+            row["future_received"] += sum(int(p.get("season") or t["season"]) >= int(t["season"]) + 2 for p in received_picks)
+            row["future_sent"] += sum(int(p.get("season") or t["season"]) >= int(t["season"]) + 2 for p in sent_picks)
+            received = [x for x in side["items"] if x["kind"] != "faab"]
+            sent = [x for x in other["items"] if x["kind"] != "faab"]
+            row["consolidate"] += len(sent) > len(received)
+            row["depth"] += len(received) > len(sent)
+            row["multi_asset"] += len(received) >= 2 or len(sent) >= 2
+            row["large"] += max(side["value_now"], other["value_now"]) >= 5000
+            row["stars_received"] += sum(x.get("value", 0) >= 4000 for x in received)
+            row["stars_sent"] += sum(x.get("value", 0) >= 4000 for x in sent)
+            week = int(t.get("week") or 0)
+            row["offseason"] += week == 0
+            row["deadline"] += week >= 10
+            if week:
+                row["weeks"].append(week)
+            edge = (side["value_now"] - other["value_now"]) / max(side["value_now"], other["value_now"], 1)
+            row["value_edges"].append(edge)
+            row["balanced"] += abs(edge) <= 0.1
+            if other.get("user"):
+                row["partners"][other["user"]] += 1
 
     total_players = sum(x["players"] for x in tendency_rows.values())
     league_young = sum(x["young"] for x in tendency_rows.values()) / max(total_players, 1)
     total_deals = sum(x["deals"] for x in tendency_rows.values())
     league_send = sum(x["pick_send_deals"] for x in tendency_rows.values()) / max(total_deals, 1)
     league_receive = sum(x["pick_receive_deals"] for x in tendency_rows.values()) / max(total_deals, 1)
+    league_first_send = sum(x["firsts_sent"] for x in tendency_rows.values()) / max(total_deals, 1)
+    league_large = sum(x["large"] for x in tendency_rows.values()) / max(total_deals, 1)
+    league_offseason = sum(x["offseason"] for x in tendency_rows.values()) / max(total_deals, 1)
+    league_deadline = sum(x["deadline"] for x in tendency_rows.values()) / max(total_deals, 1)
+    league_positions = defaultdict(int)
+    for row in tendency_rows.values():
+        for pos, count in row["positions"].items():
+            league_positions[pos] += count
+    league_position_total = sum(league_positions.values())
+    league_position_share = {p: n / max(league_position_total, 1) for p, n in league_positions.items()}
+    production_sample = sum(x["production_sample"] for x in tendency_rows.values())
+    league_production = sum(x["proven_producers"] for x in tendency_rows.values()) / max(production_sample, 1)
+    activity_rates = [r["deals"] / max(len(managers[u]["seasons"]), 1) for u, r in tendency_rows.items() if u in managers]
+    league_activity = statistics.mean(activity_rates) if activity_rates else 0
     clamp = lambda x: max(-1, min(1, x))  # noqa: E731
     for u, row in tendency_rows.items():
         confidence = min(1.0, row["deals"] / 6)
@@ -628,8 +691,33 @@ def main():
         youth_lean = clamp((young_share - league_young) / 0.35) * confidence
         pick_send_lean = clamp((send_rate - league_send) / 0.45) * confidence
         pick_receive_lean = clamp((receive_rate - league_receive) / 0.45) * confidence
+        first_send_rate = row["firsts_sent"] / row["deals"] if row["deals"] else league_first_send
+        first_send_lean = clamp((first_send_rate - league_first_send) / 0.3) * confidence
+        package_lean = clamp((row["consolidate"] - row["depth"]) / max(row["deals"], 1) / 0.45) * confidence
+        large_rate = row["large"] / row["deals"] if row["deals"] else league_large
+        large_lean = clamp((large_rate - league_large) / 0.35) * confidence
+        offseason_rate = row["offseason"] / row["deals"] if row["deals"] else league_offseason
+        deadline_rate = row["deadline"] / row["deals"] if row["deals"] else league_deadline
+        position_leans = {}
+        for pos in ("QB", "RB", "WR", "TE"):
+            share = row["positions"][pos] / max(row["players"], 1)
+            position_leans[pos] = round(clamp((share - league_position_share.get(pos, 0)) / 0.25) * min(1, row["players"] / 12), 3)
+        preferred_pos = max(position_leans, key=position_leans.get) if row["players"] else None
+        producer_rate = row["proven_producers"] / row["production_sample"] if row["production_sample"] else league_production
+        production_lean = clamp((producer_rate - league_production) / 0.35) * min(1, row["production_sample"] / 8)
         youth_label = "Targets young players" if youth_lean >= 0.2 else "Veteran-friendly" if youth_lean <= -0.2 else "Age-balanced"
         pick_label = "Loose with picks" if pick_send_lean >= 0.2 else "Stingy with picks" if pick_send_lean <= -0.2 else "Average pick activity"
+        first_label = "Willing to move 1sts" if first_send_lean >= 0.2 else "Protects 1sts" if first_send_lean <= -0.2 else "Average with 1sts"
+        package_label = "Consolidates for stars" if package_lean >= 0.2 else "Prefers depth packages" if package_lean <= -0.2 else "Flexible deal structure"
+        position_label = f"Targets {preferred_pos}" if preferred_pos and position_leans[preferred_pos] >= 0.18 else "No strong position bias"
+        production_label = "Chases proven production" if production_lean >= 0.2 else "Bets on unproven upside" if production_lean <= -0.2 else "Balances production and upside"
+        activity = row["deals"] / max(len(managers.get(u, {}).get("seasons", {})), 1)
+        activity_label = "Very active trader" if activity >= league_activity * 1.3 else "Selective trader" if activity <= league_activity * 0.7 else "Average trade frequency"
+        large_label = "Comfortable with blockbusters" if large_lean >= 0.2 else "Prefers smaller deals" if large_lean <= -0.2 else "Mixed deal sizes"
+        timing_label = "Offseason trader" if offseason_rate >= league_offseason + 0.15 else "Deadline mover" if deadline_rate >= league_deadline + 0.12 else "Trades year-round"
+        median_edge = statistics.median(row["value_edges"]) if row["value_edges"] else 0
+        balanced_rate = row["balanced"] / row["deals"] if row["deals"] else 0
+        value_label = "Usually comes out ahead in current value" if median_edge >= 0.08 else "Often gives value to close deals" if median_edge <= -0.08 else "Usually makes balanced-value deals" if balanced_rate >= 0.4 else "Flexible on value gaps"
         if u in managers:
             managers[u]["tendencies"] = {
                 "deals": row["deals"], "players_acquired": row["players"],
@@ -638,7 +726,61 @@ def main():
                 "pick_send_rate": round(send_rate, 3), "pick_receive_rate": round(receive_rate, 3),
                 "youth_lean": round(youth_lean, 3), "pick_send_lean": round(pick_send_lean, 3),
                 "pick_receive_lean": round(pick_receive_lean, 3), "youth_label": youth_label, "pick_label": pick_label,
+                "firsts_sent": row["firsts_sent"], "firsts_received": row["firsts_received"],
+                "future_picks_sent": row["future_sent"], "future_picks_received": row["future_received"],
+                "first_send_lean": round(first_send_lean, 3), "first_label": first_label,
+                "position_counts": dict(row["positions"]), "position_value": {p: round(v) for p, v in row["position_value"].items()},
+                "position_leans": position_leans, "position_label": position_label, "preferred_position": preferred_pos,
+                "production_sample": row["production_sample"], "proven_producers": row["proven_producers"],
+                "production_chase_lean": round(production_lean, 3), "production_label": production_label,
+                "consolidations": row["consolidate"], "depth_deals": row["depth"],
+                "package_lean": round(package_lean, 3), "package_label": package_label,
+                "large_deals": row["large"], "large_deal_rate": round(large_rate, 3), "large_deal_lean": round(large_lean, 3),
+                "large_label": large_label, "multi_asset_deals": row["multi_asset"],
+                "stars_received": row["stars_received"], "stars_sent": row["stars_sent"],
+                "trades_per_season": round(activity, 1), "activity_label": activity_label,
+                "offseason_rate": round(offseason_rate, 3), "deadline_rate": round(deadline_rate, 3),
+                "avg_inseason_week": round(statistics.mean(row["weeks"]), 1) if row["weeks"] else None, "timing_label": timing_label,
+                "median_current_value_edge": round(median_edge, 3), "balanced_value_rate": round(balanced_rate, 3), "value_label": value_label,
+                "favorite_partners": [{"user": p, "deals": n} for p, n in sorted(row["partners"].items(), key=lambda x: (-x[1], x[0]))[:3]],
+                "risk": {"available": False, "label": "Point-in-time injury status is not preserved by Sleeper"},
             }
+
+    # Rookie-draft habits are kept separate from trade behavior. Startup picks
+    # would swamp the much more useful signal about how a manager handles annual
+    # rookie capital.
+    draft_rows = defaultdict(lambda: {"picks": 0, "positions": defaultdict(int), "round_one": defaultdict(int),
+                                       "delta": [], "traded_in": 0, "steals": 0, "reaches": 0, "best": None})
+    for d in drafts_out:
+        if d["kind"] != "rookie":
+            continue
+        for p in d["picks"]:
+            row = draft_rows[p["user"]]
+            row["picks"] += 1
+            row["positions"][p["pos"]] += 1
+            if p["r"] == 1:
+                row["round_one"][p["pos"]] += 1
+            row["delta"].append(p["delta"])
+            row["traded_in"] += bool(p.get("orig_user") and p["orig_user"] != p["user"])
+            row["steals"] += p["delta"] >= 5
+            row["reaches"] += p["delta"] <= -5
+            if row["best"] is None or p["delta"] > row["best"]["delta"]:
+                row["best"] = {"name": p["name"], "label": p["label"], "season": d["season"], "delta": p["delta"]}
+    for u, row in draft_rows.items():
+        if u not in managers or "tendencies" not in managers[u]:
+            continue
+        preferred = max(row["positions"], key=row["positions"].get) if row["positions"] else None
+        share = row["positions"][preferred] / row["picks"] if preferred else 0
+        style = f"Leans {preferred}" if share >= 0.4 else "Position-balanced drafter"
+        acquired_rate = row["traded_in"] / max(row["picks"], 1)
+        capital = "Aggressively acquires draft slots" if acquired_rate >= 0.5 else "Sometimes trades into picks" if acquired_rate >= 0.25 else "Mostly uses own draft slots"
+        managers[u]["tendencies"]["draft"] = {
+            "rookie_picks": row["picks"], "position_counts": dict(row["positions"]), "round_one_positions": dict(row["round_one"]),
+            "preferred_position": preferred, "style_label": style, "traded_in_picks": row["traded_in"],
+            "traded_in_rate": round(acquired_rate, 3), "capital_label": capital,
+            "avg_value_delta": round(statistics.mean(row["delta"]), 1) if row["delta"] else None,
+            "steals": row["steals"], "reaches": row["reaches"], "best_pick": row["best"],
+        }
 
     for M in managers.values():
         M["pf"], M["pa"] = round(M["pf"], 2), round(M["pa"], 2)

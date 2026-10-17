@@ -12,6 +12,7 @@
   const ME_KEY = "him-me";
   const calc = { a: null, b: null, A: [], B: [] };
   const build = { a: null, b: null, ga: new Set(), gb: new Set() };
+  const guide = { target: null };
 
   const fmtNum = (n) => Math.round(n).toLocaleString();
   const signed = (n) => `${n >= 0 ? "+" : "−"}${fmtNum(Math.abs(n))}`;
@@ -27,9 +28,13 @@
     };
   }
 
-  function tendencyFor(rid) {
+  function managerForRid(rid) {
     if (!historyData) return null;
-    const m = Object.values(historyData.managers || {}).find((x) => String(x.current_rid) === String(rid));
+    return Object.values(historyData.managers || {}).find((x) => String(x.current_rid) === String(rid)) || null;
+  }
+
+  function tendencyFor(rid) {
+    const m = managerForRid(rid);
     return m && m.tendencies && m.tendencies.deals >= 2 ? m.tendencies : null;
   }
 
@@ -49,11 +54,30 @@
     const pickReturn = receivedValue ? value(receives.filter((a) => a.kind === "pick")) / receivedValue : 0;
     const youth = 2.5 * t.youth_lean * youngness;
     const picks = 3 * t.pick_send_lean * pickCost + 1.5 * t.pick_receive_lean * pickReturn;
-    const score = Math.max(-4, Math.min(4, youth + picks));
+    const position = playerValue ? players.reduce((sum, a) => sum + (t.position_leans && t.position_leans[a.pos] || 0) * Math.max(a.value || 0, 1), 0) / playerValue * 1.5 : 0;
+    const productiveCut = { QB: 18, RB: 12, WR: 12, TE: 9 };
+    const production = playerValue ? players.reduce((sum, a) => {
+      const proven = productiveCut[a.pos] && (a.ppg || 0) >= productiveCut[a.pos] ? 1 : (a.ppg || 0) > 0 ? -0.35 : -0.7;
+      return sum + proven * Math.max(a.value || 0, 1);
+    }, 0) / playerValue * (t.production_chase_lean || 0) * 1.5 : 0;
+    const receivedPieces = receives.filter((a) => a.kind !== "faab").length;
+    const sentPieces = sends.filter((a) => a.kind !== "faab").length;
+    const structure = receivedPieces === sentPieces ? 0 : (sentPieces > receivedPieces ? 1 : -1) * (t.package_lean || 0) * 1.4;
+    const firstCost = sends.some((a) => a.kind === "pick" && a.round === 1) ? (t.first_send_lean || 0) * 1.2 : 0;
+    const size = Math.max(value(receives), value(sends));
+    const dealSize = size >= 5000 ? (t.large_deal_lean || 0) * 0.8 : 0;
+    let timing = 0;
+    const week = latest && latest.league ? latest.league.nfl_week : null;
+    if (week && week >= 10 && t.timing_label === "Deadline mover") timing = 0.35;
+    else if ((!week || latest.league.status !== "in_season") && t.timing_label === "Offseason trader") timing = 0.35;
+    const score = Math.max(-4, Math.min(4, youth + picks + position + production + structure + firstCost + dealSize + timing));
     const notes = [];
     if (Math.abs(youth) >= 0.45) notes.push(youth > 0 ? "The return matches this manager’s history of targeting youth." : "The player age mix runs against this manager’s past trades.");
     if (pickCost >= 0.2 && Math.abs(t.pick_send_lean) >= 0.2) notes.push(t.pick_send_lean > 0 ? "This manager has been willing to move picks." : "This manager has historically protected their picks.");
     if (pickReturn >= 0.2 && t.pick_receive_lean >= 0.2) notes.push("This manager has frequently acquired picks in past deals.");
+    if (Math.abs(position) >= 0.35 && t.preferred_position) notes.push(position > 0 ? `This return matches a history of targeting ${t.preferred_position}.` : "The positions offered do not match this manager’s usual targets.");
+    if (Math.abs(production) >= 0.35) notes.push(production > 0 ? `The return matches this manager’s ${t.production_label.toLowerCase()} history.` : `The return runs against this manager’s ${t.production_label.toLowerCase()} history.`);
+    if (Math.abs(structure) >= 0.35) notes.push(structure > 0 ? `The package matches this manager’s ${t.package_label.toLowerCase()} habit.` : `The package shape runs against this manager’s ${t.package_label.toLowerCase()} history.`);
     return { score, tendency: t, notes };
   }
 
@@ -196,7 +220,7 @@
       card.appendChild(factors);
       card.appendChild(el("p", estimate.competition.detail, "owner"));
       const hist = estimate.historyFit.tendency;
-      card.appendChild(el("p", hist ? `Past ${hist.deals} trades: ${hist.youth_label.toLowerCase()} · ${hist.pick_label.toLowerCase()}` : "Not enough completed trades for a tendency score.", "owner"));
+      card.appendChild(el("p", hist ? `Past ${hist.deals} trades: ${hist.youth_label.toLowerCase()} · ${hist.production_label.toLowerCase()} · ${hist.pick_label.toLowerCase()} · ${hist.position_label.toLowerCase()} · ${hist.package_label.toLowerCase()}` : "Not enough completed trades for a tendency score.", "owner"));
       grid.appendChild(card);
     }
     box.appendChild(grid);
@@ -210,7 +234,7 @@
     const raw = location.hash.replace(/^#/, "");
     const [tab, ...rest] = raw.split("&");
     const params = new URLSearchParams(rest.join("&"));
-    return { tab: ["calc", "build", "ideas"].includes(tab) ? tab : "calc", params };
+    return { tab: ["calc", "build", "ideas", "guide"].includes(tab) ? tab : "calc", params };
   }
 
   function showTab(tab, push = true) {
@@ -232,6 +256,8 @@
       if (build.ga.size) p.set("ga", [...build.ga].join(","));
       if (build.gb.size) p.set("gb", [...build.gb].join(","));
       h += "&" + p.toString();
+    } else if (tab === "guide" && guide.target) {
+      h += `&m=${encodeURIComponent(guide.target)}`;
     }
     history.replaceState(null, "", h);
   }
@@ -687,7 +713,7 @@
         card.appendChild(head);
         if (r.fit.tendency) {
           const t = r.fit.tendency;
-          card.appendChild(el("div", `Past ${t.deals} trades · ${t.youth_label} · ${t.pick_label}`, "idea-tendency"));
+          card.appendChild(el("div", `Past ${t.deals} trades · ${t.youth_label} · ${t.production_label} · ${t.pick_label} · ${t.position_label} · ${t.package_label}`, "idea-tendency"));
         }
         const swap = el("div", null, "swap");
         const col = (title, list) => {
@@ -735,11 +761,249 @@
     }, 30);
   }
 
+  // ------------------------------------------------------------------ //
+  // Manager guide
+  // ------------------------------------------------------------------ //
+  const GUIDE_POSITIONS = ["QB", "RB", "WR", "TE"];
+  const GUIDE_DEPTH = { QB: 2, RB: 4, WR: 5, TE: 2 };
+
+  function positionRanks(rid) {
+    const scores = {};
+    for (const pos of GUIDE_POSITIONS) {
+      scores[pos] = {};
+      for (const id of Object.keys(data.teams)) {
+        const vals = team(id).assets.filter((a) => a.kind === "player" && a.pos === pos).map((a) => a.value).sort((a, b) => b - a);
+        scores[pos][id] = vals.slice(0, GUIDE_DEPTH[pos]).reduce((sum, v, i) => sum + v * (1 - i * 0.1), 0);
+      }
+    }
+    const out = {};
+    for (const pos of GUIDE_POSITIONS) {
+      const order = Object.keys(scores[pos]).sort((a, b) => scores[pos][b] - scores[pos][a]);
+      out[pos] = { rank: order.indexOf(String(rid)) + 1, value: Math.round(scores[pos][String(rid)] || 0) };
+    }
+    return out;
+  }
+
+  function guideAssetRow(asset, reason, target, side) {
+    const row = el("div", null, "guide-asset");
+    const info = el("div", null, "guide-asset-info");
+    info.appendChild(assetNameNode(asset));
+    info.appendChild(el("div", reason, "owner"));
+    row.appendChild(info);
+    row.appendChild(el("span", fmtNum(asset.value), "num"));
+    const add = el("button", "Use in Builder", "chip");
+    add.type = "button";
+    add.addEventListener("click", () => {
+      build.a = String(me);
+      build.b = String(target);
+      build.ga.clear(); build.gb.clear();
+      (side === "A" ? build.ga : build.gb).add(asset.id);
+      document.querySelector('.side-box[data-team="A"] select').value = build.a;
+      document.querySelector('.side-box[data-team="B"] select').value = build.b;
+      renderRosterPick("A"); renderRosterPick("B"); renderBuildResult();
+      showTab("build");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    row.appendChild(add);
+    return row;
+  }
+
+  function guideCandidates(fromRid, targetRid, direction) {
+    const t = tendencyFor(targetRid);
+    const targetRanks = positionRanks(targetRid);
+    const myRanks = positionRanks(fromRid);
+    const sourceRanks = positionRanks(direction === "offer" ? fromRid : targetRid);
+    const assets = team(direction === "offer" ? fromRid : targetRid).assets
+      .filter((a) => a.value >= 150 && a.pos !== "K" && a.pos !== "DEF");
+    return assets.map((asset) => {
+      let score = Math.log10(Math.max(asset.value, 10));
+      const reasons = [];
+      if (direction === "offer") {
+        if (asset.kind === "pick") {
+          score += 2 * (t ? t.pick_receive_lean : 0) + (data.teams[targetRid].mode === "rebuilder" ? 1.5 : 0);
+          if (t && t.pick_receive_lean > 0.2) reasons.push("frequently acquires picks");
+          if (data.teams[targetRid].mode === "rebuilder") reasons.push("fits a rebuild");
+        } else {
+          const need = targetRanks[asset.pos];
+          score += (need.rank - 6.5) * 0.35 + (t && t.position_leans ? t.position_leans[asset.pos] * 2.5 : 0);
+          if (need.rank >= 8) reasons.push(`fills their #${need.rank} ${asset.pos} room`);
+          if (t && t.position_leans && t.position_leans[asset.pos] >= 0.18) reasons.push(`historically targets ${asset.pos}`);
+          if (asset.age && t) {
+            const ageFit = t.youth_lean * (25.5 - asset.age);
+            score += ageFit * 0.35;
+            if (ageFit >= 0.5) reasons.push(t.youth_lean > 0 ? "matches their youth preference" : "matches their veteran preference");
+          }
+          const productiveCut = { QB: 18, RB: 12, WR: 12, TE: 9 };
+          if (t && t.production_chase_lean >= 0.2 && productiveCut[asset.pos] && (asset.ppg || 0) >= productiveCut[asset.pos]) {
+            score += 1.1 * t.production_chase_lean;
+            reasons.push("matches their proven-production habit");
+          }
+          if (data.teams[targetRid].mode === "contender" && asset.proj >= 10) { score += 0.8; reasons.push("can help immediately"); }
+        }
+      } else if (asset.kind === "pick") {
+        score += 2.5 * (t ? t.pick_send_lean : 0) + (t && asset.round === 1 ? 1.5 * t.first_send_lean : 0);
+        reasons.push(t && t.pick_send_lean > 0.2 ? "manager has moved picks freely" : "adds future capital");
+      } else {
+        const need = myRanks[asset.pos];
+        const surplus = sourceRanks[asset.pos];
+        score += (need.rank - 6.5) * 0.3 + (6.5 - surplus.rank) * 0.25;
+        if (need.rank >= 8) reasons.push(`fills your #${need.rank} ${asset.pos} room`);
+        if (surplus.rank <= 4) reasons.push(`comes from their #${surplus.rank} ${asset.pos} room`);
+        if (t && t.position_leans && t.position_leans[asset.pos] >= 0.18) { score -= 0.8 * t.position_leans[asset.pos]; reasons.push(`they value ${asset.pos}—expect a premium`); }
+        if (asset.age && t && t.youth_lean > 0.2 && asset.age >= 27) { score += 0.8; reasons.push("may not fit their youth preference"); }
+        if (asset.age && t && t.youth_lean > 0.2 && asset.age <= 25) score -= 0.7 * t.youth_lean;
+        if (asset.age && t && t.youth_lean < -0.2 && asset.age <= 24) { score += 0.5; reasons.push("may be movable for win-now help"); }
+        const productiveCut = { QB: 18, RB: 12, WR: 12, TE: 9 };
+        if (t && t.production_chase_lean > 0.2 && productiveCut[asset.pos] && (asset.ppg || 0) >= productiveCut[asset.pos]) score -= 0.6 * t.production_chase_lean;
+      }
+      return { asset, score, reason: reasons.slice(0, 2).join(" · ") || "strong value fit" };
+    }).sort((a, b) => b.score - a.score).slice(0, 4);
+  }
+
+  function guideStat(label, value, sub) {
+    const card = el("div", null, "stat guide-stat");
+    card.append(el("div", label, "label"), el("div", value, "value"));
+    if (sub) card.appendChild(el("div", sub, "owner"));
+    return card;
+  }
+
+  function guideTrait(title, label, detail) {
+    const card = el("article", null, "guide-trait");
+    card.append(el("div", title, "group-title"), el("div", label, "team"));
+    if (detail) card.appendChild(el("p", detail, "owner"));
+    return card;
+  }
+
+  function pct(v) { return Number.isFinite(v) ? `${v.toFixed(1)}%` : "—"; }
+
+  function renderGuide() {
+    const host = document.getElementById("guide-content");
+    if (!host || !guide.target) return;
+    const rid = String(guide.target);
+    const current = latest && latest.teams ? latest.teams[rid] : null;
+    const standing = latest && latest.standings ? latest.standings.find((x) => String(x.roster_id) === rid) : null;
+    const manager = managerForRid(rid);
+    const t = tendencyFor(rid);
+    if (!current || !manager || !t) {
+      host.replaceChildren(el("p", "This manager needs at least two completed trades before a full guide can be built.", "muted"));
+      return;
+    }
+    const ranks = positionRanks(rid);
+    const weakest = GUIDE_POSITIONS.slice().sort((a, b) => ranks[b].rank - ranks[a].rank);
+    const draft = t.draft || {};
+    const profile = data.teams[rid];
+    const wrap = el("div", null, "manager-guide");
+
+    const hero = el("section", null, "guide-hero");
+    const title = el("div");
+    title.appendChild(el("div", "How to trade with", "group-title"));
+    const name = el("div", null, "guide-name teamcell");
+    name.append(dot(Number(rid)), teamLink(Number(rid), current.team));
+    title.appendChild(name);
+    title.appendChild(el("p", `${manager.name} · ${profile.mode} · ${t.deals} completed trades analyzed`, "owner"));
+    hero.appendChild(title);
+    const badges = el("div", null, "guide-badges");
+    [t.youth_label, t.production_label, t.pick_label, t.position_label, t.package_label, t.activity_label].forEach((x) => badges.appendChild(el("span", x)));
+    hero.appendChild(badges);
+    wrap.appendChild(hero);
+
+    const stats = el("div", null, "stats guide-current");
+    const record = current.record ? `${current.record.wins}-${current.record.losses}${current.record.ties ? `-${current.record.ties}` : ""}` : "—";
+    stats.append(
+      guideStat("Standing", `#${current.rank}`, record),
+      guideStat("Playoff odds", pct(current.playoff_odds), `${standing && Number.isFinite(standing.projected_wins) ? standing.projected_wins.toFixed(1) : "—"} projected wins`),
+      guideStat("Title odds", pct(current.champion_odds), profile.mode),
+      guideStat("#1 pick odds", pct(current.first_pick_odds), current.avg_pick ? `average pick ${current.avg_pick.toFixed(2)}` : null),
+      guideStat("Dynasty value", `#${profile.value_rank}`, fmtNum(profile.total_value)),
+      guideStat("Draft capital", fmtNum(profile.picks_value), `${profile.picks.length} tradable picks`)
+    );
+    wrap.appendChild(stats);
+
+    const approach = el("section", null, "guide-approach");
+    approach.appendChild(el("h3", "Best approach", "sub-head"));
+    const lines = [];
+    const modeLead = profile.mode === "contender" ? "Lead with a player who improves the starting lineup now" : profile.mode === "rebuilder" ? "Lead with young value or draft capital" : "Lead with a balanced present-and-future return";
+    lines.push(`${modeLead}; ${weakest[0]} (ranked #${ranks[weakest[0]].rank}) and ${weakest[1]} (#${ranks[weakest[1]].rank}) are the clearest current roster needs.`);
+    lines.push(t.package_lean >= 0.2 ? "Use one premium centerpiece and ask for multiple pieces back; this manager has consolidated in past deals." : t.package_lean <= -0.2 ? "Use a multi-asset package; this manager has historically preferred receiving depth." : "Either a one-for-one or a small package can work; this manager has shown no rigid deal-shape preference.");
+    lines.push(`${t.value_label}. ${t.timing_label}; ${t.trades_per_season.toFixed(1)} completed trades per active season.`);
+    const ul = el("ul", null, "notes");
+    lines.forEach((x) => ul.appendChild(el("li", x)));
+    approach.appendChild(ul);
+    wrap.appendChild(approach);
+
+    const targets = el("div", null, "guide-target-grid");
+    for (const [heading, rows, side] of [
+      ["Best assets to offer", guideCandidates(me, rid, "offer"), "A"],
+      ["Best assets to ask for", guideCandidates(me, rid, "ask"), "B"],
+    ]) {
+      const card = el("section", null, "guide-targets");
+      card.appendChild(el("h3", heading, "sub-head"));
+      rows.forEach((x) => card.appendChild(guideAssetRow(x.asset, x.reason, rid, side)));
+      targets.appendChild(card);
+    }
+    wrap.appendChild(targets);
+
+    const traits = el("div", null, "guide-traits");
+    traits.append(
+      guideTrait("Player profile", `${t.youth_label} · ${t.production_label} · ${t.position_label}`, `${t.players_acquired} players acquired · ${t.avg_acquired_age ?? "—"} average age at trade · ${t.proven_producers}/${t.production_sample} established recent producers · QB ${t.position_counts.QB || 0}, RB ${t.position_counts.RB || 0}, WR ${t.position_counts.WR || 0}, TE ${t.position_counts.TE || 0}`),
+      guideTrait("Pick behavior", `${t.pick_label} · ${t.first_label}`, `${t.picks_sent} picks sent / ${t.picks_received} acquired · ${t.firsts_sent} firsts sent / ${t.firsts_received} acquired · ${t.future_picks_sent} future picks sent`),
+      guideTrait("Deal structure", `${t.package_label} · ${t.large_label}`, `${t.consolidations} consolidation deals · ${t.depth_deals} depth deals · ${t.large_deals} blockbusters · ${t.multi_asset_deals} multi-asset deals`),
+      guideTrait("Activity and timing", `${t.activity_label} · ${t.timing_label}`, `${t.trades_per_season.toFixed(1)} trades/season · ${Math.round(t.offseason_rate * 100)}% offseason · ${Math.round(t.deadline_rate * 100)}% week 10 or later`),
+      guideTrait("Value outcomes", t.value_label, `${Math.round(t.balanced_value_rate * 100)}% finish within 10% in current value · median current-value edge ${t.median_current_value_edge >= 0 ? "+" : ""}${Math.round(t.median_current_value_edge * 100)}%. This is hindsight, not value on trade day.`),
+      guideTrait("Rookie draft", draft.style_label || "Not enough rookie picks", draft.rookie_picks ? `${draft.rookie_picks} picks · ${draft.capital_label} · average value result ${draft.avg_value_delta > 0 ? "+" : ""}${draft.avg_value_delta} slots${draft.best_pick ? ` · best: ${draft.best_pick.name} (${draft.best_pick.season} ${draft.best_pick.label})` : ""}` : null),
+      guideTrait("Current position value", `Needs: ${weakest[0]} #${ranks[weakest[0]].rank} · ${weakest[1]} #${ranks[weakest[1]].rank}`, GUIDE_POSITIONS.map((p) => `${p} #${ranks[p].rank}`).join(" · ")),
+      guideTrait("Injury-risk tendency", t.risk.label, "Sleeper does not preserve reliable injury status from the exact date of old trades. Current injuries still affect contender fit and acceptance estimates.")
+    );
+    wrap.appendChild(el("h3", "Full tendency report", "sub-head"));
+    wrap.appendChild(traits);
+
+    const partners = el("section", null, "guide-partners");
+    partners.appendChild(el("h3", "Frequent trade partners", "sub-head"));
+    const partnerList = el("div", null, "guide-partner-list");
+    (t.favorite_partners || []).forEach((p) => {
+      const pm = historyData.managers[p.user];
+      partnerList.appendChild(el("span", `${pm ? pm.team : "Former manager"} · ${p.deals} deals`, "chip"));
+    });
+    if (!(t.favorite_partners || []).length) partnerList.appendChild(el("span", "No repeat partner yet", "muted"));
+    partners.appendChild(partnerList);
+    wrap.appendChild(partners);
+    host.replaceChildren(wrap);
+  }
+
+  function setupGuide(params) {
+    const mine = document.getElementById("guide-me");
+    const target = document.getElementById("guide-manager");
+    fillTeamSelect(mine, me);
+    fillTeamSelect(target, me);
+    const requested = params.get("m");
+    guide.target = requested && data.teams[requested] && requested !== me ? requested : Object.keys(data.teams).find((x) => x !== me);
+    target.value = guide.target;
+    mine.addEventListener("change", () => {
+      setMe(mine.value, false);
+      if (guide.target === me) guide.target = Object.keys(data.teams).find((x) => x !== me);
+      target.value = guide.target;
+      writeHash("guide");
+      renderGuide();
+    });
+    target.addEventListener("change", () => {
+      if (target.value === me) {
+        target.value = guide.target;
+        return;
+      }
+      guide.target = target.value;
+      writeHash("guide");
+      renderGuide();
+    });
+    renderGuide();
+  }
+
   function setMe(rid, rerender = true) {
     me = String(rid);
     try { localStorage.setItem(ME_KEY, me); } catch (e) { /* storage off: still works this visit */ }
     const ideaSel = document.getElementById("idea-team");
     if (ideaSel && ideaSel.value !== me) ideaSel.value = me;
+    const guideMe = document.getElementById("guide-me");
+    if (guideMe && guideMe.value !== me) guideMe.value = me;
     if (rerender) {
       if (build.a !== me) {
         if (build.b === me) build.b = build.a;
@@ -757,6 +1021,12 @@
         calc.A = [];
       }
       renderCalc();
+      if (guide.target) {
+        if (guide.target === me) guide.target = Object.keys(data.teams).find((x) => x !== me);
+        const target = document.getElementById("guide-manager");
+        if (target) target.value = guide.target;
+        renderGuide();
+      }
     }
   }
 
@@ -808,6 +1078,7 @@
     setupCalc(params, tab === "calc");
     setupBuild(tab === "build" ? params : new URLSearchParams());
     setupIdeas();
+    setupGuide(tab === "guide" ? params : new URLSearchParams());
     document.querySelectorAll("[data-tab]").forEach((b) => b.addEventListener("click", () => showTab(b.dataset.tab)));
     showTab(tab, false);
     // Rewrite the URL so a re-shared link drops anything that moved rosters.

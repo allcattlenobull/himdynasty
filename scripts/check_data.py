@@ -152,6 +152,11 @@ def history(d):
         need(len(s.get("rosters") or {}) >= 4, f"{s.get('season')} roster snapshots missing")
     active = [m for m in d["managers"].values() if m.get("current_rid") is not None]
     need(any((m.get("tendencies") or {}).get("deals", 0) >= 1 for m in active), "manager trade tendencies missing")
+    profiles = [m.get("tendencies") or {} for m in active if (m.get("tendencies") or {}).get("deals", 0)]
+    profile_keys = ("production_label", "position_label", "package_label", "activity_label",
+                    "timing_label", "value_label", "draft")
+    need(all(all(k in profile for k in profile_keys) for profile in profiles),
+         "expanded manager trade tendencies missing")
 
 
 def league_ids(d):
