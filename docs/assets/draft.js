@@ -2,7 +2,7 @@
    for team colors). All names are set with textContent. */
 (() => {
   "use strict";
-  const { el, dot, teamLink, assignColors, shareButton } = window.HIM;
+  const { el, dot, teamLink, assignColors, shareButton, playerButton } = window.HIM;
   const SVG = "http://www.w3.org/2000/svg";
   const safeUrl = (u) => (typeof u === "string" && /^https:\/\//i.test(u) ? u : null);
 
@@ -257,7 +257,7 @@
       for (const p of players) {
         const cut = cuts.has(p.id);
         const li = el("li", null, cut ? "plan-row cut" : "plan-row");
-        li.appendChild(el("span", p.name, "plan-name"));
+        li.appendChild(playerButton(p.id, p.name, "plan-name", p));
         const meta = [p.nfl, p.age ? `${p.age}` : null].filter(Boolean).join(" · ");
         if (meta) li.appendChild(el("span", meta, "owner"));
         if (GROUP_TAG[p.group]) li.appendChild(el("span", GROUP_TAG[p.group], "plan-tag"));

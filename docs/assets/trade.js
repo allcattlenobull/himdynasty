@@ -3,7 +3,7 @@
    textContent only. */
 (() => {
   "use strict";
-  const { el, dot, teamLink, assignColors, shareButton } = window.HIM;
+  const { el, dot, teamLink, assignColors, shareButton, playerButton } = window.HIM;
 
   let data, E, S, byId, latest;
   let me = null;
@@ -40,6 +40,10 @@
   function assetLabel(a) {
     if (a.kind === "pick") return a.generic ? a.name : `${a.name} · ${a.original_team.trim()}`;
     return `${a.name} (${a.pos}${a.nfl ? ", " + a.nfl : ""})`;
+  }
+
+  function assetNameNode(a, className = "team") {
+    return a.kind === "player" ? playerButton(a.id, a.name, className, a) : el("span", a.name, className);
   }
 
   function meter(lean) {
@@ -317,7 +321,7 @@
         const a = byId[id];
         const li = el("li", null, "asset");
         const info = el("div");
-        info.appendChild(el("div", a.name, "team"));
+        info.appendChild(assetNameNode(a));
         info.appendChild(el("div", assetMeta(a), "owner"));
         li.appendChild(info);
         li.appendChild(el("span", fmtNum(a.value), "num"));
@@ -432,7 +436,7 @@
         });
         row.appendChild(cb);
         const info = el("span", null, "pick-row-info");
-        const name = el("span", a.name, "team");
+        const name = assetNameNode(a);
         info.appendChild(name);
         if (starters.has(a.id)) info.appendChild(el("span", "S", "starter-tag"));
         info.appendChild(el("span", a.kind === "pick" ? assetMeta(a) : [a.age ? `${a.age} yrs` : null, a.nfl].filter(Boolean).join(" · "), "owner"));
@@ -573,7 +577,7 @@
           c.appendChild(el("div", title, "group-title"));
           for (const a of list) {
             const row = el("div", null, "swap-row");
-            row.appendChild(el("span", a.name, "team"));
+            row.appendChild(assetNameNode(a));
             row.appendChild(el("span", a.kind === "pick" ? "" : ` ${a.pos}`, "owner"));
             row.appendChild(el("span", fmtNum(a.value), "num muted"));
             c.appendChild(row);

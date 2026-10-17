@@ -5,7 +5,7 @@
    every morning. Names are set with textContent only. */
 (() => {
   "use strict";
-  const { el, dot, teamLink, assignColors, cssVar, themeChart, withAlpha } = window.HIM;
+  const { el, dot, teamLink, assignColors, cssVar, themeChart, withAlpha, playerButton, openPlayerCard } = window.HIM;
 
   let A = null;   // analytics.json
   let S = null;   // startsit.json
@@ -281,9 +281,7 @@
     card.appendChild(headshot(p));
     const main = el("div", null, "ss-main");
     const nm = el("div", null, "ss-name");
-    const b = el("button", p.name, "team prospect-link");
-    b.type = "button";
-    b.addEventListener("click", () => openPlayer(p.id));
+    const b = playerButton(p.id, p.name, "team prospect-link", p);
     nm.append(b, posBadge(p.pos));
     if (p.inj) nm.appendChild(el("span", p.inj, "inj"));
     main.appendChild(nm);
@@ -423,9 +421,7 @@
         const row = el("div", null, "ss-waiver");
         row.appendChild(headshot(add));
         const tx = el("div");
-        const b = el("button", add.name, "team prospect-link");
-        b.type = "button";
-        b.addEventListener("click", () => openPlayer(add.id));
+        const b = playerButton(add.id, add.name, "team prospect-link", add);
         tx.append(b, document.createTextNode(` ${add.pos} · `), el("span", gameLine(add), "owner"));
         tx.appendChild(el("div", `Projects ${add.proj.toFixed(1)}, ${w.gain.toFixed(1)} more than ${over.name}. ${add.pros[0] || ""}`, "ss-why"));
         row.appendChild(tx);
@@ -523,9 +519,7 @@
       const h = el("div", null, "cmp-card-head");
       h.appendChild(headshot(p, "an-photo sm"));
       const t = el("div");
-      const b = el("button", p.name, "team prospect-link");
-      b.type = "button";
-      b.addEventListener("click", () => openPlayer(p.id));
+      const b = playerButton(p.id, p.name, "team prospect-link", p);
       t.append(b, posBadge(p.pos));
       t.appendChild(el("div", p.proj !== undefined ? gameLine(p) : `${p.nfl || "FA"}`, "owner"));
       if (p.owner) { const o = el("div", null, "owner"); o.append(dot(p.owner), document.createTextNode(` ${teamName(p.owner)}`)); t.appendChild(o); }
@@ -571,7 +565,7 @@
     host.appendChild(scopeTabs);
     const duel = el("div", null, "duel");
     const hdr = el("div", null, "duel-row duel-head");
-    hdr.append(el("span", A1.name, "team"), el("span", ""), el("span", B1.name, "team right"));
+    hdr.append(playerButton(A1.id, A1.name, "team", A1), el("span", ""), playerButton(B1.id, B1.name, "team right", B1));
     duel.appendChild(hdr);
     let wa = 0, wb = 0;
     for (const k of keys) {
@@ -760,8 +754,8 @@
     for (const p of rows.slice(0, ex.shown)) {
       const tr = el("tr");
       tr.tabIndex = 0;
-      tr.addEventListener("click", () => openPlayer(p.id));
-      tr.addEventListener("keydown", (e) => { if (e.key === "Enter") openPlayer(p.id); });
+      tr.addEventListener("click", () => openPlayerCard(p));
+      tr.addEventListener("keydown", (e) => { if (e.key === "Enter") openPlayerCard(p); });
       const who = el("td", null, "sticky-col");
       const w = el("div", null, "player");
       w.appendChild(headshot(p));
@@ -897,10 +891,13 @@
     for (const t of teams) {
       const d = D[t];
       const tr = el("tr");
+      tr.tabIndex = 0;
+      tr.addEventListener("click", () => openPlayerCard({ id: t, name: `${t} Defense`, pos: "DEF", nfl: t }));
+      tr.addEventListener("keydown", (e) => { if (e.key === "Enter") openPlayerCard({ id: t, name: `${t} Defense`, pos: "DEF", nfl: t }); });
       const c0 = el("td", null, "sticky-col");
       const w = el("div", null, "player");
       w.appendChild(headshot({ id: t, pos: "DEF" }));
-      w.appendChild(el("span", t, "team"));
+      w.appendChild(playerButton(t, t, "team", { pos: "DEF", nfl: t }));
       c0.appendChild(w);
       tr.appendChild(c0);
       const g = S.games[t];

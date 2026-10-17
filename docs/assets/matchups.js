@@ -6,7 +6,7 @@
    and the new week's matchups appear on Thursday. */
 (() => {
   "use strict";
-  const { el, dot, teamLink } = window.HIM;
+  const { el, dot, teamLink, playerButton } = window.HIM;
   const SLEEPER = "https://api.sleeper.app/v1";
 
   let data = null;
@@ -112,7 +112,8 @@
       const li = el("li");
       const info = lite[pid];
       li.appendChild(el("span", (slots[i] || "").replace("SUPER_FLEX", "SF"), "pos"));
-      li.appendChild(el("span", pid && pid !== "0" ? (info ? info[0] : `Player ${pid}`) : "Empty", "lineup-name"));
+      if (pid && pid !== "0") li.appendChild(playerButton(pid, info ? info[0] : `Player ${pid}`, "lineup-name", { pos: info && info[1], nfl: info && info[2] }));
+      else li.appendChild(el("span", "Empty", "lineup-name"));
       if (info) li.appendChild(el("span", `${info[1]} · ${info[2]}`, "owner"));
       const pts = (m.starters_points || [])[i];
       li.appendChild(el("span", pts !== undefined ? pts.toFixed(2) : "—", "num"));
@@ -232,8 +233,19 @@
   let txAll = [];
   let txShown = 12;
 
-  const pname = (pid) => (lite[pid] ? `${lite[pid][0]} (${lite[pid][1]})` : `Player ${pid}`);
   const roundName = (r) => ({ 1: "1st", 2: "2nd", 3: "3rd" }[r] || `${r}th`);
+
+  function txLine(label, playerIds, picks, faab, className) {
+    const line = el("div", null, className);
+    line.appendChild(document.createTextNode(`${label} `));
+    const items = playerIds.map((pid) => {
+      const p = lite[pid];
+      return playerButton(pid, p ? `${p[0]} (${p[1]})` : `Player ${pid}`, "", { pos: p && p[1], nfl: p && p[2] });
+    }).concat(picks.map((p) => document.createTextNode(`${p.season} ${roundName(p.round)}${p.original !== p.to ? ` (${teamName(p.original)})` : ""}`)));
+    items.forEach((item, i) => { if (i) line.appendChild(document.createTextNode(", ")); line.appendChild(item); });
+    if (faab) line.appendChild(document.createTextNode(` · $${faab} FAAB`));
+    return line;
+  }
 
   function txCard(t) {
     const card = el("article", null, `tx ${t.type}`);
@@ -255,10 +267,9 @@
       row.appendChild(who);
       const what = el("div", null, "tx-what");
       if (gets.length || picksIn.length) {
-        const items = gets.map(pname).concat(picksIn.map((p) => `${p.season} ${roundName(p.round)}${p.original !== rid ? ` (${teamName(p.original)})` : ""}`));
-        what.appendChild(el("div", `${t.type === "trade" ? "Gets" : "Adds"} ${items.join(", ")}${t.faab ? ` · $${t.faab} FAAB` : ""}`, "tx-add"));
+        what.appendChild(txLine(t.type === "trade" ? "Gets" : "Adds", gets, picksIn.map((p) => Object.assign({ to: rid }, p)), t.faab, "tx-add"));
       }
-      if (loses.length && t.type !== "trade") what.appendChild(el("div", `Drops ${loses.map(pname).join(", ")}`, "tx-drop"));
+      if (loses.length && t.type !== "trade") what.appendChild(txLine("Drops", loses, [], null, "tx-drop"));
       row.appendChild(what);
       card.appendChild(row);
     }

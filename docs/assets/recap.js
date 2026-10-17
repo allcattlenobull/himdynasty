@@ -4,7 +4,7 @@
    Names are set with textContent only. */
 (() => {
   "use strict";
-  const { el, dot, assignColors, teamLink, sortableTable, shareButton } = window.HIM;
+  const { el, dot, assignColors, teamLink, sortableTable, shareButton, playerButton } = window.HIM;
 
   const S = { index: null, data: null, season: null, week: null, regretMode: "week", cache: {} };
   const f1 = (v) => (typeof v === "number" ? v.toFixed(1) : "—");
@@ -33,7 +33,7 @@
     const p = player(pid);
     const w = el("span", null, "rc-player");
     if (p[1]) w.appendChild(el("span", p[1], `posbadge pos-${String(p[1]).toLowerCase()}`));
-    w.appendChild(el("span", p[0], "rc-pname"));
+    w.appendChild(playerButton(pid, p[0], "rc-pname", { pos: p[1], nfl: p[2] }));
     if (p[2] && p[1] !== "DEF") w.appendChild(el("span", p[2], "owner"));
     if (pts !== undefined) w.appendChild(el("span", f1(pts), "rc-ppts"));
     return w;

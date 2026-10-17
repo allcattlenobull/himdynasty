@@ -2,7 +2,7 @@
    Header stats, roster, schedule (past, current, upcoming), and season trend. */
 (() => {
   "use strict";
-  const { el, dot, teamLink, teamVar, teamColor, themeChart, assignColors, loadData, updatedText, cssVar, withAlpha, shareButton } = window.HIM;
+  const { el, dot, teamLink, teamVar, teamColor, themeChart, assignColors, loadData, updatedText, cssVar, withAlpha, shareButton, playerButton } = window.HIM;
 
   const SLOT_LABELS = {
     SUPER_FLEX: "SF", FLEX: "FLEX", WRRB_FLEX: "W/R", REC_FLEX: "W/T", IDP_FLEX: "IDP",
@@ -210,9 +210,7 @@
     for (const p of mine) {
       const tr = el("tr");
       const td = el("td");
-      const a = el("a", p.name, "team");
-      a.href = `analytics.html?player=${encodeURIComponent(p.id)}`;
-      td.appendChild(a);
+      td.appendChild(playerButton(p.id, p.name, "team", p));
       tr.appendChild(td);
       tr.appendChild(el("td", p.pos, "pos"));
       tr.appendChild(el("td", f(p.age), "num"));
@@ -237,7 +235,7 @@
     const parts = [];
     if (sell.length) parts.push(`Running hot / sell candidates: ${sell.join(", ")}.`);
     if (buy.length) parts.push(`Buy-low types already here: ${buy.join(", ")}.`);
-    if (parts.length) document.getElementById("pa-note").textContent = parts.join(" ") + " Click a player for the full profile.";
+    if (parts.length) document.getElementById("pa-note").textContent = parts.join(" ") + " Click a player for the game log, schedule and news.";
   }
 
   // ------------------------------------------------------------------ //
@@ -279,7 +277,7 @@
     if (p) {
       const wrap = el("div", null, "player");
       wrap.appendChild(headshot(p));
-      const name = el("span", p.name, "team");
+      const name = playerButton(p.id, p.name, "team", p);
       wrap.appendChild(name);
       if (p.injury) wrap.appendChild(el("span", p.injury, "inj"));
       cell.appendChild(wrap);

@@ -4,7 +4,7 @@
    frozen in data/archive/). Names are set with textContent only. */
 (() => {
   "use strict";
-  const { el, dot, assignColors } = window.HIM;
+  const { el, dot, assignColors, playerButton } = window.HIM;
 
   let H = null;
   let latest = null;
@@ -409,9 +409,7 @@
       if (p.orig_user && p.orig_user !== p.user) c.appendChild(el("div", `via ${mgr(p.orig_user).seasons[d.season] ? mgr(p.orig_user).seasons[d.season].team : teamOf(p.orig_user)}`, "owner"));
       tr.appendChild(c);
       const pc = el("td");
-      const a = el("a", p.name, "team");
-      a.href = `analytics.html?player=${encodeURIComponent(p.pid)}#explorer`;
-      pc.appendChild(a);
+      pc.appendChild(playerButton(p.pid, p.name, "team", { pos: p.pos, nfl: p.nfl }));
       if (p.nfl) pc.appendChild(el("span", ` ${p.nfl}`, "owner"));
       tr.appendChild(pc);
       tr.appendChild(el("td", p.pos || "", "pos"));

@@ -3,7 +3,7 @@
    textContent; links and images must be https. */
 (() => {
   "use strict";
-  const { el, dot, teamLink, assignColors } = window.HIM;
+  const { el, dot, teamLink, assignColors, playerButton, openPlayerCard } = window.HIM;
 
   const ESPN_PLAYER_NEWS = "https://site.api.espn.com/apis/fantasy/v2/games/ffl/news/players?limit=25&playerId=";
   const BSKY_SEARCH = "https://api.bsky.app/xrpc/app.bsky.feed.searchPosts?limit=25&sort=latest&q=";
@@ -80,7 +80,8 @@
     if (scope.kind === "player") {
       const p = players[scope.id];
       title.appendChild(headshot(p));
-      title.appendChild(el("span", `${p.name} · ${p.pos} · ${p.nfl} · `, "team"));
+      title.appendChild(playerButton(p.id, p.name, "team", p));
+      title.appendChild(document.createTextNode(` · ${p.pos} · ${p.nfl} · `));
       title.appendChild(teamLink(p.owner, latest.teams[p.owner].team.trim()));
     }
   }
@@ -107,7 +108,7 @@
       chip.appendChild(el("span", p.name, "team"));
       chip.appendChild(dot(p.owner));
       chip.title = `${p.name} · ${latest.teams[p.owner].team.trim()}`;
-      chip.addEventListener("click", () => setScope({ kind: "player", id }));
+      chip.addEventListener("click", () => openPlayerCard(p));
       who.appendChild(chip);
     }
     who.appendChild(el("span", `${it.source} · ${ago(it.published)}`, "owner news-meta"));
