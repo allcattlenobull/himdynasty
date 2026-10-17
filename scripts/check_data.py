@@ -147,6 +147,11 @@ def history(d):
     keys(d, "generated_at", "seasons", "managers", "records", "trades")
     fresh(d)
     need(len(d["seasons"]) >= 1 and len(d["managers"]) >= 4, "seasons or managers missing")
+    finished = [s for s in d["seasons"] if s.get("complete")]
+    for s in finished:
+        need(len(s.get("rosters") or {}) >= 4, f"{s.get('season')} roster snapshots missing")
+    active = [m for m in d["managers"].values() if m.get("current_rid") is not None]
+    need(any((m.get("tendencies") or {}).get("deals", 0) >= 1 for m in active), "manager trade tendencies missing")
 
 
 def league_ids(d):

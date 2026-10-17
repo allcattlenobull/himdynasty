@@ -39,7 +39,7 @@ ARCHIVE_DIR = DATA_DIR / "archive"
 SLEEPER = "https://api.sleeper.app/v1"
 DP = "https://raw.githubusercontent.com/dynastyprocess/data/master/files"
 LOCAL = os.environ.get("HISTORY_LOCAL")
-ARCHIVE_VERSION = 4
+ARCHIVE_VERSION = 5
 PACKAGE_WEIGHTS = [1, 0.78, 0.62, 0.52, 0.45, 0.4, 0.36]
 
 
@@ -117,6 +117,15 @@ def build_season(league_id, weeks_done_hint=None):
             "team": ((u.get("metadata") or {}).get("team_name") or u.get("display_name") or f"Team {r['roster_id']}").strip(),
             "avatar": u.get("avatar"), "max_pf": round((r.get("settings") or {}).get("ppts", 0) + (r.get("settings") or {}).get("ppts_decimal", 0) / 100, 2),
             "co": [c for c in (r.get("co_owners") or []) if c],
+            # Sleeper keeps the final membership of a completed league. Preserve
+            # it in the immutable season archive so History can show the actual
+            # roster that ended that season, even after the live league rolls on.
+            "roster": {
+                "players": [str(p) for p in (r.get("players") or []) if p and str(p) != "0"],
+                "starters": [str(p) for p in (r.get("starters") or []) if p and str(p) != "0"],
+                "taxi": [str(p) for p in (r.get("taxi") or []) if p and str(p) != "0"],
+                "reserve": [str(p) for p in (r.get("reserve") or []) if p and str(p) != "0"],
+            },
         }
 
     # Every week's scores
@@ -312,8 +321,16 @@ def main():
     def pinfo(pid):
         p = players.get(str(pid)) or {}
         name = p.get("full_name") or " ".join(x for x in (p.get("first_name"), p.get("last_name")) if x) or str(pid)
+        age = num(p.get("age"))
+        if age is None and p.get("birth_date"):
+            try:
+                born = dt.date.fromisoformat(p["birth_date"][:10])
+                today = dt.date.today()
+                age = round((today - born).days / 365.2425, 1)
+            except (TypeError, ValueError):
+                age = None
         return {"id": str(pid), "name": name, "pos": p.get("position") or ("DEF" if str(pid).isalpha() else ""),
-                "nfl": p.get("team"), "value": round(values.get(str(pid), 0))}
+                "nfl": p.get("team"), "age": age, "value": round(values.get(str(pid), 0))}
 
     # Managers by user id
     managers = {}
@@ -384,6 +401,22 @@ def main():
         pts_leader = max(s["standings"], key=lambda x: x["pf"]) if s["standings"] else None
         rookie = next((d for d in s["drafts"] if d["kind"] == "rookie"), None)
         first_pick = rookie["picks"][0] if rookie and rookie["picks"] else None
+        roster_snapshots = {}
+        if s["complete"]:
+            for rid, m in s["managers"].items():
+                snap = m.get("roster") or {}
+                starters = set(snap.get("starters") or [])
+                taxi = set(snap.get("taxi") or [])
+                reserve = set(snap.get("reserve") or [])
+                ids = list(dict.fromkeys((snap.get("players") or []) + list(taxi) + list(reserve)))
+                rows = []
+                for pid in ids:
+                    info = pinfo(pid)
+                    info["section"] = "taxi" if pid in taxi else "ir" if pid in reserve else "starter" if pid in starters else "bench"
+                    rows.append(info)
+                order = {"starter": 0, "bench": 1, "taxi": 2, "ir": 3}
+                rows.sort(key=lambda x: (order[x["section"]], x["pos"] or "ZZ", x["name"]))
+                roster_snapshots[uid_of[(s["season"], int(rid))]] = rows
         season_rows.append({
             "season": s["season"], "complete": s["complete"], "name": s["name"],
             "champion": uid_of.get((s["season"], s["champion"])) if s["champion"] else None,
@@ -395,6 +428,7 @@ def main():
             "standings": [dict(x, user=uid_of[(s["season"], x["rid"])], team=s["managers"][str(x["rid"])]["team"]) for x in s["standings"]],
             "bracket": [g for g in s["games"] if g["kind"] != "regular"],
             "teams": {r: {"user": m["user"], "team": m["team"]} for r, m in s["managers"].items()},
+            "rosters": roster_snapshots,
             "weeks_scored": s["settings"]["weeks_scored"], "playoff_week_start": s["settings"]["playoff_week_start"],
         })
 
@@ -511,7 +545,11 @@ def main():
                 items = []
                 for pid in got["players"]:
                     info = pinfo(pid)
-                    items.append({"kind": "player", "label": info["name"], "pos": info["pos"], "pid": str(pid), "value": info["value"]})
+                    age = info["age"]
+                    if age is not None:
+                        age = round(max(18, age - (int(current["season"]) - int(s["season"]))), 1)
+                    items.append({"kind": "player", "label": info["name"], "pos": info["pos"], "pid": str(pid),
+                                  "age_at_trade": age, "value": info["value"]})
                 for pk in got["picks"]:
                     items.append(pick_asset(pk, s["season"]))
                 if got.get("faab"):
@@ -551,6 +589,56 @@ def main():
                 elif winner == other["user"]:
                     M["trade_losses"] += 1
     trades_out.sort(key=lambda t: -(t["time"] or 0))
+
+    # Acceptance tendencies from completed trades. Leans are measured against
+    # the whole league and shrunk toward neutral for small samples; this keeps a
+    # single deal from branding a manager as youth-only or pick-stingy.
+    tendency_rows = defaultdict(lambda: {"deals": 0, "ages": [], "young": 0, "players": 0,
+                                          "picks_sent": 0, "picks_received": 0,
+                                          "pick_send_deals": 0, "pick_receive_deals": 0})
+    for t in trades_out:
+        for side in t["sides"]:
+            other = next((x for x in t["sides"] if x is not side), None)
+            if not side["user"] or other is None:
+                continue
+            row = tendency_rows[side["user"]]
+            row["deals"] += 1
+            received_players = [x for x in side["items"] if x["kind"] == "player" and x.get("age_at_trade") is not None]
+            received_picks = [x for x in side["items"] if x["kind"] == "pick"]
+            sent_picks = [x for x in other["items"] if x["kind"] == "pick"]
+            row["ages"].extend(x["age_at_trade"] for x in received_players)
+            row["players"] += len(received_players)
+            row["young"] += sum(x["age_at_trade"] <= 25 for x in received_players)
+            row["picks_received"] += len(received_picks)
+            row["picks_sent"] += len(sent_picks)
+            row["pick_receive_deals"] += bool(received_picks)
+            row["pick_send_deals"] += bool(sent_picks)
+
+    total_players = sum(x["players"] for x in tendency_rows.values())
+    league_young = sum(x["young"] for x in tendency_rows.values()) / max(total_players, 1)
+    total_deals = sum(x["deals"] for x in tendency_rows.values())
+    league_send = sum(x["pick_send_deals"] for x in tendency_rows.values()) / max(total_deals, 1)
+    league_receive = sum(x["pick_receive_deals"] for x in tendency_rows.values()) / max(total_deals, 1)
+    clamp = lambda x: max(-1, min(1, x))  # noqa: E731
+    for u, row in tendency_rows.items():
+        confidence = min(1.0, row["deals"] / 6)
+        young_share = row["young"] / row["players"] if row["players"] else league_young
+        send_rate = row["pick_send_deals"] / row["deals"] if row["deals"] else league_send
+        receive_rate = row["pick_receive_deals"] / row["deals"] if row["deals"] else league_receive
+        youth_lean = clamp((young_share - league_young) / 0.35) * confidence
+        pick_send_lean = clamp((send_rate - league_send) / 0.45) * confidence
+        pick_receive_lean = clamp((receive_rate - league_receive) / 0.45) * confidence
+        youth_label = "Targets young players" if youth_lean >= 0.2 else "Veteran-friendly" if youth_lean <= -0.2 else "Age-balanced"
+        pick_label = "Loose with picks" if pick_send_lean >= 0.2 else "Stingy with picks" if pick_send_lean <= -0.2 else "Average pick activity"
+        if u in managers:
+            managers[u]["tendencies"] = {
+                "deals": row["deals"], "players_acquired": row["players"],
+                "avg_acquired_age": round(statistics.mean(row["ages"]), 1) if row["ages"] else None,
+                "young_share": round(young_share, 3), "picks_sent": row["picks_sent"], "picks_received": row["picks_received"],
+                "pick_send_rate": round(send_rate, 3), "pick_receive_rate": round(receive_rate, 3),
+                "youth_lean": round(youth_lean, 3), "pick_send_lean": round(pick_send_lean, 3),
+                "pick_receive_lean": round(pick_receive_lean, 3), "youth_label": youth_label, "pick_label": pick_label,
+            }
 
     for M in managers.values():
         M["pf"], M["pa"] = round(M["pf"], 2), round(M["pa"], 2)

@@ -5,7 +5,7 @@
   "use strict";
   const { el, dot, teamLink, assignColors, shareButton, playerButton } = window.HIM;
 
-  let data, E, S, byId, latest;
+  let data, E, S, byId, latest, history;
   let me = null;
   let baseline = null;
   let stale = null; // note for a shared link whose players moved; shown on first render only
@@ -25,6 +25,38 @@
       mode: data.teams[rid].mode,
       assets: data.assets.filter((a) => String(a.owner) === rid),
     };
+  }
+
+  function tendencyFor(rid) {
+    if (!history) return null;
+    const m = Object.values(history.managers || {}).find((x) => String(x.current_rid) === String(rid));
+    return m && m.tendencies && m.tendencies.deals >= 2 ? m.tendencies : null;
+  }
+
+  function tendencyFit(result) {
+    const t = tendencyFor(result.other.rid);
+    if (!t) return { score: 0, tendency: null, notes: [] };
+    const partnerGets = result.give;
+    const partnerSends = result.get;
+    const value = (items) => items.reduce((sum, a) => sum + Math.max(a.value || 0, 1), 0);
+    const players = partnerGets.filter((a) => a.kind === "player" && Number.isFinite(a.age));
+    const playerValue = value(players);
+    const youngness = playerValue ? players.reduce((sum, a) => {
+      const q = a.age <= 23 ? 1 : a.age <= 24 ? 0.7 : a.age <= 25 ? 0.4 : a.age <= 26 ? 0 : a.age <= 27 ? -0.25 : a.age <= 28 ? -0.55 : -1;
+      return sum + q * Math.max(a.value || 0, 1);
+    }, 0) / playerValue : 0;
+    const sentValue = value(partnerSends);
+    const receivedValue = value(partnerGets);
+    const pickCost = sentValue ? value(partnerSends.filter((a) => a.kind === "pick")) / sentValue : 0;
+    const pickReturn = receivedValue ? value(partnerGets.filter((a) => a.kind === "pick")) / receivedValue : 0;
+    const youth = 2.5 * t.youth_lean * youngness;
+    const picks = 3 * t.pick_send_lean * pickCost + 1.5 * t.pick_receive_lean * pickReturn;
+    const score = Math.max(-4, Math.min(4, youth + picks));
+    const notes = [];
+    if (Math.abs(youth) >= 0.45) notes.push(youth > 0 ? "The return matches this manager’s history of targeting youth." : "The player age mix runs against this manager’s past trades.");
+    if (pickCost >= 0.2 && Math.abs(t.pick_send_lean) >= 0.2) notes.push(t.pick_send_lean > 0 ? "This manager has been willing to move picks." : "This manager has historically protected their picks.");
+    if (pickReturn >= 0.2 && t.pick_receive_lean >= 0.2) notes.push("This manager has frequently acquired picks in past deals.");
+    return { score, tendency: t, notes };
   }
 
   function assetMeta(a) {
@@ -556,6 +588,11 @@
         void base;
         results.sort((x, y) => y.rank - x.rank);
       }
+      results.forEach((r, i) => {
+        r.fit = tendencyFit(r);
+        r.rank = (Number.isFinite(r.rank) ? r.rank : -i * 0.15) + r.fit.score;
+      });
+      results.sort((x, y) => y.rank - x.rank);
       results = results.slice(0, 15);
       out.replaceChildren();
       if (!results.length) {
@@ -571,6 +608,10 @@
         head.appendChild(teamLink(Number(r.other.rid), r.other.name));
         head.appendChild(el("span", ` · ${data.teams[r.other.rid].mode}`, "owner"));
         card.appendChild(head);
+        if (r.fit.tendency) {
+          const t = r.fit.tendency;
+          card.appendChild(el("div", `Past ${t.deals} trades · ${t.youth_label} · ${t.pick_label}`, "idea-tendency"));
+        }
         const swap = el("div", null, "swap");
         const col = (title, list) => {
           const c = el("div");
@@ -599,6 +640,7 @@
         card.appendChild(el("div", `Roster value: ${teamName(rid)} ${signed(r.ev.dA)} · ${r.other.name} ${signed(r.ev.dB)} · ${r.ev.verdict.label}`, "small muted"));
         const why = [];
         if (r.imp && r.imp.a.starters.in.length) why.push(`${r.imp.a.starters.in.map((a) => a.name).join(", ")} would start for ${teamName(rid)} this season.`);
+        why.push(...r.fit.notes.slice(0, 2 - why.length));
         why.push(...r.ev.notes.filter((n) => n.includes("younger") || n.includes("older") || n.includes("QBs")).slice(0, 2 - why.length));
         if (why.length) card.appendChild(notesList(why));
         const actions = el("div", null, "idea-actions");
@@ -658,12 +700,14 @@
   // ------------------------------------------------------------------ //
   async function load() {
     try {
-      const [trade, latestData] = await Promise.all([
+      const [trade, latestData, historyData] = await Promise.all([
         fetch("data/trade.json", { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); }),
         window.HIM.loadData().catch(() => null),
+        fetch("data/history.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       data = trade;
       latest = latestData;
+      history = historyData;
       if (latest) assignColors(latest.standings.map((t) => t.roster_id));
     } catch (err) {
       document.getElementById("updated").textContent = `Trade values appear after the next data update (${err.message}).`;

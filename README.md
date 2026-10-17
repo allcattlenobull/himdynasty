@@ -52,7 +52,7 @@ Weekly max PF is computed from each team's best possible lineup and scaled to ma
 ## A site that runs every season
 
 - **Rollover:** Sleeper gives a renewed league a new id each year. `scripts/rollover.py` runs first every morning, finds the renewal (the next-season league whose previous league is the current one) and records it in `docs/data/league_ids.json`; every script reads the id from there (`scripts/league_pointer.py`). `SLEEPER_LEAGUE_ID` still overrides it.
-- **Archive:** `scripts/history.py` walks the league chain and writes `docs/data/archive/<season>.json` for each season (finished seasons are written once, then reused) and `docs/data/history.json` for the History page.
+- **Archive:** `scripts/history.py` walks the league chain and writes `docs/data/archive/<season>.json` for each season (finished seasons, including their end-of-season rosters, are written once and then reused) and `docs/data/history.json` for the History page. Completed trades also produce sample-weighted manager tendencies for Trade Ideas (age preference and pick behavior).
 - **Offseason:** start/sit pauses outside the regular season; analytics fall back to last season's stats until the new season has games.
 - **Recaps:** each season's recap is kept in `docs/data/recaps/<season>.json` (built by `scripts/recap.py` inside the league update); `docs/data/recap.json` lists the seasons.
 - **Storage:** daily snapshots in `docs/data/history/` are kept for 3 weeks, then one per week.

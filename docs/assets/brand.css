@@ -1512,6 +1512,9 @@ th.sortable.asc::after { content: " ▲"; color: var(--red); }
 .h-avatar.lg { width: 56px; height: 56px; }
 .who { text-decoration: none; color: inherit; }
 .who:hover .team { color: var(--red); }
+.season-team-button, .draft-team-filter { appearance: none; margin: 0; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.season-team-button:hover .team, .season-team-button:focus-visible .team,
+.draft-team-filter:hover .team, .draft-team-filter:focus-visible .team { color: var(--red); text-decoration: underline; text-underline-offset: 0.18em; }
 .champ-row td { background: color-mix(in srgb, #d4a017 14%, transparent); }
 .h-bracket { display: grid; gap: 0.8rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); }
 .h-round { display: grid; gap: 0.5rem; align-content: start; }
@@ -1556,7 +1559,19 @@ th.sortable.asc::after { content: " ▲"; color: var(--red); }
 .h2h-chip.up { border-left: 4px solid var(--good); }
 .h2h-chip.down { border-left: 4px solid var(--bad); }
 .draft-sum { display: grid; gap: 0.5rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); margin: 0.6rem 0 1rem; }
-.draft-sum-card { background: var(--bg); border: 1px solid var(--line); padding: 0.55rem 0.7rem; display: grid; gap: 0.15rem; }
+.draft-sum-card { background: var(--bg); border: 1px solid var(--line); padding: 0.55rem 0.7rem; display: grid; gap: 0.15rem; color: var(--text); font: inherit; text-align: left; cursor: pointer; }
+.draft-sum-card:hover, .draft-sum-card:focus-visible { border-color: var(--red); }
+.draft-sum-card.is-current { border-color: var(--red); box-shadow: inset 4px 0 0 var(--red); }
+.draft-filter-bar { position: sticky; left: 0; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.6rem 0.7rem; margin-bottom: 0.5rem; background: var(--raise); border: 1px solid var(--line); }
+.history-roster-box { width: min(760px, 100%); }
+.history-roster-box .modal-head h2 { margin: 0; font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.04em; }
+.history-roster-body { padding: 0.9rem 1rem 1rem; display: grid; gap: 1rem; }
+.history-roster-section { display: grid; gap: 0.4rem; }
+.history-roster-section .group-title { margin: 0; }
+.history-roster-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 0.35rem; }
+.history-roster-player { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 0.5rem; padding: 0.45rem 0.55rem; background: var(--bg); border: 1px solid var(--line); }
+.history-roster-player .owner { white-space: nowrap; }
+.idea-tendency { margin: -0.1rem 0 0.15rem; padding: 0.35rem 0.5rem; border-left: 3px solid var(--red); background: var(--raise); color: var(--muted); font-size: 0.76rem; font-weight: 700; }
 .trade-board { display: grid; gap: 0.35rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); margin-bottom: 1rem; }
 .trade-lb { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 0.5rem; text-align: left; font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--line); padding: 0.4rem 0.6rem; cursor: pointer; }
 .trade-lb .owner { grid-column: 1 / -1; }

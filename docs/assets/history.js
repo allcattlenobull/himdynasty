@@ -17,14 +17,98 @@
 
   function who(u, opts = {}) {
     const m = mgr(u);
-    const w = el(opts.link === false ? "span" : "a", null, "teamcell who");
-    if (opts.link !== false) w.href = `#managers/${encodeURIComponent(u)}`;
-    if (isNum(m.current_rid)) w.appendChild(dot(m.current_rid));
+    const tag = opts.button ? "button" : opts.link === false ? "span" : "a";
+    const w = el(tag, null, "teamcell who");
+    if (tag === "a") w.href = opts.href || `#managers/${encodeURIComponent(u)}`;
+    if (tag === "button") w.type = "button";
+    const seasonRid = opts.teamFor && m.seasons[opts.teamFor] ? m.seasons[opts.teamFor].rid : m.current_rid;
+    if (isNum(seasonRid)) w.appendChild(dot(seasonRid));
     const t = el("span", null);
     t.appendChild(el("span", opts.teamFor && m.seasons[opts.teamFor] ? m.seasons[opts.teamFor].team : m.team, "team"));
     if (opts.sub !== false && m.name) t.appendChild(el("span", ` ${m.name}`, "owner"));
     w.appendChild(t);
     return w;
+  }
+
+  function closeHistoricalRoster(overlay, restore) {
+    overlay.classList.add("closing");
+    document.body.style.overflow = "";
+    setTimeout(() => overlay.remove(), 190);
+    if (restore) restore.focus();
+  }
+
+  function openHistoricalRoster(u, season, restore) {
+    const s = H.seasons.find((x) => x.season === season);
+    const m = mgr(u);
+    const roster = s && s.rosters ? s.rosters[u] : null;
+    const overlay = el("div", null, "modal history-roster-modal");
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-label", `${season} ${m.seasons[season] ? m.seasons[season].team : m.team} roster`);
+    const box = el("div", null, "modal-box history-roster-box");
+    const head = el("div", null, "modal-head");
+    head.appendChild(avatar(u, "h-avatar lg"));
+    const title = el("div");
+    title.append(el("h2", m.seasons[season] ? m.seasons[season].team : m.team), el("p", `${season} end-of-season roster · ${m.name}`, "owner"));
+    head.appendChild(title);
+    const close = el("button", "×", "modal-close");
+    close.type = "button";
+    close.setAttribute("aria-label", "Close roster");
+    head.appendChild(close);
+    box.appendChild(head);
+    const body = el("div", null, "history-roster-body");
+    if (!roster || !roster.length) {
+      body.appendChild(el("p", "This season’s roster snapshot is not available yet.", "muted"));
+    } else {
+      const groups = [["starter", "Starters"], ["bench", "Bench"], ["taxi", "Taxi squad"], ["ir", "Injured reserve"]];
+      for (const [key, label] of groups) {
+        const rows = roster.filter((p) => p.section === key);
+        if (!rows.length) continue;
+        const section = el("section", null, "history-roster-section");
+        section.appendChild(el("h3", `${label} · ${rows.length}`, "group-title"));
+        const list = el("div", null, "history-roster-list");
+        for (const p of rows) {
+          const row = el("div", null, "history-roster-player");
+          row.appendChild(playerButton(p.id, p.name, "team", { pos: p.pos, nfl: p.nfl }));
+          row.appendChild(el("span", [p.pos, p.nfl].filter(Boolean).join(" · "), "owner"));
+          list.appendChild(row);
+        }
+        section.appendChild(list);
+        body.appendChild(section);
+      }
+      body.appendChild(el("p", "Roster membership is the archived Sleeper season-ending roster. Player team and position labels use the current player database.", "small muted"));
+    }
+    box.appendChild(body);
+    overlay.appendChild(box);
+    document.body.appendChild(overlay);
+    document.body.style.overflow = "hidden";
+    let onKey = null;
+    const dismiss = () => {
+      if (overlay.classList.contains("closing")) return;
+      if (onKey) document.removeEventListener("keydown", onKey);
+      closeHistoricalRoster(overlay, restore);
+    };
+    close.addEventListener("click", dismiss);
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) dismiss(); });
+    onKey = (e) => {
+      if (e.key !== "Escape" || document.querySelector(".player-modal")) return;
+      dismiss();
+    };
+    document.addEventListener("keydown", onKey);
+    close.focus();
+  }
+
+  function seasonTeam(u, season, opts = {}) {
+    const m = mgr(u);
+    const info = m.seasons[season];
+    if (season === H.current_season && info && isNum(info.rid)) {
+      return who(u, { teamFor: season, sub: opts.sub, href: `team.html?id=${info.rid}` });
+    }
+    const b = who(u, { teamFor: season, sub: opts.sub, button: true });
+    b.classList.add("season-team-button");
+    b.title = `View ${season} end-of-season roster`;
+    b.addEventListener("click", () => openHistoricalRoster(u, season, b));
+    return b;
   }
   function avatar(u, cls = "h-avatar") {
     const m = mgr(u);
@@ -104,7 +188,7 @@
       if (s.complete && r.finish === 1) tr.classList.add("champ-row");
       tr.appendChild(el("td", String(r.rank), "num rank"));
       const c = el("td");
-      c.appendChild(who(r.user, { teamFor: season }));
+      c.appendChild(seasonTeam(r.user, season));
       tr.appendChild(c);
       tr.appendChild(el("td", `${r.w}-${r.l}${r.t ? `-${r.t}` : ""}`, "num"));
       tr.appendChild(el("td", fmt(r.pf), "num"));
@@ -132,7 +216,7 @@
           for (const [rid, pts] of [[g.a, g.pa], [g.b, g.pb]]) {
             const u = s.teams[String(rid)] ? s.teams[String(rid)].user : null;
             const row = el("div", null, `h-side${g.winner === rid ? " win" : ""}`);
-            row.appendChild(u ? who(u, { teamFor: season, sub: false }) : el("span", `Team ${rid}`));
+            row.appendChild(u ? seasonTeam(u, season, { sub: false }) : el("span", `Team ${rid}`));
             row.appendChild(el("span", fmt(pts, 2), "num"));
             card.appendChild(row);
           }
@@ -378,12 +462,14 @@
   // ---------------------------------------------------------------- //
   // Drafts
   // ---------------------------------------------------------------- //
+  const draftState = { key: null, user: null };
   function renderDrafts(key) {
     const drafts = H.drafts.slice().sort((a, b) => (b.season + b.kind).localeCompare(a.season + a.kind));
     const keys = drafts.map((d) => `${d.season}-${d.kind}`);
     if (!keys.includes(key)) key = keys[0];
     pills(document.getElementById("draft-pills"), keys, key, (k) => { const [s, kind] = k.split("-"); return `${s} ${kind === "rookie" ? "Rookie" : "Startup"}`; }, (k) => { location.hash = `#drafts/${k}`; });
     const d = drafts.find((x) => `${x.season}-${x.kind}` === key);
+    if (draftState.key !== key) { draftState.key = key; draftState.user = null; }
     const young = Number(d.season) >= Number(H.current_season);
     document.getElementById("draft-note").textContent =
       `Every pick re-graded with today's dynasty value (DynastyProcess 1-QB). "+/-" is the pick number minus where his value now ranks in this draft: +8 means he's worth 8 spots more than where he went. League pts = points he has scored in HIM starting lineups.${young ? " This class is brand new, so values still mostly reflect draft capital." : ""}`;
@@ -392,20 +478,29 @@
     d.picks.forEach((p) => { const b = (by[p.user] = by[p.user] || { picks: 0, delta: 0, value: 0, best: null }); b.picks++; b.delta += p.delta; b.value += p.value; if (!b.best || p.delta > b.best.delta) b.best = p; });
     const sum = el("div", null, "draft-sum");
     Object.entries(by).sort((a, b) => b[1].value - a[1].value).forEach(([u, b]) => {
-      const c = el("div", null, "draft-sum-card");
-      c.appendChild(who(u, { teamFor: d.season, sub: false }));
+      const c = el("button", null, `draft-sum-card${draftState.user === u ? " is-current" : ""}`);
+      c.type = "button";
+      c.setAttribute("aria-pressed", draftState.user === u ? "true" : "false");
+      c.appendChild(who(u, { teamFor: d.season, sub: false, link: false }));
       c.appendChild(el("div", `${b.picks} pick${b.picks === 1 ? "" : "s"} · ${num(b.value)} value now`, "owner"));
       c.appendChild(el("div", `${b.delta > 0 ? "+" : ""}${b.delta} vs slot`, `num ${b.delta > 0 ? "up" : b.delta < 0 ? "down" : ""}`));
       if (b.best && d.kind === "rookie") c.appendChild(el("div", `Best: ${b.best.name} (${b.best.label})`, "owner"));
+      c.addEventListener("click", () => { draftState.user = draftState.user === u ? null : u; renderDrafts(key); document.getElementById("draft-table").scrollIntoView({ behavior: "smooth", block: "start" }); });
       sum.appendChild(c);
     });
     document.getElementById("draft-summary").replaceChildren(sum);
     const [t, body] = table([["Pick", 0], ["Team", 0], ["Player", 0], ["Pos", 0], ["Value now", 1], ["Value rank", 1], ["+/-", 1, "Draft slot minus value rank: positive = steal"], ["League pts", 1]]);
-    for (const p of d.picks) {
+    const shown = draftState.user ? d.picks.filter((p) => p.user === draftState.user) : d.picks;
+    for (const p of shown) {
       const tr = el("tr");
       tr.appendChild(el("td", p.label, "num"));
       const c = el("td");
-      c.appendChild(who(p.user, { teamFor: d.season, sub: false }));
+      const filter = el("button", null, "draft-team-filter");
+      filter.type = "button";
+      filter.title = `Show every pick by ${mgr(p.user).seasons[d.season] ? mgr(p.user).seasons[d.season].team : teamOf(p.user)}`;
+      filter.appendChild(who(p.user, { teamFor: d.season, sub: false, link: false }));
+      filter.addEventListener("click", () => { draftState.user = p.user; renderDrafts(key); document.getElementById("draft-table").scrollIntoView({ behavior: "smooth", block: "start" }); });
+      c.appendChild(filter);
       if (p.orig_user && p.orig_user !== p.user) c.appendChild(el("div", `via ${mgr(p.orig_user).seasons[d.season] ? mgr(p.orig_user).seasons[d.season].team : teamOf(p.orig_user)}`, "owner"));
       tr.appendChild(c);
       const pc = el("td");
@@ -419,7 +514,16 @@
       tr.appendChild(el("td", p.league_pts ? fmt(p.league_pts, 1) : "—", "num"));
       body.appendChild(tr);
     }
-    document.getElementById("draft-table").replaceChildren(t);
+    const tableHost = document.getElementById("draft-table");
+    if (draftState.user) {
+      const bar = el("div", null, "draft-filter-bar");
+      bar.appendChild(el("span", `Showing ${shown.length} pick${shown.length === 1 ? "" : "s"} by ${mgr(draftState.user).seasons[d.season] ? mgr(draftState.user).seasons[d.season].team : teamOf(draftState.user)}`, "team"));
+      const reset = el("button", "Show all teams", "chip");
+      reset.type = "button";
+      reset.addEventListener("click", () => { draftState.user = null; renderDrafts(key); });
+      bar.appendChild(reset);
+      tableHost.replaceChildren(bar, t);
+    } else tableHost.replaceChildren(t);
   }
 
   // ---------------------------------------------------------------- //
