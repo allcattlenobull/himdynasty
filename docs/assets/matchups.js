@@ -171,9 +171,8 @@
         const diff = Math.abs((a.points || 0) - (b.points || 0));
         head.appendChild(el("span", `margin ${diff.toFixed(2)}`, "owner"));
       } else if (st === "live") {
-        const diff = Math.abs((a.points || 0) - (b.points || 0));
         const chance = chanceLabel(a, b, pa);
-        head.appendChild(el("span", `${chance ? `${chance} · ` : ""}margin ${diff.toFixed(2)}`, "owner matchup-summary"));
+        if (chance) head.appendChild(el("span", chance, "owner matchup-summary"));
       } else {
         head.appendChild(el("span", "win chance", "owner"));
       }
