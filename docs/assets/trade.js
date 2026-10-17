@@ -5,7 +5,7 @@
   "use strict";
   const { el, dot, teamLink, assignColors, shareButton, playerButton } = window.HIM;
 
-  let data, E, S, byId, latest, history;
+  let data, E, S, byId, latest, historyData;
   let me = null;
   let baseline = null;
   let stale = null; // note for a shared link whose players moved; shown on first render only
@@ -28,27 +28,25 @@
   }
 
   function tendencyFor(rid) {
-    if (!history) return null;
-    const m = Object.values(history.managers || {}).find((x) => String(x.current_rid) === String(rid));
+    if (!historyData) return null;
+    const m = Object.values(historyData.managers || {}).find((x) => String(x.current_rid) === String(rid));
     return m && m.tendencies && m.tendencies.deals >= 2 ? m.tendencies : null;
   }
 
-  function tendencyFit(result) {
-    const t = tendencyFor(result.other.rid);
+  function tendencyAlignment(rid, receives, sends) {
+    const t = tendencyFor(rid);
     if (!t) return { score: 0, tendency: null, notes: [] };
-    const partnerGets = result.give;
-    const partnerSends = result.get;
     const value = (items) => items.reduce((sum, a) => sum + Math.max(a.value || 0, 1), 0);
-    const players = partnerGets.filter((a) => a.kind === "player" && Number.isFinite(a.age));
+    const players = receives.filter((a) => a.kind === "player" && Number.isFinite(a.age));
     const playerValue = value(players);
     const youngness = playerValue ? players.reduce((sum, a) => {
       const q = a.age <= 23 ? 1 : a.age <= 24 ? 0.7 : a.age <= 25 ? 0.4 : a.age <= 26 ? 0 : a.age <= 27 ? -0.25 : a.age <= 28 ? -0.55 : -1;
       return sum + q * Math.max(a.value || 0, 1);
     }, 0) / playerValue : 0;
-    const sentValue = value(partnerSends);
-    const receivedValue = value(partnerGets);
-    const pickCost = sentValue ? value(partnerSends.filter((a) => a.kind === "pick")) / sentValue : 0;
-    const pickReturn = receivedValue ? value(partnerGets.filter((a) => a.kind === "pick")) / receivedValue : 0;
+    const sentValue = value(sends);
+    const receivedValue = value(receives);
+    const pickCost = sentValue ? value(sends.filter((a) => a.kind === "pick")) / sentValue : 0;
+    const pickReturn = receivedValue ? value(receives.filter((a) => a.kind === "pick")) / receivedValue : 0;
     const youth = 2.5 * t.youth_lean * youngness;
     const picks = 3 * t.pick_send_lean * pickCost + 1.5 * t.pick_receive_lean * pickReturn;
     const score = Math.max(-4, Math.min(4, youth + picks));
@@ -57,6 +55,10 @@
     if (pickCost >= 0.2 && Math.abs(t.pick_send_lean) >= 0.2) notes.push(t.pick_send_lean > 0 ? "This manager has been willing to move picks." : "This manager has historically protected their picks.");
     if (pickReturn >= 0.2 && t.pick_receive_lean >= 0.2) notes.push("This manager has frequently acquired picks in past deals.");
     return { score, tendency: t, notes };
+  }
+
+  function tendencyFit(result) {
+    return tendencyAlignment(result.other.rid, result.give, result.get);
   }
 
   function assetMeta(a) {
@@ -126,6 +128,79 @@
     const ul = el("ul", null, "notes");
     notes.forEach((n) => ul.appendChild(el("li", n)));
     return ul;
+  }
+
+  const clamp = (n, low, high) => Math.max(low, Math.min(high, n));
+  const factorText = (label, points) => `${label} ${points > 0 ? "+" : points < 0 ? "−" : ""}${Math.abs(points)}`;
+
+  function competitionFactor(t, side) {
+    if (!side) return { points: 0, detail: "Season model unavailable" };
+    const dPlayoff = side.playoff[1] - side.playoff[0];
+    const dChamp = side.champ[1] - side.champ[0];
+    const dFirst = side.first[1] - side.first[0];
+    let raw;
+    if (t.mode === "contender") raw = 0.65 * dPlayoff + 1.1 * dChamp + 0.35 * side.weekly;
+    else if (t.mode === "rebuilder") raw = 0.65 * dFirst - 0.25 * dPlayoff;
+    else raw = 0.6 * dPlayoff + 0.8 * dChamp + 0.25 * side.weekly;
+    const points = Math.round(clamp(raw, -15, 15));
+    const detail = t.mode === "rebuilder"
+      ? `Rebuilder fit: #1 pick odds ${dFirst >= 0 ? "+" : "−"}${Math.abs(dFirst).toFixed(1)}`
+      : `${t.mode === "contender" ? "Contender" : "Competitive"} fit: playoffs ${dPlayoff >= 0 ? "+" : "−"}${Math.abs(dPlayoff).toFixed(1)} · title ${dChamp >= 0 ? "+" : "−"}${Math.abs(dChamp).toFixed(1)}`;
+    return { points, detail };
+  }
+
+  function acceptanceEstimate(t, receives, sends, gain, otherGain, ev, impact) {
+    const scale = Math.max(ev.rawGive, ev.rawGet, 1);
+    const fairRaw = (0.65 * gain + 0.35 * (gain - otherGain)) / scale;
+    const fairness = Math.round(clamp(fairRaw * 55, -25, 25));
+    const competition = competitionFactor(t, impact);
+    const historyFit = tendencyAlignment(t.rid, receives, sends);
+    const tendency = Math.round(clamp(historyFit.score * 3, -12, 12));
+    const chance = Math.round(clamp(50 + fairness + competition.points + tendency, 5, 95));
+    const label = chance >= 70 ? "Likely" : chance >= 45 ? "Toss-up" : "Long shot";
+    return { chance, label, fairness, competition, tendency, historyFit };
+  }
+
+  function acceptancePanel(A, B, give, get, ev, imp) {
+    const box = el("section", null, "acceptance-box");
+    box.appendChild(el("div", "Estimated manager acceptance", "group-title"));
+    box.appendChild(el("p", "Based on fairness, competitive fit, and each manager’s completed-trade tendencies. This is an estimate—not the manager’s actual answer.", "small muted acceptance-note"));
+    const grid = el("div", null, "acceptance-grid");
+    const rows = [
+      [A, get, give, ev.dA, ev.dB, imp && imp.a],
+      [B, give, get, ev.dB, ev.dA, imp && imp.b],
+    ];
+    for (const [t, receives, sends, gain, otherGain, impact] of rows) {
+      const estimate = acceptanceEstimate(t, receives, sends, gain, otherGain, ev, impact);
+      const card = el("article", null, `acceptance-card ${estimate.chance >= 70 ? "likely" : estimate.chance >= 45 ? "toss" : "long"}`);
+      const head = el("div", null, "acceptance-head");
+      const name = el("div", null, "teamcell");
+      name.append(dot(Number(t.rid)), teamLink(Number(t.rid), t.name));
+      head.append(name, el("span", estimate.label, "acceptance-label"));
+      card.appendChild(head);
+      card.appendChild(el("div", `${estimate.chance}%`, "acceptance-pct"));
+      const track = el("div", null, "acceptance-track");
+      const fill = el("span");
+      fill.style.width = `${estimate.chance}%`;
+      track.appendChild(fill);
+      track.setAttribute("role", "progressbar");
+      track.setAttribute("aria-label", `${t.name} estimated acceptance`);
+      track.setAttribute("aria-valuenow", String(estimate.chance));
+      track.setAttribute("aria-valuemin", "0");
+      track.setAttribute("aria-valuemax", "100");
+      card.appendChild(track);
+      const factors = el("div", null, "acceptance-factors");
+      for (const [label, points] of [["Fairness", estimate.fairness], ["Competition", estimate.competition.points], ["Tendencies", estimate.tendency]]) {
+        factors.appendChild(el("span", factorText(label, points), points > 0 ? "up" : points < 0 ? "down" : "muted"));
+      }
+      card.appendChild(factors);
+      card.appendChild(el("p", estimate.competition.detail, "owner"));
+      const hist = estimate.historyFit.tendency;
+      card.appendChild(el("p", hist ? `Past ${hist.deals} trades: ${hist.youth_label.toLowerCase()} · ${hist.pick_label.toLowerCase()}` : "Not enough completed trades for a tendency score.", "owner"));
+      grid.appendChild(card);
+    }
+    box.appendChild(grid);
+    return box;
   }
 
   // ------------------------------------------------------------------ //
@@ -248,8 +323,9 @@
     const summary = `${A.name} sends ${give.map((x) => x.name).join(", ") || "nothing"} · ${B.name} sends ${get.map((x) => x.name).join(", ") || "nothing"}`;
     bar.append(el("span", summary, "owner"), shareButton(() => location.href, () => `HIM Dynasty trade: ${summary}`, "Share trade"));
     out.appendChild(bar);
+    let imp = null;
     if (S) {
-      const imp = S.impact(A, B, give, get, 4000, getBaseline());
+      imp = S.impact(A, B, give, get, 4000, getBaseline());
       const odds = el("div", null, "odds-pair");
       odds.appendChild(oddsBlock(A.name, A.rid, imp.a, true));
       odds.appendChild(oddsBlock(B.name, B.rid, imp.b, true));
@@ -282,6 +358,7 @@
       grid.appendChild(c);
     }
     out.appendChild(grid);
+    if (out.id === "build-result") out.appendChild(acceptancePanel(A, B, give, get, ev, imp));
     if (ev.notes.length) out.appendChild(notesList(ev.notes));
 
     // How to even it
@@ -700,14 +777,14 @@
   // ------------------------------------------------------------------ //
   async function load() {
     try {
-      const [trade, latestData, historyData] = await Promise.all([
+      const [trade, latestData, managerHistory] = await Promise.all([
         fetch("data/trade.json", { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); }),
         window.HIM.loadData().catch(() => null),
         fetch("data/history.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       data = trade;
       latest = latestData;
-      history = historyData;
+      historyData = managerHistory;
       if (latest) assignColors(latest.standings.map((t) => t.roster_id));
     } catch (err) {
       document.getElementById("updated").textContent = `Trade values appear after the next data update (${err.message}).`;

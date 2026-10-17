@@ -766,6 +766,23 @@ td.wrap { white-space: normal; min-width: 220px; }
 .result-grid { display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .result-grid .value.up { color: var(--good); }
 .result-grid .value.down { color: var(--bad); }
+.acceptance-box { margin-top: 1rem; padding: 0.75rem 0.8rem 0.85rem; background: var(--bg); border: 1px solid var(--line); border-top: 4px solid var(--red); }
+.acceptance-box > .group-title { margin-top: 0; }
+.acceptance-note { margin: 0.25rem 0 0.75rem; }
+.acceptance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); gap: 0.7rem; }
+.acceptance-card { padding: 0.65rem 0.7rem; background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--bad); }
+.acceptance-card.toss { border-left-color: #d4a017; }
+.acceptance-card.likely { border-left-color: var(--good); }
+.acceptance-head { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+.acceptance-label { flex: none; font-family: var(--display); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.acceptance-pct { margin-top: 0.35rem; font-family: var(--display); font-size: 2.2rem; line-height: 1; }
+.acceptance-track { height: 7px; margin: 0.35rem 0 0.5rem; overflow: hidden; background: var(--raise-2); }
+.acceptance-track span { display: block; height: 100%; background: var(--bad); }
+.acceptance-card.toss .acceptance-track span { background: #d4a017; }
+.acceptance-card.likely .acceptance-track span { background: var(--good); }
+.acceptance-factors { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+.acceptance-factors span { padding: 0.15rem 0.4rem; background: var(--raise); font-size: 0.72rem; font-weight: 700; }
+.acceptance-card .owner { margin: 0.2rem 0 0; }
 .notes { margin: 1rem 0 0; padding-left: 1.2rem; display: grid; gap: 0.35rem; font-size: 0.9rem; }
 .notes li::marker { color: var(--red); }
 .balance { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
